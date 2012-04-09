@@ -18,6 +18,7 @@ package org.apache.pdfbox.pdfviewer;
 
 import java.awt.Dimension;
 
+
 import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.io.FileOutputStream;
@@ -43,7 +44,7 @@ public class PDFPagePanel extends JPanel
     private static final long serialVersionUID = -4629033339560890669L;
     
     private PDPage page;
-    private PageDrawer drawer = null;
+    private org.apache.pdfbox.pdfviewer.PageDrawer drawer = null;
     private Dimension pageDimension = null;
     private Dimension drawDimension = null;
 
