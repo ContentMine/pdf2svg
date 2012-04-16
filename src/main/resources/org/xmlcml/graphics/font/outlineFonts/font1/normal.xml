@@ -1,0 +1,80 @@
+<font fontName="font1-normal" fontStyle="Normal" genericFamily="SansSerif">
+  <!--  uppercase -->
+  <!-- 
+	<glyph char="A" aspectRatio="1.0" area="6.5" strokeCount="19"/>
+	<glyph char="B"/>
+	<glyph char="C" aspectRatio="1.1" area="6.4" strokeCount="63"/>
+	<glyph char="D"/>
+	<glyph char="E"/>
+	<glyph char="F"/>
+	<glyph char="G"/>
+	<glyph char="H"/>
+	<glyph char="I" aspectRatio="7.5" area="2.4" strokeCount="5"/>
+	<glyph char="J"/>
+	<glyph char="K"/>
+	<glyph char="L"/>
+	<glyph char="M" aspectRatio="1.0" area="6.5" strokeCount="20"/>
+	<glyph char="N"/>
+	<glyph char="O"/>
+	<glyph char="P"/>
+	<glyph char="Q"/>
+	<glyph char="R"/>
+	<glyph char="S" aspectRatio="1.2" area="6.1" strokeCount="102"/>
+	<glyph char="T"/>
+	<glyph char="U"/>
+	<glyph char="V"/>
+	<glyph char="W"/>
+	<glyph char="X"/>
+	<glyph char="Y"/>
+	<glyph char="Z"/>
+	-->
+<!--  lowercase -->		
+<!-- 
+	<glyph char="a" aspectRatio="1.1" area="4.7" strokeCount="105"/>
+	<glyph char="b" aspectRatio="1.6" area="5.3" strokeCount="55"/>
+	<glyph char="c" aspectRatio="1.2" area="4.6" strokeCount="54"/>
+	<glyph char="d" aspectRatio="1.6" area="5.3" strokeCount="58"/>
+	<glyph char="e" aspectRatio="1.1" area="4.7" strokeCount="56"/>
+	<glyph char="f"/>
+	<glyph char="g"/>
+	<glyph char="h"/>
+	<glyph char="i" aspectRatio="8.1" area="2.3" strokeCount="10"/>
+	<glyph char="j"/>
+	<glyph char="k"/>
+	<glyph char="l" aspectRatio="8.1" area="2.3" strokeCount="5"/>
+	<glyph char="m" aspectRatio="0.7" area="5.7" strokeCount="63"/>
+	<glyph char="n" aspectRatio="1.2" area="4.4" strokeCount="39"/>
+	<glyph char="o" aspectRatio="1.1" area="4.8" strokeCount="53"/>
+	<glyph char="p"/>
+	<glyph char="q"/>
+	<glyph char="r" aspectRatio="1.8" area="3.6" strokeCount="28"/>
+	<glyph char="s" aspectRatio="1.2" area="4.5" strokeCount="96"/>
+	<glyph char="t"/>
+	<glyph char="u"/>
+	<glyph char="v"/>
+	<glyph char="w"/>
+	<glyph char="x" aspectRatio="1.0" area="4.7" strokeCount="20"/>
+	<glyph char="y"/>
+	<glyph char="z"/>
+	-->
+<!--  punctuation -->
+<!-- 
+	<glyph char="(" aspectRatio="3.9" area="4.4" strokeCount="27"/>
+	<glyph char=")" aspectRatio="3.9" area="4.4" strokeCount="27"/>
+	<glyph char="." aspectRatio="1.0" area="0.9" strokeCount="5"/>
+	-->
+<!-- numbers -->
+<!-- 
+	<glyph char="0" aspectRatio="1.5" area="3.0" strokeCount="62"/>
+	<glyph char="1" aspectRatio="2.7" area="2.3" strokeCount="18"/>
+	<glyph char="2"/>
+	<glyph char="3" aspectRatio="1.5" area="3.1" strokeCount="83"/>
+	<glyph char="4"/>
+	<glyph char="5"/>
+	<glyph char="6" aspectRatio="1.5" area="3.1" strokeCount="84"/>
+	<glyph char="7" aspectRatio="1.5" area="3.0" strokeCount="24"/>
+	<glyph char="8" aspectRatio="1.5" area="3.1" strokeCount="102"/>
+	<glyph char="9" aspectRatio="1.5" area="3.1" strokeCount="88"/>
+	-->
+</font>
+		

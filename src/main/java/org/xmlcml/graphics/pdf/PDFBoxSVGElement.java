@@ -3,9 +3,7 @@ package org.xmlcml.graphics.pdf;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import nu.xom.Attribute;
 import nu.xom.Builder;
@@ -21,112 +19,19 @@ import org.xmlcml.cml.graphics.SVGPath;
 import org.xmlcml.cml.graphics.SVGPolyline;
 import org.xmlcml.cml.graphics.SVGText;
 import org.xmlcml.euclid.Real2;
-import org.xmlcml.euclid.Real2Range;
-import org.xmlcml.euclid.RealRange;
+import org.xmlcml.graphics.font.FontManager;
+import org.xmlcml.graphics.font.OutlineFont;
+import org.xmlcml.graphics.graph.NodeHanger;
 
 public class PDFBoxSVGElement extends SVGElement {
 
-	static Map<String, String> glyphMap = new HashMap<String, String>();
-	static {
-		// italics
-		glyphMap.put("1.1/6.3/19", "A");
-		glyphMap.put("0", "B");
-		glyphMap.put("1.1/6.4/51", "C");
-		glyphMap.put("1.0/6.5/59", "D");
-		glyphMap.put("0", "E");
-		glyphMap.put("0", "F");
-		glyphMap.put("0", "G");
-		glyphMap.put("0", "H");
-		glyphMap.put("0", "I");
-		glyphMap.put("0", "J");
-		glyphMap.put("0", "K");
-		glyphMap.put("0", "L");
-		glyphMap.put("0.8/7.2/32", "M");
-		glyphMap.put("1.0/6.6/68", "O");
-		glyphMap.put("1.0/6.5/64", "R");
-		glyphMap.put("0", "S");
-		glyphMap.put("1.2/6.0/9", "T");
-		glyphMap.put("0", "U");
-		glyphMap.put("0", "V");
-		glyphMap.put("0", "W");
-		glyphMap.put("0", "X");
-		glyphMap.put("0", "Y");
-		glyphMap.put("0", "Z");
-		
-		glyphMap.put("1.1/4.8/101", "a");
-		glyphMap.put("1.4/5.6/71", "b");
-		glyphMap.put("1.4/5.7/71", "b");
-		glyphMap.put("1.1/4.6/57", "c");
-		glyphMap.put("1.3/5.9/61", "d");
-		glyphMap.put("1.1/4.8/68", "e");
-		glyphMap.put("2.0/4.8/34", "f");
-		glyphMap.put("1.3/5.9/100", "g");
-		glyphMap.put("1.4/5.6/42", "h");
-		glyphMap.put("3.0/3.8/10", "i");
-		glyphMap.put("0", "j");
-		glyphMap.put("0", "k");
-		glyphMap.put("3.0/3.8/5", "l");
-		glyphMap.put("0.6/6.0/75", "m");
-		glyphMap.put("1.0/4.8/39", "n");
-		glyphMap.put("1.1/4.8/71", "o");
-		glyphMap.put("1.3/5.9/67", "p");
-		glyphMap.put("0", "q");
-		glyphMap.put("1.3/4.2/25", "r");
-		glyphMap.put("1.1/4.7/84", "s");
-		glyphMap.put("2.6/4.1/37", "t");
-		glyphMap.put("2.7/4.1/37", "t");
-		glyphMap.put("1.0/4.8/42", "u");
-		glyphMap.put("1.0/4.7/14", "v");
-		glyphMap.put("0", "w");
-		glyphMap.put("0.9/4.9/19", "x");
-		glyphMap.put("1.2/6.0/30", "y");
-		glyphMap.put("0", "z");
-		
-		glyphMap.put("0.8/1.0/5", ".");
-		
-		// normal
-		
-		glyphMap.put("1.0/6.5/19", "A");
-		glyphMap.put("1.1/6.4/63", "C");
-		glyphMap.put("7.5/2.4/5", "I");
-		glyphMap.put("1.0/6.5/20", "M");
-		glyphMap.put("1.2/6.1/102", "S");
-		
-		glyphMap.put("1.1/4.7/105", "a");
-		glyphMap.put("1.6/5.3/55", "b");
-		glyphMap.put("1.2/4.6/54", "c");
-		glyphMap.put("1.1/4.6/54", "c");
-		glyphMap.put("1.6/5.3/58", "d");
-		glyphMap.put("1.1/4.7/56", "e");
-		glyphMap.put("1.1/4.8/56", "e");
-		glyphMap.put("8.1/2.3/10", "i");
-		glyphMap.put("8.1/2.3/5", "l");
-		glyphMap.put("0.7/5.7/63", "m");
-		glyphMap.put("1.2/4.4/39", "n");
-		glyphMap.put("1.1/4.8/53", "o");
-		glyphMap.put("1.8/3.6/28", "r");
-		glyphMap.put("1.2/4.5/96", "s");
-		glyphMap.put("1.0/4.7/20", "x");
-		glyphMap.put("1.0/4.7/19", "x");
-		
-		glyphMap.put("3.9/4.4/27", "(");
-		glyphMap.put("1.0/0.9/5", ".");
-		// numbers
-		glyphMap.put("1.5/3.0/62", "0");
-		glyphMap.put("1.5/3.1/62", "0");
-		glyphMap.put("2.7/2.3/18", "1");
-		glyphMap.put("0", "2");
-		glyphMap.put("1.5/3.1/83", "3");
-		glyphMap.put("", "4");
-		glyphMap.put("", "5");
-		glyphMap.put("1.5/3.1/84", "6");
-		glyphMap.put("1.5/3.0/24", "7");
-		glyphMap.put("1.5/3.1/102", "8");
-		glyphMap.put("1.5/3.1/88", "9");
-		
-	}
+	private List<SVGText> glyphList;
+	private List<SVGPath> nonTextPathList;
+	private FontManager fontManager;
+
 	public PDFBoxSVGElement(SVGElement elem) {
 		super(elem);
+		this.fontManager = new FontManager();
 	}
 	
 	public static PDFBoxSVGElement createPDFBoxSVGElement(Element elem) {
@@ -178,8 +83,8 @@ public class PDFBoxSVGElement extends SVGElement {
 			}
 			allPathList.add(path);
 		}
-		printPolylines(polylineList);
-		printPaths(allPathList);
+		analyzePolylines(polylineList);
+		analyzePaths(allPathList);
 		findTreeNodes(polylineList);
 	}
 
@@ -218,119 +123,86 @@ public class PDFBoxSVGElement extends SVGElement {
 	}
 
 
-	private void printPolylines(List<SVGPolyline> polylineList) {
+	private void analyzePolylines(List<SVGPolyline> polylineList) {
+		double epsilon = 0.0001;
 		System.out.println("polyline "+polylineList.size());
 		for (SVGPolyline polyline : polylineList) {
 			List<org.xmlcml.cml.graphics.SVGLine> lineList = polyline.createLineList();
 			int size = lineList.size();
 
-			if (size == 1) {
-				if (polyline.isAlignedWithAxes(0.01)) {
-//					polyline.debug("aligned1");
-				} else {
-					polyline.debug("size1???");
-				}
-				// later?
-			} else if (size == 3) {
-					if (polyline.isAlignedWithAxes(0.01)) {
-//						matchEnd(polyline, 0, 0, polylineList);
-//						matchEnd(polyline, 2, 1, polylineList);
-//						polyline.debug("aligned3");
-					} else {
-						// italic dash (closed)
-//						polyline.debug("size3???");
-					}
-					// later?
-			} else if (size == 4) {
-				if (polyline.isBox(0.01)) {
-//					polyline.debug("BOX");
-				} else {
-//					polyline.debug("size4??");
-				}
-			} else if (polyline.isAlignedWithAxes(0.01)) {
-				if (size == 8) {
-					// "T"
-				} else if (size == 11) {
-						// "+"
-				} else {
-					polyline.debug("aligned"+size);
-				}
+			
+			if (polyline.isBox(epsilon)) {
+				
 			} else {
-				if (size != 5 && size != 8 && size != 10 && size != 11) {
-					polyline.debug("size"+size);
-				}
+				NodeHanger nodeHanger = NodeHanger.createNodeHanger(polyline, epsilon);
+				if (nodeHanger != null) {
+					polyline.appendChild(nodeHanger);
+				} 
 			}
 		}
 	}
 
-	private void matchEnd(SVGPolyline polyline, int line, int end, List<SVGPolyline> polylineList) {
-		List<SVGLine> lineList = polyline.createLineList();
-		Real2 endpt = lineList.get(line).getXY(end);
-		SVGCircle circle = new SVGCircle(endpt, 10.0);
-		polyline.getParent().appendChild(circle);
-	}
-
-	private void printPaths(List<SVGPath> pathList) {
+	private void analyzePaths(List<SVGPath> pathList) {
+		OutlineFont outlineFont = fontManager.getDefaultFont();
 		System.out.println("paths "+pathList.size());
-		int lasty = -1;
-		double lastx = -9999;
-		Real2 lastxy = null;
 		double factor0 = 1;
 		double factor = 10;
 		String line = "";
+		glyphList = new ArrayList<SVGText>();
+		nonTextPathList = new ArrayList<SVGPath>();
 		for (SVGPath path : pathList) {
-			Real2Range boundingBox = path.getBoundingBox();
-			RealRange xr = boundingBox.getXRange();
-			double xmin = xr.getMin();
-			int ix = (int) (factor0*xmin);
-			double xmax = xr.getMax();
-			RealRange yr = boundingBox.getYRange();
-			double ymin = yr.getMin();
-			int iy = (int) (factor0*ymin);
-			double ratio = yr.getRange()/xr.getRange();
-			double geomean = Math.sqrt(yr.getRange()*xr.getRange());
-			String ratios = ""+((int)(ratio*factor))/factor+"/"+((int)(geomean*factor))/factor+"/"+path.getCoords().size();
-			String coords = "("+(((int)(factor*xmin))/factor)+"/"+(((int)(factor*ymin))/factor)+")";
-			String glyph = glyphMap.get(ratios);
-			String out = glyph; 
-			if (glyph == null) {
-				out = "("+(((int)(factor*xmin))/factor)+"/"+(((int)(factor*ymin))/factor)+"/"+ratios+")";
-				glyph = "";
+			SVGText glyph = outlineFont.lookupGlyph(path, factor, factor0);
+			if (glyph != null) {
+				glyphList.add(glyph);
+			} else {
+				debugPath(path);
+				nonTextPathList.add(path);
 			}
+		}
+	}
+	
+	private void analyzeText(ParentNode parent) {
+		int lasty = -1;
+		int ix = 0;
+		int iy = 0;
+		String line = null;
+		Real2 lastxy = null;
+		double lastx = -9999;
+		List<SVGText> textStringList = new ArrayList<SVGText>();
+		for (SVGText glyph : glyphList) {
+			double xmin = glyph.getBoundingBox().getXRange().getMin();
 			// new line?
 			if (Math.abs(iy - lasty) > 3 && Math.abs(ix - lastx) > 3) {
 				if (lastxy != null) {
-					SVGText text = new SVGText(lastxy, line);
-					text.addAttribute(new Attribute("style", "font-size:8pt; stroke-width:0.1; fill:red;"));
-					path.getParent().appendChild(text);
-					line = glyph;
+					SVGText textString = new SVGText(lastxy, line);
+					textStringList.add(textString);
+					textString.addAttribute(new Attribute("style", "font-size:8pt; stroke-width:0.1; fill:red;"));
+					parent.appendChild(textString);
+					line = textString.getValue();
 				}
 				lasty = iy;
-				lastxy = path.getCoords().get(0);
-				System.out.println(coords);
-				System.out.print(glyph);
 			} else {
 				if (Math.abs(lastx - xmin) > 2) {
 					System.out.print(" ");
 					line = line+" ";
 				}
 				line = line+glyph;
-				System.out.print(out);
 			}
-			lastx = xmax;
-//			Real2Array r2a = path.getCoords();
-//			Real2 orig = r2a.get(0);
-//			Transform2 t2 = new Transform2(new Vector2(-orig.getX(), -orig.getY()));
-//			r2a.transformBy(t2);
+//			lastx = xmax;
 		}
 	}
-	
-	
-	private String getInteger(Real2Range boundingBox) {
-		double rx = boundingBox.getXRange().getMin();
-		double ry = boundingBox.getYRange().getMin();
-		return ""+(int)rx+"/"+(int)ry+" ";
+
+	private static String debugPath(SVGPath path) {
+//		String ss = "("+(((int)(factor*xmin))/factor)+"/"+(((int)(factor*ymin))/factor)+"/"+ratios+")";
+		return null;
 	}
+	
+//	
+//	private String getInteger(Real2Range boundingBox) {
+//		double rx = boundingBox.getXRange().getMin();
+//		double ry = boundingBox.getYRange().getMin();
+//		return ""+(int)rx+"/"+(int)ry+" ";
+//	}
 
 	private static void usage() {
 		System.err.println("Usage: <svgfilein>");
