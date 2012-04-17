@@ -20,12 +20,13 @@ import org.xmlcml.cml.graphics.SVGPolyline;
 import org.xmlcml.cml.graphics.SVGText;
 import org.xmlcml.euclid.Real2;
 import org.xmlcml.graphics.font.FontManager;
+import org.xmlcml.graphics.font.Glyph;
 import org.xmlcml.graphics.font.OutlineFont;
 import org.xmlcml.graphics.graph.NodeHanger;
 
 public class PDFBoxSVGElement extends SVGElement {
 
-	private List<SVGText> glyphList;
+	private List<Glyph> glyphList;
 	private List<SVGPath> nonTextPathList;
 	private FontManager fontManager;
 
@@ -56,7 +57,7 @@ public class PDFBoxSVGElement extends SVGElement {
 		}
 		element.analysePathNodes();
 		try {
-			CMLUtil.debug(element, new FileOutputStream("test6new.svg"), 0);
+			CMLUtil.debug(element, new FileOutputStream(filename+".new"+".svg"), 0);
 		} catch (Exception e) {
 			throw new RuntimeException("Cannot write: ", e);
 		}
@@ -127,12 +128,13 @@ public class PDFBoxSVGElement extends SVGElement {
 		double epsilon = 0.0001;
 		System.out.println("polyline "+polylineList.size());
 		for (SVGPolyline polyline : polylineList) {
+			if (polyline == null) {
+				throw new RuntimeException("null polyline");
+			}
 			List<org.xmlcml.cml.graphics.SVGLine> lineList = polyline.createLineList();
 			int size = lineList.size();
 
-			
 			if (polyline.isBox(epsilon)) {
-				
 			} else {
 				NodeHanger nodeHanger = NodeHanger.createNodeHanger(polyline, epsilon);
 				if (nodeHanger != null) {
@@ -148,10 +150,11 @@ public class PDFBoxSVGElement extends SVGElement {
 		double factor0 = 1;
 		double factor = 10;
 		String line = "";
-		glyphList = new ArrayList<SVGText>();
+		glyphList = new ArrayList<Glyph>();
 		nonTextPathList = new ArrayList<SVGPath>();
 		for (SVGPath path : pathList) {
-			SVGText glyph = outlineFont.lookupGlyph(path, factor, factor0);
+			String sig = path.getSignature();
+			Glyph glyph = outlineFont.getGlyphBySig(sig);
 			if (glyph != null) {
 				glyphList.add(glyph);
 			} else {
@@ -169,8 +172,9 @@ public class PDFBoxSVGElement extends SVGElement {
 		Real2 lastxy = null;
 		double lastx = -9999;
 		List<SVGText> textStringList = new ArrayList<SVGText>();
-		for (SVGText glyph : glyphList) {
-			double xmin = glyph.getBoundingBox().getXRange().getMin();
+		for (Glyph glyph : glyphList) {
+			double xmin = 0.0;
+//			double xmin = glyph.getBoundingBox().getXRange().getMin();
 			// new line?
 			if (Math.abs(iy - lasty) > 3 && Math.abs(ix - lastx) > 3) {
 				if (lastxy != null) {

@@ -13,6 +13,7 @@ import org.junit.Test;
 public class TestEquivalence {
 
 	private static final String EQUIVALENCE1 = FontManager.packageBase+"/"+"outlineFonts/font1/equivalences1.xml";
+	private static final String FONT1ITALIC = FontManager.packageBase+"/"+"outlineFonts/font1/italic.xml";
 	private FontManager fontManager;
 	private String equivalenceS;
 	private Equivalence equiv;
@@ -42,9 +43,8 @@ public class TestEquivalence {
 		InputStream inputStream = TestOutlineFont.class.getClassLoader().getResourceAsStream(EQUIVALENCE1);
 		Element equivalence1 = new Builder().build(inputStream).getRootElement().getChildElements().get(0);
 		Equivalence equiv = Equivalence.createEquivalence(equivalence1);
-		String fontName = equivalence1.getChildElements("text").get(0).getAttributeValue(OutlineFont.FONT_NAME);
-		OutlineFont font = fontManager.getFontForName(fontName);
-		font.processEquivalence(equiv);
-		font.debug("altered font");
+		OutlineFont font1Italic = OutlineFont.readAndCreateFont(FONT1ITALIC);
+		font1Italic.processEquivalence(equiv);
+//		font1Italic.debug("altered font");
 	}
 }

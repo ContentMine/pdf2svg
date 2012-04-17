@@ -13,6 +13,7 @@ public class Glyph {
 	private static final String CHARACTER = "character";
 	private static final String GLYPH = "glyph";
 	private static final String SIGNATURE = "signature";
+	
 	Element glyphElement;
 	private SVGPath svgPath;
 	private String sig;
@@ -20,7 +21,7 @@ public class Glyph {
 	
 	public Glyph(Element glyphElement) {
 		this.glyphElement = (Element) glyphElement.copy();
-		CMLUtil.debug(glyphElement, "glyph");
+//		CMLUtil.debug(glyphElement, "glyph");
 		processChar();
 		processSVGPath();
 		processSig();
@@ -47,7 +48,7 @@ public class Glyph {
 	}
 
 	private void processChar() {
-		glyphChar = glyphElement.getAttributeValue("char");
+		glyphChar = glyphElement.getAttributeValue(CHARACTER);
 		if (glyphChar == null) {
 			throw new RuntimeException("No @char given for <glyph>");
 		}
@@ -88,8 +89,8 @@ public class Glyph {
 		if (paths.size() != 0) {
 			throw new RuntimeException("<glyph> already has svg:path child");
 		}
-		SVGPath svgPath1 = new SVGPath(svgPath);
-		glyphElement.appendChild(svgPath1);
+		this.svgPath = new SVGPath(svgPath);
+		glyphElement.appendChild(this.svgPath);
 	}
 
 	public void setSignature(String sig) {
@@ -98,6 +99,27 @@ public class Glyph {
 		} else {
 			glyphElement.addAttribute(new Attribute(SIGNATURE, sig));
 		}
+	}
+
+	public String getSignature() {
+		return glyphElement.getAttributeValue(SIGNATURE);
+	}
+
+	public String validate() {
+		String character = getCharacter();
+		if (character == null) {
+			throw new RuntimeException("missing char for glyph, element ");
+		}
+		SVGPath path = getPath();
+		if (path == null) {
+			throw new RuntimeException("glyph must have a path");
+		}
+		String sig = getSignature();
+		if (sig == null) {
+			sig = path.getSignature();
+			setSignature(sig);
+		}
+		return character;
 	}
 
 }

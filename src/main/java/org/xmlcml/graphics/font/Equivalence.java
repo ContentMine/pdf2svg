@@ -57,6 +57,7 @@ public class Equivalence {
 		if (paths.size() != textString.length()) {
 			throw new RuntimeException("text string length "+textString.length()+" != path count "+paths.size());
 		}
+		System.out.println("TEXT "+textString);
 		svgPathList = new ArrayList<SVGPath>();
 		sigList = new ArrayList<String>();
 		for (int i = 0; i < paths.size(); i++) {
@@ -70,15 +71,16 @@ public class Equivalence {
 	}
 	
 	public void checkAgainstFont(OutlineFont font) {
+		int glyphNum = 0;
 		for (int i = 0; i < sigList.size(); i++) {
 			SVGPath svgPath = svgPathList.get(i);
 			String sig = sigList.get(i);
 			Glyph glyph = font.getGlyphBySig(sig);
 			if (glyph == null) {
-				glyph = new Glyph("???");
-				glyph.addPath(svgPath);
-				glyph.setSignature(sig);
-				font.addGlyph(glyph);
+				glyph = font.addNewGlyph("?"+(++glyphNum), svgPath);
+				System.out.println("NEW "+glyph.glyphElement.toXML());
+			} else {
+				System.out.println("FOUND: "+/*sig+*/" "+glyph.getCharacter());
 			}
 		}
 	}

@@ -33,7 +33,7 @@ public class FontManager {
 	}
 	
 	public void readFonts(String resourceFile) {
-		List<OutlineFont> fontList = new ArrayList<OutlineFont>();
+		fontList = new ArrayList<OutlineFont>();
 		InputStream inputStream = FontManager.class.getClassLoader().getResourceAsStream(resourceFile);
 		BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
 		while (true) {
