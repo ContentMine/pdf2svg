@@ -5,3 +5,6 @@ foo
 ^.hgignore~$
 ^target/.*
 /target/
+
+syntax: regexp
+^\.classpath$
