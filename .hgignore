@@ -1,6 +1,6 @@
 syntax: regexp
-^.project$
-^.settings/
-^.classpath$
-^.hgignore~$
+^\.project$
+^\.settings/
+^\.classpath$
+^\.hgignore~$
 ^target/

@@ -47,7 +47,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>org.apache.pdfbox.myexample.MyPDFReader</mainClass>
+							<mainClass>org.xmlcml.graphics.pdf2svg.raw.PDF2SVGConverter</mainClass>
 						</manifest>
 					</archive>
 					<excludes>
