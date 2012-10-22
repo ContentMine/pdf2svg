@@ -1,10 +1,6 @@
-foo
+syntax: regexp
 ^.project$
 ^.settings/
 ^.classpath$
 ^.hgignore~$
-^target/.*
-/target/
-
-syntax: regexp
-^\.classpath$
+^target/
