@@ -12,17 +12,17 @@ import nu.xom.Nodes;
 import nu.xom.ParentNode;
 
 import org.xmlcml.cml.base.CMLUtil;
-import org.xmlcml.cml.graphics.SVGCircle;
-import org.xmlcml.cml.graphics.SVGElement;
-import org.xmlcml.cml.graphics.SVGLine;
-import org.xmlcml.cml.graphics.SVGPath;
-import org.xmlcml.cml.graphics.SVGPolyline;
-import org.xmlcml.cml.graphics.SVGText;
 import org.xmlcml.euclid.Real2;
 import org.xmlcml.graphics.font.FontManager;
 import org.xmlcml.graphics.font.Glyph;
 import org.xmlcml.graphics.font.OutlineFont;
 import org.xmlcml.graphics.graph.NodeHanger;
+import org.xmlcml.graphics.svg.SVGCircle;
+import org.xmlcml.graphics.svg.SVGElement;
+import org.xmlcml.graphics.svg.SVGLine;
+import org.xmlcml.graphics.svg.SVGPath;
+import org.xmlcml.graphics.svg.SVGPolyline;
+import org.xmlcml.graphics.svg.SVGText;
 
 public class PDFBoxSVGElement extends SVGElement {
 
@@ -36,7 +36,7 @@ public class PDFBoxSVGElement extends SVGElement {
 	}
 	
 	public static PDFBoxSVGElement createPDFBoxSVGElement(Element elem) {
-		PDFBoxSVGElement pdfElem = new PDFBoxSVGElement(SVGElement.createSVG(elem));
+		PDFBoxSVGElement pdfElem = new PDFBoxSVGElement(SVGElement.readAndCreateSVG(elem));
 		return pdfElem;
 	}
 	
@@ -131,7 +131,7 @@ public class PDFBoxSVGElement extends SVGElement {
 			if (polyline == null) {
 				throw new RuntimeException("null polyline");
 			}
-			List<org.xmlcml.cml.graphics.SVGLine> lineList = polyline.createLineList();
+			List<SVGLine> lineList = polyline.createLineList();
 			int size = lineList.size();
 
 			if (polyline.isBox(epsilon)) {

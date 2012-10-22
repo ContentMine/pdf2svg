@@ -7,8 +7,8 @@ import nu.xom.Element;
 import nu.xom.Nodes;
 
 import org.xmlcml.cml.base.CMLConstants;
-import org.xmlcml.cml.graphics.SVGElement;
-import org.xmlcml.cml.graphics.SVGPath;
+import org.xmlcml.graphics.svg.SVGElement;
+import org.xmlcml.graphics.svg.SVGPath;
 
 public class Equivalence {
 
@@ -62,7 +62,7 @@ public class Equivalence {
 		sigList = new ArrayList<String>();
 		for (int i = 0; i < paths.size(); i++) {
 			Element path = (Element)paths.get(i);
-			SVGPath svgPath = (SVGPath) SVGElement.createSVG(path);
+			SVGPath svgPath = (SVGPath) SVGElement.readAndCreateSVG(path);
 			svgPathList.add(svgPath);
 			svgPath.normalizeOrigin();
 			String sig = svgPath.getSignature();

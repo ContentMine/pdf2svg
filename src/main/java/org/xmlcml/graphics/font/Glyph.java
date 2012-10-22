@@ -4,9 +4,8 @@ import nu.xom.Attribute;
 import nu.xom.Element;
 import nu.xom.Nodes;
 
-import org.xmlcml.cml.base.CMLUtil;
-import org.xmlcml.cml.graphics.SVGElement;
-import org.xmlcml.cml.graphics.SVGPath;
+import org.xmlcml.graphics.svg.SVGElement;
+import org.xmlcml.graphics.svg.SVGPath;
 
 public class Glyph {
 
@@ -63,7 +62,7 @@ public class Glyph {
 			throw new RuntimeException("<glyph> cannot process multiple svg:path children ("+paths.size()+")");
 		}
 		Element path = (Element) paths.get(0);
-		svgPath = (SVGPath) SVGElement.createSVG(path);
+		svgPath = (SVGPath) SVGElement.readAndCreateSVG(path);
 		path.getParent().replaceChild(path,  svgPath);
 		
 	}

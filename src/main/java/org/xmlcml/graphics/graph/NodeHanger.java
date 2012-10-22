@@ -4,8 +4,8 @@ import java.util.List;
 
 import nu.xom.Element;
 
-import org.xmlcml.cml.graphics.SVGLine;
-import org.xmlcml.cml.graphics.SVGPolyline;
+import org.xmlcml.graphics.svg.SVGLine;
+import org.xmlcml.graphics.svg.SVGPolyline;
 
 
 /** 

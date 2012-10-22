@@ -1,13 +1,13 @@
 package org.xmlcml.graphics.pdf;
 
-import junit.framework.Assert;
 import nu.xom.Builder;
 import nu.xom.Element;
 import nu.xom.Nodes;
 
+import org.junit.Assert;
 import org.junit.Test;
-import org.xmlcml.cml.graphics.SVGElement;
-import org.xmlcml.cml.graphics.SVGPath;
+import org.xmlcml.graphics.svg.SVGElement;
+import org.xmlcml.graphics.svg.SVGPath;
 
 public class TestPDFBox2SVGElement {
 
@@ -27,7 +27,7 @@ public class TestPDFBox2SVGElement {
 		Element element = parseElement("test4.mini.svg");
 		Nodes paths = element.query("./*[local-name()='g']/*[local-name()='path']");
 		for (int i = 0; i < paths.size(); i++) {
-			SVGPath svgPath = (SVGPath) SVGElement.createSVG((Element) paths.get(i));
+			SVGPath svgPath = (SVGPath) SVGElement.readAndCreateSVG((Element) paths.get(i));
 			svgPath.normalizeOrigin();
 			System.out.println(">> "+svgPath.toXML());
 			try {

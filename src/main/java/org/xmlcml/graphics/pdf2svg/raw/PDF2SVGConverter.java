@@ -32,11 +32,10 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private PDDocument document;
 
 	private static void usage() {
-		System.err
-				.printf("usage: java -jar pdfbox-myexample-x.y.z.jar [OPTIONS] <input-file> ...%n"
-						+ "  -password <password>      Password to decrypt the document%n"
-						+ "  -nonSeq                   Enables the new non-sequential parser%n"
-						+ "  <input-file>              The PDF document to be loaded%n");
+		System.err.println("usage: java -jar pdfbox-myexample-x.y.z.jar [OPTIONS] <input-file> ...\n"
+						+ "  -password <password>      Password to decrypt the document\n"
+						+ "  -nonSeq                   Enables the new non-sequential parser\n"
+						+ "  <input-file>              The PDF document to be loaded\n");
 		System.exit(1);
 	}
 

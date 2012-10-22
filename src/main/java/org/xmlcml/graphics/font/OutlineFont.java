@@ -17,14 +17,14 @@ import nu.xom.Elements;
 import nu.xom.Nodes;
 
 import org.xmlcml.cml.base.CMLUtil;
-import org.xmlcml.cml.graphics.SVGElement;
-import org.xmlcml.cml.graphics.SVGG;
-import org.xmlcml.cml.graphics.SVGPath;
-import org.xmlcml.cml.graphics.SVGSVG;
-import org.xmlcml.cml.graphics.SVGText;
 import org.xmlcml.euclid.Real2;
 import org.xmlcml.euclid.Real2Range;
 import org.xmlcml.euclid.Transform2;
+import org.xmlcml.graphics.svg.SVGElement;
+import org.xmlcml.graphics.svg.SVGG;
+import org.xmlcml.graphics.svg.SVGPath;
+import org.xmlcml.graphics.svg.SVGSVG;
+import org.xmlcml.graphics.svg.SVGText;
 
 public class OutlineFont {
 	
@@ -327,7 +327,7 @@ public class OutlineFont {
 		
 		if (pathfile != null) {
 			Element element = new Builder().build(pathfile).getRootElement();
-			pathElement = SVGElement.createSVG(element);
+			pathElement = SVGElement.readAndCreateSVG(element);
 		}
 		font.analyze(pathElement, stats);
 		if (outfontfile != null) {
