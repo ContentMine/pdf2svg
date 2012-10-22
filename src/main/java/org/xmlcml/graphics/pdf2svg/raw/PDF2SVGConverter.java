@@ -3,6 +3,7 @@ package org.xmlcml.graphics.pdf2svg.raw;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import org.apache.pdfbox.exceptions.CryptographyException;
@@ -11,6 +12,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.util.PDFStreamEngine;
 import org.xmlcml.cml.base.CMLUtil;
+import org.xmlcml.graphics.svg.SVGSVG;
 
 /**
  * Simple app to read PDF documents ... based on ...
@@ -27,9 +29,10 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 	private static final String PASSWORD = "-password";
 	private static final String NONSEQ = "-nonSeq";
-	private static boolean useNonSeqParser = false;
-
+	
+	private boolean useNonSeqParser = false;
 	private PDDocument document;
+	private List<SVGSVG> svgPageList;
 
 	private static void usage() {
 		System.err.println("usage: java -jar pdfbox-myexample-x.y.z.jar [OPTIONS] <input-file> ...\n"
@@ -57,7 +60,16 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			drawer.convertPageToSVG(page);
 			pageNumber++;
 			System.out.println("=== "+pageNumber+" ===");
-			CMLUtil.debug(drawer.getSVG(), new FileOutputStream("target/page" + pageNumber + ".svg"), 1);
+			SVGSVG svgPage = drawer.getSVG();
+			CMLUtil.debug(svgPage, new FileOutputStream("target/page" + pageNumber + ".svg"), 1);
+			ensureSVGPageList();
+			svgPageList.add(svgPage);
+		}
+	}
+
+	private void ensureSVGPageList() {
+		if (svgPageList == null) {
+			svgPageList = new ArrayList<SVGSVG>();
 		}
 	}
 
@@ -87,7 +99,17 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	}
 	public static void main(String[] args) throws Exception {
 
-		PDF2SVGConverter myPDFReader = new PDF2SVGConverter();
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run(args);
+
+		System.exit(0);
+	}
+
+	public void run(String argString) {
+		run(argString.split("[\\s+]"));
+	}
+	
+	public void run(String[] args) {
 		String password = "";
 
 		for (int i = 0; i < args.length; i++) {
@@ -101,11 +123,18 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			if (args[i].equals(NONSEQ)) {
 				useNonSeqParser = true;
 			} else {
-				myPDFReader.openPDFFile(args[i], password);
+				try {
+					this.openPDFFile(args[i], password);
+				} catch (Exception e) {
+					throw new RuntimeException("Cannot parse PDF: "+args[i], e);
+				}
 			}
 		}
-
-		System.exit(0);
+	}
+	
+	public List<SVGSVG> getPageList() {
+		ensureSVGPageList();
+		return svgPageList;
 	}
 
 }
