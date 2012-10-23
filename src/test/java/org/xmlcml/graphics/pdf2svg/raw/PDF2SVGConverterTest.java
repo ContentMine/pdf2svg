@@ -3,10 +3,10 @@ package org.xmlcml.graphics.pdf2svg.raw;
 import java.io.File;
 import java.util.List;
 
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Ignore;
 import org.junit.Test;
+import org.xmlcml.graphics.pdf2svg.raw.PDF2SVGConverter;
 import org.xmlcml.graphics.svg.SVGPath;
 import org.xmlcml.graphics.svg.SVGSVG;
 import org.xmlcml.graphics.svg.SVGText;
@@ -16,7 +16,7 @@ public class PDF2SVGConverterTest {
 
 	@Test
 	public void testPage6() {
-		File page6File = new File("target/page2.svg");  // yes, this serial number is what is is output as
+		File page6File = new File("target/page1.svg");  // yes, this serial number is what is is output as
 		if (page6File.exists()) {
 			page6File.delete();
 		}
@@ -36,7 +36,7 @@ public class PDF2SVGConverterTest {
 	
 	
 	@Test
-//	@Ignore // do not normally run this
+	@Ignore // do not normally run this
 	public void testAJC() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("../pdfs/ajctest/xx.pdf");

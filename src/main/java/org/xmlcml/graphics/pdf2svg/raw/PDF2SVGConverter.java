@@ -30,13 +30,14 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 	private static final String PASSWORD = "-password";
 	private static final String NONSEQ = "-nonSeq";
-	
+
 	private boolean useNonSeqParser = false;
 	private PDDocument document;
 	private List<SVGSVG> svgPageList;
 
 	private static void usage() {
-		System.err.println("usage: java -jar pdfbox-myexample-x.y.z.jar [OPTIONS] <input-file> ...\n"
+		System.err
+				.println("Usage: pdf2svg [-password pw] [-nonSeq] <input-file> ...\n"
 						+ "  -password <password>      Password to decrypt the document\n"
 						+ "  -nonSeq                   Enables the new non-sequential parser\n"
 						+ "  <input-file>              The PDF document to be loaded\n");
@@ -46,11 +47,11 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private void openPDFFile(String filename, String password) throws Exception {
 
 		PDFPage2SVGConverter drawer = new PDFPage2SVGConverter();
-		
+
 		System.out.printf("Parsing PDF file %s ...%n", filename);
-		
+
 		readDocument(filename, useNonSeqParser, password);
-		
+
 		@SuppressWarnings("unchecked")
 		List<PDPage> pages = document.getDocumentCatalog().getAllPages();
 		int pageNumber = 1;
@@ -59,9 +60,10 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 		for (PDPage page : pages) {
 			drawer.convertPageToSVG(page);
-			System.out.println("=== "+pageNumber+" ===");
+			System.out.println("=== " + pageNumber + " ===");
 			SVGSVG svgPage = drawer.getSVG();
-			CMLUtil.debug(svgPage, new FileOutputStream("target/page" + pageNumber + ".svg"), 1);
+			CMLUtil.debug(svgPage, new FileOutputStream("target/page"
+					+ pageNumber + ".svg"), 1);
 			ensureSVGPageList();
 			svgPageList.add(svgPage);
 			pageNumber++;
@@ -74,7 +76,8 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		}
 	}
 
-	private void readDocument(String filename, boolean useNonSeqParser, String password) throws IOException {
+	private void readDocument(String filename, boolean useNonSeqParser,
+			String password) throws IOException {
 		File file = new File(filename);
 		if (useNonSeqParser) {
 			document = PDDocument.loadNonSeq(file, null, password);
@@ -98,6 +101,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		}
 
 	}
+
 	public static void main(String[] args) throws Exception {
 
 		PDF2SVGConverter converter = new PDF2SVGConverter();
@@ -109,7 +113,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	public void run(String argString) {
 		run(argString.split("[\\s+]"));
 	}
-	
+
 	public void run(String[] args) {
 		String password = "";
 
@@ -127,12 +131,13 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 				try {
 					this.openPDFFile(args[i], password);
 				} catch (Exception e) {
-					throw new RuntimeException("Cannot parse PDF: "+args[i], e);
+					throw new RuntimeException("Cannot parse PDF: " + args[i],
+							e);
 				}
 			}
 		}
 	}
-	
+
 	public List<SVGSVG> getPageList() {
 		ensureSVGPageList();
 		return svgPageList;
