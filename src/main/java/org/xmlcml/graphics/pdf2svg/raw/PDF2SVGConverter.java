@@ -1,6 +1,7 @@
 package org.xmlcml.graphics.pdf2svg.raw;
 
 import java.io.File;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -58,12 +59,12 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 		for (PDPage page : pages) {
 			drawer.convertPageToSVG(page);
-			pageNumber++;
 			System.out.println("=== "+pageNumber+" ===");
 			SVGSVG svgPage = drawer.getSVG();
 			CMLUtil.debug(svgPage, new FileOutputStream("target/page" + pageNumber + ".svg"), 1);
 			ensureSVGPageList();
 			svgPageList.add(svgPage);
+			pageNumber++;
 		}
 	}
 

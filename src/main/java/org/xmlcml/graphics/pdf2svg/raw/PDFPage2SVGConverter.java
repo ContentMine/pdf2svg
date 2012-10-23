@@ -12,10 +12,9 @@ import java.awt.geom.GeneralPath;
 import java.io.IOException;
 import java.util.List;
 
-import nu.xom.Attribute;
-
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
+import org.apache.pdfbox.cos.COSArray;
 import org.apache.pdfbox.cos.COSName;
 import org.apache.pdfbox.pdfviewer.PageDrawer;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -24,6 +23,7 @@ import org.apache.pdfbox.pdmodel.common.PDMatrix;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDFontDescriptor;
 import org.apache.pdfbox.pdmodel.graphics.PDGraphicsState;
+import org.apache.pdfbox.pdmodel.graphics.PDLineDashPattern;
 import org.apache.pdfbox.pdmodel.graphics.color.PDColorState;
 import org.apache.pdfbox.pdmodel.text.PDTextState;
 import org.apache.pdfbox.util.Matrix;
@@ -50,6 +50,7 @@ import org.xmlcml.graphics.svg.SVGText;
  */
 public class PDFPage2SVGConverter extends PageDrawer {
 
+	
 	private static final String BADCHAR_E = ">>";
 	private static final String BADCHAR_S = "<<";
 	private static final String FONT_NAME = "fontName";
@@ -68,28 +69,27 @@ public class PDFPage2SVGConverter extends PageDrawer {
 
 	private BasicStroke basicStroke;
 	private SVGSVG svg;
-	private SVGG g;
 	private Composite composite;
 	private Paint paint;
 	private PDGraphicsState graphicsState;
 	private Matrix textPos;
 	private PDFont font;
 
-	private boolean createNewG;
-	private String currentClipPath;
 	private Composite currentComposite;
-	private String currentFill;
 	private String currentFontFamily;
 	private String currentFontName;
 	private Double currentFontSize;
 	private String currentFontStyle;
 	private String currentFontWeight;
-	private String currentFormatFont;
 	private Paint currentPaint;
 	private String currentStroke;
 	private SVGText currentSvgText;
 	
 	private int nPlaces = 3;
+//	private String renderIntent;
+	private PDLineDashPattern dashPattern;
+	private Double lineWidth;
+	private PDTextState textState;
 
 	public PDFPage2SVGConverter() throws IOException {
 		super();
@@ -123,60 +123,141 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		}
 	}
 	
+//	protected void processTextPositionOld(TextPosition text) {
+//
+//		font = text.getFont();
+//		List<Float> widthList = font.getWidths();
+//		try {
+//			float fw = font.getAverageFontWidth();
+//			LOG.trace("average fontWidth: "+fw);
+//		} catch (IOException e1) {
+//			throw new RuntimeException("PDF exception", e1);
+//		}
+//		if (text.getCharacter().length() > 1) {
+//			throw new RuntimeException("multi-char string"+text.getCharacter());
+//		}
+//		int charCode = text.getCharacter().charAt(0);
+//		if (charCode > 255) {
+//			LOG.warn("high codepoint "+charCode);
+//		}
+//		LOG.debug("Character width: "+((char)charCode)+" "+font.getFontWidth(charCode));
+//		try {
+//			LOG.debug("String width: "+((char)charCode)+" "+font.getStringWidth(text.getCharacter()));
+//		} catch (IOException e1) {
+//			// TODO Auto-generated catch block
+//			e1.printStackTrace();
+//		}
+//		LOG.trace("W "+widthList.size());
+//		LOG.trace("W "+Arrays.toString(widthList.toArray(new Float[0])));
+//		// width example
+//		//    :250  !:333  ":408  #:500  $:500  %:833  &:778  ':180  (:333  ):333  *:500  +:564  ,:250  -:333  .:250  /:278  0:500  1:500  2:500  3:500  4:500  5:500  6:500  7:500  8:500  9:500  ::278  ;:278  <:564  =:564  >:564  ?:444  @:921  A:722  B:667  C:667  D:722  E:611  F:556  G:722  H:722  I:333  J:389  K:722  L:611  M:889  N:722  O:722  P:556  Q:722  R:667  S:556  T:611  U:722  V:722  W:944  X:722  Y:722  Z:611  [:333  \:278  ]:333  ^:469  _:500  `:333  a:444  b:500  c:444  d:500  e:444  f:333  g:500  h:500  i:278  j:278  k:500  l:278  m:778  n:500  o:500  p:500  q:500  r:333  s:389  t:278  u:500  v:500  w:722  x:500  y:500  z:444  {:480  |:200  }:480  ~:541
+//
+////		for (int i = 32; i < 127; i++	)  {
+////			System.out.print("  "+(char)i+":"+(int) (double) widthList.get(i));
+//		
+////		}
+////		System.out.println();
+//			
+//		ensurePageSize();
+//		try {
+//			createNewG = false;
+//			currentSvgText = new SVGText();
+//			// clear current values
+//			currentSvgText.setFontSize(null);
+//			currentSvgText.setStroke(null);
+//			currentSvgText.setFontWeight((FontWeight)null);
+//			currentSvgText.setFontStyle((FontStyle)null);
+//			normalizeFontFamilyNameStyleWeight();
+//			String textContent = text.getCharacter();
+//			try {
+//				currentSvgText.setText(textContent);
+//			} catch (RuntimeException e) {
+//				// drops here if cannot encode as XML character
+//				tryToConvertStrangeCharactersOrFonts(text, currentSvgText);
+//			}
+//			createGraphicsStateAndPaintAndComposite();
+//			createAndReOrientateTextPosition(text, currentSvgText);
+//			
+//			createNewGIfCurrentFontDescriptorChanged();
+//			createNewGIfFontSizeChanged(text, currentSvgText);
+//			createNewGIfClipPathChanged();
+//			checkStrokeUnchanged(currentSvgText);
+//
+//			currentSvgText.format(nPlaces);
+//			if (createNewG) {
+//				createNewGAndFillWithCurrentValues();
+//			}
+//			g.appendChild(currentSvgText);
+//		} catch (Exception e) {
+//			throw new RuntimeException("drawPage", e);
+//		}
+//	}
+
+	@Override
 	protected void processTextPosition(TextPosition text) {
 
 		font = text.getFont();
-		List<Float> widthList = font.getWidths();
-		LOG.trace("W "+widthList.size());
-		// width example
-		//    :250  !:333  ":408  #:500  $:500  %:833  &:778  ':180  (:333  ):333  *:500  +:564  ,:250  -:333  .:250  /:278  0:500  1:500  2:500  3:500  4:500  5:500  6:500  7:500  8:500  9:500  ::278  ;:278  <:564  =:564  >:564  ?:444  @:921  A:722  B:667  C:667  D:722  E:611  F:556  G:722  H:722  I:333  J:389  K:722  L:611  M:889  N:722  O:722  P:556  Q:722  R:667  S:556  T:611  U:722  V:722  W:944  X:722  Y:722  Z:611  [:333  \:278  ]:333  ^:469  _:500  `:333  a:444  b:500  c:444  d:500  e:444  f:333  g:500  h:500  i:278  j:278  k:500  l:278  m:778  n:500  o:500  p:500  q:500  r:333  s:389  t:278  u:500  v:500  w:722  x:500  y:500  z:444  {:480  |:200  }:480  ~:541
-
-//		for (int i = 32; i < 127; i++	)  {
-//			System.out.print("  "+(char)i+":"+(int) (double) widthList.get(i));
-		
-//		}
-//		System.out.println();
-			
-		ensurePageSize();
-		try {
-			createNewG = false;
-			currentSvgText = new SVGText();
-			currentSvgText.setFontSize(null);
-			currentSvgText.setStroke(null);
-			currentSvgText.setFontWeight((FontWeight)null);
-			currentSvgText.setFontStyle((FontStyle)null);
-			normalizeFontFamilyNameStyleWeight();
-			try {
-				currentSvgText.setText(text.getCharacter());
-			} catch (RuntimeException e) {
-				
-				tryToConvertStrangeCharactersOrFonts(text);
-			}
-			createGraphicsStateAndPaintAndComposite();
-			createAndReOrientateTextPosition(text, currentSvgText);
-			
-			createNewGIfCurrentFontDescriptorChanged();
-			createNewGIfFontSizeChanged(text, currentSvgText);
-			createNewGIfClipPathChanged();
-			checkStrokeUnchanged(currentSvgText);
-
-			currentSvgText.format(nPlaces);
-			if (createNewG) {
-				createNewGAndFillWithCurrentValues();
-			}
-			g.appendChild(currentSvgText);
-		} catch (Exception e) {
-			throw new RuntimeException("drawPage", e);
+		// for info
+		String textContent = text.getCharacter();
+		if (textContent.length() > 1) {
+			// don't know when or whether this will happen. I hope that the length is always 1
+			throw new RuntimeException("multi-char string"+text.getCharacter());
 		}
+		int charCode = text.getCharacter().charAt(0);
+		if (charCode > 255) {
+			LOG.warn("high codepoint "+charCode);
+		}
+		float width = getCharacterWidth(font, textContent);
+		
+		ensurePageSize();
+		SVGText svgText = new SVGText();
+		normalizeFontFamilyNameStyleWeight();
+		if (currentFontWeight != null) {
+			svgText.setFontWeight(currentFontWeight);
+		}
+		try {
+			svgText.setText(textContent);
+		} catch (RuntimeException e) {
+			// drops here if cannot encode as XML character
+			tryToConvertStrangeCharactersOrFonts(text, svgText);
+		}
+		createGraphicsStateAndPaintAndComposite();
+		createAndReOrientateTextPosition(text, svgText);
+		
+		getFontSizeAndSetNotZeroRotations(svgText);
+		svgText.setFontSize(currentFontSize);
+		String stroke = getCSSColor((Color) paint);
+		svgText.setStroke(stroke);
+		if (currentFontStyle != null) {
+			svgText.setFontStyle(currentFontStyle);
+		}
+		if (currentFontFamily != null) {
+			svgText.setFontFamily(currentFontFamily);
+		}
+		if (currentFontName != null) {
+			setFontName(svgText, currentFontName);
+		}
+		setCharacterWidth(svgText, width);
+
+		svgText.format(nPlaces);
+		svg.appendChild(svgText);
 	}
 
-	private void tryToConvertStrangeCharactersOrFonts(TextPosition text) {
-//		System.out.println("L "+text.getCharacter().length());
+	private float getCharacterWidth(PDFont font, String textContent) {
+		float width = 0.0f;
+		try {
+			width = font.getStringWidth(textContent);
+		} catch (IOException e) {
+			throw new RuntimeException("PDFBox exception ", e);
+		}
+		return width;
+	}
+
+	private void tryToConvertStrangeCharactersOrFonts(TextPosition text, SVGText svgText) {
 		char cc = text.getCharacter().charAt(0);
-//		String s = interpretCharacter(currentFontFamily, cc);
 		String s = BADCHAR_S+(int)cc+BADCHAR_E;
-		System.out.println(s+" "+currentFontName);
-		currentSvgText.setText(s);
+		LOG.debug(s+" "+currentFontName);
+		svgText.setText(s);
 	}
 
 	private String interpretCharacter(String fontFamily, char cc) {
@@ -189,18 +270,6 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			System.out.println("font "+fontFamily+" point "+(int)cc);
 		}
 		return s;
-	}
-
-	private void createNewGIfCurrentFontDescriptorChanged() {
-		String formatFont = fmtFont(font);
-		if (hasChanged(currentFormatFont, formatFont)) {
-			createNewG = true;
-			currentFormatFont = formatFont;
-			LOG.trace("FontDescriptor changed from "+currentFormatFont+" to "+formatFont);
-		}
-		if (currentFontStyle != null || currentFontWeight != null) {
-			LOG.trace("W "+currentFontWeight+" S "+currentFontStyle);
-		}
 	}
 
 	private void normalizeFontFamilyNameStyleWeight() {
@@ -254,96 +323,6 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		}
 	}
 
-	private void createNewGIfClipPathChanged() {
-		String clipPath = graphicsState.getCurrentClippingPath().toString();
-		if (hasChanged(clipPath, currentClipPath)) {
-			createNewG = true;
-			currentClipPath = clipPath;
-		}
-	}
-
-	private void checkStrokeUnchanged(SVGText svgText) {
-		String stroke = getCSSColor((Color) paint);
-		if (hasChanged(currentStroke, stroke)) {
-			createNewG = true;
-			currentStroke = stroke;
-		}
-	}
-
-
-	/**
-	 * private boolean createNewG; private String currentClipPath; private
-	 * Composite currentComposite; private String currentFill; private String
-	 * currentFontFamily; private double currentFontSize; private String
-	 * currentFontStyle; private String currentFontWeight; private String
-	 * currentFormatFont; private Paint currentPaint; private String
-	 * currentStroke; private SVGText currentSvgText;
-	 */
-	private void createNewGAndFillWithCurrentValues() {
-		addNewSVGG();
-		setNonNullClipPathInParentG();
-		setNonNullFillInParentG();
-		setNonNullFontSizeInParentG();
-		setNonNullFontFamilyInParentG();
-		setNonNullFontNameInParentG();
-		setNonNullFontStyleInParentG();
-		setNonNullFontWeightInParentG();
-		setNonNullStrokeInParentG();
-		g.format(nPlaces);
-	}
-
-	private void setNonNullClipPathInParentG() {
-		if (currentClipPath != null) {
-			g.setClipPath(currentClipPath);
-		}
-	}
-
-	private void setNonNullFillInParentG() {
-		if (currentFill != null) {
-			g.setFill(currentFill);
-		}
-	}
-
-	private void setNonNullFontSizeInParentG() {
-		if (currentFontSize != null) {
-			g.setFontSize(currentFontSize);
-		}
-	}
-
-	private void setNonNullFontFamilyInParentG() {
-		if (currentFontFamily != null) {
-			g.setFontFamily(currentFontFamily);
-			currentFontFamily = null;
-		}
-	}
-
-	private void setNonNullFontNameInParentG() {
-		if (currentFontName != null) {
-			setFontName(g, currentFontName);
-			currentFontName = null;
-		}
-	}
-
-	private void setNonNullFontStyleInParentG() {
-		if (currentFontStyle != null) {
-			g.setFontStyle(currentFontStyle);
-			currentFontStyle = null;
-		}
-	}
-
-	private void setNonNullFontWeightInParentG() {
-		if (currentFontWeight != null) {
-			g.setFontWeight(currentFontWeight);
-			currentFontWeight = null;
-		}
-	}
-
-	private void setNonNullStrokeInParentG() {
-		if (currentStroke != null) {
-			g.setStroke(currentStroke);
-		}
-	}
-
 	/** translates java color to CSS RGB
 	 * 
 	 * @param paint
@@ -362,7 +341,31 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		return colorS;
 	}
 
-	private void createNewGIfFontSizeChanged(TextPosition text, SVGText svgText) {
+//	private void createNewGIfFontSizeChanged(TextPosition text, SVGText svgText) {
+//		AffineTransform at = textPos.createAffineTransform();
+//		PDMatrix fontMatrix = font.getFontMatrix();
+//		at.scale(fontMatrix.getValue(0, 0) * 1000f,
+//				fontMatrix.getValue(1, 1) * 1000f);
+//		double scalex = at.getScaleX();
+//		double scaley = at.getScaleY();
+//		double scale = Math.sqrt(scalex * scaley);
+//		Transform2 t2 = new Transform2(at);
+//		Angle angle = t2.getAngleOfRotation();
+//		int angleDeg = Math.round((float)angle.getDegrees());
+//		if (angleDeg != 0) {
+//			LOG.trace("Transform "+t2+" "+svgText.getText()+" "+at+" "+getRealArray(fontMatrix));
+//			// do this properly later
+//			scale = Math.sqrt(Math.abs(t2.elementAt(0, 1)*t2.elementAt(1, 0)));
+//			Transform2 t2a = Transform2.getRotationAboutPoint(angle, svgText.getXY());
+//			svgText.setTransform(t2a);
+//		}
+//		if (hasChanged(scale, currentFontSize, eps)) {
+//			createNewG = true;
+//		}
+//		currentFontSize = scale;
+//	}
+
+	private double getFontSizeAndSetNotZeroRotations(SVGText svgText) {
 		AffineTransform at = textPos.createAffineTransform();
 		PDMatrix fontMatrix = font.getFontMatrix();
 		at.scale(fontMatrix.getValue(0, 0) * 1000f,
@@ -371,6 +374,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		double scaley = at.getScaleY();
 		double scale = Math.sqrt(scalex * scaley);
 		Transform2 t2 = new Transform2(at);
+		
 		Angle angle = t2.getAngleOfRotation();
 		int angleDeg = Math.round((float)angle.getDegrees());
 		if (angleDeg != 0) {
@@ -380,10 +384,8 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			Transform2 t2a = Transform2.getRotationAboutPoint(angle, svgText.getXY());
 			svgText.setTransform(t2a);
 		}
-		if (hasChanged(scale, currentFontSize, eps)) {
-			createNewG = true;
-		}
 		currentFontSize = scale;
+		return currentFontSize;
 	}
 
 	private RealArray getRealArray(PDMatrix fontMatrix) {
@@ -405,8 +407,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	 * @param text
 	 * @param svgText
 	 */
-	private void createAndReOrientateTextPosition(TextPosition text,
-			SVGText svgText) {
+	private void createAndReOrientateTextPosition(TextPosition text, SVGText svgText) {
 		textPos = text.getTextPos().copy();
 		float x = textPos.getXPosition();
 		// the 0,0-reference has to be moved from the lower left (PDF) to
@@ -464,19 +465,13 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		} catch (IOException e) {
 			throw new RuntimeException("graphics state error???", e);
 		}
-		if (hasChanged(currentPaint, paint)
-				|| hasChanged(currentComposite, composite)) {
-			createNewG = true;
-			currentPaint = paint;
-			currentComposite = composite;
-		}
 	}
 
 	/** traps any remaining unimplemented PDDrawer calls
 	 * 
 	 */
 	public Graphics2D getGraphics() {
-		System.err.printf("getGraphics was called!!!!!!!%n");
+		System.err.printf("getGraphics was called!!!!!!! (May mean method was not overridden) %n");
 		return null;
 	}
 
@@ -499,6 +494,10 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	 * @param currentPaint
 	 */
 	private void createAndAddSVGPath(Integer windingRule, Paint currentPaint) {
+//		renderIntent = getGraphicsState().getRenderingIntent(); // probably ignorable at first (converts color maps)
+		dashPattern = getGraphicsState().getLineDashPattern();
+		lineWidth = getGraphicsState().getLineWidth();
+		textState = getGraphicsState().getTextState();  // has things like character and word spacings // not yet used
 		GeneralPath generalPath = getLinePath();
 		if (windingRule != null) {
 			generalPath.setWindingRule(windingRule);
@@ -509,9 +508,32 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		} else {
 			svgPath.setStroke(getCSSColor(currentPaint));
 		}
+		if (dashPattern != null) {
+			setDashArray(svgPath);
+		}
+		if (lineWidth > 0.00001) {
+			svgPath.setStrokeWidth(lineWidth);
+			LOG.trace("stroke "+lineWidth);
+		}
 		svgPath.format(nPlaces);
 		svg.appendChild(svgPath);
 		generalPath.reset();
+	}
+
+	private void setDashArray(SVGPath svgPath) {
+		List<Integer> dashIntegerList = (List<Integer>) dashPattern.getDashPattern();
+		StringBuilder sb = new StringBuilder("");
+		LOG.trace("COS ARRAY "+dashIntegerList.size());
+		if (dashIntegerList.size() > 0) {
+			for (int i = 0; i < dashIntegerList.size(); i++) {
+				if (i > 0) {
+					sb.append(" ");
+				}
+				sb.append(dashIntegerList.get(i));
+			}
+			svgPath.setStrokeDashArray(sb.toString());
+			LOG.debug("dash "+dashPattern);
+		}
 	}
 
 	private Paint getCurrentPaint(PDColorState colorState, String type) throws IOException {
@@ -548,37 +570,6 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		throw new IOException("Not Implemented");
 	}
 
-	/** compares two objects, including null, to detect change
-	 * if two objects are null returns false
-	 * @param newObject
-	 * @param oldObject
-	 * @return
-	 */
-	private boolean hasChanged(Object newObject, Object oldObject) {
-		boolean hasChanged = true;
-		if (newObject == null && oldObject == null) {
-			hasChanged = false;
-		} else if (newObject != null && oldObject != null) {
-			String newString = newObject.toString();
-			String oldString = oldObject.toString();
-			hasChanged = !(newString.equals(oldString));
-		}
-		return hasChanged;
-	}
-
-	/** compares two Doubles, including null, to detect change
-	 * if two objects are null returns false
-	 */
-	private boolean hasChanged(Double newDouble, Double oldDouble, double eps) {
-		boolean hasChanged = true;
-		if (newDouble == null && oldDouble == null) {
-			hasChanged = false;
-		} else if (newDouble != null && oldDouble != null) {
-			hasChanged = !Real.isEqual(oldDouble, newDouble, eps);
-		}
-		return hasChanged;
-	}
-
 	/** creates new <svg> and removes/sets some defaults
 	 * this is partly beacuse SVGFoo may have defaults (bad idea?)
 	 */
@@ -586,16 +577,11 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		this.svg = new SVGSVG();
 		svg.setStroke("none");
 		svg.setStrokeWidth(0.0);
-		addNewSVGG();
+		svg.addNamespaceDeclaration(PDF2SVGUtil.SVGX_PREFIX, PDF2SVGUtil.SVGX_NS);
 	}
 
 	public SVGSVG getSVG() {
 		return svg;
-	}
-
-	private void addNewSVGG() {
-		this.g = new SVGG();
-		svg.appendChild(g);
 	}
 
 	void convertPageToSVG(PDPage page) {
@@ -603,8 +589,12 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		drawPage(page);
 	}
 	
-	private void setFontName(SVGElement svgElement, String currentFontName2) {
-		svgElement.addAttribute(new Attribute(FONT_NAME, currentFontName));
+	private void setFontName(SVGElement svgElement, String fontName) {
+		PDF2SVGUtil.setSVGXAttribute(svgElement, FONT_NAME, fontName);
+	}
+	
+	private void setCharacterWidth(SVGElement svgElement, double width) {
+		PDF2SVGUtil.setSVGXAttribute(svgElement, PDF2SVGUtil.CHARACTER_WIDTH, ""+width);
 	}
 	
 	@Override

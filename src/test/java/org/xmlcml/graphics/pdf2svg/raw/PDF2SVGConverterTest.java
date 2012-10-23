@@ -5,6 +5,7 @@ import java.util.List;
 
 import junit.framework.Assert;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.xmlcml.graphics.svg.SVGPath;
 import org.xmlcml.graphics.svg.SVGSVG;
@@ -15,7 +16,7 @@ public class PDF2SVGConverterTest {
 
 	@Test
 	public void testPage6() {
-		File page6File = new File("target/page2.svg");  // yes, this is what is is output as
+		File page6File = new File("target/page2.svg");  // yes, this serial number is what is is output as
 		if (page6File.exists()) {
 			page6File.delete();
 		}
@@ -31,5 +32,13 @@ public class PDF2SVGConverterTest {
 		List<SVGPath> paths = SVGPath.extractPaths(SVGUtil.getQuerySVGElements(svgPage, "//svg:path"));
 		int nPaths = paths.size();
 		Assert.assertTrue("count: ("+nPaths+")", nPaths > 195 && nPaths < 200);
+	}
+	
+	
+	@Test
+//	@Ignore // do not normally run this
+	public void testAJC() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("../pdfs/ajctest/xx.pdf");
 	}
 }
