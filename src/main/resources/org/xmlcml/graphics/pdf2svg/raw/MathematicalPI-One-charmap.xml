@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  this file contains a mapping from character name to UNICODE codepoint
+  for a particular font
+
+  when people discover a weird font that have been used in a pdf file
+  they create a mapping file such as this for it
+
+  the process then is to eyeball each character in the font and decide
+  which UNICODE character (of the hundreds of thousands that exist)
+  bests represents the character in the font
+-->
+<fontmapping>
+	<fontname>MathematicalPI-One</fontname>
+	<charmap>
+		<charname>H11001</charname>
+		<unicode>
+			<name>PLUS SIGN</name>
+			<code>U+002B</code>
+		</unicode>
+	</charmap>
+	<charmap>
+		<charname>H11002</charname>
+		<unicode>
+			<name>HYPHEN-MINUS</name>
+			<code>U+002D</code>
+		</unicode>
+	</charmap>
+</fontmapping>

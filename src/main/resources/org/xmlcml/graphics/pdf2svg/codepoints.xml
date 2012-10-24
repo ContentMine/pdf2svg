@@ -1,3 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  this table holds information about all UNICODE codepoints above 255 that
+  we currently understand how to handle. This is a guide for possible
+  future processing.
+
+  entries with a "substitute" attribute have been deemed to have "ascii"
+  equivalents.
+
+  otherwise the character may be tagged with semantic hints in the svg text
+  attributes or something similar
+-->
 <codepoints>
 	<codepoint name="GREEK SMALL LETTER ALPHA" value="945"/>
 	<codepoint name="GREEK SMALL LETTER BETA" value="946"/>
@@ -23,4 +35,4 @@
 	<codepoint name="WHITE BULLET" value="9702"/>
 	<codepoint name="LEFT ANGLE BRACKET" value="12296"/>
 	<codepoint name="RIGHT ANGLE BRACKET" value="12297"/>
-</codePoint>  
+</codepoints>  
