@@ -7,14 +7,16 @@ import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Paint;
+import java.awt.Shape;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.GeneralPath;
 import java.io.IOException;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
-import org.apache.pdfbox.cos.COSArray;
 import org.apache.pdfbox.cos.COSName;
 import org.apache.pdfbox.pdfviewer.PageDrawer;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -30,14 +32,12 @@ import org.apache.pdfbox.util.Matrix;
 import org.apache.pdfbox.util.TextPosition;
 import org.xmlcml.cml.base.CMLConstants;
 import org.xmlcml.euclid.Angle;
-import org.xmlcml.euclid.Real;
 import org.xmlcml.euclid.Real2;
 import org.xmlcml.euclid.RealArray;
 import org.xmlcml.euclid.Transform2;
 import org.xmlcml.graphics.svg.GraphicsElement.FontStyle;
 import org.xmlcml.graphics.svg.GraphicsElement.FontWeight;
 import org.xmlcml.graphics.svg.SVGElement;
-import org.xmlcml.graphics.svg.SVGG;
 import org.xmlcml.graphics.svg.SVGPath;
 import org.xmlcml.graphics.svg.SVGSVG;
 import org.xmlcml.graphics.svg.SVGText;
@@ -90,6 +90,9 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private PDLineDashPattern dashPattern;
 	private Double lineWidth;
 	private PDTextState textState;
+	private Set<String> clipStringSet;
+	private Set<Integer> highCodepointSet;
+	private String clipString;
 
 	public PDFPage2SVGConverter() throws IOException {
 		super();
@@ -111,7 +114,31 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			LOG.error("***FAILED " + e);
 			throw new RuntimeException("drawPage", e);
 		}
+		reportClipPaths();
+		reportHighCodePoints();
 
+	}
+
+	private void reportClipPaths() {
+		ensureClipStringSet();
+		LOG.debug("Clip paths: "+clipStringSet.size());
+		for (String shapeString : clipStringSet) {
+			LOG.trace(shapeString);
+		}
+	}
+
+	private void reportHighCodePoints() {
+		ensureHighCodePointSet();
+		LOG.debug("High Codepoints: "+highCodepointSet.size());
+		for (Integer highCodepoint : highCodepointSet) {
+			LOG.debug("Codepoint: "+highCodepoint);
+		}
+	}
+
+	private void ensureHighCodePointSet() {
+		if (highCodepointSet == null) {
+			highCodepointSet = new HashSet<Integer>();
+		}
 	}
 
 	/** adds a default pagesize if not given
@@ -123,75 +150,6 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		}
 	}
 	
-//	protected void processTextPositionOld(TextPosition text) {
-//
-//		font = text.getFont();
-//		List<Float> widthList = font.getWidths();
-//		try {
-//			float fw = font.getAverageFontWidth();
-//			LOG.trace("average fontWidth: "+fw);
-//		} catch (IOException e1) {
-//			throw new RuntimeException("PDF exception", e1);
-//		}
-//		if (text.getCharacter().length() > 1) {
-//			throw new RuntimeException("multi-char string"+text.getCharacter());
-//		}
-//		int charCode = text.getCharacter().charAt(0);
-//		if (charCode > 255) {
-//			LOG.warn("high codepoint "+charCode);
-//		}
-//		LOG.debug("Character width: "+((char)charCode)+" "+font.getFontWidth(charCode));
-//		try {
-//			LOG.debug("String width: "+((char)charCode)+" "+font.getStringWidth(text.getCharacter()));
-//		} catch (IOException e1) {
-//			// TODO Auto-generated catch block
-//			e1.printStackTrace();
-//		}
-//		LOG.trace("W "+widthList.size());
-//		LOG.trace("W "+Arrays.toString(widthList.toArray(new Float[0])));
-//		// width example
-//		//    :250  !:333  ":408  #:500  $:500  %:833  &:778  ':180  (:333  ):333  *:500  +:564  ,:250  -:333  .:250  /:278  0:500  1:500  2:500  3:500  4:500  5:500  6:500  7:500  8:500  9:500  ::278  ;:278  <:564  =:564  >:564  ?:444  @:921  A:722  B:667  C:667  D:722  E:611  F:556  G:722  H:722  I:333  J:389  K:722  L:611  M:889  N:722  O:722  P:556  Q:722  R:667  S:556  T:611  U:722  V:722  W:944  X:722  Y:722  Z:611  [:333  \:278  ]:333  ^:469  _:500  `:333  a:444  b:500  c:444  d:500  e:444  f:333  g:500  h:500  i:278  j:278  k:500  l:278  m:778  n:500  o:500  p:500  q:500  r:333  s:389  t:278  u:500  v:500  w:722  x:500  y:500  z:444  {:480  |:200  }:480  ~:541
-//
-////		for (int i = 32; i < 127; i++	)  {
-////			System.out.print("  "+(char)i+":"+(int) (double) widthList.get(i));
-//		
-////		}
-////		System.out.println();
-//			
-//		ensurePageSize();
-//		try {
-//			createNewG = false;
-//			currentSvgText = new SVGText();
-//			// clear current values
-//			currentSvgText.setFontSize(null);
-//			currentSvgText.setStroke(null);
-//			currentSvgText.setFontWeight((FontWeight)null);
-//			currentSvgText.setFontStyle((FontStyle)null);
-//			normalizeFontFamilyNameStyleWeight();
-//			String textContent = text.getCharacter();
-//			try {
-//				currentSvgText.setText(textContent);
-//			} catch (RuntimeException e) {
-//				// drops here if cannot encode as XML character
-//				tryToConvertStrangeCharactersOrFonts(text, currentSvgText);
-//			}
-//			createGraphicsStateAndPaintAndComposite();
-//			createAndReOrientateTextPosition(text, currentSvgText);
-//			
-//			createNewGIfCurrentFontDescriptorChanged();
-//			createNewGIfFontSizeChanged(text, currentSvgText);
-//			createNewGIfClipPathChanged();
-//			checkStrokeUnchanged(currentSvgText);
-//
-//			currentSvgText.format(nPlaces);
-//			if (createNewG) {
-//				createNewGAndFillWithCurrentValues();
-//			}
-//			g.appendChild(currentSvgText);
-//		} catch (Exception e) {
-//			throw new RuntimeException("drawPage", e);
-//		}
-//	}
 
 	@Override
 	protected void processTextPosition(TextPosition text) {
@@ -205,7 +163,8 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		}
 		int charCode = text.getCharacter().charAt(0);
 		if (charCode > 255) {
-			LOG.warn("high codepoint "+charCode);
+			ensureHighCodePointSet();
+			highCodepointSet.add(charCode);
 		}
 		float width = getCharacterWidth(font, textContent);
 		
@@ -225,6 +184,8 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		createAndReOrientateTextPosition(text, svgText);
 		
 		getFontSizeAndSetNotZeroRotations(svgText);
+		getClipPath();
+		svgText.setClipPath(clipString);
 		svgText.setFontSize(currentFontSize);
 		String stroke = getCSSColor((Color) paint);
 		svgText.setStroke(stroke);
@@ -241,6 +202,22 @@ public class PDFPage2SVGConverter extends PageDrawer {
 
 		svgText.format(nPlaces);
 		svg.appendChild(svgText);
+	}
+
+	private void getClipPath() {
+		Shape shape = getGraphicsState().getCurrentClippingPath();
+		String shapeString = shape.toString();
+		// normally of form: java.awt.geom.GeneralPath@10aadc97
+		int idx = shapeString.indexOf("@");
+		clipString = "clip"+shapeString.substring(idx+1);
+		ensureClipStringSet();
+		clipStringSet.add(clipString);
+	}
+
+	private void ensureClipStringSet() {
+		if (clipStringSet == null) {
+			clipStringSet = new HashSet<String>();
+		}
 	}
 
 	private float getCharacterWidth(PDFont font, String textContent) {
@@ -340,30 +317,6 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		}
 		return colorS;
 	}
-
-//	private void createNewGIfFontSizeChanged(TextPosition text, SVGText svgText) {
-//		AffineTransform at = textPos.createAffineTransform();
-//		PDMatrix fontMatrix = font.getFontMatrix();
-//		at.scale(fontMatrix.getValue(0, 0) * 1000f,
-//				fontMatrix.getValue(1, 1) * 1000f);
-//		double scalex = at.getScaleX();
-//		double scaley = at.getScaleY();
-//		double scale = Math.sqrt(scalex * scaley);
-//		Transform2 t2 = new Transform2(at);
-//		Angle angle = t2.getAngleOfRotation();
-//		int angleDeg = Math.round((float)angle.getDegrees());
-//		if (angleDeg != 0) {
-//			LOG.trace("Transform "+t2+" "+svgText.getText()+" "+at+" "+getRealArray(fontMatrix));
-//			// do this properly later
-//			scale = Math.sqrt(Math.abs(t2.elementAt(0, 1)*t2.elementAt(1, 0)));
-//			Transform2 t2a = Transform2.getRotationAboutPoint(angle, svgText.getXY());
-//			svgText.setTransform(t2a);
-//		}
-//		if (hasChanged(scale, currentFontSize, eps)) {
-//			createNewG = true;
-//		}
-//		currentFontSize = scale;
-//	}
 
 	private double getFontSizeAndSetNotZeroRotations(SVGText svgText) {
 		AffineTransform at = textPos.createAffineTransform();
@@ -503,6 +456,8 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			generalPath.setWindingRule(windingRule);
 		}
 		SVGPath svgPath = new SVGPath(generalPath);
+		getClipPath();
+		svgPath.setClipPath(clipString);
 		if (windingRule != null) {
 			svgPath.setFill(getCSSColor(currentPaint));
 		} else {
