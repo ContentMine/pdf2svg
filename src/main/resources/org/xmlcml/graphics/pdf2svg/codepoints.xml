@@ -1,0 +1,26 @@
+<codepoints>
+	<codepoint name="GREEK SMALL LETTER ALPHA" value="945"/>
+	<codepoint name="GREEK SMALL LETTER BETA" value="946"/>
+	<codepoint name="GREEK SMALL LETTER GAMMA" value="947"/>
+	<codepoint name="GREEK SMALL LETTER DELTA" value="948"/>
+	<codepoint name="GREEK SMALL LETTER PHI" value="966"/>
+	<codepoint name="GREEK SMALL LETTER OMEGA" value="969"/>
+	<codepoint name="EN DASH" value="8211" substitute="-"/>
+	<codepoint name="EM DASH" value="8212"/>
+	<codepoint name="LEFT SINGLE QUOTATION MARK" value="8216" substitute="'"/>
+	<codepoint name="RIGHT SINGLE QUOTATION MARK" value="8217" substitute="'"/>
+	<codepoint name="BULLET" value="8226" />
+	<codepoint name="PRIME" value="8242" substitute="'"/>
+	<codepoint name="INCREMENT" altName="apitalDelta" value="8710"/>
+	<codepoint name="N-ARY SUMMATION" value="8721"/>
+	<codepoint name="MINUS SIGN" value="8722" substitute="-"/>
+	<codepoint name="ASTERISK OPERATOR" value="8727" substitute="*"/>
+	<codepoint name="TILDE OPERATOR" value="8764" substitute="~"/>
+	<codepoint name="ALMOST EQUAL TO" value="8776"/>
+	<codepoint name="LESS-THAN OR EQUAL TO" value="8804"/>
+	<codepoint name="GREATER-THAN OR EQUAL TO" value="8805"/>
+	<codepoint name="BLACK SQUARE" value="9632"/>
+	<codepoint name="WHITE BULLET" value="9702"/>
+	<codepoint name="LEFT ANGLE BRACKET" value="12296"/>
+	<codepoint name="RIGHT ANGLE BRACKET" value="12297"/>
+</codePoint>  
