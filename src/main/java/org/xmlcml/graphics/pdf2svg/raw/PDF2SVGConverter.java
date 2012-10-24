@@ -5,8 +5,11 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
+import org.apache.log4j.Logger;
 import org.apache.pdfbox.exceptions.CryptographyException;
 import org.apache.pdfbox.exceptions.InvalidPasswordException;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -25,6 +28,7 @@ import org.xmlcml.graphics.svg.SVGSVG;
  */
 public class PDF2SVGConverter extends PDFStreamEngine {
 
+	private final static Logger LOG = Logger.getLogger(PDF2SVGConverter.class);
 	@SuppressWarnings("unused")
 	private static final long serialVersionUID = 1L;
 
@@ -34,6 +38,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private boolean useNonSeqParser = false;
 	private PDDocument document;
 	private List<SVGSVG> svgPageList;
+	private Set<Integer> highCodePointSet;
 
 	private static void usage() {
 		System.err
@@ -59,7 +64,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		System.out.printf("Processing %d pages ...%n", pages.size());
 
 		for (PDPage page : pages) {
-			drawer.convertPageToSVG(page);
+			drawer.convertPageToSVG(page, this);
 			System.out.println("=== " + pageNumber + " ===");
 			SVGSVG svgPage = drawer.getSVG();
 			CMLUtil.debug(svgPage, new FileOutputStream("target/page"
@@ -68,6 +73,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			svgPageList.add(svgPage);
 			pageNumber++;
 		}
+		reportHighCodePoints();
 	}
 
 	private void ensureSVGPageList() {
@@ -143,4 +149,23 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		return svgPageList;
 	}
 
+	private void reportHighCodePoints() {
+		ensureHighCodePointSet();
+		LOG.debug("High CodePoints: "+highCodePointSet.size());
+		for (Integer highCodePoint : highCodePointSet) {
+			LOG.debug("CodePoint: "+highCodePoint);
+		}
+	}
+
+	private void ensureHighCodePointSet() {
+		if (highCodePointSet == null) {
+			highCodePointSet = new HashSet<Integer>();
+		}
+	}
+	
+	public Set<Integer> getHighCodePointSet() {
+		ensureHighCodePointSet();
+		return highCodePointSet;
+
+	}
 }

@@ -91,8 +91,8 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private Double lineWidth;
 	private PDTextState textState;
 	private Set<String> clipStringSet;
-	private Set<Integer> highCodepointSet;
 	private String clipString;
+	private PDF2SVGConverter converter;
 
 	public PDFPage2SVGConverter() throws IOException {
 		super();
@@ -115,7 +115,6 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			throw new RuntimeException("drawPage", e);
 		}
 		reportClipPaths();
-		reportHighCodePoints();
 
 	}
 
@@ -127,19 +126,6 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		}
 	}
 
-	private void reportHighCodePoints() {
-		ensureHighCodePointSet();
-		LOG.debug("High Codepoints: "+highCodepointSet.size());
-		for (Integer highCodepoint : highCodepointSet) {
-			LOG.debug("Codepoint: "+highCodepoint);
-		}
-	}
-
-	private void ensureHighCodePointSet() {
-		if (highCodepointSet == null) {
-			highCodepointSet = new HashSet<Integer>();
-		}
-	}
 
 	/** adds a default pagesize if not given
 	 * 
@@ -163,8 +149,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		}
 		int charCode = text.getCharacter().charAt(0);
 		if (charCode > 255) {
-			ensureHighCodePointSet();
-			highCodepointSet.add(charCode);
+			converter.getHighCodePointSet().add(charCode);
 		}
 		float width = getCharacterWidth(font, textContent);
 		
@@ -539,7 +524,8 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		return svg;
 	}
 
-	void convertPageToSVG(PDPage page) {
+	void convertPageToSVG(PDPage page, PDF2SVGConverter converter) {
+		this.converter = converter;
 		resetSVG();
 		drawPage(page);
 	}
