@@ -1,7 +1,6 @@
 package org.xmlcml.graphics.pdf2svg.raw;
 
 import java.io.File;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -9,13 +8,15 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import nu.xom.Builder;
+import nu.xom.Document;
+
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.exceptions.CryptographyException;
 import org.apache.pdfbox.exceptions.InvalidPasswordException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.util.PDFStreamEngine;
-import org.xmlcml.cml.base.CMLUtil;
 import org.xmlcml.graphics.svg.SVGSVG;
 
 /**
@@ -67,10 +68,15 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			drawer.convertPageToSVG(page, this);
 			System.out.println("=== " + pageNumber + " ===");
 			SVGSVG svgPage = drawer.getSVG();
-			CMLUtil.debug(svgPage, new FileOutputStream("target/page"
-					+ pageNumber + ".svg"), 1);
+			String fname = "target/page" + pageNumber + ".svg";
+			SVGSerializer serializer = new SVGSerializer(new FileOutputStream(fname), "UTF-8");
+			Document document = svgPage.getDocument();
+			document = (document == null) ? new Document(svgPage) : document;
+			serializer.setIndent(1);
+			serializer.write(document);
 			ensureSVGPageList();
 			svgPageList.add(svgPage);
+			new Builder().build(new File(fname));
 			pageNumber++;
 		}
 		reportHighCodePoints();

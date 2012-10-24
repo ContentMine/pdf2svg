@@ -51,8 +51,8 @@ import org.xmlcml.graphics.svg.SVGText;
 public class PDFPage2SVGConverter extends PageDrawer {
 
 	
-	private static final String BADCHAR_E = ">>";
-	private static final String BADCHAR_S = "<<";
+	private static final String BADCHAR_E = "?}";
+	private static final String BADCHAR_S = "{?";
 	private static final String FONT_NAME = "fontName";
 	private static final String BOLD = "bold";
 	private static final String ITALIC = "italic";
@@ -518,6 +518,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		svg.setStroke("none");
 		svg.setStrokeWidth(0.0);
 		svg.addNamespaceDeclaration(PDF2SVGUtil.SVGX_PREFIX, PDF2SVGUtil.SVGX_NS);
+		clipStringSet = new HashSet<String>();
 	}
 
 	public SVGSVG getSVG() {
