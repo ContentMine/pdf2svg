@@ -8,10 +8,10 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+import javax.print.attribute.standard.PageRanges;
+
 import nu.xom.Builder;
 import nu.xom.Document;
-
-import javax.print.attribute.standard.PageRanges;
 
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.exceptions.CryptographyException;
@@ -19,7 +19,6 @@ import org.apache.pdfbox.exceptions.InvalidPasswordException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.util.PDFStreamEngine;
-import org.xmlcml.cml.base.CMLUtil;
 import org.xmlcml.graphics.svg.SVGSVG;
 
 /**
@@ -73,25 +72,51 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 		@SuppressWarnings("unchecked")
 		List<PDPage> pages = document.getDocumentCatalog().getAllPages();
-		int pageNumber = 1;
 
-		System.out.printf("Processing %d pages ...%n", pages.size());
+		PageRanges pr = pageRanges;
+		if (pr == null)
+			pr = new PageRanges(String.format("1-%d", pages.size()));
 
-		for (PDPage page : pages) {
+		File outdir = new File(outputDirectory);
+		if (!outdir.exists())
+			outdir.mkdirs();
+		if (!outdir.isDirectory())
+			throw new RuntimeException(String.format(
+					"'%s' is not a directory!", outputDirectory));
+
+		System.out.printf("Processing pages %s (of %d) ...%n", pr.toString(),
+				pages.size());
+
+		File infile = new File(filename);
+		String basename = infile.getName().toLowerCase();
+		if (basename.endsWith(".pdf"))
+			basename = basename.substring(0, basename.length() - 4);
+
+		int pageNumber = pr.next(0);
+		while (pageNumber > 0) {
+			PDPage page = pages.get(pageNumber - 1);
+
 			System.out.println("=== " + pageNumber + " ===");
 			drawer.convertPageToSVG(page, this);
+
+			File outfile = new File(outdir, basename + "-page" + pageNumber
+					+ ".svg");
+			System.out.printf("Writing output to file '%s'%n", outfile.getCanonicalPath());
+
 			SVGSVG svgPage = drawer.getSVG();
-			String fname = "target/page" + pageNumber + ".svg";
-			SVGSerializer serializer = new SVGSerializer(new FileOutputStream(fname), "UTF-8");
+			SVGSerializer serializer = new SVGSerializer(new FileOutputStream(
+					outfile), "UTF-8");
 			Document document = svgPage.getDocument();
 			document = (document == null) ? new Document(svgPage) : document;
 			serializer.setIndent(1);
 			serializer.write(document);
 			ensureSVGPageList();
 			svgPageList.add(svgPage);
-			new Builder().build(new File(fname));
-			pageNumber++;
+			new Builder().build(outfile);
+
+			pageNumber = pr.next(pageNumber);
 		}
+
 		reportHighCodePoints();
 	}
 
@@ -139,7 +164,10 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		run(argString.split("[\\s+]"));
 	}
 
-	public void run(String[] args) {
+	public void run(String... args) {
+
+		if (args.length == 0)
+			usage();
 
 		for (int i = 0; i < args.length; i++) {
 
@@ -190,9 +218,9 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 	private void reportHighCodePoints() {
 		ensureHighCodePointSet();
-		LOG.debug("High CodePoints: "+highCodePointSet.size());
+		LOG.debug("High CodePoints: " + highCodePointSet.size());
 		for (Integer highCodePoint : highCodePointSet) {
-			LOG.debug("CodePoint: "+highCodePoint);
+			LOG.debug("CodePoint: " + highCodePoint);
 		}
 	}
 
@@ -201,7 +229,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			highCodePointSet = new HashSet<Integer>();
 		}
 	}
-	
+
 	public Set<Integer> getHighCodePointSet() {
 		ensureHighCodePointSet();
 		return highCodePointSet;
