@@ -78,8 +78,8 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		System.out.printf("Processing %d pages ...%n", pages.size());
 
 		for (PDPage page : pages) {
-			drawer.convertPageToSVG(page, this);
 			System.out.println("=== " + pageNumber + " ===");
+			drawer.convertPageToSVG(page, this);
 			SVGSVG svgPage = drawer.getSVG();
 			String fname = "target/page" + pageNumber + ".svg";
 			SVGSerializer serializer = new SVGSerializer(new FileOutputStream(fname), "UTF-8");

@@ -41,4 +41,11 @@ public class PDF2SVGConverterTest {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("../pdfs/ajctest/xx.pdf");
 	}
+	
+	@Test
+//	@Ignore // do not normally run this
+	public void testBMC() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("src/test/resources/org/xmlcml/graphics/pdf/312.pdf");
+	}
 }

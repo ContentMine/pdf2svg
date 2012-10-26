@@ -10,6 +10,7 @@ import java.awt.Paint;
 import java.awt.Shape;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.GeneralPath;
+import java.awt.geom.PathIterator;
 import java.io.IOException;
 import java.util.HashSet;
 import java.util.List;
@@ -18,6 +19,7 @@ import java.util.Set;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.cos.COSName;
+import org.apache.pdfbox.encoding.Encoding;
 import org.apache.pdfbox.pdfviewer.PageDrawer;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDResources;
@@ -39,6 +41,7 @@ import org.xmlcml.graphics.svg.GraphicsElement.FontStyle;
 import org.xmlcml.graphics.svg.GraphicsElement.FontWeight;
 import org.xmlcml.graphics.svg.SVGElement;
 import org.xmlcml.graphics.svg.SVGPath;
+import org.xmlcml.graphics.svg.SVGRect;
 import org.xmlcml.graphics.svg.SVGSVG;
 import org.xmlcml.graphics.svg.SVGText;
 
@@ -51,6 +54,9 @@ import org.xmlcml.graphics.svg.SVGText;
 public class PDFPage2SVGConverter extends PageDrawer {
 
 	
+	private static final String FONT_TRUE_TYPE = "TrueType";
+	private static final String FONT_TYPE1 = "Type1";
+	private static final String FONT_TYPE0 = "Type0";
 	private static final String BADCHAR_E = "?}";
 	private static final String BADCHAR_S = "{?";
 	private static final String FONT_NAME = "fontName";
@@ -60,7 +66,9 @@ public class PDFPage2SVGConverter extends PageDrawer {
 
 	private final static Logger LOG = Logger.getLogger(PDF2SVGConverter.class);
 
-	private static final Dimension DEFAULT_DIMENSION = new Dimension(800, 800);;
+	private static final Dimension DEFAULT_DIMENSION = new Dimension(800, 800);
+//	private static final String BADCHAR = ""+(char)0X00A4;
+	private static final int BADCHAR = (char)0X2775;
 	static {
 		LOG.setLevel(Level.DEBUG);
 	}
@@ -93,6 +101,10 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private Set<String> clipStringSet;
 	private String clipString;
 	private PDF2SVGConverter converter;
+	private Encoding encoding;
+	private String charname;
+	private Real2 currentXY;
+	private String fontSubType;
 
 	public PDFPage2SVGConverter() throws IOException {
 		super();
@@ -120,10 +132,21 @@ public class PDFPage2SVGConverter extends PageDrawer {
 
 	private void reportClipPaths() {
 		ensureClipStringSet();
+		String[] color = {"yellow", "blue", "red", "green", "magenta", "cyan"};
 		LOG.debug("Clip paths: "+clipStringSet.size());
+		int icol = 0;
 		for (String shapeString : clipStringSet) {
-			LOG.trace(shapeString);
+			LOG.debug(shapeString);
+			SVGPath path = new SVGPath(shapeString);
+			SVGRect box = new SVGRect(path.getBoundingBox());
+			box.setFill("none");
+			box.setStroke(color[icol]);
+			box.setOpacity(1.0);
+			box.setStrokeWidth(5.0);
+			svg.appendChild(box);
+			icol = (icol+1) % 6;
 		}
+		
 	}
 
 
@@ -141,20 +164,45 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	protected void processTextPosition(TextPosition text) {
 
 		font = text.getFont();
+		fontSubType = font.getSubType();
+		if (FONT_TYPE1.equals(fontSubType)) {
+			//  
+		} else if (FONT_TRUE_TYPE.equals(fontSubType)) {
+			//  
+		} else if (FONT_TYPE0.equals(fontSubType)) {
+			//  
+		} else {
+			System.out.println(fontSubType);
+		}
+		encoding = font.getFontEncoding();
 		// for info
 		String textContent = text.getCharacter();
 		if (textContent.length() > 1) {
 			// don't know when or whether this will happen. I hope that the length is always 1
-			throw new RuntimeException("multi-char string"+text.getCharacter());
+			LOG.warn("multi-char string: "+text.getCharacter());
 		}
 		int charCode = text.getCharacter().charAt(0);
 		if (charCode > 255) {
 			converter.getHighCodePointSet().add(charCode);
 		}
+		charname = null;
+		if (encoding == null) {
+			LOG.warn("Null encoding for character: "+charCode+" at "+currentXY);
+		} else {
+			try {
+//				charname = encoding.getNameFromCharacter((char)charCode);
+				charname = encoding.getName(charCode);
+//				charname = encoding.getCharacter(charCode);
+//				LOG.debug(charname);
+			} catch (IOException e1) {
+				LOG.warn("cannot get char encoding "+" at "+currentXY, e1);
+			}
+		}
 		float width = getCharacterWidth(font, textContent);
 		
 		ensurePageSize();
 		SVGText svgText = new SVGText();
+		createAndReOrientateTextPosition(text, svgText);
 		normalizeFontFamilyNameStyleWeight();
 		if (currentFontWeight != null) {
 			svgText.setFontWeight(currentFontWeight);
@@ -166,7 +214,6 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			tryToConvertStrangeCharactersOrFonts(text, svgText);
 		}
 		createGraphicsStateAndPaintAndComposite();
-		createAndReOrientateTextPosition(text, svgText);
 		
 		getFontSizeAndSetNotZeroRotations(svgText);
 		getClipPath();
@@ -189,14 +236,18 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		svg.appendChild(svgText);
 	}
 
-	private void getClipPath() {
+	private String getClipPath() {
 		Shape shape = getGraphicsState().getCurrentClippingPath();
-		String shapeString = shape.toString();
-		// normally of form: java.awt.geom.GeneralPath@10aadc97
-		int idx = shapeString.indexOf("@");
-		clipString = "clip"+shapeString.substring(idx+1);
+		PathIterator pathIterator = shape.getPathIterator(new AffineTransform());
+		clipString = SVGPath.getPathAsDString(pathIterator);
+//		String shapeString = shape.toString();
+//		// normally of form: java.awt.geom.GeneralPath@10aadc97
+//		int idx = shapeString.indexOf("@");
+		
+//		clipString = "clip"+shapeString.substring(idx+1);
 		ensureClipStringSet();
 		clipStringSet.add(clipString);
+		return clipString;
 	}
 
 	private void ensureClipStringSet() {
@@ -218,8 +269,13 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private void tryToConvertStrangeCharactersOrFonts(TextPosition text, SVGText svgText) {
 		char cc = text.getCharacter().charAt(0);
 		String s = BADCHAR_S+(int)cc+BADCHAR_E;
-		LOG.debug(s+" "+currentFontName);
+		LOG.debug(s+" "+currentFontName+" ("+fontSubType+") charname: "+charname);
+		s = ""+(char)(BADCHAR+Math.min(9, cc));
 		svgText.setText(s);
+		svgText.setStroke("red");
+		svgText.setFill("red");
+		svgText.setFontFamily("Helvetica");
+		svgText.setStrokeWidth(0.5);
 	}
 
 	private String interpretCharacter(String fontFamily, char cc) {
@@ -236,19 +292,23 @@ public class PDFPage2SVGConverter extends PageDrawer {
 
 	private void normalizeFontFamilyNameStyleWeight() {
 		PDFontDescriptor fd = font.getFontDescriptor();
-		currentFontFamily = fd.getFontFamily();
-		currentFontName = fd.getFontName();
-		// currentFontFamily may be null?
-		if (currentFontName == null) {
-			throw new RuntimeException("No currentFontName");
+		if (fd == null) {
+			LOG.warn("Null Font Descriptor : "+font+" ("+fontSubType+") at "+currentXY);
+		} else {
+			currentFontFamily = fd.getFontFamily();
+			currentFontName = fd.getFontName();
+			// currentFontFamily may be null?
+			if (currentFontName == null) {
+				throw new RuntimeException("No currentFontName");
+			}
+			if (currentFontFamily == null) {
+				currentFontFamily = currentFontName;
+			}
+			// strip leading characters (e.g. KAIKCD+Helvetica-Oblique);
+			stripFamilyPrefix();
+			createFontStyle();
+			createFontWeight();
 		}
-		if (currentFontFamily == null) {
-			currentFontFamily = currentFontName;
-		}
-		// strip leading characters (e.g. KAIKCD+Helvetica-Oblique);
-		stripFamilyPrefix();
-		createFontStyle();
-		createFontWeight();
 	}
 
 	private void stripFamilyPrefix() {
@@ -358,7 +418,8 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		// opposite direction
 		textPos.setValue(0, 1, (-1) * textPos.getValue(0, 1));
 		textPos.setValue(1, 0, (-1) * textPos.getValue(1, 0));
-		svgText.setXY(new Real2(x, y));
+		currentXY = new Real2(x, y);
+		svgText.setXY(currentXY);
 	}
 
 	private void createGraphicsStateAndPaintAndComposite() {
