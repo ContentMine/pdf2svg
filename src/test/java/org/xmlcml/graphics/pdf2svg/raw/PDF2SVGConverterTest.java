@@ -51,4 +51,33 @@ public class PDF2SVGConverterTest {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("src/test/resources/org/xmlcml/graphics/pdf/312.pdf");
 	}
+	
+	@Test
+//	@Ignore // do not normally run this
+	public void testE() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("src/test/resources/e/6048.pdf");
+	}
+	
+	@Test
+	// @Ignore // do not normally run this
+	public void testRSC() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("../pdfs/rsc/b306241d.pdf");
+	}
+	
+	@Test
+	// @Ignore // do not normally run this
+	public void testPsyc() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("../pdfs/psyc/Holcombe2012.pdf");
+	}
+	
+	@Test
+	// @Ignore // do not normally run this
+	public void testPsyc1() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("../pdfs/psyc/Liu2005.pdf");
+	}
+	
 }

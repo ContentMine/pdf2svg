@@ -12,13 +12,19 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.PathIterator;
 import java.io.IOException;
+import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.cos.COSName;
+import org.apache.pdfbox.encoding.DictionaryEncoding;
 import org.apache.pdfbox.encoding.Encoding;
 import org.apache.pdfbox.pdfviewer.PageDrawer;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -54,6 +60,17 @@ import org.xmlcml.graphics.svg.SVGText;
 public class PDFPage2SVGConverter extends PageDrawer {
 
 	
+	private static final String COMM_PI = "Universal-NewswithCommPi";
+	private static final String GREEK_WITH_MATH_PI = "Universal-GreekwithMathPi";
+	private static final String MTSYN = "MTSYN";
+	private static final String TIMES_ROMAN_GROTTY = "Times-Roman";
+	private static final String SYMBOL_PS = "SymbolPS";
+	private static final String TIMES_GREEK_SF = "TimesGreekSF";
+	private static final String TIMES_NR_EXPERT_MT = "TimesNRExpertMT";
+	
+	private static final String MATHEMATICAL_PI_ONE = "MathematicalPi-One";
+	private static final String MATHEMATICAL_PI_FOUR = "MathematicalPi-Four";
+	
 	private static final String FONT_TRUE_TYPE = "TrueType";
 	private static final String FONT_TYPE1 = "Type1";
 	private static final String FONT_TYPE0 = "Type0";
@@ -62,12 +79,12 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private static final String FONT_NAME = "fontName";
 	private static final String BOLD = "bold";
 	private static final String ITALIC = "italic";
+	private static final String INCLINED = "inclined";
 	private static final String OBLIQUE = "oblique";
 
 	private final static Logger LOG = Logger.getLogger(PDF2SVGConverter.class);
 
 	private static final Dimension DEFAULT_DIMENSION = new Dimension(800, 800);
-//	private static final String BADCHAR = ""+(char)0X00A4;
 	private static final int BADCHAR = (char)0X2775;
 	static {
 		LOG.setLevel(Level.DEBUG);
@@ -84,8 +101,8 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private PDFont font;
 
 	private Composite currentComposite;
-	private String currentFontFamily;
-	private String currentFontName;
+	private String fontFamily;
+	private String fontName;
 	private Double currentFontSize;
 	private String currentFontStyle;
 	private String currentFontWeight;
@@ -105,6 +122,11 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private String charname;
 	private Real2 currentXY;
 	private String fontSubType;
+	private DictionaryEncoding dictionaryEncoding;
+	private String textContent;
+	private Map<String, Map<String, Integer>> foreign2UnicodeMapByFontFamily;
+	private Map<String, Map<Integer, String>> char2UnicodeStringMapByFontFamilyMap;
+	private String lastFontFamily = "Helvetica";
 
 	public PDFPage2SVGConverter() throws IOException {
 		super();
@@ -163,8 +185,12 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	@Override
 	protected void processTextPosition(TextPosition text) {
 
+		charname = null;
+		fontFamily = null;
+		fontName = null;
 		font = text.getFont();
 		fontSubType = font.getSubType();
+		normalizeFontFamilyNameStyleWeight();
 		if (FONT_TYPE1.equals(fontSubType)) {
 			//  
 		} else if (FONT_TRUE_TYPE.equals(fontSubType)) {
@@ -175,25 +201,25 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			System.out.println(fontSubType);
 		}
 		encoding = font.getFontEncoding();
-		// for info
-		String textContent = text.getCharacter();
+		dictionaryEncoding = null;
+		castEncodingSubclassEspeciallyDictionary();
+		textContent = text.getCharacter();
 		if (textContent.length() > 1) {
-			// don't know when or whether this will happen. I hope that the length is always 1
+			// this can happen for ligatures
 			LOG.warn("multi-char string: "+text.getCharacter());
 		}
 		int charCode = text.getCharacter().charAt(0);
 		if (charCode > 255) {
 			converter.getHighCodePointSet().add(charCode);
 		}
-		charname = null;
 		if (encoding == null) {
 			LOG.warn("Null encoding for character: "+charCode+" at "+currentXY);
 		} else {
 			try {
 //				charname = encoding.getNameFromCharacter((char)charCode);
+				// NNOTE: charname is the formal name for the character such as "period", "bracket" or "a", "two"
 				charname = encoding.getName(charCode);
-//				charname = encoding.getCharacter(charCode);
-//				LOG.debug(charname);
+				LOG.trace("code "+charCode+" (font: "+fontSubType+" "+fontName+") "+charname);
 			} catch (IOException e1) {
 				LOG.warn("cannot get char encoding "+" at "+currentXY, e1);
 			}
@@ -207,6 +233,28 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		if (currentFontWeight != null) {
 			svgText.setFontWeight(currentFontWeight);
 		}
+		if (dictionaryEncoding != null) {
+			LOG.trace("DICT_ENCODE "+fontName+" / "+fontFamily+" / "+fontSubType+" / "+charCode+" / "+charname);
+			Integer codePoint = convertDictionaryFontCharactersToUnicode(fontFamily, charname);
+			if (codePoint != null) {
+				textContent = ""+(char)(int)codePoint;
+				noteUpdated(svgText, textContent);
+			} else {
+				String unicodeContent = getUnicodeEquivalent(fontFamily, charCode);
+				if (unicodeContent != null) {
+					textContent = unicodeContent;
+					if (unicodeContent.length() > 1) {
+						LOG.trace("X: "+unicodeContent);
+					}
+					noteUpdated(svgText, unicodeContent);
+				} else {
+					LOG.debug("DICT_ENCODE uncoverted "+fontName+" / "+fontFamily+" / "+fontSubType+" / "+charCode+" / "+charname +" / "+(char) charCode);
+					svgText.setFontSize(20.0);
+					svgText.setFill("blue");
+				}
+			}
+		}
+
 		try {
 			svgText.setText(textContent);
 		} catch (RuntimeException e) {
@@ -221,30 +269,219 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		svgText.setFontSize(currentFontSize);
 		String stroke = getCSSColor((Color) paint);
 		svgText.setStroke(stroke);
-		if (currentFontStyle != null) {
-			svgText.setFontStyle(currentFontStyle);
-		}
-		if (currentFontFamily != null) {
-			svgText.setFontFamily(currentFontFamily);
-		}
-		if (currentFontName != null) {
-			setFontName(svgText, currentFontName);
-		}
+		svgText.setFontStyle(currentFontStyle);
+		svgText.setFontFamily(fontFamily);
+		setFontName(svgText, fontName);
 		setCharacterWidth(svgText, width);
-
 		svgText.format(nPlaces);
 		svg.appendChild(svgText);
+		lastFontFamily = fontFamily;
+	}
+
+	private void noteUpdated(SVGText svgText, String unicodeContent) {
+		svgText.setText(unicodeContent);
+		svgText.setFill("red");
+		svgText.setStrokeWidth(1.0);
+		svgText.setStroke("blue");
+		svgText.setFontSize(20.0);
+		fontFamily = lastFontFamily;
+	}
+
+	private String getUnicodeEquivalent(String fontFamily, Integer charCode) {
+		String unicodeString = null;
+		fontFamily = fontFamily.toLowerCase();
+		Map<Integer, String> char2UnicodeStringMap = getChar2UnicodeStringMap(fontFamily);
+		if (char2UnicodeStringMap != null) {
+			unicodeString = char2UnicodeStringMap.get(charCode);
+		}
+		return unicodeString;
+	}
+
+	private Map<Integer, String> getChar2UnicodeStringMap(String fontFamily) {
+		ensureChar2UnicodeStringMapByFontFamily();
+		return char2UnicodeStringMapByFontFamilyMap.get(fontFamily);
+	}
+
+	private void ensureChar2UnicodeStringMapByFontFamily() {
+		if (char2UnicodeStringMapByFontFamilyMap == null) {
+			char2UnicodeStringMapByFontFamilyMap = new HashMap<String, Map<Integer, String>>();
+			createTimesNRExpertMTMap();
+			createTimesGreekSFMap();
+			createMTSYNMap();
+			createSymbolPSMap();
+		};
+	}
+
+	private Integer convertDictionaryFontCharactersToUnicode(String fontFamily, String charname) {
+		fontFamily = fontFamily.toLowerCase();
+		Integer codePoint = null;
+		Map<String, Integer> foreign2UnicodeMap = getForeign2UnicodeMap(fontFamily);
+		if (foreign2UnicodeMap != null) {
+			codePoint = foreign2UnicodeMap.get(charname);
+		}
+		return codePoint;
+	}
+
+	private void debugMap(Map<String, Integer> map) {
+		String keys[] = map.keySet().toArray(new String[0]);
+		Arrays.sort(keys);
+		for (String key : keys) {
+			LOG.debug(key+": "+map.get(key));
+		}
+	}
+
+	private Map<String, Integer> getForeign2UnicodeMap(String fontFamily) {
+		ensureForeign2UnicodeMapByFontFamily();
+		return foreign2UnicodeMapByFontFamily.get(fontFamily);
+	}
+
+	private void ensureForeign2UnicodeMapByFontFamily() {
+		if (foreign2UnicodeMapByFontFamily == null) {
+			foreign2UnicodeMapByFontFamily = new HashMap<String, Map<String, Integer>>();
+			createMathematicalPiOneMap();
+			createMathematicalPiFourMap();
+			createCommPiMap();
+			createGreekWithMathPiMap();
+		};
+	}
+
+	private void createTimesNRExpertMTMap() {
+		Map<Integer, String> map = new HashMap<Integer, String>();
+		map.put((Integer)63337, ""+(char)63337);  //
+		map.put((Integer)64256, "ff");  // ligature
+		map.put((Integer)64257, "fi");  // ligature
+		map.put((Integer)64258, "fl");  // ligature
+		map.put((Integer)64259, "ffi");  // ligature
+		map.put((Integer)64260, "ffl");  // ligature (guessed)
+		char2UnicodeStringMapByFontFamilyMap.put(TIMES_NR_EXPERT_MT.toLowerCase(), map);
+	}
+
+	private void createTimesGreekSFMap() {
+//		alpha, beta gamma delta epsilon iota kappa lambda mu nu omicron pi rho sigma tau upsilon phi chi psi omega
+		Map<Integer, String> map = new HashMap<Integer, String>();
+		map.put((Integer)913, ""+(char)913);  //  GREEK CAPITAL LETTER Alpha
+		map.put((Integer)914, ""+(char)914);  //  GREEK CAPITAL LETTER Beta
+		map.put((Integer)915, ""+(char)915);  //  GREEK CAPITAL LETTER Gamma
+		map.put((Integer)916, ""+(char)916);  //  GREEK CAPITAL LETTER Delta
+		map.put((Integer)917, ""+(char)917);  //  GREEK CAPITAL LETTER Epsilon
+		map.put((Integer)918, ""+(char)918);  //  GREEK CAPITAL LETTER Zeta
+		map.put((Integer)919, ""+(char)919);  //  GREEK CAPITAL LETTER Eta
+		map.put((Integer)920, ""+(char)920);  //  GREEK CAPITAL LETTER Theta
+		map.put((Integer)921, ""+(char)921);  //  GREEK CAPITAL LETTER Iota
+		map.put((Integer)922, ""+(char)922);  //  GREEK CAPITAL LETTER Kappa
+		map.put((Integer)923, ""+(char)923);  //  GREEK CAPITAL LETTER Lambda
+		map.put((Integer)924, ""+(char)924);  //  GREEK CAPITAL LETTER Mu
+		map.put((Integer)925, ""+(char)925);  //  GREEK CAPITAL LETTER Nu
+		map.put((Integer)926, ""+(char)926);  //  GREEK CAPITAL LETTER Xi
+		map.put((Integer)927, ""+(char)927);  //  GREEK CAPITAL LETTER Omicron
+		map.put((Integer)928, ""+(char)928);  //  GREEK CAPITAL LETTER Pi
+		map.put((Integer)929, ""+(char)929);  //  GREEK CAPITAL LETTER Rho
+		map.put((Integer)931, ""+(char)931);  //  GREEK CAPITAL LETTER SIGMA
+		map.put((Integer)932, ""+(char)932);  //  GREEK CAPITAL LETTER TAU
+		map.put((Integer)933, ""+(char)933);  //  GREEK CAPITAL LETTER UPSILON
+		map.put((Integer)934, ""+(char)934);  //  GREEK CAPITAL LETTER PHI
+		map.put((Integer)935, ""+(char)935);  //  GREEK CAPITAL LETTER CHI
+		map.put((Integer)936, ""+(char)936);  //  GREEK CAPITAL LETTER PSI
+		map.put((Integer)937, ""+(char)937);  //  GREEK CAPITAL LETTER OMEGA
+		
+		map.put((Integer)945, ""+(char)945);  //  GREEK SMALL LETTER alpha
+		map.put((Integer)946, ""+(char)946);  //  GREEK SMALL LETTER beta
+		map.put((Integer)947, ""+(char)947);  //  GREEK SMALL LETTER gamma
+		map.put((Integer)948, ""+(char)948);  //  GREEK SMALL LETTER delta
+		map.put((Integer)949, ""+(char)949);  //  GREEK SMALL LETTER epsilon
+		map.put((Integer)950, ""+(char)950);  //  GREEK SMALL LETTER zeta
+		map.put((Integer)951, ""+(char)951);  //  GREEK SMALL LETTER eta
+		map.put((Integer)952, ""+(char)952);  //  GREEK SMALL LETTER theta
+		map.put((Integer)953, ""+(char)953);  //  GREEK SMALL LETTER iota
+		map.put((Integer)954, ""+(char)954);  //  GREEK SMALL LETTER kappa
+		map.put((Integer)955, ""+(char)955);  //  GREEK SMALL LETTER lambda
+		map.put((Integer)956, ""+(char)956);  //  GREEK SMALL LETTER mu
+		map.put((Integer)957, ""+(char)957);  //  GREEK SMALL LETTER nu
+		map.put((Integer)958, ""+(char)958);  //  GREEK SMALL LETTER xi
+		map.put((Integer)959, ""+(char)959);  //  GREEK SMALL LETTER omicron
+		map.put((Integer)960, ""+(char)960);  //  GREEK SMALL LETTER pi
+		map.put((Integer)961, ""+(char)961);  //  GREEK SMALL LETTER rho
+		map.put((Integer)962, ""+(char)962);  //  GREEK SMALL LETTER FINAL SIGMA
+		map.put((Integer)963, ""+(char)963);  //  GREEK SMALL LETTER SIGMA
+		map.put((Integer)964, ""+(char)964);  //  GREEK SMALL LETTER TAU
+		map.put((Integer)965, ""+(char)965);  //  GREEK SMALL LETTER UPSILON
+		map.put((Integer)966, ""+(char)966);  //  GREEK SMALL LETTER PHI
+		map.put((Integer)967, ""+(char)967);  //  GREEK SMALL LETTER CHI
+		map.put((Integer)968, ""+(char)968);  //  GREEK SMALL LETTER PSI
+		map.put((Integer)969, ""+(char)969);  //  GREEK SMALL LETTER OMEGA
+		
+		map.put((Integer)8710, ""+(char)916);  // large delta //needs changing
+		map.put((Integer)181, ""+(char)956);  //  mu
+		char2UnicodeStringMapByFontFamilyMap.put(TIMES_GREEK_SF.toLowerCase(), map);
+	}
+
+	private void createSymbolPSMap() {
+		Map<Integer, String> map = new HashMap<Integer, String>();
+		map.put((Integer)61, "=");  // equals
+		map.put((Integer)8764, ""+(char)'~');  // tilde
+		char2UnicodeStringMapByFontFamilyMap.put(SYMBOL_PS.toLowerCase(), map);
+	}
+
+	private void createMTSYNMap() {
+		Map<Integer, String> map = new HashMap<Integer, String>();
+		map.put((Integer)48, ""+(char)'\'');  // prime
+		map.put((Integer)8677, ""+(char)215);  // multiply
+		char2UnicodeStringMapByFontFamilyMap.put(MTSYN.toLowerCase(), map);
+	}
+
+	private void createCommPiMap() {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("H18456", (int)'!');  // bang
+		foreign2UnicodeMapByFontFamily.put(COMM_PI.toLowerCase(), map);
+	}
+
+	private void createGreekWithMathPiMap() {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("H11001", (int)'+');  // plus
+		map.put("H11002", (int)'-');  // minus 
+		map.put("H11003", (int)215);  // multiply 
+		map.put("H11005", (int)'=');  // equals 
+		map.put("H11021", (int)'<');  // LT 
+		foreign2UnicodeMapByFontFamily.put(GREEK_WITH_MATH_PI.toLowerCase(), map);
+	}
+
+
+	private void createMathematicalPiOneMap() {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("H11001", (int)'+');  // plus -> plus
+		map.put("H11002", (int)'-');  // minus -> hyphenminus
+		map.put("H11032", (int)'\'');  // Prime -> apos
+		map.put("H11034", (int)176);  // Degree sign -> degree
+		foreign2UnicodeMapByFontFamily.put(MATHEMATICAL_PI_ONE.toLowerCase(), map);
+	}
+	
+	private void createMathematicalPiFourMap() {
+		Map<String, Integer> map = new HashMap<String, Integer>();
+		map.put("H11554", 183);  // middot
+		foreign2UnicodeMapByFontFamily.put(MATHEMATICAL_PI_FOUR.toLowerCase(), map);
+	}
+
+	private void castEncodingSubclassEspeciallyDictionary() {
+		if (encoding == null) {
+			LOG.warn("NO ENCODING");
+		} else if (encoding instanceof org.apache.pdfbox.encoding.MacRomanEncoding) {
+			LOG.trace("mac "+encoding.toString());
+		} else if (encoding instanceof org.apache.pdfbox.encoding.WinAnsiEncoding) {
+			LOG.trace("win "+encoding.toString());
+		} else if (encoding instanceof org.apache.pdfbox.encoding.StandardEncoding) {
+			LOG.trace("std "+encoding.toString());
+		} else if (encoding instanceof org.apache.pdfbox.encoding.DictionaryEncoding) {
+			dictionaryEncoding = (DictionaryEncoding) encoding;
+			LOG.trace("DICTENC "+fontName);
+		} else {
+			LOG.warn("UNKNOWN ENCODING "+encoding.toString());
+		}
 	}
 
 	private String getClipPath() {
 		Shape shape = getGraphicsState().getCurrentClippingPath();
 		PathIterator pathIterator = shape.getPathIterator(new AffineTransform());
 		clipString = SVGPath.getPathAsDString(pathIterator);
-//		String shapeString = shape.toString();
-//		// normally of form: java.awt.geom.GeneralPath@10aadc97
-//		int idx = shapeString.indexOf("@");
-		
-//		clipString = "clip"+shapeString.substring(idx+1);
 		ensureClipStringSet();
 		clipStringSet.add(clipString);
 		return clipString;
@@ -269,7 +506,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private void tryToConvertStrangeCharactersOrFonts(TextPosition text, SVGText svgText) {
 		char cc = text.getCharacter().charAt(0);
 		String s = BADCHAR_S+(int)cc+BADCHAR_E;
-		LOG.debug(s+" "+currentFontName+" ("+fontSubType+") charname: "+charname);
+		LOG.debug(s+" "+fontName+" ("+fontSubType+") charname: "+charname);
 		s = ""+(char)(BADCHAR+Math.min(9, cc));
 		svgText.setText(s);
 		svgText.setStroke("red");
@@ -280,7 +517,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 
 	private String interpretCharacter(String fontFamily, char cc) {
 		String s = null;
-		if ("MathematicalPi-One".equals(fontFamily)) {
+		if (MATHEMATICAL_PI_ONE.toLowerCase().equals(fontFamily)) {
 			if (cc == 1) {
 				s = CMLConstants.S_PLUS;
 			}
@@ -295,36 +532,59 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		if (fd == null) {
 			LOG.warn("Null Font Descriptor : "+font+" ("+fontSubType+") at "+currentXY);
 		} else {
-			currentFontFamily = fd.getFontFamily();
-			currentFontName = fd.getFontName();
-			// currentFontFamily may be null?
-			if (currentFontName == null) {
+			fontFamily = fd.getFontFamily();
+			fontName = fd.getFontName();
+			// fontFamily may be null?
+			if (fontName == null) {
 				throw new RuntimeException("No currentFontName");
 			}
-			if (currentFontFamily == null) {
-				currentFontFamily = currentFontName;
+			normalizeGrottyFontNames();
+			if (fontFamily == null) {
+				fontFamily = fontName;
 			}
 			// strip leading characters (e.g. KAIKCD+Helvetica-Oblique);
 			stripFamilyPrefix();
+			createFontMatch();
 			createFontStyle();
 			createFontWeight();
 		}
 	}
 
+	private void normalizeGrottyFontNames() {
+		if (TIMES_ROMAN_GROTTY.equalsIgnoreCase(fontName)) {
+			fontName = "UNKNWN+TimesNewRoman";
+		}
+	}
+
 	private void stripFamilyPrefix() {
-		int index = currentFontFamily.indexOf("+");
-		if (index != -1) {
-			currentFontFamily = currentFontFamily.substring(index+1);
+		int index = fontName.indexOf("+");
+		LOG.trace(fontName);
+		if (index == 6) {
+			fontFamily = fontName.substring(index+1);
+		} else {
+			LOG.warn("FontName lacks XXXXXX prefix:"+fontName+" / "+index);
 		}
 	}
 	
+	private void createFontMatch() {
+//		Pattern fontNamePattern = Pattern.compile("([A-Z]{6}\\+)?([\\-\\.][^\\-\\.]+)*");
+		Pattern fontNamePattern = Pattern.compile("([A-Z]{6}\\+).*");
+		Matcher matcher = fontNamePattern.matcher(fontName);
+		if (!matcher.matches()) {
+			LOG.warn("bad fontName/Family: "+fontName+" / "+fontFamily);
+		} else {
+			LOG.trace(matcher.group(1));
+		}
+//		LOG.trace(matcher.group(2));
+	}
+	
 	private void createFontStyle() {
-		String ff = currentFontFamily.toLowerCase();
-		int idx = currentFontFamily.indexOf("-");
+		String ff = fontFamily.toLowerCase();
+		int idx = ff.indexOf("-");
 		String suffix = ff.substring(idx+1).toLowerCase();
-		if (suffix.equals(OBLIQUE) || suffix.equals(ITALIC)) {
+		if (suffix.equals(OBLIQUE) || suffix.equals(ITALIC) || suffix.equals(INCLINED)) {
 			currentFontStyle = FontStyle.ITALIC.toString().toLowerCase();
-			currentFontFamily = currentFontFamily.substring(0, idx);
+			fontFamily = fontFamily.substring(0, idx);
 		} else {
 			currentFontStyle = null;
 		}
@@ -334,12 +594,12 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	 * 
 	 */
 	private void createFontWeight() {
-		String ff = currentFontFamily.toLowerCase();
+		String ff = fontFamily.toLowerCase();
 		int idx = ff.indexOf("-");
 		String suffix = ff.substring(idx+1);
 		if (suffix.equals(BOLD)) {
 			currentFontWeight = FontWeight.BOLD.toString().toLowerCase();
-			currentFontFamily = currentFontFamily.substring(0, idx);
+			fontFamily = fontFamily.substring(0, idx);
 		} else {
 			currentFontWeight = null;
 		}
