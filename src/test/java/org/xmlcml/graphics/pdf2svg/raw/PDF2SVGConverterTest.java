@@ -80,4 +80,11 @@ public class PDF2SVGConverterTest {
 		converter.run("../pdfs/psyc/Liu2005.pdf");
 	}
 	
+	@Test
+	// @Ignore // do not normally run this
+	public void testSocDir() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("../pdfs/socdir/1-PB.pdf");
+	}
+	
 }

@@ -1,0 +1,8 @@
+<chars>
+	<char charname="H11001" codepoint16="0X2B" codepoint="43" unicodeName="PLUS"/>
+	<char charname="H11002" codepoint16="0x2D" codepoint="45" unicodeName="MINUS"/>
+	<char charname="H11003" codepoint16="0XD7" codepoint="215" unicodeName="MULTIPLICATION SIGN"/> 
+	<char charname="H11005" codepoint16="0X3D" codepoint="61" unicodeName="EQUALS"/> 
+	<char charname="H11021" codepoint16="0X3C" codepoint="60" unicodeName="LT" htmlName="lt"/> 
+</chars>
+		

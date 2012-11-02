@@ -22,12 +22,8 @@ import org.apache.pdfbox.util.PDFStreamEngine;
 import org.xmlcml.graphics.svg.SVGSVG;
 
 /**
- * Simple app to read PDF documents ... based on ...
+ * Simple app to read PDF documents ... based on ... * PDFReader.java
  * 
- * PDFReader.java
- * 
- * @author <a href="ben@benlitchfield.com">Ben Litchfield</a>
- * @version $Revision: 1.5 $
  */
 public class PDF2SVGConverter extends PDFStreamEngine {
 
@@ -48,6 +44,9 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private PDDocument document;
 	private List<SVGSVG> svgPageList;
 	private Set<Integer> highCodePointSet;
+	private boolean fixFont = true;
+	
+	private AMIFontManager amiFontManager;
 
 	private static void usage() {
 		System.err
@@ -65,9 +64,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private void openPDFFile(String filename) throws Exception {
 
 		PDFPage2SVGConverter drawer = new PDFPage2SVGConverter();
-
 		System.out.printf("Parsing PDF file %s ...%n", filename);
-
 		readDocument(filename, useNonSeqParser, PDFpassword);
 
 		@SuppressWarnings("unchecked")
@@ -235,4 +232,24 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		return highCodePointSet;
 
 	}
+
+	public void setFixFont(boolean fixFont) {
+		this.fixFont = fixFont;
+	}
+
+	public boolean isFixFont() {
+		return fixFont ;
+	}
+	
+	public AMIFontManager getAmiFontManager() {
+		ensureAmiFontManager();
+		return amiFontManager;
+	}
+
+	private void ensureAmiFontManager() {
+		if (amiFontManager == null) {
+			amiFontManager = new AMIFontManager();
+		}
+	}
+
 }
