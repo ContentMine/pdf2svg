@@ -11,6 +11,7 @@ import nu.xom.Element;
 import nu.xom.Elements;
 
 import org.apache.log4j.Logger;
+import org.apache.pdfbox.encoding.StandardEncoding;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDFontDescriptor;
 import org.apache.pdfbox.pdmodel.font.PDTrueTypeFont;
@@ -314,8 +315,23 @@ public class AMIFontManager {
 	}
 	
 	public Integer convertSymbol2Unicode(String symbol) {
+		Integer codePoint = null;
 		ensureSymbol2UnicodeMap();
-		return symbol2UnicodeMap.get(symbol);
+		String s = (symbol == null) ? null : StandardEncoding.INSTANCE.getCharacter(symbol);
+		// for ?unknown? charnames (e.g. "H1101") appears to return the charname unchanged
+		if (s != null) {
+			if (!s.equals(symbol) && s.length() == 1) {
+				LOG.trace(symbol+" => "+s);
+				codePoint = new Integer((int) s.charAt(0));
+			} else {
+				s = null; 
+			}
+		}
+		if (s == null) {
+			codePoint = symbol2UnicodeMap.get(symbol);
+			LOG.debug("Used symbol2UnicodeMap to translate: "+symbol+" => "+((codePoint == null) ? null : (char)(int)codePoint));
+		}
+		return codePoint;
 	}
 
 }

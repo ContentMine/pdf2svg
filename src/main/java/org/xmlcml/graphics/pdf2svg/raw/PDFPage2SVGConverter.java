@@ -13,7 +13,6 @@ import java.awt.geom.GeneralPath;
 import java.awt.geom.PathIterator;
 import java.io.IOException;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -22,14 +21,12 @@ import java.util.Set;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.encoding.DictionaryEncoding;
 import org.apache.pdfbox.encoding.Encoding;
 import org.apache.pdfbox.pdfviewer.PageDrawer;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDResources;
 import org.apache.pdfbox.pdmodel.common.PDMatrix;
 import org.apache.pdfbox.pdmodel.font.PDFont;
-import org.apache.pdfbox.pdmodel.font.PDFontDescriptor;
 import org.apache.pdfbox.pdmodel.graphics.PDGraphicsState;
 import org.apache.pdfbox.pdmodel.graphics.PDLineDashPattern;
 import org.apache.pdfbox.pdmodel.graphics.color.PDColorState;
@@ -38,6 +35,7 @@ import org.apache.pdfbox.util.Matrix;
 import org.apache.pdfbox.util.TextPosition;
 import org.xmlcml.euclid.Angle;
 import org.xmlcml.euclid.Real2;
+import org.xmlcml.euclid.Real2Range;
 import org.xmlcml.euclid.RealArray;
 import org.xmlcml.euclid.Transform2;
 import org.xmlcml.graphics.svg.SVGElement;
@@ -135,15 +133,19 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		LOG.debug("Clip paths: "+clipStringSet.size());
 		int icol = 0;
 		for (String shapeString : clipStringSet) {
-			LOG.debug(shapeString);
-			SVGPath path = new SVGPath(shapeString);
-			SVGRect box = new SVGRect(path.getBoundingBox());
-			box.setFill("none");
-			box.setStroke(color[icol]);
-			box.setOpacity(1.0);
-			box.setStrokeWidth(5.0);
-			svg.appendChild(box);
-			icol = (icol+1) % 6;
+			LOG.trace("Shape: "+shapeString);
+			if (shapeString != null && shapeString.trim().length() > 0) {
+				SVGPath path = new SVGPath(shapeString);
+				Real2Range bbox = path.getBoundingBox();
+				SVGRect box = null;
+				box = new SVGRect(bbox);
+				box.setFill("none");
+				box.setStroke(color[icol]);
+				box.setOpacity(1.0);
+				box.setStrokeWidth(5.0);
+				svg.appendChild(box);
+				icol = (icol+1) % 6;
+			}
 		}
 		
 	}
@@ -197,11 +199,12 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		createAndReOrientateTextPosition(text, svgText);		
 		svgText.setFontWeight(amiFont.getFontWeight());
 		if (amiFont.isSymbol() && charname != null) {
+			LOG.trace("SYMBOL "+fontName+" / "+fontFamily+" / "+fontSubType+" / "+charCode+" / "+charname);
 			Integer charCodex = amiFontManager.convertSymbol2Unicode(charname);
 			if (charCodex != null) {
 				textContent = ""+(char)(int)charCodex;
 				noteUpdated(svgText, textContent);
-				LOG.debug("charname: "+charname+" charCode: "+charCodex+" textContent: "+textContent);
+				LOG.trace("charname: "+charname+" charCode: "+charCodex+" textContent: "+textContent);
 			} else {
 				LOG.error("Cannot find character: "+charname);
 			}
@@ -213,15 +216,19 @@ public class PDFPage2SVGConverter extends PageDrawer {
 					textContent = ""+(char)(int)codePoint;
 					noteUpdated(svgText, textContent);
 				} else {
-					String unicodeContent = amiFontManager.getUnicodeEquivalent(fontFamily, charCode);
-					if (unicodeContent != null) {
-						textContent = unicodeContent;
-						if (unicodeContent.length() > 1) {
-							LOG.trace("X: "+unicodeContent);
-						}
-						noteUpdated(svgText, unicodeContent);
+//					String unicodeContent = amiFontManager.getUnicodeEquivalent(fontFamily, charCode);
+					Integer unicode = null;
+					if (charname != null) {
+						unicode = amiFontManager.convertSymbol2Unicode(charname);
 					} else {
-						LOG.debug("DICT_ENCODE uncoverted "+fontName+" / "+fontFamily+" / "+fontSubType+" / "+charCode+" / "+charname +" / "+(char) charCode);
+						//have to assume unicode at this stage
+						unicode = (Integer) charCode;
+					}
+					if (unicode != null) {
+						textContent = ""+(char)(int)unicode;
+						noteUpdated(svgText, textContent);
+					} else {
+						LOG.debug("DICT_ENCODE unconverted "+fontName+" / "+fontFamily+" / "+fontSubType+" / "+charCode+" / "+charname +" / "+(char) charCode);
 						svgText.setFontSize(20.0);
 						svgText.setFill("blue");
 					}

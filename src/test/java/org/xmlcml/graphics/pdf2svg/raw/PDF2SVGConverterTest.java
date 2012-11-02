@@ -38,7 +38,7 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	@Ignore
+//	@Ignore
 	// do not normally run this
 	public void testAJC() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
