@@ -1,5 +1,6 @@
 package org.xmlcml.graphics.pdf2svg.raw;
 
+import java.io.IOException;
 import java.io.InputStream;
 import java.util.HashMap;
 import java.util.HashSet;
@@ -11,9 +12,13 @@ import nu.xom.Element;
 import nu.xom.Elements;
 
 import org.apache.log4j.Logger;
+import org.apache.pdfbox.cos.COSArray;
+import org.apache.pdfbox.cos.COSDictionary;
+import org.apache.pdfbox.cos.COSName;
 import org.apache.pdfbox.encoding.StandardEncoding;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDFontDescriptor;
+import org.apache.pdfbox.pdmodel.font.PDFontFactory;
 import org.apache.pdfbox.pdmodel.font.PDTrueTypeFont;
 import org.apache.pdfbox.pdmodel.font.PDType0Font;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
@@ -93,7 +98,7 @@ public class AMIFontManager {
 			createMathematicalPiFourMap();
 			createCommPiMap();
 			createGreekWithMathPiMap();
-		};
+		}
 	}
 
 	private void createTimesNRExpertMTMap() {
@@ -234,7 +239,7 @@ public class AMIFontManager {
 			createTimesGreekSFMap();
 			createMTSYNMap();
 			createSymbolPSMap();
-		};
+		}
 	}
 
 	public Map<String, AMIFont> getAmiFontByFontNameMap() {
@@ -259,13 +264,54 @@ public class AMIFontManager {
 		}
 	}
 
+	private void logFontDict(int level, COSDictionary dict) {
+
+		String indent = "";
+		for (int i = 0; i < level; i++)
+			indent += " ";
+
+		LOG.debug(String.format("%s****************** level %d font dict:",
+				indent, level));
+
+		level++;
+		indent += "    ";
+
+		for (COSName key : dict.keySet())
+			LOG.debug(String.format("%s****************** %s = %s", indent,
+					key.getName(), dict.getDictionaryObject(key)));
+
+		COSArray array = (COSArray) dict
+				.getDictionaryObject(COSName.DESCENDANT_FONTS);
+		if (array != null) {
+			LOG.debug(String.format(
+					"%s****************** descendant fonts (%d):", indent,
+					array.size()));
+
+			logFontDict(level, (COSDictionary) array.getObject(0));
+		}
+	}
+
 	public AMIFont getAmiFontByFont(PDFont pdFont) {
 		ensureAMIFontByFontNameMap();
 		String fontName = null;
 		AMIFont amiFont = null;
 		PDFontDescriptor fd = pdFont.getFontDescriptor();
+		if (fd == null && pdFont instanceof PDType0Font) {
+			COSDictionary dict = (COSDictionary) pdFont.getCOSObject();
+			COSArray array = (COSArray) dict
+					.getDictionaryObject(COSName.DESCENDANT_FONTS);
+			PDFont descendantFont;
+			try {
+				descendantFont = PDFontFactory.createFont((COSDictionary) array
+						.getObject(0));
+				fd = descendantFont.getFontDescriptor();
+			} catch (IOException e) {
+				LOG.error("****************** Can't create descendant font!");
+			}
+		}
 		if (fd == null) {
 			LOG.error("****************** Null Font Descriptor : "+pdFont);
+			logFontDict(0, (COSDictionary) pdFont.getCOSObject());
 		} else {
 			fontName = fd.getFontName();
 			if (fontName == null) {

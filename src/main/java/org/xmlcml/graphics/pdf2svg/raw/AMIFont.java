@@ -154,16 +154,20 @@ and
 	}
 
 	public AMIFont(PDFont pdFont) {
+		this(pdFont, pdFont.getFontDescriptor());
+	}
+
+	public AMIFont(PDFont pdFont, PDFontDescriptor fd) {
 		this.baseFont = pdFont.getBaseFont();
 		this.type1Font = (pdFont instanceof PDType1Font) ? (PDType1Font) pdFont : null;
 		this.type0Font = (pdFont instanceof PDType0Font) ? (PDType0Font) pdFont : null;
 		this.trueTypeFont = (pdFont instanceof PDTrueTypeFont) ? (PDTrueTypeFont) pdFont : null;
-		processFont(pdFont);
+		processFont(pdFont, fd);
 	}
 
-	private void processFont(PDFont pdFont) {
+	private void processFont(PDFont pdFont, PDFontDescriptor fd) {
 		this.pdFont = pdFont;
-		fontDescriptor = pdFont.getFontDescriptor();
+		fontDescriptor = fd;
 		if (fontDescriptor != null) {
 			fontName = fontDescriptor.getFontName();
 			fontFamily = fontDescriptor.getFontFamily();
@@ -181,7 +185,7 @@ and
 			
 			processEncoding();
 			fontName = fontDescriptor.getFontName();
-			LOG.debug("name="+fontName+" fam="+fontFamily+" bold="+isBold +" it="+isItalic+" face="+finalSuffix+" sym="+isSymbol+ " enc="+encoding.getClass().getName());
+			LOG.debug("name="+fontName+" fam="+fontFamily+" bold="+isBold +" it="+isItalic+" face="+finalSuffix+" sym="+isSymbol+ " enc="+(encoding == null ? "null" : encoding.getClass().getName()));
 		} else {
 			LOG.warn("font had no descriptor: "+baseFont);
 			fontName = baseFont;

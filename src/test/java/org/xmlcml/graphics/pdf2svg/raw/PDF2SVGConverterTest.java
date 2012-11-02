@@ -20,7 +20,8 @@ public class PDF2SVGConverterTest {
 			page6File.delete();
 		}
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "target", "-pages", "1", "src/test/resources/page6.pdf");
+		converter.run("-outdir", "target", "-pages", "1",
+				"src/test/resources/page6.pdf");
 		// results have been written to target
 		Assert.assertTrue(page6File.exists());
 		Assert.assertEquals("Page count", 1, converter.getPageList().size());
@@ -38,69 +39,101 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-//	@Ignore
+	@Ignore
 	// do not normally run this
 	public void testAJC() {
+		for (int pageNum = 1; pageNum <= 131; pageNum++) {
+			File pageNFile = new File("target/xx-page" + pageNum + ".svg");
+			if (pageNFile.exists()) {
+				pageNFile.delete();
+			}
+		}
+
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("../pdfs/ajctest/xx.pdf");
+		converter.run("-outdir", "target", "-pages", "1-131",
+				"../pdfs/ajctest/xx.pdf");
+
+		for (int pageNum = 1; pageNum <= 131; pageNum++) {
+			File pageNFile = new File("target/xx-page" + pageNum + ".svg");
+			Assert.assertTrue(pageNFile.exists());
+		}
 	}
 
 	@Test
 	// @Ignore // do not normally run this
 	public void testBMC() {
+		for (int pageNum = 1; pageNum <= 14; pageNum++) {
+			File pageNFile = new File("target/312-page" + pageNum + ".svg");
+			if (pageNFile.exists()) {
+				pageNFile.delete();
+			}
+		}
+
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("src/test/resources/org/xmlcml/graphics/pdf/312.pdf");
+		converter.run("-outdir", "target", "-pages", "1-14",
+				"src/test/resources/org/xmlcml/graphics/pdf/312.pdf");
+
+		for (int pageNum = 1; pageNum <= 14; pageNum++) {
+			File pageNFile = new File("target/312-page" + pageNum + ".svg");
+			Assert.assertTrue(pageNFile.exists());
+		}
 	}
-	
+
 	@Test
-//	@Ignore // do not normally run this
+	@Ignore
+	// do not normally run this
 	public void testE() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("../pdfs/e/6048.pdf");
 	}
-	
+
 	@Test
-	// @Ignore // do not normally run this
+	@Ignore
+	// do not normally run this
 	public void testRSC() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("../pdfs/rsc/b306241d.pdf");
 	}
-	
+
 	@Test
-	// @Ignore // do not normally run this
+	@Ignore
+	// do not normally run this
 	public void testRSC1() {
 		// something wierd with this one?
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-//		converter.run("../pdfs/rsc/c2cp43347h.pdf");
+		// converter.run("../pdfs/rsc/c2cp43347h.pdf");
 	}
-	
+
 	@Test
-	// @Ignore // do not normally run this
+	@Ignore
+	// do not normally run this
 	public void testPsyc() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("../pdfs/psyc/Holcombe2012.pdf");
 	}
-	
+
 	@Test
-	// @Ignore // do not normally run this
+	@Ignore
+	// do not normally run this
 	public void testPsyc1() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("../pdfs/psyc/Liu2005.pdf");
 	}
-	
+
 	@Test
-	// @Ignore // do not normally run this
+	@Ignore
+	// do not normally run this
 	public void testSocDir() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("../pdfs/socdir/1-PB.pdf");
 	}
 
 	@Test
-	// @Ignore // do not normally run this
+	@Ignore
+	// do not normally run this
 	public void testACS() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("../pdfs/acs/nl072516n.pdf");
 	}
 
-	
 }
