@@ -56,7 +56,7 @@ public class PDF2SVGConverterTest {
 //	@Ignore // do not normally run this
 	public void testE() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("src/test/resources/e/6048.pdf");
+		converter.run("../pdfs/e/6048.pdf");
 	}
 	
 	@Test
@@ -64,6 +64,14 @@ public class PDF2SVGConverterTest {
 	public void testRSC() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("../pdfs/rsc/b306241d.pdf");
+	}
+	
+	@Test
+	// @Ignore // do not normally run this
+	public void testRSC1() {
+		// something wierd with this one?
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+//		converter.run("../pdfs/rsc/c2cp43347h.pdf");
 	}
 	
 	@Test
@@ -86,5 +94,13 @@ public class PDF2SVGConverterTest {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("../pdfs/socdir/1-PB.pdf");
 	}
+
+	@Test
+	// @Ignore // do not normally run this
+	public void testACS() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("../pdfs/acs/nl072516n.pdf");
+	}
+
 	
 }

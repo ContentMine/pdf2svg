@@ -15,6 +15,7 @@ import org.apache.pdfbox.encoding.StandardEncoding;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDFontDescriptor;
 import org.apache.pdfbox.pdmodel.font.PDTrueTypeFont;
+import org.apache.pdfbox.pdmodel.font.PDType0Font;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 import org.xmlcml.euclid.Util;
 public class AMIFontManager {
@@ -273,14 +274,11 @@ public class AMIFontManager {
 		}
 		amiFont = amiFontByFontNameMap.get(fontName);
 		if (amiFont == null) {
-			if (pdFont instanceof PDType1Font) {
-				amiFont = new AMIFont((PDType1Font) pdFont);
-				amiFontByFontNameMap.put(fontName, amiFont);
-			} else if (pdFont instanceof PDTrueTypeFont) {
-				amiFont = new AMIFont((PDTrueTypeFont) pdFont);
+			if (pdFont instanceof PDType1Font || pdFont instanceof PDTrueTypeFont || pdFont instanceof PDType0Font) {
+				amiFont = new AMIFont(pdFont);
 				amiFontByFontNameMap.put(fontName, amiFont);
 			} else {
-				throw new RuntimeException("Cannot process font: "+pdFont+" / "+pdFont.getSubType());
+				throw new RuntimeException("Cannot find font type: "+pdFont+" / "+pdFont.getSubType()+", ");
 			}
 		}
 		return amiFont;
@@ -329,7 +327,7 @@ public class AMIFontManager {
 		}
 		if (s == null) {
 			codePoint = symbol2UnicodeMap.get(symbol);
-			LOG.debug("Used symbol2UnicodeMap to translate: "+symbol+" => "+((codePoint == null) ? null : (char)(int)codePoint));
+			LOG.trace("Used symbol2UnicodeMap to translate: "+symbol+" => "+((codePoint == null) ? null : (char)(int)codePoint));
 		}
 		return codePoint;
 	}

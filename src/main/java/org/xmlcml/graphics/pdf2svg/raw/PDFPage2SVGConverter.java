@@ -351,8 +351,11 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		double scale = Math.sqrt(scalex * scaley);
 		Transform2 t2 = new Transform2(at);
 		
+		int angleDeg =0;
 		Angle angle = t2.getAngleOfRotation();
-		int angleDeg = Math.round((float)angle.getDegrees());
+		if (angle != null) {
+			angleDeg = Math.round((float)angle.getDegrees());
+		}
 		if (angleDeg != 0) {
 			LOG.trace("Transform "+t2+" "+svgText.getText()+" "+at+" "+getRealArray(fontMatrix));
 			// do this properly later

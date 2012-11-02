@@ -12,6 +12,7 @@ import org.apache.pdfbox.encoding.WinAnsiEncoding;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDFontDescriptor;
 import org.apache.pdfbox.pdmodel.font.PDTrueTypeFont;
+import org.apache.pdfbox.pdmodel.font.PDType0Font;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
 /** wrapper for PDType1Font. is meant to manage the badFontnames, other
@@ -54,6 +55,7 @@ public class AMIFont {
 	private String fontName;
 	
 	private PDFont pdFont;
+	private PDType0Font type0Font;
 	private PDType1Font type1Font;
 	private PDTrueTypeFont trueTypeFont;
 	private PDFontDescriptor fontDescriptor;
@@ -69,6 +71,9 @@ public class AMIFont {
 	private MacRomanEncoding macRomanEncoding;
 	private StandardEncoding standardEncoding;
 	private WinAnsiEncoding winAnsiEncoding;
+
+	private String baseFont;
+
 
 
 	
@@ -149,7 +154,9 @@ and
 	}
 
 	public AMIFont(PDFont pdFont) {
+		this.baseFont = pdFont.getBaseFont();
 		this.type1Font = (pdFont instanceof PDType1Font) ? (PDType1Font) pdFont : null;
+		this.type0Font = (pdFont instanceof PDType0Font) ? (PDType0Font) pdFont : null;
 		this.trueTypeFont = (pdFont instanceof PDTrueTypeFont) ? (PDTrueTypeFont) pdFont : null;
 		processFont(pdFont);
 	}
@@ -176,7 +183,8 @@ and
 			fontName = fontDescriptor.getFontName();
 			LOG.debug("name="+fontName+" fam="+fontFamily+" bold="+isBold +" it="+isItalic+" face="+finalSuffix+" sym="+isSymbol+ " enc="+encoding.getClass().getName());
 		} else {
-			throw new RuntimeException("font had no descriptor: ");
+			LOG.warn("font had no descriptor: "+baseFont);
+			fontName = baseFont;
 		}
 	}
 
@@ -287,7 +295,7 @@ and
 	}
 
 	public String getFontWeight() {
-		return (isBold) ? AMIFontManager.BOLD : null;
+		return (isBold != null && isBold) ? AMIFontManager.BOLD : null;
 	}
 
 	public String getFontName() {
@@ -299,7 +307,7 @@ and
 	}
 	
 	public boolean isSymbol() {
-		return isSymbol;
+		return (isSymbol == null) ? false : isSymbol;
 	}
 	
 }
