@@ -1,0 +1,123 @@
+<codePoints>
+	<codePoint decimal="913" unicode="U+0391" name="GREEK CAPITAL LETTER ALPHA"/>
+	<codePoint decimal="914" unicode="U+0392" name="GREEK CAPITAL LETTER BETA"/>
+	<codePoint decimal="915" unicode="U+0393" name="GREEK CAPITAL LETTER GAMMA"/>
+	<codePoint decimal="916" unicode="U+0394" name="GREEK CAPITAL LETTER DELTA"/>
+	<codePoint decimal="917" unicode="U+0395" name="GREEK CAPITAL LETTER EPSILON"/>
+	<codePoint decimal="918" unicode="U+0396" name="GREEK CAPITAL LETTER ZETA"/>
+	<codePoint decimal="919" unicode="U+0397" name="GREEK CAPITAL LETTER ETA"/>
+	<codePoint decimal="920" unicode="U+0398" name="GREEK CAPITAL LETTER THETA"/>
+	<codePoint decimal="921" unicode="U+0399" name="GREEK CAPITAL LETTER IOTA"/>
+	<codePoint decimal="922" unicode="U+039A" name="GREEK CAPITAL LETTER KAPPA"/>
+	<codePoint decimal="923" unicode="U+039B" name="GREEK CAPITAL LETTER LAMBDA"/>
+	<codePoint decimal="924" unicode="U+039C" name="GREEK CAPITAL LETTER MU"/>
+	<codePoint decimal="925" unicode="U+039D" name="GREEK CAPITAL LETTER NU"/>
+	<codePoint decimal="926" unicode="U+039E" name="GREEK CAPITAL LETTER XI"/>
+	<codePoint decimal="927" unicode="U+039F" name="GREEK CAPITAL LETTER OMICRON"/>
+	<codePoint decimal="928" unicode="U+03A0" name="GREEK CAPITAL LETTER PI"/>
+	<codePoint decimal="929" unicode="U+03A1" name="GREEK CAPITAL LETTER RHO"/>
+	<codePoint decimal="931" unicode="U+03A3" name="GREEK CAPITAL LETTER SIGMA"/>
+	<codePoint decimal="932" unicode="U+03A4" name="GREEK CAPITAL LETTER TAU"/>
+	<codePoint decimal="933" unicode="U+03A5" name="GREEK CAPITAL LETTER UPSILON"/>
+	<codePoint decimal="934" unicode="U+03A6" name="GREEK CAPITAL LETTER PHI" note="" />
+	<codePoint decimal="935" unicode="U+03A7" name="GREEK CAPITAL LETTER CHI" note="" />
+	<codePoint decimal="936" unicode="U+03A8" name="GREEK CAPITAL LETTER PSI" note="" />
+	<codePoint decimal="937" unicode="U+03A9" name="GREEK CAPITAL LETTER OMEGA" note="" />
+	
+	<codePoint decimal="945" unicode="U+03B1" name="GREEK SMALL LETTER ALPHA"/>
+	<codePoint decimal="946" unicode="U+03B2" name="GREEK SMALL LETTER BETA"/>
+	<codePoint decimal="947" unicode="U+03B3" name="GREEK SMALL LETTER GAMMA"/>
+	<codePoint decimal="948" unicode="U+03B4" name="GREEK SMALL LETTER DELTA"/>
+	<codePoint decimal="949" unicode="U+03B5" name="GREEK SMALL LETTER EPSILON"/>
+	<codePoint decimal="950" unicode="U+03B6" name="GREEK SMALL LETTER ZETA"/>
+	<codePoint decimal="951" unicode="U+03B7" name="GREEK SMALL LETTER ETA"/>
+	<codePoint decimal="952" unicode="U+03B8" name="GREEK SMALL LETTER THETA"/>
+	<codePoint decimal="953" unicode="U+03B9" name="GREEK SMALL LETTER IOTA"/>
+	<codePoint decimal="954" unicode="U+03BA" name="GREEK SMALL LETTER KAPPA"/>
+	<codePoint decimal="955" unicode="U+03BB" name="GREEK SMALL LETTER LAMBDA"/>
+	<codePoint decimal="956" unicode="U+03BC" name="GREEK SMALL LETTER MU"/>
+	<codePoint decimal="957" unicode="U+03BD" name="GREEK SMALL LETTER NU"/>
+	<codePoint decimal="958" unicode="U+03BE" name="GREEK SMALL LETTER XI"/>
+	<codePoint decimal="959" unicode="U+03BF" name="GREEK SMALL LETTER OMICRON"/>
+	<codePoint decimal="960" unicode="U+03C0" name="GREEK SMALL LETTER PI"/>
+	<codePoint decimal="961" unicode="U+03C1" name="GREEK SMALL LETTER RHO"/>
+	<codePoint decimal="962" unicode="U+03C2" name="GREEK SMALL LETTER FINAL SIGMA" note="probably uncommon"/>
+	<codePoint decimal="963" unicode="U+03C3" name="GREEK SMALL LETTER SIGMA"/>
+	<codePoint decimal="964" unicode="U+03C4" name="GREEK SMALL LETTER TAU"/>
+	<codePoint decimal="965" unicode="U+03C5" name="GREEK SMALL LETTER UPSILON"/>
+	<codePoint decimal="966" unicode="U+03C6" name="GREEK SMALL LETTER PHI" note="" />
+	<codePoint decimal="967" unicode="U+03C7" name="GREEK SMALL LETTER CHI" note="" />
+	<codePoint decimal="968" unicode="U+03C8" name="GREEK SMALL LETTER PSI" note="" />
+	<codePoint decimal="969" unicode="U+03C9" name="GREEK SMALL LETTER OMEGA" note="" />
+	
+	<codePoint decimal="8211" unicode="U+2013" replaceByUnicode=""
+		name="EN DASH" note="" />
+	<codePoint decimal="8212" unicode="U+2014" replaceByUnicode=""
+		name="EM DASH" note="" />
+	<codePoint decimal="8216" unicode="U+2018" replaceByUnicode=""
+		name="LEFT SINGLE QUOTATION MARK" note="" />
+	<codePoint decimal="8217" unicode="U+2019" replaceByUnicode=""
+		name="RIGHT SINGLE QUOTATION MARK" note="" />
+	<codePoint decimal="8226" unicode="U+2022" replaceByUnicode=""
+		name="BULLET" note="" />
+	<codePoint decimal="8242" unicode="U+2032" replaceByUnicode=""
+		name="PRIME" note="" />
+	<codePoint decimal="8710" unicode="U+2206" replaceByUnicode=""
+		name="INCREMENT" note="" />
+	<codePoint decimal="8721" unicode="U+2211" replaceByUnicode=""
+		name="N-ARY SUMMATION" note="" />
+	<codePoint decimal="8722" unicode="U+2212" replaceByUnicode=""
+		name="MINUS SIGN" note="" />
+	<codePoint decimal="8727" unicode="U+2217" replaceByUnicode=""
+		name="ASTERISK OPERATOR" note="" />
+	<codePoint decimal="8764" unicode="U+223C" name="TILDE OPERATOR"
+		note="exact synonym" replaceByUnicode="U+007E" replaceName="TILDE" />
+	<codePoint decimal="8776" unicode="U+2248" name="ALMOST EQUAL TO"
+		note="" />
+	<codePoint decimal="8804" unicode="U+2264" name="LESS-THAN OR EQUAL TO"
+		note="probably worth keeping and using instead of &lt;=" />
+	<codePoint decimal="8805" unicode="U+2265" name="GREATER-THAN OR EQUAL TO"
+		note="probably worth keeping and using instead of >=" />
+	<codePoint decimal="9632" unicode="U+25A0" name="BLACK SQUARE"
+		note="probably for lists and graph symbols" />
+	<codePoint decimal="9702" unicode="U+25E6" name="WHITE BULLET"
+		note="probably for lists and graph symbols" confusions="ring operator U+2218 inverse bullet U+25D8" />
+	<codePoint decimal="12296" unicode="U+3008" name="LEFT ANGLE BRACKET"
+		note="quasi-synonym" replaceByUnicode="U+003C" replaceName="LESS-THAN SIGN" />
+	<codePoint decimal="12297" unicode="U+3009" name="RIGHT ANGLE BRACKET"
+		note="quasi-synonym" replaceByUnicode="U+003D" replaceName="GREATER-THAN SIGN" />
+		
+	<!-- to be validated and integrated -->
+	<!-- 
+	<codePoint decimal="305" unicode="U+131" name="LATIN SMALL LETTER DOTLESS I" note="possibly a mistake and indication of non-univcode"/>
+	-->
+	
+	<codePoint decimal="710" unicode="U+02C6" name="MODIFIER LETTER CIRCUMFLEX ACCENT" note=""/>
+	<codePoint decimal="730" unicode="U+02DA" name="RING ABOVE"/>
+	<codePoint decimal="732" unicode="U+02DC" name="SMALL TILDE"/>
+	
+	
+	<codePoint decimal="8220" unicode="U+201C" />
+	<codePoint decimal="8221" unicode="U+201D" />
+    <codePoint decimal="8224" unicode="U+2020" />
+	<codePoint decimal="8364" unicode="U+20AC" />
+	<codePoint decimal="8677" unicode="U+21E5" />
+
+	<codePoint decimal="9642" unicode="U+25AA" />
+	<codePoint decimal="9656" unicode="U+25B8" />
+	
+	<codePoint decimal="16090" unicode="U+3EDA" />
+	<codePoint decimal="16092" unicode="U+3EDC" />
+	<codePoint decimal="16093" unicode="U+3EDD" />
+	<codePoint decimal="16097" unicode="U+3EE1" />
+	
+	<codePoint decimal="63337" unicode="U+F769" />
+	<codePoint decimal="64256" unicode="U+FB00" />
+	<codePoint decimal="64257" unicode="U+FB01" />
+	<codePoint decimal="64258" unicode="U+FB02" />
+	<codePoint decimal="64259" unicode="U+FB03" />
+	
+	
+	
+</codePoints>
+		

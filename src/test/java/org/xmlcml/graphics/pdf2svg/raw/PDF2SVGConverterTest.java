@@ -60,7 +60,7 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	// @Ignore // do not normally run this
+	@Ignore // do not normally run this
 	public void testBMC() {
 		for (int pageNum = 1; pageNum <= 14; pageNum++) {
 			File pageNFile = new File("target/312-page" + pageNum + ".svg");
@@ -99,9 +99,9 @@ public class PDF2SVGConverterTest {
 	@Ignore
 	// do not normally run this
 	public void testRSC1() {
-		// something wierd with this one?
+		// this has very bad performance // no idea yet why
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-		// converter.run("../pdfs/rsc/c2cp43347h.pdf");
+		converter.run("../pdfs/rsc/c2cp43347h.pdf");
 	}
 
 	@Test
@@ -134,6 +134,55 @@ public class PDF2SVGConverterTest {
 	public void testACS() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("../pdfs/acs/nl072516n.pdf");
+	}
+
+	@Test
+	@Ignore // do not normally run this
+	public void testNPG() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("../pdfs/npg/srep00778.pdf");
+	}
+
+	@Test
+	@Ignore // do not normally run this
+	public void testWiley() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("../pdfs/wiley/1032.pdf");
+	}
+
+	@Test
+	@Ignore // do not normally run this
+	public void testBMJ() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("../pdfs/bmj/e001553.pdf");
+	}
+
+	@Test
+	@Ignore // do not normally run this
+	public void testElife() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("src/test/resources/elife/00013.pdf");
+	}
+
+	@Test
+	@Ignore // do not normally run this
+	public void testJB() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("../pdfs/jb/100-14.pdf");
+	}
+
+	@Test
+	@Ignore // do not normally run this
+	public void testPlosOne() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("src/test/resources/plosone/0049149.pdf");
+	}
+
+	@Test
+	@Ignore // do not normally run this
+	public void testElsevier2() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("../pdfs/e2/1-s2.0-S2212877812000129-main.pdf");
 	}
 
 }

@@ -51,31 +51,24 @@ public class AMIFont {
 	private Boolean isBold = null;
 	private Boolean isItalic = null;
 	private Boolean isSymbol = null;
-	private String fontFamily;
+	private String fontFamilyName;
 	private String fontName;
 	
 	private PDFont pdFont;
-	private PDType0Font type0Font;
-	private PDType1Font type1Font;
-	private PDTrueTypeFont trueTypeFont;
 	private PDFontDescriptor fontDescriptor;
+	private String fontType;
 	
 	private int currentIndex;
 	
-	static Pattern leaderPattern = Pattern.compile("[A-Z]{6}\\+.*");
+	static Pattern LEADER_PATTERN = Pattern.compile("[A-Z]{6}\\+.*");
 	private boolean hasPrefix;
 	private String finalSuffix;
 
 	private Encoding encoding;
-	private DictionaryEncoding dictionaryEncoding;
-	private MacRomanEncoding macRomanEncoding;
-	private StandardEncoding standardEncoding;
-	private WinAnsiEncoding winAnsiEncoding;
+	private String fontEncoding;
 
 	private String baseFont;
-
-
-
+	private String fontFamilySave;
 	
 	static {
 		String[] standard14Names = PDType1Font.getStandard14Names();
@@ -125,19 +118,97 @@ and
 	 */
 	private AMIFont(String fontName) {
 		this();
-		fontFamily = null;
-		this.fontName = fontName;
-		Matcher matcher = leaderPattern.matcher(fontName);
-		hasPrefix = false;
-		if (matcher.matches()) {
-			fontName = fontName.substring(7);
-			hasPrefix = true;
-		}
+		fontFamilyName = null;
+		fontName = noteAndRemovePrefix(fontName);
 		processStandardFamilies();
 		processIsBoldInName();
 		processIsItalicInName();
 		processFinalSuffix();
 		LOG.debug(fontName);
+	}
+
+	/** create font from family and key attributes
+	 * currently used when compiling an external table
+	 */
+	public AMIFont(String fontFamilyName, String encoding, String type, boolean isSymbol) {
+		this();
+		this.fontFamilyName = fontFamilyName;
+		this.fontEncoding = encoding;
+		this.fontType = type;
+		this.isSymbol = isSymbol;
+	}
+
+	public AMIFont(PDFont pdFont) {
+		this(pdFont, pdFont.getFontDescriptor());
+	}
+
+	public AMIFont(PDFont pdFont, PDFontDescriptor fd) {
+		this.baseFont = pdFont.getBaseFont();
+		this.fontType = pdFont.getClass().getSimpleName();
+		encoding = pdFont.getFontEncoding();
+		fontEncoding = (encoding == null) ? null : encoding.getClass().getSimpleName();
+		processFont(pdFont, fd);
+	}
+
+	/** do not call without fontName or PDType1Font
+	 * 
+	 */
+	private AMIFont() {
+	}
+
+	public static AMIFont createAMIFontFromName(String fontName) {
+		AMIFont amiFont = new AMIFont(fontName);
+		return (amiFont.isOK()) ? amiFont : null;
+	}
+	
+	private void processFont(PDFont pdFont, PDFontDescriptor fd) {
+		this.pdFont = pdFont;
+		fontDescriptor = fd;
+		fontFamilyName = null;
+		if (fontDescriptor != null) {
+			fontName = fontDescriptor.getFontName();
+			fontFamilySave = fontDescriptor.getFontFamily();
+			
+			stripFontNameComponents();
+			if (fontFamilyName == null) {
+				fontFamilyName = fontName;
+			}
+			LOG.trace("FFFFF "+fontFamilyName);
+			// take fontDescriptor over name extraction
+			isBold = fontDescriptor.isForceBold() ? true : isBold;
+			isItalic = fontDescriptor.isItalic() ? true : isItalic;
+			isSymbol = fontDescriptor.isSymbolic();
+			
+			fontName = fontDescriptor.getFontName();
+			LOG.debug("name="+fontName+" fam="+fontFamilyName+" type="+pdFont.getSubType()+" bold="+isBold +" it="+isItalic+" face="+finalSuffix+" sym="+isSymbol+ " enc="+(encoding == null ? "null" : encoding.getClass().getSimpleName()));
+		} else {
+			LOG.warn("font had no descriptor: "+baseFont+" / "+fontFamilyName);
+			fontName = baseFont;
+			if (fontName.contains("Arial") ||
+					fontName.contains("Unicode")) {
+				LOG.warn("Encoding forcibly set to "+WinAnsiEncoding.class);
+				encoding = new WinAnsiEncoding();
+			}
+		}
+	}
+
+	private void stripFontNameComponents() {
+		fontName = noteAndRemovePrefix(fontName);
+		processStandardFamilies();
+		processIsBoldInName();
+		processIsItalicInName();
+		processFinalSuffix();
+	}
+
+	private String noteAndRemovePrefix(String fontName) {
+		this.fontName = fontName;
+		Matcher matcher = LEADER_PATTERN.matcher(fontName);
+		hasPrefix = false;
+		if (matcher.matches()) {
+			fontName = fontName.substring(7);
+			hasPrefix = true;
+		}
+		return fontName;
 	}
 
 	private void processFinalSuffix() {
@@ -153,73 +224,15 @@ and
 		}
 	}
 
-	public AMIFont(PDFont pdFont) {
-		this(pdFont, pdFont.getFontDescriptor());
-	}
-
-	public AMIFont(PDFont pdFont, PDFontDescriptor fd) {
-		this.baseFont = pdFont.getBaseFont();
-		this.type1Font = (pdFont instanceof PDType1Font) ? (PDType1Font) pdFont : null;
-		this.type0Font = (pdFont instanceof PDType0Font) ? (PDType0Font) pdFont : null;
-		this.trueTypeFont = (pdFont instanceof PDTrueTypeFont) ? (PDTrueTypeFont) pdFont : null;
-		processFont(pdFont, fd);
-	}
-
-	private void processFont(PDFont pdFont, PDFontDescriptor fd) {
-		this.pdFont = pdFont;
-		fontDescriptor = fd;
-		if (fontDescriptor != null) {
-			fontName = fontDescriptor.getFontName();
-			fontFamily = fontDescriptor.getFontFamily();
-			if (fontFamily == null) {
-				fontFamily = fontName;
-			}
-			processStandardFamilies();
-			processIsBoldInName();
-			processIsItalicInName();
-			processFinalSuffix();
-			// take fontDescriptor over name extraction
-			isBold = fontDescriptor.isForceBold() ? true : isBold;
-			isItalic = fontDescriptor.isItalic() ? true : isItalic;
-			isSymbol = fontDescriptor.isSymbolic();
-			
-			processEncoding();
-			fontName = fontDescriptor.getFontName();
-			LOG.debug("name="+fontName+" fam="+fontFamily+" bold="+isBold +" it="+isItalic+" face="+finalSuffix+" sym="+isSymbol+ " enc="+(encoding == null ? "null" : encoding.getClass().getName()));
-		} else {
-			LOG.warn("font had no descriptor: "+baseFont);
-			fontName = baseFont;
-		}
-	}
-
-	private void processEncoding() {
-		encoding = pdFont.getFontEncoding();
-		dictionaryEncoding = (encoding instanceof DictionaryEncoding) ? (DictionaryEncoding) encoding : null;
-		macRomanEncoding   = (encoding instanceof MacRomanEncoding)   ? (MacRomanEncoding)   encoding : null;
-		standardEncoding   = (encoding instanceof StandardEncoding)   ? (StandardEncoding)   encoding : null;
-		winAnsiEncoding    = (encoding instanceof WinAnsiEncoding)    ? (WinAnsiEncoding)    encoding : null;
-	}
-	
-	/** do not call without fontName or PDType1Font
-	 * 
-	 */
-	private AMIFont() {
-	}
-
-	public static AMIFont createAMIFontFromName(String fontName) {
-		AMIFont amiFont = new AMIFont(fontName);
-		return (amiFont.isOK()) ? amiFont : null;
-	}
-	
 	private void processStandardFamilies() {
 		processAsFamily("TimesNewRoman");
-		if (fontFamily != null) return;
+		if (fontFamilyName != null) return;
 		processAsFamily("Courier");
-		if (fontFamily != null) return;
+		if (fontFamilyName != null) return;
 		processAsFamily("Helvetica");
-		if (fontFamily != null) return;
+		if (fontFamilyName != null) return;
 		processAsFamily("Symbol");
-		if (fontFamily != null) return;
+		if (fontFamilyName != null) return;
 		processAsFamily("ZapfDingbats");
 	}
 	
@@ -244,7 +257,7 @@ and
 		isBold != null &&
 		isItalic != null &&
 		isSymbol != null &&
-		fontFamily != null &&
+		fontFamilyName != null &&
 		fontName != null;
 	}
 
@@ -253,7 +266,7 @@ and
 		currentIndex = fontNameLower.indexOf(standardFamilyName.toLowerCase());
 		if (currentIndex != -1) {
 			removeFromFontName(standardFamilyName, currentIndex);
-			fontFamily = standardFamilyName;
+			fontFamilyName = standardFamilyName;
 		}
 	}
 
@@ -294,8 +307,12 @@ and
 		return encoding;
 	}
 
+	public String getFontEncoding() {
+		return fontEncoding;
+	}
+
 	public DictionaryEncoding getDictionaryEncoding() {
-		return dictionaryEncoding;
+		return (encoding instanceof DictionaryEncoding) ? (DictionaryEncoding) encoding : null;
 	}
 
 	public String getFontWeight() {
@@ -306,12 +323,25 @@ and
 		return fontName;
 	}
 	
-	public String getFontFamily() {
-		return fontFamily;
+	public String getFontFamilyName() {
+		return fontFamilyName;
+	}
+	
+	public String getFontType() {
+		return fontType;
 	}
 	
 	public boolean isSymbol() {
 		return (isSymbol == null) ? false : isSymbol;
+	}
+	
+	public String getBaseFont() {
+		return baseFont;
+	}
+
+	public FontFamily getFontFamily() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 	
 }

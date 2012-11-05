@@ -4,8 +4,10 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.print.attribute.standard.PageRanges;
@@ -43,10 +45,12 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 	private PDDocument document;
 	private List<SVGSVG> svgPageList;
-	private Set<Integer> highCodePointSet;
 	private boolean fixFont = true;
 	
 	private AMIFontManager amiFontManager;
+	private Map<String, AMIFont> amiFontMap;
+	CodePointSet knownCodePointSet;
+	CodePointSet newCodePointSet;
 
 	private static void usage() {
 		System.err
@@ -214,23 +218,28 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	}
 
 	private void reportHighCodePoints() {
-		ensureHighCodePointSet();
-		LOG.debug("High CodePoints: " + highCodePointSet.size());
-		for (Integer highCodePoint : highCodePointSet) {
-			LOG.debug("CodePoint: " + highCodePoint);
+		ensureCodePointSets();
+		LOG.debug("New High CodePoints: " + newCodePointSet.size());
+		LOG.debug(newCodePointSet.createElementWithSortedIntegers().toXML());
+	}
+
+	void ensureCodePointSets() {
+		if (newCodePointSet == null) {
+			newCodePointSet = new CodePointSet();
+		}
+		if (knownCodePointSet == null) {
+			knownCodePointSet = CodePointSet.readCodePointSet(CodePointSet.KNOWN_HIGH_CODE_POINT_SET_XML); 
 		}
 	}
 
-	private void ensureHighCodePointSet() {
-		if (highCodePointSet == null) {
-			highCodePointSet = new HashSet<Integer>();
-		}
+	public CodePointSet getKnownCodePointSet() {
+		ensureCodePointSets();
+		return knownCodePointSet;
 	}
 
-	public Set<Integer> getHighCodePointSet() {
-		ensureHighCodePointSet();
-		return highCodePointSet;
-
+	public CodePointSet getNewCodePointSet() {
+		ensureCodePointSets();
+		return newCodePointSet;
 	}
 
 	public void setFixFont(boolean fixFont) {
@@ -249,7 +258,15 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private void ensureAmiFontManager() {
 		if (amiFontManager == null) {
 			amiFontManager = new AMIFontManager();
+			amiFontMap = AMIFontManager.readAmiFonts();
+			for (String fontName : amiFontMap.keySet()) {
+				AMIFont font = amiFontMap.get(fontName);
+			}
 		}
 	}
 
+	Map<String, AMIFont> getAMIFontMap() {
+		ensureAmiFontManager();
+		return amiFontMap;
+	}
 }

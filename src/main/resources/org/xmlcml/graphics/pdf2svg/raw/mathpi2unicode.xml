@@ -1,0 +1,27 @@
+<codePoints encoding="MathematicalPI">
+	<codePoint charname="H9251" unicode="U+03B1" unicodeName="GREEK LOWERCASE LETTER ALPHA"/>
+	<codePoint charname="H9252" unicode="U+03B2" unicodeName="GREEK LOWERCASE LETTER BETA"/>
+	<codePoint charname="H9253" unicode="U+03B3" unicodeName="GREEK SMALL LETTER GAMMA"/>
+	<codePoint charname="H9254" unicode="U+03B4" unicodeName="GREEK SMALL LETTER DELTA"/>
+	<codePoint charname="H9255" unicode="U+03B5" unicodeName="GREEK SMALL LETTER EPSILON"/>
+	<codePoint charname="H9256" unicode="U+03B6" unicodeName="GREEK SMALL LETTER ZETA"/>
+	<codePoint charname="H9257" unicode="U+03B7" unicodeName="GREEK SMALL LETTER ETA"/>
+	<codePoint charname="H9258" unicode="U+03B8" unicodeName="GREEK SMALL LETTER THETA"/>
+	<codePoint charname="H9259" unicode="U+03B9" unicodeName="GREEK SMALL LETTER IOTA"/>
+	<codePoint charname="H9260" unicode="U+03BA" unicodeName="GREEK SMALL LETTER KAPPA"/>
+	<codePoint charname="H9261" unicode="U+03BB" unicodeName="GREEK SMALL LETTER LAMBDA"/>
+	<codePoint charname="H9262" unicode="U+03BB" unicodeName="GREEK LOWERCASE LETTER MU"/>
+	
+	<codePoint charname="H11001" unicode="U+002B" codepoint="43" unicodeName="PLUS"/>
+	<codePoint charname="H11002" unicode="U+002D" codepoint="45" unicodeName="MINUS"/>
+	<codePoint charname="H11003" unicode="U+00D7" codepoint="215" unicodeName="MULTIPLICATION SIGN"/> 
+	<codePoint charname="H11005" unicode="U+003D" codepoint="61" unicodeName="EQUALS"/> 
+	<codePoint charname="H11011" unicode="U+007E" codepoint="126" unicodeName="TILDE"/> 
+	<codePoint charname="H11021" unicode="U+003C" codepoint="60" unicodeName="LESS" htmlName="lt"/> 
+	<codePoint charname="H11022" unicode="U+003E" codepoint="62" unicodeName="" htmlName="gt"/> 
+	<codePoint charname="H11032" unicode="U+0027" codepoint="39" unicodeName="APOSTROPHE" htmlName="apos"/> 
+	<codePoint charname="H11034" unicode="U+00B0" codepoint="176" unicodeName="DEGREE SIGN" htmlName="deg"/> 
+	
+	<codePoint charname="H11554" unicode="U+00B7" codepoint="183" unicodeName="MIDDLE DOT"/> 
+</chars>
+		

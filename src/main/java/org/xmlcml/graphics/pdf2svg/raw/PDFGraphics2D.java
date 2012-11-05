@@ -28,7 +28,7 @@ import java.util.Map;
 
 /** a graphics2D for PDFBox applications to write to
  * traps all Java2D graphics calls
- * mainly diagnostic - if psf2svg is comprehesive, these methods should not be
+ * mainly diagnostic - if psf2svg is comprehensive, these methods should not be
  * required
  */
 public class PDFGraphics2D extends Graphics2D {
