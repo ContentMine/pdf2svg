@@ -1,0 +1,8 @@
+<chars name="ligatures">
+	<codePoint decimal="64256" unicode="U+FB00" name="LATIN SMALL LIGATURE FF" replaceByUnicode="U+0066 U+0066"/>
+	<codePoint decimal="64257" unicode="U+FB01" name="LATIN SMALL LIGATURE FI" replaceByUnicode="U+0066 U+0069"/>
+	<codePoint decimal="64258" unicode="U+FB02" name="LATIN SMALL LIGATURE FL" replaceByUnicode="U+0066 U+006C"/>
+	<codePoint decimal="64259" unicode="U+FB03" name="LATIN SMALL LIGATURE FFI" replaceByUnicode="U+0066 U+0066 U+0069"/>
+	<codePoint decimal="64260" unicode="U+FB04" name="LATIN SMALL LIGATURE FFL" replaceByUnicode="U+0066 U+0066 U+006C"/>
+</chars>
+		

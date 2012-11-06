@@ -119,6 +119,12 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		}
 
 		reportHighCodePoints();
+		reportNewFontFamilyNames();
+	}
+
+	private void reportNewFontFamilyNames() {
+		FontFamilySet newFontFamilySet = amiFontManager.getNewFontFamilySet();
+		LOG.debug("new fontFamilyNames: "+newFontFamilySet.createElement().toXML());
 	}
 
 	private void ensureSVGPageList() {

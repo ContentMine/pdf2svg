@@ -27,26 +27,33 @@ public class AMIFont {
 
 	private final static Logger LOG = Logger.getLogger(AMIFont.class);
 	
-	// order may matter
+	// order may matter - longest/unique strings first
 	private static final String[] BOLD_SUFFIXES = new String[]{
+		"-SemiBold",
+		"SemiBold",
 		"-Bold", 
 		".Bold", 
 		".B", 
-		"Bold"
+		"-B", 
+		"Bold",
 		};
 	private static final String[] ITALIC_SUFFIXES = new String[]{
 		"-Italic", 
 		".Italic", 
 		".I", 
+		"-I", 
 		"Italic",
 		"-Oblique", 
 		".Oblique", 
-//		".I", // unlikely
 		"Oblique",
+		"-Inclined", 
+		".Inclined", 
 		};
 	
-	private static final String MONOTYPE_SUFFIX = "MT";
-	private static final String POSTSCRIPT_SUFFIX = "PS";
+	public static final String MONOTYPE_SUFFIX = "MT";
+	public static final String POSTSCRIPT_SUFFIX = "PS";
+	public static final String ENCODING = "Encoding";
+	static Pattern LEADER_PATTERN = Pattern.compile("[A-Z]{6}\\+.*");
 	
 	private Boolean isBold = null;
 	private Boolean isItalic = null;
@@ -60,7 +67,7 @@ public class AMIFont {
 	
 	private int currentIndex;
 	
-	static Pattern LEADER_PATTERN = Pattern.compile("[A-Z]{6}\\+.*");
+	
 	private boolean hasPrefix;
 	private String finalSuffix;
 
@@ -109,6 +116,8 @@ and
         addAdobeFontMetric( metrics, "ZapfDingbats" );
         return metrics;
     }
+    
+    
         
 	 */
 	
@@ -154,6 +163,7 @@ and
 	 * 
 	 */
 	private AMIFont() {
+		encoding = null;
 	}
 
 	public static AMIFont createAMIFontFromName(String fontName) {
@@ -176,8 +186,17 @@ and
 			LOG.trace("FFFFF "+fontFamilyName);
 			// take fontDescriptor over name extraction
 			isBold = fontDescriptor.isForceBold() ? true : isBold;
+			if (isBold) {
+				LOG.debug("bold from Font Descriptor");
+			}
 			isItalic = fontDescriptor.isItalic() ? true : isItalic;
+			if (isItalic) {
+				LOG.debug("italic from Font Descriptor");
+			}
 			isSymbol = fontDescriptor.isSymbolic();
+			if (isSymbol) {
+				LOG.debug("symbol from Font Descriptor");
+			}
 			
 			fontName = fontDescriptor.getFontName();
 			LOG.debug("name="+fontName+" fam="+fontFamilyName+" type="+pdFont.getSubType()+" bold="+isBold +" it="+isItalic+" face="+finalSuffix+" sym="+isSymbol+ " enc="+(encoding == null ? "null" : encoding.getClass().getSimpleName()));
@@ -186,7 +205,7 @@ and
 			fontName = baseFont;
 			if (fontName.contains("Arial") ||
 					fontName.contains("Unicode")) {
-				LOG.warn("Encoding forcibly set to "+WinAnsiEncoding.class);
+				LOG.warn("Encoding in ("+fontName+") forcibly set to "+WinAnsiEncoding.class);
 				encoding = new WinAnsiEncoding();
 			}
 		}
@@ -238,18 +257,22 @@ and
 	
 	private void processIsBoldInName() {
 		// syntactic variants 
+		boolean isBoldInName = false;
 		for (String bString : BOLD_SUFFIXES) {
-			isBold = isIncluded(bString);
-			if (isBold) break;
+			isBoldInName = isIncluded(bString);
+			if (isBoldInName) break;
 		}
+		isBold = (isBold != null) ? isBold : isBoldInName;
 	}
 	
 	private void processIsItalicInName() {
 		// syntactic variants 
+		boolean isItalicInName = false;
 		for (String iString : ITALIC_SUFFIXES) {
-			isItalic = isIncluded(iString);
-			if (isItalic) break;
+			isItalicInName = isIncluded(iString);
+			if (isItalicInName) break;
 		}
+		isItalic = (isItalic != null) ? isItalic : isItalicInName;
 	}
 	
 	private boolean isOK() {
@@ -342,6 +365,14 @@ and
 	public FontFamily getFontFamily() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	public Boolean isItalic() {
+		return isItalic;
+	}
+	
+	public Boolean isBold() {
+		return isBold;
 	}
 	
 }

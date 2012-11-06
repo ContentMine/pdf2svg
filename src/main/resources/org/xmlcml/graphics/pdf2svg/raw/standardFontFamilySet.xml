@@ -1,10 +1,8 @@
 <fonts>
-    <font family="Courier" fontType="PDType1Font" note="a standard14 font" serif="yes" unicode="yes"/>
-    <font family="Helvetica" fontType="PDType1Font" note="a standard14 font" serif="no" unicode="yes"/>
-    <font family="TimesNewRoman" fontType="PDType1Font" note="a standard14 font" serif="yes" unicode="yes"/>
-    <font family="Symbol" fontType="PDType1Font" note="a standard14 font" symbol="yes"/>
-    <font family="ZapfDingbats" fontType="PDType1Font" note="a standard14 font"/>
-    <!--  -->
-    <font family="Foo" fontType="PDType1Font" note="nonstandard"/>
+    <font familyName="Courier" fontType="PDType1Font" note="a standard14 font" serif="yes" unicode="yes"/>
+    <font familyName="Helvetica" fontType="PDType1Font" note="a standard14 font" serif="no" unicode="yes"/>
+    <font familyName="TimesNewRoman" fontType="PDType1Font" note="a standard14 font" serif="yes" unicode="yes"/>
+    <font familyName="Symbol" fontType="PDType1Font" note="a standard14 font" symbol="yes"/>
+    <font familyName="ZapfDingbats" fontType="PDType1Font" note="a standard14 font"/>
 </fonts>
 		

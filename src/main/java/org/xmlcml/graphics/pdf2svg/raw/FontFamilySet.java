@@ -69,16 +69,31 @@ public class FontFamilySet {
 		return fontFamilySet;
 	}
 	
-	private boolean containsKey(String name) {
+	boolean containsKey(String name) {
 		return fontFamilyByFamilyName.containsKey(name);
 	}
 
-	public FontFamily getFontByFamilyName(String fontFamilyName) {
+	FontFamily getFontByFamilyName(String fontFamilyName) {
 		return fontFamilyByFamilyName.get(fontFamilyName);
 	}
 
-	public void add(String fontFamilyName, FontFamily fontFamily) {
-		LOG.error("NYI add(String fontFamilyName, FontFamily fontFamily)");
+	void add(String fontFamilyName, FontFamily fontFamily) {
+		if (fontFamily == null) {
+			throw new RuntimeException("Cannot add null fontFamily");
+		}
+		fontFamilyByFamilyName.put(fontFamilyName, fontFamily);
 	}
-	
+
+	Element createElement() {
+		Element fontsElement = new Element(FONTS);
+		for (String fontFamilyName : fontFamilyByFamilyName.keySet()) {
+			FontFamily fontFamily = fontFamilyByFamilyName.get(fontFamilyName);
+			if (fontFamily == null) {
+				throw new RuntimeException("BUG null fontFamily should never happen: ");
+			}
+			Element fontFamilyElement = fontFamily.createElement();
+			fontsElement.appendChild(fontFamilyElement);
+		}
+		return fontsElement;
+	}
 }

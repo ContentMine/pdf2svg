@@ -43,6 +43,7 @@ import org.xmlcml.graphics.svg.SVGPath;
 import org.xmlcml.graphics.svg.SVGRect;
 import org.xmlcml.graphics.svg.SVGSVG;
 import org.xmlcml.graphics.svg.SVGText;
+import org.xmlcml.graphics.svg.SVGTitle;
 
 /** converts a PDPage to SVG
  * Originally used PageDrawer to capture the PDF operations.These have been
@@ -87,10 +88,15 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private Real2 currentXY;
 	private String fontSubType;
 	private String textContent;
-	private String lastFontFamily = "Helvetica";
+//	private String lastFontFamily = null;
 	private AMIFontManager amiFontManager;
 
 	private FontFamily newFontFamily;
+	private boolean addTooltips = true;
+
+	private int charCode;
+
+	private AMIFont amiFont;
 
 	public PDFPage2SVGConverter() throws IOException {
 		super();
@@ -167,23 +173,21 @@ public class PDFPage2SVGConverter extends PageDrawer {
 
 		charname = null;
 		font = text.getFont();
-		AMIFont amiFont = amiFontManager.getAmiFontByFont(font);
+		amiFont = amiFontManager.getAmiFontByFont(font);
 		fontName = amiFont.getFontName();
 		if (fontName == null) {
 			throw new RuntimeException("Null font name");
 		}
 		fontFamilyName = amiFont.getFontFamilyName();
 		FontFamily fontFamily = amiFontManager.getFontFamily(fontFamilyName);
-		if (fontFamily == null) {
-			newFontFamily = amiFontManager.addNewFontFamily(amiFont);
-		}
 		fontEncoding = amiFont.getEncoding();
 		textContent = text.getCharacter();
+		LOG.trace("CH...."+textContent);
 		if (textContent.length() > 1) {
 			// this can happen for ligatures
 			LOG.trace("multi-char string: "+text.getCharacter());
 		}
-		int charCode = getCharCodeAndAddToHighPoints(text);
+		charCode = getCharCodeAndAddToHighPoints(text);
 		if (fontEncoding == null) {
 			LOG.warn("Null encoding for character: "+charCode+" at "+currentXY+" font: "+amiFont.getFontName()+" / "+amiFont.getFontFamilyName()+" / "+amiFont.getBaseFont());
 		} else {
@@ -205,6 +209,9 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			convertSymbolsToCharacters(charCode, svgText);
 		} else if (amiFont.getDictionaryEncoding() != null) {
 			processDictionaryEncoding(charCode, svgText);
+		} else {
+			// debug
+			annotateContent(svgText, textContent, charCode, charname, charCode, fontEncoding);
 		}
 
 		try {
@@ -219,7 +226,25 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		getClipPath();
 		addTextAttributes(width, svgText);
 		svg.appendChild(svgText);
-		lastFontFamily = fontFamilyName;
+		addTooltips(svgText);
+		if (amiFont.isItalic() != null && amiFont.isItalic()) {
+			svgText.setFontStyle("italic");
+		}
+		if (amiFont.isBold() != null && amiFont.isBold()) {
+			svgText.setFontStyle("bold");
+		}
+//		lastFontFamily = fontFamilyName;
+	}
+
+	private void addTooltips(SVGText svgText) {
+		if (addTooltips) {
+			Encoding encoding = (amiFont == null) ? null : amiFont.getEncoding();
+			String enc = (encoding == null) ? null : encoding.getClass().getSimpleName();
+			enc =(enc != null && enc.endsWith(AMIFont.ENCODING)) ? enc.substring(0, enc.length()-AMIFont.ENCODING.length()) : enc;
+			String title = "char: "+charCode+"; name: "+charname+"; f: "+fontFamilyName+"; fn: "+fontName+"; e: "+enc;
+			SVGTitle svgTitle = new SVGTitle(title);
+			svgText.appendChild(svgTitle);
+		}
 	}
 
 	private int getCharCodeAndAddToHighPoints(TextPosition text) {
@@ -315,12 +340,17 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	}
 	
 	private void annotateContent(SVGText svgText, String unicodeContent, int charCode, String charname, int newCode, Encoding fontEncoding) {
-		svgText.setText(unicodeContent);
+		try {
+			svgText.setText(unicodeContent);
+		} catch (Exception e) {
+			LOG.error("font: "+fontName+" charname: "+charname+" "+charCode);
+			svgText.setText("?"+(int)charCode);
+		}
 		if (unicodeContent.length() > 1) {
 			PDF2SVGUtil.setSVGXAttribute(svgText, PDF2SVGUtil.LIGATURE, ""+unicodeContent.length());
 		}
 		PDF2SVGUtil.setSVGXAttribute(svgText, PDF2SVGUtil.CHARACTER_CODE, ""+charCode);
-		String fontEnc = fontEncoding.getClass().getSimpleName();
+		String fontEnc = (fontEncoding == null) ? "null" : fontEncoding.getClass().getSimpleName();
 		if (fontEnc.endsWith("Encoding")) {
 			fontEnc = fontEnc.substring(0, fontEnc.length()-"Encoding".length());
 		}
@@ -335,7 +365,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		svgText.setStrokeWidth(0.15);
 		svgText.setStroke("blue");
 		svgText.setFontSize(20.0);
-		fontFamilyName = lastFontFamily;
+//		fontFamilyName = lastFontFamily;
 	}
 
 	private void debugMap(Map<String, Integer> map) {

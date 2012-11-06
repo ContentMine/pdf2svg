@@ -28,7 +28,7 @@ public class FontFamily {
 
 	// XML
 	public final static String FONT = "font";
-	public static final String FAMILY = "family";
+	public static final String FAMILY_NAME = "familyName";
 	public static final String FONT_TYPE = "fontType";
 	public static final String MONOSPACED = "monospaced";
 	public static final String NOTE = "note";
@@ -36,7 +36,7 @@ public class FontFamily {
 	public static final String STANDARD_FONT = "standardFont";
 	public static final String UNICODE = "unicode";
 
-	private String family;
+	private String familyName;
 	private String fontType;
 	private String standardFont;
 	private String unicode;
@@ -55,9 +55,9 @@ public class FontFamily {
 			if (!(FONT.equals(fontFamilyElement.getLocalName()))) {
 				throw new RuntimeException("FontFamilySet children must be <font>");
 			}
-			fontFamily.family = fontFamilyElement.getAttributeValue(FAMILY);
-			if (fontFamily.family == null) {
-				throw new RuntimeException("<FontFamily> must have family attribute");
+			fontFamily.familyName = fontFamilyElement.getAttributeValue(FAMILY_NAME);
+			if (fontFamily.familyName == null) {
+				throw new RuntimeException("<FontFamily> must have familyName attribute");
 			}
 			fontFamily.fontType = fontFamilyElement.getAttributeValue(FONT_TYPE);
 			fontFamily.standardFont = fontFamilyElement.getAttributeValue(STANDARD_FONT);
@@ -71,12 +71,12 @@ public class FontFamily {
 		return fontFamily;
 	}
 
-	public Element getElement() {
+	public Element createElement() {
 		Element FontFamilyElement = new Element(FONT);
-		if (family == null) {
-			throw new RuntimeException("family must not be null");
+		if (familyName == null) {
+			throw new RuntimeException("familyName must not be null");
 		}
-		FontFamilyElement.addAttribute(new Attribute(FAMILY, ""+family));
+		FontFamilyElement.addAttribute(new Attribute(FAMILY_NAME, ""+familyName));
 		if (standardFont != null) {
 			FontFamilyElement.addAttribute(new Attribute(STANDARD_FONT, standardFont));
 		}
@@ -103,7 +103,11 @@ public class FontFamily {
 	}
 
 	public String getFamily() {
-		return family;
+		return familyName;
+	}
+
+	public void setFamilyName(String familyName) {
+		this.familyName = familyName;
 	}
 
 }

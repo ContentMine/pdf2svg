@@ -73,18 +73,6 @@ public class AMIFontManager {
 	}
 
 	
-//	private void createTimesNRExpertMTMap() {
-//		Map<Integer, String> map = new HashMap<Integer, String>();
-//		map.put((Integer)63337, ""+(char)63337);  //
-//		map.put((Integer)64256, "ff");  // ligature
-//		map.put((Integer)64257, "fi");  // ligature
-//		map.put((Integer)64258, "fl");  // ligature
-//		map.put((Integer)64259, "ffi");  // ligature
-//		map.put((Integer)64260, "ffl");  // ligature (guessed)
-//		char2UnicodeStringMapByFontFamilyMap.put(TIMES_NR_EXPERT_MT.toLowerCase(), map);
-//	}
-//
-
 	public Map<String, AMIFont> getAmiFontByFontNameMap() {
 		ensureAMIFontMaps();
 		return amiFontByFontNameMap;
@@ -153,6 +141,8 @@ public class AMIFontManager {
 			if (pdFont instanceof PDType1Font || pdFont instanceof PDTrueTypeFont || pdFont instanceof PDType0Font) {
 				amiFont = new AMIFont(pdFont);
 				amiFontByFontNameMap.put(fontName, amiFont);
+				String fontFamilyName = amiFont.getFontFamilyName();
+				recordExistingOrAddNewFontFamily(fontFamilyName, amiFont);
 			} else {
 				throw new RuntimeException("Cannot find font type: "+pdFont+" / "+pdFont.getSubType()+", ");
 			}
@@ -296,11 +286,28 @@ public class AMIFontManager {
 		return fontFamily;
 	}
 
-	public FontFamily addNewFontFamily(AMIFont amiFont) {
-		LOG.error("Not yet tested");
+	public FontFamily recordExistingOrAddNewFontFamily(String fontName, AMIFont amiFont) {
 		String fontFamilyName = amiFont.getFontFamilyName();
 		FontFamily fontFamily = amiFont.getFontFamily();
-		newFontFamilySet.add(fontFamilyName, fontFamily);
+		if (standardFontFamilySet.containsKey(fontFamilyName)) {
+			LOG.debug(fontFamilyName+" is a standard FontFamily");
+		} else if (nonStandardFontFamilySet.containsKey(fontFamilyName)) {
+			LOG.debug(fontFamilyName+" is a known non-standard FontFamily");
+		} else if (newFontFamilySet.containsKey(fontFamilyName)) {
+			LOG.debug(fontFamilyName+" is a known newFontFamily");
+		} else {
+			LOG.debug(fontName+" is being added as new FontFamily");
+			if (fontFamily == null) {
+				fontFamily = new FontFamily();
+				fontFamily.setFamilyName(""+fontName);
+			}
+			newFontFamilySet.add(fontName, fontFamily);
+		}
 		return fontFamily;
 	}
+	
+	public FontFamilySet getNewFontFamilySet() {
+		return newFontFamilySet;
+	}
+	
 }
