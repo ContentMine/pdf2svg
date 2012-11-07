@@ -26,6 +26,9 @@ import java.text.AttributedCharacterIterator;
 import java.util.Arrays;
 import java.util.Map;
 
+import org.apache.log4j.Logger;
+import org.xmlcml.graphics.svg.SVGPath;
+
 /**
  * a graphics2D for PDFBox applications to write to traps all Java2D graphics
  * calls mainly diagnostic - if psf2svg is comprehensive, these methods should
@@ -33,7 +36,9 @@ import java.util.Map;
  */
 public class PDFGraphics2D extends Graphics2D {
 
+	private final static Logger LOG = Logger.getLogger(PDFGraphics2D.class);
 	private AMIFont amiFont;
+	private String currentPathString;
 
 	public PDFGraphics2D(AMIFont amiFont) {
 		this.amiFont = amiFont;
@@ -48,8 +53,8 @@ public class PDFGraphics2D extends Graphics2D {
 	@Override
 	public boolean drawImage(Image img, AffineTransform xform, ImageObserver obs) {
 		// TODO Auto-generated method stub
-		System.out.printf("drawImage(img=%s,xform=%s,obs=%s)%n",
-				img.toString(), xform.toString(), obs.toString());
+//		System.out.printf("drawImage(img=%s,xform=%s,obs=%s)%n",
+//				img.toString(), xform.toString(), obs.toString());
 		return false;
 	}
 
@@ -77,15 +82,15 @@ public class PDFGraphics2D extends Graphics2D {
 	@Override
 	public void drawString(String str, int x, int y) {
 		// TODO Auto-generated method stub
-		System.out.printf("drawString(str=%s,x=%d,y=%d)%n", str.toString(), x,
-				y);
+//		System.out.printf("drawString(str=%s,x=%d,y=%d)%n", str.toString(), x,
+//				y);
 	}
 
 	@Override
 	public void drawString(String str, float x, float y) {
 		// TODO Auto-generated method stub
-		System.out.printf("drawString(str=%s,x=%f,y=%f)%n", str.toString(), x,
-				y);
+//		System.out.printf("drawString(str=%s,x=%f,y=%f)%n", str.toString(), x,
+//				y);
 	}
 
 	@Override
@@ -106,8 +111,12 @@ public class PDFGraphics2D extends Graphics2D {
 	@Override
 	public void drawGlyphVector(GlyphVector g, float x, float y) {
 		// TODO Auto-generated method stub
-		System.out.printf("drawGlyphVector(g=%s,x=%f,y=%f)%n", g.toString(), x,
-				y);
+//		System.out.printf("drawGlyphVector(g=%s,x=%f,y=%f)%n", g.toString(), x,
+//				y);
+		Shape shape = g.getOutline();
+		AffineTransform at = new AffineTransform();
+		this.currentPathString = SVGPath.getPathAsDString(shape.getPathIterator(at));
+		LOG.trace("**D** "+this.currentPathString);
 	}
 
 	@Override
@@ -152,8 +161,8 @@ public class PDFGraphics2D extends Graphics2D {
 	@Override
 	public void setRenderingHint(Key hintKey, Object hintValue) {
 		// TODO Auto-generated method stub
-		System.out.printf("setRenderingHint(hintKey=%s, hintValue=%s)%n",
-				hintKey.toString(), hintValue.toString());
+//		System.out.printf("setRenderingHint(hintKey=%s, hintValue=%s)%n",
+//				hintKey.toString(), hintValue.toString());
 	}
 
 	@Override
@@ -226,8 +235,8 @@ public class PDFGraphics2D extends Graphics2D {
 
 	@Override
 	public void transform(AffineTransform Tx) {
-		// TODO Auto-generated method stub
-		System.out.printf("transform(Tx=%s)%n", Tx.toString());
+//		// TODO Auto-generated method stub
+//		System.out.printf("transform(Tx=%s)%n", Tx.toString());
 
 	}
 
@@ -365,8 +374,8 @@ public class PDFGraphics2D extends Graphics2D {
 	@Override
 	public void setClip(int x, int y, int width, int height) {
 		// TODO Auto-generated method stub
-		System.out.printf("setClip(x=%d, y=%d, width=%d, height=%d)%n", x, y,
-				width, height);
+//		System.out.printf("setClip(x=%d, y=%d, width=%d, height=%d)%n", x, y,
+//				width, height);
 	}
 
 	@Override
@@ -379,7 +388,7 @@ public class PDFGraphics2D extends Graphics2D {
 	@Override
 	public void setClip(Shape clip) {
 		// TODO Auto-generated method stub
-		System.out.printf("setClip(shape=%s)%n", clip.toString());
+//		System.out.printf("setClip(shape=%s)%n", clip.toString());
 	}
 
 	@Override
@@ -548,7 +557,11 @@ public class PDFGraphics2D extends Graphics2D {
 	@Override
 	public void dispose() {
 		// TODO Auto-generated method stub
-		System.out.printf("dispose()%n");
+//		System.out.printf("dispose()%n");
+	}
+
+	public String getCurrentPathString() {
+		return this.currentPathString;
 	}
 
 }

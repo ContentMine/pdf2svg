@@ -1,19 +1,18 @@
 package org.xmlcml.graphics.pdf2svg.raw;
 
+import java.util.HashMap;
+import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.encoding.DictionaryEncoding;
 import org.apache.pdfbox.encoding.Encoding;
-import org.apache.pdfbox.encoding.MacRomanEncoding;
-import org.apache.pdfbox.encoding.StandardEncoding;
 import org.apache.pdfbox.encoding.WinAnsiEncoding;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDFontDescriptor;
-import org.apache.pdfbox.pdmodel.font.PDTrueTypeFont;
-import org.apache.pdfbox.pdmodel.font.PDType0Font;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.xmlcml.euclid.RealArray;
 
 /** wrapper for PDType1Font. is meant to manage the badFontnames, other
  * fontTypes, etc and try to convert them to a standard approach. 
@@ -76,6 +75,8 @@ public class AMIFont {
 
 	private String baseFont;
 	private String fontFamilySave;
+
+	private Map<String, String> pathStringByCharnameMap;
 	
 	static {
 		String[] standard14Names = PDType1Font.getStandard14Names();
@@ -373,6 +374,17 @@ and
 	
 	public Boolean isBold() {
 		return isBold;
+	}
+
+	public Map<String, String> getPathStringByCharnameMap() {
+		ensurePathStringByCharnameMap();
+		return pathStringByCharnameMap;
+	}
+
+	private void ensurePathStringByCharnameMap() {
+		if (this.pathStringByCharnameMap == null) {
+			pathStringByCharnameMap = new HashMap<String, String>();
+		}
 	}
 	
 }

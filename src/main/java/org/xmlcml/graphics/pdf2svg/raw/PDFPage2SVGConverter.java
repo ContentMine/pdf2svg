@@ -183,37 +183,6 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		fontFamilyName = amiFont.getFontFamilyName();
 		FontFamily fontFamily = amiFontManager.getFontFamily(fontFamilyName);
 		fontEncoding = amiFont.getEncoding();
-		if (fontEncoding instanceof DictionaryEncoding) {
-			PDFGraphics2D graphics = new PDFGraphics2D(amiFont);
-			Matrix textPos = text.getTextPos().copy();
-			float x = textPos.getXPosition();
-			// the 0,0-reference has to be moved from the lower left (PDF) to
-			// the upper left (AWT-graphics)
-			float y = pageSize.height - textPos.getYPosition();
-			// Set translation to 0,0. We only need the scaling and shearing
-			textPos.setValue(2, 0, 0);
-			textPos.setValue(2, 1, 0);
-			// because of the moved 0,0-reference, we have to shear in the
-			// opposite direction
-			textPos.setValue(0, 1, (-1) * textPos.getValue(0, 1));
-			textPos.setValue(1, 0, (-1) * textPos.getValue(1, 0));
-			AffineTransform at = textPos.createAffineTransform();
-			PDMatrix fontMatrix = font.getFontMatrix();
-			at.scale(fontMatrix.getValue(0, 0) * 1000f,
-					fontMatrix.getValue(1, 1) * 1000f);
-			// TODO setClip() is a massive performance hot spot. Investigate
-			// optimization possibilities
-			graphics.setClip(graphicsState.getCurrentClippingPath());
-			// the fontSize is no longer needed as it is already part of the
-			// transformation
-			// we should remove it from the parameter list in the long run
-			try {
-				font.drawString(text.getCharacter(), text.getCodePoints(),
-						graphics, 1, at, x, y);
-			} catch (IOException e) {
-				throw new RuntimeException("font.drawString", e);
-			}
-		}
 		textContent = text.getCharacter();
 		LOG.trace("CH...."+textContent);
 		if (textContent.length() > 1) {
@@ -233,6 +202,9 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			}
 		}
 		float width = getCharacterWidth(font, textContent);
+		if (fontEncoding instanceof DictionaryEncoding) {
+			captureAndIndexGlyphVector(text);
+		}
 		
 		SVGText svgText = new SVGText();
 		createAndReOrientateTextPosition(text, svgText);		
@@ -267,6 +239,44 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			svgText.setFontStyle("bold");
 		}
 //		lastFontFamily = fontFamilyName;
+	}
+
+	private void captureAndIndexGlyphVector(TextPosition text) {
+		String pathString = amiFont.getPathStringByCharnameMap().get(charname);
+		if (pathString == null) {
+			PDFGraphics2D graphics = new PDFGraphics2D(amiFont);
+			Matrix textPos = text.getTextPos().copy();
+			float x = textPos.getXPosition();
+			// the 0,0-reference has to be moved from the lower left (PDF) to
+			// the upper left (AWT-graphics)
+			float y = pageSize.height - textPos.getYPosition();
+			// Set translation to 0,0. We only need the scaling and shearing
+			textPos.setValue(2, 0, 0);
+			textPos.setValue(2, 1, 0);
+			// because of the moved 0,0-reference, we have to shear in the
+			// opposite direction
+			textPos.setValue(0, 1, (-1) * textPos.getValue(0, 1));
+			textPos.setValue(1, 0, (-1) * textPos.getValue(1, 0));
+			AffineTransform at = textPos.createAffineTransform();
+			PDMatrix fontMatrix = font.getFontMatrix();
+			at.scale(fontMatrix.getValue(0, 0) * 1000f,
+					fontMatrix.getValue(1, 1) * 1000f);
+			// TODO setClip() is a massive performance hot spot. Investigate
+			// optimization possibilities
+			graphics.setClip(graphicsState.getCurrentClippingPath());
+			// the fontSize is no longer needed as it is already part of the
+			// transformation
+			// we should remove it from the parameter list in the long run
+			try {
+				font.drawString(text.getCharacter(), text.getCodePoints(),
+						graphics, 1, at, x, y);
+			} catch (IOException e) {
+				throw new RuntimeException("font.drawString", e);
+			}
+			pathString = graphics.getCurrentPathString();
+			LOG.debug(charname+": created "+pathString);
+			amiFont.getPathStringByCharnameMap().put(charname, pathString);
+		}
 	}
 
 	private void addTooltips(SVGText svgText) {
