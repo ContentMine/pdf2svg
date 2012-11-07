@@ -1,14 +1,13 @@
 package org.xmlcml.graphics.pdf2svg.raw;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
-import java.util.Set;
 
 import javax.print.attribute.standard.PageRanges;
 
@@ -22,6 +21,7 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.util.PDFStreamEngine;
 import org.xmlcml.graphics.svg.SVGSVG;
+import org.xmlcml.graphics.util.MenuSystem;
 
 /**
  * Simple app to read PDF documents ... based on ... * PDFReader.java
@@ -51,6 +51,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private Map<String, AMIFont> amiFontMap;
 	CodePointSet knownCodePointSet;
 	CodePointSet newCodePointSet;
+	private File outdir;
 
 	private static void usage() {
 		System.err
@@ -78,7 +79,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		if (pr == null)
 			pr = new PageRanges(String.format("1-%d", pages.size()));
 
-		File outdir = new File(outputDirectory);
+		outdir = new File(outputDirectory);
 		if (!outdir.exists())
 			outdir.mkdirs();
 		if (!outdir.isDirectory())
@@ -94,37 +95,50 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			basename = basename.substring(0, basename.length() - 4);
 
 		int pageNumber = pr.next(0);
+		List<File> outfileList = new ArrayList<File>();
 		while (pageNumber > 0) {
 			PDPage page = pages.get(pageNumber - 1);
 
 			System.out.println("=== " + pageNumber + " ===");
 			drawer.convertPageToSVG(page, this);
 
-			File outfile = new File(outdir, basename + "-page" + pageNumber
-					+ ".svg");
-			System.out.printf("Writing output to file '%s'%n", outfile.getCanonicalPath());
-
-			SVGSVG svgPage = drawer.getSVG();
-			SVGSerializer serializer = new SVGSerializer(new FileOutputStream(
-					outfile), "UTF-8");
-			Document document = svgPage.getDocument();
-			document = (document == null) ? new Document(svgPage) : document;
-			serializer.setIndent(1);
-			serializer.write(document);
-			ensureSVGPageList();
-			svgPageList.add(svgPage);
-			new Builder().build(outfile);
+			File outfile = writeFile(drawer, basename, pageNumber);
+			outfileList.add(outfile);
 
 			pageNumber = pr.next(pageNumber);
 		}
 
 		reportHighCodePoints();
 		reportNewFontFamilyNames();
+		writeHTMLSystem(outfileList);
+	}
+
+	private File writeFile(PDFPage2SVGConverter drawer, String basename,
+			int pageNumber) throws IOException,
+			UnsupportedEncodingException, FileNotFoundException {
+		ensureSVGPageList();
+		File outfile = new File(outdir, basename + "-page" + pageNumber + ".svg");
+		System.out.printf("Writing output to file '%s'%n", outfile.getCanonicalPath());
+
+		SVGSVG svgPage = drawer.getSVG();
+		svgPageList.add(svgPage);
+		SVGSerializer serializer = new SVGSerializer(new FileOutputStream(
+				outfile), "UTF-8");
+		Document document = svgPage.getDocument();
+		document = (document == null) ? new Document(svgPage) : document;
+		serializer.setIndent(1);
+		serializer.write(document);
+		return outfile;
 	}
 
 	private void reportNewFontFamilyNames() {
 		FontFamilySet newFontFamilySet = amiFontManager.getNewFontFamilySet();
 		LOG.debug("new fontFamilyNames: "+newFontFamilySet.createElement().toXML());
+	}
+
+	private void writeHTMLSystem(List<File> outfileList) {
+		MenuSystem menuSystem = new MenuSystem(outdir);
+		menuSystem.writeDisplayFiles(outfileList, "");
 	}
 
 	private void ensureSVGPageList() {

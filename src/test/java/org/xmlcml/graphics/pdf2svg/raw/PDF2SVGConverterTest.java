@@ -97,7 +97,7 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	@Ignore
+	//@Ignore
 	// do not normally run this
 	public void testRSC1() {
 		// this has very bad performance // no idea yet why
@@ -160,14 +160,14 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	@Ignore // do not normally run this
+	//@Ignore // do not normally run this
 	public void testElife() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-outdir", "../pdfs/elife", "src/test/resources/elife/00013.pdf");
 	}
 
 	@Test
-	@Ignore // do not normally run this
+	//@Ignore // do not normally run this
 	public void testJB() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-outdir", "../pdfs/jb", "../pdfs/jb/100-14.pdf");
@@ -185,6 +185,20 @@ public class PDF2SVGConverterTest {
 	public void testElsevier2() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-outdir", "../pdfs/els", "../pdfs/e2/1-s2.0-S2212877812000129-main.pdf");
+	}
+
+	@Test
+	//@Ignore // do not normally run this
+	public void testWord() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("-outdir", "../pdfs/word", "../pdfs/word/test.pdf");
+	}
+
+	@Test
+	//@Ignore // do not normally run this
+	public void testWordMath() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("-outdir", "../pdfs/word", "../pdfs/word/testmath.pdf");
 	}
 
 	@Test

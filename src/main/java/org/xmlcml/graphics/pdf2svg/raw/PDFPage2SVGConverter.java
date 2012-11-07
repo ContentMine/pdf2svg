@@ -174,27 +174,31 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	protected void processTextPosition(TextPosition text) {
 
 		charname = null;
+		charCode = 0;
 		font = text.getFont();
 		amiFont = amiFontManager.getAmiFontByFont(font);
 		fontName = amiFont.getFontName();
+		LOG.debug("Font name: "+fontName);
 		if (fontName == null) {
 			throw new RuntimeException("Null font name");
 		}
 		fontFamilyName = amiFont.getFontFamilyName();
+		LOG.debug("Font family name: "+fontFamilyName);
 		FontFamily fontFamily = amiFontManager.getFontFamily(fontFamilyName);
 		fontEncoding = amiFont.getEncoding();
 		textContent = text.getCharacter();
-		LOG.trace("CH...."+textContent);
+		LOG.debug("CH>"+textContent+"<");
 		if (textContent.length() > 1) {
 			// this can happen for ligatures
 			LOG.trace("multi-char string: "+text.getCharacter());
 		}
 		charCode = getCharCodeAndAddToHighPoints(text);
+		LOG.debug("code: "+charCode);
 		if (fontEncoding == null) {
 			LOG.warn("Null encoding for character: "+charCode+" at "+currentXY+" font: "+amiFont.getFontName()+" / "+amiFont.getFontFamilyName()+" / "+amiFont.getBaseFont());
 		} else {
 			try {
-				// NNOTE: charname is the formal name for the character such as "period", "bracket" or "a", "two"
+				// NOTE: charname is the formal name for the character such as "period", "bracket" or "a", "two"
 				charname = fontEncoding.getName(charCode);
 				LOG.trace("code "+charCode+" (font: "+fontSubType+" "+fontName+") "+charname);
 			} catch (IOException e1) {
@@ -202,7 +206,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			}
 		}
 		float width = getCharacterWidth(font, textContent);
-		if (fontEncoding instanceof DictionaryEncoding) {
+		if (fontEncoding instanceof DictionaryEncoding || fontFamilyName == null) {
 			captureAndIndexGlyphVector(text);
 		}
 		
@@ -277,6 +281,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			LOG.debug(charname+": created "+pathString);
 			amiFont.getPathStringByCharnameMap().put(charname, pathString);
 		}
+		LOG.debug("pathString: "+pathString);
 	}
 
 	private void addTooltips(SVGText svgText) {
