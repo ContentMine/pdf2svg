@@ -21,10 +21,12 @@ import java.util.Set;
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.cos.COSName;
+import org.apache.pdfbox.encoding.DictionaryEncoding;
 import org.apache.pdfbox.encoding.Encoding;
 import org.apache.pdfbox.pdfviewer.PageDrawer;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDResources;
+import org.apache.pdfbox.pdmodel.common.PDDictionaryWrapper;
 import org.apache.pdfbox.pdmodel.common.PDMatrix;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.graphics.PDGraphicsState;
@@ -181,6 +183,37 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		fontFamilyName = amiFont.getFontFamilyName();
 		FontFamily fontFamily = amiFontManager.getFontFamily(fontFamilyName);
 		fontEncoding = amiFont.getEncoding();
+		if (fontEncoding instanceof DictionaryEncoding) {
+			PDFGraphics2D graphics = new PDFGraphics2D(amiFont);
+			Matrix textPos = text.getTextPos().copy();
+			float x = textPos.getXPosition();
+			// the 0,0-reference has to be moved from the lower left (PDF) to
+			// the upper left (AWT-graphics)
+			float y = pageSize.height - textPos.getYPosition();
+			// Set translation to 0,0. We only need the scaling and shearing
+			textPos.setValue(2, 0, 0);
+			textPos.setValue(2, 1, 0);
+			// because of the moved 0,0-reference, we have to shear in the
+			// opposite direction
+			textPos.setValue(0, 1, (-1) * textPos.getValue(0, 1));
+			textPos.setValue(1, 0, (-1) * textPos.getValue(1, 0));
+			AffineTransform at = textPos.createAffineTransform();
+			PDMatrix fontMatrix = font.getFontMatrix();
+			at.scale(fontMatrix.getValue(0, 0) * 1000f,
+					fontMatrix.getValue(1, 1) * 1000f);
+			// TODO setClip() is a massive performance hot spot. Investigate
+			// optimization possibilities
+			graphics.setClip(graphicsState.getCurrentClippingPath());
+			// the fontSize is no longer needed as it is already part of the
+			// transformation
+			// we should remove it from the parameter list in the long run
+			try {
+				font.drawString(text.getCharacter(), text.getCodePoints(),
+						graphics, 1, at, x, y);
+			} catch (IOException e) {
+				throw new RuntimeException("font.drawString", e);
+			}
+		}
 		textContent = text.getCharacter();
 		LOG.trace("CH...."+textContent);
 		if (textContent.length() > 1) {
@@ -537,7 +570,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		}
 	}
 
-	/** traps any remaining unimplemented PDDrawer calls
+	/** traps any remaining unimplemented PageDrawer calls
 	 * 
 	 */
 	public Graphics2D getGraphics() {
