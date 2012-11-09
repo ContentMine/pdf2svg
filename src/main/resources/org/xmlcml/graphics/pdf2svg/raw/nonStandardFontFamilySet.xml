@@ -10,7 +10,7 @@
 	<fontFamily name="FrutigerBold" />
 	<fontFamily name="FrutigerLTStdBold" />
 	<fontFamily name="FrutigerLTStd-Roman" />
-	<fontFamily name="MathematicalPi-One" fontType="?" standardFont="MathematicalPi" note="" serif="" unicode="no"/>
+	<fontFamily name="MathematicalPi-One" standardFont="MathematicalPi" note="" unicode="no"/>
 	<fontFamily name="MathematicalPi-Three" />
 	<fontFamily name="MathematicalPi-Four" />
 	<fontFamily name="MyriadMM215LT700SE" />
@@ -34,7 +34,7 @@
 	<fontFamily name="Wingdings-Regular" />
 
 	<!--  possible symbol fonts -->
-	<fontFamily name="AdvPi1" symbol="true" encoding="null" codePointSet="org/xmlcml/graphics/pdf2svg/raw/advpi1.xml"/>
+	<fontFamily name="AdvPi1" symbol="true" codePointSet="org/xmlcml/graphics/pdf2svg/raw/advpi1.xml"/>
 
 	<!-- normalize these later -->
 	<fontFamily name="CalibriBold" />

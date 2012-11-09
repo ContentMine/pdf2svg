@@ -39,7 +39,7 @@ public class FontFamily {
 	public static final String STANDARD_FONT = "standardFont";
 	public static final String UNICODE = "unicode";
 
-	private String familyName;
+	private String name;
 	private String fontType;
 	private String standardFont;
 	private String unicode;
@@ -59,8 +59,8 @@ public class FontFamily {
 			if (!(FONT_FAMILY.equals(fontFamilyElement.getLocalName()))) {
 				throw new RuntimeException("FontFamilySet children must be: "+FONT_FAMILY);
 			}
-			fontFamily.familyName = fontFamilyElement.getAttributeValue(NAME);
-			if (fontFamily.familyName == null) {
+			fontFamily.name = fontFamilyElement.getAttributeValue(NAME);
+			if (fontFamily.name == null) {
 				throw new RuntimeException("<FontFamily> must have familyName attribute");
 			}
 			fontFamily.fontType = fontFamilyElement.getAttributeValue(FONT_TYPE);
@@ -90,10 +90,10 @@ public class FontFamily {
 
 	public Element createElement() {
 		Element FontFamilyElement = new Element(FONT_FAMILY);
-		if (familyName == null) {
+		if (name == null) {
 			throw new RuntimeException("familyName must not be null");
 		}
-		FontFamilyElement.addAttribute(new Attribute(NAME, ""+familyName));
+		FontFamilyElement.addAttribute(new Attribute(NAME, ""+name));
 		if (standardFont != null) {
 			FontFamilyElement.addAttribute(new Attribute(STANDARD_FONT, standardFont));
 		}
@@ -119,12 +119,12 @@ public class FontFamily {
 		return unicode;
 	}
 
-	public String getFamily() {
-		return familyName;
+	public String getName() {
+		return name;
 	}
 
-	public void setFamilyName(String familyName) {
-		this.familyName = familyName;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public CodePointSet getCodePointSet() {

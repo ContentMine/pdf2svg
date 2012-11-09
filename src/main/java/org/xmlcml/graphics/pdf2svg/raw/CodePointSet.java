@@ -82,11 +82,13 @@ public class CodePointSet {
 			}
 			codePointSet.codePointByUnicodeMap.put(unicode, codePoint);
 			Integer decimal = codePoint.getDecimal();
-			if (decimal != null) {
-				codePointSet.codePointByIntegerMap.put(decimal, codePoint);
-			}
+			codePointSet.add(codePoint);
 		}
 		return codePointSet;
+	}
+
+	private void add(CodePoint codePoint) {
+		this.add(codePoint.getDecimal(), codePoint.getName(), codePoint.getUnicode());
 	}
 
 	private boolean containsKey(String unicode) {
@@ -115,6 +117,9 @@ public class CodePointSet {
 	}
 
 	public void add(Integer charCode, String charname, String unicode) {
+		if (encoding == null) {
+			throw new RuntimeException("CodePointSet must have encoding");
+		}
 		CodePoint codePoint = new CodePoint();
 		codePoint.setUnicode(unicode);
 		if (charCode != null) {
@@ -123,10 +128,16 @@ public class CodePointSet {
 		if (charname != null) {
 			codePoint.setName(charname);
 		}
+		if (unicode != null) {
+			codePoint.setUnicode(unicode);
+		}
+		
 		if (codePoint.getDecimal() != null) {
 			this.codePointByIntegerMap.put(codePoint.getDecimal(), codePoint);
 		}
-		this.codePointByUnicodeMap.put(codePoint.getUnicode(), codePoint);
+		if (codePoint.getUnicode() != null) {
+			this.codePointByUnicodeMap.put(codePoint.getUnicode(), codePoint);
+		}
 		if (charname != null) {
 			this.unicodeByCharnameMap.put(charname, codePoint.getUnicode());
 		}
@@ -136,8 +147,25 @@ public class CodePointSet {
 	}
 
 	public String convertCharnameToUnicode(String charname) {
+		ensureMaps();
 		String unicode = unicodeByCharnameMap.get(charname);
 		return unicode;
+	}
+
+	public String convertCharCodeToUnicode(Integer codepoint) {
+		ensureMaps();
+		String unicode = unicodeByCharCodeMap.get(codepoint);
+		return unicode;
+	}
+
+	public CodePoint getByUnicode(String unicode) {
+		ensureMaps();
+		return codePointByUnicodeMap.get(unicode);
+	}
+	
+	public CodePoint getByDecimal(Integer decimal) {
+		ensureMaps();
+		return codePointByIntegerMap.get(decimal);
 	}
 	
 }

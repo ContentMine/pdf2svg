@@ -67,7 +67,7 @@ public class FontFamilySet {
 			if (fontFamily == null) {
 				throw new RuntimeException("Cannot read/parse fontFamilyElement: "+((fontFamilyElement == null) ? null : fontFamilyElement.toXML()));
 			}
-			String family = fontFamily.getFamily();
+			String family = fontFamily.getName();
 			if (fontFamilySet.containsKey(family)) {
 				throw new RuntimeException("Duplicate name: "+family);
 			}

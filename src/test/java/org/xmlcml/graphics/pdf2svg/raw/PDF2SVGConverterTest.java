@@ -181,7 +181,7 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	@Ignore // do not normally run this
+	//@Ignore // do not normally run this
 	public void testPlosOne1() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-outdir", "../pdfs/plosone", "-pages", "2", "src/test/resources/plosone/2009_rip_loop_conformations.pdf");

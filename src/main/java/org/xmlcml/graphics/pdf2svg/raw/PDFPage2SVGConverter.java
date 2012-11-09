@@ -183,7 +183,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		if (fontName == null) {
 			throw new RuntimeException("Null font name");
 		} else if (!fontName.equals(lastFontName)) {
-			LOG.debug("font from "+lastFontName+" -> "+fontName);
+			LOG.trace("font from "+lastFontName+" -> "+fontName);
 			lastFontName = fontName;
 		}
 		fontFamilyName = amiFont.getFontFamilyName();
@@ -199,13 +199,13 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		if (fontEncoding == null) {
 			LOG.warn("Null encoding for character: "+charCode+" at "+currentXY+" font: "+amiFont.getFontName()+" / "+amiFont.getFontFamilyName()+" / "+amiFont.getBaseFont());
 		} else {
-			try {
-				// NOTE: charname is the formal name for the character such as "period", "bracket" or "a", "two"
-				charname = fontEncoding.getName(charCode);
-				LOG.trace("code "+charCode+" (font: "+fontSubType+" "+fontName+") "+charname);
-			} catch (IOException e1) {
-				LOG.warn("cannot get char encoding "+" at "+currentXY, e1);
-			}
+//			try {
+//				// NOTE: charname is the formal name for the character such as "period", "bracket" or "a", "two"
+//				charname = fontEncoding.getName(charCode);
+//				LOG.trace("code "+charCode+" (font: "+fontSubType+" "+fontName+") "+charname);
+//			} catch (IOException e1) {
+//				LOG.warn("cannot get char encoding "+" at "+currentXY, e1);
+//			}
 		}
 		LOG.trace("Fn: "+fontName+"; Ff: "+fontFamilyName+"; "+textContent+"; "+charCode+"; "+charname);
 		float width = getCharacterWidth(font, textContent);
@@ -252,11 +252,14 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		CodePointSet codePointSet = fontFamily.getCodePointSet();
 		if (codePointSet != null) {
 			LOG.debug("code point set for "+fontFamilyName);
-			String textContent1 = codePointSet.convertCharnameToUnicode(textContent);
-			if (textContent1 == null) {
+			String unicode = codePointSet.convertCharCodeToUnicode((int)textContent.charAt(0));
+			if (unicode == null) {
+				//or add Bad Character Glyph
 				throw new RuntimeException("Cannot convert character: "+textContent);
+			} else {
+				Integer codepoint = CodePoint.getDecimal(unicode);
+				textContent = ""+(char)(int) codepoint;
 			}
-			textContent = textContent1;
 		}
 	}
 

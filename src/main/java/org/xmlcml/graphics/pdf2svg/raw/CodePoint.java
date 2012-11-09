@@ -40,8 +40,8 @@ public class CodePoint {
 				throw new RuntimeException("CodePointSet children must be <codePoint>");
 			}
 			String decimalS = codePointElement.getAttributeValue(DECIMAL);
-			String charname = codePointElement.getAttributeValue(NAME);
-			if (decimalS == null && charname == null) {
+			codePoint.name = codePointElement.getAttributeValue(NAME);
+			if (decimalS == null && codePoint.name == null) {
 				throw new RuntimeException("<codePoint> must have decimal attribute and/or name");
 			}
 			if (decimalS != null) {
@@ -52,13 +52,7 @@ public class CodePoint {
 				throw new RuntimeException("missing or invalid unicode value");
 			}
 			codePoint.unicode = codePoint.unicode.toUpperCase();
-			String hex = HEX_PREFIX+codePoint.unicode.substring(2);
-			Integer codePointHex = Integer.decode(hex);
-			if (CodePointSet.UNICODE.equals(encoding) && (codePoint.decimal != null && !codePointHex.equals(codePoint.decimal))) {
-				throw new RuntimeException(
-						"<codePoint> integer ("+codePoint.decimal+") and unicode ("+codePoint.unicode+") values do not match; try: "+Integer.toHexString(codePoint.decimal));
-			}
-			codePoint.name = codePointElement.getAttributeValue(UNICODE);
+			checkUnicodeMatchesDecimal(encoding, codePoint);
 			codePoint.replacementUnicode = codePointElement.getAttributeValue(REPLACE_BY_UNICODE);
 			codePoint.replaceName = codePointElement.getAttributeValue(REPLACE_NAME);
 			codePoint.note = codePointElement.getAttributeValue(NOTE);
@@ -68,12 +62,25 @@ public class CodePoint {
 		return codePoint;
 	}
 
+	private static void checkUnicodeMatchesDecimal(String encoding, CodePoint codePoint) {
+		String hex = HEX_PREFIX+codePoint.unicode.substring(2);
+		Integer codePointHex = Integer.decode(hex);
+		if (CodePointSet.UNICODE.equals(encoding) && (codePoint.decimal != null && !codePointHex.equals(codePoint.decimal))) {
+			throw new RuntimeException(
+					"<codePoint> integer ("+codePoint.decimal+") and unicode ("+codePoint.unicode+") values do not match; try: "+Integer.toHexString(codePoint.decimal));
+		}
+	}
+
 	public Integer getDecimal() {
 		return decimal;
 	}
 
 	public String getUnicode() {
 		return unicode;
+	}
+
+	public String getName() {
+		return name;
 	}
 
 	public Element getElement() {
@@ -105,6 +112,19 @@ public class CodePoint {
 			hex = hex.substring(HEX_PREFIX.length());
 		}
 		this.unicode = UNICODE_PREFIX+hex;
+	}
+	
+	public static Integer getDecimal(String unicode) {
+		Integer codepoint = null;
+		if (unicode != null && unicode.startsWith(UNICODE_PREFIX)) {
+			String hex = HEX_PREFIX+unicode.substring(UNICODE_PREFIX.length());
+			try {
+				codepoint = Integer.decode(hex);
+			} catch (Exception e) {
+				throw new RuntimeException("Bad hex: "+hex);
+			}
+		}
+		return codepoint;
 	}
 	
 	public void setName(String name) {

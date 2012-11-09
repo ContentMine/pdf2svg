@@ -299,7 +299,7 @@ public class AMIFontManager {
 			LOG.debug(fontName+" is being added as new FontFamily");
 			if (fontFamily == null) {
 				fontFamily = new FontFamily();
-				fontFamily.setFamilyName(""+fontName);
+				fontFamily.setName(""+fontName);
 			}
 			newFontFamilySet.add(fontName, fontFamily);
 		}
