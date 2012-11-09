@@ -276,12 +276,12 @@ public class AMIFontManager {
 	}
 
 	public FontFamily getFontFamily(String fontFamilyName) {
-		FontFamily fontFamily = standardFontFamilySet.getFontByFamilyName(fontFamilyName);
+		FontFamily fontFamily = standardFontFamilySet.getFontFamilyByName(fontFamilyName);
 		if (fontFamily == null) {
-			fontFamily = nonStandardFontFamilySet.getFontByFamilyName(fontFamilyName);
+			fontFamily = nonStandardFontFamilySet.getFontFamilyByName(fontFamilyName);
 		}
 		if (fontFamily == null) {
-			fontFamily = newFontFamilySet.getFontByFamilyName(fontFamilyName);
+			fontFamily = newFontFamilySet.getFontFamilyByName(fontFamilyName);
 		}
 		return fontFamily;
 	}

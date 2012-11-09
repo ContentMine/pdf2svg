@@ -1,220 +1,222 @@
-<fonts standard="nonStandard">
-    <font familyName="Foo" fontType="PDType1Font" standardFont="Helvetica" note="" serif="" unicode="guessed"/>
-    <!--   -->
-	<font familyName="Arial" />
-	<font familyName="Avenir" />
-	<font familyName="Calibri" />
-	<font familyName="Frutiger-Roman" />
-	<font familyName="Frutiger-Light" />
-	<font familyName="FrutigerBold" />
-	<font familyName="FrutigerLTStdBold" />
-	<font familyName="FrutigerLTStd-Roman" />
-    <font familyName="MathematicalPi-One" fontType="?" standardFont="MathematicalPi" note="" serif="" unicode="no"/>
-	<font familyName="MathematicalPi-Three" />
-    <font familyName="MathematicalPi-Four" />
-    <font familyName="MyriadMM215LT700SE" />
-    <font familyName="MyriadMM565SB700SE" />
-    <font familyName="MyriadMM400RG700SE" />
-	<font familyName="MSAM8" />
-	<font familyName="MTSYB" />
-	<font familyName="MTMI" />
-	<font familyName="MTGU" />
-	<font familyName="MTEX" />
-	<font familyName="MTSYN" />
-	<font familyName="OptimaItalic" />
-	<font familyName="Optima" />
-	<font familyName="OptimaBold" />
-	<font familyName="Strada-Light" />
-    <font familyName="TimesGreekSF" />
-    <font familyName="TimesNRExpertMT" />
-    <font familyName="TimesNRMT" />
-    <font familyName="Times-Roman" />
-    <font familyName="Univers" />
-	<font familyName="Wingdings-Regular" />
-    
-<!-- normalize these later -->
-	<font familyName="CalibriBold" />
-	<font familyName="Calibri,old" />
-	<font familyName="Calibri,talic" />
-	<font familyName="MT" />
-	<font familyName="TimesNRMTBold" />
-	<font familyName="TimesGreekSFInclined" />
-	<font familyName="TimesNRExpertMTBold" />
-	<font familyName="TimesNRMTSemiBold" />
-	<font familyName="TimesBold" />
-	<font familyName="TimesNRMTItalic" />
-	<font familyName="TimesNRMTBoldtalic" />
-	<font familyName="TimesNRMTSemiBoldtalic" />
-	<font familyName="Times-RomanSC" />
-	<font familyName="UniversBold" />
+<fontFamilySet name="nonStandard">
+	<!--
+	<fontFamily name="Foo" fontType="PDType1Font" standardFont="Helvetica" note="" serif="" unicode="guessed"/>
+	-->
+	<fontFamily name="Arial" />
+	<fontFamily name="Avenir" />
+	<fontFamily name="Calibri" />
+	<fontFamily name="Frutiger-Roman" />
+	<fontFamily name="Frutiger-Light" />
+	<fontFamily name="FrutigerBold" />
+	<fontFamily name="FrutigerLTStdBold" />
+	<fontFamily name="FrutigerLTStd-Roman" />
+	<fontFamily name="MathematicalPi-One" fontType="?" standardFont="MathematicalPi" note="" serif="" unicode="no"/>
+	<fontFamily name="MathematicalPi-Three" />
+	<fontFamily name="MathematicalPi-Four" />
+	<fontFamily name="MyriadMM215LT700SE" />
+	<fontFamily name="MyriadMM565SB700SE" />
+	<fontFamily name="MyriadMM400RG700SE" />
+	<fontFamily name="MSAM8" />
+	<fontFamily name="MTSYB" />
+	<fontFamily name="MTMI" />
+	<fontFamily name="MTGU" />
+	<fontFamily name="MTEX" />
+	<fontFamily name="MTSYN" />
+	<fontFamily name="OptimaItalic" />
+	<fontFamily name="Optima" />
+	<fontFamily name="OptimaBold" />
+	<fontFamily name="Strada-Light" />
+	<fontFamily name="TimesGreekSF" />
+	<fontFamily name="TimesNRExpertMT" />
+	<fontFamily name="TimesNRMT" />
+	<fontFamily name="Times-Roman" />
+	<fontFamily name="Univers" />
+	<fontFamily name="Wingdings-Regular" />
 
-<!--  BMC -->
-	<font familyName="AdvOTa9103878+03" />
-	<font familyName="AdvOT3b30f6dbB" />
-	<font familyName="AdvOT07517017" />
-	<font familyName="AdvOTf0bf83d5I" />
-	<font familyName="AdvOT46dcae81" />
-	<font familyName="AdvOT46dcae81+20" />
-	<font familyName="AdvOT56309c18I" />
-	<font familyName="AdvOT65f8a23bI" />
-	<font familyName="AdvOTce3d9a73" />
-	<font familyName="AdvOT07517017+03" />
-	<font familyName="AdvOTa9103878+20" />
-	<font familyName="AdvOTa9103878" />
-	<font familyName="AdvTT3f84ef53" />
-	<font familyName="AdvOT07517017+20" />
-	<font familyName="AdvOTce3d9a73+03" />
-	<font familyName="AdvOTce3d9a73+20" />
-	<font familyName="AdvOT0d9ab1dbI" />
+	<!--  possible symbol fonts -->
+	<fontFamily name="AdvPi1" symbol="true" encoding="null" codePointSet="org/xmlcml/graphics/pdf2svg/raw/advpi1.xml"/>
 
-<!--  elsevier  -->	
-	<font familyName="AdvP4C4E59" />
-	<font familyName="AdvP4C4E74" />
-	<font familyName="AdvP4C4E51" />
-	<font familyName="AdvPSA35D" />
-	<font familyName="AdvOTc4d0b532" />
-	<font familyName="AdvOT863180fb" />
-	<font familyName="AdvPSSym" />
-	<font familyName="AdvOTb83ee1ddB" />
-	<font familyName="AdvOT404f8e91BI" />
-	<font familyName="AdvPS4BD310" />
-	<font familyName="AdvPS3F4C13" />
-	<font familyName="AdvOTb92eb7dfI" />
-	<font familyName="AdvOT863180fb+fb" />
-	<font familyName="AdvOT863180fb+20" />
-	<font familyName="AdvPS4721B4" />
-	<font familyName="AdvPS44A44B" />
-	
-	<font familyName="RMTMI" />
-	<font familyName="Minion-Regular" />
-	<font familyName="MinionBold" />
-	<font familyName="MinionBoldtalic" />
-	<font familyName="MinionItalic" />
-	<font familyName="Univers-Condensedold" />
-	<font familyName="Univers-Lightblique" />
-	<font familyName="UniversBoldblique" />
-	<font familyName="Univers-Condensedoldblique" />
-	<font familyName="Univers-Light" />
-	<font familyName="UniversBlack" />
-	
-	<font familyName="TimesItalic" />
-	<font familyName="Universal-NewswithCommPi" />
-	<font familyName="Universal-GreekwithMathPi" />
-	
-	
-	<font familyName="MTSY" />
-	<font familyName="TimesTenGreekInclined" />
-	<font familyName="ChemBats2" />
-	<font familyName="ChemBats" />
-	
-	<font familyName="AdvOTf32ed098B" />
-	<font familyName="AdvOT144a03c1" />
-	<font familyName="AdvP43B38B" />
-	<font familyName="AdvOT7d6df7abI" />
-	<font familyName="AdvPA0C7" />
-	<font familyName="AdvP44E6F4" />
-	<font familyName="AdvOT5e4d79fc" />
-	<font familyName="AdvP40798" />
-	<font familyName="AdvP3EAA99" />
-	<font familyName="AdvP414BFB" />
-	<font familyName="AdvOT1415ea69B" />
-	<font familyName="AdvP7DA6" />
-	<font familyName="AdvP705F" />
-	<font familyName="AdvP7627" />
-	<font familyName="AdvP7DB7" />
-	<font familyName="AdvP4383EF" />
-	<font familyName="AdvP4C4E46" />
-	<font familyName="AdvP3F0CD3" />
-	<font familyName="AdvP7CA8" />
-	<font familyName="AdvOT735b620e" />
-	<font familyName="AdvOTb65e897dB" />
-	<font familyName="AdvOT1ef757c0" />
-	
-	<font familyName="AdvTimes" />
-	<font familyName="AdvP3FA081" />
-	<font familyName="AdvTT3f228929" />
-	<font familyName="AdvP3FA080" />
-	<font familyName="AdvP8952" />
-	<font familyName="AdvTT9b21af61" />
-	<font familyName="AdvT042" />
-	<font familyName="AdvTTaf2fa8d1" />
-	<font familyName="AdvP8955" />
-	<font familyName="AdvTT7c108665" />
-	<font familyName="AdvP3FA07F" />
-	<font familyName="AdvP3FA07E" />
-	<font familyName="AdvP3FA07A" />
-	<font familyName="AdvPi1" />
-	<font familyName="AdvTT1fd23801" />
-	<font familyName="AdvP4A5FDB" />
-	<font familyName="AdvTT920944b2" />
-	
-	<font familyName="AdvTT00bc0be2" />
-	<font familyName="AdvOT8608a8d1+25" />
-	<font familyName="AdvTT03eea2a7B+20" />
-	<font familyName="AdvOT7b6c0d50B" />
-	<font familyName="AdvOT8608a8d1+22" />
-	<font familyName="AdvTT03eea2a7B" />
-	<font familyName="AdvOTeeb42827I" />
-	<font familyName="AdvOT82c4f4c4" />
-	<font familyName="AdvOTef4c711aI" />
-	<font familyName="AdvOT82c4f4c4+20" />
-	<font familyName="AdvTT03eea2a7B+fb" />
-	<font familyName="AdvTT00bc0be2+fb" />
-	<font familyName="AdvTTd9d2734bI" />
-	<font familyName="AdvOT9bd2e232B" />
-	<font familyName="AdvTT00bc0be2+20" />
-	<font familyName="AdvOT30a32c65" />
-	<font familyName="AdvOT30a32c65+20" />
-	<font familyName="AdvTT05cc2067+03" />
-	
-	<font familyName="Avenir-Roman" />
-	<font familyName="Avenir-Mediumblique" />
-	<font familyName="AvenirLTStd-Medium" />
-	<font familyName="AvenirOblique" />
-	<font familyName="Avenir-Heavy" />
-	<font familyName="AvenirBlack" />
-	<font familyName="AvenirLTStd-Mediumblique" />
-	<font familyName="AvenirBlackblique" />
-	<font familyName="Avenir-Medium" />
-	<font familyName="Avenir-Lightblique" />
-	<font familyName="Avenir-Light" />
-	
-	<font familyName="MyriadProIt" />
-	<font familyName="MinionSemiboldtalic" />
-	<font familyName="MinionSemibold" />
-	<font familyName="OurOwn-CJS" />
-	<font familyName="MyriadMM-Regular" />
-	<font familyName="MyriadProSemibold" />
-	<font familyName="MyriadPro-Regular" />
-	<font familyName="MyriadMM-Light" />
-	<font familyName="MyriadProBold" />
-	
-	<font familyName="AdvP4C9F3E" />
-	<font familyName="AdvP43A417" />
-	<font familyName="AdvP41461E" />
-	<font familyName="AdvP4041BD" />
-	<font familyName="AdvP3D3256" />
-	<font familyName="AdvP4980F" />
-	<font familyName="AdvT377" />
-	<font familyName="AdvP4980C" />
-	<font familyName="AdvP49811" />
-	<font familyName="AdvP403A40" />
-	<font familyName="AdvP49812" />
-	<font familyName="AdvP40319B" />
-	<font familyName="AdvP497E2" />
-	<font familyName="AdvP497E3" />
-	<font familyName="AdvP697C" />
-	
-	<font familyName="AdvTA42" />
-	<font familyName="AdvEls-ent4" />
-	<font familyName="AdvP4DF614" />
-	<font familyName="AdvMacT_R" />
-	<font familyName="AdvUnivers" />
-	<font familyName="AdvMacMthSyN" />
-	<font familyName="AdvP4DF60E" />
-	<font familyName="AdvEls-ent8" />
-	<font familyName="AdvP4DF60F" />
-	<font familyName="AdvGulliver-SCO" />
+	<!-- normalize these later -->
+	<fontFamily name="CalibriBold" />
+	<fontFamily name="Calibri,old" />
+	<fontFamily name="Calibri,talic" />
+	<fontFamily name="MT" />
+	<fontFamily name="TimesNRMTBold" />
+	<fontFamily name="TimesGreekSFInclined" />
+	<fontFamily name="TimesNRExpertMTBold" />
+	<fontFamily name="TimesNRMTSemiBold" />
+	<fontFamily name="TimesBold" />
+	<fontFamily name="TimesNRMTItalic" />
+	<fontFamily name="TimesNRMTBoldtalic" />
+	<fontFamily name="TimesNRMTSemiBoldtalic" />
+	<fontFamily name="Times-RomanSC" />
+	<fontFamily name="UniversBold" />
 
-</fonts>
-		
+	<!--  BMC -->
+	<fontFamily name="AdvOTa9103878+03" />
+	<fontFamily name="AdvOT3b30f6dbB" />
+	<fontFamily name="AdvOT07517017" />
+	<fontFamily name="AdvOTf0bf83d5I" />
+	<fontFamily name="AdvOT46dcae81" />
+	<fontFamily name="AdvOT46dcae81+20" />
+	<fontFamily name="AdvOT56309c18I" />
+	<fontFamily name="AdvOT65f8a23bI" />
+	<fontFamily name="AdvOTce3d9a73" />
+	<fontFamily name="AdvOT07517017+03" />
+	<fontFamily name="AdvOTa9103878+20" />
+	<fontFamily name="AdvOTa9103878" />
+	<fontFamily name="AdvTT3f84ef53" />
+	<fontFamily name="AdvOT07517017+20" />
+	<fontFamily name="AdvOTce3d9a73+03" />
+	<fontFamily name="AdvOTce3d9a73+20" />
+	<fontFamily name="AdvOT0d9ab1dbI" />
+
+	<!--  elsevier  -->	
+	<fontFamily name="AdvP4C4E59" />
+	<fontFamily name="AdvP4C4E74" />
+	<fontFamily name="AdvP4C4E51" />
+	<fontFamily name="AdvPSA35D" />
+	<fontFamily name="AdvOTc4d0b532" />
+	<fontFamily name="AdvOT863180fb" />
+	<fontFamily name="AdvPSSym" />
+	<fontFamily name="AdvOTb83ee1ddB" />
+	<fontFamily name="AdvOT404f8e91BI" />
+	<fontFamily name="AdvPS4BD310" />
+	<fontFamily name="AdvPS3F4C13" />
+	<fontFamily name="AdvOTb92eb7dfI" />
+	<fontFamily name="AdvOT863180fb+fb" />
+	<fontFamily name="AdvOT863180fb+20" />
+	<fontFamily name="AdvPS4721B4" />
+	<fontFamily name="AdvPS44A44B" />
+
+	<fontFamily name="RMTMI" />
+	<fontFamily name="Minion-Regular" />
+	<fontFamily name="MinionBold" />
+	<fontFamily name="MinionBoldtalic" />
+	<fontFamily name="MinionItalic" />
+	<fontFamily name="Univers-Condensedold" />
+	<fontFamily name="Univers-Lightblique" />
+	<fontFamily name="UniversBoldblique" />
+	<fontFamily name="Univers-Condensedoldblique" />
+	<fontFamily name="Univers-Light" />
+	<fontFamily name="UniversBlack" />
+
+	<fontFamily name="TimesItalic" />
+	<fontFamily name="Universal-NewswithCommPi" />
+	<fontFamily name="Universal-GreekwithMathPi" />
+
+
+	<fontFamily name="MTSY" />
+	<fontFamily name="TimesTenGreekInclined" />
+	<fontFamily name="ChemBats2" />
+	<fontFamily name="ChemBats" />
+
+	<fontFamily name="AdvOTf32ed098B" />
+	<fontFamily name="AdvOT144a03c1" />
+	<fontFamily name="AdvP43B38B" />
+	<fontFamily name="AdvOT7d6df7abI" />
+	<fontFamily name="AdvPA0C7" />
+	<fontFamily name="AdvP44E6F4" />
+	<fontFamily name="AdvOT5e4d79fc" />
+	<fontFamily name="AdvP40798" />
+	<fontFamily name="AdvP3EAA99" />
+	<fontFamily name="AdvP414BFB" />
+	<fontFamily name="AdvOT1415ea69B" />
+	<fontFamily name="AdvP7DA6" />
+	<fontFamily name="AdvP705F" />
+	<fontFamily name="AdvP7627" />
+	<fontFamily name="AdvP7DB7" />
+	<fontFamily name="AdvP4383EF" />
+	<fontFamily name="AdvP4C4E46" />
+	<fontFamily name="AdvP3F0CD3" />
+	<fontFamily name="AdvP7CA8" />
+	<fontFamily name="AdvOT735b620e" />
+	<fontFamily name="AdvOTb65e897dB" />
+	<fontFamily name="AdvOT1ef757c0" />
+
+	<fontFamily name="AdvTimes" />
+	<fontFamily name="AdvP3FA081" />
+	<fontFamily name="AdvTT3f228929" />
+	<fontFamily name="AdvP3FA080" />
+	<fontFamily name="AdvP8952" />
+	<fontFamily name="AdvTT9b21af61" />
+	<fontFamily name="AdvT042" />
+	<fontFamily name="AdvTTaf2fa8d1" />
+	<fontFamily name="AdvP8955" />
+	<fontFamily name="AdvTT7c108665" />
+	<fontFamily name="AdvP3FA07F" />
+	<fontFamily name="AdvP3FA07E" />
+	<fontFamily name="AdvP3FA07A" />
+	<fontFamily name="AdvTT1fd23801" />
+	<fontFamily name="AdvP4A5FDB" />
+	<fontFamily name="AdvTT920944b2" />
+
+	<fontFamily name="AdvTT00bc0be2" />
+	<fontFamily name="AdvOT8608a8d1+25" />
+	<fontFamily name="AdvTT03eea2a7B+20" />
+	<fontFamily name="AdvOT7b6c0d50B" />
+	<fontFamily name="AdvOT8608a8d1+22" />
+	<fontFamily name="AdvTT03eea2a7B" />
+	<fontFamily name="AdvOTeeb42827I" />
+	<fontFamily name="AdvOT82c4f4c4" />
+	<fontFamily name="AdvOTef4c711aI" />
+	<fontFamily name="AdvOT82c4f4c4+20" />
+	<fontFamily name="AdvTT03eea2a7B+fb" />
+	<fontFamily name="AdvTT00bc0be2+fb" />
+	<fontFamily name="AdvTTd9d2734bI" />
+	<fontFamily name="AdvOT9bd2e232B" />
+	<fontFamily name="AdvTT00bc0be2+20" />
+	<fontFamily name="AdvOT30a32c65" />
+	<fontFamily name="AdvOT30a32c65+20" />
+	<fontFamily name="AdvTT05cc2067+03" />
+
+	<fontFamily name="Avenir-Roman" />
+	<fontFamily name="Avenir-Mediumblique" />
+	<fontFamily name="AvenirLTStd-Medium" />
+	<fontFamily name="AvenirOblique" />
+	<fontFamily name="Avenir-Heavy" />
+	<fontFamily name="AvenirBlack" />
+	<fontFamily name="AvenirLTStd-Mediumblique" />
+	<fontFamily name="AvenirBlackblique" />
+	<fontFamily name="Avenir-Medium" />
+	<fontFamily name="Avenir-Lightblique" />
+	<fontFamily name="Avenir-Light" />
+
+	<fontFamily name="MyriadProIt" />
+	<fontFamily name="MinionSemiboldtalic" />
+	<fontFamily name="MinionSemibold" />
+	<fontFamily name="OurOwn-CJS" />
+	<fontFamily name="MyriadMM-Regular" />
+	<fontFamily name="MyriadProSemibold" />
+	<fontFamily name="MyriadPro-Regular" />
+	<fontFamily name="MyriadMM-Light" />
+	<fontFamily name="MyriadProBold" />
+
+	<fontFamily name="AdvP4C9F3E" />
+	<fontFamily name="AdvP43A417" />
+	<fontFamily name="AdvP41461E" />
+	<fontFamily name="AdvP4041BD" />
+	<fontFamily name="AdvP3D3256" />
+	<fontFamily name="AdvP4980F" />
+	<fontFamily name="AdvT377" />
+	<fontFamily name="AdvP4980C" />
+	<fontFamily name="AdvP49811" />
+	<fontFamily name="AdvP403A40" />
+	<fontFamily name="AdvP49812" />
+	<fontFamily name="AdvP40319B" />
+	<fontFamily name="AdvP497E2" />
+	<fontFamily name="AdvP497E3" />
+	<fontFamily name="AdvP697C" />
+
+	<fontFamily name="AdvTA42" />
+	<fontFamily name="AdvEls-ent4" />
+	<fontFamily name="AdvP4DF614" />
+	<fontFamily name="AdvMacT_R" />
+	<fontFamily name="AdvUnivers" />
+	<fontFamily name="AdvMacMthSyN" />
+	<fontFamily name="AdvP4DF60E" />
+	<fontFamily name="AdvEls-ent8" />
+	<fontFamily name="AdvP4DF60F" />
+	<fontFamily name="AdvGulliver-SCO" />
+
+</fontFamilySet>

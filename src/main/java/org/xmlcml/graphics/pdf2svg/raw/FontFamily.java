@@ -3,6 +3,7 @@ package org.xmlcml.graphics.pdf2svg.raw;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
+import org.apache.log4j.Logger;
 import org.xmlcml.euclid.Util;
 
 import nu.xom.Attribute;
@@ -26,9 +27,11 @@ import nu.xom.ValidityException;
  */
 public class FontFamily {
 
+	public final static Logger LOG = Logger.getLogger(FontFamily.class);
 	// XML
-	public final static String FONT = "font";
-	public static final String FAMILY_NAME = "familyName";
+	public static final String CODE_POINT_SET = "codePointSet";
+	public final static String FONT_FAMILY = "fontFamily";
+	public static final String NAME = "name";
 	public static final String FONT_TYPE = "fontType";
 	public static final String MONOSPACED = "monospaced";
 	public static final String NOTE = "note";
@@ -43,6 +46,7 @@ public class FontFamily {
 	private String serif;
 	private String monospaced;
 	private String note;
+	private CodePointSet codePointSet;
 
 	public FontFamily() {
 		
@@ -52,10 +56,10 @@ public class FontFamily {
 		FontFamily fontFamily = null;
 		try {
 			fontFamily = new FontFamily();
-			if (!(FONT.equals(fontFamilyElement.getLocalName()))) {
-				throw new RuntimeException("FontFamilySet children must be <font>");
+			if (!(FONT_FAMILY.equals(fontFamilyElement.getLocalName()))) {
+				throw new RuntimeException("FontFamilySet children must be: "+FONT_FAMILY);
 			}
-			fontFamily.familyName = fontFamilyElement.getAttributeValue(FAMILY_NAME);
+			fontFamily.familyName = fontFamilyElement.getAttributeValue(NAME);
 			if (fontFamily.familyName == null) {
 				throw new RuntimeException("<FontFamily> must have familyName attribute");
 			}
@@ -65,18 +69,31 @@ public class FontFamily {
 			fontFamily.serif = fontFamilyElement.getAttributeValue(SERIF);
 			fontFamily.monospaced = fontFamilyElement.getAttributeValue(MONOSPACED);
 			fontFamily.note = fontFamilyElement.getAttributeValue(NOTE);
+			String codePointSetName = fontFamilyElement.getAttributeValue(CODE_POINT_SET);
+			if (codePointSetName != null) {
+				CodePointSet codePointSet = CodePointSet.readCodePointSet(codePointSetName);
+				if (codePointSet == null) {
+					throw new RuntimeException("Cannot read codePointSet: "+codePointSetName);
+				}
+				fontFamily.setCodePointSet(codePointSet);
+				LOG.debug("CPS: "+fontFamily.getCodePointSet());
+			}
 		} catch (Exception e) {
 			throw new RuntimeException("invalid FontFamilyElement: "+((fontFamilyElement == null) ? null : fontFamilyElement.toXML()), e);
 		}
 		return fontFamily;
 	}
 
+	private void setCodePointSet(CodePointSet codePointSet) {
+		this.codePointSet = codePointSet;
+	}
+
 	public Element createElement() {
-		Element FontFamilyElement = new Element(FONT);
+		Element FontFamilyElement = new Element(FONT_FAMILY);
 		if (familyName == null) {
 			throw new RuntimeException("familyName must not be null");
 		}
-		FontFamilyElement.addAttribute(new Attribute(FAMILY_NAME, ""+familyName));
+		FontFamilyElement.addAttribute(new Attribute(NAME, ""+familyName));
 		if (standardFont != null) {
 			FontFamilyElement.addAttribute(new Attribute(STANDARD_FONT, standardFont));
 		}
@@ -108,6 +125,10 @@ public class FontFamily {
 
 	public void setFamilyName(String familyName) {
 		this.familyName = familyName;
+	}
+
+	public CodePointSet getCodePointSet() {
+		return codePointSet;
 	}
 
 }

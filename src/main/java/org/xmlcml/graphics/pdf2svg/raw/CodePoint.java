@@ -7,8 +7,6 @@ import org.apache.log4j.Logger;
 
 public class CodePoint {
 
-
-
 	private final static Logger LOG = Logger.getLogger(CodePoint.class);
 	
 	// XML
@@ -34,7 +32,7 @@ public class CodePoint {
 		
 	}
 
-	public static CodePoint createFromElement(Element codePointElement) {
+	public static CodePoint createFromElement(Element codePointElement, String encoding) {
 		CodePoint codePoint = null;
 		try {
 			codePoint = new CodePoint();
@@ -42,18 +40,21 @@ public class CodePoint {
 				throw new RuntimeException("CodePointSet children must be <codePoint>");
 			}
 			String decimalS = codePointElement.getAttributeValue(DECIMAL);
-			if (decimalS == null) {
-				throw new RuntimeException("<codePoint> must have decimal attribute");
+			String charname = codePointElement.getAttributeValue(NAME);
+			if (decimalS == null && charname == null) {
+				throw new RuntimeException("<codePoint> must have decimal attribute and/or name");
 			}
-			codePoint.decimal = new Integer(decimalS); 
+			if (decimalS != null) {
+				codePoint.decimal = new Integer(decimalS); 
+			}
 			codePoint.unicode = codePointElement.getAttributeValue(UNICODE);
 			if (codePoint.unicode == null || !codePoint.unicode.startsWith(UNICODE_PREFIX)) {
-				throw new RuntimeException("CodePointSet children must be <codePoint>");
+				throw new RuntimeException("missing or invalid unicode value");
 			}
 			codePoint.unicode = codePoint.unicode.toUpperCase();
 			String hex = HEX_PREFIX+codePoint.unicode.substring(2);
 			Integer codePointHex = Integer.decode(hex);
-			if (!codePointHex.equals(codePoint.decimal)) {
+			if (CodePointSet.UNICODE.equals(encoding) && (codePoint.decimal != null && !codePointHex.equals(codePoint.decimal))) {
 				throw new RuntimeException(
 						"<codePoint> integer ("+codePoint.decimal+") and unicode ("+codePoint.unicode+") values do not match; try: "+Integer.toHexString(codePoint.decimal));
 			}
@@ -108,6 +109,10 @@ public class CodePoint {
 	
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public void setUnicode(String unicode) {
+		this.unicode = unicode;
 	}
 	
 }

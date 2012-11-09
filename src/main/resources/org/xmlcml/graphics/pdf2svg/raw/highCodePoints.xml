@@ -1,4 +1,4 @@
-<codePoints>
+<codePointSet encoding="Unicode">
 	<codePoint decimal="913" unicode="U+0391" name="GREEK CAPITAL LETTER ALPHA"/>
 	<codePoint decimal="914" unicode="U+0392" name="GREEK CAPITAL LETTER BETA"/>
 	<codePoint decimal="915" unicode="U+0393" name="GREEK CAPITAL LETTER GAMMA"/>
@@ -117,7 +117,5 @@
 	<codePoint decimal="64258" unicode="U+FB02" />
 	<codePoint decimal="64259" unicode="U+FB03" />
 	
-	
-	
-</codePoints>
+</codePointSet>
 		

@@ -19,7 +19,7 @@ public class FontFamilySet {
 
 	private final static Logger LOG = Logger.getLogger(FontFamilySet.class);
 	
-	private static final String FONTS = "fonts";
+	private static final String FONT_FAMILY_SET = "fontFamilySet";
 	public static final String STANDARD_FONT_FAMILY_SET_XML = "org/xmlcml/graphics/pdf2svg/raw/standardFontFamilySet.xml";
 	public static final String NON_STANDARD_FONT_FAMILY_SET_XML = "org/xmlcml/graphics/pdf2svg/raw/nonStandardFontFamilySet.xml";
 
@@ -42,29 +42,36 @@ public class FontFamilySet {
 	 * @return
 	 */
 	public static FontFamilySet readFontFamilySet(String fontFamilySetXml) {
-		FontFamilySet fontFamilySet = new FontFamilySet();
+		FontFamilySet fontFamilySet = null;
 		try {
-			Element FontFamilys = new Builder().build(
+			Element fontFamilySetElement = new Builder().build(
 					Util.getResourceUsingContextClassLoader(fontFamilySetXml, FontFamilySet.class)).getRootElement();
-			if (!(FONTS.equals(FontFamilys.getLocalName()))) {
-				throw new RuntimeException("FontFamilySet must have rootElement <FontFamilys>");
-			}
-			Elements childElements = FontFamilys.getChildElements();
-			for (int i = 0; i < childElements.size(); i++) {
-				Element fontFamilyElement = childElements.get(i);
-				FontFamily fontFamily = FontFamily.createFromElement(fontFamilyElement);
-				if (fontFamily == null) {
-					throw new RuntimeException("Cannot read/parse fontFamilyElement: "+((fontFamilyElement == null) ? null : fontFamilyElement.toXML()));
-				}
-				String family = fontFamily.getFamily();
-				if (fontFamilySet.containsKey(family)) {
-					throw new RuntimeException("Duplicate name: "+family);
-				}
-				fontFamilySet.fontFamilyByFamilyName.put(family, fontFamily);
-			}
+			fontFamilySet = createFromElement(fontFamilySetElement);
 
 		} catch (Exception e) {
 			throw new RuntimeException("Cannot read FontFamilySet: "+fontFamilySetXml, e);
+		}
+		return fontFamilySet;
+	}
+
+	public static FontFamilySet createFromElement(Element fontFamilySetElement) {
+		FontFamilySet fontFamilySet = new FontFamilySet();
+		String rootName = fontFamilySetElement.getLocalName();
+		if (!(FONT_FAMILY_SET.equals(rootName))) {
+			throw new RuntimeException("FontFamilySet must have rootElement "+FONT_FAMILY_SET+"; found: "+rootName);
+		}
+		Elements childElements = fontFamilySetElement.getChildElements();
+		for (int i = 0; i < childElements.size(); i++) {
+			Element fontFamilyElement = childElements.get(i);
+			FontFamily fontFamily = FontFamily.createFromElement(fontFamilyElement);
+			if (fontFamily == null) {
+				throw new RuntimeException("Cannot read/parse fontFamilyElement: "+((fontFamilyElement == null) ? null : fontFamilyElement.toXML()));
+			}
+			String family = fontFamily.getFamily();
+			if (fontFamilySet.containsKey(family)) {
+				throw new RuntimeException("Duplicate name: "+family);
+			}
+			fontFamilySet.fontFamilyByFamilyName.put(family, fontFamily);
 		}
 		return fontFamilySet;
 	}
@@ -73,7 +80,7 @@ public class FontFamilySet {
 		return fontFamilyByFamilyName.containsKey(name);
 	}
 
-	FontFamily getFontByFamilyName(String fontFamilyName) {
+	FontFamily getFontFamilyByName(String fontFamilyName) {
 		return fontFamilyByFamilyName.get(fontFamilyName);
 	}
 
@@ -85,7 +92,7 @@ public class FontFamilySet {
 	}
 
 	Element createElement() {
-		Element fontsElement = new Element(FONTS);
+		Element fontsElement = new Element(FONT_FAMILY_SET);
 		for (String fontFamilyName : fontFamilyByFamilyName.keySet()) {
 			FontFamily fontFamily = fontFamilyByFamilyName.get(fontFamilyName);
 			if (fontFamily == null) {

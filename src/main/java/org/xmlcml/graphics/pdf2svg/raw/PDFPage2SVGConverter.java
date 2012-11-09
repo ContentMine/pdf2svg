@@ -100,6 +100,8 @@ public class PDFPage2SVGConverter extends PageDrawer {
 
 	private AMIFont amiFont;
 
+	private String lastFontName;
+
 	public PDFPage2SVGConverter() throws IOException {
 		super();
 	}
@@ -178,22 +180,22 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		font = text.getFont();
 		amiFont = amiFontManager.getAmiFontByFont(font);
 		fontName = amiFont.getFontName();
-		LOG.debug("Font name: "+fontName);
 		if (fontName == null) {
 			throw new RuntimeException("Null font name");
+		} else if (!fontName.equals(lastFontName)) {
+			LOG.debug("font from "+lastFontName+" -> "+fontName);
+			lastFontName = fontName;
 		}
 		fontFamilyName = amiFont.getFontFamilyName();
-		LOG.debug("Font family name: "+fontFamilyName);
 		FontFamily fontFamily = amiFontManager.getFontFamily(fontFamilyName);
 		fontEncoding = amiFont.getEncoding();
 		textContent = text.getCharacter();
-		LOG.debug("CH>"+textContent+"<");
 		if (textContent.length() > 1) {
 			// this can happen for ligatures
 			LOG.trace("multi-char string: "+text.getCharacter());
 		}
+		convertNonUnicodeCharacterEncodings(fontFamily);
 		charCode = getCharCodeAndAddToHighPoints(text);
-		LOG.debug("code: "+charCode);
 		if (fontEncoding == null) {
 			LOG.warn("Null encoding for character: "+charCode+" at "+currentXY+" font: "+amiFont.getFontName()+" / "+amiFont.getFontFamilyName()+" / "+amiFont.getBaseFont());
 		} else {
@@ -205,6 +207,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 				LOG.warn("cannot get char encoding "+" at "+currentXY, e1);
 			}
 		}
+		LOG.trace("Fn: "+fontName+"; Ff: "+fontFamilyName+"; "+textContent+"; "+charCode+"; "+charname);
 		float width = getCharacterWidth(font, textContent);
 		if (fontEncoding instanceof DictionaryEncoding || fontFamilyName == null) {
 			captureAndIndexGlyphVector(text);
@@ -245,8 +248,21 @@ public class PDFPage2SVGConverter extends PageDrawer {
 //		lastFontFamily = fontFamilyName;
 	}
 
+	private void convertNonUnicodeCharacterEncodings(FontFamily fontFamily) {
+		CodePointSet codePointSet = fontFamily.getCodePointSet();
+		if (codePointSet != null) {
+			LOG.debug("code point set for "+fontFamilyName);
+			String textContent1 = codePointSet.convertCharnameToUnicode(textContent);
+			if (textContent1 == null) {
+				throw new RuntimeException("Cannot convert character: "+textContent);
+			}
+			textContent = textContent1;
+		}
+	}
+
 	private void captureAndIndexGlyphVector(TextPosition text) {
 		String pathString = amiFont.getPathStringByCharnameMap().get(charname);
+		LOG.debug("charname: "+charname+" oath: "+pathString);
 		if (pathString == null) {
 			PDFGraphics2D graphics = new PDFGraphics2D(amiFont);
 			Matrix textPos = text.getTextPos().copy();
@@ -304,7 +320,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			} else if (converter.newCodePointSet.containsKey((Integer) charCode)) {
 				// known 
 			} else {
-				converter.newCodePointSet.add((Integer)charCode, charname);
+				converter.newCodePointSet.add((Integer)charCode, charname, null);
 				System.out.println("ADDED: "+charCode);
 			}
 		}
