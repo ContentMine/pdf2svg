@@ -1,0 +1,6 @@
+<codePointSet encoding="AdvPSSym">
+    <codePoint unicodeName="COPYRIGHT" unicode="U+00A9" decimal="170" name="ordfeminine"/>
+    <codePoint unicodeName="UNKNOWN" unicode="U+274E" decimal="999999"/>
+    
+	<codePoint name="C212" unicode="U+2122" decimal="50" unicodeName="TRADE MARK SIGN"/> 
+</codePointSet>

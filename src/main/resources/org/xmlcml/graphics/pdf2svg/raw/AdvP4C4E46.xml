@@ -1,0 +1,13 @@
+<codePointSet encoding="AdvP4C4E46"> 
+	
+	<codePoint decimal="88" unicode="U+274E" unicodeName="UNK"/>  
+	<codePoint decimal="113" unicode="U+274E" unicodeName="UNK"/>  
+	<codePoint decimal="64259" unicode="U+274E" unicodeName="UNK"/>  
+	
+	<codePoint name="C2" unicode="U+005B" unicodeName="LEFT SQUARE BRACKET"/>  
+	<codePoint name="C3" unicode="U+005D" unicodeName="RIGHT SQUARE BRACKET"/>  
+
+	<codePoint name="C16" unicode="U+0028" unicodeName="LEFT BRACKET"/>  
+	<codePoint name="C17" unicode="U+0029" unicodeName="RIGHT BRACKET"/>  
+</codePointSet>
+		

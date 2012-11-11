@@ -1,0 +1,6 @@
+<codePointSet encoding="AdvEnt7">
+    <codePoint unicodeName="TILDE" unicode="U+007E" decimal="66" note="unknown"/>
+    <codePoint unicodeName="ALMOST EQUAL TO" unicode="U+2248" decimal="69" note="unknown"/>
+    <codePoint unicodeName="NOT EQUAL TO" unicode="U+2260" decimal="97" note="unknown"/>
+    <codePoint unicodeName="UNKNOWN" unicode="U+274E" decimal="999999" note="unknown"/>
+</codePointSet>

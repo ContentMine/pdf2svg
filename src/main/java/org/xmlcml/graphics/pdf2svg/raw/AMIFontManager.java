@@ -27,9 +27,8 @@ public class AMIFontManager {
 
 	private final static Logger LOG = Logger.getLogger(AMIFontManager.class);
 
-	private static final String SYMBOL2UNICODE_HACK_XML = "org/xmlcml/graphics/pdf2svg/raw/symbol2unicode.xml";
+	private static final String SYMBOL2UNICODE_HACK_XML = "org/xmlcml/graphics/pdf2svg/raw/csymbol2unicode.xml";
 	private static final String AMI_FONT_BY_FAMILY_XML = "org/xmlcml/graphics/pdf2svg/raw/amiFontByFamily.xml";
-//	private static final String AMI_FONT_BY_NAME_XML = "org/xmlcml/graphics/pdf2svg/raw/amiFontByFamily.xml";
 
 	public static final String FONT_TRUE_TYPE = "TrueType";
 	public static final String FONT_TYPE1 = "Type1";
@@ -58,6 +57,8 @@ public class AMIFontManager {
 	private FontFamilySet newFontFamilySet;
 
 	private Map<String, Integer> symbol2UnicodeHackMap;
+	
+	public static final int UNKNOWN_CHAR = (char)0X274E; // black square with white cross
 
 	public AMIFontManager() {
 		ensureAMIFontMaps();
@@ -150,9 +151,9 @@ public class AMIFontManager {
 		return amiFont;
 	}
 
-	public void ensureSymbol2UnicodeHackMap() {
-		ensureSymbol2UnicodeHackMap(SYMBOL2UNICODE_HACK_XML);
-	}
+//	public void ensureSymbol2UnicodeHackMap() {
+//		ensureSymbol2UnicodeHackMap(SYMBOL2UNICODE_HACK_XML);
+//	}
 
 	/** hopefully this map is independent of font; if not we may have to move it to
 	 * individual AMIFonts
@@ -186,21 +187,30 @@ public class AMIFontManager {
 	 * @param symbol e.g. "two", "A", "comma"
 	 * @return codepoint 50, 65, 44 or null if not converted
 	 */
-	public Integer convertSymbol2UnicodeStandard(String symbol) {
+	public static Integer convertSymbol2UnicodeStandard(String symbol) {
 		Integer codePoint = null;
-		ensureSymbol2UnicodeHackMap();
-		String s = (symbol == null) ? null : StandardEncoding.INSTANCE.getCharacter(symbol);
+		String s = (symbol == null) ? null : convertToUnicodeWithPDFStandardEncoding(symbol);
 		if (s != null) {
 			// all converted characters should have length 1
 			if (s.length() == 1) {
 				LOG.trace(symbol+" => "+s);
 				codePoint = new Integer((int) s.charAt(0));
 			} else {
-				// for ?unknown? charnames (e.g. "H1101") appears to return the charname unchanged
+				// for ?unknown? charnames - we may need glyphs
 				s = null; 
 			}
 		}
 		return codePoint;
+	}
+
+	/** uses PDFBox list of standard symbols to convert to characters.
+	 * e.g. "two" converts to "2" (unicode codePoint 50)
+	 * some are identity ops - "a" converts to "a"
+	 * @param symbol
+	 * @return
+	 */
+	public static String convertToUnicodeWithPDFStandardEncoding(String symbol) {
+		return StandardEncoding.INSTANCE.getCharacter(symbol);
 	}
 	
 	/** has a messy collection of character names from MathematicalPi, Cddd and elsewhere
@@ -210,7 +220,7 @@ public class AMIFontManager {
 	 * @param symbol
 	 * @return
 	 */
-	public Integer convertSymbol2UnicodeHack(String symbol) {
+	public Integer convertSymbol2UnicodeHack(String symbol, String fontF) {
 		Integer codePoint = null;
 		if (symbol != null) {
 			codePoint = symbol2UnicodeHackMap.get(symbol);
@@ -290,13 +300,13 @@ public class AMIFontManager {
 		String fontFamilyName = amiFont.getFontFamilyName();
 		FontFamily fontFamily = amiFont.getFontFamily();
 		if (standardFontFamilySet.containsKey(fontFamilyName)) {
-			LOG.debug(fontFamilyName+" is a standard FontFamily");
+			LOG.trace(fontFamilyName+" is a standard FontFamily");
 		} else if (nonStandardFontFamilySet.containsKey(fontFamilyName)) {
-			LOG.debug(fontFamilyName+" is a known non-standard FontFamily");
+			LOG.trace(fontFamilyName+" is a known non-standard FontFamily");
 		} else if (newFontFamilySet.containsKey(fontFamilyName)) {
-			LOG.debug(fontFamilyName+" is a known newFontFamily");
+			LOG.trace(fontFamilyName+" is a known newFontFamily");
 		} else {
-			LOG.debug(fontName+" is being added as new FontFamily");
+			LOG.trace(fontName+" is being added as new FontFamily");
 			if (fontFamily == null) {
 				fontFamily = new FontFamily();
 				fontFamily.setName(""+fontName);
@@ -308,6 +318,10 @@ public class AMIFontManager {
 	
 	public FontFamilySet getNewFontFamilySet() {
 		return newFontFamilySet;
+	}
+
+	public static String getUnknownCharacterSymbol() {
+		return ""+(char)UNKNOWN_CHAR;
 	}
 	
 }

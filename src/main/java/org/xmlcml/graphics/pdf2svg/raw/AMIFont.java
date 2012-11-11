@@ -134,7 +134,7 @@ and
 		processIsBoldInName();
 		processIsItalicInName();
 		processFinalSuffix();
-		LOG.debug(fontName);
+		LOG.trace(fontName);
 	}
 
 	/** create font from family and key attributes
@@ -188,19 +188,19 @@ and
 			// take fontDescriptor over name extraction
 			isBold = fontDescriptor.isForceBold() ? true : isBold;
 			if (isBold) {
-				LOG.debug("bold from Font Descriptor");
+				LOG.trace("bold from Font Descriptor");
 			}
 			isItalic = fontDescriptor.isItalic() ? true : isItalic;
 			if (isItalic) {
-				LOG.debug("italic from Font Descriptor");
+				LOG.trace("italic from Font Descriptor");
 			}
 			isSymbol = fontDescriptor.isSymbolic();
 			if (isSymbol) {
-				LOG.debug("symbol from Font Descriptor");
+				LOG.trace("symbol from Font Descriptor");
 			}
 			
 			fontName = fontDescriptor.getFontName();
-			LOG.debug("name="+fontName+" fam="+fontFamilyName+" type="+pdFont.getSubType()+" bold="+isBold +" it="+isItalic+" face="+finalSuffix+" sym="+isSymbol+ " enc="+(encoding == null ? "null" : encoding.getClass().getSimpleName()));
+			LOG.trace("name="+fontName+" fam="+fontFamilyName+" type="+pdFont.getSubType()+" bold="+isBold +" it="+isItalic+" face="+finalSuffix+" sym="+isSymbol+ " enc="+(encoding == null ? "null" : encoding.getClass().getSimpleName()));
 		} else {
 			LOG.warn("font had no descriptor: "+baseFont+" / "+fontFamilyName);
 			fontName = baseFont;

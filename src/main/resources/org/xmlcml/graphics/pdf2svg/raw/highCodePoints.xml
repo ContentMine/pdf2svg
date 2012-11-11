@@ -1,4 +1,9 @@
 <codePointSet encoding="Unicode">
+
+
+    <codePoint decimal="305" unicode="U+131" name="LATIN SMALL LETTER DOTLESS I" note="probably mistake"/>
+    <codePoint decimal="711" unicode="U+02C7" name="CARON" note="probaby used as combining character ? use U+030C?"/>
+<!--  Greek -->
 	<codePoint decimal="913" unicode="U+0391" name="GREEK CAPITAL LETTER ALPHA"/>
 	<codePoint decimal="914" unicode="U+0392" name="GREEK CAPITAL LETTER BETA"/>
 	<codePoint decimal="915" unicode="U+0393" name="GREEK CAPITAL LETTER GAMMA"/>
@@ -49,26 +54,27 @@
 	<codePoint decimal="967" unicode="U+03C7" name="GREEK SMALL LETTER CHI" note="" />
 	<codePoint decimal="968" unicode="U+03C8" name="GREEK SMALL LETTER PSI" note="" />
 	<codePoint decimal="969" unicode="U+03C9" name="GREEK SMALL LETTER OMEGA" note="" />
+
 	
-	<codePoint decimal="8211" unicode="U+2013" replaceByUnicode=""
+	<codePoint decimal="8211" unicode="U+2013" replaceName="HYPHEN-MINUS" replaceByUnicode="U+002D"
 		name="EN DASH" note="" />
-	<codePoint decimal="8212" unicode="U+2014" replaceByUnicode=""
+	<codePoint decimal="8212" unicode="U+2014" replaceName="HYPHEN-MINUS" replaceByUnicode="U+002D"
 		name="EM DASH" note="" />
-	<codePoint decimal="8216" unicode="U+2018" replaceByUnicode=""
+	<codePoint decimal="8216" unicode="U+2018" replaceName="APOSTROPHE" replaceByUnicode="U+0027"
 		name="LEFT SINGLE QUOTATION MARK" note="" />
-	<codePoint decimal="8217" unicode="U+2019" replaceByUnicode=""
+	<codePoint decimal="8217" unicode="U+2019" replaceName="APOSTROPHE" replaceByUnicode="U+0027"
 		name="RIGHT SINGLE QUOTATION MARK" note="" />
 	<codePoint decimal="8226" unicode="U+2022" replaceByUnicode=""
 		name="BULLET" note="" />
-	<codePoint decimal="8242" unicode="U+2032" replaceByUnicode=""
+	<codePoint decimal="8242" unicode="U+2032" replaceName="APOSTROPHE" replaceByUnicode="U+0027"
 		name="PRIME" note="" />
-	<codePoint decimal="8710" unicode="U+2206" replaceByUnicode=""
+	<codePoint decimal="8710" unicode="U+2206" replaceByName="GREEK CAPITAL LETTER DELTA" replaceByUnicode="U+0394"
 		name="INCREMENT" note="" />
 	<codePoint decimal="8721" unicode="U+2211" replaceByUnicode=""
 		name="N-ARY SUMMATION" note="" />
-	<codePoint decimal="8722" unicode="U+2212" replaceByUnicode=""
+	<codePoint decimal="8722" unicode="U+2212" replaceName="HYPHEN-MINUS" replaceByUnicode="U+002D"
 		name="MINUS SIGN" note="" />
-	<codePoint decimal="8727" unicode="U+2217" replaceByUnicode=""
+	<codePoint decimal="8727" unicode="U+2217" replaceName="ASTERISK" replaceByUnicode="U+002A"
 		name="ASTERISK OPERATOR" note="" />
 	<codePoint decimal="8764" unicode="U+223C" name="TILDE OPERATOR"
 		note="exact synonym" replaceByUnicode="U+007E" replaceName="TILDE" />
@@ -87,35 +93,38 @@
 	<codePoint decimal="12297" unicode="U+3009" name="RIGHT ANGLE BRACKET"
 		note="quasi-synonym" replaceByUnicode="U+003D" replaceName="GREATER-THAN SIGN" />
 		
-	<!-- to be validated and integrated -->
-	<!-- 
-	<codePoint decimal="305" unicode="U+131" name="LATIN SMALL LETTER DOTLESS I" note="possibly a mistake and indication of non-univcode"/>
-	-->
 	
 	<codePoint decimal="710" unicode="U+02C6" name="MODIFIER LETTER CIRCUMFLEX ACCENT" note=""/>
 	<codePoint decimal="730" unicode="U+02DA" name="RING ABOVE"/>
 	<codePoint decimal="732" unicode="U+02DC" name="SMALL TILDE"/>
 	
 	
-	<codePoint decimal="8220" unicode="U+201C" />
-	<codePoint decimal="8221" unicode="U+201D" />
-    <codePoint decimal="8224" unicode="U+2020" />
-	<codePoint decimal="8364" unicode="U+20AC" />
-	<codePoint decimal="8677" unicode="U+21E5" />
+	<codePoint decimal="8220" unicode="U+201C" name="LEFT DOUBLE QUOTATION MARK"/>
+	<codePoint decimal="8221" unicode="U+201D" name="RIGHT DOUBLE QUOTATION MARK"/>
+    <codePoint decimal="8224" unicode="U+2020" name="DAGGER" />
+    <!--  not used in STM?  -->
+	<codePoint decimal="8364" unicode="U+20AC" name="EURO SIGN" />
+    <codePoint decimal="8486" unicode="U+2126" name="OHM SIGN"/>
+    <!--  not used in STM?  -->
+	<codePoint decimal="8677" unicode="U+21E5" name="RIGHTWARDS ARROW TO BAR" />
 
-	<codePoint decimal="9642" unicode="U+25AA" />
-	<codePoint decimal="9656" unicode="U+25B8" />
+	<codePoint decimal="8594" unicode="U+2192" name="RIGHTWARDS ARROW"/>
 	
-	<codePoint decimal="16090" unicode="U+3EDA" />
-	<codePoint decimal="16092" unicode="U+3EDC" />
-	<codePoint decimal="16093" unicode="U+3EDD" />
-	<codePoint decimal="16097" unicode="U+3EE1" />
+	<codePoint decimal="8734" unicode="U+221E" name="INFINITY"/>
+	<codePoint decimal="8800" unicode="U+2260" name="NOT EQUAL TO"/>
+
+<!-- these may be errors -->	
+	<codePoint decimal="9642" unicode="U+25AA" name="BLACK SMALL SQUARE"/>
+	<codePoint decimal="9656" unicode="U+25B8" name="BLACK RIGHT-POINTING SMALL TRIANGLE"/>
 	
-	<codePoint decimal="63337" unicode="U+F769" />
-	<codePoint decimal="64256" unicode="U+FB00" />
-	<codePoint decimal="64257" unicode="U+FB01" />
-	<codePoint decimal="64258" unicode="U+FB02" />
-	<codePoint decimal="64259" unicode="U+FB03" />
+	<codePoint decimal="64256" unicode="U+FB00" name="LATIN SMALL LIGATURE FF" replaceByUnicode="U+0066 U+0066"/>
+	<codePoint decimal="64257" unicode="U+FB01" name="LATIN SMALL LIGATURE FI" replaceByUnicode="U+0066 U+0069"/>
+	<codePoint decimal="64258" unicode="U+FB02" name="LATIN SMALL LIGATURE FL" replaceByUnicode="U+0066 U+006C"/>
+	<codePoint decimal="64259" unicode="U+FB03" name="LATIN SMALL LIGATURE FFI" replaceByUnicode="U+0066 U+0066 U+0069"/>
+	<codePoint decimal="64260" unicode="U+FB04" name="LATIN SMALL LIGATURE FFL" replaceByUnicode="U+0066 U+0066 U+006C"/>
+	<codePoint decimal="64261" unicode="U+FB05" name="LATIN SMALL LIGATURE LONG S T" note="highly unlikely" replaceByUnicode="U+0073 U+0074" />
+	<codePoint decimal="64262" unicode="U+FB06" name="LATIN SMALL LIGATURE ST" note="highly unlikely" replaceByUnicode="U+0073 U+0074"/>
 	
+		
 </codePointSet>
 		

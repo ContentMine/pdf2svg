@@ -29,19 +29,24 @@ import org.xmlcml.graphics.util.MenuSystem;
  */
 public class PDF2SVGConverter extends PDFStreamEngine {
 
+	private static final double _DEFAULT_PAGE_WIDTH = 600.0;
+	private static final double _DEFAULT_PAGE_HEIGHT = 800.0;
+	private static final String DEFAULT_PUBLISHER_SET_XML = "org/xmlcml/graphics/pdf2svg/raw/publisherSet.xml";
 	private final static Logger LOG = Logger.getLogger(PDF2SVGConverter.class);
 	@SuppressWarnings("unused")
 	private static final long serialVersionUID = 1L;
 
-	private static final String PASSWORD = "-password";
-	private static final String NONSEQ = "-nonseq";
-	private static final String PAGES = "-pages";
-	private static final String OUTDIR = "-outdir";
+	public static final String PASSWORD = "-password";
+	public static final String NONSEQ = "-nonseq";
+	public static final String PAGES = "-pages";
+	public static final String PUB = "-pub";
+	public static final String OUTDIR = "-outdir";
 
 	private String PDFpassword = "";
 	private boolean useNonSeqParser = false;
 	private String outputDirectory = ".";
 	private PageRanges pageRanges = null;
+	private Publisher publisher = null;
 
 	private PDDocument document;
 	private List<SVGSVG> svgPageList;
@@ -52,6 +57,12 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	CodePointSet knownCodePointSet;
 	CodePointSet newCodePointSet;
 	private File outdir;
+	private int iarg;
+	private String publisherSetXmlResource = DEFAULT_PUBLISHER_SET_XML;
+	private PublisherSet publisherSet;
+	
+	Double pageHeight = _DEFAULT_PAGE_HEIGHT;
+	Double pageWidth = _DEFAULT_PAGE_WIDTH;
 
 	private static void usage() {
 		System.err
@@ -59,9 +70,10 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 						+ "  %s <password>  Password to decrypt the document (default none)%n"
 						+ "  %s               Enables the new non-sequential parser%n"
 						+ "  %s <page-ranges>  Restrict pages to be output (default all)%n"
+						+ "  %s <publisher>   Use publisher-specific info%n"
 						+ "  %s <dirname>     Location to write output pages (default '.')%n"
 						+ "  <input-file>          The PDF document to be loaded%n",
-						PASSWORD, NONSEQ, PAGES, OUTDIR, PASSWORD, NONSEQ,
+						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, PASSWORD, NONSEQ,
 						PAGES, OUTDIR);
 		System.exit(1);
 	}
@@ -76,18 +88,14 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		List<PDPage> pages = document.getDocumentCatalog().getAllPages();
 
 		PageRanges pr = pageRanges;
-		if (pr == null)
+		if (pr == null) {
 			pr = new PageRanges(String.format("1-%d", pages.size()));
+		}
 
-		outdir = new File(outputDirectory);
-		if (!outdir.exists())
-			outdir.mkdirs();
-		if (!outdir.isDirectory())
-			throw new RuntimeException(String.format(
-					"'%s' is not a directory!", outputDirectory));
+		createOutputDirectory();
 
 		System.out.printf("Processing pages %s (of %d) ...%n", pr.toString(),
-				pages.size());
+				pages.size()); 
 
 		File infile = new File(filename);
 		String basename = infile.getName().toLowerCase();
@@ -111,6 +119,22 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		reportHighCodePoints();
 		reportNewFontFamilyNames();
 		writeHTMLSystem(outfileList);
+		reportPublisher();
+	}
+
+	private void reportPublisher() {
+		if (publisher != null) {
+			LOG.debug("PUB "+publisher.createElement().toXML());
+		}
+	}
+
+	private void createOutputDirectory() {
+		outdir = new File(outputDirectory);
+		if (!outdir.exists())
+			outdir.mkdirs();
+		if (!outdir.isDirectory())
+			throw new RuntimeException(String.format(
+					"'%s' is not a directory!", outputDirectory));
 	}
 
 	private File writeFile(PDFPage2SVGConverter drawer, String basename,
@@ -190,45 +214,64 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		if (args.length == 0)
 			usage();
 
-		for (int i = 0; i < args.length; i++) {
+		for (iarg = 0; iarg < args.length; iarg++) {
 
-			if (args[i].equals(PASSWORD)) {
-				i++;
-				if (i >= args.length) {
-					usage();
-				}
-				PDFpassword = args[i];
+			if (args[iarg].equals(PASSWORD)) {
+				incrementArg(args);
+				PDFpassword = args[iarg];
 				continue;
 			}
 
-			if (args[i].equals(NONSEQ)) {
+			if (args[iarg].equals(NONSEQ)) {
 				useNonSeqParser = true;
 				continue;
 			}
 
-			if (args[i].equals(OUTDIR)) {
-				i++;
-				if (i >= args.length) {
-					usage();
-				}
-				outputDirectory = args[i];
+			if (args[iarg].equals(OUTDIR)) {
+				incrementArg(args);
+				outputDirectory = args[iarg];
 				continue;
 			}
 
-			if (args[i].equals(PAGES)) {
-				i++;
-				if (i >= args.length) {
-					usage();
-				}
-				pageRanges = new PageRanges(args[i]);
+			if (args[iarg].equals(PAGES)) {
+				incrementArg(args);
+				pageRanges = new PageRanges(args[iarg]);
+				continue;
+			}
+			if (args[iarg].equals(PUB)) {
+				incrementArg(args);
+				publisher = getPublisher(args[iarg]);
 				continue;
 			}
 
 			try {
-				this.openPDFFile(args[i]);
+				this.openPDFFile(args[iarg]);
 			} catch (Exception e) {
-				throw new RuntimeException("Cannot parse PDF: " + args[i], e);
+				throw new RuntimeException("Cannot parse PDF: " + args[iarg], e);
 			}
+		}
+	}
+
+	public Publisher getPublisher() {
+		return publisher;
+	}
+
+	private Publisher getPublisher(String abbreviation) {
+		ensurePublisherMaps();
+		publisher = (publisherSet == null) ? null : publisherSet.getPublisherByAbbreviation(abbreviation);
+		return publisher;
+	}
+
+	private void ensurePublisherMaps() {
+		if (publisherSet == null && publisherSetXmlResource != null) {
+			publisherSet = PublisherSet.readPublisherSet(publisherSetXmlResource );
+		}
+	}
+
+	private void incrementArg(String... args) {
+		iarg++;
+		if (iarg >= args.length) {
+			usage();
 		}
 	}
 
@@ -239,8 +282,11 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 	private void reportHighCodePoints() {
 		ensureCodePointSets();
-		LOG.debug("New High CodePoints: " + newCodePointSet.size());
-		LOG.debug(newCodePointSet.createElementWithSortedIntegers().toXML());
+		int newCodePointCount = newCodePointSet.size();
+		if (newCodePointCount > 0) {
+			LOG.debug("New High CodePoints: " + newCodePointSet.size());
+			LOG.debug(newCodePointSet.createElementWithSortedIntegers().toXML());
+		}
 	}
 
 	void ensureCodePointSets() {

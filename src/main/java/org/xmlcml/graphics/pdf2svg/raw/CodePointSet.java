@@ -8,6 +8,7 @@ import nu.xom.Builder;
 import nu.xom.Element;
 import nu.xom.Elements;
 
+import org.apache.pdfbox.encoding.Encoding;
 import org.apache.pdfbox.util.TextPosition;
 import org.xmlcml.euclid.Util;
 
@@ -77,8 +78,8 @@ public class CodePointSet {
 			if (unicode == null) {
 				throw new RuntimeException("codePoint must contain unicode value");
 			}
-			if (codePointSet.containsKey(unicode)) {
-				throw new RuntimeException("Duplicate unicode: "+unicode);
+			if (codePointSet.containsKey(unicode) && UNICODE.equals(codePointSet.encoding)) {
+				throw new RuntimeException("Duplicate unicode in unicode encoding: "+unicode);
 			}
 			codePointSet.codePointByUnicodeMap.put(unicode, codePoint);
 			Integer decimal = codePoint.getDecimal();
@@ -166,6 +167,12 @@ public class CodePointSet {
 	public CodePoint getByDecimal(Integer decimal) {
 		ensureMaps();
 		return codePointByIntegerMap.get(decimal);
+	}
+
+	public void ensureEncoding(String encoding) {
+		if (this.encoding == null) {
+			this.encoding = encoding;
+		}
 	}
 	
 }

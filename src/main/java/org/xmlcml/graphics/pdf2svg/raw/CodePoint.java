@@ -49,7 +49,7 @@ public class CodePoint {
 			}
 			codePoint.unicode = codePointElement.getAttributeValue(UNICODE);
 			if (codePoint.unicode == null || !codePoint.unicode.startsWith(UNICODE_PREFIX)) {
-				throw new RuntimeException("missing or invalid unicode value");
+				throw new RuntimeException("missing or invalid unicode value in: "+codePointElement.toXML());
 			}
 			codePoint.unicode = codePoint.unicode.toUpperCase();
 			checkUnicodeMatchesDecimal(encoding, codePoint);

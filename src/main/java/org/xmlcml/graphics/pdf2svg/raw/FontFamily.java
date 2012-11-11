@@ -76,7 +76,7 @@ public class FontFamily {
 					throw new RuntimeException("Cannot read codePointSet: "+codePointSetName);
 				}
 				fontFamily.setCodePointSet(codePointSet);
-				LOG.debug("CPS: "+fontFamily.getCodePointSet());
+				LOG.trace("CPS: "+fontFamily.getCodePointSet());
 			}
 		} catch (Exception e) {
 			throw new RuntimeException("invalid FontFamilyElement: "+((fontFamilyElement == null) ? null : fontFamilyElement.toXML()), e);
@@ -129,6 +129,15 @@ public class FontFamily {
 
 	public CodePointSet getCodePointSet() {
 		return codePointSet;
+	}
+
+	public String convertSymbol2UnicodeValue(String charname) {
+		return (codePointSet == null) ? null : codePointSet.convertCharnameToUnicode(charname);
+	}
+
+	public Integer convertSymbol2UnicodePoint(String charname) {
+		String unicodeValue = convertSymbol2UnicodeValue(charname);
+		return (unicodeValue == null || unicodeValue.length() == 0) ? null : (Integer) (int) unicodeValue.charAt(0);
 	}
 
 }

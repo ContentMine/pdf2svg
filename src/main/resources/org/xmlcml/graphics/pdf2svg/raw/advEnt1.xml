@@ -1,0 +1,7 @@
+<codePointSet encoding="AdvEnt1">
+    <codePoint unicodeName="LEFTWARDS ARROW" unicode="U+2190" decimal="8217" note="unknown"/>
+    <codePoint unicodeName="RIGHTWARDS ARROW" unicode="U+2192" decimal="45" note="unknown"/>
+    <codePoint unicodeName="LEFT RIGHT ARROW" unicode="U+2194" decimal="50" note="unknown"/>
+    <codePoint unicodeName="RIGHTWARDS ARROW OVER LEFTWARDS ARROW" unicode="U+21C4" decimal="34"/>
+    <codePoint unicodeName="UNKNOWN" unicode="U+274E" decimal="999999" note="unknown"/>
+</codePointSet>

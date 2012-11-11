@@ -1,7 +1,4 @@
 <fontFamilySet name="nonStandard">
-	<!--
-	<fontFamily name="Foo" fontType="PDType1Font" standardFont="Helvetica" note="" serif="" unicode="guessed"/>
-	-->
 	<fontFamily name="Arial" />
 	<fontFamily name="Avenir" />
 	<fontFamily name="Calibri" />
@@ -10,7 +7,8 @@
 	<fontFamily name="FrutigerBold" />
 	<fontFamily name="FrutigerLTStdBold" />
 	<fontFamily name="FrutigerLTStd-Roman" />
-	<fontFamily name="MathematicalPi-One" standardFont="MathematicalPi" note="" unicode="no"/>
+	<fontFamily name="MathematicalPi-One" note="" symbol="true" codePointSet="org/xmlcml/graphics/pdf2svg/raw/mathpi2unicode.xml"
+	    publishers="ajc"/>
 	<fontFamily name="MathematicalPi-Three" />
 	<fontFamily name="MathematicalPi-Four" />
 	<fontFamily name="MyriadMM215LT700SE" />
@@ -20,8 +18,8 @@
 	<fontFamily name="MTSYB" />
 	<fontFamily name="MTMI" />
 	<fontFamily name="MTGU" />
-	<fontFamily name="MTEX" />
-	<fontFamily name="MTSYN" />
+	<fontFamily name="MTEX" unicode="guessed" publishers=""/>
+	<fontFamily name="MTSYN" unicode="guessed"/>
 	<fontFamily name="OptimaItalic" />
 	<fontFamily name="Optima" />
 	<fontFamily name="OptimaBold" />
@@ -35,7 +33,47 @@
 
 	<!--  possible symbol fonts -->
 	<fontFamily name="AdvPi1" symbol="true" codePointSet="org/xmlcml/graphics/pdf2svg/raw/advpi1.xml"/>
+	<fontFamily name="AdvMPi-One" symbol="true" codePointSet="org/xmlcml/graphics/pdf2svg/raw/advpi1.xml"/>
+	<fontFamily name="AdvPi2" symbol="true" codePointSet="org/xmlcml/graphics/pdf2svg/raw/advpi2.xml"/>
+	
+	<fontFamily name="AdvP4C4E74" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/AdvP4C4E74.xml"/>
+	<fontFamily name="AdvP4C4E59" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/AdvP4C4E59.xml"/>
+	<fontFamily name="AdvP4C4E46" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/AdvP4C4E46.xml"/>
+	<fontFamily name="AdvP697C" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/AdvP4C4E74.xml"/>
+	<fontFamily name="AdvEls-Ent1" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/advEnt1.xml"/>
+	<fontFamily name="AdvEls-ent2" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/advEnt2.xml"/>
+	<fontFamily name="AdvEls-ent3" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/advEnt3.xml"/>
+	<fontFamily name="AdvEls-ent4" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/advEnt4.xml"/>
+	<fontFamily name="AdvEls-ent5" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/advEnt5.xml"/>
+	<fontFamily name="AdvEls-ent6" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/advEnt6.xml"/>
+	<fontFamily name="AdvEls-ent7" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/advEnt7.xml"/>
+	<fontFamily name="AdvEls-ent8" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/advEnt8.xml"/>
+	<fontFamily name="AdvPSSym" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/advPSSym.xml"/>
+	<fontFamily name="AdvP4C4E51" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/AdvP4C4E51.xml"/>
+	<fontFamily name="AdvTTec1d2308I" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/AdvTTec1d2308I.xml"/>
+	<fontFamily name="AdvPS4731B1" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/AdvPS4731B1.xml"/>
 
+
+    <!-- ligatures -->
+	<fontFamily name="AdvOT863180fb" symbol="false" />
+	<fontFamily name="AdvOT863180fb+fb" symbol="false" />
+	    
 	<!-- normalize these later -->
 	<fontFamily name="CalibriBold" />
 	<fontFamily name="Calibri,old" />
@@ -72,19 +110,13 @@
 	<fontFamily name="AdvOT0d9ab1dbI" />
 
 	<!--  elsevier  -->	
-	<fontFamily name="AdvP4C4E59" />
-	<fontFamily name="AdvP4C4E74" />
-	<fontFamily name="AdvP4C4E51" />
 	<fontFamily name="AdvPSA35D" />
 	<fontFamily name="AdvOTc4d0b532" />
-	<fontFamily name="AdvOT863180fb" />
-	<fontFamily name="AdvPSSym" />
 	<fontFamily name="AdvOTb83ee1ddB" />
 	<fontFamily name="AdvOT404f8e91BI" />
 	<fontFamily name="AdvPS4BD310" />
 	<fontFamily name="AdvPS3F4C13" />
 	<fontFamily name="AdvOTb92eb7dfI" />
-	<fontFamily name="AdvOT863180fb+fb" />
 	<fontFamily name="AdvOT863180fb+20" />
 	<fontFamily name="AdvPS4721B4" />
 	<fontFamily name="AdvPS44A44B" />
@@ -127,7 +159,6 @@
 	<fontFamily name="AdvP7627" />
 	<fontFamily name="AdvP7DB7" />
 	<fontFamily name="AdvP4383EF" />
-	<fontFamily name="AdvP4C4E46" />
 	<fontFamily name="AdvP3F0CD3" />
 	<fontFamily name="AdvP7CA8" />
 	<fontFamily name="AdvOT735b620e" />
@@ -206,17 +237,41 @@
 	<fontFamily name="AdvP40319B" />
 	<fontFamily name="AdvP497E2" />
 	<fontFamily name="AdvP497E3" />
-	<fontFamily name="AdvP697C" />
-
+	
 	<fontFamily name="AdvTA42" />
-	<fontFamily name="AdvEls-ent4" />
 	<fontFamily name="AdvP4DF614" />
 	<fontFamily name="AdvMacT_R" />
 	<fontFamily name="AdvUnivers" />
 	<fontFamily name="AdvMacMthSyN" />
 	<fontFamily name="AdvP4DF60E" />
-	<fontFamily name="AdvEls-ent8" />
 	<fontFamily name="AdvP4DF60F" />
 	<fontFamily name="AdvGulliver-SCO" />
 
+	<fontFamily name="AdvHelv_B" />
+	<fontFamily name="AdvTT5843c571" />
+	<fontFamily name="AdvTNR" />
+	<fontFamily name="AdvTNRBoldI" />
+	<fontFamily name="AdvMPi-Three" />
+	<fontFamily name="AdvHelv_BO" />
+	<fontFamily name="AdvOptima" />
+	<fontFamily name="AdvMPi-Four" />
+	<fontFamily name="AdvOptimab" />
+	<fontFamily name="AdvTNRBold" />
+	<fontFamily name="AdvTNRItalic" />
+	<fontFamily name="AdvHelv_R" />
+	<fontFamily name="AdvP7B6C" />
+	<fontFamily name="AdvOT62649246B" />
+	<fontFamily name="AdvOptimai" />
+
+	<fontFamily name="Myriad-Roman" />
+	<fontFamily name="AdvPompei_Reg" />
+	<fontFamily name="MyriadItalic" />
+	<fontFamily name="AdvTimesb" />
+	<fontFamily name="MyriadPro-Light" />
+	<fontFamily name="MyriademiBold" />
+	<fontFamily name="AdvTimesbi" />
+	<fontFamily name="AdvTimesi" />
+	<fontFamily name="MyriadLight" />
+	<fontFamily name="AdvT004" />
+	<fontFamily name="AdvMyriad_R" />
 </fontFamilySet>
