@@ -1,5 +1,8 @@
 =PDF2SVG=
 
+==License==
+Apache2, see LICENSE.txt
+
 ==Introduction== 
 PDF2SVG is the first of (probably) three modules in the AMI2 system. Its role is to convert PDF to SVG
 with as little loss as possible. The aims include:
@@ -56,7 +59,3 @@ We have not (yet) analyzed the font dictionaries in PDFBox. Most characters are 
 and a PDFont. However some Fonts do not offer code points, but offsets into maps. In some cases we suspect that
 character information can be recovered, but in others it may only be glyphs. In the latter case we shall need
 heuristics to determine the best match for the glyph/character.
-
-
-
-
