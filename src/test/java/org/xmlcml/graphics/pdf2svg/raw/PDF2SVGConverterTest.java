@@ -236,6 +236,47 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
+	@Ignore // do not normally run this
+	public void testThesis() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("-outdir", "../pdfs/thesis", "../pdfs/thesis/darmstadt.pdf");
+	}
+	@Test
+	//@Ignore // do not normally run this
+	public void testThesis1() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("-outdir", "../pdfs/thesis", "../pdfs/thesis/keruzore.pdf");
+	}
+	@Test
+	//@Ignore // do not normally run this
+	public void testThesis2() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("-outdir", "../pdfs/thesis", "../pdfs/thesis/Mawer.pdf");
+	}
+	@Test
+	//@Ignore // do not normally run this
+	public void testThesis5() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("-outdir", "../pdfs/thesis", "../pdfs/thesis/zakrysphd.pdf");
+	}
+	@Test
+	//@Ignore
+	public void testThesisMany() {
+		convertPDFsToSVG("../pdfs/thesis", "target/thesis");
+	}
+
+	@Test
+	//@Ignore
+	public void testArxivMany() {
+		convertPDFsToSVG("../pdfs/arxiv", "target/arxiv");
+	}
+	
+	@Test
+	public void testECU() {
+		convertPDFsToSVG("../../documents/standalone/ecu2012", "target/ecu");
+	}
+
+	@Test
 	@Ignore
 	public void testHelp() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();

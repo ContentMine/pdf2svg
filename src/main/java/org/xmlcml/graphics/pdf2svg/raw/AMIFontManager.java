@@ -306,10 +306,12 @@ public class AMIFontManager {
 		} else if (newFontFamilySet.containsKey(fontFamilyName)) {
 			LOG.trace(fontFamilyName+" is a known newFontFamily");
 		} else {
-			LOG.trace(fontName+" is being added as new FontFamily");
+			LOG.debug(fontName+" is being added as new FontFamily ("+fontFamilyName+")");
 			if (fontFamily == null) {
+				LOG.debug("ami: "+amiFont.toString());
 				fontFamily = new FontFamily();
 				fontFamily.setName(""+fontName);
+				LOG.debug("created new FontFamily: "+fontFamilyName);
 			}
 			newFontFamilySet.add(fontName, fontFamily);
 		}

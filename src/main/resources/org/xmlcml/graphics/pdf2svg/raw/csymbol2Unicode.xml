@@ -1,10 +1,7 @@
-<codePointSet encoding="MacMath"> <!--  I am not sure of this yet  -->
+<codePointSet encoding="CSymbol" > 
 	<codePoint name="asterisk" unicode="U+002A" unicodeName="ASTERISK"/>  
 	<codePoint decimal="8364" unicode="U+0308" unicodeName="COMBINING DIAERESIS"/>  
 	
-	<!-- 
-	<codePoint name="thorn" unicode="U+002B" unicodeName="PLUS"/>  
--->	
 	<codePoint name="C0" unicode="U+002D" decimal="45" unicodeName="MINUS"/>  
 	<codePoint name="C2" unicode="U+00D7" decimal="215" unicodeName="MULTIPLICATION SIGN"/>  
 	<codePoint name="C3" unicode="U+002A" decimal="42" unicodeName="ASTERISK"/>  

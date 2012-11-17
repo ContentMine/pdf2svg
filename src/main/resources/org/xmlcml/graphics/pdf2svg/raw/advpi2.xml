@@ -1,6 +1,4 @@
 <codePointSet encoding="AdvPi2">
-    <codePoint unicodeName="GREEK CAPITAL LETTER GAMMA" decimal="71" unicode="U+0393" name="G"/>
-    <codePoint unicodeName="UNKNOWN" unicode="U+2775" name="grot" note="unknown"/>
     
     <!--  These are not systematic Z seems to map onto eta-->
     <!--  

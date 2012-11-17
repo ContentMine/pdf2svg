@@ -19,7 +19,9 @@
 	<fontFamily name="MTMI" />
 	<fontFamily name="MTGU" />
 	<fontFamily name="MTEX" unicode="guessed" publishers=""/>
+	<!--
 	<fontFamily name="MTSYN" unicode="guessed"/>
+	-->
 	<fontFamily name="OptimaItalic" />
 	<fontFamily name="Optima" />
 	<fontFamily name="OptimaBold" />
@@ -29,7 +31,10 @@
 	<fontFamily name="TimesNRMT" />
 	<fontFamily name="Times-Roman" />
 	<fontFamily name="Univers" />
+	<!--
+	<fontFamily name="Wingdings" />
 	<fontFamily name="Wingdings-Regular" />
+	-->
 
 	<!--  possible symbol fonts -->
 	<fontFamily name="AdvPi1" symbol="true" codePointSet="org/xmlcml/graphics/pdf2svg/raw/advpi1.xml"/>
@@ -69,6 +74,14 @@
 	<fontFamily name="AdvPS4731B1" symbol="true" 
 	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/AdvPS4731B1.xml"/>
 
+<!-- Cambria may be Unicode?
+	<fontFamily name="Cambria" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/cambria.xml"/>
+-->	    
+	<fontFamily name="Wingdings" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/wingdings.xml"/>
+	<fontFamily name="MTSYN" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/mtsyn.xml"/>
 
     <!-- ligatures -->
 	<fontFamily name="AdvOT863180fb" symbol="false" />

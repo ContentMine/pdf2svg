@@ -74,7 +74,6 @@ public class AMIFont {
 	private String fontEncoding;
 
 	private String baseFont;
-	private String fontFamilySave;
 
 	private Map<String, String> pathStringByCharnameMap;
 	
@@ -178,7 +177,7 @@ and
 		fontFamilyName = null;
 		if (fontDescriptor != null) {
 			fontName = fontDescriptor.getFontName();
-			fontFamilySave = fontDescriptor.getFontFamily();
+//			fontFamilySave = fontDescriptor.getFontFamily();
 			
 			stripFontNameComponents();
 			if (fontFamilyName == null) {
@@ -202,8 +201,13 @@ and
 			fontName = fontDescriptor.getFontName();
 			LOG.trace("name="+fontName+" fam="+fontFamilyName+" type="+pdFont.getSubType()+" bold="+isBold +" it="+isItalic+" face="+finalSuffix+" sym="+isSymbol+ " enc="+(encoding == null ? "null" : encoding.getClass().getSimpleName()));
 		} else {
-			LOG.warn("font had no descriptor: "+baseFont+" / "+fontFamilyName);
 			fontName = baseFont;
+			stripFontNameComponents();
+			if (fontFamilyName == null) {
+				fontFamilyName = fontName;
+			}
+			LOG.debug(this.toString());
+			LOG.warn("font had no descriptor: "+baseFont+" / "+fontFamilyName);
 			if (fontName.contains("Arial") ||
 					fontName.contains("Unicode")) {
 				LOG.warn("Encoding in ("+fontName+") forcibly set to "+WinAnsiEncoding.class);
@@ -385,6 +389,35 @@ and
 		if (this.pathStringByCharnameMap == null) {
 			pathStringByCharnameMap = new HashMap<String, String>();
 		}
+	}
+	
+	public String toString() {
+
+		StringBuilder sb = new StringBuilder();
+		sb.append("isBold: ");
+		sb.append(isBold);
+		sb.append("; isItalic: ");
+		sb.append(isItalic);
+		sb.append("; isSymbol: ");
+		sb.append(isSymbol);
+		sb.append("; fontFamilyName: ");
+		sb.append(fontFamilyName);
+		sb.append("; fontName: ");
+		sb.append(fontName);
+		sb.append("; pdFont: ");
+		sb.append(pdFont);
+		sb.append("; fontDescriptor: ");
+		sb.append(fontDescriptor);
+		sb.append("; fontType: ");
+		sb.append(fontType);
+		sb.append("; encoding: ");
+		sb.append(encoding);
+		sb.append("; fontEncoding: ");
+		sb.append(fontEncoding);
+		sb.append("; baseFont: ");
+		sb.append(baseFont);
+		
+		return sb.toString();
 	}
 	
 }

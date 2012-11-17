@@ -353,7 +353,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 				converter.newCodePointSet.add((Integer)charCode, charname, null);
 				System.out.println("ADDED: "+charCode);
 			} else {
-				LOG.warn("No encoding, so cannot add codePointSet");
+				LOG.warn("Font name: "+fontName+" No encoding, so cannot add codePoint ("+charCode+") to codePointSet");
 			}
 		}
 		return charCode;

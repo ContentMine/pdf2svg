@@ -4,6 +4,7 @@
     <codePoint decimal="305" unicode="U+131" name="LATIN SMALL LETTER DOTLESS I" note="probably mistake"/>
     <codePoint decimal="711" unicode="U+02C7" name="CARON" note="probaby used as combining character ? use U+030C?"/>
 <!--  Greek -->
+
 	<codePoint decimal="913" unicode="U+0391" name="GREEK CAPITAL LETTER ALPHA"/>
 	<codePoint decimal="914" unicode="U+0392" name="GREEK CAPITAL LETTER BETA"/>
 	<codePoint decimal="915" unicode="U+0393" name="GREEK CAPITAL LETTER GAMMA"/>
@@ -55,7 +56,63 @@
 	<codePoint decimal="968" unicode="U+03C8" name="GREEK SMALL LETTER PSI" note="" />
 	<codePoint decimal="969" unicode="U+03C9" name="GREEK SMALL LETTER OMEGA" note="" />
 
-	
+<codePoint unicode="U+0391" adobePoint="41" foo="GREEK CAPITAL LETTER ALPHA" foo="Alpha"/>
+<codePoint unicode="U+0392" adobePoint="42" foo="GREEK CAPITAL LETTER BETA" foo="Beta"/>
+<codePoint unicode="U+0393" adobePoint="47" foo="GREEK CAPITAL LETTER GAMMA" foo="Gamma"/>
+<codePoint unicode="U+0394" adobePoint="44" foo="GREEK CAPITAL LETTER DELTA" foo="Delta"/>
+<codePoint unicode="U+0395" adobePoint="45" foo="GREEK CAPITAL LETTER EPSILON" foo="Epsilon"/>
+<codePoint unicode="U+0396" adobePoint="5A" foo="GREEK CAPITAL LETTER ZETA" foo="Zeta"/>
+<codePoint unicode="U+0397" adobePoint="48" foo="GREEK CAPITAL LETTER ETA" foo="Eta"/>
+<codePoint unicode="U+0398" adobePoint="51" foo="GREEK CAPITAL LETTER THETA" foo="Theta"/>
+<codePoint unicode="U+0399" adobePoint="49" foo="GREEK CAPITAL LETTER IOTA" foo="Iota"/>
+<codePoint unicode="U+039A" adobePoint="4B" foo="GREEK CAPITAL LETTER KAPPA" foo="Kappa"/>
+<codePoint unicode="U+039B" adobePoint="4C" foo="GREEK CAPITAL LETTER LAMDA" foo="Lambda"/>
+<codePoint unicode="U+039C" adobePoint="4D" foo="GREEK CAPITAL LETTER MU" foo="Mu"/>
+<codePoint unicode="U+039D" adobePoint="4E" foo="GREEK CAPITAL LETTER NU" foo="Nu"/>
+<codePoint unicode="U+039E" adobePoint="58" foo="GREEK CAPITAL LETTER XI" foo="Xi"/>
+<codePoint unicode="U+039F" adobePoint="4F" foo="GREEK CAPITAL LETTER OMICRON" foo="Omicron"/>
+<codePoint unicode="U+03A0" adobePoint="50" foo="GREEK CAPITAL LETTER PI" foo="Pi"/>
+<codePoint unicode="U+03A1" adobePoint="52" foo="GREEK CAPITAL LETTER RHO" foo="Rho"/>
+<codePoint unicode="U+03A3" adobePoint="53" foo="GREEK CAPITAL LETTER SIGMA" foo="Sigma"/>
+<codePoint unicode="U+03A4" adobePoint="54" foo="GREEK CAPITAL LETTER TAU" foo="Tau"/>
+<codePoint unicode="U+03A5" adobePoint="55" foo="GREEK CAPITAL LETTER UPSILON" foo="Upsilon"/>
+<codePoint unicode="U+03A6" adobePoint="46" foo="GREEK CAPITAL LETTER PHI" foo="Phi"/>
+<codePoint unicode="U+03A7" adobePoint="43" foo="GREEK CAPITAL LETTER CHI" foo="Chi"/>
+<codePoint unicode="U+03A8" adobePoint="59" foo="GREEK CAPITAL LETTER PSI" foo="Psi"/>
+<codePoint unicode="U+03A9" adobePoint="57" foo="GREEK CAPITAL LETTER OMEGA" foo="Omega"/>
+<codePoint unicode="U+03B1" adobePoint="61" foo="GREEK SMALL LETTER ALPHA" foo="alpha"/>
+<codePoint unicode="U+03B2" adobePoint="62" foo="GREEK SMALL LETTER BETA" foo="beta"/>
+<codePoint unicode="U+03B3" adobePoint="67" foo="GREEK SMALL LETTER GAMMA" foo="gamma"/>
+<codePoint unicode="U+03B4" adobePoint="64" foo="GREEK SMALL LETTER DELTA" foo="delta"/>
+<codePoint unicode="U+03B5" adobePoint="65" foo="GREEK SMALL LETTER EPSILON" foo="epsilon"/>
+<codePoint unicode="U+03B6" adobePoint="7A" foo="GREEK SMALL LETTER ZETA" foo="zeta"/>
+<codePoint unicode="U+03B7" adobePoint="68" foo="GREEK SMALL LETTER ETA" foo="eta"/>
+<codePoint unicode="U+03B8" adobePoint="71" foo="GREEK SMALL LETTER THETA" foo="theta"/>
+<codePoint unicode="U+03B9" adobePoint="69" foo="GREEK SMALL LETTER IOTA" foo="iota"/>
+<codePoint unicode="U+03BA" adobePoint="6B" foo="GREEK SMALL LETTER KAPPA" foo="kappa"/>
+<codePoint unicode="U+03BB" adobePoint="6C" foo="GREEK SMALL LETTER LAMDA" foo="lambda"/>
+<codePoint unicode="U+03BC" adobePoint="6D" foo="GREEK SMALL LETTER MU" foo="mu"/>
+<codePoint unicode="U+03BD" adobePoint="6E" foo="GREEK SMALL LETTER NU" foo="nu"/>
+<codePoint unicode="U+03BE" adobePoint="78" foo="GREEK SMALL LETTER XI" foo="xi"/>
+<codePoint unicode="U+03BF" adobePoint="6F" foo="GREEK SMALL LETTER OMICRON" foo="omicron"/>
+<codePoint unicode="U+03C0" adobePoint="70" foo="GREEK SMALL LETTER PI" foo="pi"/>
+<codePoint unicode="U+03C1" adobePoint="72" foo="GREEK SMALL LETTER RHO" foo="rho"/>
+<codePoint unicode="U+03C2" adobePoint="56" foo="GREEK SMALL LETTER FINAL SIGMA" foo="sigma1"/>
+<codePoint unicode="U+03C3" adobePoint="73" foo="GREEK SMALL LETTER SIGMA" foo="sigma"/>
+<codePoint unicode="U+03C4" adobePoint="74" foo="GREEK SMALL LETTER TAU" foo="tau"/>
+<codePoint unicode="U+03C5" adobePoint="75" foo="GREEK SMALL LETTER UPSILON" foo="upsilon"/>
+<codePoint unicode="U+03C6" adobePoint="66" foo="GREEK SMALL LETTER PHI" foo="phi"/>
+<codePoint unicode="U+03C7" adobePoint="63" foo="GREEK SMALL LETTER CHI" foo="chi"/>
+<codePoint unicode="U+03C8" adobePoint="79" foo="GREEK SMALL LETTER PSI" foo="psi"/>
+<codePoint unicode="U+03C9" adobePoint="77" foo="GREEK SMALL LETTER OMEGA" foo="omega"/>
+<codePoint unicode="U+03D1" adobePoint="4A" foo="GREEK THETA SYMBOL" foo="theta1"/>
+<codePoint unicode="U+03D2" adobePoint="A1" foo="GREEK UPSILON WITH HOOK SYMBOL" foo="Upsilon1"/>
+<codePoint unicode="U+03D5" adobePoint="6A" foo="GREEK PHI SYMBOL" foo="phi1"/>
+<codePoint unicode="U+03D6" adobePoint="76" foo="GREEK PI SYMBOL" foo="omega1"/>
+
+<!--  20xx -->	
+	<codePoint decimal="8208" unicode="U+2010" replaceName="HYPHEN-MINUS" replaceByUnicode="U+002D"
+		name="UNKNOWN NAME" note="" />
 	<codePoint decimal="8211" unicode="U+2013" replaceName="HYPHEN-MINUS" replaceByUnicode="U+002D"
 		name="EN DASH" note="" />
 	<codePoint decimal="8212" unicode="U+2014" replaceName="HYPHEN-MINUS" replaceByUnicode="U+002D"
@@ -68,6 +125,42 @@
 		name="BULLET" note="" />
 	<codePoint decimal="8242" unicode="U+2032" replaceName="APOSTROPHE" replaceByUnicode="U+0027"
 		name="PRIME" note="" />
+
+<codePoint unicode="U+2022" adobePoint="B7" foo="BULLET" foo="bullet"/>
+<codePoint unicode="U+2026" adobePoint="BC" foo="HORIZONTAL ELLIPSIS" foo="ellipsis"/>
+<codePoint unicode="U+2032" adobePoint="A2" foo="PRIME" foo="minute"/>
+<codePoint unicode="U+2033" adobePoint="B2" foo="DOUBLE PRIME" foo="second"/>
+<codePoint unicode="U+2044" adobePoint="A4" foo="FRACTION SLASH" foo="fraction"/>
+
+<codePoint unicode="U+20AC" adobePoint="A0" foo="EURO SIGN" foo="Euro"/>
+	<codePoint decimal="8220" unicode="U+201C" name="LEFT DOUBLE QUOTATION MARK"/>
+	<codePoint decimal="8221" unicode="U+201D" name="RIGHT DOUBLE QUOTATION MARK"/>
+	<codePoint decimal="8222" unicode="U+201E" name="UNKNOWN" />
+	<codePoint decimal="8223" unicode="U+201F" name="UNKNOWN" />
+    <codePoint decimal="8224" unicode="U+2020" name="DAGGER" />
+	<codePoint decimal="8225" unicode="U+2021" name="UNKNOWN" />
+	
+
+
+<!--  21xx -->		
+<codePoint unicode="U+2111" adobePoint="C1" foo="BLACK-LETTER CAPITAL I" foo="Ifraktur"/>
+<codePoint unicode="U+2118" adobePoint="C3" foo="SCRIPT CAPITAL P" foo="weierstrass"/>
+<codePoint unicode="U+211C" adobePoint="C2" foo="BLACK-LETTER CAPITAL R" foo="Rfraktur"/>
+<codePoint unicode="U+2126" adobePoint="57" foo="OHM SIGN" foo="Omega"/>
+<codePoint unicode="U+2135" adobePoint="C0" foo="ALEF SYMBOL" foo="aleph"/>
+<codePoint unicode="U+2190" adobePoint="AC" foo="LEFTWARDS ARROW" foo="arrowleft"/>
+<codePoint unicode="U+2191" adobePoint="AD" foo="UPWARDS ARROW" foo="arrowup"/>
+<codePoint unicode="U+2192" adobePoint="AE" foo="RIGHTWARDS ARROW" foo="arrowright"/>
+<codePoint unicode="U+2193" adobePoint="AF" foo="DOWNWARDS ARROW" foo="arrowdown"/>
+<codePoint unicode="U+2194" adobePoint="AB" foo="LEFT RIGHT ARROW" foo="arrowboth"/>
+<codePoint unicode="U+21B5" adobePoint="BF" foo="DOWNWARDS ARROW WITH CORNER LEFTWARDS" foo="carriagereturn"/>
+<codePoint unicode="U+21D0" adobePoint="DC" foo="LEFTWARDS DOUBLE ARROW" foo="arrowdblleft"/>
+<codePoint unicode="U+21D1" adobePoint="DD" foo="UPWARDS DOUBLE ARROW" foo="arrowdblup"/>
+<codePoint unicode="U+21D2" adobePoint="DE" foo="RIGHTWARDS DOUBLE ARROW" foo="arrowdblright"/>
+<codePoint unicode="U+21D3" adobePoint="DF" foo="DOWNWARDS DOUBLE ARROW" foo="arrowdbldown"/>
+<codePoint unicode="U+21D4" adobePoint="DB" foo="LEFT RIGHT DOUBLE ARROW" foo="arrowdblboth"/>
+		
+<!-- 22xx -->		
 	<codePoint decimal="8710" unicode="U+2206" replaceByName="GREEK CAPITAL LETTER DELTA" replaceByUnicode="U+0394"
 		name="INCREMENT" note="" />
 	<codePoint decimal="8721" unicode="U+2211" replaceByUnicode=""
@@ -84,24 +177,88 @@
 		note="probably worth keeping and using instead of &lt;=" />
 	<codePoint decimal="8805" unicode="U+2265" name="GREATER-THAN OR EQUAL TO"
 		note="probably worth keeping and using instead of >=" />
+
+<codePoint unicode="U+2200" adobePoint="22" foo="FOR ALL" foo="universal"/>
+<codePoint unicode="U+2202" adobePoint="B6" foo="PARTIAL DIFFERENTIAL" foo="partialdiff"/>
+<codePoint unicode="U+2203" adobePoint="24" foo="THERE EXISTS" foo="existential"/>
+<codePoint unicode="U+2205" adobePoint="C6" foo="EMPTY SET" foo="emptyset"/>
+<codePoint unicode="U+2206" adobePoint="44" foo="INCREMENT" foo="Delta"/>
+<codePoint unicode="U+2207" adobePoint="D1" foo="NABLA" foo="gradient"/>
+<codePoint unicode="U+2208" adobePoint="CE" foo="ELEMENT OF" foo="element"/>
+<codePoint unicode="U+2209" adobePoint="CF" foo="NOT AN ELEMENT OF" foo="notelement"/>
+<codePoint unicode="U+220B" adobePoint="27" foo="CONTAINS AS MEMBER" foo="suchthat"/>
+<codePoint unicode="U+220F" adobePoint="D5" foo="N-ARY PRODUCT" foo="product"/>
+<codePoint unicode="U+2211" adobePoint="E5" foo="N-ARY SUMMATION" foo="summation"/>
+<codePoint unicode="U+2212" adobePoint="2D" foo="MINUS SIGN" foo="minus"/>
+<codePoint unicode="U+2215" adobePoint="A4" foo="DIVISION SLASH" foo="fraction"/>
+<codePoint unicode="U+2217" adobePoint="2A" foo="ASTERISK OPERATOR" foo="asteriskmath"/>
+<codePoint unicode="U+221A" adobePoint="D6" foo="SQUARE ROOT" foo="radical"/>
+<codePoint unicode="U+221D" adobePoint="B5" foo="PROPORTIONAL TO" foo="proportional"/>
+<codePoint unicode="U+221E" adobePoint="A5" foo="INFINITY" foo="infinity"/>
+<codePoint unicode="U+2220" adobePoint="D0" foo="ANGLE" foo="angle"/>
+<codePoint unicode="U+2227" adobePoint="D9" foo="LOGICAL AND" foo="logicaland"/>
+<codePoint unicode="U+2228" adobePoint="DA" foo="LOGICAL OR" foo="logicalor"/>
+<codePoint unicode="U+2229" adobePoint="C7" foo="INTERSECTION" foo="intersection"/>
+<codePoint unicode="U+222A" adobePoint="C8" foo="UNION" foo="union"/>
+<codePoint unicode="U+222B" adobePoint="F2" foo="INTEGRAL" foo="integral"/>
+<codePoint unicode="U+2234" adobePoint="5C" foo="THEREFORE" foo="therefore"/>
+<codePoint unicode="U+223C" adobePoint="7E" foo="TILDE OPERATOR" foo="similar"/>
+<codePoint unicode="U+2245" adobePoint="40" foo="APPROXIMATELY EQUAL TO" foo="congruent"/>
+<codePoint unicode="U+2248" adobePoint="BB" foo="ALMOST EQUAL TO" foo="approxequal"/>
+<codePoint unicode="U+2260" adobePoint="B9" foo="NOT EQUAL TO" foo="notequal"/>
+<codePoint unicode="U+2261" adobePoint="BA" foo="IDENTICAL TO" foo="equivalence"/>
+<codePoint unicode="U+2264" adobePoint="A3" foo="LESS-THAN OR EQUAL TO" foo="lessequal"/>
+<codePoint unicode="U+2265" adobePoint="B3" foo="GREATER-THAN OR EQUAL TO" foo="greaterequal"/>
+<codePoint unicode="U+2282" adobePoint="CC" foo="SUBSET OF" foo="propersubset"/>
+<codePoint unicode="U+2283" adobePoint="C9" foo="SUPERSET OF" foo="propersuperset"/>
+<codePoint unicode="U+2284" adobePoint="CB" foo="NOT A SUBSET OF" foo="notsubset"/>
+<codePoint unicode="U+2286" adobePoint="CD" foo="SUBSET OF OR EQUAL TO" foo="reflexsubset"/>
+<codePoint unicode="U+2287" adobePoint="CA" foo="SUPERSET OF OR EQUAL TO" foo="reflexsuperset"/>
+<codePoint unicode="U+2295" adobePoint="C5" foo="CIRCLED PLUS" foo="circleplus"/>
+<codePoint unicode="U+2297" adobePoint="C4" foo="CIRCLED TIMES" foo="circlemultiply"/>
+<codePoint unicode="U+22A5" adobePoint="5E" foo="UP TACK" foo="perpendicular"/>
+<codePoint unicode="U+22C5" adobePoint="D7" foo="DOT OPERATOR" foo="dotmath"/>
+
+<!--  23xx -->
+<codePoint unicode="U+2320" adobePoint="F3" foo="TOP HALF INTEGRAL" foo="integraltp"/>
+<codePoint unicode="U+2321" adobePoint="F5" foo="BOTTOM HALF INTEGRAL" foo="integralbt"/>
+<codePoint unicode="U+2329" adobePoint="E1" foo="LEFT-POINTING ANGLE BRACKET" foo="angleleft"/>
+<codePoint unicode="U+232A" adobePoint="F1" foo="RIGHT-POINTING ANGLE BRACKET" foo="angleright"/>
+
+
+<!--  25xx -->		
 	<codePoint decimal="9632" unicode="U+25A0" name="BLACK SQUARE"
 		note="probably for lists and graph symbols" />
 	<codePoint decimal="9702" unicode="U+25E6" name="WHITE BULLET"
 		note="probably for lists and graph symbols" confusions="ring operator U+2218 inverse bullet U+25D8" />
+		
+		<codePoint unicode="U+25CA" adobePoint="E0" foo="LOZENGE" foo="lozenge"/>
+
+<!-- these may be errors -->	
+	<codePoint decimal="9642" unicode="U+25AA" name="BLACK SMALL SQUARE"/>
+	<codePoint decimal="9656" unicode="U+25B8" name="BLACK RIGHT-POINTING SMALL TRIANGLE"/>
+		
+<!--  26xx -->
+<codePoint unicode="U+2660" adobePoint="AA" foo="BLACK SPADE SUIT" foo="spade"/>
+<codePoint unicode="U+2663" adobePoint="A7" foo="BLACK CLUB SUIT" foo="club"/>
+<codePoint unicode="U+2665" adobePoint="A9" foo="BLACK HEART SUIT" foo="heart"/>
+<codePoint unicode="U+2666" adobePoint="A8" foo="BLACK DIAMOND SUIT" foo="diamond"/>
+
+
+<!--  30xx -->		
 	<codePoint decimal="12296" unicode="U+3008" name="LEFT ANGLE BRACKET"
 		note="quasi-synonym" replaceByUnicode="U+003C" replaceName="LESS-THAN SIGN" />
 	<codePoint decimal="12297" unicode="U+3009" name="RIGHT ANGLE BRACKET"
 		note="quasi-synonym" replaceByUnicode="U+003D" replaceName="GREATER-THAN SIGN" />
 		
-	
+<!--  02xx -->	
 	<codePoint decimal="710" unicode="U+02C6" name="MODIFIER LETTER CIRCUMFLEX ACCENT" note=""/>
 	<codePoint decimal="730" unicode="U+02DA" name="RING ABOVE"/>
 	<codePoint decimal="732" unicode="U+02DC" name="SMALL TILDE"/>
-	
-	
-	<codePoint decimal="8220" unicode="U+201C" name="LEFT DOUBLE QUOTATION MARK"/>
-	<codePoint decimal="8221" unicode="U+201D" name="RIGHT DOUBLE QUOTATION MARK"/>
-    <codePoint decimal="8224" unicode="U+2020" name="DAGGER" />
+
+<!-- 1xxx -->	
+	<codePoint decimal="7429" unicode="U+1D05" name="UNKNOWN" />
+
     <!--  not used in STM?  -->
 	<codePoint decimal="8364" unicode="U+20AC" name="EURO SIGN" />
     <codePoint decimal="8486" unicode="U+2126" name="OHM SIGN"/>
@@ -111,12 +268,47 @@
 	<codePoint decimal="8594" unicode="U+2192" name="RIGHTWARDS ARROW"/>
 	
 	<codePoint decimal="8734" unicode="U+221E" name="INFINITY"/>
+	<codePoint decimal="8745" unicode="U+2229" name="UNKNOWN" />
 	<codePoint decimal="8800" unicode="U+2260" name="NOT EQUAL TO"/>
 
-<!-- these may be errors -->	
-	<codePoint decimal="9642" unicode="U+25AA" name="BLACK SMALL SQUARE"/>
-	<codePoint decimal="9656" unicode="U+25B8" name="BLACK RIGHT-POINTING SMALL TRIANGLE"/>
 	
+
+<!--  f6xx -->
+	<codePoint decimal="63193" unicode="U+F6D9" name="UNKNOWN" />
+<codePoint unicode="U+F6D9" adobePoint="D3" foo="COPYRIGHT SIGN SERIF" foo="copyrightserif (CUS)"/>
+<codePoint unicode="U+F6DA" adobePoint="D2" foo="REGISTERED SIGN SERIF" foo="registerserif (CUS)"/>
+<codePoint unicode="U+F6DB" adobePoint="D4" foo="TRADE MARK SIGN SERIF" foo="trademarkserif (CUS)"/>
+
+
+<!--  f8xx -->	
+<codePoint unicode="U+F8E5" adobePoint="60" foo="RADICAL EXTENDER" foo="radicalex (CUS)"/>
+<codePoint unicode="U+F8E6" adobePoint="BD" foo="VERTICAL ARROW EXTENDER" foo="arrowvertex (CUS)"/>
+<codePoint unicode="U+F8E7" adobePoint="BE" foo="HORIZONTAL ARROW EXTENDER" foo="arrowhorizex (CUS)"/>
+<codePoint unicode="U+F8E8" adobePoint="E2" foo="REGISTERED SIGN SANS SERIF" foo="registersans (CUS)"/>
+<codePoint unicode="U+F8E9" adobePoint="E3" foo="COPYRIGHT SIGN SANS SERIF" foo="copyrightsans (CUS)"/>
+<codePoint unicode="U+F8EA" adobePoint="E4" foo="TRADE MARK SIGN SANS SERIF" foo="trademarksans (CUS)"/>
+<codePoint unicode="U+F8EB" adobePoint="E6" foo="LEFT PAREN TOP" foo="parenlefttp (CUS)"/>
+<codePoint unicode="U+F8EC" adobePoint="E7" foo="LEFT PAREN EXTENDER" foo="parenleftex (CUS)"/>
+<codePoint unicode="U+F8ED" adobePoint="E8" foo="LEFT PAREN BOTTOM" foo="parenleftbt (CUS)"/>
+<codePoint unicode="U+F8EE" adobePoint="E9" foo="LEFT SQUARE BRACKET TOP" foo="bracketlefttp (CUS)"/>
+<codePoint unicode="U+F8EF" adobePoint="EA" foo="LEFT SQUARE BRACKET EXTENDER" foo="bracketleftex (CUS)"/>
+<codePoint unicode="U+F8F0" adobePoint="EB" foo="LEFT SQUARE BRACKET BOTTOM" foo="bracketleftbt (CUS)"/>
+<codePoint unicode="U+F8F1" adobePoint="EC" foo="LEFT CURLY BRACKET TOP" foo="bracelefttp (CUS)"/>
+<codePoint unicode="U+F8F2" adobePoint="ED" foo="LEFT CURLY BRACKET MID" foo="braceleftmid (CUS)"/>
+<codePoint unicode="U+F8F3" adobePoint="EE" foo="LEFT CURLY BRACKET BOTTOM" foo="braceleftbt (CUS)"/>
+<codePoint unicode="U+F8F4" adobePoint="EF" foo="CURLY BRACKET EXTENDER" foo="braceex (CUS)"/>
+<codePoint unicode="U+F8F5" adobePoint="F4" foo="INTEGRAL EXTENDER" foo="integralex (CUS)"/>
+<codePoint unicode="U+F8F6" adobePoint="F6" foo="RIGHT PAREN TOP" foo="parenrighttp (CUS)"/>
+<codePoint unicode="U+F8F7" adobePoint="F7" foo="RIGHT PAREN EXTENDER" foo="parenrightex (CUS)"/>
+<codePoint unicode="U+F8F8" adobePoint="F8" foo="RIGHT PAREN BOTTOM" foo="parenrightbt (CUS)"/>
+<codePoint unicode="U+F8F9" adobePoint="F9" foo="RIGHT SQUARE BRACKET TOP" foo="bracketrighttp (CUS)"/>
+<codePoint unicode="U+F8FA" adobePoint="FA" foo="RIGHT SQUARE BRACKET EXTENDER" foo="bracketrightex (CUS)"/>
+<codePoint unicode="U+F8FB" adobePoint="FB" foo="RIGHT SQUARE BRACKET BOTTOM" foo="bracketrightbt (CUS)"/>
+<codePoint unicode="U+F8FC" adobePoint="FC" foo="RIGHT CURLY BRACKET TOP" foo="bracerighttp (CUS)"/>
+<codePoint unicode="U+F8FD" adobePoint="FD" foo="RIGHT CURLY BRACKET MID" foo="bracerightmid (CUS)"/>
+<codePoint unicode="U+F8FE" adobePoint="FE" foo="RIGHT CURLY BRACKET BOTTOM" foo="bracerightbt (CUS)
+
+<!--  fbxx -->
 	<codePoint decimal="64256" unicode="U+FB00" name="LATIN SMALL LIGATURE FF" replaceByUnicode="U+0066 U+0066"/>
 	<codePoint decimal="64257" unicode="U+FB01" name="LATIN SMALL LIGATURE FI" replaceByUnicode="U+0066 U+0069"/>
 	<codePoint decimal="64258" unicode="U+FB02" name="LATIN SMALL LIGATURE FL" replaceByUnicode="U+0066 U+006C"/>
