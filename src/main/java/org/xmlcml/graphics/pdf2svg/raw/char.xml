@@ -1,8 +1,0 @@
-<chars>
-	<char charname="H11001" codepoint16="0X2B" codepoint="43" unicodeName="PLUS"/>
-	<char charname="H11002" codepoint16="0x2D" codepoint="45" unicodeName="MINUS"/> 
-	<char charname="H11003" codepoint16=""? codepoint="215" unicodeName="MULTIPLY"/> 
-	<char charname="H11005" codepoint16="'=' codepoint="215" unicodeName="EQUALS"/> 
-	<char charname="H11021" codepoint16="'<'" codepoint="215" unicodeName="LT"/> 
-</chars>
-		

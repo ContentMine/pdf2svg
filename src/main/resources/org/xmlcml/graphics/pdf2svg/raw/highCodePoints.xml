@@ -56,6 +56,7 @@
 	<codePoint decimal="968" unicode="U+03C8" name="GREEK SMALL LETTER PSI" note="" />
 	<codePoint decimal="969" unicode="U+03C9" name="GREEK SMALL LETTER OMEGA" note="" />
 
+<!-- 
 <codePoint unicode="U+0391" adobePoint="41" foo="GREEK CAPITAL LETTER ALPHA" foo="Alpha"/>
 <codePoint unicode="U+0392" adobePoint="42" foo="GREEK CAPITAL LETTER BETA" foo="Beta"/>
 <codePoint unicode="U+0393" adobePoint="47" foo="GREEK CAPITAL LETTER GAMMA" foo="Gamma"/>
@@ -109,7 +110,7 @@
 <codePoint unicode="U+03D2" adobePoint="A1" foo="GREEK UPSILON WITH HOOK SYMBOL" foo="Upsilon1"/>
 <codePoint unicode="U+03D5" adobePoint="6A" foo="GREEK PHI SYMBOL" foo="phi1"/>
 <codePoint unicode="U+03D6" adobePoint="76" foo="GREEK PI SYMBOL" foo="omega1"/>
-
+-->
 <!--  20xx -->	
 	<codePoint decimal="8208" unicode="U+2010" replaceName="HYPHEN-MINUS" replaceByUnicode="U+002D"
 		name="UNKNOWN NAME" note="" />
@@ -126,13 +127,14 @@
 	<codePoint decimal="8242" unicode="U+2032" replaceName="APOSTROPHE" replaceByUnicode="U+0027"
 		name="PRIME" note="" />
 
+<!--  
 <codePoint unicode="U+2022" adobePoint="B7" foo="BULLET" foo="bullet"/>
 <codePoint unicode="U+2026" adobePoint="BC" foo="HORIZONTAL ELLIPSIS" foo="ellipsis"/>
 <codePoint unicode="U+2032" adobePoint="A2" foo="PRIME" foo="minute"/>
 <codePoint unicode="U+2033" adobePoint="B2" foo="DOUBLE PRIME" foo="second"/>
 <codePoint unicode="U+2044" adobePoint="A4" foo="FRACTION SLASH" foo="fraction"/>
-
 <codePoint unicode="U+20AC" adobePoint="A0" foo="EURO SIGN" foo="Euro"/>
+-->
 	<codePoint decimal="8220" unicode="U+201C" name="LEFT DOUBLE QUOTATION MARK"/>
 	<codePoint decimal="8221" unicode="U+201D" name="RIGHT DOUBLE QUOTATION MARK"/>
 	<codePoint decimal="8222" unicode="U+201E" name="UNKNOWN" />
@@ -143,6 +145,7 @@
 
 
 <!--  21xx -->		
+<!-- 
 <codePoint unicode="U+2111" adobePoint="C1" foo="BLACK-LETTER CAPITAL I" foo="Ifraktur"/>
 <codePoint unicode="U+2118" adobePoint="C3" foo="SCRIPT CAPITAL P" foo="weierstrass"/>
 <codePoint unicode="U+211C" adobePoint="C2" foo="BLACK-LETTER CAPITAL R" foo="Rfraktur"/>
@@ -159,7 +162,7 @@
 <codePoint unicode="U+21D2" adobePoint="DE" foo="RIGHTWARDS DOUBLE ARROW" foo="arrowdblright"/>
 <codePoint unicode="U+21D3" adobePoint="DF" foo="DOWNWARDS DOUBLE ARROW" foo="arrowdbldown"/>
 <codePoint unicode="U+21D4" adobePoint="DB" foo="LEFT RIGHT DOUBLE ARROW" foo="arrowdblboth"/>
-		
+-->		
 <!-- 22xx -->		
 	<codePoint decimal="8710" unicode="U+2206" replaceByName="GREEK CAPITAL LETTER DELTA" replaceByUnicode="U+0394"
 		name="INCREMENT" note="" />
@@ -178,6 +181,7 @@
 	<codePoint decimal="8805" unicode="U+2265" name="GREATER-THAN OR EQUAL TO"
 		note="probably worth keeping and using instead of >=" />
 
+<!-- 
 <codePoint unicode="U+2200" adobePoint="22" foo="FOR ALL" foo="universal"/>
 <codePoint unicode="U+2202" adobePoint="B6" foo="PARTIAL DIFFERENTIAL" foo="partialdiff"/>
 <codePoint unicode="U+2203" adobePoint="24" foo="THERE EXISTS" foo="existential"/>
@@ -218,32 +222,36 @@
 <codePoint unicode="U+2297" adobePoint="C4" foo="CIRCLED TIMES" foo="circlemultiply"/>
 <codePoint unicode="U+22A5" adobePoint="5E" foo="UP TACK" foo="perpendicular"/>
 <codePoint unicode="U+22C5" adobePoint="D7" foo="DOT OPERATOR" foo="dotmath"/>
+-->
 
 <!--  23xx -->
+<!-- 
 <codePoint unicode="U+2320" adobePoint="F3" foo="TOP HALF INTEGRAL" foo="integraltp"/>
 <codePoint unicode="U+2321" adobePoint="F5" foo="BOTTOM HALF INTEGRAL" foo="integralbt"/>
 <codePoint unicode="U+2329" adobePoint="E1" foo="LEFT-POINTING ANGLE BRACKET" foo="angleleft"/>
 <codePoint unicode="U+232A" adobePoint="F1" foo="RIGHT-POINTING ANGLE BRACKET" foo="angleright"/>
-
+-->
 
 <!--  25xx -->		
 	<codePoint decimal="9632" unicode="U+25A0" name="BLACK SQUARE"
 		note="probably for lists and graph symbols" />
 	<codePoint decimal="9702" unicode="U+25E6" name="WHITE BULLET"
 		note="probably for lists and graph symbols" confusions="ring operator U+2218 inverse bullet U+25D8" />
-		
-		<codePoint unicode="U+25CA" adobePoint="E0" foo="LOZENGE" foo="lozenge"/>
 
+<!-- 		
+		<codePoint unicode="U+25CA" adobePoint="E0" foo="LOZENGE" foo="lozenge"/>
+-->
 <!-- these may be errors -->	
 	<codePoint decimal="9642" unicode="U+25AA" name="BLACK SMALL SQUARE"/>
 	<codePoint decimal="9656" unicode="U+25B8" name="BLACK RIGHT-POINTING SMALL TRIANGLE"/>
 		
 <!--  26xx -->
+<!-- 
 <codePoint unicode="U+2660" adobePoint="AA" foo="BLACK SPADE SUIT" foo="spade"/>
 <codePoint unicode="U+2663" adobePoint="A7" foo="BLACK CLUB SUIT" foo="club"/>
 <codePoint unicode="U+2665" adobePoint="A9" foo="BLACK HEART SUIT" foo="heart"/>
 <codePoint unicode="U+2666" adobePoint="A8" foo="BLACK DIAMOND SUIT" foo="diamond"/>
-
+-->
 
 <!--  30xx -->		
 	<codePoint decimal="12296" unicode="U+3008" name="LEFT ANGLE BRACKET"
@@ -275,12 +283,14 @@
 
 <!--  f6xx -->
 	<codePoint decimal="63193" unicode="U+F6D9" name="UNKNOWN" />
+<!-- 	
 <codePoint unicode="U+F6D9" adobePoint="D3" foo="COPYRIGHT SIGN SERIF" foo="copyrightserif (CUS)"/>
 <codePoint unicode="U+F6DA" adobePoint="D2" foo="REGISTERED SIGN SERIF" foo="registerserif (CUS)"/>
 <codePoint unicode="U+F6DB" adobePoint="D4" foo="TRADE MARK SIGN SERIF" foo="trademarkserif (CUS)"/>
-
+ -->
 
 <!--  f8xx -->	
+<!-- 
 <codePoint unicode="U+F8E5" adobePoint="60" foo="RADICAL EXTENDER" foo="radicalex (CUS)"/>
 <codePoint unicode="U+F8E6" adobePoint="BD" foo="VERTICAL ARROW EXTENDER" foo="arrowvertex (CUS)"/>
 <codePoint unicode="U+F8E7" adobePoint="BE" foo="HORIZONTAL ARROW EXTENDER" foo="arrowhorizex (CUS)"/>
@@ -307,6 +317,7 @@
 <codePoint unicode="U+F8FC" adobePoint="FC" foo="RIGHT CURLY BRACKET TOP" foo="bracerighttp (CUS)"/>
 <codePoint unicode="U+F8FD" adobePoint="FD" foo="RIGHT CURLY BRACKET MID" foo="bracerightmid (CUS)"/>
 <codePoint unicode="U+F8FE" adobePoint="FE" foo="RIGHT CURLY BRACKET BOTTOM" foo="bracerightbt (CUS)
+-->
 
 <!--  fbxx -->
 	<codePoint decimal="64256" unicode="U+FB00" name="LATIN SMALL LIGATURE FF" replaceByUnicode="U+0066 U+0066"/>
