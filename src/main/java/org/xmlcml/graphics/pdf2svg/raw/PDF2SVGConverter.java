@@ -1,3 +1,18 @@
+/**
+ * Copyright (C) 2012 pm286 <peter.murray.rust@googlemail.com>
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *         http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package org.xmlcml.graphics.pdf2svg.raw;
 
 import java.io.File;
@@ -41,6 +56,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	public static final String PAGES = "-pages";
 	public static final String PUB = "-pub";
 	public static final String OUTDIR = "-outdir";
+	public static final String NO_SVG = "-nosvg";
 
 	private String PDFpassword = "";
 	private boolean useNonSeqParser = false;
@@ -63,25 +79,29 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	
 	Double pageHeight = _DEFAULT_PAGE_HEIGHT;
 	Double pageWidth = _DEFAULT_PAGE_WIDTH;
+	private PDFPage2SVGConverter page2svgConverter;
+	private SVGSVG currentSVGPage;
+	private boolean writeFile = true;
 
 	private static void usage() {
 		System.err
-				.printf("Usage: pdf2svg [%s pw] [%s] [%s <page-ranges>] [%s dir] <input-file> ...%n%n"
+				.printf("Usage: pdf2svg [%s <pw>] [%s] [%s <page-ranges>] [%s <pub>] [%s <dir>] [%s] <input-file> ...%n%n"
 						+ "  %s <password>  Password to decrypt the document (default none)%n"
 						+ "  %s               Enables the new non-sequential parser%n"
 						+ "  %s <page-ranges>  Restrict pages to be output (default all)%n"
 						+ "  %s <publisher>   Use publisher-specific info%n"
-						+ "  %s <dirname>     Location to write output pages (default '.')%n"
+						+ "  %s <dirname>     Location to write output SVG pages (default '.')%n"
+						+ "  %s               Don't write SVG files %n"
 						+ "  <input-file>          The PDF document to be loaded%n",
-						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, PASSWORD, NONSEQ,
-						PAGES, OUTDIR);
-		System.exit(1);
+						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, NO_SVG, PASSWORD, NONSEQ,
+						PAGES, PUB, OUTDIR, NO_SVG);
+//		System.exit(1); // fouls maven tests
 	}
 
 	private void openPDFFile(String filename) throws Exception {
 
-		PDFPage2SVGConverter drawer = new PDFPage2SVGConverter();
-		System.out.printf("Parsing PDF file %s ...%n", filename);
+		page2svgConverter = new PDFPage2SVGConverter();
+		LOG.debug("Parsing PDF file "+ filename);
 		readDocument(filename, useNonSeqParser, PDFpassword);
 
 		@SuppressWarnings("unchecked")
@@ -94,8 +114,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 		createOutputDirectory();
 
-		System.out.printf("Processing pages %s (of %d) ...%n", pr.toString(),
-				pages.size()); 
+		LOG.debug("Processing pages "+pr.toString()+" (of "+pages.size()+")"); 
 
 		File infile = new File(filename);
 		String basename = infile.getName().toLowerCase();
@@ -107,19 +126,30 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		while (pageNumber > 0) {
 			PDPage page = pages.get(pageNumber - 1);
 
-			System.out.println("=== " + pageNumber + " ===");
-			drawer.convertPageToSVG(page, this);
+			LOG.debug("=== " + pageNumber + " ===");
+			currentSVGPage = page2svgConverter.convertPageToSVG(page, this);
 
-			File outfile = writeFile(drawer, basename, pageNumber);
-			outfileList.add(outfile);
+			addPageToPageList();
+			if (writeFile) {
+				File outfile = writeFile(basename, pageNumber);
+				outfileList.add(outfile);
+			}
 
 			pageNumber = pr.next(pageNumber);
 		}
 
-		reportHighCodePoints();
-		reportNewFontFamilyNames();
-		writeHTMLSystem(outfileList);
-		reportPublisher();
+		if (writeFile) {
+			reportHighCodePoints();
+			reportNewFontFamilyNames();
+			writeHTMLSystem(outfileList);
+			reportPublisher();
+		}
+	}
+
+	private void addPageToPageList() {
+		ensureSVGPageList();
+		SVGSVG svgPage = page2svgConverter.getSVG();
+		svgPageList.add(svgPage);
 	}
 
 	private void reportPublisher() {
@@ -137,21 +167,21 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 					"'%s' is not a directory!", outputDirectory));
 	}
 
-	private File writeFile(PDFPage2SVGConverter drawer, String basename,
-			int pageNumber) throws IOException,
-			UnsupportedEncodingException, FileNotFoundException {
-		ensureSVGPageList();
-		File outfile = new File(outdir, basename + "-page" + pageNumber + ".svg");
-		System.out.printf("Writing output to file '%s'%n", outfile.getCanonicalPath());
+	private File writeFile(String basename, int pageNumber) {
 
-		SVGSVG svgPage = drawer.getSVG();
-		svgPageList.add(svgPage);
-		SVGSerializer serializer = new SVGSerializer(new FileOutputStream(
-				outfile), "UTF-8");
-		Document document = svgPage.getDocument();
-		document = (document == null) ? new Document(svgPage) : document;
-		serializer.setIndent(1);
-		serializer.write(document);
+		File outfile = null;
+		try {
+			outfile = new File(outdir, basename + "-page" + pageNumber + ".svg");
+			LOG.trace("Writing output to file '"+outfile.getCanonicalPath());
+			SVGSerializer serializer = new SVGSerializer(new FileOutputStream(
+					outfile), "UTF-8");
+			Document document = currentSVGPage.getDocument();
+			document = (document == null) ? new Document(currentSVGPage) : document;
+			serializer.setIndent(1);
+			serializer.write(document);
+		} catch (Exception e) {
+			throw new RuntimeException("Cannot convert PDF to SVG", e);
+		}
 		return outfile;
 	}
 
@@ -230,6 +260,11 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			if (args[iarg].equals(OUTDIR)) {
 				incrementArg(args);
 				outputDirectory = args[iarg];
+				continue;
+			}
+
+			if (args[iarg].equals(NO_SVG)) {
+				writeFile  = true;
 				continue;
 			}
 

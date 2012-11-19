@@ -1,3 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <fontFamilySet name="nonStandard">
 	<fontFamily name="Arial" />
 	<fontFamily name="Avenir" />
@@ -6,9 +7,9 @@
 	<fontFamily name="Frutiger-Light" />
 	<fontFamily name="FrutigerBold" />
 	<fontFamily name="FrutigerLTStdBold" />
-	<fontFamily name="FrutigerLTStd-Roman" />
-	<fontFamily name="MathematicalPi-One" note="" symbol="true" codePointSet="org/xmlcml/graphics/pdf2svg/raw/mathpi2unicode.xml"
-	    publishers="ajc"/>
+	<fontFamily name="FrutigerLTStd-Roman"/>
+	<fontFamily name="MathematicalPi-One" note="" symbol="true" 
+	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/mathpi2unicode.xml"/>
 	<fontFamily name="MathematicalPi-Three" />
 	<fontFamily name="MathematicalPi-Four" />
 	<fontFamily name="MyriadMM215LT700SE" />
@@ -19,6 +20,7 @@
 	<fontFamily name="MTMI" />
 	<fontFamily name="MTGU" />
 	<fontFamily name="MTEX" unicode="guessed" publishers=""/>
+	
 	<!--
 	<fontFamily name="MTSYN" unicode="guessed"/>
 	-->
@@ -31,11 +33,10 @@
 	<fontFamily name="TimesNRMT" />
 	<fontFamily name="Times-Roman" />
 	<fontFamily name="Univers" />
-	<!--
+	<!-- 
 	<fontFamily name="Wingdings" />
 	<fontFamily name="Wingdings-Regular" />
 	-->
-
 	<!--  possible symbol fonts -->
 	<fontFamily name="AdvPi1" symbol="true" codePointSet="org/xmlcml/graphics/pdf2svg/raw/advpi1.xml"/>
 	<fontFamily name="AdvMPi-One" symbol="true" codePointSet="org/xmlcml/graphics/pdf2svg/raw/advpi1.xml"/>
@@ -80,8 +81,10 @@
 -->	    
 	<fontFamily name="Wingdings" symbol="true" 
 	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/wingdings.xml"/>
+<!-- seems to be Unicode
 	<fontFamily name="MTSYN" symbol="true" 
 	    codePointSet="org/xmlcml/graphics/pdf2svg/raw/mtsyn.xml"/>
+-->
 
     <!-- ligatures -->
 	<fontFamily name="AdvOT863180fb" symbol="false" />
@@ -287,4 +290,6 @@
 	<fontFamily name="MyriadLight" />
 	<fontFamily name="AdvT004" />
 	<fontFamily name="AdvMyriad_R" />
+	
 </fontFamilySet>
+	
