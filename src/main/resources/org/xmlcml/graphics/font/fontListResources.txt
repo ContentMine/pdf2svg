@@ -1,3 +1,0 @@
-outlineFonts/font1/italic.xml
-outlineFonts/font1/normal.xml
-outlineFonts/font2/bold.xml
