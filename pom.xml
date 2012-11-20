@@ -97,7 +97,7 @@
 					<archive>
 						<manifest>
 							<addClasspath>true</addClasspath>
-							<mainClass>org.xmlcml.graphics.pdf2svg.raw.PDF2SVGConverter</mainClass>
+							<mainClass>org.xmlcml.pdf2svg.PDF2SVGConverter</mainClass>
 						</manifest>
 					</archive>
 					<excludes>
@@ -117,7 +117,7 @@
 					</descriptorRefs>
 					<archive>
 						<manifest>
-							<mainClass>org.xmlcml.graphics.pdf2svg.raw.PDF2SVGConverter</mainClass>
+							<mainClass>org.xmlcml.pdf2svg.PDF2SVGConverter</mainClass>
 						</manifest>
 					</archive>
 					<excludes>

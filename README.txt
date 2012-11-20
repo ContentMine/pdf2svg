@@ -16,9 +16,6 @@
 
 =PDF2SVG=
 
-==License==
-Apache2, see LICENSE.txt
-
 ==Introduction== 
 PDF2SVG is the first of (probably) three modules in the AMI2 system. Its role is to convert PDF to SVG
 with as little loss as possible. The aims include:
@@ -35,6 +32,11 @@ PDF2SVG is particularly aimed at those who wish to process the documents into ot
 In the best case the SVG produced will be almost indistinguishable on the screen from the PDF. Moreover
 the consumer should need to know nothing about PDF. The SVG can then be processed by the SVG2rawXML module
 in AMI.
+
+==Updates==
+PDF2SVG is "finished" but because of the awful mess that is STM publishers fonts we expect that font information
+will be continually updates. See NOTES.txt for any late changes and also read the issue tracker on
+Bitbucket
 
 ==Architecture== 
 PDF2SVG is written in Java >= 1.5 and built/distributed under Maven. It relies on the following libraries:
@@ -75,3 +77,7 @@ We have not (yet) analyzed the font dictionaries in PDFBox. Most characters are 
 and a PDFont. However some Fonts do not offer code points, but offsets into maps. In some cases we suspect that
 character information can be recovered, but in others it may only be glyphs. In the latter case we shall need
 heuristics to determine the best match for the glyph/character.
+
+==License==
+Apache2, see LICENSE.txt
+

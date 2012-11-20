@@ -1,0 +1,9 @@
+ReleaseNotes
+============
+
+Unofficial log of important changes:
+
+2012-11-20: Changed many package names ro remove "graphics". Main class is now:
+	org.xmlcml.pdf2svg.PDF2SVGConverter
+2012-11-20: Changed src/main/resources to have directories for font resources
+
