@@ -45,9 +45,9 @@
 		</license>
 	</licenses>
 	<scm>
-		<url>https://bitbucket.org/petermr/html/src</url>
-		<connection>scm:hg:http://bitbucket.org/petermr/html</connection>
-		<developerConnection>scm:hg:https://bitbucket.org/petermr/html</developerConnection>
+		<url>https://bitbucket.org/petermr/pdf2svg/src</url>
+		<connection>scm:hg:http://bitbucket.org/petermr/pdf2svg</connection>
+		<developerConnection>scm:hg:https://bitbucket.org/petermr/pdf2svg</developerConnection>
 	</scm>
 	
 	<!-- remove <repositories> for releases to maven central -->
@@ -122,6 +122,7 @@
 			<version>13.0.1</version>
 		</dependency>
 	</dependencies>
+	
 	<build>
 		<plugins>
 			<plugin>
@@ -184,4 +185,5 @@
 
 		</plugins>
 	</build>
+	
 </project>
