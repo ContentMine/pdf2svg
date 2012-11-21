@@ -101,7 +101,7 @@ public class SemiTest {
 		convertPDFsToSVG("../pdfs/ajc/many", "target/ajc/many");
 	}
 
-	private void convertPDFsToSVG(String pdfDirName, String outdir) {
+	static void convertPDFsToSVG(String pdfDirName, String outdir) {
 		File pdfDir = new File(pdfDirName);
 		File[] files = pdfDir.listFiles();
 		if (files != null) {

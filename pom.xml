@@ -26,6 +26,7 @@
 		<version>4</version>
 	</parent>
 
+
 	<groupId>org.xml-cml</groupId>
 	<artifactId>pdf2svg</artifactId>
 	<version>0.1-SNAPSHOT</version>
@@ -36,6 +37,29 @@
 		<pdfbox.version>1.7.1</pdfbox.version>
 	</properties>
 
+	<licenses>
+		<license>
+			<name>Apache License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<scm>
+		<url>https://bitbucket.org/petermr/html/src</url>
+		<connection>scm:hg:http://bitbucket.org/petermr/html</connection>
+		<developerConnection>scm:hg:https://bitbucket.org/petermr/html</developerConnection>
+	</scm>
+	
+	<!-- remove <repositories> for releases to maven central -->
+	<repositories>
+		<repository>
+			<id>ucc-repo</id>
+			<name>UCC Repository</name>
+			<url>https://maven.ch.cam.ac.uk/m2repo</url>
+		</repository>
+	</repositories>
+	
+	<!-- 
 	<pluginRepositories>
 		<pluginRepository>
 			<id>mc-release</id>
@@ -49,9 +73,20 @@
 			</releases>
 		</pluginRepository>
 	</pluginRepositories>
-	
+-->	
+ 
 
 	<dependencies>
+		<dependency>
+			<groupId>org.xml-cml</groupId>
+			<artifactId>euclid</artifactId>
+			<version>1.1-SNAPSHOT</version>
+		</dependency>
+		<dependency>
+			<groupId>org.xml-cml</groupId>
+			<artifactId>cmlxom</artifactId>
+			<version>3.2-SNAPSHOT</version>
+		</dependency>
 		<dependency>
 			<groupId>org.apache.pdfbox</groupId>
 			<artifactId>pdfbox</artifactId>
@@ -137,6 +172,7 @@
 					</execution>
 				</executions>
 			</plugin>
+			<!-- 
 			<plugin>
 				<groupId>com.mycila.maven-license-plugin</groupId>
 				<artifactId>maven-license-plugin</artifactId>
@@ -144,6 +180,7 @@
 					<header>src/etc/header.txt</header>
 				</configuration>
 			</plugin>
+			-->
 
 		</plugins>
 	</build>

@@ -77,249 +77,34 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	@Ignore
-	// do not normally run this
-	public void testAJC() {
-		for (int pageNum = 1; pageNum <= 131; pageNum++) {
-			File pageNFile = new File("target/ajc/xx-page" + pageNum + ".svg");
-			if (pageNFile.exists()) {
-				pageNFile.delete();
-			}
-		}
-
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "target/ajc", "-pages", "1-131",
-				"-pub", "ajc", "../pdfs/ajctest/xx.pdf");
-
-		for (int pageNum = 1; pageNum <= 131; pageNum++) {
-			File pageNFile = new File("target/ajc/xx-page" + pageNum + ".svg");
-			Assert.assertTrue(pageNFile.exists());
-		}
-	}
-
-	@Test
-	@Ignore
-	public void testAJCMany() {
-		convertPDFsToSVG("../pdfs/ajc/many", "target/ajc/many");
-	}
-
-	private void convertPDFsToSVG(String pdfDirName, String outdir) {
-		File pdfDir = new File(pdfDirName);
-		File[] files = pdfDir.listFiles();
-		if (files != null) {
-			for (File file : files){
-				if (file.toString().endsWith(".pdf")) {
-					PDF2SVGConverter converter = new PDF2SVGConverter();
-					converter.run("-outdir", outdir, file.toString());
-				}
-			}
-		}
-	}
-	
-	@Test
-	@Ignore // do not normally run this
-	public void testBMC() {
-		for (int pageNum = 1; pageNum <= 14; pageNum++) {
-			File pageNFile = new File("../pdfs/312-page" + pageNum + ".svg");
-			if (pageNFile.exists()) {
-				pageNFile.delete();
-			}
-		}
-
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/bmc", "-pages", "1-14",
-				"-pub", "bmc", "src/test/resources/org/xmlcml/graphics/pdf/312.pdf");
-
-		for (int pageNum = 1; pageNum <= 14; pageNum++) {
-			File pageNFile = new File("../pdfs/bmc/312-page" + pageNum + ".svg");
-			Assert.assertTrue(pageNFile.exists());
-		}
-	}
-
-	@Test
-	@Ignore
-	// do not normally run this
-	public void testE() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/e", "-pub", "els", "../pdfs/e/6048.pdf");
-	}
-
-	@Test
-	@Ignore
-	// do not normally run this
-	public void testRSC() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/rsc", "-pub", "rsc", "../pdfs/rsc/b306241d.pdf");
-	}
-
-	@Test
-	@Ignore
-	// do not normally run this
-	public void testRSC1() {
-		// this has very bad performance because of colour conversion in bitmap fonts
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-//		converter.run("-outdir", "../pdfs/rsc", "-pages", "3", "../pdfs/rsc/problemChars.pdf");
-		converter.run("-outdir", "../pdfs/rsc", "-pub", "pccp", "../pdfs/rsc/problemChars.pdf");
-	}
-	
-	@Test
-	@Ignore
-	public void testRSCMany() {
-		convertPDFsToSVG("../pdfs/rsc/many", "target/rsc/many");
-	}
-
-	@Test
-	@Ignore
-	// do not normally run this
-	public void testPsyc() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/psyc", "-pub", "frpsyc","../pdfs/psyc/Holcombe2012.pdf");
-	}
-
-	@Test
-	@Ignore
-	// do not normally run this
-	public void testAPA() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/apa", "-pub", "apa", "../pdfs/apa/Liu2005.pdf");
-	}
-
-	@Test
-	@Ignore
-	// do not normally run this
-	public void testSocDir() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/socdir", "-pub", "socdir", "../pdfs/socdir/1-PB.pdf");
-	}
-
-	@Test
-	@Ignore // not behaving right
-	// do not normally run this
-	public void testACS() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/acs", "-pub", "acs", "../pdfs/acs/nl072516n.pdf");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testNPG() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/npg", "-pub", "npg", "../pdfs/npg/srep00778.pdf");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testWiley() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/wiley", "-pub", "wiley", "../pdfs/wiley/1032.pdf");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testBMJ() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/bmj", "-pub", "bmj", "../pdfs/bmj/e001553.pdf");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testElife() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/elife", "-pub", "elife", "src/test/resources/elife/00013.pdf");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testJB() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/jb", "-pub", "jb", "../pdfs/jb/100-14.pdf");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testPlosOne() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/plosone", "-pub", "plosone", "src/test/resources/plosone/0049149.pdf");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testPlosOne1() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/plosone", "-pages", "2", "src/test/resources/plosone/2009_rip_loop_conformations.pdf");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testElsevier2() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/els", "../pdfs/e2/1-s2.0-S2212877812000129-main.pdf");
-	}
-
-	@Test
-	@Ignore // do not normally run this
+	//@Ignore // do not normally run this
 	public void testWord() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-outdir", "../pdfs/word", "-pub", "word", "../pdfs/word/test.pdf");
 	}
 
 	@Test
-	@Ignore // do not normally run this
+	//@Ignore // do not normally run this
 	public void testWordMath() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-outdir", "../pdfs/word", "-pub", "word", "../pdfs/word/testmath.pdf");
 	}
 
 	@Test
-	@Ignore // do not normally run this
-	public void testThesis() {
+	//@Ignore // do not normally run this
+	public void testWordThesis() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/thesis", "../pdfs/thesis/darmstadt.pdf");
-	}
-	@Test
-	@Ignore // do not normally run this
-	public void testThesis1() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/thesis", "../pdfs/thesis/keruzore.pdf");
-	}
-	@Test
-	@Ignore // do not normally run this
-	public void testThesis2() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/thesis", "../pdfs/thesis/Mawer.pdf");
-	}
-	@Test
-	@Ignore // do not normally run this
-	public void testThesis5() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/thesis", "../pdfs/thesis/zakrysphd.pdf");
-	}
-	@Test
-	@Ignore
-	public void testThesisMany() {
-		convertPDFsToSVG("../pdfs/thesis", "target/thesis");
+		converter.run("-outdir", "../pdfs/word", "../pdfs/word/harterchap7small.pdf");
 	}
 
 	@Test
-	@Ignore
-	public void testArxivMany() {
-		convertPDFsToSVG("../pdfs/arxiv", "target/arxiv");
-	}
-	
-	@Test
-	@Ignore
-	public void testECU() {
-		convertPDFsToSVG("../../documents/standalone/ecu2012", "target/ecu");
-	}
-
-	@Test
-	@Ignore
+	//@Ignore
 	public void testPPT() {
-		convertPDFsToSVG("../pdfs/ppt", "target/ppt");
+		SemiTest.convertPDFsToSVG("../pdfs/ppt", "target/ppt");
 	}
 
 	@Test
-	@Ignore
+	//@Ignore
 	public void testHelp() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run();
