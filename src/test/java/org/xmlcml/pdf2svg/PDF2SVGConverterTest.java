@@ -84,21 +84,24 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	//@Ignore // do not normally run this
+	@Ignore // do not normally run this
+	// FIXME - move to test/resources
 	public void testWordMath() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-outdir", "../pdfs/word", "-pub", "word", "../pdfs/word/testmath.pdf");
 	}
 
 	@Test
-	//@Ignore // do not normally run this
+	@Ignore // do not normally run this
+	// FIXME - move to test/resources
 	public void testWordThesis() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-outdir", "../pdfs/word", "../pdfs/word/harterchap7small.pdf");
 	}
 
 	@Test
-	//@Ignore
+	@Ignore
+	// FIXME - move to test/resources
 	public void testPPT() {
 		SemiTest.convertPDFsToSVG("../pdfs/ppt", "target/ppt");
 	}
