@@ -344,7 +344,25 @@
 	<codePoint decimal="64260" unicode="U+FB04" name="LATIN SMALL LIGATURE FFL" replaceByUnicode="U+0066 U+0066 U+006C"/>
 	<codePoint decimal="64261" unicode="U+FB05" name="LATIN SMALL LIGATURE LONG S T" note="highly unlikely" replaceByUnicode="U+0073 U+0074" />
 	<codePoint decimal="64262" unicode="U+FB06" name="LATIN SMALL LIGATURE ST" note="highly unlikely" replaceByUnicode="U+0073 U+0074"/>
-	
+
+<!-- 
+MS mapping http://support.microsoft.com/kb/897872
+"Richedit 4.1 maps the range of characters between U+F020 and U+F0FF in the PUA to symbol fonts. Therefore, when you map
+ any character in this range, Richedit 4.1 shows the symbol character instead of the end-user-defined character (EUDC).
+"
+"U+F020 is not a valid unicode character"
+61472
+61540
+61544
+61547
+61549
+61550
+61552
+61616
+
+61472-61695
+
+ -->	
 		
 </codePointSet>
 		

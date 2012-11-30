@@ -77,7 +77,7 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	@Ignore // do not normally run this
+	//@Ignore // do not normally run this
 	public void testWord() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-outdir", "../pdfs/word", "-pub", "word", "../pdfs/word/test.pdf");

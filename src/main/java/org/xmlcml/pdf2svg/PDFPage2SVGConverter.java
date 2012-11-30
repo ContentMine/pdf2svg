@@ -28,6 +28,7 @@ import java.awt.geom.GeneralPath;
 import java.awt.geom.PathIterator;
 import java.io.IOException;
 import java.util.Arrays;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
@@ -54,12 +55,14 @@ import org.xmlcml.euclid.Real2;
 import org.xmlcml.euclid.Real2Range;
 import org.xmlcml.euclid.RealArray;
 import org.xmlcml.euclid.Transform2;
+import org.xmlcml.graphics.svg.SVGClipPath;
 import org.xmlcml.graphics.svg.SVGElement;
 import org.xmlcml.graphics.svg.SVGPath;
 import org.xmlcml.graphics.svg.SVGRect;
 import org.xmlcml.graphics.svg.SVGSVG;
 import org.xmlcml.graphics.svg.SVGText;
 import org.xmlcml.graphics.svg.SVGTitle;
+import org.xmlcml.graphics.svg.SVGUtil;
 import org.xmlcml.pdf2svg.util.PDF2SVGUtil;
 
 /** converts a PDPage to SVG
@@ -70,6 +73,8 @@ import org.xmlcml.pdf2svg.util.PDF2SVGUtil;
  */
 public class PDFPage2SVGConverter extends PageDrawer {
 	
+	private static final String CLIP_PATH = "clipPath";
+
 	private final static Logger LOG = Logger.getLogger(PDF2SVGConverter.class);
 
 	private static final Dimension DEFAULT_DIMENSION = new Dimension(800, 800);
@@ -99,7 +104,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private Double lineWidth;
 	private Set<String> clipStringSet;
 	private String clipString;
-	private PDF2SVGConverter converter;
+	private PDF2SVGConverter pdf2svgConverter;
 	private Encoding encoding; // to distinguish from content-type encoding
 	private String charname;
 	private Real2 currentXY;
@@ -108,12 +113,15 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private AMIFontManager amiFontManager;
 
 	private FontFamily newFontFamily;
-	private boolean addTooltips = true;
 
 	private int charCode;
 	private AMIFont amiFont;
 	private String lastFontName;
 	private FontFamily fontFamily;
+
+	private HashMap<String, Integer> integerByClipStringMap;
+
+	private SVGElement defs1;
 	
 
 	public PDFPage2SVGConverter() throws IOException {
@@ -126,7 +134,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	 * @param converter
 	 */
 	SVGSVG convertPageToSVG(PDPage page, PDF2SVGConverter converter) {
-		this.converter = converter;
+		this.pdf2svgConverter = converter;
 		this.amiFontManager = converter.getAmiFontManager();
 		createSVGSVG();
 		drawPage(page);
@@ -149,11 +157,13 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			LOG.error("***FAILED " + e);
 			throw new RuntimeException("drawPage", e);
 		}
-		reportClipPaths();
-
+		createDefsForClipPaths();
+		if (pdf2svgConverter.drawBoxesForClipPaths) {
+			drawBoxesForClipPaths();
+		}
 	}
 
-	private void reportClipPaths() {
+	private void drawBoxesForClipPaths() {
 		ensureClipStringSet();
 		String[] color = {"yellow", "blue", "red", "green", "magenta", "cyan"};
 		LOG.trace("Clip paths: "+clipStringSet.size());
@@ -173,9 +183,44 @@ public class PDFPage2SVGConverter extends PageDrawer {
 				icol = (icol+1) % 6;
 			}
 		}
-		
 	}
 
+	private void createDefsForClipPaths() {
+//   <clipPath clipPathUnits="userSpaceOnUse" id="clipPath14">
+//	    <path stroke="black" stroke-width="0.5" fill="none" d="M0 0 L89.814 0 L89.814 113.7113 L0 113.7113 L0 0 Z"/>
+//	  </clipPath>
+		ensureIntegerByClipStringMap();
+		ensureDefs1();
+		for (String pathString : integerByClipStringMap.keySet()) {
+			Integer serial = integerByClipStringMap.get(pathString);
+			SVGClipPath clipPath = new SVGClipPath();
+			clipPath.setId(CLIP_PATH+serial);
+			defs1.appendChild(clipPath);
+			SVGPath path = new SVGPath();
+			path.setDString(pathString);
+			clipPath.appendChild(path);
+		}
+	}
+
+
+	private void ensureDefs1() {
+/*
+<svg fill-opacity="1" 
+xmlns="http://www.w3.org/2000/svg">
+  <defs id="defs1">
+   <clipPath clipPathUnits="userSpaceOnUse" id="clipPath1">
+    <path stroke="black" stroke-width="0.5" fill="none" d="M0 0 L595 0 L595 793 L0 793 L0 0 Z"/>
+   </clipPath>
+   </defs>
+ */
+		List<SVGElement> defList = SVGUtil.getQuerySVGElements(svg, "/svg:g/svg:defs[@id='defs1']");
+		defs1 = (defList.size() > 0) ? defList.get(0) : null;
+		if (defs1 == null) {
+			defs1 = new SVGElement("defs");
+			defs1.setId("defs1");
+			svg.appendChild(defs1);
+		}
+	}
 
 	/** adds a default pagesize if not given
 	 * 
@@ -245,7 +290,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		createGraphicsStateAndPaintAndComposite();
 		
 		getFontSizeAndSetNotZeroRotations(svgText);
-		getClipPath();
+		getAndFormatClipPath();
 		addTextAttributes(width, svgText);
 		svg.appendChild(svgText);
 		addTooltips(svgText);
@@ -269,7 +314,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	}
 
 	private void checkPublisherFontFamily() {
-		Publisher publisher = converter.getPublisher();
+		Publisher publisher = pdf2svgConverter.getPublisher();
 		if (publisher != null) {
 			if (!publisher.containsFontFamilyName(fontFamilyName))  {
 				publisher.addFontFamilyName(fontFamilyName);
@@ -347,7 +392,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	}
 
 	private void addTooltips(SVGText svgText) {
-		if (addTooltips) {
+		if (pdf2svgConverter.addTooltipDebugTitles) {
 			Encoding encoding = (amiFont == null) ? null : amiFont.getEncoding();
 			String enc = (encoding == null) ? null : encoding.getClass().getSimpleName();
 			enc =(enc != null && enc.endsWith(AMIFont.ENCODING)) ? enc.substring(0, enc.length()-AMIFont.ENCODING.length()) : enc;
@@ -358,16 +403,16 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	}
 
 	private int addCodePointToHighPoints(TextPosition text) {
-		converter.ensureCodePointSets();
+		pdf2svgConverter.ensureCodePointSets();
 		int charCode = text.getCharacter().charAt(0);
 		if (charCode > 255) {
-			if (converter.knownCodePointSet.containsKey((Integer)charCode)) {
+			if (pdf2svgConverter.knownCodePointSet.containsKey((Integer)charCode)) {
 				// known
-			} else if (converter.newCodePointSet.containsKey((Integer) charCode)) {
+			} else if (pdf2svgConverter.newCodePointSet.containsKey((Integer) charCode)) {
 				// known 
 			} else if (encoding != null) {
-				converter.newCodePointSet.ensureEncoding(encoding.toString());
-				converter.newCodePointSet.add((Integer)charCode, charname, null);
+				pdf2svgConverter.newCodePointSet.ensureEncoding(encoding.toString());
+				pdf2svgConverter.newCodePointSet.add((Integer)charCode, charname, null);
 				System.out.println("ADDED: "+charCode);
 			} else {
 				LOG.warn("Font name: "+fontName+" No encoding, so cannot add codePoint ("+charCode+") to codePointSet");
@@ -377,7 +422,8 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	}
 
 	private void addTextAttributes(float width, SVGText svgText) {
-		svgText.setClipPath(clipString);
+//		svgText.setClipPath(clipString);
+		setClipPath(svgText, clipString, (Integer) integerByClipStringMap.get(clipString));
 		svgText.setFontSize(currentFontSize);
 		final String stroke = getCSSColor((Color) paint);
 		svgText.setStroke(stroke);
@@ -493,13 +539,28 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		}
 	}
 
-	private String getClipPath() {
+	private String getAndFormatClipPath() {
 		Shape shape = getGraphicsState().getCurrentClippingPath();
 		PathIterator pathIterator = shape.getPathIterator(new AffineTransform());
 		clipString = SVGPath.getPathAsDString(pathIterator);
+		SVGPath path = new SVGPath(clipString);
+		path.format(nPlaces);
+		clipString = path.getDString();
+		// old approach
 		ensureClipStringSet();
 		clipStringSet.add(clipString);
+		// new approach
+		ensureIntegerByClipStringMap();
+		if (!integerByClipStringMap.containsKey(clipString)) {
+			integerByClipStringMap.put(clipString, integerByClipStringMap.size()+1); // count from 1
+		}
 		return clipString;
+	}
+
+	private void ensureIntegerByClipStringMap() {
+		if (integerByClipStringMap == null) {
+			integerByClipStringMap = new HashMap<String, Integer>();
+		}
 	}
 
 	private void ensureClipStringSet() {
@@ -690,8 +751,9 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			generalPath.setWindingRule(windingRule);
 		}
 		SVGPath svgPath = new SVGPath(generalPath);
-		getClipPath();
+		clipString = getAndFormatClipPath();
 		svgPath.setClipPath(clipString);
+		setClipPath(svgPath, clipString, integerByClipStringMap.get(clipString));
 		if (windingRule != null) {
 			svgPath.setFill(getCSSColor(currentPaint));
 		} else {
@@ -707,6 +769,11 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		svgPath.format(nPlaces);
 		svg.appendChild(svgPath);
 		generalPath.reset();
+	}
+
+	private void setClipPath(SVGElement svgElement, String clipString, Integer clipPathNumber) {
+		String urlString = "url(#clipPath"+clipPathNumber+")";
+		svgElement.setClipPath(urlString);
 	}
 
 	private void setDashArray(SVGPath svgPath) {
@@ -764,8 +831,8 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	 */
 	public void createSVGSVG() {
 		this.svg = new SVGSVG();
-		svg.setWidth(converter.pageWidth);
-		svg.setHeight(converter.pageHeight);
+		svg.setWidth(pdf2svgConverter.pageWidth);
+		svg.setHeight(pdf2svgConverter.pageHeight);
 		svg.setStroke("none");
 		svg.setStrokeWidth(0.0);
 		svg.addNamespaceDeclaration(PDF2SVGUtil.SVGX_PREFIX, PDF2SVGUtil.SVGX_NS);

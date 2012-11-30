@@ -80,6 +80,9 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private PDFPage2SVGConverter page2svgConverter;
 	private SVGSVG currentSVGPage;
 	private boolean writeFile = true;
+	
+	public boolean drawBoxesForClipPaths = false;
+	public boolean addTooltipDebugTitles = false;
 
 	private static void usage() {
 		System.err
