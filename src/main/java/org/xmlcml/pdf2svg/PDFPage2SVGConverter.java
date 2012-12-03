@@ -56,6 +56,7 @@ import org.xmlcml.euclid.Real2Range;
 import org.xmlcml.euclid.RealArray;
 import org.xmlcml.euclid.Transform2;
 import org.xmlcml.graphics.svg.SVGClipPath;
+import org.xmlcml.graphics.svg.SVGDefs;
 import org.xmlcml.graphics.svg.SVGElement;
 import org.xmlcml.graphics.svg.SVGPath;
 import org.xmlcml.graphics.svg.SVGRect;
@@ -216,7 +217,7 @@ xmlns="http://www.w3.org/2000/svg">
 		List<SVGElement> defList = SVGUtil.getQuerySVGElements(svg, "/svg:g/svg:defs[@id='defs1']");
 		defs1 = (defList.size() > 0) ? defList.get(0) : null;
 		if (defs1 == null) {
-			defs1 = new SVGElement("defs");
+			defs1 = new SVGDefs();
 			defs1.setId("defs1");
 			svg.appendChild(defs1);
 		}
