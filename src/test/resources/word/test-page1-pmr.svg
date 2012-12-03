@@ -1,0 +1,1108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg stroke="none" stroke-width="0.0" xmlns="http://www.w3.org/2000/svg" xmlns:svgx="http://www.xml-cml.org/schema/svgx">
+ <text svgx:charCode="84" svgx:fontEnc="WinAnsi" svgx:charName="T" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="487.0" x="72.024" y="40.52" font-size="11.04">T
+  <title stroke="black" stroke-width="1.0">char: 84; name: T; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="525.0" x="77.4" y="40.52" font-size="11.04">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="230.0" x="83.196" y="40.52" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="391.0" x="85.736" y="40.52" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="226.0" x="90.052" y="40.52" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="230.0" x="92.547" y="40.52" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="391.0" x="95.087" y="40.52" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="226.0" x="99.403" y="40.52" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="67" svgx:fontEnc="WinAnsi" svgx:charName="C" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="533.0" x="101.898" y="40.52" font-size="11.04">C
+  <title stroke="black" stroke-width="1.0">char: 67; name: C; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="479.0" x="107.783" y="40.52" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="108" svgx:fontEnc="WinAnsi" svgx:charName="l" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="230.0" x="113.071" y="40.52" font-size="11.04">l
+  <title stroke="black" stroke-width="1.0">char: 108; name: l; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="230.0" x="115.61" y="40.52" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="98" svgx:fontEnc="WinAnsi" svgx:charName="b" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="525.0" x="118.105" y="40.52" font-size="11.04">b
+  <title stroke="black" stroke-width="1.0">char: 98; name: b; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="349.0" x="123.868" y="40.52" font-size="11.04">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="230.0" x="127.721" y="40.52" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Calibri" svgx:fontName="ABCDEE+Calibri" svgx:width="226.0" x="130.1" y="40.52" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Calibri; fn: ABCDEE+Calibri; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="84" svgx:fontEnc="WinAnsi" svgx:charName="T" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="72.024" y="64.9" font-size="11.04">T
+  <title stroke="black" stroke-width="1.0">char: 84; name: T; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="78.624" y="64.9" font-size="11.04">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="85.224" y="64.9" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="91.824" y="64.9" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="98.424" y="64.9" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="105.024" y="64.9" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="111.624" y="64.9" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="118.224" y="64.9" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="67" svgx:fontEnc="WinAnsi" svgx:charName="C" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="124.824" y="64.9" font-size="11.04">C
+  <title stroke="black" stroke-width="1.0">char: 67; name: C; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="131.424" y="64.9" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="117" svgx:fontEnc="WinAnsi" svgx:charName="u" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="138.024" y="64.9" font-size="11.04">u
+  <title stroke="black" stroke-width="1.0">char: 117; name: u; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="144.624" y="64.9" font-size="11.04">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="151.224" y="64.9" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="157.824" y="64.9" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="164.424" y="64.9" font-size="11.04">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="171.02" y="64.9" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="84" svgx:fontEnc="WinAnsi" svgx:charName="T" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="72.024" y="89.26" font-size="11.04" font-style="italic">T
+  <title stroke="black" stroke-width="1.0">char: 84; name: T; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="78.624" y="89.26" font-size="11.04" font-style="italic">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="85.224" y="89.26" font-size="11.04" font-style="italic">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="91.824" y="89.26" font-size="11.04" font-style="italic">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="98.424" y="89.26" font-size="11.04" font-style="italic"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="105.024" y="89.26" font-size="11.04" font-style="italic">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="111.624" y="89.26" font-size="11.04" font-style="italic">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="118.224" y="89.26" font-size="11.04" font-style="italic"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="73" svgx:fontEnc="WinAnsi" svgx:charName="I" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="124.824" y="89.26" font-size="11.04" font-style="italic">I
+  <title stroke="black" stroke-width="1.0">char: 73; name: I; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="131.424" y="89.26" font-size="11.04" font-style="italic">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="138.024" y="89.26" font-size="11.04" font-style="italic">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="108" svgx:fontEnc="WinAnsi" svgx:charName="l" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="144.624" y="89.26" font-size="11.04" font-style="italic">l
+  <title stroke="black" stroke-width="1.0">char: 108; name: l; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="151.224" y="89.26" font-size="11.04" font-style="italic">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="99" svgx:fontEnc="WinAnsi" svgx:charName="c" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="157.824" y="89.26" font-size="11.04" font-style="italic">c
+  <title stroke="black" stroke-width="1.0">char: 99; name: c; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="164.424" y="89.26" font-size="11.04" font-style="italic"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="67" svgx:fontEnc="WinAnsi" svgx:charName="C" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="171.024" y="89.26" font-size="11.04" font-style="italic">C
+  <title stroke="black" stroke-width="1.0">char: 67; name: C; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="177.624" y="89.26" font-size="11.04" font-style="italic">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="117" svgx:fontEnc="WinAnsi" svgx:charName="u" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="184.224" y="89.26" font-size="11.04" font-style="italic">u
+  <title stroke="black" stroke-width="1.0">char: 117; name: u; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="190.824" y="89.26" font-size="11.04" font-style="italic">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="197.424" y="89.26" font-size="11.04" font-style="italic">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="204.024" y="89.26" font-size="11.04" font-style="italic">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="210.624" y="89.26" font-size="11.04" font-style="italic">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Italic" svgx:width="600.0" x="217.25" y="89.26" font-size="11.04" font-style="italic"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New,Italic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="84" svgx:fontEnc="WinAnsi" svgx:charName="T" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="72.024" y="113.26" font-size="11.04" font-style="bold">T
+  <title stroke="black" stroke-width="1.0">char: 84; name: T; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="78.624" y="113.26" font-size="11.04" font-style="bold">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="85.224" y="113.26" font-size="11.04" font-style="bold">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="91.824" y="113.26" font-size="11.04" font-style="bold">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="98.424" y="113.26" font-size="11.04" font-style="bold"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="105.024" y="113.26" font-size="11.04" font-style="bold">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="111.624" y="113.26" font-size="11.04" font-style="bold">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="118.224" y="113.26" font-size="11.04" font-style="bold"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="73" svgx:fontEnc="WinAnsi" svgx:charName="I" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="124.824" y="113.26" font-size="11.04" font-style="bold">I
+  <title stroke="black" stroke-width="1.0">char: 73; name: I; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="131.424" y="113.26" font-size="11.04" font-style="bold">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="138.024" y="113.26" font-size="11.04" font-style="bold">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="108" svgx:fontEnc="WinAnsi" svgx:charName="l" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="144.624" y="113.26" font-size="11.04" font-style="bold">l
+  <title stroke="black" stroke-width="1.0">char: 108; name: l; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="151.224" y="113.26" font-size="11.04" font-style="bold">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="99" svgx:fontEnc="WinAnsi" svgx:charName="c" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="157.824" y="113.26" font-size="11.04" font-style="bold">c
+  <title stroke="black" stroke-width="1.0">char: 99; name: c; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="164.424" y="113.26" font-size="11.04" font-style="bold"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="67" svgx:fontEnc="WinAnsi" svgx:charName="C" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="171.024" y="113.26" font-size="11.04" font-style="bold">C
+  <title stroke="black" stroke-width="1.0">char: 67; name: C; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="177.624" y="113.26" font-size="11.04" font-style="bold">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="117" svgx:fontEnc="WinAnsi" svgx:charName="u" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="184.224" y="113.26" font-size="11.04" font-style="bold">u
+  <title stroke="black" stroke-width="1.0">char: 117; name: u; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="190.824" y="113.26" font-size="11.04" font-style="bold">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="197.424" y="113.26" font-size="11.04" font-style="bold">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="204.024" y="113.26" font-size="11.04" font-style="bold">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="210.624" y="113.26" font-size="11.04" font-style="bold">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="217.224" y="113.26" font-size="11.04" font-style="bold"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="66" svgx:fontEnc="WinAnsi" svgx:charName="B" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="223.824" y="113.26" font-size="11.04" font-style="bold">B
+  <title stroke="black" stroke-width="1.0">char: 66; name: B; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="230.424" y="113.26" font-size="11.04" font-style="bold">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="108" svgx:fontEnc="WinAnsi" svgx:charName="l" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="237.024" y="113.26" font-size="11.04" font-style="bold">l
+  <title stroke="black" stroke-width="1.0">char: 108; name: l; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="100" svgx:fontEnc="WinAnsi" svgx:charName="d" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="243.624" y="113.26" font-size="11.04" font-style="bold">d
+  <title stroke="black" stroke-width="1.0">char: 100; name: d; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,BoldItalic" svgx:width="600.0" x="250.25" y="113.26" font-size="11.04" font-style="bold"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New,BoldItalic; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="84" svgx:fontEnc="WinAnsi" svgx:charName="T" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="72.024" y="137.5" font-size="11.04" font-style="bold">T
+  <title stroke="black" stroke-width="1.0">char: 84; name: T; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="78.624" y="137.5" font-size="11.04" font-style="bold">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="85.224" y="137.5" font-size="11.04" font-style="bold">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="91.824" y="137.5" font-size="11.04" font-style="bold">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="98.424" y="137.5" font-size="11.04" font-style="bold"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="105.024" y="137.5" font-size="11.04" font-style="bold">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="111.624" y="137.5" font-size="11.04" font-style="bold">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="118.224" y="137.5" font-size="11.04" font-style="bold"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="73" svgx:fontEnc="WinAnsi" svgx:charName="I" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="124.824" y="137.5" font-size="11.04" font-style="bold">I
+  <title stroke="black" stroke-width="1.0">char: 73; name: I; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="131.424" y="137.5" font-size="11.04" font-style="bold">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="138.024" y="137.5" font-size="11.04" font-style="bold">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="108" svgx:fontEnc="WinAnsi" svgx:charName="l" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="144.624" y="137.5" font-size="11.04" font-style="bold">l
+  <title stroke="black" stroke-width="1.0">char: 108; name: l; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="151.224" y="137.5" font-size="11.04" font-style="bold">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="99" svgx:fontEnc="WinAnsi" svgx:charName="c" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="157.824" y="137.5" font-size="11.04" font-style="bold">c
+  <title stroke="black" stroke-width="1.0">char: 99; name: c; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="164.424" y="137.5" font-size="11.04" font-style="bold"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="67" svgx:fontEnc="WinAnsi" svgx:charName="C" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="171.024" y="137.5" font-size="11.04" font-style="bold">C
+  <title stroke="black" stroke-width="1.0">char: 67; name: C; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="177.624" y="137.5" font-size="11.04" font-style="bold">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="117" svgx:fontEnc="WinAnsi" svgx:charName="u" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="184.224" y="137.5" font-size="11.04" font-style="bold">u
+  <title stroke="black" stroke-width="1.0">char: 117; name: u; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="190.824" y="137.5" font-size="11.04" font-style="bold">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="197.424" y="137.5" font-size="11.04" font-style="bold">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="204.024" y="137.5" font-size="11.04" font-style="bold">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="210.624" y="137.5" font-size="11.04" font-style="bold">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="217.224" y="137.5" font-size="11.04" font-style="bold"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="66" svgx:fontEnc="WinAnsi" svgx:charName="B" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="223.824" y="137.5" font-size="11.04" font-style="bold">B
+  <title stroke="black" stroke-width="1.0">char: 66; name: B; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="230.424" y="137.5" font-size="11.04" font-style="bold">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="108" svgx:fontEnc="WinAnsi" svgx:charName="l" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="237.024" y="137.5" font-size="11.04" font-style="bold">l
+  <title stroke="black" stroke-width="1.0">char: 108; name: l; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="100" svgx:fontEnc="WinAnsi" svgx:charName="d" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="243.624" y="137.5" font-size="11.04" font-style="bold">d
+  <title stroke="black" stroke-width="1.0">char: 100; name: d; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text font-weight="bold" svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New,Bold" svgx:width="600.0" x="250.25" y="137.5" font-size="11.04" font-style="bold"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New,Bold; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="72" svgx:fontEnc="WinAnsi" svgx:charName="H" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="722.0" x="72.024" y="162.82" font-size="11.04">H
+  <title stroke="black" stroke-width="1.0">char: 72; name: H; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="79.94" y="162.82" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="333.0" x="84.841" y="162.82" font-size="11.04">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="88.573" y="162.82" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="93.475" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="96.135" y="162.82" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="389.0" x="99.249" y="162.82" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="103.543" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="106.303" y="162.82" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="111.238" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="108" svgx:fontEnc="WinAnsi" svgx:charName="l" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="113.877" y="162.82" font-size="11.04">l
+  <title stroke="black" stroke-width="1.0">char: 108; name: l; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="116.99" y="162.82" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="110" svgx:fontEnc="WinAnsi" svgx:charName="n" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="122.51" y="162.82" font-size="11.04">n
+  <title stroke="black" stroke-width="1.0">char: 110; name: n; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="103" svgx:fontEnc="WinAnsi" svgx:charName="g" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="128.03" y="162.82" font-size="11.04">g
+  <title stroke="black" stroke-width="1.0">char: 103; name: g; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="133.429" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="112" svgx:fontEnc="WinAnsi" svgx:charName="p" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="136.189" y="162.82" font-size="11.04">p
+  <title stroke="black" stroke-width="1.0">char: 112; name: p; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="141.709" y="162.82" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="333.0" x="146.61" y="162.82" font-size="11.04">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="150.231" y="162.82" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="103" svgx:fontEnc="WinAnsi" svgx:charName="g" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="155.133" y="162.82" font-size="11.04">g
+  <title stroke="black" stroke-width="1.0">char: 103; name: g; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="333.0" x="160.554" y="162.82" font-size="11.04">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="164.263" y="162.82" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="112" svgx:fontEnc="WinAnsi" svgx:charName="p" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="169.165" y="162.82" font-size="11.04">p
+  <title stroke="black" stroke-width="1.0">char: 112; name: p; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="174.685" y="162.82" font-size="11.04">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="180.26" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="182.9" y="162.82" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="110" svgx:fontEnc="WinAnsi" svgx:charName="n" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="186.013" y="162.82" font-size="11.04">n
+  <title stroke="black" stroke-width="1.0">char: 110; name: n; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="191.533" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="84" svgx:fontEnc="WinAnsi" svgx:charName="T" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="611.0" x="194.172" y="162.82" font-size="11.04">T
+  <title stroke="black" stroke-width="1.0">char: 84; name: T; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="200.917" y="162.82" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="109" svgx:fontEnc="WinAnsi" svgx:charName="m" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="778.0" x="203.986" y="162.82" font-size="11.04">m
+  <title stroke="black" stroke-width="1.0">char: 109; name: m; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="212.41" y="162.82" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="389.0" x="217.312" y="162.82" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="78" svgx:fontEnc="WinAnsi" svgx:charName="N" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="722.0" x="221.639" y="162.82" font-size="11.04">N
+  <title stroke="black" stroke-width="1.0">char: 78; name: N; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="229.555" y="162.82" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="119" svgx:fontEnc="WinAnsi" svgx:charName="w" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="722.0" x="234.457" y="162.82" font-size="11.04">w
+  <title stroke="black" stroke-width="1.0">char: 119; name: w; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="82" svgx:fontEnc="WinAnsi" svgx:charName="R" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="667.0" x="242.428" y="162.82" font-size="11.04">R
+  <title stroke="black" stroke-width="1.0">char: 82; name: R; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="249.714" y="162.82" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="109" svgx:fontEnc="WinAnsi" svgx:charName="m" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="778.0" x="255.344" y="162.82" font-size="11.04">m
+  <title stroke="black" stroke-width="1.0">char: 109; name: m; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="263.746" y="162.82" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="110" svgx:fontEnc="WinAnsi" svgx:charName="n" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="268.648" y="162.82" font-size="11.04">n
+  <title stroke="black" stroke-width="1.0">char: 110; name: n; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="274.168" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="276.928" y="162.82" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="110" svgx:fontEnc="WinAnsi" svgx:charName="n" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="281.852" y="162.82" font-size="11.04">n
+  <title stroke="black" stroke-width="1.0">char: 110; name: n; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="100" svgx:fontEnc="WinAnsi" svgx:charName="d" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="287.372" y="162.82" font-size="11.04">d
+  <title stroke="black" stroke-width="1.0">char: 100; name: d; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="292.892" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="108" svgx:fontEnc="WinAnsi" svgx:charName="l" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="295.652" y="162.82" font-size="11.04">l
+  <title stroke="black" stroke-width="1.0">char: 108; name: l; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="298.765" y="162.82" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="110" svgx:fontEnc="WinAnsi" svgx:charName="n" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="304.163" y="162.82" font-size="11.04">n
+  <title stroke="black" stroke-width="1.0">char: 110; name: n; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="103" svgx:fontEnc="WinAnsi" svgx:charName="g" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="309.683" y="162.82" font-size="11.04">g
+  <title stroke="black" stroke-width="1.0">char: 103; name: g; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="315.082" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="317.93" y="162.82" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="110" svgx:fontEnc="WinAnsi" svgx:charName="n" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="322.832" y="162.82" font-size="11.04">n
+  <title stroke="black" stroke-width="1.0">char: 110; name: n; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="328.352" y="162.82" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="117" svgx:fontEnc="WinAnsi" svgx:charName="u" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="333.872" y="162.82" font-size="11.04">u
+  <title stroke="black" stroke-width="1.0">char: 117; name: u; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="103" svgx:fontEnc="WinAnsi" svgx:charName="g" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="339.392" y="162.82" font-size="11.04">g
+  <title stroke="black" stroke-width="1.0">char: 103; name: g; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="344.812" y="162.82" font-size="11.04">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="350.35" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="353.11" y="162.82" font-size="11.04">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="356.223" y="162.82" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="361.743" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="119" svgx:fontEnc="WinAnsi" svgx:charName="w" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="722.0" x="364.503" y="162.82" font-size="11.04">w
+  <title stroke="black" stroke-width="1.0">char: 119; name: w; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="333.0" x="372.419" y="162.82" font-size="11.04">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="376.018" y="162.82" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="112" svgx:fontEnc="WinAnsi" svgx:charName="p" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="380.92" y="162.82" font-size="11.04">p
+  <title stroke="black" stroke-width="1.0">char: 112; name: p; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="386.44" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="389.2" y="162.82" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="110" svgx:fontEnc="WinAnsi" svgx:charName="n" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="394.72" y="162.82" font-size="11.04">n
+  <title stroke="black" stroke-width="1.0">char: 110; name: n; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="400.24" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="402.9" y="162.82" font-size="11.04">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="406.014" y="162.82" font-size="11.04">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="411.534" y="162.82" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="416.435" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="112" svgx:fontEnc="WinAnsi" svgx:charName="p" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="419.096" y="162.82" font-size="11.04">p
+  <title stroke="black" stroke-width="1.0">char: 112; name: p; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="424.616" y="162.82" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="103" svgx:fontEnc="WinAnsi" svgx:charName="g" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="429.518" y="162.82" font-size="11.04">g
+  <title stroke="black" stroke-width="1.0">char: 103; name: g; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="434.938" y="162.82" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="439.84" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="389.0" x="442.6" y="162.82" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="446.928" y="162.82" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="452.448" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="119" svgx:fontEnc="WinAnsi" svgx:charName="w" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="722.0" x="455.208" y="162.82" font-size="11.04">w
+  <title stroke="black" stroke-width="1.0">char: 119; name: w; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="463.124" y="162.82" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="468.025" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="99" svgx:fontEnc="WinAnsi" svgx:charName="c" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="470.785" y="162.82" font-size="11.04">c
+  <title stroke="black" stroke-width="1.0">char: 99; name: c; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="475.599" y="162.82" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="110" svgx:fontEnc="WinAnsi" svgx:charName="n" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="480.501" y="162.82" font-size="11.04">n
+  <title stroke="black" stroke-width="1.0">char: 110; name: n; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="486.021" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="488.681" y="162.82" font-size="11.04">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="491.794" y="162.82" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="389.0" x="496.696" y="162.82" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="500.98" y="162.82" font-size="11.04">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="504.1" y="162.82" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="119" svgx:fontEnc="WinAnsi" svgx:charName="w" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="722.0" x="72.024" y="177.34" font-size="11.04">w
+  <title stroke="black" stroke-width="1.0">char: 119; name: w; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="79.94" y="177.34" font-size="11.04">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="85.46" y="177.34" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="90.361" y="177.34" font-size="11.04">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="93.486" y="177.34" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="80" svgx:fontEnc="WinAnsi" svgx:charName="P" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="556.0" x="96.246" y="177.34" font-size="11.04">P
+  <title stroke="black" stroke-width="1.0">char: 80; name: P; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="68" svgx:fontEnc="WinAnsi" svgx:charName="D" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="722.0" x="102.384" y="177.34" font-size="11.04">D
+  <title stroke="black" stroke-width="1.0">char: 68; name: D; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="70" svgx:fontEnc="WinAnsi" svgx:charName="F" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="556.0" x="110.289" y="177.34" font-size="11.04">F
+  <title stroke="black" stroke-width="1.0">char: 70; name: F; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="116.427" y="177.34" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="100" svgx:fontEnc="WinAnsi" svgx:charName="d" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="119.187" y="177.34" font-size="11.04">d
+  <title stroke="black" stroke-width="1.0">char: 100; name: d; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="124.707" y="177.34" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="130.227" y="177.34" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="389.0" x="135.007" y="177.34" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="46" svgx:fontEnc="WinAnsi" svgx:charName="period" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="139.302" y="177.34" font-size="11.04">.
+  <title stroke="black" stroke-width="1.0">char: 46; name: period; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="142.062" y="177.34" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="87" svgx:fontEnc="WinAnsi" svgx:charName="W" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="944.0" x="144.822" y="177.34" font-size="11.04">W
+  <title stroke="black" stroke-width="1.0">char: 87; name: W; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="155.166" y="177.34" font-size="11.04">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="160.686" y="177.34" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="165.588" y="177.34" font-size="11.04">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="168.712" y="177.34" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="119" svgx:fontEnc="WinAnsi" svgx:charName="w" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="722.0" x="171.472" y="177.34" font-size="11.04">w
+  <title stroke="black" stroke-width="1.0">char: 119; name: w; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="179.278" y="177.34" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="108" svgx:fontEnc="WinAnsi" svgx:charName="l" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="182.391" y="177.34" font-size="11.04">l
+  <title stroke="black" stroke-width="1.0">char: 108; name: l; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="108" svgx:fontEnc="WinAnsi" svgx:charName="l" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="185.394" y="177.34" font-size="11.04">l
+  <title stroke="black" stroke-width="1.0">char: 108; name: l; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="188.507" y="177.34" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="65" svgx:fontEnc="WinAnsi" svgx:charName="A" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="722.0" x="191.146" y="177.34" font-size="11.04">A
+  <title stroke="black" stroke-width="1.0">char: 65; name: A; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="77" svgx:fontEnc="WinAnsi" svgx:charName="M" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="889.0" x="199.061" y="177.34" font-size="11.04">M
+  <title stroke="black" stroke-width="1.0">char: 77; name: M; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="73" svgx:fontEnc="WinAnsi" svgx:charName="I" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="333.0" x="208.876" y="177.34" font-size="11.04">I
+  <title stroke="black" stroke-width="1.0">char: 73; name: I; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="212.387" y="177.34" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="100" svgx:fontEnc="WinAnsi" svgx:charName="d" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="215.147" y="177.34" font-size="11.04">d
+  <title stroke="black" stroke-width="1.0">char: 100; name: d; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="220.667" y="177.34" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="63" svgx:fontEnc="WinAnsi" svgx:charName="question" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="226.187" y="177.34" font-size="11.04">?
+  <title stroke="black" stroke-width="1.0">char: 63; name: question; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="231.29" y="177.34" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="84" svgx:fontEnc="WinAnsi" svgx:charName="T" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="611.0" x="72.024" y="201.94" font-size="11.04">T
+  <title stroke="black" stroke-width="1.0">char: 84; name: T; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="78.858" y="201.94" font-size="11.04">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="84.256" y="201.94" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="389.0" x="87.37" y="201.94" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="91.664" y="201.94" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="94.325" y="201.94" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="389.0" x="97.438" y="201.94" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="101.733" y="201.94" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="104.393" y="201.94" font-size="11.04">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="107.507" y="201.94" font-size="11.04">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="113.027" y="201.94" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="117.928" y="201.94" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="98" svgx:fontEnc="WinAnsi" svgx:charName="b" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="120.688" y="201.94" font-size="11.04">b
+  <title stroke="black" stroke-width="1.0">char: 98; name: b; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="126.109" y="201.94" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="110" svgx:fontEnc="WinAnsi" svgx:charName="n" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="129.222" y="201.94" font-size="11.04">n
+  <title stroke="black" stroke-width="1.0">char: 110; name: n; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="134.742" y="201.94" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="109" svgx:fontEnc="WinAnsi" svgx:charName="m" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="778.0" x="140.262" y="201.94" font-size="11.04">m
+  <title stroke="black" stroke-width="1.0">char: 109; name: m; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="148.664" y="201.94" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="151.777" y="201.94" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="108" svgx:fontEnc="WinAnsi" svgx:charName="l" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="156.679" y="201.94" font-size="11.04">l
+  <title stroke="black" stroke-width="1.0">char: 108; name: l; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="159.803" y="201.94" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="162.442" y="201.94" font-size="11.04">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="165.555" y="201.94" font-size="11.04">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="171.075" y="201.94" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="175.977" y="201.94" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="333.0" x="181.397" y="201.94" font-size="11.04">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="185.107" y="201.94" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="109" svgx:fontEnc="WinAnsi" svgx:charName="m" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="778.0" x="189.909" y="201.94" font-size="11.04">m
+  <title stroke="black" stroke-width="1.0">char: 109; name: m; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="198.53" y="201.94" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="40" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="234.41" y="238.09" font-size="11.04">(
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="238.97" y="238.45" font-size="11.04">q1 
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="247.61" y="238.45" font-size="11.04">q2 
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="258.29" y="238.45" font-size="11.04">q3 
+ </text>
+ <text svgx:charCode="41" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="264.65" y="238.09" font-size="11.04">)
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="269.33" y="234.37" font-size="8.04">q4 
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="278.09" y="238.45" font-size="11.04">q5 
+ </text>
+ <text svgx:charCode="8721" fill="blue" stroke-width="0.15" stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="289.73" y="238.45" font-size="11.04">&#8721;</text>
+ <text svgx:charCode="40" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="306.77" y="238.45" font-size="11.04">(
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="312.17" y="230.05" font-size="11.04"> 
+q6
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="312.17" y="245.89" font-size="11.04"> 
+q7
+ </text>
+ <text svgx:charCode="41" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="318.77" y="238.45" font-size="11.04">)
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="325.87" y="238.45" font-size="11.04">q8 
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="332.35" y="234.37" font-size="8.04">q9 
+  <title stroke="black" stroke-width="1.0">char: 32; name: null; f: null; fn: ABCDEE+Cambria Math; e: null</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="337.99" y="238.45" font-size="11.04">q10 
+  <title stroke="black" stroke-width="1.0">char: 32; name: null; f: null; fn: ABCDEE+Cambria Math; e: null</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="344.35" y="234.37" font-size="8.04">q11 
+  <title stroke="black" stroke-width="1.0">char: 32; name: null; f: null; fn: ABCDEE+Cambria Math; e: null</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="349.63" y="234.37" font-size="8.04">q12 
+  <title stroke="black" stroke-width="1.0">char: 32; name: null; f: null; fn: ABCDEE+Cambria Math; e: null</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="355.51" y="234.37" font-size="8.04">q13 
+  <title stroke="black" stroke-width="1.0">char: 32; name: null; f: null; fn: ABCDEE+Cambria Math; e: null</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="294.41" y="222.01" font-size="8.04">q14 
+  <title stroke="black" stroke-width="1.0">char: 32; name: null; f: null; fn: ABCDEE+Cambria Math; e: null</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="289.37" y="252.61" font-size="8.04">q15 
+  <title stroke="black" stroke-width="1.0">char: 32; name: null; f: null; fn: ABCDEE+Cambria Math; e: null</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="294.53" y="252.61" font-size="8.04">q16 
+  <title stroke="black" stroke-width="1.0">char: 32; name: null; f: null; fn: ABCDEE+Cambria Math; e: null</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="null" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" svgx:fontName="ABCDEE+Cambria Math" svgx:width="1000.0" x="300.41" y="252.61" font-size="8.04">q17 
+  <title stroke="black" stroke-width="1.0">char: 32; name: null; f: null; fn: ABCDEE+Cambria Math; e: null</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="360.91" y="238.45" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="65" svgx:fontEnc="WinAnsi" svgx:charName="A" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="722.0" x="72.024" y="274.57" font-size="11.04">A
+  <title stroke="black" stroke-width="1.0">char: 65; name: A; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="110" svgx:fontEnc="WinAnsi" svgx:charName="n" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="79.94" y="274.57" font-size="11.04">n
+  <title stroke="black" stroke-width="1.0">char: 110; name: n; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="100" svgx:fontEnc="WinAnsi" svgx:charName="d" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="85.46" y="274.57" font-size="11.04">d
+  <title stroke="black" stroke-width="1.0">char: 100; name: d; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="90.98" y="274.57" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="93.74" y="274.57" font-size="11.04">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="99.26" y="274.57" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="333.0" x="104.161" y="274.57" font-size="11.04">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="107.893" y="274.57" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="112.695" y="274.57" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="115.455" y="274.57" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="333.0" x="120.357" y="274.57" font-size="11.04">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="123.978" y="274.57" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="128.88" y="274.57" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="389.0" x="131.64" y="274.57" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="135.968" y="274.57" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="109" svgx:fontEnc="WinAnsi" svgx:charName="m" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="778.0" x="141.488" y="274.57" font-size="11.04">m
+  <title stroke="black" stroke-width="1.0">char: 109; name: m; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="149.889" y="274.57" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="154.791" y="274.57" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="389.0" x="157.551" y="274.57" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="121" svgx:fontEnc="WinAnsi" svgx:charName="y" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="161.879" y="274.57" font-size="11.04">y
+  <title stroke="black" stroke-width="1.0">char: 121; name: y; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="109" svgx:fontEnc="WinAnsi" svgx:charName="m" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="778.0" x="167.399" y="274.57" font-size="11.04">m
+  <title stroke="black" stroke-width="1.0">char: 109; name: m; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="98" svgx:fontEnc="WinAnsi" svgx:charName="b" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="175.8" y="274.57" font-size="11.04">b
+  <title stroke="black" stroke-width="1.0">char: 98; name: b; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="181.32" y="274.57" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="108" svgx:fontEnc="WinAnsi" svgx:charName="l" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="186.84" y="274.57" font-size="11.04">l
+  <title stroke="black" stroke-width="1.0">char: 108; name: l; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="389.0" x="189.953" y="274.57" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="58" svgx:fontEnc="WinAnsi" svgx:charName="colon" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="194.149" y="274.57" font-size="11.04">:
+  <title stroke="black" stroke-width="1.0">char: 58; name: colon; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="197.21" y="274.57" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="8486" svgx:fontEnc="WinAnsi" svgx:charName="bullet" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="1000.0" x="72.024" y="299.05" font-size="11.04">&#8486;
+  <title stroke="black" stroke-width="1.0">char: 8486; name: bullet; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="80.544" y="299.05" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="83.304" y="299.05" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="110" svgx:fontEnc="WinAnsi" svgx:charName="n" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="88.206" y="299.05" font-size="11.04">n
+  <title stroke="black" stroke-width="1.0">char: 110; name: n; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="100" svgx:fontEnc="WinAnsi" svgx:charName="d" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="93.726" y="299.05" font-size="11.04">d
+  <title stroke="black" stroke-width="1.0">char: 100; name: d; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="99.246" y="299.05" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="8721" svgx:fontEnc="WinAnsi" svgx:charName="bullet" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="1000.0" x="101.9" y="299.05" font-size="11.04">&#8721;
+  <title stroke="black" stroke-width="1.0">char: 8721; name: bullet; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="109.7" y="299.05" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="49" svgx:fontEnc="WinAnsi" svgx:charName="one" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="72.024" y="323.65" font-size="11.04">1
+  <title stroke="black" stroke-width="1.0">char: 49; name: one; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="215" svgx:fontEnc="WinAnsi" svgx:charName="multiply" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="564.0" x="77.544" y="323.65" font-size="11.04">×
+  <title stroke="black" stroke-width="1.0">char: 215; name: multiply; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="51" svgx:fontEnc="WinAnsi" svgx:charName="three" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="83.784" y="323.65" font-size="11.04">3
+  <title stroke="black" stroke-width="1.0">char: 51; name: three; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="8800" svgx:fontEnc="WinAnsi" svgx:charName="bullet" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="1000.0" x="89.304" y="323.65" font-size="11.04">&#8800;
+  <title stroke="black" stroke-width="1.0">char: 8800; name: bullet; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="55" svgx:fontEnc="WinAnsi" svgx:charName="seven" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="95.184" y="323.65" font-size="11.04">7
+  <title stroke="black" stroke-width="1.0">char: 55; name: seven; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="100.82" y="323.65" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="87" svgx:fontEnc="WinAnsi" svgx:charName="W" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="944.0" x="72.024" y="348.13" font-size="11.04">W
+  <title stroke="black" stroke-width="1.0">char: 87; name: W; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="104" svgx:fontEnc="WinAnsi" svgx:charName="h" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="82.464" y="348.13" font-size="11.04">h
+  <title stroke="black" stroke-width="1.0">char: 104; name: h; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="87.984" y="348.13" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="92.886" y="348.13" font-size="11.04">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="95.9" y="348.13" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="65" svgx:fontEnc="WinAnsi" svgx:charName="A" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="722.0" x="98.664" y="348.13" font-size="11.04">A
+  <title stroke="black" stroke-width="1.0">char: 65; name: A; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="77" svgx:fontEnc="WinAnsi" svgx:charName="M" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="889.0" x="106.584" y="348.13" font-size="11.04">M
+  <title stroke="black" stroke-width="1.0">char: 77; name: M; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="73" svgx:fontEnc="WinAnsi" svgx:charName="I" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="333.0" x="116.42" y="348.13" font-size="11.04">I
+  <title stroke="black" stroke-width="1.0">char: 73; name: I; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="119.898" y="348.13" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="122.658" y="348.13" font-size="11.04">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="121" svgx:fontEnc="WinAnsi" svgx:charName="y" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="125.771" y="348.13" font-size="11.04">y
+  <title stroke="black" stroke-width="1.0">char: 121; name: y; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="112" svgx:fontEnc="WinAnsi" svgx:charName="p" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="131.169" y="348.13" font-size="11.04">p
+  <title stroke="black" stroke-width="1.0">char: 112; name: p; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="136.689" y="348.13" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="389.0" x="141.591" y="348.13" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="145.919" y="348.13" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="105" svgx:fontEnc="WinAnsi" svgx:charName="i" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="148.679" y="348.13" font-size="11.04">i
+  <title stroke="black" stroke-width="1.0">char: 105; name: i; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="115" svgx:fontEnc="WinAnsi" svgx:charName="s" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="389.0" x="151.792" y="348.13" font-size="11.04">s
+  <title stroke="black" stroke-width="1.0">char: 115; name: s; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="156.14" y="348.13" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="8734" svgx:fontEnc="WinAnsi" svgx:charName="bullet" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="1000.0" x="158.78" y="348.13" font-size="11.04">&#8734;
+  <title stroke="black" stroke-width="1.0">char: 8734; name: bullet; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="45" svgx:fontEnc="WinAnsi" svgx:charName="hyphen" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="333.0" x="166.7" y="348.13" font-size="11.04">-
+  <title stroke="black" stroke-width="1.0">char: 45; name: hyphen; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="108" svgx:fontEnc="WinAnsi" svgx:charName="l" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="170.18" y="348.13" font-size="11.04">l
+  <title stroke="black" stroke-width="1.0">char: 108; name: l; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="121" svgx:fontEnc="WinAnsi" svgx:charName="y" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="173.293" y="348.13" font-size="11.04">y
+  <title stroke="black" stroke-width="1.0">char: 121; name: y; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="178.692" y="348.13" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="109" svgx:fontEnc="WinAnsi" svgx:charName="m" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="778.0" x="181.562" y="348.13" font-size="11.04">m
+  <title stroke="black" stroke-width="1.0">char: 109; name: m; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="111" svgx:fontEnc="WinAnsi" svgx:charName="o" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="190.196" y="348.13" font-size="11.04">o
+  <title stroke="black" stroke-width="1.0">char: 111; name: o; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="333.0" x="195.716" y="348.13" font-size="11.04">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="199.425" y="348.13" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="204.327" y="348.13" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="206.987" y="348.13" font-size="11.04">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="114" svgx:fontEnc="WinAnsi" svgx:charName="r" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="333.0" x="210.101" y="348.13" font-size="11.04">r
+  <title stroke="black" stroke-width="1.0">char: 114; name: r; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="213.81" y="348.13" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="99" svgx:fontEnc="WinAnsi" svgx:charName="c" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="218.612" y="348.13" font-size="11.04">c
+  <title stroke="black" stroke-width="1.0">char: 99; name: c; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="116" svgx:fontEnc="WinAnsi" svgx:charName="t" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="223.514" y="348.13" font-size="11.04">t
+  <title stroke="black" stroke-width="1.0">char: 116; name: t; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="97" svgx:fontEnc="WinAnsi" svgx:charName="a" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="226.639" y="348.13" font-size="11.04">a
+  <title stroke="black" stroke-width="1.0">char: 97; name: a; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="98" svgx:fontEnc="WinAnsi" svgx:charName="b" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="500.0" x="231.441" y="348.13" font-size="11.04">b
+  <title stroke="black" stroke-width="1.0">char: 98; name: b; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="108" svgx:fontEnc="WinAnsi" svgx:charName="l" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="278.0" x="236.961" y="348.13" font-size="11.04">l
+  <title stroke="black" stroke-width="1.0">char: 108; name: l; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="101" svgx:fontEnc="WinAnsi" svgx:charName="e" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="444.0" x="240.074" y="348.13" font-size="11.04">e
+  <title stroke="black" stroke-width="1.0">char: 101; name: e; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="244.97" y="348.13" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="72.024" y="372.73" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="72.024" y="397.23" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Times New Roman" svgx:fontName="Times New Roman" svgx:width="250.0" x="74.784" y="397.23" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Times New Roman; fn: Times New Roman; e: WinAnsi</title>
+ </text>
+ <text svgx:charCode="32" svgx:fontEnc="WinAnsi" svgx:charName="space" fill="red" stroke-width="0.15" clip-path=" M 0.0 0.0 L 595.0 0.0 L 595.0 841.0 L 0.0 841.0 L 0.0 0.0 Z " stroke="#000000" font-family="Courier" svgx:fontName="ABCDEE+Courier New" svgx:width="600.0" x="72.024" y="421.23" font-size="11.04"> 
+  <title stroke="black" stroke-width="1.0">char: 32; name: space; f: Courier; fn: ABCDEE+Courier New; e: WinAnsi</title>
+ </text>
+ <rect x="0.0" y="0.0" width="595.0" height="841.0" fill="none" stroke="yellow" opacity="1.0" stroke-width="2.0"/>
+</svg>

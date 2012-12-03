@@ -73,14 +73,14 @@ public class PDF2SVGConverterTest {
 				svgPage, "//svg:path"));
 		int nPaths = paths.size();
 		Assert.assertTrue("count: (" + nPaths + ")", nPaths > 195
-				&& nPaths < 200);
+				&& nPaths < 210);
 	}
 
 	@Test
 	//@Ignore // do not normally run this
 	public void testWord() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/word", "-pub", "word", "../pdfs/word/test.pdf");
+		converter.run("-outdir", "target/word/", "-pub", "word", "src/test/resources/word/test.pdf");
 	}
 
 	@Test
@@ -88,7 +88,7 @@ public class PDF2SVGConverterTest {
 	// FIXME - move to test/resources
 	public void testWordMath() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/word", "-pub", "word", "../pdfs/word/testmath.pdf");
+		converter.run("-outdir", "target/word/", "-pub", "word", "src/test/resources/word/testmath.pdf");
 	}
 
 	@Test
@@ -96,7 +96,7 @@ public class PDF2SVGConverterTest {
 	// FIXME - move to test/resources
 	public void testWordThesis() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "../pdfs/word", "../pdfs/word/harterchap7small.pdf");
+		converter.run("-outdir", "target/word", "src/test/resources//word/harterchap7small.pdf");
 	}
 
 	@Test
