@@ -46,7 +46,7 @@ public class PDF2SVGConverterTest {
 	@Test
 	public void testSimpleRun() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("src/test/resources/page6.pdf");
+		converter.run("-outdir", "target/ajc", "src/test/resources/page6.pdf");
 	}
 
 
