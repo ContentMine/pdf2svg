@@ -55,6 +55,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	public static final String PUB = "-pub";
 	public static final String OUTDIR = "-outdir";
 	public static final String NO_SVG = "-nosvg";
+	public static final String INFO_FILES = "-infofiles";
 
 	private String PDFpassword = "";
 	private boolean useNonSeqParser = false;
@@ -79,23 +80,25 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	Double pageWidth = _DEFAULT_PAGE_WIDTH;
 	private PDFPage2SVGConverter page2svgConverter;
 	private SVGSVG currentSVGPage;
-	private boolean writeFile = false;
+	private boolean writeFile = true;
+	private boolean writeInfoFiles = false;
 	
 	public boolean drawBoxesForClipPaths = false;
 	public boolean addTooltipDebugTitles = false;
 
 	private static void usage() {
 		System.err
-				.printf("Usage: pdf2svg [%s <pw>] [%s] [%s <page-ranges>] [%s <pub>] [%s <dir>] [%s] <input-file> ...%n%n"
+				.printf("Usage: pdf2svg [%s <pw>] [%s] [%s <page-ranges>] [%s <pub>] [%s <dir>] [%s] [%s] <input-file> ...%n%n"
 						+ "  %s <password>  Password to decrypt the document (default none)%n"
 						+ "  %s               Enables the new non-sequential parser%n"
 						+ "  %s <page-ranges>  Restrict pages to be output (default all)%n"
-						+ "  %s <publisher>   Use publisher-specific info%n"
+						+ "  %s <publisher>      Use publisher-specific info%n"
 						+ "  %s <dirname>     Location to write output SVG pages (default '.')%n"
-						+ "  %s               Don't write SVG files %n"
+						+ "  %s                Don't write SVG files%n"
+						+ "  %s            Write info files%n"
 						+ "  <input-file>          The PDF document to be loaded%n",
-						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, NO_SVG, PASSWORD, NONSEQ,
-						PAGES, PUB, OUTDIR, NO_SVG);
+						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, NO_SVG, INFO_FILES, PASSWORD, NONSEQ,
+						PAGES, PUB, OUTDIR, NO_SVG, INFO_FILES);
 	}
 
 	private void openPDFFile(String filename) throws Exception {
@@ -138,7 +141,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			pageNumber = pr.next(pageNumber);
 		}
 
-		if (writeFile) {
+		if (writeInfoFiles) {
 			reportHighCodePoints();
 			reportNewFontFamilyNames();
 			writeHTMLSystem(outfileList);
