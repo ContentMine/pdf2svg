@@ -267,7 +267,12 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			}
 
 			if (args[iarg].equals(NO_SVG)) {
-				writeFile  = true;
+				writeFile  = false;
+				continue;
+			}
+
+			if (args[iarg].equals(INFO_FILES)) {
+				writeInfoFiles  = true;
 				continue;
 			}
 
