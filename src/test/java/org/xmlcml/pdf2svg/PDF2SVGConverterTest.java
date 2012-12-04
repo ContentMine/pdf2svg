@@ -98,6 +98,15 @@ public class PDF2SVGConverterTest {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-outdir", "target/word", "src/test/resources//word/harterchap7small.pdf");
 	}
+	
+	@Test
+	//@Ignore // do not normally run this
+	// this file requires encryption processing though it seems to be openly readable
+	public void testEncryption() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("-outdir", "target/ajc", "../pdfs/ajc/CH01182.pdf");
+	}
+
 
 	@Test
 	@Ignore

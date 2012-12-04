@@ -43,6 +43,7 @@ import org.apache.pdfbox.pdfviewer.PageDrawer;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.pdmodel.PDResources;
 import org.apache.pdfbox.pdmodel.common.PDMatrix;
+import org.apache.pdfbox.pdmodel.common.PDRectangle;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.graphics.PDGraphicsState;
 import org.apache.pdfbox.pdmodel.graphics.PDLineDashPattern;
@@ -78,6 +79,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 
 	private final static Logger LOG = Logger.getLogger(PDF2SVGConverter.class);
 
+	// only use if mediaBox fails to give dimension
 	private static final Dimension DEFAULT_DIMENSION = new Dimension(800, 800);
 	private static final int BADCHAR = (char)0X2775;
 	static {
@@ -135,6 +137,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	 * @param converter
 	 */
 	SVGSVG convertPageToSVG(PDPage page, PDF2SVGConverter converter) {
+		pageSize = null;	// reset size for each page
 		this.pdf2svgConverter = converter;
 		this.amiFontManager = converter.getAmiFontManager();
 		createSVGSVG();
@@ -228,7 +231,12 @@ xmlns="http://www.w3.org/2000/svg">
 	 */
 	private void ensurePageSize() {
 		if (pageSize == null) {
-			pageSize = DEFAULT_DIMENSION;
+			if (page != null) {
+				PDRectangle mediaBox = page.findMediaBox();
+				pageSize = mediaBox == null ? null : mediaBox.createDimension();
+				pageSize = pageSize == null ? DEFAULT_DIMENSION : pageSize;
+				LOG.trace("set dimension: "+pageSize);
+			}
 		}
 	}
 	
@@ -351,6 +359,7 @@ xmlns="http://www.w3.org/2000/svg">
 		String pathString = amiFont.getPathStringByCharnameMap().get(charname);
 		LOG.trace("charname: "+charname+" path: "+pathString);
 		if (pathString == null) {
+			ensurePageSize();
 			PDFGraphics2D graphics = new PDFGraphics2D(amiFont);
 			Matrix textPos = text.getTextPos().copy();
 			float x = textPos.getXPosition();
@@ -656,6 +665,7 @@ xmlns="http://www.w3.org/2000/svg">
 	 * @param svgText
 	 */
 	private void createAndReOrientateTextPosition(TextPosition text, SVGText svgText) {
+		ensurePageSize();
 		textPos = text.getTextPos().copy();
 		float x = textPos.getXPosition();
 		// the 0,0-reference has to be moved from the lower left (PDF) to
@@ -675,21 +685,20 @@ xmlns="http://www.w3.org/2000/svg">
 	private void createGraphicsStateAndPaintAndComposite() {
 		try {
 			graphicsState = getGraphicsState();
+			ensurePageSize();
 			switch (graphicsState.getTextState().getRenderingMode()) {
 			case PDTextState.RENDERING_MODE_FILL_TEXT:
 				composite = graphicsState.getNonStrokeJavaComposite();
 				paint = graphicsState.getNonStrokingColor().getJavaColor();
 				if (paint == null) {
-					paint = graphicsState.getNonStrokingColor().getPaint(
-							pageSize.height);
+					paint = graphicsState.getNonStrokingColor().getPaint(pageSize.height);
 				}
 				break;
 			case PDTextState.RENDERING_MODE_STROKE_TEXT:
 				composite = graphicsState.getStrokeJavaComposite();
 				paint = graphicsState.getStrokingColor().getJavaColor();
 				if (paint == null) {
-					paint = graphicsState.getStrokingColor().getPaint(
-							pageSize.height);
+					paint = graphicsState.getStrokingColor().getPaint(pageSize.height);
 				}
 				break;
 			case PDTextState.RENDERING_MODE_NEITHER_FILL_NOR_STROKE_TEXT:
