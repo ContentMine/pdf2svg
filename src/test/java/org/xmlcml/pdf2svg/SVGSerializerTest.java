@@ -34,7 +34,7 @@ public class SVGSerializerTest {
 		element.appendChild(content);
 		
 		try {
-			FileOutputStream os = new FileOutputStream("test.svg");
+			FileOutputStream os = new FileOutputStream("target/test.svg");
 			SVGSerializer serializer = new SVGSerializer(os);
 			serializer.write(doc);
 		} catch (Exception e) {

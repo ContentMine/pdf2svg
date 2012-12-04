@@ -79,7 +79,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	Double pageWidth = _DEFAULT_PAGE_WIDTH;
 	private PDFPage2SVGConverter page2svgConverter;
 	private SVGSVG currentSVGPage;
-	private boolean writeFile = true;
+	private boolean writeFile = false;
 	
 	public boolean drawBoxesForClipPaths = false;
 	public boolean addTooltipDebugTitles = false;
