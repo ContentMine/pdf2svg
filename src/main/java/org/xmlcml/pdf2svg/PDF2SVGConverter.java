@@ -17,6 +17,7 @@ package org.xmlcml.pdf2svg;
 
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FilenameFilter;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -42,10 +43,12 @@ import org.xmlcml.pdf2svg.util.PConstants;
  */
 public class PDF2SVGConverter extends PDFStreamEngine {
 
+	private final static Logger LOG = Logger.getLogger(PDF2SVGConverter.class);
+	
+	private static final String PDF = ".pdf";
 	private static final double _DEFAULT_PAGE_WIDTH = 600.0;
 	private static final double _DEFAULT_PAGE_HEIGHT = 800.0;
 	private static final String DEFAULT_PUBLISHER_SET_XML = PConstants.PDF2SVG_ROOT+"/"+"publisherSet.xml";
-	private final static Logger LOG = Logger.getLogger(PDF2SVGConverter.class);
 	@SuppressWarnings("unused")
 	private static final long serialVersionUID = 1L;
 
@@ -101,11 +104,11 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 						PAGES, PUB, OUTDIR, NO_SVG, INFO_FILES);
 	}
 
-	private void openPDFFile(String filename) throws Exception {
+	private void openPDFFile(File file) throws Exception {
 
 		page2svgConverter = new PDFPage2SVGConverter();
-		LOG.debug("Parsing PDF file "+ filename);
-		readDocument(filename, useNonSeqParser, PDFpassword);
+		LOG.debug("Parsing PDF file "+ file.getAbsolutePath());
+		readDocument(file, useNonSeqParser, PDFpassword);
 
 		@SuppressWarnings("unchecked")
 		List<PDPage> pages = document.getDocumentCatalog().getAllPages();
@@ -119,9 +122,8 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 		LOG.debug("Processing pages "+pr.toString()+" (of "+pages.size()+")"); 
 
-		File infile = new File(filename);
-		String basename = infile.getName().toLowerCase();
-		if (basename.endsWith(".pdf"))
+		String basename = file.getName().toLowerCase();
+		if (basename.endsWith(PDF))
 			basename = basename.substring(0, basename.length() - 4);
 
 		int pageNumber = pr.next(0);
@@ -204,9 +206,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		}
 	}
 
-	private void readDocument(String filename, boolean useNonSeqParser,
-			String password) throws IOException {
-		File file = new File(filename);
+	private void readDocument(File file, boolean useNonSeqParser, String password) throws IOException {
 		if (useNonSeqParser) {
 			document = PDDocument.loadNonSeq(file, null, password);
 		} else {
@@ -217,12 +217,12 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 				} catch (InvalidPasswordException e) {
 					System.err
 							.printf("Error: The document in file '%s' is encrypted (use '-password' option).%n",
-									filename);
+									file.getAbsolutePath());
 					return;
 				} catch (CryptographyException e) {
 					System.err
 							.printf("Error: Failed to decrypt document in file '%s'.%n",
-									filename);
+									file.getAbsolutePath());
 					return;
 				}
 			}
@@ -288,12 +288,43 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			}
 
 			try {
-				this.openPDFFile(args[iarg]);
+				readFileOrDirectory(args[iarg]);
 			} catch (Exception e) {
 				throw new RuntimeException("Cannot parse PDF: " + args[iarg], e);
 			}
 		}
 	}
+
+	private void readFileOrDirectory(String filename) {
+		File file = new File(filename);
+		if (!file.exists()) {
+			throw new RuntimeException("File does not exist: " + filename);
+		}
+		if (file.isDirectory()) {
+			File[] pdfFiles = file.listFiles(new FilenameFilter() {
+				public boolean accept(File dir, String filename) {
+					return filename.endsWith(PDF);
+				}
+			});
+			if (pdfFiles != null) {
+				for (File pdf : pdfFiles) {
+					try {
+						openPDFFile(pdf);
+					} catch (Exception e) {
+						LOG.error("Failed to convert file: "+pdf+", skipping", e);
+					}
+				}
+			}
+		} else {
+			try {
+				openPDFFile(file);
+			} catch (Exception e) {
+				throw new RuntimeException("Cannot convert file: "+file, e);
+			}
+		}
+		
+	}
+	
 
 	public Publisher getPublisher() {
 		return publisher;

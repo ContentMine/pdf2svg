@@ -152,6 +152,8 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		try {
 			if (page.getContents() != null) {
 				PDResources resources = page.findResources();
+				LOG.trace("pageSize: "+pageSize);
+				ensurePageSize();
 				processStream(page, resources, page.getContents().getStream());
 			}
 		} catch (Exception e) {
