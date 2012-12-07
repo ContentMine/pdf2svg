@@ -66,6 +66,7 @@ import org.xmlcml.graphics.svg.SVGText;
 import org.xmlcml.graphics.svg.SVGTitle;
 import org.xmlcml.graphics.svg.SVGUtil;
 import org.xmlcml.pdf2svg.util.PDF2SVGUtil;
+import org.xmlcml.pdf2svg.util.XMLLogger;
 
 /** converts a PDPage to SVG
  * Originally used PageDrawer to capture the PDF operations.These have been
@@ -257,6 +258,8 @@ xmlns="http://www.w3.org/2000/svg">
 			LOG.trace("font from "+lastFontName+" -> "+fontName);
 			lastFontName = fontName;
 		}
+		if (pdf2svgConverter.useXMLLogger)
+			pdf2svgConverter.xmlLogger.newFont(amiFont);
 		fontFamilyName = amiFont.getFontFamilyName();
 		fontFamily = amiFontManager.getFontFamily(fontFamilyName);
 //		if (fontFamily.getCodePointSet() == null && amiFont.isSymbol()) {
@@ -348,7 +351,10 @@ xmlns="http://www.w3.org/2000/svg">
 			if (unicode == null) {
 				//or add Bad Character Glyph
 				int ch = (int) textContent.charAt(0);
-				LOG.error("Cannot convert character: "+textContent+" char: "+ch+" charname: "+charname+" fn: "+fontFamilyName);
+				if (pdf2svgConverter.useXMLLogger)
+					pdf2svgConverter.xmlLogger.newCharacter(fontFamilyName, charname, ch);
+				else
+					LOG.error("Cannot convert character: "+textContent+" char: "+ch+" charname: "+charname+" fn: "+fontFamilyName);
 				textContent = ""+AMIFontManager.getUnknownCharacterSymbol()+ch;
 			} else {
 				Integer codepoint = CodePoint.getDecimal(unicode);
@@ -516,7 +522,10 @@ xmlns="http://www.w3.org/2000/svg">
 		try {
 			svgText.setText(unicodeContent);
 		} catch (Exception e) {
-			LOG.error("couldn't set unicode: "+unicodeContent+" / +font: "+fontName+" charname: "+charname+" "+charCode+" / "+e);
+			if (pdf2svgConverter.useXMLLogger)
+				pdf2svgConverter.xmlLogger.newCharacter(fontName, charname, charCode);
+			else
+				LOG.error("couldn't set unicode: "+unicodeContent+" / +font: "+fontName+" charname: "+charname+" "+charCode+" / "+e);
 			svgText.setText("?"+(int)charCode);
 		}
 		if (unicodeContent.length() > 1) {
@@ -594,7 +603,10 @@ xmlns="http://www.w3.org/2000/svg">
 	private void annotateUnusualCharacters(TextPosition text, SVGText svgText) {
 		char cc = text.getCharacter().charAt(0);
 		String s = AMIFontManager.BADCHAR_S+(int)cc+AMIFontManager.BADCHAR_E;
-		LOG.debug(s+" "+fontName+" ("+fontSubType+") charname: "+charname);
+		if (pdf2svgConverter.useXMLLogger)
+			pdf2svgConverter.xmlLogger.newCharacter(fontName, charname, cc);
+		else
+			LOG.debug(s+" "+fontName+" ("+fontSubType+") charname: "+charname);
 		s = ""+(char)(BADCHAR+Math.min(9, cc));
 		svgText.setText(s);
 		svgText.setStroke("red");

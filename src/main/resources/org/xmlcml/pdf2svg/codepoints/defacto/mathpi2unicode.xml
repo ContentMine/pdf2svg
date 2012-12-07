@@ -37,8 +37,8 @@
 	<codePoint name="H11003" unicode="U+00D7" decimal="215" unicodeName="MULTIPLICATION SIGN"/> 
 	<codePoint name="H11005" unicode="U+003D" decimal="61" unicodeName="EQUALS"/> 
 	<codePoint name="H11011" unicode="U+007E" decimal="126" unicodeName="TILDE"/> 
-	<codePoint name="H11021" unicode="U+003C" decimal="60" unicodeName="LESS" htmlName="lt"/> 
-	<codePoint name="H11022" unicode="U+003E" decimal="62" unicodeName="" htmlName="gt"/> 
+	<codePoint name="H11021" unicode="U+003C" decimal="60" unicodeName="LESS-THAN SIGN" htmlName="lt"/> 
+	<codePoint name="H11022" unicode="U+003E" decimal="62" unicodeName="GREATER-THAN SIGN" htmlName="gt"/> 
 	<codePoint name="H11032" unicode="U+0027" decimal="39" unicodeName="APOSTROPHE" htmlName="apos"/> 
 	<codePoint name="H11034" unicode="U+00B0" decimal="176" unicodeName="DEGREE SIGN" htmlName="deg"/> 
 	

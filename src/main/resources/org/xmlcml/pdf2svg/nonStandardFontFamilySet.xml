@@ -17,7 +17,8 @@
 	<fontFamily name="MyriadMM400RG700SE" />
 	<fontFamily name="MSAM8" />
 	<fontFamily name="MTSYB" />
-	<fontFamily name="MTMI" />
+	<fontFamily name="MTMI" symbol="true" italic="true"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mtmi.xml" />
 	<fontFamily name="MTGU" />
 	<fontFamily name="MTEX" unicode="guessed" publishers=""/>
 	

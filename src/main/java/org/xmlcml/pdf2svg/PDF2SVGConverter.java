@@ -16,6 +16,7 @@
 package org.xmlcml.pdf2svg;
 
 import java.io.File;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FilenameFilter;
 import java.io.IOException;
@@ -36,6 +37,7 @@ import org.apache.pdfbox.util.PDFStreamEngine;
 import org.xmlcml.graphics.svg.SVGSVG;
 import org.xmlcml.pdf2svg.util.MenuSystem;
 import org.xmlcml.pdf2svg.util.PConstants;
+import org.xmlcml.pdf2svg.util.XMLLogger;
 
 /**
  * Simple app to read PDF documents ... based on ... * PDFReader.java
@@ -44,7 +46,7 @@ import org.xmlcml.pdf2svg.util.PConstants;
 public class PDF2SVGConverter extends PDFStreamEngine {
 
 	private final static Logger LOG = Logger.getLogger(PDF2SVGConverter.class);
-	
+
 	private static final String PDF = ".pdf";
 	private static final double _DEFAULT_PAGE_WIDTH = 600.0;
 	private static final double _DEFAULT_PAGE_HEIGHT = 800.0;
@@ -59,6 +61,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	public static final String OUTDIR = "-outdir";
 	public static final String NO_SVG = "-nosvg";
 	public static final String INFO_FILES = "-infofiles";
+	public static final String LOGGER = "-logger";
 
 	private String PDFpassword = "";
 	private boolean useNonSeqParser = false;
@@ -88,10 +91,12 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	
 	public boolean drawBoxesForClipPaths = false;
 	public boolean addTooltipDebugTitles = false;
+	public boolean useXMLLogger = false;
+	public XMLLogger xmlLogger;
 
 	private static void usage() {
 		System.err
-				.printf("Usage: pdf2svg [%s <pw>] [%s] [%s <page-ranges>] [%s <pub>] [%s <dir>] [%s] [%s] <input-file> ...%n%n"
+				.printf("Usage: pdf2svg [%s <pw>] [%s] [%s <page-ranges>] [%s <pub>] [%s <dir>] [%s] [%s] [%s] <input-file> ...%n%n"
 						+ "  %s <password>  Password to decrypt the document (default none)%n"
 						+ "  %s               Enables the new non-sequential parser%n"
 						+ "  %s <page-ranges>  Restrict pages to be output (default all)%n"
@@ -99,15 +104,17 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 						+ "  %s <dirname>     Location to write output SVG pages (default '.')%n"
 						+ "  %s                Don't write SVG files%n"
 						+ "  %s            Write info files%n"
+						+ "  %s               Use XML logger to record unknown characters/fonts/etc%n"
 						+ "  <input-file>          The PDF document to be loaded%n",
-						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, NO_SVG, INFO_FILES, PASSWORD, NONSEQ,
-						PAGES, PUB, OUTDIR, NO_SVG, INFO_FILES);
+						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, NO_SVG, INFO_FILES, LOGGER, PASSWORD, NONSEQ,
+						PAGES, PUB, OUTDIR, NO_SVG, INFO_FILES, LOGGER);
 	}
 
 	private void openPDFFile(File file) throws Exception {
 
 		page2svgConverter = new PDFPage2SVGConverter();
-		LOG.debug("Parsing PDF file "+ file.getAbsolutePath());
+		if (!useXMLLogger)
+			LOG.debug("Parsing PDF file "+ file.getAbsolutePath());
 		readDocument(file, useNonSeqParser, PDFpassword);
 
 		@SuppressWarnings("unchecked")
@@ -120,7 +127,10 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 		createOutputDirectory();
 
-		LOG.debug("Processing pages "+pr.toString()+" (of "+pages.size()+")"); 
+		if (useXMLLogger)
+			xmlLogger.newPDFFile(file.getAbsolutePath(), pages.size());
+		else
+			LOG.debug("Processing pages "+pr.toString()+" (of "+pages.size()+")"); 
 
 		String basename = file.getName().toLowerCase();
 		if (basename.endsWith(PDF))
@@ -131,7 +141,10 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		while (pageNumber > 0) {
 			PDPage page = pages.get(pageNumber - 1);
 
-			LOG.debug("=== " + pageNumber + " ===");
+			if (useXMLLogger)
+				xmlLogger.newPDFPage(pageNumber);
+			else
+				LOG.debug("=== " + pageNumber + " ===");
 			currentSVGPage = page2svgConverter.convertPageToSVG(page, this);
 
 			addPageToPageList();
@@ -149,6 +162,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			writeHTMLSystem(outfileList);
 			reportPublisher();
 		}
+
 	}
 
 	private void addPageToPageList() {
@@ -247,6 +261,9 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		if (args.length == 0)
 			usage();
 
+		if (xmlLogger == null)
+			xmlLogger = new XMLLogger();
+
 		for (iarg = 0; iarg < args.length; iarg++) {
 
 			if (args[iarg].equals(PASSWORD)) {
@@ -276,6 +293,11 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 				continue;
 			}
 
+			if (args[iarg].equals(LOGGER)) {
+				useXMLLogger = true;
+				continue;
+			}
+
 			if (args[iarg].equals(PAGES)) {
 				incrementArg(args);
 				pageRanges = new PageRanges(args[iarg]);
@@ -291,6 +313,20 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 				readFileOrDirectory(args[iarg]);
 			} catch (Exception e) {
 				throw new RuntimeException("Cannot parse PDF: " + args[iarg], e);
+			}
+		}
+
+		if (useXMLLogger) {
+			File outfile = new File(outdir, "pdfLog.xml");
+			try {
+				LOG.debug("Writing XML logger output to file '"+outfile.getCanonicalPath()+"'.");
+			} catch (IOException e) {
+				throw new RuntimeException("caught I/O Exception while writing XML Logger output");
+			}
+			try {
+				xmlLogger.writeXMLFile(new FileOutputStream(outfile));
+			} catch (FileNotFoundException e) {
+				throw new RuntimeException("caught File Not Found Exception while writing XML Logger output");
 			}
 		}
 	}
