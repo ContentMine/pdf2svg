@@ -225,7 +225,7 @@ xmlns="http://www.w3.org/2000/svg">
 		if (defs1 == null) {
 			defs1 = new SVGDefs();
 			defs1.setId("defs1");
-			svg.appendChild(defs1);
+			svg.insertChild(defs1, 0);
 		}
 	}
 
