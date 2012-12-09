@@ -77,15 +77,12 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	//@Ignore // do not normally run this
 	public void testWord() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-outdir", "target/word/", "-pub", "word", "src/test/resources/word/test.pdf");
 	}
 
 	@Test
-	@Ignore // do not normally run this
-	// FIXME - move to test/resources
 	public void testWordMath() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-outdir", "target/word/", "-pub", "word", "src/test/resources/word/testmath.pdf");
@@ -108,14 +105,14 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	//@Ignore // do not normally run this
+	@Ignore // do not normally run this
 	public void testAJCCorpus() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run( "-logger","-outdir", "target/ajc/sample", "../pdfs/ajc/sample");
 	}
 
 	@Test
-	//@Ignore // do not normally run this
+	@Ignore // do not normally run this
 	public void test0All() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-logger", "-outdir", "target/0all/0", "../pdfs/0all/0");
@@ -124,7 +121,7 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	//@Ignore // do not normally run this
+	@Ignore // do not normally run this
 	public void testAllBMC() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 //		converter.run("-logger", "-outdir", "target/bmc/0", "../pdfs/bmc/0");
@@ -141,7 +138,7 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	//@Ignore
+	@Ignore
 	public void testHelp() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run();
