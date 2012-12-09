@@ -79,6 +79,8 @@
 	<codePoint decimal="102" unicode="U+03C6" name="GREEK SMALL LETTER PHI" note="" />
 	<codePoint decimal="99" unicode="U+03C7" name="GREEK SMALL LETTER CHI" note="" />
 	<codePoint decimal="121" unicode="U+03C8" name="GREEK SMALL LETTER PSI" note="" />
+	<!-- don't understand whey there are two omega? or maybe a mistake? -->
+	<codePoint decimal="118" unicode="U+03C9" name="GREEK SMALL LETTER OMEGA" note="" />
 	<codePoint decimal="119" unicode="U+03C9" name="GREEK SMALL LETTER OMEGA" note="" />
 
     

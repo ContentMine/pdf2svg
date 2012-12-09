@@ -29,14 +29,6 @@ public class CodePointSetTest {
 
 	private final static Logger LOG = Logger.getLogger(CodePointSet.class);
 	
-	@Test
-	public void testCreateFromElementStandard() throws Exception {
-		Element fontFamilyElementSet = new Builder().build(
-				Util.getResourceUsingContextClassLoader(
-						"org/xmlcml/pdf2svg/standardEncoding.xml", this.getClass())).getRootElement();
-		CodePointSet nonStandardSet = CodePointSet.createFromElement(fontFamilyElementSet); 
-		Assert.assertNotNull(nonStandardSet);
-	}
 	
 	@Test
 	public void testCreateFromElementHighCodePoints() throws Exception {

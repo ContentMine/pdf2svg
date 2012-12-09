@@ -16,5 +16,6 @@
 
 -->
 <codePointSet encoding="AdvEnt8">
-    <codePoint unicodeName="UNKNOWN" unicode="U+274E" name="grot" note="unknown"/>
+    <codePoint unicode="U+274E"  unicodeName="UNKNOWN" name="grot" note="unknown"/>
+    <codePoint unicode="U+00B1" unicodeName="UNKNOWN" decimal="55" name="" note="plus-minus"/>
 </codePointSet>

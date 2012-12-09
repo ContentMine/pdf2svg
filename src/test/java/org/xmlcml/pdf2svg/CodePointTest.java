@@ -34,7 +34,7 @@ public class CodePointTest {
 		CodePointSet nonStandardSet = CodePointSet.createFromElement(fontFamilyElementSet); 
 		CodePoint codePoint = nonStandardSet.getByUnicodeValue("U+039F");
 		Assert.assertNotNull(codePoint);
-		Assert.assertEquals((int)927, (int)codePoint.getDecimal());
+///		Assert.assertEquals((int)927, (int)codePoint.getDecimal());
 		Assert.assertEquals("U+039F", codePoint.getUnicodePoint().getUnicodeValue());
 		Assert.assertEquals("GREEK CAPITAL LETTER OMICRON", codePoint.getUnicodePoint().getUnicodeName());
 	}

@@ -108,10 +108,28 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	@Ignore // do not normally run this
+	//@Ignore // do not normally run this
 	public void testAJCCorpus() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "target/ajc/sample", "../pdfs/ajc/sample");
+		converter.run( "-logger","-outdir", "target/ajc/sample", "../pdfs/ajc/sample");
+	}
+
+	@Test
+	//@Ignore // do not normally run this
+	public void test0All() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("-logger", "-outdir", "target/0all/0", "../pdfs/0all/0");
+//		converter.run("-logger", "-outdir", "target/0all/1", "../pdfs/0all/1");
+//		converter.run("-logger", "-outdir", "target/0all/2", "../pdfs/0all/2");
+	}
+
+	@Test
+	//@Ignore // do not normally run this
+	public void testAllBMC() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+//		converter.run("-logger", "-outdir", "target/bmc/0", "../pdfs/bmc/0");
+//		converter.run("-logger", "-outdir", "target/bmc/1", "../pdfs/bmc/1");
+		converter.run("-logger", "-outdir", "target/bmc/2", "../pdfs/bmc/2");
 	}
 
 

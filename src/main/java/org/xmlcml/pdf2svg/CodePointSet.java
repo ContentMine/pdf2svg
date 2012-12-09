@@ -43,7 +43,8 @@ public class CodePointSet {
 	
 	public static final String UNICODE = "Unicode";
 	public static final String CODE_POINT_SET = "codePointSet";
-	public static final String KNOWN_HIGH_CODE_POINT_SET_XML = PConstants.PDF2SVG_ROOT+"/"+"highCodePoints.xml";
+//	public static final String KNOWN_HIGH_CODE_POINT_SET_XML = PConstants.PDF2SVG_ROOT+"/"+"highCodePoints.xml";
+	public static final String KNOWN_HIGH_CODE_POINT_SET_XML = PConstants.PDF2SVG_ROOT+"/"+"unicode.xml";
 	public static final String ENCODING = "encoding";
 
 	private Map<UnicodePoint, CodePoint> codePointByUnicodePointMap;

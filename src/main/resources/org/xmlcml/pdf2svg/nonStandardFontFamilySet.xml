@@ -10,7 +10,6 @@
 	<fontFamily name="FrutigerLTStd-Roman"/>
 	<fontFamily name="MathematicalPi-One" note="" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi2unicode.xml"/>
-	    <!-- this is a guess -->
 	<fontFamily name="MathematicalPi-Three"
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi3.xml"/>
 	<fontFamily name="MyriadMM215LT700SE" />
@@ -63,7 +62,8 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 
 	<fontFamily name="MTMI" symbol="true" italic="true"
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mtmi.xml" />
-	<fontFamily name="MTSY"/>
+	<fontFamily name="MTSY"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mtsy.xml" />
 	<fontFamily name="MTEX" unicode="guessed" publishers=""/>
 	
 	<fontFamily name="MTGU" />
@@ -77,7 +77,8 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	-->
 	<!--  possible symbol fonts -->
 	<fontFamily name="AdvPi1" symbol="true" codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi1.xml"/>
-	<fontFamily name="AdvMPi-One" symbol="true" codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi1.xml"/>
+	<fontFamily name="AdvMPi-One" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi1.xml"/>
 	<fontFamily name="AdvPi2" symbol="true" codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi2.xml"/>
 	
 	<fontFamily name="AdvP4C4E74" symbol="true" 
@@ -180,7 +181,8 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 
 	<fontFamily name="TimesItalic" />
 	<fontFamily name="Universal-NewswithCommPi" />
-	<fontFamily name="Universal-GreekwithMathPi" />
+	<fontFamily name="Universal-GreekwithMathPi" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi2unicode.xml"/>
 
 
 	<fontFamily name="TimesTenGreekInclined" />
@@ -286,7 +288,8 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	<fontFamily name="AdvP4DF614" />
 	<fontFamily name="AdvMacT_R" />
 	<fontFamily name="AdvUnivers" />
-	<fontFamily name="AdvMacMthSyN" />
+	<fontFamily name="AdvMacMthSyN" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/csymbol2Unicode.xml"/>
 	<fontFamily name="AdvP4DF60E" />
 	<fontFamily name="AdvP4DF60F" />
 	<fontFamily name="AdvGulliver-SCO" />
