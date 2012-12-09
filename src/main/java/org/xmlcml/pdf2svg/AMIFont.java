@@ -27,7 +27,6 @@ import org.apache.pdfbox.encoding.WinAnsiEncoding;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDFontDescriptor;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
-import org.xmlcml.euclid.RealArray;
 
 /** wrapper for PDType1Font. is meant to manage the badFontnames, other
  * fontTypes, etc and try to convert them to a standard approach. 

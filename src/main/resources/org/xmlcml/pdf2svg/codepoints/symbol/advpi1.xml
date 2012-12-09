@@ -24,6 +24,12 @@
     <codePoint unicodeName="MULTIPLY SIGN" unicode="U+00D7" decimal="54"/>
     
 
+	<codePoint decimal="35" unicode="U+2264" name="LESS-THAN OR EQUAL TO"/>
+	<codePoint decimal="36" unicode="U+2265" name="GREATER-THAN OR EQUAL TO"/>
+	<codePoint decimal="44" unicode="U+003C" name="LESS-THAN SIGN"/>
+	<codePoint decimal="46" unicode="U+003E" name="GREATER-THAN SIGN"/>
+	<codePoint decimal="49" unicode="U+2260" name="NOT-EQUALS SIGN"/>
+	<codePoint decimal="56" unicode="U+00B0" name="DEGREE SIGN"/>
 	<codePoint decimal="65" unicode="U+0391" name="GREEK CAPITAL LETTER ALPHA"/>
 	<codePoint decimal="66" unicode="U+0392" name="GREEK CAPITAL LETTER BETA"/>
 	<codePoint decimal="71" unicode="U+0393" name="GREEK CAPITAL LETTER GAMMA"/>

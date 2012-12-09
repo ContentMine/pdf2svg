@@ -5,7 +5,10 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import nu.xom.Attribute;
@@ -108,12 +111,15 @@ public class XMLLogger {
 		if (page == null)
 			throw new RuntimeException("no current PDF page!");
 
-		if (fontName == null)
+		if (fontName == null) {
 			return;
+		}
 
-		if (!fontmap.containsKey(fontName))
-			LOG.error("new character specifies font name '" + fontName
+		if (!fontmap.containsKey(fontName)) {
+			LOG.error("new character ("+charName+","+charValue+") specifies font name '" + fontName
 					+ "' - which doesn't exist!");
+//			printFontMapKeys();
+		}
 
 		Element character = new Element("character");
 
@@ -124,6 +130,18 @@ public class XMLLogger {
 				.toString(charValue)));
 
 		page.appendChild(character);
+	}
+
+	private void printFontMapKeys() {
+		int i = 0;
+		List<String> keys = Arrays.asList(fontmap.keySet().toArray(new String[0]));
+		Collections.sort(keys);
+		for (String key : keys) {
+			System.out.print(key+" ... ");
+			if (++i %5 == 0) {
+				System.out.println();
+			}
+		}
 	}
 
 	public void writeXMLFile(OutputStream outputStream) {

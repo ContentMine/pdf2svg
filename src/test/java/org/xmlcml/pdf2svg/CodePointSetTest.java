@@ -53,9 +53,9 @@ public class CodePointSetTest {
 				Util.getResourceUsingContextClassLoader(
 						CodePointSet.KNOWN_HIGH_CODE_POINT_SET_XML, this.getClass())).getRootElement();
 		CodePointSet nonStandardSet = CodePointSet.createFromElement(fontFamilyElementSet); 
-		CodePoint codePoint = nonStandardSet.getByUnicode("U+039F");
+		CodePoint codePoint = nonStandardSet.getByUnicodeValue("U+039F");
 		Assert.assertNotNull(codePoint);
-		Assert.assertEquals("GREEK CAPITAL LETTER OMICRON", codePoint.getName());
+		Assert.assertEquals("GREEK CAPITAL LETTER OMICRON", codePoint.getUnicodeName());
 	}
 	
 	@Test
@@ -66,7 +66,7 @@ public class CodePointSetTest {
 		CodePointSet nonStandardSet = CodePointSet.createFromElement(fontFamilyElementSet); 
 		CodePoint codePoint = nonStandardSet.getByDecimal((Integer)927);
 		Assert.assertNotNull(codePoint);
-		Assert.assertEquals("GREEK CAPITAL LETTER OMICRON", codePoint.getName());
+		Assert.assertEquals("GREEK CAPITAL LETTER OMICRON", codePoint.getUnicodeName());
 	}
 	
 	@Test
@@ -75,8 +75,8 @@ public class CodePointSetTest {
 				Util.getResourceUsingContextClassLoader(
 						CodePointSet.KNOWN_HIGH_CODE_POINT_SET_XML, this.getClass())).getRootElement();
 		CodePointSet nonStandardSet = CodePointSet.createFromElement(fontFamilyElementSet); 
-		String unicode = nonStandardSet.convertCharnameToUnicode("GREEK CAPITAL LETTER OMICRON");
-		Assert.assertEquals("unicode", "U+039F", unicode);
+		CodePoint codePoint = nonStandardSet.getByUnicodeName("GREEK CAPITAL LETTER OMICRON");
+		Assert.assertEquals("unicode", "U+039F", codePoint.getUnicodeValue());
 	}
 
 	@Test
@@ -85,8 +85,8 @@ public class CodePointSetTest {
 				Util.getResourceUsingContextClassLoader(
 						CodePointSet.KNOWN_HIGH_CODE_POINT_SET_XML, this.getClass())).getRootElement();
 		CodePointSet nonStandardSet = CodePointSet.createFromElement(fontFamilyElementSet); 
-		String unicode = nonStandardSet.convertCharCodeToUnicode((int)927);
-		Assert.assertEquals("unicode", "U+039F", unicode);
+		CodePoint codePoint = nonStandardSet.getByDecimal((int)927);
+		Assert.assertEquals("unicode", "U+039F", codePoint.getUnicodeValue());
 	}
 
 }

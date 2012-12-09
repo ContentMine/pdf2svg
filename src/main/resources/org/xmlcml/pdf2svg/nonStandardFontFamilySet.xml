@@ -10,21 +10,15 @@
 	<fontFamily name="FrutigerLTStd-Roman"/>
 	<fontFamily name="MathematicalPi-One" note="" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi2unicode.xml"/>
-	<fontFamily name="MathematicalPi-Three" />
-	<fontFamily name="MathematicalPi-Four" />
+	    <!-- this is a guess -->
+	<fontFamily name="MathematicalPi-Three"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi3.xml"/>
 	<fontFamily name="MyriadMM215LT700SE" />
 	<fontFamily name="MyriadMM565SB700SE" />
 	<fontFamily name="MyriadMM400RG700SE" />
-	<fontFamily name="MSAM8" />
-	<fontFamily name="MTSYB" />
-	<fontFamily name="MTMI" symbol="true" italic="true"
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mtmi.xml" />
-	<fontFamily name="MTGU" />
-	<fontFamily name="MTEX" unicode="guessed" publishers=""/>
 	
-	<!--
-	<fontFamily name="MTSYN" unicode="guessed"/>
-	-->
+	<fontFamily name="MSAM8" />
+	
 	<fontFamily name="OptimaItalic" />
 	<fontFamily name="Optima" />
 	<fontFamily name="OptimaBold" />
@@ -34,6 +28,49 @@
 	<fontFamily name="TimesNRMT" />
 	<fontFamily name="Times-Roman" />
 	<fontFamily name="Univers" />
+
+<!-- for MT (Y&Y) fonts see http://www.math.utah.edu/~beebe/fonts/y-and-y-fontnames.html#Y-and-Y-MathTime-1.1-fonts 
+ Here are the 3 font names, in alphabetical order:
+
+    MTMI
+    MTSY
+    MTEX
+
+Y & Y MathTime Plus fonts
+
+Here are the 15 font names, in alphabetical order:
+
+    MTEXB
+    MTEXH
+    MTGU
+    MTGUB
+    MTLS
+    MTLSB
+    MTMIB
+    MTMIH
+    MTMS
+    MTMSB
+    MTMUB
+    MTMUH
+    MTSYB
+    MTSYH
+    MTSYN
+
+see also http://www.pctex.com/mtpro2.html (commercial sale)
+
+-->	
+	<fontFamily name="MT" />
+
+	<fontFamily name="MTMI" symbol="true" italic="true"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mtmi.xml" />
+	<fontFamily name="MTSY"/>
+	<fontFamily name="MTEX" unicode="guessed" publishers=""/>
+	
+	<fontFamily name="MTGU" />
+	<fontFamily name="MTGUB" />
+	<fontFamily name="MTSYB" />
+	<fontFamily name="MTSYN" unicode="guessed"/>
+	
 	<!-- 
 	<fontFamily name="Wingdings" />
 	<fontFamily name="Wingdings-Regular" />
@@ -87,7 +124,6 @@
 	<fontFamily name="CalibriBold" />
 	<fontFamily name="Calibri,old" />
 	<fontFamily name="Calibri,talic" />
-	<fontFamily name="MT" />
 	<fontFamily name="TimesNRMTBold" />
 	<fontFamily name="TimesGreekSFInclined" />
 	<fontFamily name="TimesNRExpertMTBold" />
@@ -147,7 +183,6 @@
 	<fontFamily name="Universal-GreekwithMathPi" />
 
 
-	<fontFamily name="MTSY" />
 	<fontFamily name="TimesTenGreekInclined" />
 	<fontFamily name="ChemBats2" />
 	<fontFamily name="ChemBats" />

@@ -32,11 +32,11 @@ public class CodePointTest {
 				Util.getResourceUsingContextClassLoader(
 						CodePointSet.KNOWN_HIGH_CODE_POINT_SET_XML, this.getClass())).getRootElement();
 		CodePointSet nonStandardSet = CodePointSet.createFromElement(fontFamilyElementSet); 
-		CodePoint codePoint = nonStandardSet.getByUnicode("U+039F");
+		CodePoint codePoint = nonStandardSet.getByUnicodeValue("U+039F");
 		Assert.assertNotNull(codePoint);
 		Assert.assertEquals((int)927, (int)codePoint.getDecimal());
-		Assert.assertEquals("U+039F", codePoint.getUnicode());
-		Assert.assertEquals("GREEK CAPITAL LETTER OMICRON", codePoint.getName());
+		Assert.assertEquals("U+039F", codePoint.getUnicodePoint().getUnicodeValue());
+		Assert.assertEquals("GREEK CAPITAL LETTER OMICRON", codePoint.getUnicodePoint().getUnicodeName());
 	}
 	
 	@Test

@@ -23,6 +23,7 @@ import nu.xom.Builder;
 import nu.xom.Element;
 import nu.xom.Elements;
 
+import org.apache.log4j.Logger;
 import org.xmlcml.euclid.Util;
 import org.xmlcml.pdf2svg.util.PConstants;
 
@@ -38,15 +39,18 @@ import org.xmlcml.pdf2svg.util.PConstants;
  */
 public class CodePointSet {
 
+	private final static Logger LOG = Logger.getLogger(CodePointSet.class);
+	
 	public static final String UNICODE = "Unicode";
 	public static final String CODE_POINT_SET = "codePointSet";
 	public static final String KNOWN_HIGH_CODE_POINT_SET_XML = PConstants.PDF2SVG_ROOT+"/"+"highCodePoints.xml";
 	public static final String ENCODING = "encoding";
 
-	private Map<String, CodePoint> codePointByUnicodeMap;
-	private Map<Integer, CodePoint> codePointByIntegerMap;
-	private Map<String, String> unicodeByCharnameMap;
-	private Map<Integer, String> unicodeByCharCodeMap;
+	private Map<UnicodePoint, CodePoint> codePointByUnicodePointMap;
+	private Map<String, CodePoint> codePointByUnicodeValueMap;
+	private Map<Integer, CodePoint> codePointByDecimalMap;
+	private Map<String, CodePoint> codePointByUnicodeNameMap;
+	private Map<String, CodePoint> codePointByNameMap;
 	private String encoding = null;
 
 	public CodePointSet() {
@@ -54,11 +58,12 @@ public class CodePointSet {
 	}
 
 	private void ensureMaps() {
-		if (codePointByIntegerMap == null) {
-			codePointByIntegerMap = new HashMap<Integer, CodePoint>();
-			codePointByUnicodeMap = new HashMap<String, CodePoint>();
-			unicodeByCharnameMap = new HashMap<String, String>();
-			unicodeByCharCodeMap = new HashMap<Integer, String>();
+		if (codePointByDecimalMap == null) {
+			codePointByDecimalMap =      new HashMap<Integer, CodePoint>();
+			codePointByUnicodePointMap = new HashMap<UnicodePoint, CodePoint>();
+			codePointByUnicodeNameMap =  new HashMap<String, CodePoint>();
+			codePointByUnicodeValueMap =  new HashMap<String, CodePoint>();
+			codePointByNameMap =         new HashMap<String, CodePoint>();
 		}
 	}
 
@@ -88,39 +93,36 @@ public class CodePointSet {
 		for (int i = 0; i < childElements.size(); i++) {
 			Element codePointElement = childElements.get(i);
 			CodePoint codePoint = CodePoint.createFromElement(codePointElement, codePointSet.encoding);
-			String unicode = codePoint.getUnicode();
-			if (unicode == null) {
+			UnicodePoint unicodePoint = codePoint.getUnicodePoint();
+			if (unicodePoint == null) {
 				throw new RuntimeException("codePoint must contain unicode value");
 			}
-			if (codePointSet.containsKey(unicode) && UNICODE.equals(codePointSet.encoding)) {
-				throw new RuntimeException("Duplicate unicode in unicode encoding: "+unicode);
+			if (codePointSet.containsKey(unicodePoint) && UNICODE.equals(codePointSet.encoding)) {
+				throw new RuntimeException("Duplicate unicode in unicode encoding: "+unicodePoint);
 			}
-			codePointSet.codePointByUnicodeMap.put(unicode, codePoint);
+			codePointSet.codePointByUnicodePointMap.put(unicodePoint, codePoint);
 			Integer decimal = codePoint.getDecimal();
 			codePointSet.add(codePoint);
+			LOG.trace("CodePoint "+codePoint);
 		}
 		return codePointSet;
 	}
 
-	private void add(CodePoint codePoint) {
-		this.add(codePoint.getDecimal(), codePoint.getName(), codePoint.getUnicode());
-	}
-
-	private boolean containsKey(String unicode) {
-		return codePointByUnicodeMap.containsKey(unicode);
+	private boolean containsKey(UnicodePoint unicodePoint) {
+		return codePointByUnicodePointMap.containsKey(unicodePoint);
 	}
 	
 	boolean containsKey(Integer decimal) {
-		return codePointByIntegerMap.containsKey(decimal);
+		return codePointByDecimalMap.containsKey(decimal);
 	}
 	
 	public Element createElementWithSortedIntegers() {
 		Element codePointsElement = new Element(CODE_POINT_SET);
-		Integer[] codePointIntegers = codePointByIntegerMap.keySet().toArray(new Integer[0]);
+		Integer[] codePointIntegers = codePointByDecimalMap.keySet().toArray(new Integer[0]);
 		Arrays.sort(codePointIntegers);
 		for (Integer codePointInteger : codePointIntegers) {
-			CodePoint codePoint = codePointByIntegerMap.get(codePointInteger);
-			Element codePointElement = (Element) codePoint.getElement().copy();
+			CodePoint codePoint = codePointByDecimalMap.get(codePointInteger);
+			Element codePointElement = (Element) codePoint.createElement().copy();
 			codePointsElement.appendChild(codePointElement);
 		}
 		return codePointsElement;
@@ -128,65 +130,70 @@ public class CodePointSet {
 	}
 
 	public int size() {
-		return codePointByIntegerMap.size();
+		return codePointByDecimalMap.size();
 	}
 
-	public void add(Integer charCode, String charname, String unicode) {
+	/** adds and indexes codePoints checking for duplicates etc.
+	*/
+	public void add(CodePoint codePoint) {
 		if (encoding == null) {
 			throw new RuntimeException("CodePointSet must have encoding");
 		}
-		CodePoint codePoint = new CodePoint();
-		codePoint.setUnicode(unicode);
-		if (charCode != null) {
-			codePoint.setDecimal(charCode);
+		UnicodePoint unicodePoint = codePoint.getUnicodePoint();
+		if (unicodePoint == null) {
+			throw new RuntimeException("CodePoint must have unicodePoint");
 		}
-		if (charname != null) {
-			codePoint.setName(charname);
-		}
-		if (unicode != null) {
-			codePoint.setUnicode(unicode);
-		}
-		
+		makeIndexes(codePoint, unicodePoint);
+	}
+
+	private void makeIndexes(CodePoint codePoint, UnicodePoint unicodePoint) {
 		if (codePoint.getDecimal() != null) {
-			this.codePointByIntegerMap.put(codePoint.getDecimal(), codePoint);
+			this.codePointByDecimalMap.put(codePoint.getDecimal(), codePoint);
+		} else {
+			Integer decimal = (unicodePoint == null) ? null : unicodePoint.getDecimalValue();
+			if (decimal != null) {
+				this.codePointByDecimalMap.put(decimal, codePoint);
+			}
 		}
-		if (codePoint.getUnicode() != null) {
-			this.codePointByUnicodeMap.put(codePoint.getUnicode(), codePoint);
+		this.codePointByUnicodePointMap.put(unicodePoint, codePoint);
+		this.codePointByUnicodeValueMap.put(unicodePoint.getUnicodeValue(), codePoint);
+		if (codePoint.getName() != null) {
+			this.codePointByNameMap.put(codePoint.getName(), codePoint);
 		}
-		if (charname != null) {
-			this.unicodeByCharnameMap.put(charname, codePoint.getUnicode());
-		}
-		if (charCode != null) {
-			this.unicodeByCharCodeMap.put(charCode, codePoint.getUnicode());
+		if (codePoint.getUnicodeName() != null) {
+			this.codePointByUnicodeNameMap.put(codePoint.getUnicodeName(), codePoint);
 		}
 	}
 
-	public String convertCharnameToUnicode(String charname) {
+	public CodePoint getByUnicodePoint(UnicodePoint unicodePoint) {
 		ensureMaps();
-		String unicode = unicodeByCharnameMap.get(charname);
-		return unicode;
+		return codePointByUnicodePointMap.get(unicodePoint);
 	}
-
-	public String convertCharCodeToUnicode(Integer codepoint) {
+	
+	public CodePoint getByUnicodeValue(String unicode) {
 		ensureMaps();
-		String unicode = unicodeByCharCodeMap.get(codepoint);
-		return unicode;
+		return codePointByUnicodeValueMap.get(unicode);
 	}
-
-	public CodePoint getByUnicode(String unicode) {
+	
+	public CodePoint getByName(String name) {
 		ensureMaps();
-		return codePointByUnicodeMap.get(unicode);
+		return codePointByNameMap.get(name);
 	}
 	
 	public CodePoint getByDecimal(Integer decimal) {
 		ensureMaps();
-		return codePointByIntegerMap.get(decimal);
+		return codePointByDecimalMap.get(decimal);
 	}
 
+	public CodePoint getByUnicodeName(String unicodeName) {
+		ensureMaps();
+		return codePointByUnicodeNameMap.get(unicodeName);
+	}
 	public void ensureEncoding(String encoding) {
 		if (this.encoding == null) {
 			this.encoding = encoding;
 		}
 	}
+
 	
 }

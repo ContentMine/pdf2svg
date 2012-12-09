@@ -20,6 +20,7 @@
 	<codePoint name="asciitilde" unicode="U+007E" unicodeName="TILDE"/>  
 
 	<codePoint name="C19" unicode="U+007E" unicodeName="TILDE"/>  
+	<codePoint name="C22" unicode="U+00A8"  unicodeName="MACRON" />  
 
 </codePointSet>
 		

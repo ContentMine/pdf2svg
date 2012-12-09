@@ -17,46 +17,51 @@
 -->
 <codePointSet encoding="Unicode">
 
-<codePoint unicode="U+0020" adobePoint="20" foo="SPACE" foo="space"/>
-<codePoint unicode="U+0021" adobePoint="21" foo="EXCLAMATION MARK" foo="exclam"/>
-<codePoint unicode="U+0023" adobePoint="23" foo="NUMBER SIGN" foo="numbersign"/>
-<codePoint unicode="U+0025" adobePoint="25" foo="PERCENT SIGN" foo="percent"/>
-<codePoint unicode="U+0026" adobePoint="26" foo="AMPERSAND" foo="ampersand"/>
-<codePoint unicode="U+0028" adobePoint="28" foo="LEFT PARENTHESIS" foo="parenleft"/>
-<codePoint unicode="U+0029" adobePoint="29" foo="RIGHT PARENTHESIS" foo="parenright"/>
-<codePoint unicode="U+002B" adobePoint="2B" foo="PLUS SIGN" foo="plus"/>
-<codePoint unicode="U+002C" adobePoint="2C" foo="COMMA" foo="comma"/>
-<codePoint unicode="U+002E" adobePoint="2E" foo="FULL STOP" foo="period"/>
-<codePoint unicode="U+002F" adobePoint="2F" foo="SOLIDUS" foo="slash"/>
-<codePoint unicode="U+0030" adobePoint="30" foo="DIGIT ZERO" foo="zero"/>
-<codePoint unicode="U+0031" adobePoint="31" foo="DIGIT ONE" foo="one"/>
-<codePoint unicode="U+0032" adobePoint="32" foo="DIGIT TWO" foo="two"/>
-<codePoint unicode="U+0033" adobePoint="33" foo="DIGIT THREE" foo="three"/>
-<codePoint unicode="U+0034" adobePoint="34" foo="DIGIT FOUR" foo="four"/>
-<codePoint unicode="U+0035" adobePoint="35" foo="DIGIT FIVE" foo="five"/>
-<codePoint unicode="U+0036" adobePoint="36" foo="DIGIT SIX" foo="six"/>
-<codePoint unicode="U+0037" adobePoint="37" foo="DIGIT SEVEN" foo="seven"/>
-<codePoint unicode="U+0038" adobePoint="38" foo="DIGIT EIGHT" foo="eight"/>
-<codePoint unicode="U+0039" adobePoint="39" foo="DIGIT NINE" foo="nine"/>
-<codePoint unicode="U+003A" adobePoint="3A" foo="COLON" foo="colon"/>
-<codePoint unicode="U+003B" adobePoint="3B" foo="SEMICOLON" foo="semicolon"/>
-<codePoint unicode="U+003C" adobePoint="3C" foo="LESS-THAN SIGN" foo="less"/>
-<codePoint unicode="U+003D" adobePoint="3D" foo="EQUALS SIGN" foo="equal"/>
-<codePoint unicode="U+003E" adobePoint="3E" foo="GREATER-THAN SIGN" foo="greater"/>
-<codePoint unicode="U+003F" adobePoint="3F" foo="QUESTION MARK" foo="question"/>
-<codePoint unicode="U+005B" adobePoint="5B" foo="LEFT SQUARE BRACKET" foo="bracketleft"/>
-<codePoint unicode="U+005D" adobePoint="5D" foo="RIGHT SQUARE BRACKET" foo="bracketright"/>
-<codePoint unicode="U+005F" adobePoint="5F" foo="LOW LINE" foo="underscore"/>
-<codePoint unicode="U+007B" adobePoint="7B" foo="LEFT CURLY BRACKET" foo="braceleft"/>
-<codePoint unicode="U+007C" adobePoint="7C" foo="VERTICAL LINE" foo="bar"/>
-<codePoint unicode="U+007D" adobePoint="7D" foo="RIGHT CURLY BRACKET" foo="braceright"/>
-<codePoint unicode="U+00A0" adobePoint="20" foo="NO-BREAK SPACE" foo="space"/>
-<codePoint unicode="U+00AC" adobePoint="D8" foo="NOT SIGN" foo="logicalnot"/>
-<codePoint unicode="U+00B0" adobePoint="B0" foo="DEGREE SIGN" foo="degree"/>
-<codePoint unicode="U+00B1" adobePoint="B1" foo="PLUS-MINUS SIGN" foo="plusminus"/>
-<codePoint unicode="U+00B5" adobePoint="6D" foo="MICRO SIGN" foo="mu"/>
-<codePoint unicode="U+00D7" adobePoint="B4" foo="MULTIPLICATION SIGN" foo="multiply"/>
-<codePoint unicode="U+00F7" adobePoint="B8" foo="DIVISION SIGN" foo="divide"/>
+<codePoint unicode="U+0020" adobePoint="20" unicodeName="SPACE" name="space"/>
+<codePoint unicode="U+0021" adobePoint="21" unicodeName="EXCLAMATION MARK" name="exclam"/>
+<codePoint unicode="U+0022" adobePoint="22" unicodeName="QUOTATION MARK" name=""/>
+<codePoint unicode="U+0023" adobePoint="23" unicodeName="NUMBER SIGN" name="numbersign"/>
+<codePoint unicode="U+0024" adobePoint="24" unicodeName="DOLLAR SIGN" name=""/>
+<codePoint unicode="U+0025" adobePoint="25" unicodeName="PERCENT SIGN" name="percent"/>
+<codePoint unicode="U+0026" adobePoint="26" unicodeName="AMPERSAND" name="ampersand"/>
+<codePoint unicode="U+0027" adobePoint="27" unicodeName="APOSTROPHE" name=""/>
+<codePoint unicode="U+0028" adobePoint="28" unicodeName="LEFT PARENTHESIS" name="parenleft"/>
+<codePoint unicode="U+0029" adobePoint="29" unicodeName="RIGHT PARENTHESIS" name="parenright"/>
+<codePoint unicode="U+002A" adobePoint="2A" unicodeName="ASTERISK" name=""/>
+<codePoint unicode="U+002B" adobePoint="2B" unicodeName="PLUS SIGN" name="plus"/>
+<codePoint unicode="U+002C" adobePoint="2C" unicodeName="COMMA" name="comma"/>
+<codePoint unicode="U+002D" adobePoint="2D" unicodeName="HYPHEN-MINUS" name=""/>
+<codePoint unicode="U+002E" adobePoint="2E" unicodeName="FULL STOP" name="period"/>
+<codePoint unicode="U+002F" adobePoint="2F" unicodeName="SOLIDUS" name="slash"/>
+<codePoint unicode="U+0030" adobePoint="30" unicodeName="DIGIT ZERO" name="zero"/>
+<codePoint unicode="U+0031" adobePoint="31" unicodeName="DIGIT ONE" name="one"/>
+<codePoint unicode="U+0032" adobePoint="32" unicodeName="DIGIT TWO" name="two"/>
+<codePoint unicode="U+0033" adobePoint="33" unicodeName="DIGIT THREE" name="three"/>
+<codePoint unicode="U+0034" adobePoint="34" unicodeName="DIGIT FOUR" name="four"/>
+<codePoint unicode="U+0035" adobePoint="35" unicodeName="DIGIT FIVE" name="five"/>
+<codePoint unicode="U+0036" adobePoint="36" unicodeName="DIGIT SIX" name="six"/>
+<codePoint unicode="U+0037" adobePoint="37" unicodeName="DIGIT SEVEN" name="seven"/>
+<codePoint unicode="U+0038" adobePoint="38" unicodeName="DIGIT EIGHT" name="eight"/>
+<codePoint unicode="U+0039" adobePoint="39" unicodeName="DIGIT NINE" name="nine"/>
+<codePoint unicode="U+003A" adobePoint="3A" unicodeName="COLON" name="colon"/>
+<codePoint unicode="U+003B" adobePoint="3B" unicodeName="SEMICOLON" name="semicolon"/>
+<codePoint unicode="U+003C" adobePoint="3C" unicodeName="LESS-THAN SIGN" name="less"/>
+<codePoint unicode="U+003D" adobePoint="3D" unicodeName="EQUALS SIGN" name="equal"/>
+<codePoint unicode="U+003E" adobePoint="3E" unicodeName="GREATER-THAN SIGN" name="greater"/>
+<codePoint unicode="U+003F" adobePoint="3F" unicodeName="QUESTION MARK" name="question"/>
+<codePoint unicode="U+005B" adobePoint="5B" unicodeName="LEFT SQUARE BRACKET" name="bracketleft"/>
+<codePoint unicode="U+005D" adobePoint="5D" unicodeName="RIGHT SQUARE BRACKET" name="bracketright"/>
+<codePoint unicode="U+005F" adobePoint="5F" unicodeName="LOW LINE" name="underscore"/>
+<codePoint unicode="U+007B" adobePoint="7B" unicodeName="LEFT CURLY BRACKET" name="braceleft"/>
+<codePoint unicode="U+007C" adobePoint="7C" unicodeName="VERTICAL LINE" name="bar"/>
+<codePoint unicode="U+007D" adobePoint="7D" unicodeName="RIGHT CURLY BRACKET" name="braceright"/>
+<codePoint unicode="U+00A0" adobePoint="20" unicodeName="NO-BREAK SPACE" name="space"/>
+<codePoint unicode="U+00AC" adobePoint="D8" unicodeName="NOT SIGN" name="logicalnot"/>
+<codePoint unicode="U+00B0" adobePoint="B0" unicodeName="DEGREE SIGN" name="degree"/>
+<codePoint unicode="U+00B1" adobePoint="B1" unicodeName="PLUS-MINUS SIGN" name="plusminus"/>
+<codePoint unicode="U+00B5" adobePoint="6D" unicodeName="MICRO SIGN" name="mu"/>
+<codePoint unicode="U+00D7" adobePoint="B4" unicodeName="MULTIPLICATION SIGN" name="multiply"/>
+<codePoint unicode="U+00F7" adobePoint="B8" unicodeName="DIVISION SIGN" name="divide"/>
 
 		
 </codePointSet>

@@ -15,13 +15,8 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvP4C4E51"> 
-
-<!-- is this right? -->
-	<codePoint name="colon" unicode="U+002E" unicodeName="PERIOD"/>  
-	<codePoint decimal="58" unicode="U+003A" unicodeName="FULL STOP"/>  
-	<codePoint decimal="61" unicode="U+002F" unicodeName="SOLIDUS"/>  
-	<codePoint decimal="60" unicode="U+274E" unicodeName="UNK"/>  
-
+<codePointSet encoding="MathematicalPI">
+    <!--  how does this differ from MathPi1?-->
+	<codePoint name="H11013" unicode="U+003D" unicodeName="EQUALS"/> 
 </codePointSet>
 		

@@ -18,19 +18,20 @@
 <codePointSet encoding="MacMath"> <!--  I am not sure of this yet  -->
 
 <!-- seems to contain both name and Cdd names -->
-	<codePoint name="one" unicode="U+274E" unicodeName="UNK"/>  
-	<codePoint name="six" unicode="U+002F" unicodeName="SOLIDUS"/>  
-	<codePoint name="f" unicode="U+007B" unicodeName="LEFT CURLY BRACKET"/>  
-	<codePoint name="g" unicode="U+007D" unicodeName="RIGHT CURLY BRACKET"/>  
-	<codePoint name="z" unicode="U+2021" unicodeName="DOUBLE DAGGER"/>  
-	<codePoint name="zero" unicode="U+2032" unicodeName="PRIME"/>  
-	<codePoint name="thorn" unicode="U+002B" unicodeName="PLUS"/>  
-	<codePoint name="eth" unicode="U+0028" unicodeName="LEFT PARENTHESIS"/>  
-	<codePoint name="Thorn" unicode="U+0029" unicodeName="RIGHT PARENTHESIS"/>  
-	<codePoint name="exclam" unicode="U+2192" unicodeName="RIGHTWARDS ARROW"/>  
-	<codePoint name="onehalf" unicode="U+005B" unicodeName="LEFT SQUARE BRACKET"/>  
-	<codePoint name="onequarter" unicode="U+003D" unicodeName="EQUALS"/>  
-	<codePoint name="grot" unicode="U+274E" unicodeName="UNKKNOWN "/>  
+	<codePoint name="one"         unicode="U+274E" unicodeName="UNK"/>  
+	<codePoint name="six"         unicode="U+002F" unicodeName="SOLIDUS"/>  
+	<codePoint name="eth"         unicode="U+0028" unicodeName="LEFT PARENTHESIS"/>  
+	<codePoint name="Thorn"       unicode="U+0029" unicodeName="RIGHT PARENTHESIS"/>  
+	<codePoint name="thorn"       unicode="U+002B" unicodeName="PLUS"/>  
+	<codePoint name="onequarter"  unicode="U+003D" unicodeName="EQUALS"/>  
+	<codePoint name="onehalf"     unicode="U+005B" unicodeName="LEFT SQUARE BRACKET"/>  
+	<codePoint name="f"           unicode="U+007B" unicodeName="LEFT CURLY BRACKET"/>  
+	<codePoint name="g"           unicode="U+007D" unicodeName="RIGHT CURLY BRACKET"/>  
+	<codePoint name="y"           unicode="U+2020" charval="121" unicodeName="DAGGER"/>  
+	<codePoint name="z"           unicode="U+2021" unicodeName="DOUBLE DAGGER"/>  
+	<codePoint name="zero"        unicode="U+2032" unicodeName="PRIME"/>  
+	<codePoint name="exclam"      unicode="U+2192" unicodeName="RIGHTWARDS ARROW"/>  
+	<codePoint name="Eth"         unicode="U+21C4" charval="208" note="reversible reaction should be: U+21CB U+21CC"/>  
 
 	<codePoint name="C0" unicode="U+002D" unicodeName="MINUS"/>  
 	<codePoint name="C1" unicode="U+00B7" unicodeName="MMIDDLE DOT"/>  
@@ -43,6 +44,7 @@
 	<codePoint name="C17" unicode="U+0029"  unicodeName="RIGHT PARENTHESIS"/>  
 	<codePoint name="C18" unicode="U+0028" unicodeName="LEFT PARENTHESIS"/> 
 	<codePoint name="C19" unicode="U+0029"  unicodeName="RIGHT PARENTHESIS"/>     
+	<codePoint name="C20" unicode="U+2264" unicodeName="LESS-THAN OR EQUAL TO"/>     
 	<codePoint name="C21" unicode="U+274E"  unicodeName="UNK"/>     
 	<codePoint name="C23" unicode="U+030A"  unicodeName="COMBINING RING ABOVE" />  
 	<codePoint name="C24" unicode="U+00BB"  unicodeName="RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK" />  

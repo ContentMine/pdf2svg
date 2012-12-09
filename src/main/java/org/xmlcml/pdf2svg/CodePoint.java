@@ -32,19 +32,26 @@ public class CodePoint {
 	private static final String REPLACE_BY_UNICODE = "replaceByUnicode";
 	private static final String REPLACE_NAME = "replaceName";
 	private static final String UNICODE = "unicode";
+	private static final String UNICODE_NAME = "unicodeName";
 	
-	private static final String HEX_PREFIX = "0X";
-	private static final String UNICODE_PREFIX = "U+";
-
-	private Integer decimal;
-	private String name;
-	private String note;
-	private String replacementUnicode;
-	private String replaceName;
-	private String unicode; // always uppercase
+	private Integer decimal;    // this is often NOT the unicode value
+	private String name;        // a mnemonic (origin unspecified , ?Adobe, ?HTML-ent
+	private String note;        // some explanatory or other note
+	private UnicodePoint unicodePoint; 
 	
 	public CodePoint() {
 		
+	}
+
+	/** codePoint when we don't know the Unicode
+	 * will create an UNKNOWN unicode
+	 * @param charCode
+	 * @param charname
+	 */
+	public CodePoint(Integer charCode, String charname) {
+		this.decimal = charCode;
+		this.name = charname;
+		this.unicodePoint = UnicodePoint.UNKNOWN;
 	}
 
 	public static CodePoint createFromElement(Element codePointElement, String encoding) {
@@ -62,92 +69,82 @@ public class CodePoint {
 			if (decimalS != null) {
 				codePoint.decimal = new Integer(decimalS); 
 			}
-			codePoint.unicode = codePointElement.getAttributeValue(UNICODE);
-			if (codePoint.unicode == null || !codePoint.unicode.startsWith(UNICODE_PREFIX)) {
+			codePoint.unicodePoint = UnicodePoint.createUnicodeValue(codePointElement.getAttributeValue(UNICODE));
+			if (codePoint.unicodePoint == null) {
 				throw new RuntimeException("missing or invalid unicode value in: "+codePointElement.toXML());
+				
 			}
-			codePoint.unicode = codePoint.unicode.toUpperCase();
-			checkUnicodeMatchesDecimal(encoding, codePoint);
-			codePoint.replacementUnicode = codePointElement.getAttributeValue(REPLACE_BY_UNICODE);
-			codePoint.replaceName = codePointElement.getAttributeValue(REPLACE_NAME);
+			codePoint.unicodePoint.setUnicodeName(codePointElement.getAttributeValue(UNICODE_NAME));
+			codePoint.unicodePoint.addReplacmentPoints(codePointElement.getAttributeValue(REPLACE_BY_UNICODE));
 			codePoint.note = codePointElement.getAttributeValue(NOTE);
 		} catch (Exception e) {
 			throw new RuntimeException("invalid codePointElement: "+((codePointElement == null) ? null : codePointElement.toXML()), e);
 		}
+		LOG.trace("Created "+codePoint);
 		return codePoint;
 	}
 
-	private static void checkUnicodeMatchesDecimal(String encoding, CodePoint codePoint) {
-		String hex = HEX_PREFIX+codePoint.unicode.substring(2);
-		Integer codePointHex = Integer.decode(hex);
-		if (CodePointSet.UNICODE.equals(encoding) && (codePoint.decimal != null && !codePointHex.equals(codePoint.decimal))) {
-			throw new RuntimeException(
-					"<codePoint> integer ("+codePoint.decimal+") and unicode ("+codePoint.unicode+") values do not match; try: "+Integer.toHexString(codePoint.decimal));
-		}
-	}
-
-	public Integer getDecimal() {
-		return decimal;
-	}
-
-	public String getUnicode() {
-		return unicode;
-	}
-
-	public String getName() {
-		return name;
-	}
-
-	public Element getElement() {
+	public Element createElement() {
 		Element codePointElement = new Element(CODE_POINT);
-		if (decimal == null || unicode == null) {
-			throw new RuntimeException("decimal and unicode must not be null");
+		if (unicodePoint == null) {
+			throw new RuntimeException("unicode must not be null");
 		}
-		codePointElement.addAttribute(new Attribute(DECIMAL, ""+decimal));
-		codePointElement.addAttribute(new Attribute(UNICODE, unicode));
+		codePointElement.addAttribute(new Attribute(UNICODE, unicodePoint.getUnicodeValue()));
+		if (decimal == null && name == null) {
+			throw new RuntimeException("decimal and name must not both be null");
+		}
+		if (decimal != null) {
+			codePointElement.addAttribute(new Attribute(DECIMAL, ""+decimal));
+		}
 		if (name != null) {
 			codePointElement.addAttribute(new Attribute(NAME, name));
 		}
 		if (note != null) {
 			codePointElement.addAttribute(new Attribute(NOTE, note));
 		}
-		if (replaceName != null) {
-			codePointElement.addAttribute(new Attribute(REPLACE_NAME, replaceName));
+		if (unicodePoint.getUnicodeName() != null) {
+			codePointElement.addAttribute(new Attribute(UNICODE_NAME, unicodePoint.getUnicodeName()));
 		}
-		if (replacementUnicode != null) {
-			codePointElement.addAttribute(new Attribute(REPLACE_BY_UNICODE, replacementUnicode));
+		String replacementPointString = unicodePoint.getReplacementPointString();
+		if (replacementPointString != null) {
+			codePointElement.addAttribute(new Attribute(REPLACE_BY_UNICODE, replacementPointString));
 		}
 		return codePointElement;
 	}
 
-	public void setDecimal(Integer decimal) {
-		this.decimal = decimal;
-		String hex = Integer.toHexString(decimal).toUpperCase();
-		if (hex.startsWith(HEX_PREFIX)) {
-			hex = hex.substring(HEX_PREFIX.length());
-		}
-		this.unicode = UNICODE_PREFIX+hex;
-	}
-	
-	public static Integer getDecimal(String unicode) {
-		Integer codepoint = null;
-		if (unicode != null && unicode.startsWith(UNICODE_PREFIX)) {
-			String hex = HEX_PREFIX+unicode.substring(UNICODE_PREFIX.length());
-			try {
-				codepoint = Integer.decode(hex);
-			} catch (Exception e) {
-				throw new RuntimeException("Bad hex: "+hex);
-			}
-		}
-		return codepoint;
-	}
-	
 	public void setName(String name) {
 		this.name = name;
 	}
 
-	public void setUnicode(String unicode) {
-		this.unicode = unicode;
+	public String getName() {
+		return name;
 	}
-	
+
+	public Integer getDecimal() {
+		return decimal;
+	}
+
+	public Integer getUnicodeDecimal() {
+		return unicodePoint.getDecimalValue();
+	}
+
+	public String toString() {
+		return "\n"+
+		"decimal: "+decimal+"\n" +
+		"name: "+name+"\n" +
+		"note: "+note+"\n" +
+		"unicode: "+unicodePoint+"\n";
+	}
+
+	public UnicodePoint getUnicodePoint() {
+		return unicodePoint;
+	}
+
+	public String getUnicodeValue() {
+		return unicodePoint == null ? null : unicodePoint.getUnicodeValue();
+	}
+
+	public String getUnicodeName() {
+		return unicodePoint == null ? null : unicodePoint.getUnicodeName();
+	}
 }

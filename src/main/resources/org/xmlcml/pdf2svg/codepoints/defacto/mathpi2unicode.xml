@@ -40,6 +40,7 @@
 	<codePoint name="H11021" unicode="U+003C" decimal="60" unicodeName="LESS-THAN SIGN" htmlName="lt"/> 
 	<codePoint name="H11022" unicode="U+003E" decimal="62" unicodeName="GREATER-THAN SIGN" htmlName="gt"/> 
 	<codePoint name="H11032" unicode="U+0027" decimal="39" unicodeName="APOSTROPHE" htmlName="apos"/> 
+	<codePoint name="H11033" unicode="U+0022" decimal="34" unicodeName="QUOT" htmlName="quot"/> 
 	<codePoint name="H11034" unicode="U+00B0" decimal="176" unicodeName="DEGREE SIGN" htmlName="deg"/> 
 	
 	<codePoint name="H11554" unicode="U+00B7" decimal="183" unicodeName="MIDDLE DOT"/> 

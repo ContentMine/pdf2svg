@@ -147,7 +147,12 @@ public class FontFamily {
 	}
 
 	public String convertSymbol2UnicodeValue(String charname) {
-		return (codePointSet == null) ? null : codePointSet.convertCharnameToUnicode(charname);
+		String unicodeValue = null;
+		if (codePointSet != null) {
+			CodePoint codePoint = codePointSet.getByName(charname);
+			unicodeValue = (codePoint == null) ? null : codePoint.getUnicodeValue(); 
+		}
+		return unicodeValue;
 	}
 
 	public Integer convertSymbol2UnicodePoint(String charname) {

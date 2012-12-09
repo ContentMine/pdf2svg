@@ -28,6 +28,7 @@
 	<codePoint name="C17" unicode="U+0029" decimal="41" unicodeName="RIGHT PARENTHESIS"/>  
 	<codePoint name="C18" unicode="U+0028" decimal="40" unicodeName="LEFT PARENTHESIS"/> <!--  may be larger?? -->  
 	<codePoint name="C19" unicode="U+0029" decimal="41" unicodeName="RIGHT PARENTHESIS"/> <!--  may be larger?? -->    
+	<codePoint name="C22" unicode="U+00A8"  unicodeName="MACRON" />  
 	<codePoint name="C23" unicode="U+030A" decimal="778" unicodeName="COMBINING RING ABOVE" />  
 	<codePoint name="C26" unicode="U+007B" decimal="123" unicodeName="LEFT CURLY BRACKET"/> 
 	<codePoint name="C27" unicode="U+007D" decimal="125" unicodeName="RIGHT CURLY BRACKET"/>  

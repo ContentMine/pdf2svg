@@ -66,7 +66,6 @@ import org.xmlcml.graphics.svg.SVGText;
 import org.xmlcml.graphics.svg.SVGTitle;
 import org.xmlcml.graphics.svg.SVGUtil;
 import org.xmlcml.pdf2svg.util.PDF2SVGUtil;
-import org.xmlcml.pdf2svg.util.XMLLogger;
 
 /** converts a PDPage to SVG
  * Originally used PageDrawer to capture the PDF operations.These have been
@@ -312,7 +311,7 @@ xmlns="http://www.w3.org/2000/svg">
 			svgText.setFontStyle("italic");
 		}
 		if (amiFont.isBold() != null && amiFont.isBold()) {
-			svgText.setFontStyle("bold");
+			svgText.setFontWeight("bold");
 		}
 		addCodePointToHighPoints(textPosition);
 	}
@@ -342,13 +341,13 @@ xmlns="http://www.w3.org/2000/svg">
 	private void convertNonUnicodeCharacterEncodings() {
 		CodePointSet codePointSet = fontFamily.getCodePointSet();
 		if (codePointSet != null) {
-			String unicode = null;
+			CodePoint codePoint = null;
 			if (charname != null) {	
-				unicode = codePointSet.convertCharnameToUnicode(charname);
+				codePoint = codePointSet.getByName(charname);
 			} else {
-				unicode = codePointSet.convertCharCodeToUnicode((int)textContent.charAt(0));
+				codePoint = codePointSet.getByDecimal((int)textContent.charAt(0));
 			}
-			if (unicode == null) {
+			if (codePoint == null) {
 				//or add Bad Character Glyph
 				int ch = (int) textContent.charAt(0);
 				if (pdf2svgConverter.useXMLLogger)
@@ -357,7 +356,7 @@ xmlns="http://www.w3.org/2000/svg">
 					LOG.error("Cannot convert character: "+textContent+" char: "+ch+" charname: "+charname+" fn: "+fontFamilyName);
 				textContent = ""+AMIFontManager.getUnknownCharacterSymbol()+ch;
 			} else {
-				Integer codepoint = CodePoint.getDecimal(unicode);
+				Integer codepoint = codePoint.getUnicodeDecimal();
 				textContent = ""+(char)(int) codepoint;
 			}
 		}
@@ -430,8 +429,9 @@ xmlns="http://www.w3.org/2000/svg">
 				// known 
 			} else if (encoding != null) {
 				pdf2svgConverter.newCodePointSet.ensureEncoding(encoding.toString());
-				pdf2svgConverter.newCodePointSet.add((Integer)charCode, charname, null);
-				System.out.println("ADDED: "+charCode);
+				CodePoint codePoint = new CodePoint((Integer)charCode, charname); // creates as UNKNOWN unicode
+				pdf2svgConverter.newCodePointSet.add(codePoint);
+				LOG.debug("added to new codePointSet: "+charCode);
 			} else {
 				LOG.warn("Font name: "+fontName+" No encoding, so cannot add codePoint ("+charCode+") to codePointSet");
 			}
