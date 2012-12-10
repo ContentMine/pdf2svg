@@ -141,8 +141,11 @@ public class XMLLogger {
 		if (amiFont == null) {
 			LOG.error(String.format("no AMIFont available for (%s,%s,%d)",
 					fontName, charName, charCode));
-		} else if (charName != null) {
-			String D = amiFont.getPathStringByCharnameMap().get(charName);
+		} else {
+			String key = charName;
+			if (key == null)
+				key = "" + charCode;
+			String D = amiFont.getPathStringByCharnameMap().get(key);
 			if (D != null)
 				character.appendChild(new SVGPath(D));
 		}

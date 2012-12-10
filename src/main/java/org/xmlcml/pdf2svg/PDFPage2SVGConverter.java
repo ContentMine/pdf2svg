@@ -289,10 +289,9 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 		LOG.trace("Fn: "+fontName+"; Ff: "+fontFamilyName+"; "+textContent+"; "+charCode+"; "+charname);
 		float width = getCharacterWidth(pdFont, textContent);
-		if (encoding instanceof DictionaryEncoding && fontFamilyName == null) {
-			captureAndIndexGlyphVector(textPosition);
-		}
-		
+
+		captureAndIndexGlyphVector(textPosition);
+
 		try {
 			svgText.setText(textContent);
 		} catch (RuntimeException e) {
@@ -362,7 +361,10 @@ xmlns="http://www.w3.org/2000/svg">
 	}
 
 	private void captureAndIndexGlyphVector(TextPosition text) {
-		String pathString = amiFont.getPathStringByCharnameMap().get(charname);
+		String key = charname;
+		if (key == null)
+			key = "" + charCode;
+		String pathString = amiFont.getPathStringByCharnameMap().get(key);
 		LOG.trace("charname: "+charname+" path: "+pathString);
 		if (pathString == null) {
 			ensurePageSize();
@@ -402,7 +404,7 @@ xmlns="http://www.w3.org/2000/svg">
 			}
 			pathString = graphics.getCurrentPathString();
 			LOG.trace(charname+": created "+pathString);
-			amiFont.getPathStringByCharnameMap().put(charname, pathString);
+			amiFont.getPathStringByCharnameMap().put(key, pathString);
 		}
 		LOG.trace("pathString: "+pathString);
 	}
