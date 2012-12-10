@@ -76,7 +76,7 @@ public class FontFamily {
 			}
 			fontFamily.name = fontFamilyElement.getAttributeValue(NAME);
 			if (fontFamily.name == null) {
-				throw new RuntimeException("<FontFamily> must have familyName attribute");
+				throw new RuntimeException("<fontFamily> must have name attribute");
 			}
 			fontFamily.fontType = fontFamilyElement.getAttributeValue(FONT_TYPE);
 			fontFamily.standardFont = fontFamilyElement.getAttributeValue(STANDARD_FONT);

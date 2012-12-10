@@ -32,7 +32,9 @@ e.g.
 
 the charname appears to take precedence over the charval
 -->
-<codePointSet encoding="MTMI">
+<codePointSet encoding="MTMI" default="Unicode">
+    <codePoint unicode="U+0394" decimal="7" unicodeName="GREEK CAPITAL LETTER DELTA" />
+    
     <codePoint unicode="U+0028" decimal="40" name="parenleft" font="MTMI"/>
     <codePoint unicode="U+0029" decimal="41" name="parenright" font="MTMI"/>
     <codePoint unicode="U+002E" decimal="46" name="period"  note="PERIOD"/>
@@ -41,7 +43,8 @@ the charname appears to take precedence over the charval
     <codePoint unicode="U+003E" decimal="62" name="greater"   note="GREATER-THAN SIGN"/>
     <codePoint unicode="U+274E" decimal="64" name="at"  note="partial derivative; find correct char"/>
     
-    <codePoint name="Delta1"  unicode="U+0394" decimal="5"    note="GREEK CAPITAL LETTER DELTA"/>
+    <codePoint name="Delta1"  unicode="U+0394" note="GREEK CAPITAL LETTER DELTA"/>
+    <codePoint name="delta1"  unicode="U+0394" note="GREEK CAPITAL LETTER DELTA"/>
 
 <!-- direct unicode equivalents? might guess most missing chars-->    
     <codePoint name="Theta1"  unicode="U+0398" decimal="0920" note="GREEK CAPITAL LETTER THETA"/>

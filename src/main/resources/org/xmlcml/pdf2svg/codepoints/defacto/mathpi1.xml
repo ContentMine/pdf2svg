@@ -19,8 +19,10 @@
     <!--  appear to be some simply names -->
 	<codePoint name="space" unicode="U+0020" unicodeName="SPACE"/>
 	
-	<codePoint name="H9251" unicode="U+03B1" unicodeName="GREEK LOWERCASE LETTER ALPHA"/>
-	<codePoint name="H9252" unicode="U+03B2" unicodeName="GREEK LOWERCASE LETTER BETA"/>
+	<codePoint name="H9004" unicode="U+0394" unicodeName="GREEK CAPITAL LETTER DELTA"/>
+	
+	<codePoint name="H9251" unicode="U+03B1" unicodeName="GREEK SMALL LETTER ALPHA"/>
+	<codePoint name="H9252" unicode="U+03B2" unicodeName="GREEK SMALL LETTER BETA"/>
 	<codePoint name="H9253" unicode="U+03B3" unicodeName="GREEK SMALL LETTER GAMMA"/>
 	<codePoint name="H9254" unicode="U+03B4" unicodeName="GREEK SMALL LETTER DELTA"/>
 	<codePoint name="H9255" unicode="U+03B5" unicodeName="GREEK SMALL LETTER EPSILON"/>
@@ -30,20 +32,26 @@
 	<codePoint name="H9259" unicode="U+03B9" unicodeName="GREEK SMALL LETTER IOTA"/>
 	<codePoint name="H9260" unicode="U+03BA" unicodeName="GREEK SMALL LETTER KAPPA"/>
 	<codePoint name="H9261" unicode="U+03BB" unicodeName="GREEK SMALL LETTER LAMBDA"/>
-	<codePoint name="H9262" unicode="U+03BC" unicodeName="GREEK LOWERCASE LETTER MU"/>
+	<codePoint name="H9262" unicode="U+03BC" unicodeName="GREEK SMALL LETTER MU"/>
+	<codePoint name="H9263" unicode="U+03BD" unicodeName="GREEK SMALL LETTER NU"/>
 	
-	<codePoint name="H11001" unicode="U+002B" decimal="43" unicodeName="PLUS"/>
-	<codePoint name="H11002" unicode="U+002D" decimal="45" unicodeName="MINUS"/>
-	<codePoint name="H11003" unicode="U+00D7" decimal="215" unicodeName="MULTIPLICATION SIGN"/> 
-	<codePoint name="H11005" unicode="U+003D" decimal="61" unicodeName="EQUALS"/> 
-	<codePoint name="H11011" unicode="U+007E" decimal="126" unicodeName="TILDE"/> 
-	<codePoint name="H11021" unicode="U+003C" decimal="60" unicodeName="LESS-THAN SIGN" htmlName="lt"/> 
-	<codePoint name="H11022" unicode="U+003E" decimal="62" unicodeName="GREATER-THAN SIGN" htmlName="gt"/> 
-	<codePoint name="H11032" unicode="U+0027" decimal="39" unicodeName="APOSTROPHE" htmlName="apos"/> 
-	<codePoint name="H11033" unicode="U+0022" decimal="34" unicodeName="QUOT" htmlName="quot"/> 
-	<codePoint name="H11034" unicode="U+00B0" decimal="176" unicodeName="DEGREE SIGN" htmlName="deg"/> 
+	<codePoint name="H9273" unicode="U+03C7" unicodeName="GREEK SMALL LETTER CHI"/>
+
+
 	
-	<codePoint name="H11554" unicode="U+00B7" decimal="183" unicodeName="MIDDLE DOT"/> 
+	<codePoint name="H11001" unicode="U+002B"  unicodeName="PLUS"/>
+	<codePoint name="H11002" unicode="U+002D"  unicodeName="MINUS"/>
+	<codePoint name="H11003" unicode="U+00D7"  unicodeName="MULTIPLICATION SIGN"/> 
+	<codePoint name="H11005" unicode="U+003D"  unicodeName="EQUALS"/> 
+	<codePoint name="H11006" unicode="U+00B1"  unicodeName="PLUS-MINUS SIGN"/> 
+	<codePoint name="H11011" unicode="U+007E"  unicodeName="TILDE"/> 
+	<codePoint name="H11021" unicode="U+003C"  unicodeName="LESS-THAN SIGN" htmlName="lt"/> 
+	<codePoint name="H11022" unicode="U+003E"  unicodeName="GREATER-THAN SIGN" htmlName="gt"/> 
+	<codePoint name="H11032" unicode="U+0027"  unicodeName="APOSTROPHE" htmlName="apos"/> 
+	<codePoint name="H11033" unicode="U+0022"  unicodeName="QUOT" htmlName="quot"/> 
+	<codePoint name="H11034" unicode="U+00B0"  unicodeName="DEGREE SIGN" htmlName="deg"/> 
+	
+	<codePoint name="H11554" unicode="U+00B7"  unicodeName="MIDDLE DOT"/> 
 	
 </codePointSet>
 		

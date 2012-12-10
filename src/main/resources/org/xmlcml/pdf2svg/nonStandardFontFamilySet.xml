@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <fontFamilySet name="nonStandard">
+
 	<fontFamily name="Arial" />
 	<fontFamily name="Avenir" />
 	<fontFamily name="Calibri" />
@@ -11,9 +12,6 @@
 	<fontFamily name="MyriadMM215LT700SE" />
 	<fontFamily name="MyriadMM565SB700SE" />
 	<fontFamily name="MyriadMM400RG700SE" />
-	
-	<fontFamily name="MSAM8" />
-	
 	<fontFamily name="OptimaItalic" />
 	<fontFamily name="Optima" />
 	<fontFamily name="OptimaBold" />
@@ -24,14 +22,24 @@
 	<fontFamily name="Times-Roman" />
 	<fontFamily name="Univers" />
 
-<!-- MathematicalPi fonts -->
+<!--  =================MathematicalPi================================= -->	
+	<fontFamily name="MathematicalPi-One-Italic" note="" symbol="true" italic="true"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi1.xml"/>
 	<fontFamily name="MathematicalPi-One" note="" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi1.xml"/>
 	<fontFamily name="Universal-GreekwithMathPi" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi1.xml"/>
+	<fontFamily name="MathematicalPi-Two"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi2.xml"/>
 	<fontFamily name="MathematicalPi-Three"
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi3.xml"/>
+	<fontFamily name="MathematicalPi-Four"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi4.xml"/>
+	<fontFamily name="MathematicalPi-Five"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi5.xml"/>
 
+
+<!--  ================== MATH TIME =================== -->	
 <!-- for MT (Y&Y) fonts see http://www.math.utah.edu/~beebe/fonts/y-and-y-fontnames.html#Y-and-Y-MathTime-1.1-fonts 
  Here are the 3 font names, in alphabetical order:
 
@@ -66,6 +74,8 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 
 	<fontFamily name="MTMI" symbol="true" italic="true"
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mtmi.xml" />
+	<fontFamily name="MTMIB" symbol="true" italic="true"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mtmi.xml" />
 	<fontFamily name="MTSY"
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mtsy.xml" />
 	<fontFamily name="MTEX" unicode="guessed" publishers=""/>
@@ -73,12 +83,30 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	<fontFamily name="MTGU" />
 	<fontFamily name="MTGUB" />
 	<fontFamily name="MTSYB" />
-	<fontFamily name="MTSYN" unicode="guessed"/>
+	
+	<!-- this is mainly Unicode so cannot be used for other codes till we fix that
+	
+	<fontFamily name="MTSYN"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mtsyn.xml" />
+ -->
+	<fontFamily name="MTSYN"/>
+
+<!--  =======================FONTS OF TEX / AMS (MSAM/MSBM)=========================== -->	
+	<!--  FONTS OF TEX / AMS (MSAM/MSBM) -->
+	<fontFamily name="MSAM6" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/msam6.xml" />
+	<fontFamily name="MSAM8" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/msam8.xml" />
+	<fontFamily name="MSAM9" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/msam9.xml" />
+	    
+<!--  ================================================== -->	
 	
 	<!-- 
 	<fontFamily name="Wingdings" />
 	<fontFamily name="Wingdings-Regular" />
 	-->
+<!--  ==================ADVPI fonts =========================== -->	
 	<!--  possible symbol fonts -->
 	<fontFamily name="AdvPi1" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi1.xml"/>
@@ -86,6 +114,8 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi1.xml"/>
 	<fontFamily name="AdvPi2" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi2.xml"/>
+
+<!--  ==================Adv misc =========================== -->	
 	
 	<fontFamily name="AdvP4C4E74" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvP4C4E74.xml"/>
@@ -95,6 +125,16 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvP4C4E46.xml"/>
 	<fontFamily name="AdvP697C" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvP4C4E74.xml"/>
+	<fontFamily name="AdvPSSym" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advPSSym.xml"/>
+	<fontFamily name="AdvP4C4E51" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvP4C4E51.xml"/>
+	<fontFamily name="AdvTTec1d2308I" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvTTec1d2308I.xml"/>
+	<fontFamily name="AdvPS4731B1" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvPS4731B1.xml"/>
+	    
+<!--  ==================AdvELS-ENT =========================== -->	
 	<fontFamily name="AdvEls-Ent1" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/advEnt1.xml"/>
 	<fontFamily name="AdvEls-ent2" symbol="true" 
@@ -111,14 +151,7 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/advEnt7.xml"/>
 	<fontFamily name="AdvEls-ent8" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/advEnt8.xml"/>
-	<fontFamily name="AdvPSSym" symbol="true" 
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advPSSym.xml"/>
-	<fontFamily name="AdvP4C4E51" symbol="true" 
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvP4C4E51.xml"/>
-	<fontFamily name="AdvTTec1d2308I" symbol="true" 
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvTTec1d2308I.xml"/>
-	<fontFamily name="AdvPS4731B1" symbol="true" 
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvPS4731B1.xml"/>
+	    
 
 	<fontFamily name="SymbolStd" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/csymbol.xml"/>

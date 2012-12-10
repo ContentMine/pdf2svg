@@ -15,11 +15,10 @@
     limitations under the License.
 
 -->
-<fontFamilySet>
-    <fontFamily name="Courier" type="PDType1Font" note="a standard14 fontFamily" serif="yes" unicode="yes"/>
-    <fontFamily name="Helvetica" type="PDType1Font"  note="a standard14 fontFamily" serif="no" unicode="yes"/>
-    <fontFamily name="TimesNewRoman" type="PDType1Font" note="a standard14 fontFamily" serif="yes" unicode="yes"/>
-    <fontFamily name="Symbol" type="PDType1Font" note="a standard14 fontFamily" symbol="yes"/>
-    <fontFamily name="ZapfDingbats" type="PDType1Font" note="a standard14 fontFamily" />
-</fontFamilySet>
+<codePointSet encoding="MathematicalPI">
+	<codePoint name="H11541" unicode="U+2032" unicodeName="PRIME"/> 
+	<codePoint name="H11542" unicode="U+2033" unicodeName="DOUBLE PRIME"/> 
+	<codePoint name="H11546" unicode="U+2014" unicodeName="EM DASH"/> 
+	
+</codePointSet>
 		

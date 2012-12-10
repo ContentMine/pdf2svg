@@ -84,6 +84,7 @@
     <codePoint unicode="U+007B" adobePoint="7B" unicodeName="LEFT CURLY BRACKET" name="braceleft"/>
     <codePoint unicode="U+007C" adobePoint="7C" unicodeName="VERTICAL LINE" name="bar"/>
     <codePoint unicode="U+007D" adobePoint="7D" unicodeName="RIGHT CURLY BRACKET" name="braceright"/>
+    <codePoint unicode="U+007E" adobePoint="7E" unicodeName="TILDE" name="tilde"/>
 <!-- non-printing chars 0080-009F omitted -->
     <codePoint unicode="U+00A0" adobePoint="20" unicodeName="NO-BREAK SPACE" name="space"/>
     <codePoint unicode="U+00A1" unicodeName="INVERTED EXCLAMATION MARK" name=""/>
@@ -188,6 +189,7 @@
 <!--  02xx -->    
     <codePoint unicode="U+02C6" unicodeName="MODIFIER LETTER CIRCUMFLEX ACCENT"  name=""/>
     <codePoint unicode="U+02C7" unicodeName="CARON" note="probaby used as combining character ? use U+030C?" name=""/>
+    <codePoint unicode="U+02D9" unicodeName="DOT ABOVE" name=""/>
     <codePoint unicode="U+02DA" unicodeName="RING ABOVE" name=""/>
     <codePoint unicode="U+02DC" unicodeName="SMALL TILDE" name=""/>
     
@@ -243,6 +245,7 @@
     <codePoint unicode="U+03C7" unicodeName="GREEK SMALL LETTER CHI"  name="chi"/>
     <codePoint unicode="U+03C8" unicodeName="GREEK SMALL LETTER PSI"  name="psi"/>
     <codePoint unicode="U+03C9" unicodeName="GREEK SMALL LETTER OMEGA"  name="omega"/>
+    <codePoint unicode="U+03D5" unicodeName="GREEK PHI SYMBOL"  name=""/>
 
 <!-- 1xxx -->    
 
@@ -288,6 +291,7 @@
 <codePoint unicode="U+21BE" decimal="8638" unicodeName="UPWARDS HARPOON WITH BARB RIGHTWARDS"  name=""/>
 <codePoint unicode="U+21BF" decimal="8639" unicodeName="UPWARDS HARPOON WITH BARB LEFTWARDS"  name=""/>
 <codePoint unicode="U+21C0" decimal="8640" unicodeName="RIGHTWARDS HARPOON WITH BARB UPWARDS"  name=""/>
+<codePoint unicode="U+21CC"  unicodeName="RIGHTWARDS HARPOON OVER LEFTWARDS HARPOON"  name=""/>
 
 <codePoint unicode="U+21D0" adobePoint="DC" unicodeName="LEFTWARDS DOUBLE ARROW" name="arrowdblleft" />
 <codePoint unicode="U+21D1" adobePoint="DD" unicodeName="UPWARDS DOUBLE ARROW" name="arrowdblup" />
@@ -342,6 +346,9 @@
 <codePoint unicode="U+22A5" adobePoint="5E" unicodeName="UP TACK" name="perpendicular" />
 <codePoint unicode="U+22C5" adobePoint="D7" unicodeName="DOT OPERATOR" name="dotmath" />
 
+<codePoint unicode="U+22EF" unicodeName="MIDLINE HORIZONTAL ELLIPSIS" name="" />
+	
+
 <!--  23xx -->
 <codePoint unicode="U+2320" adobePoint="F3" unicodeName="TOP HALF INTEGRAL" name="integraltp" />
 <codePoint unicode="U+2321" adobePoint="F5" unicodeName="BOTTOM HALF INTEGRAL" name="integralbt" />
@@ -368,10 +375,8 @@
     <codePoint unicode="U+25E6" unicodeName="WHITE BULLET"
         note="probably for lists and graph symbols" confusions="ring operator U+2218 inverse bullet U+25D8"  name=""/>
 
-<!--         
--->
-<!-- these may be errors -->    
     <codePoint unicode="U+25AA" unicodeName="BLACK SMALL SQUARE" name=""/>
+    <codePoint unicode="U+25B2" unicodeName="BLACK UP-POINTING TRIANGLE" name=""/>
     <codePoint unicode="U+25B8" unicodeName="BLACK RIGHT-POINTING SMALL TRIANGLE" name=""/>
     <codePoint unicode="U+25CA" adobePoint="E0" unicodeName="LOZENGE" name="lozenge"/>
         

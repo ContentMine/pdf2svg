@@ -44,8 +44,7 @@ public class AMIFontManager {
 
 	private final static Logger LOG = Logger.getLogger(AMIFontManager.class);
 
-	private static final String AMI_FONT_BY_FAMILY_XML = PConstants.PDF2SVG_ROOT+"/"+"amiFontByFamily.xml";
-
+	
 	public static final String FONT_TRUE_TYPE = "TrueType";
 	public static final String FONT_TYPE1 = "Type1";
 	public static final String FONT_TYPE0 = "Type0";
@@ -60,12 +59,12 @@ public class AMIFontManager {
 	public static final String CHARNAME = "charname";
 	public static final String CODEPOINT = "codepoint";
 
-	private static final String FAMILY = "family";
+	private static final String NAME = "name";
 	private static final String FONT_ENCODING = "fontEncoding";
 	private static final String FONTS = "fonts";
 	private static final String FONT = "font";
 	private static final String IS_SYMBOL = "isSymbol";
-	private static final String FONT_TYPE = "fontType";
+	private static final String TYPE = "type";
 
 	private Map<String, AMIFont> amiFontByFontNameMap;
 	private FontFamilySet standardFontFamilySet;
@@ -246,7 +245,7 @@ public class AMIFontManager {
 	}
 
 	public static Map<String, AMIFont> readAmiFonts() {
-		return readAmiFonts(AMI_FONT_BY_FAMILY_XML);
+		return readAmiFonts(FontFamilySet.STANDARD_FONT_FAMILY_SET_XML);
 	}
 
 	public static Map<String, AMIFont> readAmiFonts(String resourceName) {
@@ -256,14 +255,14 @@ public class AMIFontManager {
 			Element amiFontList = new Builder().build(is).getRootElement();
 			for (int i = 0; i < amiFontList.getChildElements().size(); i++) {
 				Element amiFontElement = amiFontList.getChildElements().get(i);
-				String familyName = amiFontElement.getAttributeValue(FAMILY);
+				String familyName = amiFontElement.getAttributeValue(NAME);
 				String encoding = amiFontElement.getAttributeValue(FONT_ENCODING); 
-				String type = amiFontElement.getAttributeValue(FONT_TYPE);
+				String type = amiFontElement.getAttributeValue(TYPE);
 				if (
 						familyName == null 
 //						|| encoding == null 
 						|| type == null) {
-					throw new RuntimeException("Must have family, encoding and type for font");
+					throw new RuntimeException("Must have family and type for font");
 				}
 				if (fontMap.get(familyName) != null) {
 					throw new RuntimeException("AMIFont map ("+resourceName+") already contains family: "+familyName);
@@ -287,12 +286,12 @@ public class AMIFontManager {
 			AMIFont amiFont = fontMap.get(family);
 			Element font = new Element(FONT);
 			fontList.appendChild(font);
-			font.addAttribute(new Attribute(FAMILY, family));
+			font.addAttribute(new Attribute(NAME, family));
 			String encoding = amiFont.getFontEncoding();
 			if (encoding != null) {
 				font.addAttribute(new Attribute(FONT_ENCODING, encoding));
 			}
-			font.addAttribute(new Attribute(FONT_TYPE, amiFont.getFontType()));
+			font.addAttribute(new Attribute(TYPE, amiFont.getFontType()));
 			Boolean isSymbol = amiFont.isSymbol();
 			if (isSymbol != null) {
 				font.addAttribute(new Attribute(IS_SYMBOL, isSymbol.toString()));
