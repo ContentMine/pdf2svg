@@ -348,6 +348,20 @@
 <codePoint unicode="U+2329" adobePoint="E1" unicodeName="LEFT-POINTING ANGLE BRACKET" name="angleleft" />
 <codePoint unicode="U+232A" adobePoint="F1" unicodeName="RIGHT-POINTING ANGLE BRACKET" name="angleright" />
 
+	<codePoint unicode="U+239B" unicodeName="LEFT PARENTHESIS UPPER HOOK" name=""/>
+    <codePoint unicode="U+239C" unicodeName="LEFT PARENTHESIS EXTENSION" name=""/>
+    <codePoint unicode="U+239D" unicodeName="LEFT PARENTHESIS LOWER HOOK" name=""/>
+    <codePoint unicode="U+239E" unicodeName="RIGHT PARENTHESIS UPPER HOOK" name=""/>
+    <codePoint unicode="U+239F" unicodeName="RIGHT PARENTHESIS EXTENSION" name=""/>
+    <codePoint unicode="U+23A0" unicodeName="RIGHT PARENTHESIS LOWER HOOK" name=""/>
+
+    <codePoint unicode="U+23A1" unicodeName="RIGHT SQUARE BRACKET UPPER CORNER" name=""/>
+    <codePoint unicode="U+23A2" unicodeName="RIGHT SQUARE BRACKET EXTENSION" name=""/>
+    <codePoint unicode="U+23A3" unicodeName="RIGHT SQUARE BRACKET LOWER CORNER" name=""/>
+    <codePoint unicode="U+23A4" unicodeName="RIGHT SQUARE BRACKET UPPER CORNER" name=""/>
+    <codePoint unicode="U+23A5" unicodeName="RIGHT SQUARE BRACKET EXTENSION" name=""/>
+    <codePoint unicode="U+23A6" unicodeName="RIGHT SQUARE BRACKET LOWER CORNER" name=""/>
+
 <!--  25xx -->        
     <codePoint unicode="U+25A0" unicodeName="BLACK SQUARE"
         note="probably for lists and graph symbols"  name=""/>
@@ -388,6 +402,7 @@
  -->
 
 <!--  f8xx -->    
+<!-- I think these are all Adobe extensions -->
 <codePoint unicode="U+F8E5" adobePoint="60" unicodeName="RADICAL EXTENDER" name="radicalex (CUS)" />
 <codePoint unicode="U+F8E6" adobePoint="BD" unicodeName="VERTICAL ARROW EXTENDER" name="arrowvertex (CUS)" />
 <codePoint unicode="U+F8E7" adobePoint="BE" unicodeName="HORIZONTAL ARROW EXTENDER" name="arrowhorizex (CUS)" />

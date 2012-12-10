@@ -18,8 +18,10 @@
 -->
 <codePointSet encoding="MTSY">
 <!-- assume >=32 == Unicode??? -->
-    <codePoint unicode="U+007C" decimal="124" name="bar" note="bar"/>
+    <!-- only non-Unicode? -->
     <codePoint unicode="U+00D7" decimal="2"   name="multiply" note="multiply"/>
+    
+    <codePoint unicode="U+007C" decimal="124" name="bar" note="bar"/>
     <codePoint unicode="U+00D7" decimal="215" name="multiply" note="multiply"/>
     <codePoint unicode="U+00D7" decimal="175" name="macron" />
     <codePoint unicode="U+2245" decimal="25"  note="approximately equal to"/>

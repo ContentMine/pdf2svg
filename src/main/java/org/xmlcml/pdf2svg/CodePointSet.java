@@ -37,12 +37,12 @@ import org.xmlcml.pdf2svg.util.PConstants;
  * @author pm286
  *
  */
-public class CodePointSet {
+public class CodePointSet extends Element {
 
 	private final static Logger LOG = Logger.getLogger(CodePointSet.class);
 	
 	public static final String UNICODE = "Unicode";
-	public static final String CODE_POINT_SET = "codePointSet";
+	public static final String TAG = "codePointSet";
 //	public static final String KNOWN_HIGH_CODE_POINT_SET_XML = PConstants.PDF2SVG_ROOT+"/"+"highCodePoints.xml";
 	public static final String KNOWN_HIGH_CODE_POINT_SET_XML = PConstants.PDF2SVG_ROOT+"/"+"unicode.xml";
 	public static final String ENCODING = "encoding";
@@ -55,6 +55,7 @@ public class CodePointSet {
 	private String encoding = null;
 
 	public CodePointSet() {
+		super(TAG);
 		ensureMaps();
 	}
 
@@ -83,12 +84,12 @@ public class CodePointSet {
 
 	public static CodePointSet createFromElement(Element codePointSetElement) {
 		CodePointSet codePointSet = new CodePointSet();
-		if (!(CODE_POINT_SET.equals(codePointSetElement.getLocalName()))) {
-			throw new RuntimeException("CodePointSet must have rootElement: "+CODE_POINT_SET);
+		if (!(TAG.equals(codePointSetElement.getLocalName()))) {
+			throw new RuntimeException("CodePointSet must have rootElement: "+TAG);
 		}
 		codePointSet.encoding = codePointSetElement.getAttributeValue(ENCODING);
 		if (codePointSet.encoding == null) {
-			throw new RuntimeException("Must give encoding on: "+CODE_POINT_SET);
+			throw new RuntimeException("Must give encoding on: "+TAG);
 		}
 		Elements childElements = codePointSetElement.getChildElements();
 		for (int i = 0; i < childElements.size(); i++) {
@@ -118,7 +119,7 @@ public class CodePointSet {
 	}
 	
 	public Element createElementWithSortedIntegers() {
-		Element codePointsElement = new Element(CODE_POINT_SET);
+		Element codePointsElement = new Element(TAG);
 		Integer[] codePointIntegers = codePointByDecimalMap.keySet().toArray(new Integer[0]);
 		Arrays.sort(codePointIntegers);
 		for (Integer codePointInteger : codePointIntegers) {

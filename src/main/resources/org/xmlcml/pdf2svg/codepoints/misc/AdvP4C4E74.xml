@@ -50,7 +50,6 @@
 	<codePoint name="C24" unicode="U+00BB"  unicodeName="RIGHT-POINTING DOUBLE ANGLE QUOTATION MARK" />  
 	<codePoint name="C26" unicode="U+007B"  unicodeName="LEFT CURLY BRACKET"/> 
 	<codePoint name="C27" unicode="U+007D"  unicodeName="RIGHT CURLY BRACKET"/>  
-<!--  	<codePoint name="C138" unicode="U+002F" d" unicodeName="SOLIDUS" />  -->
 	<codePoint name="C138" unicode="U+005D" unicodeName="RIGHT SQUARE BRACKET" />  
 	<codePoint name="C210" unicode="U+00AE" unicodeName="REGISTERED SIGN"/> 
 	<codePoint name="C211" unicode="U+00A9" unicodeName="COPYRIGHT SIGN"/> 

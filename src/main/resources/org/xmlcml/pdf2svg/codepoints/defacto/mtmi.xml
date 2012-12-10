@@ -16,6 +16,15 @@
     limitations under the License.
 
 -->
+<!-- 
+from http://www.tug.org/pipermail/tex-live/2011-June/029475.html
+
+[MTMI] doesn't exist : "the font MTMI is a virtual one, combining characters
+ from Times Italic with additional characters (such as an italic
+ letter v looking less like the Greek letter nu) contained in a font
+ RMTMI."
+ 
+ -->
 <!-- appears that names take priority over charvals 
 e.g. 
 <character charval="5" charname="Delta1" font="MTMI"/> 
@@ -33,7 +42,8 @@ the charname appears to take precedence over the charval
     <codePoint unicode="U+274E" decimal="64" name="at"  note="partial derivative; find correct char"/>
     
     <codePoint name="Delta1"  unicode="U+0394" decimal="5"    note="GREEK CAPITAL LETTER DELTA"/>
-    
+
+<!-- direct unicode equivalents? might guess most missing chars-->    
     <codePoint name="Theta1"  unicode="U+0398" decimal="0920" note="GREEK CAPITAL LETTER THETA"/>
     <codePoint name="Phi1"    unicode="U+03A6" decimal="0934" note="GREEK SMALL LETTER PHI"/>
     <codePoint name="alpha"   unicode="U+03B1" decimal="0945" note="GREEK SMALL LETTER ALPHA"/>
@@ -59,7 +69,7 @@ the charname appears to take precedence over the charval
     <codePoint name="chi"     unicode="U+03C8" decimal="0968" note="GREEK SMALL LETTER CHI"/>
     <codePoint name="omega"   unicode="U+03C9" decimal="0969" note="GREEK SMALL LETTER OMEGA"/>
     
-    <codePoint name="left-reverse-eq"   unicode="U+21BD" decimal="8637" note="LEFTWARDS HARPOON WITH BARB DOWNWARDS"/>
-    <codePoint name="right-reverse-eq"   unicode="U+21C0" decimal="8640" note="RIGHTWARDS HARPOON WITH BARB UPWARDS"/>
+    <codePoint unicode="U+21BD" decimal="8637" note="LEFTWARDS HARPOON WITH BARB DOWNWARDS"/>
+    <codePoint unicode="U+21C0" decimal="8640" note="RIGHTWARDS HARPOON WITH BARB UPWARDS"/>
 
 </codePointSet>

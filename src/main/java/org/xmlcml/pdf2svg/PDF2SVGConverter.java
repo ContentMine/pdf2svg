@@ -112,6 +112,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 	private void openPDFFile(File file) throws Exception {
 
+		svgPageList = null;
 		page2svgConverter = new PDFPage2SVGConverter();
 		LOG.debug("Parsing PDF file "+ file.getAbsolutePath());
 		readDocument(file, useNonSeqParser, PDFpassword);
@@ -163,6 +164,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			reportPublisher();
 		}
 
+		document.close();
 	}
 
 	private void addPageToPageList() {

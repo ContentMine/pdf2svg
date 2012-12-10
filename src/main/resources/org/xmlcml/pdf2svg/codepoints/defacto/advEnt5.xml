@@ -16,7 +16,7 @@
 
 -->
 <codePointSet encoding="AdvEnt5">
-    <codePoint unicode="U+274E" decimal="78" unicodeName="UNK" />
-    <codePoint unicode="U+00B0" decimal="49" unicodeName="DEGREE SIGN" />
-    <codePoint unicode="U+2026" decimal="121" unicodeName="HORIZONTAL ELLIPSIS" />
+    <codePoint decimal="49"  unicode="U+00B0" unicodeName="DEGREE SIGN" />
+    <codePoint decimal="78"  unicode="U+274E" unicodeName="UNK" />
+    <codePoint decimal="121" unicode="U+2026" unicodeName="HORIZONTAL ELLIPSIS" />
 </codePointSet>

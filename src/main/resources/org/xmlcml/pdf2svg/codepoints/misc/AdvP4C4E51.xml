@@ -18,10 +18,14 @@
 <codePointSet encoding="AdvP4C4E51"> 
 
 <!-- is this right? -->
-	<codePoint name="colon" unicode="U+002E" unicodeName="PERIOD"/>  
-	<codePoint decimal="58" unicode="U+003A" unicodeName="FULL STOP"/>  
-	<codePoint decimal="61" unicode="U+002F" unicodeName="SOLIDUS"/>  
-	<codePoint decimal="60" unicode="U+274E" unicodeName="UNK"/>  
 
+	<codePoint name="colon" decimal="58" unicode="U+003A" unicodeName="FULL STOP"/>  
+	<codePoint name="semicolon" decimal="59" unicode="U+002C" unicodeName="COMMA"/>  
+	<codePoint name="slash" decimal="61" unicode="U+002F" unicodeName="SOLIDUS"/>  
+	<codePoint name="less" decimal="60" unicode="U+274E" unicodeName="UNK"/>  
+    <codePoint name="equal" unicode="U+002F" unicodeName="SOLIDUS"/>
+
+	<codePoint name="C18" unicode="U+03B8" unicodeName="GREEK SMALL LETTER THETA"/>
+	
 </codePointSet>
 		

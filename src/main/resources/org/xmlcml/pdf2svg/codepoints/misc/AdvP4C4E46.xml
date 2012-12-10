@@ -16,15 +16,39 @@
 
 -->
 <codePointSet encoding="AdvP4C4E46"> 
+
+	<codePoint name="zero" unicode="U+239B" unicodeName="LEFT PARENTHESIS UPPER HOOK" />
+    <codePoint name="B" unicode="U+239C" unicodeName="LEFT PARENTHESIS EXTENSION"/>
+    <codePoint name="at" unicode="U+239D" unicodeName="LEFT PARENTHESIS LOWER HOOK"/>
+    <codePoint name="one" unicode="U+239E" unicodeName="RIGHT PARENTHESIS UPPER HOOK" />
+    <codePoint name="C" unicode="U+239F" unicodeName="RIGHT PARENTHESIS EXTENSION" />
+    <codePoint name="A" unicode="U+23A0" unicodeName="RIGHT PARENTHESIS LOWER HOOK" />
+    <codePoint name="s" unicode="U+221A" unicodeName="SQUARE ROOT" />
+
+    <codePoint unicode="U+23A1" unicodeName="RIGHT SQUARE BRACKET UPPER CORNER" name="two"/>
+    <codePoint unicode="U+23A2" unicodeName="RIGHT SQUARE BRACKET EXTENSION" name="six"/>
+    <codePoint unicode="U+23A3" unicodeName="RIGHT SQUARE BRACKET LOWER CORNER" name="four"/>
+    <codePoint unicode="U+23A4" unicodeName="RIGHT SQUARE BRACKET UPPER CORNER" name="three"/>
+    <codePoint unicode="U+23A5" unicodeName="RIGHT SQUARE BRACKET EXTENSION" name="seven"/>
+    <codePoint unicode="U+23A6" unicodeName="RIGHT SQUARE BRACKET LOWER CORNER" name="five"/>
+<!--  this seems to be an extended SQRT without clear unicode mapping 
+      this hack may be the best we can do -->    
+    <codePoint unicode="U+23A1" unicodeName="RIGHT SQUARE BRACKET UPPER CORNER" name="v"/>
+    <codePoint unicode="U+23A2" unicodeName="RIGHT SQUARE BRACKET EXTENSION" name="u"/>
+    <codePoint name="t" unicode="U+221A" unicodeName="SQUARE ROOT" />
+
+
+	<codePoint decimal="80" unicode="U+2211" unicodeName="N-ARY SUMMATION"/>  
 	
-	<codePoint decimal="88" unicode="U+274E" unicodeName="UNK"/>  
-	<codePoint decimal="113" unicode="U+274E" unicodeName="UNK"/>  
-	<codePoint decimal="64259" unicode="U+274E" unicodeName="UNK"/>  
+	<codePoint decimal="64259" unicode="U+00AF" unicodeName="MACRON"/>  
 	
 	<codePoint name="C2" unicode="U+005B" unicodeName="LEFT SQUARE BRACKET"/>  
 	<codePoint name="C3" unicode="U+005D" unicodeName="RIGHT SQUARE BRACKET"/>  
 
 	<codePoint name="C16" unicode="U+0028" unicodeName="LEFT BRACKET"/>  
-	<codePoint name="C17" unicode="U+0029" unicodeName="RIGHT BRACKET"/>  
+	<codePoint name="C17" unicode="U+0029" unicodeName="RIGHT BRACKET"/>
+	  
+	<codePoint name="C18" unicode="U+0028" unicodeName="LEFT BRACKET"/>  <!--  larger size -->
+	<codePoint name="C19" unicode="U+0029" unicodeName="RIGHT BRACKET"/> <!--  larger size --> 
 </codePointSet>
 		

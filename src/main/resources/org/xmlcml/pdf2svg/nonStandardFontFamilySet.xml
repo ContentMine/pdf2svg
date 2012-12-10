@@ -8,10 +8,6 @@
 	<fontFamily name="FrutigerBold" />
 	<fontFamily name="FrutigerLTStdBold" />
 	<fontFamily name="FrutigerLTStd-Roman"/>
-	<fontFamily name="MathematicalPi-One" note="" symbol="true" 
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi2unicode.xml"/>
-	<fontFamily name="MathematicalPi-Three"
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi3.xml"/>
 	<fontFamily name="MyriadMM215LT700SE" />
 	<fontFamily name="MyriadMM565SB700SE" />
 	<fontFamily name="MyriadMM400RG700SE" />
@@ -27,6 +23,14 @@
 	<fontFamily name="TimesNRMT" />
 	<fontFamily name="Times-Roman" />
 	<fontFamily name="Univers" />
+
+<!-- MathematicalPi fonts -->
+	<fontFamily name="MathematicalPi-One" note="" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi1.xml"/>
+	<fontFamily name="Universal-GreekwithMathPi" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi1.xml"/>
+	<fontFamily name="MathematicalPi-Three"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi3.xml"/>
 
 <!-- for MT (Y&Y) fonts see http://www.math.utah.edu/~beebe/fonts/y-and-y-fontnames.html#Y-and-Y-MathTime-1.1-fonts 
  Here are the 3 font names, in alphabetical order:
@@ -76,10 +80,12 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	<fontFamily name="Wingdings-Regular" />
 	-->
 	<!--  possible symbol fonts -->
-	<fontFamily name="AdvPi1" symbol="true" codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi1.xml"/>
+	<fontFamily name="AdvPi1" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi1.xml"/>
 	<fontFamily name="AdvMPi-One" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi1.xml"/>
-	<fontFamily name="AdvPi2" symbol="true" codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi2.xml"/>
+	<fontFamily name="AdvPi2" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi2.xml"/>
 	
 	<fontFamily name="AdvP4C4E74" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvP4C4E74.xml"/>
@@ -114,8 +120,18 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	<fontFamily name="AdvPS4731B1" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvPS4731B1.xml"/>
 
+	<fontFamily name="SymbolStd" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/csymbol.xml"/>
+	<fontFamily name="AdvT897" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/csymbol.xml"/>
+
+
 	<fontFamily name="Wingdings" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/wingdings.xml"/>
+
+<!-- uses Cddd codepoints -->
+	<fontFamily name="AdvMacMthSyN" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/csymbol.xml"/>
 
     <!-- ligatures -->
 	<fontFamily name="AdvOT863180fb" symbol="false" />
@@ -181,8 +197,6 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 
 	<fontFamily name="TimesItalic" />
 	<fontFamily name="Universal-NewswithCommPi" />
-	<fontFamily name="Universal-GreekwithMathPi" 
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi2unicode.xml"/>
 
 
 	<fontFamily name="TimesTenGreekInclined" />
@@ -288,8 +302,6 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	<fontFamily name="AdvP4DF614" />
 	<fontFamily name="AdvMacT_R" />
 	<fontFamily name="AdvUnivers" />
-	<fontFamily name="AdvMacMthSyN" 
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/csymbol2Unicode.xml"/>
 	<fontFamily name="AdvP4DF60E" />
 	<fontFamily name="AdvP4DF60F" />
 	<fontFamily name="AdvGulliver-SCO" />

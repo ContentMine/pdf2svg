@@ -20,12 +20,13 @@ import nu.xom.Element;
 
 import org.apache.log4j.Logger;
 
-public class CodePoint {
+public class CodePoint extends Element {
 
 	private final static Logger LOG = Logger.getLogger(CodePoint.class);
 	
 	// XML
-	private static final String CODE_POINT = "codePoint";
+	private static final String TAG = "codePoint";
+	
 	private static final String DECIMAL = "decimal";
 	private static final String NAME = "name";
 	private static final String NOTE = "note";
@@ -34,13 +35,13 @@ public class CodePoint {
 	private static final String UNICODE = "unicode";
 	private static final String UNICODE_NAME = "unicodeName";
 	
-	private Integer decimal;    // this is often NOT the unicode value
+	private Integer nonUnicodeDecimal; // may or may not be the decimal equivalent of unicode    
 	private String name;        // a mnemonic (origin unspecified , ?Adobe, ?HTML-ent
 	private String note;        // some explanatory or other note
 	private UnicodePoint unicodePoint; 
 	
 	public CodePoint() {
-		
+		super(TAG);
 	}
 
 	/** codePoint when we don't know the Unicode
@@ -49,7 +50,8 @@ public class CodePoint {
 	 * @param charname
 	 */
 	public CodePoint(Integer charCode, String charname) {
-		this.decimal = charCode;
+		this();
+		this.nonUnicodeDecimal = charCode;
 		this.name = charname;
 		this.unicodePoint = UnicodePoint.UNKNOWN;
 	}
@@ -58,7 +60,7 @@ public class CodePoint {
 		CodePoint codePoint = null;
 		try {
 			codePoint = new CodePoint();
-			if (!(CODE_POINT.equals(codePointElement.getLocalName()))) {
+			if (!(TAG.equals(codePointElement.getLocalName()))) {
 				throw new RuntimeException("CodePointSet children must be <codePoint>");
 			}
 			String decimalS = codePointElement.getAttributeValue(DECIMAL);
@@ -67,7 +69,7 @@ public class CodePoint {
 				throw new RuntimeException("<codePoint> must have decimal attribute and/or name");
 			}
 			if (decimalS != null) {
-				codePoint.decimal = new Integer(decimalS); 
+				codePoint.nonUnicodeDecimal = new Integer(decimalS); 
 			}
 			codePoint.unicodePoint = UnicodePoint.createUnicodeValue(codePointElement.getAttributeValue(UNICODE));
 			if (codePoint.unicodePoint == null) {
@@ -85,16 +87,16 @@ public class CodePoint {
 	}
 
 	public Element createElement() {
-		Element codePointElement = new Element(CODE_POINT);
+		Element codePointElement = new Element(TAG);
 		if (unicodePoint == null) {
 			throw new RuntimeException("unicode must not be null");
 		}
 		codePointElement.addAttribute(new Attribute(UNICODE, unicodePoint.getUnicodeValue()));
-		if (decimal == null && name == null) {
+		if (nonUnicodeDecimal == null && name == null) {
 			throw new RuntimeException("decimal and name must not both be null");
 		}
-		if (decimal != null) {
-			codePointElement.addAttribute(new Attribute(DECIMAL, ""+decimal));
+		if (nonUnicodeDecimal != null) {
+			codePointElement.addAttribute(new Attribute(DECIMAL, ""+nonUnicodeDecimal));
 		}
 		if (name != null) {
 			codePointElement.addAttribute(new Attribute(NAME, name));
@@ -121,7 +123,7 @@ public class CodePoint {
 	}
 
 	public Integer getDecimal() {
-		return decimal;
+		return nonUnicodeDecimal;
 	}
 
 	public Integer getUnicodeDecimal() {
@@ -130,7 +132,7 @@ public class CodePoint {
 
 	public String toString() {
 		return "\n"+
-		"decimal: "+decimal+"\n" +
+		"decimal: "+nonUnicodeDecimal+"\n" +
 		"name: "+name+"\n" +
 		"note: "+note+"\n" +
 		"unicode: "+unicodePoint+"\n";
