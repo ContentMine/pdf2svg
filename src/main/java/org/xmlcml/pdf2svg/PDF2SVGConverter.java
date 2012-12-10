@@ -113,8 +113,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private void openPDFFile(File file) throws Exception {
 
 		page2svgConverter = new PDFPage2SVGConverter();
-		if (!useXMLLogger)
-			LOG.debug("Parsing PDF file "+ file.getAbsolutePath());
+		LOG.debug("Parsing PDF file "+ file.getAbsolutePath());
 		readDocument(file, useNonSeqParser, PDFpassword);
 
 		@SuppressWarnings("unchecked")
@@ -129,8 +128,8 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 		if (useXMLLogger)
 			xmlLogger.newPDFFile(file.getAbsolutePath(), pages.size());
-		else
-			LOG.debug("Processing pages "+pr.toString()+" (of "+pages.size()+")"); 
+
+		LOG.debug("Processing pages "+pr.toString()+" (of "+pages.size()+")"); 
 
 		String basename = file.getName().toLowerCase();
 		if (basename.endsWith(PDF))
@@ -143,8 +142,9 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 			if (useXMLLogger)
 				xmlLogger.newPDFPage(pageNumber);
-			else
-				LOG.debug("=== " + pageNumber + " ===");
+
+			LOG.debug("=== " + pageNumber + " ===");
+
 			currentSVGPage = page2svgConverter.convertPageToSVG(page, this);
 
 			addPageToPageList();

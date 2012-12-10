@@ -351,7 +351,7 @@ xmlns="http://www.w3.org/2000/svg">
 				//or add Bad Character Glyph
 				int ch = (int) textContent.charAt(0);
 				if (pdf2svgConverter.useXMLLogger)
-					pdf2svgConverter.xmlLogger.newCharacter(fontFamilyName, charname, ch);
+					pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, ch);
 				else
 					LOG.error("Cannot convert character: "+textContent+" char: "+ch+" charname: "+charname+" fn: "+fontFamilyName);
 				textContent = ""+AMIFontManager.getUnknownCharacterSymbol()+ch;
@@ -452,30 +452,30 @@ xmlns="http://www.w3.org/2000/svg">
 		svgText.format(nPlaces);
 	}
 
-	private void processDictionaryEncoding(int charCode, SVGText svgText) {
-		LOG.trace("DICT_ENCODE "+fontName+" / "+fontFamilyName+" / "+fontSubType+" / "+charCode+" / "+charname);
-		Integer charCodeNew = fontFamily.convertSymbol2UnicodePoint(charname);
+//	private void processDictionaryEncoding(int charCode, SVGText svgText) {
+//		LOG.trace("DICT_ENCODE "+fontName+" / "+fontFamilyName+" / "+fontSubType+" / "+charCode+" / "+charname);
+//		Integer charCodeNew = fontFamily.convertSymbol2UnicodePoint(charname);
 //		if (charCodeNew == null) {
 //			charCodeNew = convertCharacterHack(charCode, svgText, "DICT_ENCODE");
 //		}
-		if (charCodeNew != null) {
-			if (charCodeNew != charCode) {
-				LOG.warn("Inconsistent charCodes (orig: "+charCode+"("+(char)charCode+"); new "+charCodeNew+"("+(char)(int)charCodeNew+");) for charname "+charname+"; taking old: ");
-				charCodeNew = charCode;
-			}
-			addCharacterData(charCode, svgText, charCodeNew);
-		} else {
-			LOG.error("Cannot find character in dictionary font ("+fontName+"): "+charname+" / "+charCode);
-		}
-	}
+//		if (charCodeNew != null) {
+//			if (charCodeNew != charCode) {
+//				LOG.warn("Inconsistent charCodes (orig: "+charCode+"("+(char)charCode+"); new "+charCodeNew+"("+(char)(int)charCodeNew+");) for charname "+charname+"; taking old: ");
+//				charCodeNew = charCode;
+//			}
+//			addCharacterData(charCode, svgText, charCodeNew);
+//		} else {
+//			LOG.error("Cannot find character in dictionary font ("+fontName+"): "+charname+" / "+charCode);
+//		}
+//	}
 
-	private void addCharacterData(int charCode, SVGText svgText, Integer charCodeNew) {
-		if (textContent.length() == 1) {
-			textContent = ""+(char)(int)charCodeNew;
-		}
-		annotateContent(svgText, textContent, charCode, charname, charCodeNew, encoding);
-		LOG.trace("charname: "+charname+" charCode: "+charCodeNew+" textContent: "+textContent);
-	}
+//	private void addCharacterData(int charCode, SVGText svgText, Integer charCodeNew) {
+//		if (textContent.length() == 1) {
+//			textContent = ""+(char)(int)charCodeNew;
+//		}
+//		annotateContent(svgText, textContent, charCode, charname, charCodeNew, encoding);
+//		LOG.trace("charname: "+charname+" charCode: "+charCodeNew+" textContent: "+textContent);
+//	}
 
 //	private Integer convertCharacterHack(Integer charCode, SVGText svgText, String title) {
 //		Integer charCodeNew = null;
@@ -523,7 +523,7 @@ xmlns="http://www.w3.org/2000/svg">
 			svgText.setText(unicodeContent);
 		} catch (Exception e) {
 			if (pdf2svgConverter.useXMLLogger)
-				pdf2svgConverter.xmlLogger.newCharacter(fontName, charname, charCode);
+				pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, charCode);
 			else
 				LOG.error("couldn't set unicode: "+unicodeContent+" / +font: "+fontName+" charname: "+charname+" "+charCode+" / "+e);
 			svgText.setText("?"+(int)charCode);
@@ -552,13 +552,13 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 	}
 
-	private void debugMap(Map<String, Integer> map) {
-		String keys[] = map.keySet().toArray(new String[0]);
-		Arrays.sort(keys);
-		for (String key : keys) {
-			LOG.debug(key+": "+map.get(key));
-		}
-	}
+//	private void debugMap(Map<String, Integer> map) {
+//		String keys[] = map.keySet().toArray(new String[0]);
+//		Arrays.sort(keys);
+//		for (String key : keys) {
+//			LOG.debug(key+": "+map.get(key));
+//		}
+//	}
 
 	private String getAndFormatClipPath() {
 		Shape shape = getGraphicsState().getCurrentClippingPath();
@@ -604,7 +604,7 @@ xmlns="http://www.w3.org/2000/svg">
 		char cc = text.getCharacter().charAt(0);
 		String s = AMIFontManager.BADCHAR_S+(int)cc+AMIFontManager.BADCHAR_E;
 		if (pdf2svgConverter.useXMLLogger)
-			pdf2svgConverter.xmlLogger.newCharacter(fontName, charname, cc);
+			pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, cc);
 		else
 			LOG.debug(s+" "+fontName+" ("+fontSubType+") charname: "+charname);
 		s = ""+(char)(BADCHAR+Math.min(9, cc));

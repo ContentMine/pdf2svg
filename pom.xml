@@ -163,6 +163,7 @@
 					</excludes>
 				</configuration>
 			</plugin>
+<!-- uncomment this plugin to enable building of one humongous jar file with dependencies included ...
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-assembly-plugin</artifactId>
@@ -184,15 +185,16 @@
 				</configuration>
 				<executions>
 					<execution>
-						<id>make-assembly</id> <!-- this is used for inheritance merges -->
-						<phase>package</phase> <!-- bind to the packaging phase -->
+						<id>make-assembly</id>
+						<phase>package</phase>
 						<goals>
 							<goal>single</goal>
 						</goals>
 					</execution>
 				</executions>
 			</plugin>
-			<!-- 
+-->
+<!-- not sure what this one does ...
 			<plugin>
 				<groupId>com.mycila.maven-license-plugin</groupId>
 				<artifactId>maven-license-plugin</artifactId>
@@ -200,7 +202,8 @@
 					<header>src/etc/header.txt</header>
 				</configuration>
 			</plugin>
-			-->
+-->
+<!-- uncomment this plugin to enable creation of a "lib" directory with jar files of all dependencies copied into it ...
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-dependency-plugin</artifactId>
@@ -220,6 +223,7 @@
 					</execution>
 				</executions>
 			</plugin>
+-->
 		</plugins>
 		<pluginManagement>
 			<plugins>
