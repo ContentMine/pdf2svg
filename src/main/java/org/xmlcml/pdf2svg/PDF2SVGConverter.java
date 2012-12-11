@@ -59,13 +59,18 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	public static final String PAGES = "-pages";
 	public static final String PUB = "-pub";
 	public static final String OUTDIR = "-outdir";
+	public static final String MKDIR = "-mkdir";
 	public static final String NO_SVG = "-nosvg";
 	public static final String INFO_FILES = "-infofiles";
 	public static final String LOGGER = "-logger";
+	public static final String LOGFILE = "-logfile";
+	public static final String LOGCONVS = "-logconvs";
+	public static final String LOGGLYPHS = "-logglyphs";
 
 	private String PDFpassword = "";
 	private boolean useNonSeqParser = false;
 	private String outputDirectory = ".";
+	private boolean basenameOutdir = false;
 	private PageRanges pageRanges = null;
 	private Publisher publisher = null;
 
@@ -92,22 +97,32 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	public boolean drawBoxesForClipPaths = false;
 	public boolean addTooltipDebugTitles = false;
 	public boolean useXMLLogger = false;
-	public XMLLogger xmlLogger;
+	public XMLLogger xmlLogger = null;
+	public String XMLLoggerFile = "pdfLog.xml";
+	public boolean xmlLoggerLogGlyphs = false;
+	public boolean xmlLoggerLogConvs = false;
 
 	private static void usage() {
 		System.err
-				.printf("Usage: pdf2svg [%s <pw>] [%s] [%s <page-ranges>] [%s <pub>] [%s <dir>] [%s] [%s] [%s] <input-file> ...%n%n"
+				.printf("Usage: pdf2svg [%s <pw>] [%s] [%s <page-ranges>] [%s <pub>] [%s <dir>] [%s]%n"
+						+ "               [%s] [%s] [%s] [%s <filename>] [%s] [%s] <input-file(s)> ...%n%n"
 						+ "  %s <password>  Password to decrypt the document (default none)%n"
 						+ "  %s               Enables the new non-sequential parser%n"
 						+ "  %s <page-ranges>  Restrict pages to be output (default all)%n"
 						+ "  %s <publisher>      Use publisher-specific info%n"
 						+ "  %s <dirname>     Location to write output SVG pages (default '.')%n"
+						+ "  %s                Create dir in outdir using PDF basename and set as outdir for this PDF%n"
 						+ "  %s                Don't write SVG files%n"
 						+ "  %s            Write info files%n"
 						+ "  %s               Use XML logger to record unknown characters/fonts/etc%n"
-						+ "  <input-file>          The PDF document to be loaded%n",
-						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, NO_SVG, INFO_FILES, LOGGER, PASSWORD, NONSEQ,
-						PAGES, PUB, OUTDIR, NO_SVG, INFO_FILES, LOGGER);
+						+ "  %s <filename>   Write the XML Logger output into 'filename' (default 'pdfLog.xml')%n"
+						+ "  %s             log any characters that are converted to unicode using heuristics%n"
+						+ "  %s            Attempt to include char glyphs as svg paths in the XML logger%n"
+						+ "  <input-file(s)>       The PDF document(s) to be loaded%n%n",
+						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, MKDIR, NO_SVG,
+						INFO_FILES, LOGGER, LOGFILE, LOGCONVS, LOGGLYPHS,
+						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, MKDIR, NO_SVG,
+						INFO_FILES, LOGGER, LOGFILE, LOGCONVS, LOGGLYPHS);
 	}
 
 	private void openPDFFile(File file) throws Exception {
@@ -125,8 +140,6 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			pr = new PageRanges(String.format("1-%d", pages.size()));
 		}
 
-		createOutputDirectory();
-
 		if (useXMLLogger)
 			xmlLogger.newPDFFile(file.getAbsolutePath(), pages.size());
 
@@ -135,6 +148,8 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		String basename = file.getName().toLowerCase();
 		if (basename.endsWith(PDF))
 			basename = basename.substring(0, basename.length() - 4);
+
+		createOutputDirectory(basename);
 
 		int pageNumber = pr.next(0);
 		List<File> outfileList = new ArrayList<File>();
@@ -179,13 +194,16 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		}
 	}
 
-	private void createOutputDirectory() {
-		outdir = new File(outputDirectory);
+	private void createOutputDirectory(String basename) {
+		if (basenameOutdir)
+			outdir = new File(outputDirectory, basename);
+		else
+			outdir = new File(outputDirectory);
 		if (!outdir.exists())
 			outdir.mkdirs();
 		if (!outdir.isDirectory())
 			throw new RuntimeException(String.format(
-					"'%s' is not a directory!", outputDirectory));
+					"'%s' is not a directory!", outdir.getAbsoluteFile()));
 	}
 
 	private File writeFile(String basename, int pageNumber) {
@@ -263,8 +281,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		if (args.length == 0)
 			usage();
 
-		if (xmlLogger == null)
-			xmlLogger = new XMLLogger();
+		List<String> fileList = new ArrayList<String>();
 
 		for (iarg = 0; iarg < args.length; iarg++) {
 
@@ -285,6 +302,11 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 				continue;
 			}
 
+			if (args[iarg].equals(MKDIR)) {
+				basenameOutdir = true;
+				continue;
+			}
+
 			if (args[iarg].equals(NO_SVG)) {
 				writeFile  = false;
 				continue;
@@ -300,26 +322,64 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 				continue;
 			}
 
+			if (args[iarg].equals(LOGFILE)) {
+				incrementArg(args);
+				XMLLoggerFile = args[iarg];
+				continue;
+			}
+
+			if (args[iarg].equals(LOGCONVS)) {
+				xmlLoggerLogConvs = true;
+				continue;
+			}
+
+			if (args[iarg].equals(LOGGLYPHS)) {
+				xmlLoggerLogGlyphs = true;
+				continue;
+			}
+
 			if (args[iarg].equals(PAGES)) {
 				incrementArg(args);
 				pageRanges = new PageRanges(args[iarg]);
 				continue;
 			}
+
 			if (args[iarg].equals(PUB)) {
 				incrementArg(args);
 				publisher = getPublisher(args[iarg]);
 				continue;
 			}
 
+			fileList.add(args[iarg]);
+		}
+
+		if (fileList.size() == 0) {
+			usage();
+			return;
+		}
+
+		ensureXMLLogger();
+
+		for (String filename : fileList) {
 			try {
-				readFileOrDirectory(args[iarg]);
+				readFileOrDirectory(filename);
 			} catch (Exception e) {
-				throw new RuntimeException("Cannot parse PDF: " + args[iarg], e);
+//				throw new RuntimeException("Cannot parse PDF: " + filename, e);
+				System.err.printf("Cannot parse PDF '" + filename + "':" + e);
 			}
 		}
 
+		writeXMLLoggerOutput();
+	}
+
+	private void ensureXMLLogger() {
+		if (useXMLLogger && xmlLogger == null)
+			xmlLogger = new XMLLogger(xmlLoggerLogGlyphs);
+	}
+
+	private void writeXMLLoggerOutput() {
 		if (useXMLLogger) {
-			File outfile = new File(outdir, "pdfLog.xml");
+			File outfile = new File(outdir, XMLLoggerFile);
 			try {
 				LOG.debug("Writing XML logger output to file '"+outfile.getCanonicalPath()+"'.");
 			} catch (IOException e) {

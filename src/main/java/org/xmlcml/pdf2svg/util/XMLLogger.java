@@ -6,7 +6,6 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.OutputStream;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -32,8 +31,15 @@ public class XMLLogger {
 
 	private List<String> fontnames; // names of all fonts in the fontlist
 	private Map<String, AMIFont> fontmap; // only valid for the current PDF
+	private final boolean logGlyphs;
 
 	public XMLLogger() {
+		logGlyphs = false;
+		reset();
+	}
+
+	public XMLLogger(boolean logGlyphs) {
+		this.logGlyphs = logGlyphs;
 		reset();
 	}
 
@@ -47,7 +53,8 @@ public class XMLLogger {
 		page = null;
 
 		fontnames = new ArrayList<String>();
-		fontmap = null;
+		if (logGlyphs)
+			fontmap = null;
 	}
 
 	public void newPDFFile(String fileName, int pageCount) {
@@ -57,7 +64,8 @@ public class XMLLogger {
 				.toString(pageCount)));
 		root.appendChild(file);
 
-		fontmap = new HashMap<String, AMIFont>();
+		if (logGlyphs)
+			fontmap = new HashMap<String, AMIFont>();
 	}
 
 	public void newPDFPage(int pageNumber) {
@@ -72,7 +80,8 @@ public class XMLLogger {
 		String fontName = amiFont.getFontName();
 		if (fontName == null)
 			return;
-		fontmap.put(fontName, amiFont);
+		if (logGlyphs)
+			fontmap.put(fontName, amiFont);
 
 		if (fontnames.contains(fontName))
 			return;
@@ -124,7 +133,6 @@ public class XMLLogger {
 			LOG.error("new character (" + charName + "," + charCode
 					+ ") specifies font name '" + fontName
 					+ "' - which doesn't exist!");
-			// printFontNames();
 		}
 
 		Element character = new Element("character");
@@ -132,38 +140,28 @@ public class XMLLogger {
 		character.addAttribute(new Attribute("font", fontName));
 		character.addAttribute(new Attribute("family",
 				fontFamilyName == null ? "null" : fontFamilyName));
-		character.addAttribute(new Attribute("name",
-				charName == null ? "null" : charName));
-		character.addAttribute(new Attribute("code", Integer
-				.toString(charCode)));
+		character.addAttribute(new Attribute("name", charName == null ? "null"
+				: charName));
+		character
+				.addAttribute(new Attribute("code", Integer.toString(charCode)));
 
-		AMIFont amiFont = fontmap.get(fontName);
-		if (amiFont == null) {
-			LOG.error(String.format("no AMIFont available for (%s,%s,%d)",
-					fontName, charName, charCode));
-		} else {
-			String key = charName;
-			if (key == null)
-				key = "" + charCode;
-			String D = amiFont.getPathStringByCharnameMap().get(key);
-			if (D != null)
-				character.appendChild(new SVGPath(D));
+		if (logGlyphs) {
+			AMIFont amiFont = fontmap.get(fontName);
+			if (amiFont == null) {
+				LOG.error(String.format("no AMIFont available for (%s,%s,%d)",
+						fontName, charName, charCode));
+			} else {
+				String key = charName;
+				if (key == null)
+					key = "" + charCode;
+				String D = amiFont.getPathStringByCharnameMap().get(key);
+				if (D != null)
+					character.appendChild(new SVGPath(D));
+			}
 		}
 
 		page.appendChild(character);
 	}
-
-//	private void printFontNames() {
-//		int i = 0;
-//		String[] fontNames = (String[]) fontnames.toArray();
-//		Arrays.sort(fontNames);
-//		for (String fontName : fontNames) {
-//			System.out.print(fontName + " ... ");
-//			if (++i % 5 == 0) {
-//				System.out.println();
-//			}
-//		}
-//	}
 
 	public void writeXMLFile(OutputStream outputStream) {
 		Document doc = new Document(root);

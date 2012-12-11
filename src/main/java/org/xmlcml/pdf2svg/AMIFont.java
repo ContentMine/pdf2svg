@@ -222,8 +222,8 @@ and
 			}
 			LOG.debug(this.toString());
 			LOG.warn("font had no descriptor: "+baseFont+" / "+fontFamilyName);
-			if (fontName.contains("Arial") ||
-					fontName.contains("Unicode")) {
+			if (encoding == null && (fontName.contains("Arial") ||
+					fontName.contains("Unicode"))) {
 				LOG.warn("Encoding in ("+fontName+") forcibly set to "+WinAnsiEncoding.class);
 				encoding = new WinAnsiEncoding();
 			}

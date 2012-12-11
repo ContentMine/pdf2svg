@@ -44,6 +44,21 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
+	public void testBasenameOutdir() {
+		File dir = new File("target", "page6");
+		File file = new File("target/page6", "page6-page1.svg");
+
+		dir.delete();
+		file.delete();
+
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("-outdir", "target", "-mkdir", "src/test/resources/page6.pdf");
+
+		Assert.assertTrue(dir.exists() && dir.isDirectory());
+		Assert.assertTrue(file.exists() && file.isFile());
+	}
+
+	@Test
 	public void testSimpleRun() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-outdir", "target/ajc", "src/test/resources/page6.pdf");

@@ -248,8 +248,10 @@ xmlns="http://www.w3.org/2000/svg">
 
 		charname = null;
 		charCode = 0;
+
 		pdFont = textPosition.getFont();
 		amiFont = amiFontManager.getAmiFontByFont(pdFont);
+
 		fontName = amiFont.getFontName();
 		if (fontName == null) {
 			throw new RuntimeException("Null font name");
@@ -257,14 +259,41 @@ xmlns="http://www.w3.org/2000/svg">
 			LOG.trace("font from "+lastFontName+" -> "+fontName);
 			lastFontName = fontName;
 		}
-		if (pdf2svgConverter.useXMLLogger)
-			pdf2svgConverter.xmlLogger.newFont(amiFont);
 		fontFamilyName = amiFont.getFontFamilyName();
 		fontFamily = amiFontManager.getFontFamily(fontFamilyName);
 //		if (fontFamily.getCodePointSet() == null && amiFont.isSymbol()) {
 //			throw new RuntimeException("Symbol font ("+fontFamilyName+") needs codePointSet");
 //		}
-		checkPublisherFontFamily();
+//		checkPublisherFontFamily();
+
+		int charCode = getCharCodeAndSetCharname(textPosition);
+
+		createGraphicsStateAndPaintAndComposite();
+		getAndFormatClipPath();
+
+		if (pdf2svgConverter.useXMLLogger) {
+			pdf2svgConverter.xmlLogger.newFont(amiFont);
+			if (pdf2svgConverter.xmlLoggerLogGlyphs)
+				captureAndIndexGlyphVector(textPosition);
+		}
+
+		SVGText svgText = new SVGText();
+		createAndReOrientateTextPosition(textPosition, svgText);		
+		svgText.setFontWeight(amiFont.getFontWeight());
+		if ((amiFont.isSymbol() || amiFont.getDictionaryEncoding() != null) &&
+				fontFamily.getCodePointSet() != null) {
+			convertNonUnicodeCharacterEncodings();
+			annotateContent(svgText, textContent, charCode, charname, charCode, encoding);
+		}
+		LOG.trace("Fn: "+fontName+"; Ff: "+fontFamilyName+"; "+textContent+"; "+charCode+"; "+charname);
+		float width = getCharacterWidth(pdFont, textContent);
+
+		addContentAndAttributesToSVGText(textPosition, svgText, width);
+
+		svg.appendChild(svgText);
+	}
+
+	private int getCharCodeAndSetCharname(TextPosition textPosition) {
 		encoding = amiFont.getEncoding();
 		textContent = textPosition.getCharacter();
 		if (textContent.length() > 1) {
@@ -275,35 +304,24 @@ xmlns="http://www.w3.org/2000/svg">
 		if (encoding == null) {
 			LOG.trace("Null encoding for character: "+charCode+" at "+currentXY+" font: "+amiFont.getFontName()+" / "+amiFont.getFontFamilyName()+" / "+amiFont.getBaseFont());
 		} else {
-			if (encoding instanceof DictionaryEncoding) {
-				getCharnameThroughEncoding(charCode);
-			}
+//			if (encoding instanceof DictionaryEncoding) {
+				getCharnameThroughEncoding();
+//			}
 		}
-		SVGText svgText = new SVGText();
-		createAndReOrientateTextPosition(textPosition, svgText);		
-		svgText.setFontWeight(amiFont.getFontWeight());
-		if (amiFont.isSymbol() || amiFont.getDictionaryEncoding() != null ||
-				fontFamily.getCodePointSet() != null) {
-			convertNonUnicodeCharacterEncodings();
-			annotateContent(svgText, textContent, charCode, charname, charCode, encoding);
-		}
-		LOG.trace("Fn: "+fontName+"; Ff: "+fontFamilyName+"; "+textContent+"; "+charCode+"; "+charname);
-		float width = getCharacterWidth(pdFont, textContent);
+		return charCode;
+	}
 
-		captureAndIndexGlyphVector(textPosition);
-
+	private void addContentAndAttributesToSVGText(TextPosition textPosition, SVGText svgText,
+			float width) {
 		try {
 			svgText.setText(textContent);
 		} catch (RuntimeException e) {
 			// drops here if cannot encode as XML character
 			annotateUnusualCharacters(textPosition, svgText);
 		}
-		createGraphicsStateAndPaintAndComposite();
 		
 		getFontSizeAndSetNotZeroRotations(svgText);
-		getAndFormatClipPath();
-		addTextAttributes(width, svgText);
-		svg.appendChild(svgText);
+		addAttributesToSVGText(width, svgText);
 		addTooltips(svgText);
 		if (amiFont.isItalic() != null && amiFont.isItalic()) {
 			svgText.setFontStyle("italic");
@@ -314,7 +332,7 @@ xmlns="http://www.w3.org/2000/svg">
 		addCodePointToHighPoints(textPosition);
 	}
 
-	private void getCharnameThroughEncoding(int charCode) {
+	private void getCharnameThroughEncoding() {
 		try {
 			// NOTE: charname is the formal name for the character such as "period", "bracket" or "a", "two"
 			charname = encoding.getName(charCode);
@@ -324,17 +342,17 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 	}
 
-	private void checkPublisherFontFamily() {
-		Publisher publisher = pdf2svgConverter.getPublisher();
-		if (publisher != null) {
-			if (!publisher.containsFontFamilyName(fontFamilyName))  {
-				publisher.addFontFamilyName(fontFamilyName);
-				LOG.trace("added fontFamilyName "+fontFamilyName);
-			} else {
-				LOG.trace("already in publisher fontFamilySet "+fontFamilyName);
-			}
-		}
-	}
+//	private void checkPublisherFontFamily() {
+//		Publisher publisher = pdf2svgConverter.getPublisher();
+//		if (publisher != null) {
+//			if (!publisher.containsFontFamilyName(fontFamilyName))  {
+//				publisher.addFontFamilyName(fontFamilyName);
+//				LOG.trace("added fontFamilyName "+fontFamilyName);
+//			} else {
+//				LOG.trace("already in publisher fontFamilySet "+fontFamilyName);
+//			}
+//		}
+//	}
 
 	private void convertNonUnicodeCharacterEncodings() {
 		CodePointSet codePointSet = fontFamily.getCodePointSet();
@@ -356,6 +374,10 @@ xmlns="http://www.w3.org/2000/svg">
 			} else {
 				Integer codepoint = codePoint.getUnicodeDecimal();
 				textContent = ""+(char)(int) codepoint;
+				if (pdf2svgConverter.useXMLLogger && pdf2svgConverter.xmlLoggerLogConvs) {
+					int ch = (int) textContent.charAt(0);
+					pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, ch);
+				}
 			}
 		}
 	}
@@ -440,7 +462,7 @@ xmlns="http://www.w3.org/2000/svg">
 		return charCode;
 	}
 
-	private void addTextAttributes(float width, SVGText svgText) {
+	private void addAttributesToSVGText(float width, SVGText svgText) {
 //		svgText.setClipPath(clipString);
 		setClipPath(svgText, clipString, (Integer) integerByClipStringMap.get(clipString));
 		svgText.setFontSize(currentFontSize);
@@ -523,9 +545,9 @@ xmlns="http://www.w3.org/2000/svg">
 		try {
 			svgText.setText(unicodeContent);
 		} catch (Exception e) {
-			if (pdf2svgConverter.useXMLLogger)
-				pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, charCode);
-			else
+//			if (pdf2svgConverter.useXMLLogger)
+//				pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, charCode);
+//			else
 				LOG.error("couldn't set unicode: "+unicodeContent+" / +font: "+fontName+" charname: "+charname+" "+charCode+" / "+e);
 			svgText.setText("?"+(int)charCode);
 		}
