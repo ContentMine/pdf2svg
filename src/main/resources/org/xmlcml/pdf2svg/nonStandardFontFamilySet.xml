@@ -133,6 +133,9 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvTTec1d2308I.xml"/>
 	<fontFamily name="AdvPS4731B1" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvPS4731B1.xml"/>
+
+	<fontFamily name="ADVMT_MI" symbol="true"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/ADVMT_MI.xml" />
 	    
 <!--  ==================AdvELS-ENT =========================== -->	
 	<fontFamily name="AdvEls-Ent1" symbol="true" 

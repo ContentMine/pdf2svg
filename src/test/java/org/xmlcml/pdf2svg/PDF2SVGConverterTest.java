@@ -129,6 +129,20 @@ public class PDF2SVGConverterTest {
 
 	@Test
 	@Ignore // do not normally run this
+	public void testIUCR() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("-logger", "-outdir", "target/iucr", "../pdfs/iucr");
+	}
+
+	@Test
+	@Ignore // do not normally run this
+	public void testCSIROTest() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("-logger", "-outdir", "target/csiro/test", "../pdfs/csiro/test");
+	}
+
+	@Test
+	@Ignore // do not normally run this
 	public void testAllBMC() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-logger", "-outdir", "target/bmc/", "../pdfs/bmc");

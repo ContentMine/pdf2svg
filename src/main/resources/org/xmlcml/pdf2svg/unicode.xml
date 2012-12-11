@@ -379,6 +379,7 @@
     <codePoint unicode="U+25B2" unicodeName="BLACK UP-POINTING TRIANGLE" name=""/>
     <codePoint unicode="U+25B8" unicodeName="BLACK RIGHT-POINTING SMALL TRIANGLE" name=""/>
     <codePoint unicode="U+25CA" adobePoint="E0" unicodeName="LOZENGE" name="lozenge"/>
+    <codePoint unicode="U+25CB" unicodeName="WHITE CIRCLE" name=""/>  
         
 <!--  26xx -->
 <!-- 
