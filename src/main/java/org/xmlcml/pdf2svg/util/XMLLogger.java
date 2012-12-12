@@ -156,8 +156,11 @@ public class XMLLogger {
 				if (key == null)
 					key = "" + charCode;
 				String d = amiFont.getPathStringByCharnameMap().get(key);
-				if (d != null)
-					character.appendChild(new SVGPath(d));
+				if (d != null) {
+					SVGPath path = new SVGPath(d);
+					path.setStrokeWidth(0.005);
+					character.appendChild(path);
+				}
 			}
 		}
 

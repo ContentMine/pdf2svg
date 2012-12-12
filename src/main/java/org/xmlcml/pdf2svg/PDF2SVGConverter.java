@@ -64,7 +64,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	public static final String INFO_FILES = "-infofiles";
 	public static final String LOGGER = "-logger";
 	public static final String LOGFILE = "-logfile";
-	public static final String LOGCONVS = "-logconvs";
+	public static final String LOGMORE = "-logmore";
 	public static final String LOGGLYPHS = "-logglyphs";
 	public static final String EXITONERR = "-exitonerr";
 
@@ -102,7 +102,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	public XMLLogger xmlLogger = null;
 	public String XMLLoggerFile = "pdfLog.xml";
 	public boolean xmlLoggerLogGlyphs = false;
-	public boolean xmlLoggerLogConvs = false;
+	public boolean xmlLoggerLogMore = false;
 
 	private static void usage() {
 		System.err
@@ -118,14 +118,14 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 						+ "  %s            Write info files%n"
 						+ "  %s               Use XML logger to record unknown characters/fonts/etc%n"
 						+ "  %s <filename>   Write the XML Logger output into 'filename' (default 'pdfLog.xml')%n"
-						+ "  %s             log any characters that are converted to unicode using heuristics%n"
+						+ "  %s              log lots more characters (could produce a VERY big log)%n"
 						+ "  %s            Attempt to include char glyphs as svg paths in the XML logger%n"
 						+ "  %s            exit on PDF parse error (otherwise continue to next pdf)%n"
 						+ "  <input-file(s)>       The PDF document(s) to be loaded%n%n",
 						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, MKDIR, NO_SVG,
-						INFO_FILES, LOGGER, LOGFILE, LOGCONVS, LOGGLYPHS,
+						INFO_FILES, LOGGER, LOGFILE, LOGMORE, LOGGLYPHS,
 						EXITONERR, PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, MKDIR,
-						NO_SVG, INFO_FILES, LOGGER, LOGFILE, LOGCONVS,
+						NO_SVG, INFO_FILES, LOGGER, LOGFILE, LOGMORE,
 						LOGGLYPHS, EXITONERR);
 	}
 
@@ -339,8 +339,8 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 				continue;
 			}
 
-			if (args[iarg].equals(LOGCONVS)) {
-				xmlLoggerLogConvs = true;
+			if (args[iarg].equals(LOGMORE)) {
+				xmlLoggerLogMore = true;
 				continue;
 			}
 

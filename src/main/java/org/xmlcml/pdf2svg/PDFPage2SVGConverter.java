@@ -110,6 +110,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private String fontSubType;
 	private String textContent;
 	private AMIFontManager amiFontManager;
+	private boolean charWasLogged = false;
 
 //	private FontFamily newFontFamily;
 
@@ -242,6 +243,7 @@ xmlns="http://www.w3.org/2000/svg">
 	protected void processTextPosition(TextPosition textPosition) {
 
 		charname = null;
+		charWasLogged = false;
 
 		pdFont = textPosition.getFont();
 		amiFont = amiFontManager.getAmiFontByFont(pdFont);
@@ -265,7 +267,7 @@ xmlns="http://www.w3.org/2000/svg">
 
 		svgText.setFontWeight(amiFont.getFontWeight());
 
-		if ((amiFont.isSymbol() || amiFont.getDictionaryEncoding() != null) &&
+		if (amiFont.isSymbol() || amiFont.getDictionaryEncoding() != null ||
 				fontFamily.getCodePointSet() != null) {
 			convertNonUnicodeCharacterEncodings();
 			annotateContent(svgText, textContent, charCode, charname, charCode, encoding);
@@ -371,17 +373,20 @@ xmlns="http://www.w3.org/2000/svg">
 			if (codePoint == null) {
 				//or add Bad Character Glyph
 				int ch = (int) textContent.charAt(0);
-				if (pdf2svgConverter.useXMLLogger)
+				if (pdf2svgConverter.useXMLLogger && !charWasLogged) {
 					pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, ch);
+					charWasLogged = true;
+				}
 				else
 					LOG.error("Cannot convert character: "+textContent+" char: "+ch+" charname: "+charname+" fn: "+fontFamilyName);
 				textContent = ""+AMIFontManager.getUnknownCharacterSymbol()+ch;
 			} else {
 				Integer codepoint = codePoint.getUnicodeDecimal();
 				textContent = ""+(char)(int) codepoint;
-				if (pdf2svgConverter.useXMLLogger && pdf2svgConverter.xmlLoggerLogConvs) {
+				if (pdf2svgConverter.useXMLLogger && pdf2svgConverter.xmlLoggerLogMore && !charWasLogged) {
 					int ch = (int) textContent.charAt(0);
 					pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, ch);
+					charWasLogged = true;
 				}
 			}
 		}
@@ -549,8 +554,10 @@ xmlns="http://www.w3.org/2000/svg">
 		try {
 			svgText.setText(unicodeContent);
 		} catch (Exception e) {
-//			if (pdf2svgConverter.useXMLLogger)
+//			if (pdf2svgConverter.useXMLLogger && !charWasLogged) {
 //				pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, charCode);
+//				charWasLogged = true;
+//			}
 //			else
 				LOG.error("couldn't set unicode: "+unicodeContent+" / +font: "+fontName+" charname: "+charname+" "+charCode+" / "+e);
 			svgText.setText("?"+(int)charCode);
@@ -576,6 +583,10 @@ xmlns="http://www.w3.org/2000/svg">
 		svgText.setFontSize(20.0);
 		if (charCode == AMIFontManager.UNKNOWN_CHAR) {
 			svgText.setStrokeWidth(3.0);
+		}
+		if (pdf2svgConverter.useXMLLogger && pdf2svgConverter.xmlLoggerLogMore && !charWasLogged) {
+			pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, charCode);
+			charWasLogged = true;
 		}
 	}
 
@@ -630,8 +641,10 @@ xmlns="http://www.w3.org/2000/svg">
 	private void annotateUnusualCharacters(TextPosition text, SVGText svgText) {
 		char cc = text.getCharacter().charAt(0);
 		String s = AMIFontManager.BADCHAR_S+(int)cc+AMIFontManager.BADCHAR_E;
-		if (pdf2svgConverter.useXMLLogger)
+		if (pdf2svgConverter.useXMLLogger && !charWasLogged) {
 			pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, cc);
+			charWasLogged = true;
+		}
 		else
 			LOG.debug(s+" "+fontName+" ("+fontSubType+") charname: "+charname);
 		s = ""+(char)(BADCHAR+Math.min(9, cc));
