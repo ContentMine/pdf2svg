@@ -36,4 +36,9 @@ public class PDF2SVGUtil {
 		svgElement.addAttribute(attribute);
 	}
 
+	public static String getSVGXAttribute(SVGElement svgElement, String attName) {
+		Attribute attribute = svgElement.getAttribute(attName, SVGX_NS);
+		return (attribute == null) ? null : attribute.getValue();
+	}
+
 }

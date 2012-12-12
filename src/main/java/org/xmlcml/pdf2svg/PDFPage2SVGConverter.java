@@ -48,9 +48,11 @@ import org.apache.pdfbox.pdmodel.text.PDTextState;
 import org.apache.pdfbox.util.Matrix;
 import org.apache.pdfbox.util.TextPosition;
 import org.xmlcml.euclid.Angle;
+import org.xmlcml.euclid.Real;
 import org.xmlcml.euclid.Real2;
 import org.xmlcml.euclid.Real2Range;
 import org.xmlcml.euclid.RealArray;
+import org.xmlcml.euclid.RealMatrix;
 import org.xmlcml.euclid.Transform2;
 import org.xmlcml.graphics.svg.SVGClipPath;
 import org.xmlcml.graphics.svg.SVGDefs;
@@ -415,8 +417,11 @@ xmlns="http://www.w3.org/2000/svg">
 			textPos.setValue(1, 0, (-1) * textPos.getValue(1, 0));
 			AffineTransform at = textPos.createAffineTransform();
 			PDMatrix fontMatrix = pdFont.getFontMatrix();
-			at.scale(fontMatrix.getValue(0, 0) * 1000f,
-					fontMatrix.getValue(1, 1) * 1000f);
+			// matrix is r00 r01 r10 r11 t0 t1
+			double r00 = fontMatrix.getValue(0, 0) * 1000f; 
+			double r11 = fontMatrix.getValue(1, 1) * 1000f; 
+			LOG.trace("scales: "+r00+"/"+r11);
+			at.scale(r00, r11);
 			// TODO setClip() is a massive performance hot spot. Investigate
 			// optimization possibilities
 			if (graphicsState == null) {
@@ -674,12 +679,31 @@ xmlns="http://www.w3.org/2000/svg">
 	}
 
 	private double getFontSizeAndSetNotZeroRotations(SVGText svgText) {
+		// attempts to see if matrices were scaling glyphs - apparently not.
 		AffineTransform at = textPos.createAffineTransform();
+//		double atScaleX = at.getScaleX();
+//		double atScaleY = at.getScaleY();
+//		double atScaleRatio = atScaleX/atScaleY;
+//		if (!Real.isEqual(1.0, atScaleRatio, eps)) {
+//			double[] dd = new double[9];
+//			at.getMatrix(dd);
+//			LOG.debug(svgText.getText()+" / atScaleRatio "+atScaleRatio+"/"+atScaleX+"/"+atScaleY+"/"+new RealArray(dd));
+//		}		
 		PDMatrix fontMatrix = pdFont.getFontMatrix();
 		at.scale(fontMatrix.getValue(0, 0) * 1000f,
 				fontMatrix.getValue(1, 1) * 1000f);
+//		RealMatrix realMatrix = getRealMatrix(fontMatrix);
 		double scalex = at.getScaleX();
 		double scaley = at.getScaleY();
+//		double scaleRatio = scalex/scaley;
+//		double eps = 0.00000001;
+//		if (Real.isZero(scalex, eps) || Real.isZero(scaley, eps)) {
+//			LOG.debug("zero scales: "+fontMatrix.getValue(0, 0)+"/"+fontMatrix.getValue(0, 1)+"/"+fontMatrix.getValue(1, 0)+"/"+fontMatrix.getValue(1, 1)+"/"+fontMatrix.getValue(0, 2)+"/"+fontMatrix.getValue(1, 2)+"/");
+//			LOG.debug("RM "+realMatrix);
+//		} else if (!Real.isEqual(1.0, atScaleRatio, eps)) {
+//			LOG.debug("scaleRatio "+atScaleRatio+"/"+atScaleY+"/"+atScaleY);
+//			LOG.debug("RM "+realMatrix);
+//		}		
 		double scale = Math.sqrt(scalex * scaley);
 		Transform2 t2 = new Transform2(at);
 		
@@ -690,13 +714,23 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 		if (angleDeg != 0) {
 			LOG.trace("Transform "+t2+" "+svgText.getText()+" "+at+" "+getRealArray(fontMatrix));
-			// do this properly later
+			// do this properly later (only if scales are anisotropic and so far no evidence)
 			scale = Math.sqrt(Math.abs(t2.elementAt(0, 1)*t2.elementAt(1, 0)));
 			Transform2 t2a = Transform2.getRotationAboutPoint(angle, svgText.getXY());
 			svgText.setTransform(t2a);
 		}
 		currentFontSize = scale;
 		return currentFontSize;
+	}
+
+	private RealMatrix getRealMatrix(PDMatrix fontMatrix) {
+		RealMatrix rm = new RealMatrix(2, 3);
+		for (int i = 0; i < 2; i++) {
+			for (int j = 0; j < 3; j++) {
+				rm.setElementAt(i,  j, fontMatrix.getValue(i, j));
+			}
+		}
+		return rm;
 	}
 
 	private RealArray getRealArray(PDMatrix fontMatrix) {

@@ -157,6 +157,13 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
+	//@Ignore // do not normally run this
+	public void testCSIROTest0() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("-logger", "-logglyphs", "-logconvs",  "-outdir", "target/csiro/test0", "../pdfs/csiro/test0");
+	}
+
+	@Test
 	@Ignore // do not normally run this
 	public void testAllBMC() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
