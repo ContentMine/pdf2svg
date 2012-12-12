@@ -17,7 +17,6 @@ package org.xmlcml.pdf2svg;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
-import java.awt.Composite;
 import java.awt.Dimension;
 import java.awt.Graphics2D;
 import java.awt.Image;
@@ -27,17 +26,14 @@ import java.awt.geom.AffineTransform;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.PathIterator;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
-import java.util.Map;
 import java.util.Set;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.cos.COSName;
-import org.apache.pdfbox.encoding.DictionaryEncoding;
 import org.apache.pdfbox.encoding.Encoding;
 import org.apache.pdfbox.pdfviewer.PageDrawer;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -86,11 +82,11 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		LOG.setLevel(Level.DEBUG);
 	}
 
-	private static double eps = 0.001;
+//	private static double eps = 0.001;
 
 	private BasicStroke basicStroke;
 	private SVGSVG svg;
-	private Composite composite;
+//	private Composite composite;
 	private Paint paint;
 	private PDGraphicsState graphicsState;
 	private Matrix textPos;
@@ -100,7 +96,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private String fontName;
 	private Double currentFontSize;
 	private String currentFontStyle;
-	private String currentFontWeight;
+//	private String currentFontWeight;
 	
 	private int nPlaces = 3;
 	private PDLineDashPattern dashPattern;
@@ -115,9 +111,8 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private String textContent;
 	private AMIFontManager amiFontManager;
 
-	private FontFamily newFontFamily;
+//	private FontFamily newFontFamily;
 
-	private int charCode;
 	private AMIFont amiFont;
 	private String lastFontName;
 	private FontFamily fontFamily;
@@ -247,11 +242,44 @@ xmlns="http://www.w3.org/2000/svg">
 	protected void processTextPosition(TextPosition textPosition) {
 
 		charname = null;
-		charCode = 0;
 
 		pdFont = textPosition.getFont();
 		amiFont = amiFontManager.getAmiFontByFont(pdFont);
 
+		setAndProcessFontNameAndFamilyName();
+
+		int charCode = getCharCodeAndSetEncodingAndCharname(textPosition);
+
+		createGraphicsStateAndPaintAndComposite();
+		getAndFormatClipPath();
+
+		if (pdf2svgConverter.useXMLLogger) {
+			pdf2svgConverter.xmlLogger.newFont(amiFont);
+			if (pdf2svgConverter.xmlLoggerLogGlyphs)
+				captureAndIndexGlyphVector(textPosition, charCode);
+		}
+
+		SVGText svgText = new SVGText();
+
+		createAndReOrientateTextPosition(textPosition, svgText);
+
+		svgText.setFontWeight(amiFont.getFontWeight());
+
+		if ((amiFont.isSymbol() || amiFont.getDictionaryEncoding() != null) &&
+				fontFamily.getCodePointSet() != null) {
+			convertNonUnicodeCharacterEncodings();
+			annotateContent(svgText, textContent, charCode, charname, charCode, encoding);
+		}
+
+		LOG.trace("Fn: "+fontName+"; Ff: "+fontFamilyName+"; "+textContent+"; "+charCode+"; "+charname);
+
+		float width = getCharacterWidth(pdFont, textContent);
+		addContentAndAttributesToSVGText(textPosition, svgText, width, charCode);
+
+		svg.appendChild(svgText);
+	}
+
+	private void setAndProcessFontNameAndFamilyName() {
 		fontName = amiFont.getFontName();
 		if (fontName == null) {
 			throw new RuntimeException("Null font name");
@@ -265,81 +293,6 @@ xmlns="http://www.w3.org/2000/svg">
 //			throw new RuntimeException("Symbol font ("+fontFamilyName+") needs codePointSet");
 //		}
 //		checkPublisherFontFamily();
-
-		int charCode = getCharCodeAndSetCharname(textPosition);
-
-		createGraphicsStateAndPaintAndComposite();
-		getAndFormatClipPath();
-
-		if (pdf2svgConverter.useXMLLogger) {
-			pdf2svgConverter.xmlLogger.newFont(amiFont);
-			if (pdf2svgConverter.xmlLoggerLogGlyphs)
-				captureAndIndexGlyphVector(textPosition);
-		}
-
-		SVGText svgText = new SVGText();
-		createAndReOrientateTextPosition(textPosition, svgText);		
-		svgText.setFontWeight(amiFont.getFontWeight());
-		if ((amiFont.isSymbol() || amiFont.getDictionaryEncoding() != null) &&
-				fontFamily.getCodePointSet() != null) {
-			convertNonUnicodeCharacterEncodings();
-			annotateContent(svgText, textContent, charCode, charname, charCode, encoding);
-		}
-		LOG.trace("Fn: "+fontName+"; Ff: "+fontFamilyName+"; "+textContent+"; "+charCode+"; "+charname);
-		float width = getCharacterWidth(pdFont, textContent);
-
-		addContentAndAttributesToSVGText(textPosition, svgText, width);
-
-		svg.appendChild(svgText);
-	}
-
-	private int getCharCodeAndSetCharname(TextPosition textPosition) {
-		encoding = amiFont.getEncoding();
-		textContent = textPosition.getCharacter();
-		if (textContent.length() > 1) {
-			// this can happen for ligatures
-			LOG.trace("multi-char string: "+textPosition.getCharacter());
-		} 
-		int charCode = textContent.charAt(0);
-		if (encoding == null) {
-			LOG.trace("Null encoding for character: "+charCode+" at "+currentXY+" font: "+amiFont.getFontName()+" / "+amiFont.getFontFamilyName()+" / "+amiFont.getBaseFont());
-		} else {
-//			if (encoding instanceof DictionaryEncoding) {
-				getCharnameThroughEncoding();
-//			}
-		}
-		return charCode;
-	}
-
-	private void addContentAndAttributesToSVGText(TextPosition textPosition, SVGText svgText,
-			float width) {
-		try {
-			svgText.setText(textContent);
-		} catch (RuntimeException e) {
-			// drops here if cannot encode as XML character
-			annotateUnusualCharacters(textPosition, svgText);
-		}
-		
-		getFontSizeAndSetNotZeroRotations(svgText);
-		addAttributesToSVGText(width, svgText);
-		addTooltips(svgText);
-		if (amiFont.isItalic() != null && amiFont.isItalic()) {
-			svgText.setFontStyle("italic");
-		}
-		if (amiFont.isBold() != null && amiFont.isBold()) {
-			svgText.setFontWeight("bold");
-		}
-		addCodePointToHighPoints(textPosition);
-	}
-
-	private void getCharnameThroughEncoding() {
-		try {
-			// NOTE: charname is the formal name for the character such as "period", "bracket" or "a", "two"
-			charname = encoding.getName(charCode);
-			LOG.trace("code "+charCode+" (font: "+fontSubType+" "+fontName+") "+charname);
-		} catch (IOException e1) {
-			LOG.warn("cannot get char encoding "+" at "+currentXY, e1);
-		}
 	}
 
 //	private void checkPublisherFontFamily() {
@@ -353,6 +306,58 @@ xmlns="http://www.w3.org/2000/svg">
 //			}
 //		}
 //	}
+
+	private int getCharCodeAndSetEncodingAndCharname(TextPosition textPosition) {
+
+		textContent = textPosition.getCharacter();
+		if (textContent.length() > 1) {
+			// this can happen for ligatures
+			LOG.trace("multi-char string: "+textPosition.getCharacter());
+		} 
+		int charCode = textContent.charAt(0);
+
+		encoding = amiFont.getEncoding();
+		if (encoding == null) {
+			LOG.debug("Null encoding for character: "+charCode+" at "+currentXY+" font: "+fontName+" / "+fontFamilyName+" / "+amiFont.getBaseFont());
+		} else {
+//			if (encoding instanceof DictionaryEncoding) {
+				getCharnameThroughEncoding(charCode);
+//			}
+		}
+
+		return charCode;
+	}
+
+	private void getCharnameThroughEncoding(int charCode) {
+		try {
+			// NOTE: charname is the formal name for the character such as "period", "bracket" or "a", "two"
+			charname = encoding.getName(charCode);
+			LOG.trace("code "+charCode+" (font: "+fontSubType+" "+fontName+") "+charname);
+		} catch (IOException e1) {
+			LOG.warn("cannot get char encoding "+" at "+currentXY, e1);
+		}
+	}
+
+	private void addContentAndAttributesToSVGText(TextPosition textPosition, SVGText svgText,
+			float width, int charCode) {
+		try {
+			svgText.setText(textContent);
+		} catch (RuntimeException e) {
+			// drops here if cannot encode as XML character
+			annotateUnusualCharacters(textPosition, svgText);
+		}
+		
+		getFontSizeAndSetNotZeroRotations(svgText);
+		addAttributesToSVGText(width, svgText);
+		addTooltips(svgText, charCode);
+		if (amiFont.isItalic() != null && amiFont.isItalic()) {
+			svgText.setFontStyle("italic");
+		}
+		if (amiFont.isBold() != null && amiFont.isBold()) {
+			svgText.setFontWeight("bold");
+		}
+		addCodePointToHighPoints(textPosition);
+	}
 
 	private void convertNonUnicodeCharacterEncodings() {
 		CodePointSet codePointSet = fontFamily.getCodePointSet();
@@ -382,7 +387,7 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 	}
 
-	private void captureAndIndexGlyphVector(TextPosition text) {
+	private void captureAndIndexGlyphVector(TextPosition text, int charCode) {
 		String key = charname;
 		if (key == null)
 			key = "" + charCode;
@@ -431,9 +436,8 @@ xmlns="http://www.w3.org/2000/svg">
 		LOG.trace("pathString: "+pathString);
 	}
 
-	private void addTooltips(SVGText svgText) {
+	private void addTooltips(SVGText svgText, int charCode) {
 		if (pdf2svgConverter.addTooltipDebugTitles) {
-			Encoding encoding = (amiFont == null) ? null : amiFont.getEncoding();
 			String enc = (encoding == null) ? null : encoding.getClass().getSimpleName();
 			enc =(enc != null && enc.endsWith(AMIFont.ENCODING)) ? enc.substring(0, enc.length()-AMIFont.ENCODING.length()) : enc;
 			String title = "char: "+charCode+"; name: "+charname+"; f: "+fontFamilyName+"; fn: "+fontName+"; e: "+enc;
@@ -647,7 +651,7 @@ xmlns="http://www.w3.org/2000/svg">
 		int r = ((Color) paint).getRed();
 		int g = ((Color) paint).getGreen();
 		int b = ((Color) paint).getBlue();
-		int a = ((Color) paint).getAlpha();
+		// int a = ((Color) paint).getAlpha();
 		int rgb = (r<<16)+(g<<8)+b;
 		String colorS = String.format("#%06x", rgb);
 		if (rgb != 0) {
@@ -725,14 +729,14 @@ xmlns="http://www.w3.org/2000/svg">
 			ensurePageSize();
 			switch (graphicsState.getTextState().getRenderingMode()) {
 			case PDTextState.RENDERING_MODE_FILL_TEXT:
-				composite = graphicsState.getNonStrokeJavaComposite();
+				// composite = graphicsState.getNonStrokeJavaComposite();
 				paint = graphicsState.getNonStrokingColor().getJavaColor();
 				if (paint == null) {
 					paint = graphicsState.getNonStrokingColor().getPaint(pageSize.height);
 				}
 				break;
 			case PDTextState.RENDERING_MODE_STROKE_TEXT:
-				composite = graphicsState.getStrokeJavaComposite();
+				// composite = graphicsState.getStrokeJavaComposite();
 				paint = graphicsState.getStrokingColor().getJavaColor();
 				if (paint == null) {
 					paint = graphicsState.getStrokingColor().getPaint(pageSize.height);
@@ -744,17 +748,17 @@ xmlns="http://www.w3.org/2000/svg">
 				float[] components = { Color.black.getRed(),
 						Color.black.getGreen(), Color.black.getBlue() };
 				paint = new Color(nsc.getColorSpace(), components, 0f);
-				composite = graphicsState.getStrokeJavaComposite();
+				// composite = graphicsState.getStrokeJavaComposite();
 				break;
 			default:
 				// TODO : need to implement....
-				System.out.println("Unsupported RenderingMode "
+				LOG.trace("Unsupported RenderingMode "
 						+ this.getGraphicsState().getTextState()
 								.getRenderingMode()
 						+ " in PageDrawer.processTextPosition()."
 						+ " Using RenderingMode "
 						+ PDTextState.RENDERING_MODE_FILL_TEXT + " instead");
-				composite = graphicsState.getNonStrokeJavaComposite();
+				// composite = graphicsState.getNonStrokeJavaComposite();
 				paint = graphicsState.getNonStrokingColor().getJavaColor();
 			}
 		} catch (IOException e) {
@@ -824,6 +828,7 @@ xmlns="http://www.w3.org/2000/svg">
 	}
 
 	private void setDashArray(SVGPath svgPath) {
+		@SuppressWarnings("unchecked")
 		List<Integer> dashIntegerList = (List<Integer>) dashPattern.getDashPattern();
 		StringBuilder sb = new StringBuilder("");
 		LOG.trace("COS ARRAY "+dashIntegerList.size());

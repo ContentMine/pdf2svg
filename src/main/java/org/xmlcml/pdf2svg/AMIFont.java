@@ -66,7 +66,7 @@ public class AMIFont {
 	public static final String MONOTYPE_SUFFIX = "MT";
 	public static final String POSTSCRIPT_SUFFIX = "PS";
 	public static final String ENCODING = "Encoding";
-	static Pattern LEADER_PATTERN = Pattern.compile("[A-Z]{6}\\+.*");
+	static Pattern LEADER_PATTERN = Pattern.compile("^[A-Z]{6}\\+(.*)$");
 	
 	private Boolean isBold = null;
 	private Boolean isItalic = null;
@@ -81,7 +81,6 @@ public class AMIFont {
 	private int currentIndex;
 	
 	
-	private boolean hasPrefix;
 	private String finalSuffix;
 
 	private Encoding encoding;
@@ -91,12 +90,12 @@ public class AMIFont {
 
 	private Map<String, String> pathStringByCharnameMap;
 	
-	static {
-		String[] standard14Names = PDType1Font.getStandard14Names();
-		for (String standard14Name : standard14Names) {
+//	static {
+//		String[] standard14Names = PDType1Font.getStandard14Names();
+//		for (String standard14Name : standard14Names) {
 //			System.out.println(standard14Name);
-		}
-	}
+//		}
+//	}
 
 	/**
         addFontMapping("Times-Roman","TimesNewRoman");
@@ -142,12 +141,8 @@ and
 	private AMIFont(String fontName) {
 		this();
 		fontFamilyName = null;
-		fontName = noteAndRemovePrefix(fontName);
-		processStandardFamilies();
-		processIsBoldInName();
-		processIsItalicInName();
-		processFinalSuffix();
-		LOG.trace(fontName);
+		this.fontName = fontName;
+		stripFontNameComponents();
 	}
 
 	/** create font from family and key attributes
@@ -231,22 +226,17 @@ and
 	}
 
 	private void stripFontNameComponents() {
-		fontName = noteAndRemovePrefix(fontName);
+		noteAndRemovePrefix();
 		processStandardFamilies();
 		processIsBoldInName();
 		processIsItalicInName();
 		processFinalSuffix();
 	}
 
-	private String noteAndRemovePrefix(String fontName) {
-		this.fontName = fontName;
+	private void noteAndRemovePrefix() {
 		Matcher matcher = LEADER_PATTERN.matcher(fontName);
-		hasPrefix = false;
-		if (matcher.matches()) {
-			fontName = fontName.substring(7);
-			hasPrefix = true;
-		}
-		return fontName;
+		if (matcher.matches())
+			fontName = matcher.group(matcher.groupCount());
 	}
 
 	private void processFinalSuffix() {
@@ -258,7 +248,7 @@ and
 		}
 		if (finalSuffix != null) {
 			int lf = fontName.length();
-			fontName =  fontName.substring(lf-finalSuffix.length());
+			fontName = fontName.substring(0, lf-finalSuffix.length());
 		}
 	}
 
@@ -325,25 +315,25 @@ and
 
 	private void removeFromFontName(String subName, int idx) {
 		if (fontName.substring(idx, idx+subName.length()).equalsIgnoreCase(subName)) {
-			fontName = fontName.substring(0,  idx)+fontName.substring(idx+1);
+			fontName = fontName.substring(0, idx)+fontName.substring(idx+subName.length());
 		}
 	}
 
-	/** should only be used once for each new fontName
-	 * 
-	 * @param fontName
-	 * @return
-	 */
-	AMIFont createAMIFont(String fontName) {
-		AMIFont amiFont = null;
-		PDType1Font standardFont = PDType1Font.getStandardFont(fontName);
-		if (standardFont != null) {
-			amiFont = new AMIFont(standardFont);
-		} else {
-			amiFont = createAMIFontFromName(fontName);
-		}
-		return amiFont;
-	}
+//	/** should only be used once for each new fontName
+//	 * 
+//	 * @param fontName
+//	 * @return
+//	 */
+//	AMIFont createAMIFont(String fontName) {
+//		AMIFont amiFont = null;
+//		PDType1Font standardFont = PDType1Font.getStandardFont(fontName);
+//		if (standardFont != null) {
+//			amiFont = new AMIFont(standardFont);
+//		} else {
+//			amiFont = createAMIFontFromName(fontName);
+//		}
+//		return amiFont;
+//	}
 
 	public Encoding getEncoding() {
 		return encoding;

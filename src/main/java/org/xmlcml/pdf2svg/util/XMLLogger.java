@@ -45,6 +45,7 @@ public class XMLLogger {
 
 	public void reset() {
 		root = new Element("pdfLog");
+		root.addAttribute(new Attribute("glyphs", Boolean.toString(logGlyphs)));
 
 		fontlist = new Element("fontList");
 		root.appendChild(fontlist);
@@ -154,9 +155,9 @@ public class XMLLogger {
 				String key = charName;
 				if (key == null)
 					key = "" + charCode;
-				String D = amiFont.getPathStringByCharnameMap().get(key);
-				if (D != null)
-					character.appendChild(new SVGPath(D));
+				String d = amiFont.getPathStringByCharnameMap().get(key);
+				if (d != null)
+					character.appendChild(new SVGPath(d));
 			}
 		}
 
