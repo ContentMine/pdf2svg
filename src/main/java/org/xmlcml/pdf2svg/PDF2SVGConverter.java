@@ -66,6 +66,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	public static final String LOGFILE = "-logfile";
 	public static final String LOGCONVS = "-logconvs";
 	public static final String LOGGLYPHS = "-logglyphs";
+	public static final String EXITONERR = "-exitonerr";
 
 	private String PDFpassword = "";
 	private boolean useNonSeqParser = false;
@@ -93,6 +94,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private SVGSVG currentSVGPage;
 	private boolean writeFile = true;
 	private boolean writeInfoFiles = false;
+	private boolean exitOnError = false;
 	
 	public boolean drawBoxesForClipPaths = false;
 	public boolean addTooltipDebugTitles = false;
@@ -104,8 +106,8 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 	private static void usage() {
 		System.err
-				.printf("Usage: pdf2svg [%s <pw>] [%s] [%s <page-ranges>] [%s <pub>] [%s <dir>] [%s]%n"
-						+ "               [%s] [%s] [%s] [%s <filename>] [%s] [%s] <input-file(s)> ...%n%n"
+				.printf("Usage: pdf2svg [%s <pw>] [%s] [%s <page-ranges>] [%s <pub>] [%s <dir>] [%s] [%s]%n"
+						+ "               [%s] [%s] [%s <filename>] [%s] [%s] [%s] <input-file(s)> ...%n%n"
 						+ "  %s <password>  Password to decrypt the document (default none)%n"
 						+ "  %s               Enables the new non-sequential parser%n"
 						+ "  %s <page-ranges>  Restrict pages to be output (default all)%n"
@@ -118,11 +120,13 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 						+ "  %s <filename>   Write the XML Logger output into 'filename' (default 'pdfLog.xml')%n"
 						+ "  %s             log any characters that are converted to unicode using heuristics%n"
 						+ "  %s            Attempt to include char glyphs as svg paths in the XML logger%n"
+						+ "  %s            exit on PDF parse error (otherwise continue to next pdf)%n"
 						+ "  <input-file(s)>       The PDF document(s) to be loaded%n%n",
 						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, MKDIR, NO_SVG,
 						INFO_FILES, LOGGER, LOGFILE, LOGCONVS, LOGGLYPHS,
-						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, MKDIR, NO_SVG,
-						INFO_FILES, LOGGER, LOGFILE, LOGCONVS, LOGGLYPHS);
+						EXITONERR, PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, MKDIR,
+						NO_SVG, INFO_FILES, LOGGER, LOGFILE, LOGCONVS,
+						LOGGLYPHS, EXITONERR);
 	}
 
 	private void openPDFFile(File file) throws Exception {
@@ -267,26 +271,31 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	public static void main(String[] args) throws Exception {
 
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run(args);
+
+		if (!converter.run(args))
+			System.exit(1);
 
 		System.exit(0);
 	}
 
-	public void run(String argString) {
-		run(argString.split("[\\s+]"));
+	public boolean run(String argString) {
+		return run(argString.split("[\\s+]"));
 	}
 
-	public void run(String... args) {
+	public boolean run(String... args) {
 
-		if (args.length == 0)
+		if (args.length == 0) {
 			usage();
+			return false;
+		}
 
 		List<String> fileList = new ArrayList<String>();
 
 		for (iarg = 0; iarg < args.length; iarg++) {
 
 			if (args[iarg].equals(PASSWORD)) {
-				incrementArg(args);
+				if (!incrementArg(args))
+					return false;
 				PDFpassword = args[iarg];
 				continue;
 			}
@@ -297,7 +306,8 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			}
 
 			if (args[iarg].equals(OUTDIR)) {
-				incrementArg(args);
+				if (!incrementArg(args))
+					return false;
 				outputDirectory = args[iarg];
 				continue;
 			}
@@ -308,12 +318,12 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			}
 
 			if (args[iarg].equals(NO_SVG)) {
-				writeFile  = false;
+				writeFile = false;
 				continue;
 			}
 
 			if (args[iarg].equals(INFO_FILES)) {
-				writeInfoFiles  = true;
+				writeInfoFiles = true;
 				continue;
 			}
 
@@ -323,7 +333,8 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			}
 
 			if (args[iarg].equals(LOGFILE)) {
-				incrementArg(args);
+				if (!incrementArg(args))
+					return false;
 				XMLLoggerFile = args[iarg];
 				continue;
 			}
@@ -338,14 +349,21 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 				continue;
 			}
 
+			if (args[iarg].equals(EXITONERR)) {
+				exitOnError = true;
+				continue;
+			}
+
 			if (args[iarg].equals(PAGES)) {
-				incrementArg(args);
+				if (!incrementArg(args))
+					return false;
 				pageRanges = new PageRanges(args[iarg]);
 				continue;
 			}
 
 			if (args[iarg].equals(PUB)) {
-				incrementArg(args);
+				if (!incrementArg(args))
+					return false;
 				publisher = getPublisher(args[iarg]);
 				continue;
 			}
@@ -355,21 +373,27 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 		if (fileList.size() == 0) {
 			usage();
-			return;
+			return false;
 		}
 
 		ensureXMLLogger();
+
+		boolean succeeded = true;
 
 		for (String filename : fileList) {
 			try {
 				readFileOrDirectory(filename);
 			} catch (Exception e) {
-//				throw new RuntimeException("Cannot parse PDF: " + filename, e);
 				System.err.printf("Cannot parse PDF '" + filename + "':" + e);
+				if (exitOnError)
+					return false;
+				succeeded = false;
 			}
 		}
 
 		writeXMLLoggerOutput();
+
+		return succeeded;
 	}
 
 	private void ensureXMLLogger() {
@@ -440,11 +464,13 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		}
 	}
 
-	private void incrementArg(String... args) {
+	private boolean incrementArg(String... args) {
 		iarg++;
 		if (iarg >= args.length) {
 			usage();
+			return false;
 		}
+		return true;
 	}
 
 	public List<SVGSVG> getPageList() {

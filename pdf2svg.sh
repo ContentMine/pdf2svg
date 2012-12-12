@@ -12,7 +12,12 @@
 
 PDF2SVG_HOME="${PDF2SVG_HOME-/opt/pdf2svg}"
 JAVA_HOME="${JAVA_HOME-/usr/lib/jvm/java-6-sun}"
-JAVA_OPTS="${JAVA_OPTS--Djava.awt.headless=true -Xms512m -Xmx512m}"
+jopts="-Djava.awt.headless=true"	  # font graphics accesses X11 display
+jopts="${jopts} -XX:+UseConcMarkSweepGC"  # prevent OOM?
+jopts="${jopts} -XX:-UseGCOverheadLimit"  # prevent OOM?
+jopts="${jopts} ${JAVA_HEAPMIN--Xms128m}" # initial heap
+jopts="${jopts} ${JAVA_HEAPMAX--Xmx512m}" # use 1024m for lots of big docs
+JAVA_OPTS="${JAVA_OPTS-${jopts}}"
 export PDF2SVG_HOME JAVA_HOME JAVA_OPTS
 
 lib="$PDF2SVG_HOME/lib"
