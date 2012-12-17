@@ -25,11 +25,15 @@ import java.awt.Shape;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.GeneralPath;
 import java.awt.geom.PathIterator;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
+
+import javax.imageio.ImageIO;
 
 import org.apache.log4j.Level;
 import org.apache.log4j.Logger;
@@ -47,8 +51,8 @@ import org.apache.pdfbox.pdmodel.graphics.color.PDColorState;
 import org.apache.pdfbox.pdmodel.text.PDTextState;
 import org.apache.pdfbox.util.Matrix;
 import org.apache.pdfbox.util.TextPosition;
+import org.apache.xerces.impl.dv.util.Base64;
 import org.xmlcml.euclid.Angle;
-import org.xmlcml.euclid.Real;
 import org.xmlcml.euclid.Real2;
 import org.xmlcml.euclid.Real2Range;
 import org.xmlcml.euclid.RealArray;
@@ -57,6 +61,7 @@ import org.xmlcml.euclid.Transform2;
 import org.xmlcml.graphics.svg.SVGClipPath;
 import org.xmlcml.graphics.svg.SVGDefs;
 import org.xmlcml.graphics.svg.SVGElement;
+import org.xmlcml.graphics.svg.SVGImage;
 import org.xmlcml.graphics.svg.SVGPath;
 import org.xmlcml.graphics.svg.SVGRect;
 import org.xmlcml.graphics.svg.SVGSVG;
@@ -595,14 +600,6 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 	}
 
-//	private void debugMap(Map<String, Integer> map) {
-//		String keys[] = map.keySet().toArray(new String[0]);
-//		Arrays.sort(keys);
-//		for (String key : keys) {
-//			LOG.debug(key+": "+map.get(key));
-//		}
-//	}
-
 	private String getAndFormatClipPath() {
 		Shape shape = getGraphicsState().getCurrentClippingPath();
 		PathIterator pathIterator = shape.getPathIterator(new AffineTransform());
@@ -713,7 +710,7 @@ xmlns="http://www.w3.org/2000/svg">
 			angleDeg = Math.round((float)angle.getDegrees());
 		}
 		if (angleDeg != 0) {
-			LOG.trace("Transform "+t2+" "+svgText.getText()+" "+at+" "+getRealArray(fontMatrix));
+			LOG.trace("Transform "+t2+" "+svgText.getText()+" "+at+" "+PDF2SVGUtil.getRealArray(fontMatrix));
 			// do this properly later (only if scales are anisotropic and so far no evidence)
 			scale = Math.sqrt(Math.abs(t2.elementAt(0, 1)*t2.elementAt(1, 0)));
 			Transform2 t2a = Transform2.getRotationAboutPoint(angle, svgText.getXY());
@@ -721,30 +718,6 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 		currentFontSize = scale;
 		return currentFontSize;
-	}
-
-	private RealMatrix getRealMatrix(PDMatrix fontMatrix) {
-		RealMatrix rm = new RealMatrix(2, 3);
-		for (int i = 0; i < 2; i++) {
-			for (int j = 0; j < 3; j++) {
-				rm.setElementAt(i,  j, fontMatrix.getValue(i, j));
-			}
-		}
-		return rm;
-	}
-
-	private RealArray getRealArray(PDMatrix fontMatrix) {
-		double[] dd = new double[9];
-		int kk = 0;
-		int nrow = 2;
-		int ncol = 3;
-		for (int irow = 0; irow < nrow; irow++) {
-			for (int jcol = 0; jcol < ncol; jcol++) {
-				dd[kk++] = fontMatrix.getValue(irow, jcol);
-			}
-		}
-		RealArray ra = new RealArray(dd);
-		return ra;
 	}
 
 	/** changes coordinates because AWT and SVG use top-left origin while PDF uses bottom left
@@ -817,7 +790,7 @@ xmlns="http://www.w3.org/2000/svg">
 	 * 
 	 */
 	public Graphics2D getGraphics() {
-		System.err.printf("getGraphics was called!!!!!!! (May mean method was not overridden) %n");
+		LOG.error("getGraphics was called!!!!!!! (May mean method was not overridden) %n");
 		return null;
 	}
 
@@ -907,20 +880,34 @@ xmlns="http://www.w3.org/2000/svg">
 	}
 
 	/** maye be removed later
+	 * @throws IOException 
 	 * 
 	 */
+	@Override
 	public void drawImage(Image awtImage, AffineTransform at) {
 //		System.out
 //				.printf("\tdrawImage: awtImage='%s', affineTransform='%s', composite='%s', clip='%s'%n",
 //						awtImage.toString(), at.toString(), getGraphicsState()
 //								.getStrokeJavaComposite().toString(),
 //						getGraphicsState().getCurrentClippingPath().toString());
-		 LOG.trace("drawImage Not yet implemented");
+		if (awtImage instanceof BufferedImage) {
+			LOG.debug("AT "+at);
+			Transform2 t2 = new Transform2(at);
+			BufferedImage bImage = (BufferedImage) awtImage;
+			LOG.debug("IMAGE: x="+bImage.getMinX()+" y="+bImage.getMinY()+" h="+bImage.getHeight()+" w="+bImage.getWidth());
+			SVGImage svgImage = new SVGImage();
+			svgImage.setTransform(t2);
+			svgImage.readImageData(bImage, SVGImage.IMAGE_PNG);
+			svg.appendChild(svgImage);
+		} else {
+			LOG.warn("Image not incorporated");
+		}
 	}
 
 	/** used in pageDrawer - shaded type of fill
 	 * 
 	 */
+	@Override
 	public void shFill(COSName shadingName) throws IOException {
 		LOG.warn("Shading Fill Not Implemented");
 	}

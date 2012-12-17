@@ -17,7 +17,10 @@ package org.xmlcml.pdf2svg.util;
 
 import nu.xom.Attribute;
 
+import org.apache.pdfbox.pdmodel.common.PDMatrix;
 import org.xmlcml.cml.base.CMLConstants;
+import org.xmlcml.euclid.RealArray;
+import org.xmlcml.euclid.RealMatrix;
 import org.xmlcml.graphics.svg.SVGElement;
 
 public class PDF2SVGUtil {
@@ -40,5 +43,40 @@ public class PDF2SVGUtil {
 		Attribute attribute = svgElement.getAttribute(attName, SVGX_NS);
 		return (attribute == null) ? null : attribute.getValue();
 	}
+
+	/** extracts PDMatrix to RealMatrix
+	 * 
+	 * @param fontMatrix
+	 * @return
+	 */
+	public static RealMatrix getRealMatrix(PDMatrix fontMatrix) {
+		RealMatrix rm = new RealMatrix(2, 3);
+		for (int i = 0; i < 2; i++) {
+			for (int j = 0; j < 3; j++) {
+				rm.setElementAt(i,  j, fontMatrix.getValue(i, j));
+			}
+		}
+		return rm;
+	}
+
+	/** extracts PDMatrix to array of doubles in RealArray
+	 * 
+	 * @param fontMatrix
+	 * @return
+	 */
+	public static RealArray getRealArray(PDMatrix fontMatrix) {
+		double[] dd = new double[9];
+		int kk = 0;
+		int nrow = 2;
+		int ncol = 3;
+		for (int irow = 0; irow < nrow; irow++) {
+			for (int jcol = 0; jcol < ncol; jcol++) {
+				dd[kk++] = fontMatrix.getValue(irow, jcol);
+			}
+		}
+		RealArray ra = new RealArray(dd);
+		return ra;
+	}
+
 
 }

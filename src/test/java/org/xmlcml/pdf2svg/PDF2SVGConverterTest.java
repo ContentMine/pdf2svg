@@ -157,7 +157,7 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	//@Ignore // do not normally run this
+	@Ignore // do not normally run this
 	public void testCSIROTest0() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
 		converter.run("-logger", "-logglyphs", "-logconvs",  "-outdir", "target/csiro/test0", "../pdfs/csiro/test0");
@@ -165,9 +165,16 @@ public class PDF2SVGConverterTest {
 
 	@Test
 	@Ignore // do not normally run this
+	public void testBMCEvolbio() {
+		PDF2SVGConverter converter = new PDF2SVGConverter();
+		converter.run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/bmc/evolbio/", "../ami2/pdfs/bmcevolbiol/2/");
+	}
+
+	@Test
+	@Ignore // do not normally run this
 	public void testAllBMC() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-logger", "-outdir", "target/bmc/", "../pdfs/bmc");
+		converter.run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/bmc/", "../pdfs/bmc");
 	}
 
 
