@@ -84,13 +84,9 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	<fontFamily name="MTGUB" />
 	<fontFamily name="MTSYB" />
 	
-	<!-- this is mainly Unicode so cannot be used for other codes till we fix that
-	
 	<fontFamily name="MTSYN"
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mtsyn.xml" />
- -->
-	<fontFamily name="MTSYN"/>
-
+	    
 <!--  =======================FONTS OF TEX / AMS (MSAM/MSBM)=========================== -->	
 	<!--  FONTS OF TEX / AMS (MSAM/MSBM) -->
 	<fontFamily name="MSAM6" 
@@ -114,6 +110,8 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi1.xml"/>
 	<fontFamily name="AdvPi2" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi2.xml"/>
+	<fontFamily name="AdvPi3" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi3.xml"/>
 
 <!--  ==================Adv misc =========================== -->	
 	
@@ -134,8 +132,15 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	<fontFamily name="AdvPS4731B1" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvPS4731B1.xml"/>
 
+	<fontFamily name="AdvMT_MI" symbol="true"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmt_mi.xml" />
 	<fontFamily name="ADVMT_MI" symbol="true"
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/ADVMT_MI.xml" />
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmt_mi.xml" />
+	    
+	<fontFamily name="AdvMT_SY" symbol="true"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmt_sy.xml" />
+	<fontFamily name="ADVMT_SY" symbol="true"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmt_sy.xml" />
 	    
 <!--  ==================AdvELS-ENT =========================== -->	
 	<fontFamily name="AdvEls-Ent1" symbol="true" 
@@ -164,6 +169,9 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 
 	<fontFamily name="Wingdings" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/wingdings.xml"/>
+
+	<fontFamily name="Cambria Math" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cambriaMath.xml"/>
 
 <!-- uses Cddd codepoints -->
 	<fontFamily name="AdvMacMthSyN" 

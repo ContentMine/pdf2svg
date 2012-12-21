@@ -16,7 +16,7 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="MTSY">
+<codePointSet encoding="MTSY" id="mtsy">
 <!-- assume >=32 == Unicode??? -->
     <!-- only non-Unicode? -->
     <codePoint unicode="U+00D7" decimal="2"   name="multiply" note="multiply"/>

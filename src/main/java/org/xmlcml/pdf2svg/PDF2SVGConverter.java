@@ -50,7 +50,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private static final String PDF = ".pdf";
 	private static final double _DEFAULT_PAGE_WIDTH = 600.0;
 	private static final double _DEFAULT_PAGE_HEIGHT = 800.0;
-	private static final String DEFAULT_PUBLISHER_SET_XML = PConstants.PDF2SVG_ROOT+"/"+"publisherSet.xml";
+	
 	@SuppressWarnings("unused")
 	private static final long serialVersionUID = 1L;
 
@@ -85,7 +85,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	CodePointSet newCodePointSet;
 	private File outdir;
 	private int iarg;
-	private String publisherSetXmlResource = DEFAULT_PUBLISHER_SET_XML;
+	private String publisherSetXmlResource = PublisherSet.PUBLISHER_SET_XML;
 	private PublisherSet publisherSet;
 	
 	Double pageHeight = _DEFAULT_PAGE_HEIGHT;
@@ -144,14 +144,16 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			pr = new PageRanges(String.format("1-%d", pages.size()));
 		}
 
-		if (useXMLLogger)
+		if (useXMLLogger) {
 			xmlLogger.newPDFFile(file.getAbsolutePath(), pages.size());
+		}
 
-		LOG.debug("Processing pages "+pr.toString()+" (of "+pages.size()+")"); 
+		System.out.print(" .. pages "+pr.toString()+" ("+pages.size()+") "); 
 
 		String basename = file.getName().toLowerCase();
-		if (basename.endsWith(PDF))
+		if (basename.endsWith(PDF)) {
 			basename = basename.substring(0, basename.length() - 4);
+		}
 
 		createOutputDirectory(basename);
 
@@ -160,10 +162,11 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		while (pageNumber > 0) {
 			PDPage page = pages.get(pageNumber - 1);
 
-			if (useXMLLogger)
+			if (useXMLLogger) {
 				xmlLogger.newPDFPage(pageNumber);
+			}
 
-			LOG.debug("=== " + pageNumber + " ===");
+			System.out.print(pageNumber + " = ");
 
 			currentSVGPage = page2svgConverter.convertPageToSVG(page, this);
 
@@ -175,6 +178,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 			pageNumber = pr.next(pageNumber);
 		}
+		System.out.println();
 
 		if (writeInfoFiles) {
 			reportHighCodePoints();
@@ -492,7 +496,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			newCodePointSet = new CodePointSet();
 		}
 		if (knownCodePointSet == null) {
-			knownCodePointSet = CodePointSet.readCodePointSet(CodePointSet.KNOWN_HIGH_CODE_POINT_SET_XML); 
+			knownCodePointSet = CodePointSet.readCodePointSet(CodePointSet.UNICODE_POINT_SET_XML); 
 		}
 	}
 

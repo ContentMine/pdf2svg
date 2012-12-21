@@ -15,11 +15,12 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvEnt1">
+<codePointSet encoding="AdvEnt1" id="advEnt1" resource="org/xmlcml/pdf2svg/codepoints/defacto">
+
+    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/>
+    
     <codePoint decimal="34"   unicode="U+21C4" unicodeName="RIGHTWARDS ARROW OVER LEFTWARDS ARROW"/>
     <codePoint decimal="45"   unicode="U+2192" unicodeName="RIGHTWARDS ARROW" note="unknown"/>
     <codePoint decimal="50"   unicode="U+2194" unicodeName="LEFT RIGHT ARROW" note="unknown"/>
     
-    <codePoint decimal="8217" unicode="U+2190" unicodeName="LEFTWARDS ARROW" note="unknown"/>
-    <codePoint unicodeName="UNKNOWN" unicode="U+274E" decimal="999999" note="unknown"/>
 </codePointSet>

@@ -30,7 +30,7 @@ public class CodePointTest {
 	public void testGetCodePointAttributes() throws Exception {
 		Element fontFamilyElementSet = new Builder().build(
 				Util.getResourceUsingContextClassLoader(
-						CodePointSet.KNOWN_HIGH_CODE_POINT_SET_XML, this.getClass())).getRootElement();
+						CodePointSet.UNICODE_POINT_SET_XML, this.getClass())).getRootElement();
 		CodePointSet nonStandardSet = CodePointSet.createFromElement(fontFamilyElementSet); 
 		CodePoint codePoint = nonStandardSet.getByUnicodeValue("U+039F");
 		Assert.assertNotNull(codePoint);

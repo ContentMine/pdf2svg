@@ -18,9 +18,11 @@ package org.xmlcml.pdf2svg;
 import java.awt.BasicStroke;
 import java.awt.Color;
 import java.awt.Dimension;
+import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.Paint;
+import java.awt.RenderingHints;
 import java.awt.Shape;
 import java.awt.geom.AffineTransform;
 import java.awt.geom.GeneralPath;
@@ -31,6 +33,7 @@ import java.io.IOException;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.List;
+import java.util.Map;
 import java.util.Set;
 
 import javax.imageio.ImageIO;
@@ -48,6 +51,9 @@ import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.graphics.PDGraphicsState;
 import org.apache.pdfbox.pdmodel.graphics.PDLineDashPattern;
 import org.apache.pdfbox.pdmodel.graphics.color.PDColorState;
+import org.apache.pdfbox.pdmodel.interactive.annotation.PDAnnotation;
+import org.apache.pdfbox.pdmodel.interactive.annotation.PDAppearanceDictionary;
+import org.apache.pdfbox.pdmodel.interactive.annotation.PDAppearanceStream;
 import org.apache.pdfbox.pdmodel.text.PDTextState;
 import org.apache.pdfbox.util.Matrix;
 import org.apache.pdfbox.util.TextPosition;
@@ -80,7 +86,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	
 	private static final String CLIP_PATH = "clipPath";
 
-	private final static Logger LOG = Logger.getLogger(PDF2SVGConverter.class);
+	private final static Logger LOG = Logger.getLogger(PDFPage2SVGConverter.class);
 
 	// only use if mediaBox fails to give dimension
 	private static final Dimension DEFAULT_DIMENSION = new Dimension(800, 800);
@@ -211,6 +217,59 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		}
 	}
 
+    /**
+     * DUPLICATE OF SUPER SO WE CAN DEBUG
+     * This will draw the page to the requested context.
+     *
+     * @param g The graphics context to draw onto.
+     * @param p The page to draw.
+     * @param pageDimension The size of the page to draw.
+     *
+     * @throws IOException If there is an IO error while drawing the page.
+     */
+    public void drawPage( Graphics g, PDPage p, Dimension pageDimension ) throws IOException {
+    	super.drawPage(g, p, pageDimension);
+    	// cannot use this because private
+    	// graphics = (Graphics2D)g;
+        Graphics2D g2d = (Graphics2D)g;
+//	        g2d = (Graphics2D)g;
+        page = p;
+        pageSize = pageDimension;
+        g2d.setRenderingHint( RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON );
+        g2d.setRenderingHint( RenderingHints.KEY_FRACTIONALMETRICS, RenderingHints.VALUE_FRACTIONALMETRICS_ON );
+        // Only if there is some content, we have to process it. 
+        // Otherwise we are done here and we will produce an empty page
+        if ( page.getContents() != null) {
+            PDResources resources = page.findResources();
+            processStream( page, resources, page.getContents().getStream() );
+        }
+        List annotations = page.getAnnotations();
+        if (annotations.size() > 0) {
+        	throw new RuntimeException("ANNOTATIONS");
+        }
+        for( int i=0; i<annotations.size(); i++ ) {
+            PDAnnotation annot = (PDAnnotation)annotations.get( i );
+            PDRectangle rect = annot.getRectangle();
+            String appearanceName = annot.getAppearanceStream();
+            PDAppearanceDictionary appearDictionary = annot.getAppearance();
+            if( appearDictionary != null ) {
+                if( appearanceName == null ) {
+                    appearanceName = "default";
+                }
+                Map appearanceMap = appearDictionary.getNormalAppearance();
+                if (appearanceMap != null) { 
+                    PDAppearanceStream appearance = 
+                        (PDAppearanceStream)appearanceMap.get( appearanceName ); 
+                    if( appearance != null ) { 
+                        g.translate( (int)rect.getLowerLeftX(), (int)-rect.getLowerLeftY() ); 
+                        processSubStream( page, appearance.getResources(), appearance.getStream() ); 
+                        g.translate( (int)-rect.getLowerLeftX(), (int)+rect.getLowerLeftY() ); 
+                    }
+                }
+            }
+        }
+    }
+
 
 	private void ensureDefs1() {
 /*
@@ -264,8 +323,9 @@ xmlns="http://www.w3.org/2000/svg">
 
 		if (pdf2svgConverter.useXMLLogger) {
 			pdf2svgConverter.xmlLogger.newFont(amiFont);
-			if (pdf2svgConverter.xmlLoggerLogGlyphs)
+			if (pdf2svgConverter.xmlLoggerLogGlyphs) {
 				captureAndIndexGlyphVector(textPosition, charCode);
+			}
 		}
 
 		SVGText svgText = new SVGText();
@@ -318,14 +378,25 @@ xmlns="http://www.w3.org/2000/svg">
 
 	private int getCharCodeAndSetEncodingAndCharname(TextPosition textPosition) {
 
-		textContent = textPosition.getCharacter();
-		if (textContent.length() > 1) {
-			// this can happen for ligatures
-			LOG.trace("multi-char string: "+textPosition.getCharacter());
-		} 
-		int charCode = textContent.charAt(0);
-
 		encoding = amiFont.getEncoding();
+		int[] codePoints = textPosition.getCodePoints();
+		LOG.trace("codePoints: "+(codePoints == null ? null : codePoints.length));
+		int charCode = -1;
+		if (encoding == null) {
+			if (codePoints != null) {
+				charCode = codePoints[0];
+				LOG.trace("charCode "+charCode);
+				textContent = ""+(char) charCode;
+			}
+		} else {
+			textContent = textPosition.getCharacter();
+			if (textContent.length() > 1) {
+				// this can happen for ligatures
+				LOG.trace("multi-char string: "+textPosition.getCharacter());
+			} 
+			charCode = textContent.charAt(0);
+		}
+
 		if (encoding == null) {
 			LOG.debug("Null encoding for character: "+charCode+" at "+currentXY+" font: "+fontName+" / "+fontFamilyName+" / "+amiFont.getBaseFont());
 		} else {
@@ -401,8 +472,9 @@ xmlns="http://www.w3.org/2000/svg">
 
 	private void captureAndIndexGlyphVector(TextPosition text, int charCode) {
 		String key = charname;
-		if (key == null)
+		if (key == null) {
 			key = "" + charCode;
+		}
 		String pathString = amiFont.getPathStringByCharnameMap().get(key);
 		LOG.trace("charname: "+charname+" path: "+pathString);
 		if (pathString == null) {
@@ -602,9 +674,7 @@ xmlns="http://www.w3.org/2000/svg">
 
 	private String getAndFormatClipPath() {
 		Shape shape = getGraphicsState().getCurrentClippingPath();
-		PathIterator pathIterator = shape.getPathIterator(new AffineTransform());
-		clipString = SVGPath.getPathAsDString(pathIterator);
-		SVGPath path = new SVGPath(clipString);
+		SVGPath path = new SVGPath(shape);
 		path.format(nPlaces);
 		clipString = path.getDString();
 		// old approach
@@ -663,14 +733,17 @@ xmlns="http://www.w3.org/2000/svg">
 	 * @return CCC as #rrggbb (alpha is currently discarded)
 	 */
 	private static String getCSSColor(Paint paint) {
-		int r = ((Color) paint).getRed();
-		int g = ((Color) paint).getGreen();
-		int b = ((Color) paint).getBlue();
-		// int a = ((Color) paint).getAlpha();
-		int rgb = (r<<16)+(g<<8)+b;
-		String colorS = String.format("#%06x", rgb);
-		if (rgb != 0) {
-			LOG.trace("Paint "+rgb+" "+colorS);
+		String colorS = null;
+		if (paint instanceof Color) {
+			int r = ((Color) paint).getRed();
+			int g = ((Color) paint).getGreen();
+			int b = ((Color) paint).getBlue();
+			// int a = ((Color) paint).getAlpha();
+			int rgb = (r<<16)+(g<<8)+b;
+			colorS = String.format("#%06x", rgb);
+			if (rgb != 0) {
+				LOG.trace("Paint "+rgb+" "+colorS);
+			}
 		}
 		return colorS;
 	}
@@ -870,7 +943,7 @@ xmlns="http://www.w3.org/2000/svg">
 			currentPaint = colorState.getPaint(pageSize.height);
 		}
 		if (currentPaint == null) {
-			LOG.warn("ColorSpace "
+			LOG.trace("ColorSpace "
 					+ colorState.getColorSpace().getName()
 					+ " doesn't provide a " + type
 					+ " color, using white instead!");
@@ -891,10 +964,9 @@ xmlns="http://www.w3.org/2000/svg">
 //								.getStrokeJavaComposite().toString(),
 //						getGraphicsState().getCurrentClippingPath().toString());
 		if (awtImage instanceof BufferedImage) {
-			LOG.debug("AT "+at);
 			Transform2 t2 = new Transform2(at);
 			BufferedImage bImage = (BufferedImage) awtImage;
-			LOG.debug("IMAGE: x="+bImage.getMinX()+" y="+bImage.getMinY()+" h="+bImage.getHeight()+" w="+bImage.getWidth());
+			LOG.trace("IMAGE: x="+bImage.getMinX()+" y="+bImage.getMinY()+" h="+bImage.getHeight()+" w="+bImage.getWidth());
 			SVGImage svgImage = new SVGImage();
 			svgImage.setTransform(t2);
 			svgImage.readImageData(bImage, SVGImage.IMAGE_PNG);
@@ -909,7 +981,7 @@ xmlns="http://www.w3.org/2000/svg">
 	 */
 	@Override
 	public void shFill(COSName shadingName) throws IOException {
-		LOG.warn("Shading Fill Not Implemented");
+		LOG.trace("Shading Fill Not Implemented");
 	}
 
 	/** creates new <svg> and removes/sets some defaults

@@ -43,7 +43,8 @@ public class PublisherSet {
 	public static final String PUBLISHER_SET = "publisherSet";
 	
 	// resources
-	public static final String PUBLISHER_SET_XML = PConstants.PDF2SVG_ROOT+"/"+"publisherSet.xml";
+	public static final String PUBLISHER_DIR = PConstants.PDF2SVG_ROOT+"/"+"publishers/";
+	public static final String PUBLISHER_SET_XML = PublisherSet.PUBLISHER_DIR+"publisherSet.xml";
 	
 	// publishers
 	public  static final String BMC_ABB = "bmc";

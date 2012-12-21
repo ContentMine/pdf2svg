@@ -17,6 +17,7 @@ package org.xmlcml.pdf2svg;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import nu.xom.Builder;
@@ -39,13 +40,19 @@ import org.xmlcml.pdf2svg.util.PConstants;
  */
 public class CodePointSet extends Element {
 
-	private final static Logger LOG = Logger.getLogger(CodePointSet.class);
-	
-	public static final String UNICODE = "Unicode";
 	public static final String TAG = "codePointSet";
-//	public static final String KNOWN_HIGH_CODE_POINT_SET_XML = PConstants.PDF2SVG_ROOT+"/"+"highCodePoints.xml";
-	public static final String KNOWN_HIGH_CODE_POINT_SET_XML = PConstants.PDF2SVG_ROOT+"/"+"unicode.xml";
+	private final static Logger LOG = Logger.getLogger(CodePointSet.class);
+
 	public static final String ENCODING = "encoding";
+	public static final String HREF =   "href";
+	public static final String ID   =   "id";
+	public static final String IDREF  =   "idRef";
+	public static final String RESOURCE = "resource";
+	public static final String UNICODE = "Unicode";
+	
+	public static final String CODEPOINT_DIR = PConstants.PDF2SVG_ROOT+"/codepoints/";
+	public static final String UNICODE_DIR = CODEPOINT_DIR+"unicode/";
+	public static final String UNICODE_POINT_SET_XML = UNICODE_DIR+"unicode.xml";
 
 	private Map<UnicodePoint, CodePoint> codePointByUnicodePointMap;
 	private Map<String, CodePoint> codePointByUnicodeValueMap;
@@ -53,6 +60,8 @@ public class CodePointSet extends Element {
 	private Map<String, CodePoint> codePointByUnicodeNameMap;
 	private Map<String, CodePoint> codePointByNameMap;
 	private String encoding = null;
+	private String id       = null;
+	private String resource = null;
 
 	public CodePointSet() {
 		super(TAG);
@@ -64,7 +73,7 @@ public class CodePointSet extends Element {
 			codePointByDecimalMap =      new HashMap<Integer, CodePoint>();
 			codePointByUnicodePointMap = new HashMap<UnicodePoint, CodePoint>();
 			codePointByUnicodeNameMap =  new HashMap<String, CodePoint>();
-			codePointByUnicodeValueMap =  new HashMap<String, CodePoint>();
+			codePointByUnicodeValueMap = new HashMap<String, CodePoint>();
 			codePointByNameMap =         new HashMap<String, CodePoint>();
 		}
 	}
@@ -87,27 +96,84 @@ public class CodePointSet extends Element {
 		if (!(TAG.equals(codePointSetElement.getLocalName()))) {
 			throw new RuntimeException("CodePointSet must have rootElement: "+TAG);
 		}
-		codePointSet.encoding = codePointSetElement.getAttributeValue(ENCODING);
-		if (codePointSet.encoding == null) {
-			throw new RuntimeException("Must give encoding on: "+TAG);
-		}
+		codePointSet.addEncoding(codePointSetElement);
+		codePointSet.addId(codePointSetElement);
+		codePointSet.resource  = codePointSetElement.getAttributeValue(RESOURCE);
 		Elements childElements = codePointSetElement.getChildElements();
 		for (int i = 0; i < childElements.size(); i++) {
-			Element codePointElement = childElements.get(i);
-			CodePoint codePoint = CodePoint.createFromElement(codePointElement, codePointSet.encoding);
-			UnicodePoint unicodePoint = codePoint.getUnicodePoint();
-			if (unicodePoint == null) {
-				throw new RuntimeException("codePoint must contain unicode value");
+			Element element = childElements.get(i);
+			if (CodePoint.TAG.equals(element.getLocalName())) {
+				codePointSet.createCodePoint(element);
+			} else if (CodePointSet.TAG.equals(element.getLocalName())) {
+				codePointSet.createCodePointSet(element);
+			} else {
+				throw new RuntimeException("Unknown/forbidden child of codePointSet: "+element.toXML());
 			}
-			if (codePointSet.containsKey(unicodePoint) && UNICODE.equals(codePointSet.encoding)) {
-				throw new RuntimeException("Duplicate unicode in unicode encoding: "+unicodePoint);
-			}
-			codePointSet.codePointByUnicodePointMap.put(unicodePoint, codePoint);
-			Integer decimal = codePoint.getDecimal();
-			codePointSet.add(codePoint);
-			LOG.trace("CodePoint "+codePoint);
 		}
 		return codePointSet;
+	}
+
+	private void addEncoding(Element codePointSetElement) {
+		this.encoding = codePointSetElement.getAttributeValue(ENCODING);
+		if (this.encoding == null) {
+			throw new RuntimeException("Must give encoding on: "+TAG);
+		}
+	}
+
+	private void addId(Element codePointSetElement) {
+		this.id  = codePointSetElement.getAttributeValue(ID);
+		if (this.id == null) {
+			throw new RuntimeException("Must give id on: "+TAG);
+		}
+	}
+
+	private void createCodePoint(Element element) {
+		CodePoint codePoint = CodePoint.createFromElement(element, this.encoding);
+		this.addCodePoint(codePoint);
+	}
+
+	private void addCodePoint(CodePoint codePoint) {
+		UnicodePoint unicodePoint = createUnicodePointAndCheckUniqueness( codePoint);
+		this.codePointByUnicodePointMap.put(unicodePoint, codePoint);
+		this.add(codePoint);
+		LOG.trace("CodePoint "+codePoint);
+	}
+
+	private UnicodePoint createUnicodePointAndCheckUniqueness(CodePoint codePoint) {
+		UnicodePoint unicodePoint = codePoint.getUnicodePoint();
+		if (unicodePoint == null) {
+			throw new RuntimeException("codePoint must contain unicode value");
+		}
+		if (this.containsKey(unicodePoint) && UNICODE.equals(this.encoding)) {
+			throw new RuntimeException("Duplicate unicode in unicode encoding: "+unicodePoint);
+		}
+		return unicodePoint;
+	}
+
+	/** currently does not check for cyclic dependencies
+	 * 
+	 * @param codePointSet
+	 * @param element
+	 */
+	private void createCodePointSet(Element element) {
+		String href = element.getAttributeValue(HREF);
+		String idRef = element.getAttributeValue(IDREF);
+		if (idRef == null || href == null) {
+			throw new RuntimeException("Must give idRef and href");
+		}
+		href = (resource != null) ? resource+"/"+href : href;
+		CodePointSet subCodePointSet = CodePointSet.readCodePointSet(href);
+		if (subCodePointSet == null) {
+			throw new RuntimeException("Cannot find codePointSet: "+href+"("+idRef+")");
+		}
+		if (!idRef.equals(subCodePointSet.id)) {
+			throw new RuntimeException("Expected idRef: "+idRef+"; found: "+subCodePointSet.id);
+		}
+		List<CodePoint> subCodePoints = subCodePointSet.getCodePoints();
+		for (CodePoint subCodePoint : subCodePoints) {
+			subCodePoint.detach();
+			this.addCodePoint(subCodePoint);
+		}
 	}
 
 	private boolean containsKey(UnicodePoint unicodePoint) {
@@ -165,6 +231,10 @@ public class CodePointSet extends Element {
 		if (codePoint.getUnicodeName() != null) {
 			this.codePointByUnicodeNameMap.put(codePoint.getUnicodeName(), codePoint);
 		}
+	}
+	
+	public List<CodePoint> getCodePoints() {
+		return (List<CodePoint>) Arrays.asList(codePointByUnicodePointMap.values().toArray(new CodePoint[0]));
 	}
 
 	public CodePoint getByUnicodePoint(UnicodePoint unicodePoint) {

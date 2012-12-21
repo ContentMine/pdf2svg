@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvP4C4E59"> 
+<codePointSet encoding="AdvP4C4E59" id="advp4c4e59"> 
 
 	<codePoint name="asciitilde" unicode="U+007E" unicodeName="TILDE"/>  
 

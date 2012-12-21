@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="CSymbol" > 
+<codePointSet encoding="CSymbol" id="csymbol"> 
     <codePoint name="asterisk" unicode="U+002A" unicodeName="ASTERISK"/>  
     <codePoint decimal="8364" unicode="U+0308" unicodeName="COMBINING DIAERESIS"/>  
     <codePoint unicode="U+002B" decimal="254" name="thorn" note="plus"/>

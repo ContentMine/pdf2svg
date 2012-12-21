@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<codePointSet encoding="AdvPi3" id="advpi3">
+    
+    <!--  This is a symbol font? -->
+	<codePoint unicode="U+00A9" decimal="35" note="COPYRIGHT SIGN" />
+    
+</codePointSet>

@@ -1,0 +1,9 @@
+<codePointSet encoding="Unicode" id="geometricShapes">
+    <codePoint unicode="U+25AA" unicodeName="BLACK SMALL SQUARE" name=""/>
+    <codePoint unicode="U+25B2" unicodeName="BLACK UP-POINTING TRIANGLE" name=""/>
+    <codePoint unicode="U+25B8" unicodeName="BLACK RIGHT-POINTING SMALL TRIANGLE" name=""/>
+    <codePoint unicode="U+25CA" unicodeName="LOZENGE" name="lozenge"/>
+    <codePoint unicode="U+25CB" unicodeName="WHITE CIRCLE" name=""/>  
+    <codePoint unicode="U+25CF" unicodeName="BLACK CIRCLE" name="" />
+        
+</codePointSet>

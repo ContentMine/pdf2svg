@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<codePoints>
+<codePoints encoding="macRomanEncoding" id="macRomanEncoding">
     <codePoint unicode="U+0020" name="space" />
     <codePoint unicode="U+0021" name="exclam" />
     <codePoint unicode="U+0022" name="quotedbl" />

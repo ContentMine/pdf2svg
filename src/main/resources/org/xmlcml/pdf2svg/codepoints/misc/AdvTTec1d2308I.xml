@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvTTec1d2308I">
+<codePointSet encoding="AdvTTec1d2308I"  id="advpi3">
+<!--  adobe  -->
     <codePoint unicodeName="GREEK SMALL LETTER NU" unicode="U+03BD" name="n" decimal="110"/>
-    <codePoint unicodeName="UNKNOWN" unicode="U+274E" decimal="99999" note="unknown"/>
 </codePointSet>

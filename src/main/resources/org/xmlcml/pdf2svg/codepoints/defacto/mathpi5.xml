@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="MathematicalPI">
+<codePointSet encoding="MathematicalPI" id="mathpi5">
     <codePoint name="H33522" unicode="U+007E" unicodeName="TILDE" />
 </codePointSet>
 		

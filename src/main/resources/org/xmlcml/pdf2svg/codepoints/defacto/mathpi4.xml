@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="MathematicalPI">
+<codePointSet encoding="MathematicalPI" id="mathpi4">
 	<codePoint name="H11541" unicode="U+2032" unicodeName="PRIME"/> 
 	<codePoint name="H11542" unicode="U+2033" unicodeName="DOUBLE PRIME"/> 
 	<codePoint name="H11546" unicode="U+2014" unicodeName="EM DASH"/> 

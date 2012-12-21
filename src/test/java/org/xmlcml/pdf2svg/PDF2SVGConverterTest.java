@@ -104,77 +104,9 @@ public class PDF2SVGConverterTest {
 	}
 
 	@Test
-	@Ignore // do not normally run this
-	// FIXME - move to test/resources
-	public void testWordThesis() {
+	public void testWordMath1() {
 		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "target/word", "src/test/resources//word/harterchap7small.pdf");
-	}
-	
-	@Test
-	@Ignore // do not normally run this
-	// this file requires encryption processing though it seems to be openly readable
-	public void testEncryption() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-outdir", "target/ajc", "../pdfs/ajc/CH01182.pdf");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testAJCCorpus() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run( "-logger","-outdir", "target/ajc/sample", "../pdfs/ajc/sample");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void test0All() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-logger", "-outdir", "target/0all/0", "../pdfs/0all/0");
-//		converter.run("-logger", "-outdir", "target/0all/1", "../pdfs/0all/1");
-//		converter.run("-logger", "-outdir", "target/0all/2", "../pdfs/0all/2");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testCSIRO() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-logger", "-outdir", "target/csiro/pick100", "../pdfs/csiro/pick100");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testIUCR() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-logger", "-outdir", "target/iucr", "../pdfs/iucr");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testCSIROTest() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-logger", "-outdir", "target/csiro/test", "../pdfs/csiro/test");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testCSIROTest0() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-logger", "-logglyphs", "-logconvs",  "-outdir", "target/csiro/test0", "../pdfs/csiro/test0");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testBMCEvolbio() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/bmc/evolbio/", "../ami2/pdfs/bmcevolbiol/2/");
-	}
-
-	@Test
-	@Ignore // do not normally run this
-	public void testAllBMC() {
-		PDF2SVGConverter converter = new PDF2SVGConverter();
-		converter.run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/bmc/", "../pdfs/bmc");
+		converter.run("-outdir", "target/word/", "-pub", "word", "src/test/resources/word/testmath1.pdf");
 	}
 
 

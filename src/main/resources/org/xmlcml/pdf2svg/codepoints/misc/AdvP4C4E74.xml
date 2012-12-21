@@ -15,8 +15,9 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="MacMath"> <!--  I am not sure of this yet  -->
+<codePointSet encoding="MacMath" id="macmath"> <!--  I am not sure of this yet  -->
 
+<!--  this is adobe -->
 <!-- seems to contain both name and Cdd names -->
 	<codePoint name="backslash" decimal="92" unicode="U+2229" unicodeName="INTERSECTION"/>  
 	<codePoint name="one"         unicode="U+274E" unicodeName="UNK"/>  

@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="MSAM8">
+<codePointSet encoding="MSAM8" id="msam8">
 	<codePoint decimal="1" name="" unicode="U+2734" unicodeName="BLACK DOWN-POINTING TRIANGLE" note="don't trust"/> 
 	
 	<codePoint name="trianglesolid" unicode="U+25B2" unicodeName="BLACK UP-POINTING TRIANGLE"/> 

@@ -15,6 +15,6 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvEnt3">
+<codePointSet encoding="AdvEnt3" id="advEnt3">
     <codePoint unicodeName="UNKNOWN" unicode="U+274E" name="grot" note="unknown"/>
 </codePointSet>

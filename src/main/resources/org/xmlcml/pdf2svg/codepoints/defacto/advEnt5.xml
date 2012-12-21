@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvEnt5">
+<codePointSet encoding="AdvEnt5" id="advEnt5">
     <codePoint decimal="49"  unicode="U+00B0" unicodeName="DEGREE SIGN" />
     <codePoint decimal="78"  unicode="U+274E" unicodeName="UNK" />
     <codePoint decimal="121" unicode="U+2026" unicodeName="HORIZONTAL ELLIPSIS" />

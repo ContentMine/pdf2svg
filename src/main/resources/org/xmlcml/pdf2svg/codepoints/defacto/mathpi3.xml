@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="MathematicalPI">
+<codePointSet encoding="MathematicalPI" id="mathpi3">
     <!--  how does this differ from MathPi1?-->
 	<codePoint name="H11013" unicode="U+003D" unicodeName="EQUALS"/> 
 	<codePoint name="H20908" unicode="U+003C" unicodeName="LESS-THAN SIGN"/> 

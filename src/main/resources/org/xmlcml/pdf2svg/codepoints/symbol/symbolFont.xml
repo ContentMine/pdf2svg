@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<codePointSet encoding="Symbol">
+<codePointSet encoding="Symbol" id="symbolFont">
 
     <codePoint decimal="34" name="universal" htmlEnt="forall" unicode="2200" unicodeDecimal="8704" unicodeName="For all"/>
     <codePoint decimal="36" name="existential" htmlEnt="exist" unicode="2203" unicodeDecimal="8707" unicodeName="There exists"/>

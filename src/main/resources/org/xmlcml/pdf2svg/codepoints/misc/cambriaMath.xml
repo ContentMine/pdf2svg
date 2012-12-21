@@ -1,0 +1,270 @@
+<!--
+
+    Copyright (C) 2012 pm286 <peter.murray.rust@googlemail.com>
+
+    Licensed under the Apache License, Version 2.0 (the "License");
+    you may not use this file except in compliance with the License.
+    You may obtain a copy of the License at
+
+            http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing, software
+    distributed under the License is distributed on an "AS IS" BASIS,
+    WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+    See the License for the specific language governing permissions and
+    limitations under the License.
+
+-->
+<!--  this has different fontSizes for different characters! -->
+<codePointSet encoding="Cambria Math" id="cambriaMath">
+
+<!--  this may be wrong -->
+    <codePoint unicode="U+0020" decimal="3" note="space"/>
+    
+    <codePoint unicode="U+0061" decimal="131" note="a"/>
+    <codePoint unicode="U+0062" decimal="132" note="b"/>
+    <codePoint unicode="U+0063" decimal="133" note="c"/>
+    <codePoint unicode="U+0064" decimal="134" note="d"/>
+    <codePoint unicode="U+0065" decimal="135" note="e"/>
+    <codePoint unicode="U+0066" decimal="136" note="f"/>
+    <codePoint unicode="U+0067" decimal="137" note="g"/>
+    <codePoint unicode="U+0068" decimal="138" note="h"/>
+    <codePoint unicode="U+0069" decimal="139" note="i"/>
+    <codePoint unicode="U+006A" decimal="140" note="j"/>
+    <codePoint unicode="U+006B" decimal="141" note="k"/>
+    <codePoint unicode="U+006C" decimal="142" note="l"/>
+    <codePoint unicode="U+006D" decimal="143" note="m"/>
+    <codePoint unicode="U+006E" decimal="144" note="n"/>
+    <codePoint unicode="U+006F" decimal="145" note="o"/>
+    <codePoint unicode="U+0070" decimal="146" note="p"/>
+    <codePoint unicode="U+0071" decimal="147" note="q"/>
+    <codePoint unicode="U+0072" decimal="148" note="r"/>
+    <codePoint unicode="U+0073" decimal="149" note="s"/>
+    <codePoint unicode="U+0074" decimal="150" note="t"/>
+    <codePoint unicode="U+0075" decimal="151" note="u"/>
+    <codePoint unicode="U+0076" decimal="152" note="v"/>
+    <codePoint unicode="U+0077" decimal="153" note="w"/>
+    <codePoint unicode="U+0078" decimal="154" note="x"/>
+    <codePoint unicode="U+0079" decimal="155" note="y"/>
+    <codePoint unicode="U+007A" decimal="156" note="z"/>
+    
+
+    <codePoint unicode="U+002C" decimal="481" note=","/>
+    <codePoint unicode="U+002E" decimal="484" note="period"/>
+    <codePoint unicode="U+0021" decimal="488" note="exclam"/>
+
+    <codePoint unicode="U+007E" decimal="817" note="tilde"/>
+
+    <codePoint unicode="U+0030" decimal="882" note="0"/>
+    <codePoint unicode="U+0031" decimal="883" note="1"/>
+    <codePoint unicode="U+0032" decimal="884" note="2"/>
+    <codePoint unicode="U+0033" decimal="885" note="3"/>
+    <codePoint unicode="U+0034" decimal="886" note="4"/>
+    <codePoint unicode="U+0035" decimal="887" note="5"/>
+    <codePoint unicode="U+0036" decimal="888" note="6"/>
+    <codePoint unicode="U+0037" decimal="889" note="7"/>
+    <codePoint unicode="U+0038" decimal="890" note="8"/>
+    <codePoint unicode="U+0039" decimal="891" note="9"/>
+    
+    <codePoint unicode="U+221E" decimal="955" note="infinty"/>
+    <codePoint unicode="U+221A" decimal="958" note="squareroot"/>
+
+    <codePoint unicode="U+03A3" decimal="963" note="Sigma"/>
+
+    <codePoint unicode="U+2192" decimal="1372" note="rarrow"/>
+    
+    <codePoint unicode="U+221D" decimal="1503" note="proportional"/>
+    <codePoint unicode="U+222B" decimal="1516" note="integral"/>
+    <codePoint unicode="U+003C" decimal="1575" note="less"/>
+    <codePoint unicode="U+003E" decimal="1576" note="greater"/>
+
+    <codePoint unicode="U+0041" decimal="1827" note="A"/>
+    <codePoint unicode="U+0042" decimal="1828" note="B"/>
+    <codePoint unicode="U+0043" decimal="1829" note="C"/>
+    <codePoint unicode="U+0044" decimal="1830" note="D"/>
+    <codePoint unicode="U+0045" decimal="1831" note="E"/>
+    <codePoint unicode="U+0046" decimal="1832" note="F"/>
+    <codePoint unicode="U+0047" decimal="1833" note="G"/>
+    <codePoint unicode="U+0048" decimal="1834" note="H"/>
+    <codePoint unicode="U+0049" decimal="1835" note="I"/>
+    <codePoint unicode="U+004A" decimal="1836" note="J"/>
+    <codePoint unicode="U+004B" decimal="1837" note="K"/>
+    <codePoint unicode="U+004C" decimal="1838" note="L"/>
+    <codePoint unicode="U+004D" decimal="1839" note="M"/>
+    <codePoint unicode="U+004E" decimal="1840" note="N"/>
+    <codePoint unicode="U+004F" decimal="1841" note="O"/>
+    <codePoint unicode="U+0050" decimal="1842" note="P"/>
+    <codePoint unicode="U+0051" decimal="1843" note="Q"/>
+    <codePoint unicode="U+0052" decimal="1844" note="R"/>
+    <codePoint unicode="U+0053" decimal="1845" note="S"/>
+    <codePoint unicode="U+0054" decimal="1846" note="T"/>
+    <codePoint unicode="U+0055" decimal="1847" note="U"/>
+    <codePoint unicode="U+0056" decimal="1848" note="V"/>
+    <codePoint unicode="U+0057" decimal="1849" note="W"/>
+    <codePoint unicode="U+0058" decimal="1850" note="X"/>
+    <codePoint unicode="U+0059" decimal="1851" note="Y"/>
+    <codePoint unicode="U+005A" decimal="1852" note="Z"/>
+
+    <codePoint unicode="U+0061" decimal="1853" note="a"/>
+    <codePoint unicode="U+0062" decimal="1854" note="b"/>
+    <codePoint unicode="U+0063" decimal="1855" note="c"/>
+    <codePoint unicode="U+0064" decimal="1856" note="d"/>
+    <codePoint unicode="U+0065" decimal="1857" note="e"/>
+    <codePoint unicode="U+0066" decimal="1858" note="f"/>
+    <codePoint unicode="U+0067" decimal="1859" note="g"/>
+    <codePoint unicode="U+0068" decimal="1860" note="h"/>
+    <codePoint unicode="U+0069" decimal="1861" note="i"/>
+    <codePoint unicode="U+006A" decimal="1862" note="j"/>
+    <codePoint unicode="U+006B" decimal="1863" note="k"/>
+    <codePoint unicode="U+006C" decimal="1864" note="l"/>
+    <codePoint unicode="U+006D" decimal="1865" note="m"/>
+    <codePoint unicode="U+006E" decimal="1866" note="n"/>
+    <codePoint unicode="U+006F" decimal="1867" note="o"/>
+    <codePoint unicode="U+0070" decimal="1868" note="p"/>
+    <codePoint unicode="U+0071" decimal="1869" note="q"/>
+    <codePoint unicode="U+0072" decimal="1870" note="r"/>
+    <codePoint unicode="U+0073" decimal="1871" note="s"/>
+    <codePoint unicode="U+0074" decimal="1872" note="t"/>
+    <codePoint unicode="U+0075" decimal="1873" note="u"/>
+    <codePoint unicode="U+0076" decimal="1874" note="v"/>
+    <codePoint unicode="U+0077" decimal="1875" note="w"/>
+    <codePoint unicode="U+0078" decimal="1876" note="x"/>
+    <codePoint unicode="U+0079" decimal="1877" note="y"/>
+    <codePoint unicode="U+007A" decimal="1878" note="z"/>
+    
+    <codePoint unicode="U+03B1" decimal="2009" note="alpha"/>
+    <codePoint unicode="U+03B2" decimal="2010" note="beta"/>
+    <codePoint unicode="U+03B3" decimal="2011" note="gamma"/>
+    <codePoint unicode="U+03B4" decimal="2012" note="delta"/>
+    <codePoint unicode="U+03B5" decimal="2013" note="epsilon"/>
+    
+    <codePoint unicode="U+03B8" decimal="2016" note="theta"/>
+    
+    <codePoint unicode="U+03BC" decimal="2020" note="mu"/>
+    <codePoint unicode="U+03C0" decimal="2024" note="pi"/>
+    <codePoint unicode="U+03C1" decimal="2025" note="rho"/>
+    <codePoint unicode="U+03C3" decimal="2026" note="sigma"/>
+    <codePoint unicode="U+03C4" decimal="2028" note="tau"/>
+    <codePoint unicode="U+03C6" decimal="2030" note="phi"/>
+    
+    <codePoint unicode="U+0030" decimal="2868" note="0"/>
+    <codePoint unicode="U+0031" decimal="2869" note="1"/>
+    <codePoint unicode="U+0032" decimal="2870" note="2"/>
+    <codePoint unicode="U+0033" decimal="2871" note="3"/>
+    <codePoint unicode="U+0034" decimal="2872" note="4"/>
+    <codePoint unicode="U+0035" decimal="2873" note="5"/>
+    <codePoint unicode="U+0036" decimal="2874" note="6"/>
+    <codePoint unicode="U+0037" decimal="2875" note="7"/>
+    <codePoint unicode="U+0038" decimal="2876" note="8"/>
+    <codePoint unicode="U+0039" decimal="2877" note="9"/>
+    
+    <codePoint unicode="U+002D" decimal="2879" note="-"/>
+    <codePoint unicode="U+003D" decimal="2880" note="="/>
+
+    <codePoint unicode="U+0061" decimal="2911" note="a"/>
+    <codePoint unicode="U+0062" decimal="2912" note="b"/>
+    <codePoint unicode="U+0063" decimal="2913" note="c"/>
+    <codePoint unicode="U+0064" decimal="2914" note="d"/>
+    <codePoint unicode="U+0065" decimal="2915" note="e"/>
+    <codePoint unicode="U+0066" decimal="2916" note="f"/>
+    <codePoint unicode="U+0067" decimal="2917" note="g"/>
+    <codePoint unicode="U+0068" decimal="2918" note="h"/>
+    <codePoint unicode="U+0069" decimal="2919" note="i"/>
+    <codePoint unicode="U+006A" decimal="2920" note="j"/>
+    <codePoint unicode="U+006B" decimal="2921" note="k"/>
+    <codePoint unicode="U+006C" decimal="2922" note="l"/>
+    <codePoint unicode="U+006D" decimal="2923" note="m"/>
+    <codePoint unicode="U+006E" decimal="2924" note="n"/>
+    <codePoint unicode="U+006F" decimal="2925" note="o"/>
+    <codePoint unicode="U+0070" decimal="2926" note="p"/>
+    <codePoint unicode="U+0071" decimal="2927" note="q"/>
+    <codePoint unicode="U+0072" decimal="2928" note="r"/>
+    <codePoint unicode="U+0073" decimal="2929" note="s"/>
+    <codePoint unicode="U+0074" decimal="2930" note="t"/>
+    <codePoint unicode="U+0075" decimal="2931" note="u"/>
+    <codePoint unicode="U+0076" decimal="2932" note="v"/>
+    <codePoint unicode="U+0077" decimal="2933" note="w"/>
+    <codePoint unicode="U+0078" decimal="2934" note="x"/>
+    <codePoint unicode="U+0079" decimal="2935" note="y"/>
+    <codePoint unicode="U+007A" decimal="2936" note="z"/>
+    
+    <codePoint unicode="U+0394" decimal="2940" note="Delta"/>
+    
+    
+    <codePoint unicode="U+003C" decimal="2996" note="less"/>
+    <codePoint unicode="U+221E" decimal="2998" note="infinty"/>
+    <codePoint unicode="U+2264" decimal="3000" note="le"/>
+
+    <codePoint unicode="U+0061" decimal="3028" note="a"/>
+    <codePoint unicode="U+0062" decimal="3029" note="b"/>
+    <codePoint unicode="U+0063" decimal="3030" note="c"/>
+    <codePoint unicode="U+0064" decimal="3031" note="d"/>
+    <codePoint unicode="U+0065" decimal="3032" note="e"/>
+    <codePoint unicode="U+0066" decimal="3033" note="f"/>
+    <codePoint unicode="U+0067" decimal="3034" note="g"/>
+    <codePoint unicode="U+0068" decimal="3035" note="h"/>
+    <codePoint unicode="U+0069" decimal="3036" note="i"/>
+    <codePoint unicode="U+006A" decimal="3037" note="j"/>
+    <codePoint unicode="U+006B" decimal="3038" note="k"/>
+    <codePoint unicode="U+006C" decimal="3039" note="l"/>
+    <codePoint unicode="U+006D" decimal="3040" note="m"/>
+    <codePoint unicode="U+006E" decimal="3041" note="n"/>
+    <codePoint unicode="U+006F" decimal="3042" note="o"/>
+    <codePoint unicode="U+0070" decimal="3043" note="p"/>
+    <codePoint unicode="U+0071" decimal="3044" note="q"/>
+    <codePoint unicode="U+0072" decimal="3045" note="r"/>
+    <codePoint unicode="U+0073" decimal="3046" note="s"/>
+    <codePoint unicode="U+0074" decimal="3047" note="t"/>
+    <codePoint unicode="U+0075" decimal="3048" note="u"/>
+    <codePoint unicode="U+0076" decimal="3049" note="v"/>
+    <codePoint unicode="U+0077" decimal="3050" note="w"/>
+    <codePoint unicode="U+0078" decimal="3051" note="x"/>
+    <codePoint unicode="U+0079" decimal="3052" note="y"/>
+    <codePoint unicode="U+007A" decimal="3053" note="z"/>
+    
+    <codePoint unicode="U+03B4" decimal="3083" note="delta"/>
+    <codePoint unicode="U+03B8" decimal="3087" note="theta"/>
+    <codePoint unicode="U+03C0" decimal="3095" note="pi"/>
+    <codePoint unicode="U+03C9" decimal="3104" note="omega"/>
+    <codePoint unicode="U+2202" decimal="3105" note="diff"/>
+    
+    <codePoint unicode="U+0030" decimal="3116" note="0"/>
+    <codePoint unicode="U+0031" decimal="3117" note="1"/>
+    <codePoint unicode="U+0032" decimal="3118" note="2"/>
+    <codePoint unicode="U+0033" decimal="3119" note="3"/>
+    <codePoint unicode="U+0034" decimal="3120" note="4"/>
+    <codePoint unicode="U+0035" decimal="3121" note="5"/>
+    <codePoint unicode="U+0036" decimal="3122" note="6"/>
+    <codePoint unicode="U+0037" decimal="3123" note="7"/>
+    <codePoint unicode="U+0038" decimal="3124" note="8"/>
+    <codePoint unicode="U+0039" decimal="3125" note="9"/>
+    
+    <codePoint unicode="U+002B" decimal="3397" note="+"/>
+    <codePoint unicode="U+002D" decimal="3398" note="-"/>
+    <codePoint unicode="U+00B1" decimal="3399" note="plusminus"/>
+    <codePoint unicode="U+00F7" decimal="3402" note="divide"/>
+    <codePoint unicode="U+003D" decimal="3404" note="="/>
+    <codePoint unicode="U+2260" decimal="3405" note="ne"/>
+    <codePoint unicode="U+003C" decimal="3407" note="less"/>
+    <codePoint unicode="U+226A" decimal="3408" note="very much less"/>
+    <codePoint unicode="U+226B" decimal="3409" note="very much greater"/>
+    <codePoint unicode="U+2265" decimal="3410" note="ge"/>
+
+    <codePoint unicode="U+0028" decimal="3435" note="("/>
+    <codePoint unicode="U+0029" decimal="3439" note=")"/>
+
+    <codePoint unicode="U+221A" decimal="3493" note="squareroot"/>
+
+    <codePoint unicode="U+222B" decimal="3505" note="integral"/>
+    
+    <codePoint unicode="U+03A3" decimal="3533" note="Sigma"/>
+    
+    <codePoint unicode="U+0028" decimal="4666" note="("/>
+    <codePoint unicode="U+0029" decimal="4667" note=")"/>
+    
+    <codePoint unicode="U+0028" decimal="4672" note="("/>
+    <codePoint unicode="U+0029" decimal="4673" note=")"/>
+    <codePoint unicode="U+007B" decimal="4676" note="{"/>
+    
+    
+</codePointSet>

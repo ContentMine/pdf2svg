@@ -16,7 +16,7 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="Symbol">
+<codePointSet encoding="Symbol" id="symbol">
   <!--  high code points in Symbol font -->    
   
 	<codePoint decimal="65" unicode="U+0391" unicodeName="GREEK CAPITAL LETTER ALPHA"/>
@@ -63,7 +63,7 @@
 	<codePoint decimal="120" unicode="U+03BE" unicodeName="GREEK SMALL LETTER XI"/>
 	<codePoint decimal="121" unicode="U+03C8" unicodeName="GREEK SMALL LETTER PSI" note="" />
     
-<!--  these display OK in browsers so are probably standard -->	
+<!--  these display OK in browsers so are probably standard ; see nonunicodesymbol.xml -->	
 
 	<codePoint decimal="61537" unicode="U+03B1" unicodeName="GREEK SMALL LETTER ALPHA"/>
 	<codePoint decimal="61538" unicode="U+03B2" unicodeName="GREEK SMALL LETTER BETA"/>

@@ -36,8 +36,9 @@ public class FontFamilySet {
 	private final static Logger LOG = Logger.getLogger(FontFamilySet.class);
 	
 	private static final String FONT_FAMILY_SET = "fontFamilySet";
-	public static final String STANDARD_FONT_FAMILY_SET_XML = PConstants.PDF2SVG_ROOT+"/"+"standardFontFamilySet.xml";
-	public static final String NON_STANDARD_FONT_FAMILY_SET_XML = PConstants.PDF2SVG_ROOT+"/"+"nonStandardFontFamilySet.xml";
+	public static final String FONT_FAMILY_DIR = PConstants.PDF2SVG_ROOT+"/"+"fontFamilySets";
+	public static final String STANDARD_FONT_FAMILY_SET_XML = FONT_FAMILY_DIR+"/"+"standardFontFamilySet.xml";
+	public static final String NON_STANDARD_FONT_FAMILY_SET_XML = FONT_FAMILY_DIR+"/"+"nonStandardFontFamilySet.xml";
 
 	private Map<String, FontFamily> fontFamilyByFamilyName;
 

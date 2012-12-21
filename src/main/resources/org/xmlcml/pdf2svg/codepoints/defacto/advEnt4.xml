@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvEnt4">
+<codePointSet encoding="AdvEnt4" id="advEnt4">
     <codePoint decimal="111" unicode="U+003C" unicodeName="LEFT ANGLE BRACKET" note=""/>
     <codePoint decimal="114" unicode="U+2246" unicodeName="LESS THAN OR EQUALS" note=""/>
     <codePoint unicodeName="UNKNOWN" unicode="U+274E" name="grot" note="unknown"/>

@@ -15,7 +15,8 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="ADVMT_MI">
+<codePointSet encoding="ADVMT_MI" id="advmt_mi">
+
     <codePoint name="C2"  unicode="U+00D7" unicodeName="MULTIPLICATION SIGN"/>
     <codePoint name="C14" unicode="U+25CB" unicodeName="WHITE CIRCLE"/>
     <codePoint name="C15" unicode="U+2022" unicodeName="BULLET"/>

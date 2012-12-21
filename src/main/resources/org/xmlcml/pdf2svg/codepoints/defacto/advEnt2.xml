@@ -15,7 +15,6 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvEnt2">
+<codePointSet encoding="AdvEnt2" id="advEnt2">
     <codePoint decimal="119" unicode="U+2020" unicodeName="DAGGER" name="w" note=""/>
-    <codePoint unicode="U+274E" unicodeName="UNKNOWN" name="grot" note="unknown"/>
 </codePointSet>

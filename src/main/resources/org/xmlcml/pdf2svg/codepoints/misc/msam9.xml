@@ -15,6 +15,6 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="MSAM9" default="Unicode">
+<codePointSet encoding="MSAM9" id="msam9">
 	<codePoint name="harpoonleftright" unicode="U+21CC" unicodeName="RIGHTWARDS HARPOON OVER LEFTWARDS HARPOON"/> 
 </codePointSet>

@@ -25,7 +25,7 @@ public class CodePoint extends Element {
 	private final static Logger LOG = Logger.getLogger(CodePoint.class);
 	
 	// XML
-	private static final String TAG = "codePoint";
+	static final String TAG = "codePoint";
 	
 	private static final String DECIMAL = "decimal";
 	private static final String NAME = "name";

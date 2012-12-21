@@ -16,9 +16,12 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="MTSYN">
-<!-- assume >=32 == Unicode??? -->
-    <!-- only non-Unicode? -->
+<codePointSet encoding="MTSYN" id="MTSYN" resource="org/xmlcml/pdf2svg/codepoints/defacto">
+
+    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
+    
+    <!-- non-Unicode? -->
+    <codePoint unicode="U+002F" decimal="5"    unicodeName="SOLIDUS" />
     <codePoint unicode="U+2260" decimal="11"   unicodeName="NOT EQUAL TO" />
     
 </codePointSet>

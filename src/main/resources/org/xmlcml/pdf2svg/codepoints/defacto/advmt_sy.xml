@@ -15,11 +15,9 @@
     limitations under the License.
 
 -->
-<fonts>
-    <font family="Courier" fontType="PDType1Font" note="a standard14 font" serif="yes" unicode="yes"/>
-    <font family="Helvetica" fontType="PDType1Font" note="a standard14 font" serif="no" unicode="yes"/>
-    <font family="TimesNewRoman" fontType="PDType1Font" note="a standard14 font" serif="yes" unicode="yes"/>
-    <font family="Symbol" fontType="PDType1Font" note="a standard14 font" symbol="yes"/>
-    <font family="ZapfDingbats" fontType="PDType1Font" note="a standard14 font"/>
-</fonts>
-		
+<codePointSet encoding="advmt_sy" id="advmt_sy"> 
+    
+    <codePoint name="C2" unicode="U+00D7" unicodeName="MULTIPLICATION SIGN"/>  
+    <codePoint name="C14" unicode="U+00B0" unicodeName="DEGREE SIGN" htmlName="deg"/>  
+</codePointSet>
+        

@@ -217,11 +217,11 @@ and
 			}
 			LOG.debug(this.toString());
 			LOG.warn("font had no descriptor: "+baseFont+" / "+fontFamilyName);
-			if (encoding == null && (fontName.contains("Arial") ||
-					fontName.contains("Unicode"))) {
-				LOG.warn("Encoding in ("+fontName+") forcibly set to "+WinAnsiEncoding.class);
-				encoding = new WinAnsiEncoding();
-			}
+//			if (encoding == null && (fontName.contains("Arial") ||
+//					fontName.contains("Unicode") || fontName.contains("Cambria"))) {
+//				LOG.warn("Encoding in ("+fontName+") forcibly set to "+WinAnsiEncoding.class);
+//				encoding = new WinAnsiEncoding();
+//			}
 		}
 	}
 

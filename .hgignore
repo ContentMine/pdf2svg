@@ -3,5 +3,7 @@ syntax: regexp
 ^\.settings/
 ^\.classpath$
 ^\.hgignore~$
+unicodeInfo/
+nonUnicodeSymbolInfo/
 ^misc/
 ^target/

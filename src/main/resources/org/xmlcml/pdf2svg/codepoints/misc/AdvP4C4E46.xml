@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvP4C4E46"> 
+<codePointSet encoding="AdvP4C4E46" id="AdvP4C4E46"> 
 
 	<codePoint name="zero" unicode="U+239B" unicodeName="LEFT PARENTHESIS UPPER HOOK" />
     <codePoint name="B" unicode="U+239C" unicodeName="LEFT PARENTHESIS EXTENSION"/>

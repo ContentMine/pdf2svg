@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<codePointSet encoding="AdvPi2">
+<codePointSet encoding="AdvPi2" id="advpi2">
     
     <!--  This is a symbol font? -->
 	<codePoint decimal="68"  unicode="U+0394" name="GREEK CAPITAL LETTER DELTA" note="" />

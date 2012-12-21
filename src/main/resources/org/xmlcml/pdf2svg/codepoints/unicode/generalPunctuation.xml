@@ -1,0 +1,48 @@
+<codePointSet encoding="Unicode" id="generalPunctuation">
+    <codePoint unicode="U+2000" unicodeName="EN QUAD" name=""/>
+    <codePoint unicode="U+2001" unicodeName="EM QUAD" name=""/>
+    <codePoint unicode="U+2002" unicodeName="EN SPACE" name=""/>
+    <codePoint unicode="U+2003" unicodeName="EM SPACE" name=""/>
+    <codePoint unicode="U+2004" unicodeName="THREE-PER-EM SPACE" name=""/>
+    <codePoint unicode="U+2005" unicodeName="FOUR-PER-EM SPACE" name=""/>
+    <codePoint unicode="U+2006" unicodeName="SIX-PER-EM SPACE" name=""/>
+    <codePoint unicode="U+2007" unicodeName="FIGURE SPACE" name=""/>
+    <codePoint unicode="U+2008" unicodeName="PUNCTUATION SPACE" name=""/>
+    <codePoint unicode="U+2009" unicodeName="THIN SPACE" name=""/>
+    <codePoint unicode="U+200A" unicodeName="HAIR SPACE" name=""/>
+    <!--  these are probably not wanted -->
+    <codePoint unicode="U+200B" unicodeName="ZERO WIDTH SPACE" name=""/>
+    <codePoint unicode="U+200C" unicodeName="ZERO WIDTH NON-JOINER" name=""/>
+    <codePoint unicode="U+200D" unicodeName="ZERO WIDTH JOINER" name=""/>
+    <codePoint unicode="U+200E" unicodeName="LEFT-TO-RIGHT MARK" name=""/>
+    <codePoint unicode="U+200F" unicodeName="RIGHT-TO-LEFT MARK" name=""/>
+    
+<!--  201x punctuation -->    
+    <codePoint unicode="U+2010" unicodeName="HYPHEN" note="replace by HYPHEN-MINUS" replaceByUnicode="U+002D" name=""/>
+    <codePoint unicode="U+2011" unicodeName="NON-BREAKING HYPHEN" name=""/>
+    <codePoint unicode="U+2012" unicodeName="FIGURE DASH" name=""/>
+    <codePoint unicode="U+2013" unicodeName="EN DASH" note="replace by HYPHEN-MINUS" replaceByUnicode="U+002D" name=""/>
+    <codePoint unicode="U+2014" unicodeName="EM DASH" note="replace by HYPHEN-MINUS" replaceByUnicode="U+002D" name=""/>
+    <codePoint unicode="U+2015" unicodeName="FIGURE DASH" name=""/>
+    <codePoint unicode="U+2016" unicodeName="DOUBLE VERTICAL LINE" name=""/>
+    <codePoint unicode="U+2017" unicodeName="DOUBLE LOW LINE" name=""/>
+    <codePoint unicode="U+2018" unicodeName="LEFT SINGLE QUOTATION MARK" note="replace by APOSTROPHE" replaceByUnicode="U+0027" name="" />
+    <codePoint unicode="U+2019" unicodeName="RIGHT SINGLE QUOTATION MARK" note="replace by APOSTROPHE" replaceByUnicode="U+0027" name="" />
+    <codePoint unicode="U+201A" unicodeName="SINGLE LOW-9 QUOTATION MARK" note="replace by APOSTROPHE" replaceByUnicode="U+0027" name="" />
+    <codePoint unicode="U+201B" unicodeName="SINGLE HIGH-REVERSED-9 QUOTATION MARK" note="replace by APOSTROPHE" replaceByUnicode="U+0027" name="" />
+    <codePoint unicode="U+201C" unicodeName="LEFT DOUBLE QUOTATION MARK" note="replace by QUOTATION MARK" replaceByUnicode="U+0022" name=""/>
+    <codePoint unicode="U+201D" unicodeName="RIGHT DOUBLE QUOTATION MARK" note="replace by QUOTATION MARK" replaceByUnicode="U+0022" name=""/>
+    <codePoint unicode="U+201E" unicodeName="DOUBLE LOW-9 QUOTATION MARK" note="replace by QUOTATION MARK" replaceByUnicode="U+0022" name=""/>
+    <codePoint unicode="U+201F" unicodeName="DOUBLE HIGH-REVERSED-9 QUOTATION MARK" note="replace by QUOTATION MARK" replaceByUnicode="U+0022" name=""/>
+
+    <codePoint unicode="U+2020" unicodeName="DAGGER" name=""/>
+    <codePoint unicode="U+2021" unicodeName="DOUBLE DAGGER" name=""/>
+    <codePoint unicode="U+2022" unicodeName="BULLET" name=""/>
+    <codePoint unicode="U+2026" unicodeName="HORIZONTAL ELLIPSIS" name="ellipsis" />
+    
+    <codePoint unicode="U+2030" unicodeName="PER MILLE SIGN" name=""/>
+    <codePoint unicode="U+2032" unicodeName="PRIME" decimal="8242" note="replace by APOSTROPHE" replaceByUnicode="U+0027" name="minute" />
+    <codePoint unicode="U+2033" unicodeName="DOUBLE PRIME" name="second" />
+    
+    <codePoint unicode="U+2044" unicodeName="FRACTION SLASH" name="fraction" />
+</codePointSet>
