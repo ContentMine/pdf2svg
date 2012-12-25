@@ -15,7 +15,8 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="Wingdings" id="wingdings">
-    <codePoint unicodeName="RIGHTWARDS POINTING ARROW" unicode="U+005B" decimal="61664" note=""/>
-    <codePoint unicodeName="UNKNOWN" unicode="U+274E" name="grot" decimal="9999999" note="unknown"/>
+<codePointSet encoding="Wingdings" id="wingdings" resource="org/xmlcml/pdf2svg/codepoints/defacto">
+
+    <codePoint unicode="U+2192" decimal="61664" note="RIGHTWARDS POINTING ARROW"/>
+    
 </codePointSet>

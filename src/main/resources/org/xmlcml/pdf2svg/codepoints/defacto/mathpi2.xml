@@ -15,7 +15,7 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="MathematicalPI" id="mathpi2">
+<codePointSet encoding="MathematicalPI" id="mathpi2" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
 </codePointSet>
 		

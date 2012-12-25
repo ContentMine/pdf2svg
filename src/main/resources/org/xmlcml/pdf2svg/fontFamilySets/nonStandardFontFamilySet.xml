@@ -3,7 +3,9 @@
 
 	<fontFamily name="Arial" />
 	<fontFamily name="Avenir" />
+	<!-- 
 	<fontFamily name="Calibri" />
+	-->
 	<fontFamily name="Frutiger-Roman" />
 	<fontFamily name="Frutiger-Light" />
 	<fontFamily name="FrutigerBold" />
@@ -37,6 +39,12 @@
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi4.xml"/>
 	<fontFamily name="MathematicalPi-Five"
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi5.xml"/>
+	<fontFamily name="MathematicalPi-Six"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi6.xml"/>
+
+	<fontFamily name="Universal-NewswithCommPi"
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/commpi.xml"/>
+
 
 
 <!--  ================== MATH TIME =================== -->	
@@ -113,6 +121,13 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	<fontFamily name="AdvPi3" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/advpi3.xml"/>
 
+<!--  ==================MathPack =========================== -->	
+	<fontFamily name="MathPackTen" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/mathpack10.xml"/>
+	<fontFamily name="MathPackThirteen" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/mathpack13.xml"/>
+
+
 <!--  ==================Adv misc =========================== -->	
 	
 	<fontFamily name="AdvP4C4E74" symbol="true" 
@@ -122,7 +137,7 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	<fontFamily name="AdvP4C4E46" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvP4C4E46.xml"/>
 	<fontFamily name="AdvP697C" symbol="true" 
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvP4C4E74.xml"/>
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvP697C.xml"/>
 	<fontFamily name="AdvPSSym" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advPSSym.xml"/>
 	<fontFamily name="AdvP4C4E51" symbol="true" 
@@ -131,6 +146,11 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvTTec1d2308I.xml"/>
 	<fontFamily name="AdvPS4731B1" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvPS4731B1.xml"/>
+
+	<fontFamily name="AdvPSMP1" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advPSMP1.xml"/>
+	<fontFamily name="AdvPS_TINR" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advPSTINR.xml"/>
 
 	<fontFamily name="AdvMT_MI" symbol="true"
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmt_mi.xml" />
@@ -160,31 +180,45 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	<fontFamily name="AdvEls-ent8" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/advEnt8.xml"/>
 	    
-
+<!--some SymbolStd announce family Symbol -->
 	<fontFamily name="SymbolStd" symbol="true" 
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/csymbol.xml"/>
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/SymbolStd.xml"/>
+	<fontFamily name="Symbol" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/symbol/symbol.xml"/>
+	    
+	<fontFamily name="AdvT377" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvT377.xml"/>
+	<fontFamily name="AdvT042" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvT042.xml"/>
 	<fontFamily name="AdvT897" symbol="true" 
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/csymbol.xml"/>
-
-
-	<fontFamily name="Wingdings" symbol="true" 
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/wingdings.xml"/>
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvT897.xml"/>
+	    
+	<fontFamily name="Wingdings-Regular" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/wingdings.xml"/>
+	<fontFamily name="Wingdings3" symbol="true" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/wingdings.xml"/>
 
 	<fontFamily name="Cambria Math" symbol="true" 
 	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cambriaMath.xml"/>
 
 <!-- uses Cddd codepoints -->
 	<fontFamily name="AdvMacMthSyN" 
-	    codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/csymbol.xml"/>
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvMacMthSyN.xml"/>
 
     <!-- ligatures -->
 	<fontFamily name="AdvOT863180fb" symbol="false" />
 	<fontFamily name="AdvOT863180fb+fb" symbol="false" />
+
+<!-- ====================== Calibri ==============================  -->
+	<fontFamily name="Calibri" 
+	    codePointSet="org/xmlcml/pdf2svg/codepoints/misc/calibri.xml"/>
 	    
 	<!-- normalize these later -->
 	<fontFamily name="CalibriBold" />
 	<fontFamily name="Calibri,old" />
 	<fontFamily name="Calibri,talic" />
+
+	
 	<fontFamily name="TimesNRMTBold" />
 	<fontFamily name="TimesGreekSFInclined" />
 	<fontFamily name="TimesNRExpertMTBold" />
@@ -240,8 +274,6 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	<fontFamily name="UniversBlack" />
 
 	<fontFamily name="TimesItalic" />
-	<fontFamily name="Universal-NewswithCommPi" />
-
 
 	<fontFamily name="TimesTenGreekInclined" />
 	<fontFamily name="ChemBats2" />
@@ -275,7 +307,6 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	<fontFamily name="AdvP3FA080" />
 	<fontFamily name="AdvP8952" />
 	<fontFamily name="AdvTT9b21af61" />
-	<fontFamily name="AdvT042" />
 	<fontFamily name="AdvTTaf2fa8d1" />
 	<fontFamily name="AdvP8955" />
 	<fontFamily name="AdvTT7c108665" />
@@ -333,7 +364,6 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 	<fontFamily name="AdvP4041BD" />
 	<fontFamily name="AdvP3D3256" />
 	<fontFamily name="AdvP4980F" />
-	<fontFamily name="AdvT377" />
 	<fontFamily name="AdvP4980C" />
 	<fontFamily name="AdvP49811" />
 	<fontFamily name="AdvP403A40" />

@@ -15,9 +15,12 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvEnt7" id="advEnt7">
-    <codePoint decimal="66" unicode="U+007E" unicodeName="TILDE"           note="unknown"/>     
-    <codePoint decimal="69" unicode="U+2248" unicodeName="ALMOST EQUAL TO" note="unknown"/>
-    <codePoint decimal="97" unicode="U+2260" unicodeName="NOT EQUAL TO"    note="unknown"/>
-    <codePoint decimal="999999" unicode="U+274E" unicodeName="UNKNOWN"     note="unknown"/>
+<codePointSet encoding="AdvEnt7" id="advEnt7" resource="org/xmlcml/pdf2svg/codepoints/defacto">
+
+    <codePoint unicode="U+007E" decimal="66" note="TILDE"/>     
+    <codePoint unicode="U+2248" decimal="69" note="ALMOST EQUAL TO"/>
+    <codePoint unicode="U+2260" decimal="97" note="NOT EQUAL TO"/>
+
+    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
+    
 </codePointSet>

@@ -4,193 +4,196 @@
 see http://www.fileformat.info/info/unicode/font/symbol/nonunicode.htm
 characters are >= F020
  -->
-<codePointSet encoding="nonUnicodeSymbol" id="nonUnicodeSymbol">
-    <codePoint name="f020" decimal="61472" unicode="U+0020" unicodeName="SPACE" note="space"/>
-    <codePoint name="f021" decimal="61473" unicode="U+0021" unicodeName="EXCLAMATION MARK" note="exclam"/>
-    <codePoint name="f022" decimal="61474" unicode="U+" note="forall"/>
-    <codePoint name="f023" decimal="61475" unicode="U+" note="hash"/>
-    <codePoint name="f024" decimal="61476" unicode="U+" note="exists"/>
-    <codePoint name="f025" decimal="61477" unicode="U+" note="percent"/>
-    <codePoint name="f026" decimal="61478" unicode="U+" note="amp"/>
-    <codePoint name="f027" decimal="61479" unicode="U+" note="set"/>
-    <codePoint name="f028" decimal="61480" unicode="U+" note="lparen"/>
-    <codePoint name="f029" decimal="61481" unicode="U+" note="rparen"/>
-    <codePoint name="f02a" decimal="61482" unicode="U+" note="asterisk"/>
-    <codePoint name="f02b" decimal="61483" unicode="U+" note="plus"/>
-    <codePoint name="f02c" decimal="61484" unicode="U+" note="comma"/>
-    <codePoint name="f02d" decimal="61485" unicode="U+" note="minus"/>
-    <codePoint name="f02e" decimal="61486" unicode="U+" note="fullstop"/>
-    <codePoint name="f02f" decimal="61487" unicode="U+" note="slash"/>
-    <codePoint name="f030" decimal="61488" unicode="U+" note="zero"/>
-    <codePoint name="f031" decimal="61489" unicode="U+" note="one"/>
-    <codePoint name="f032" decimal="61490" unicode="U+" note="two"/>
-    <codePoint name="f033" decimal="61491" unicode="U+" note="three"/>
-    <codePoint name="f034" decimal="61492" unicode="U+" note="four"/>
-    <codePoint name="f035" decimal="61493" unicode="U+" note="five"/>
-    <codePoint name="f036" decimal="61494" unicode="U+" note="six"/>
-    <codePoint name="f037" decimal="61495" unicode="U+" note="seven"/>
-    <codePoint name="f038" decimal="61496" unicode="U+" note="eight"/>
-    <codePoint name="f039" decimal="61497" unicode="U+" note="nine"/>
-    <codePoint name="f03a" decimal="61498" unicode="U+" note="colon"/>
-    <codePoint name="f03b" decimal="61499" unicode="U+" note="semicolon"/>
-    <codePoint name="f03c" decimal="61500" unicode="U+" note="less than"/>
-    <codePoint name="f03d" decimal="61501" unicode="U+" note="equals"/>
-    <codePoint name="f03e" decimal="61502" unicode="U+" note="greater"/>
-    <codePoint name="f03f" decimal="61503" unicode="U+" note="question"/>
-    <codePoint name="f040" decimal="61504" unicode="U+" note="almost equal"/>
-    <codePoint name="f041" decimal="61505" unicode="U+" note="Alpha"/>
-    <codePoint name="f042" decimal="61506" unicode="U+" note="Beta"/>
-    <codePoint name="f043" decimal="61507" unicode="U+" note="Chi"/>
-    <codePoint name="f044" decimal="61508" unicode="U+" note="Delta"/>
-    <codePoint name="f045" decimal="61509" unicode="U+" note="Epsilon"/>
-    <codePoint name="f046" decimal="61510" unicode="U+" note="Phi"/>
-    <codePoint name="f047" decimal="61511" unicode="U+" note="Gamma"/>
-    <codePoint name="f048" decimal="61512" unicode="U+" note="Eta"/>
-    <codePoint name="f049" decimal="61513" unicode="U+" note="Iota"/>
-    <codePoint name="f04a" decimal="61514" unicode="U+" note="Theta1"/>
-    <codePoint name="f04b" decimal="61515" unicode="U+" note="Kappa"/>
-    <codePoint name="f04c" decimal="61516" unicode="U+" note="Lambda"/>
-    <codePoint name="f04d" decimal="61517" unicode="U+" note="Mu"/>
-    <codePoint name="f04e" decimal="61518" unicode="U+" note="Nu"/>
-    <codePoint name="f04f" decimal="61519" unicode="U+" note="Omicron"/>
-    <codePoint name="f050" decimal="61520" unicode="U+" note="Pi"/>
-    <codePoint name="f051" decimal="61521" unicode="U+" note="Theta"/>
-    <codePoint name="f052" decimal="61522" unicode="U+" note="Rho"/>
-    <codePoint name="f053" decimal="61523" unicode="U+" note="Sigma"/>
-    <codePoint name="f054" decimal="61524" unicode="U+" note="Tau"/>
-    <codePoint name="f055" decimal="61525" unicode="U+" note="Upsilon"/>
-    <codePoint name="f056" decimal="61526" unicode="U+" note="sigma1"/>
-    <codePoint name="f057" decimal="61527" unicode="U+" note="Omega"/>
-    <codePoint name="f058" decimal="61528" unicode="U+" note="Xi"/>
-    <codePoint name="f059" decimal="61529" unicode="U+" note="Psi"/>
-    <codePoint name="f05a" decimal="61530" unicode="U+" note="Zeta"/>
-    <codePoint name="f05b" decimal="61531" unicode="U+" note="lsquare"/>
-    <codePoint name="f05c" decimal="61532" unicode="U+" note="therefore"/>
-    <codePoint name="f05d" decimal="61533" unicode="U+" note="rsquare"/>
-    <codePoint name="f05e" decimal="61534" unicode="U+" note="perp"/>
-    <codePoint name="f05f" decimal="61535" unicode="U+" note="underscore"/>
-    <codePoint name="f060" decimal="61536" unicode="U+" note="macron"/>
-    <codePoint name="f061" decimal="61537" unicode="U+" note="alpha"/>
-    <codePoint name="f062" decimal="61538" unicode="U+" note="beta"/>
-    <codePoint name="f063" decimal="61539" unicode="U+" note="chi"/>
-    <codePoint name="f064" decimal="61540" unicode="U+" note="delta"/>
-    <codePoint name="f065" decimal="61541" unicode="U+" note="epsilon"/>
-    <codePoint name="f066" decimal="61542" unicode="U+" note="phi"/>
-    <codePoint name="f067" decimal="61543" unicode="U+" note="gamma"/>
-    <codePoint name="f068" decimal="61544" unicode="U+" note="eta"/>
-    <codePoint name="f069" decimal="61545" unicode="U+" note="iota"/>
-    <codePoint name="f06a" decimal="61546" unicode="U+" note="phi"/>
-    <codePoint name="f06b" decimal="61547" unicode="U+" note="kappa"/>
-    <codePoint name="f06c" decimal="61548" unicode="U+" note="lambda"/>
-    <codePoint name="f06d" decimal="61549" unicode="U+" note="mu"/>
-    <codePoint name="f06e" decimal="61550" unicode="U+" note="nu"/>
-    <codePoint name="f06f" decimal="61551" unicode="U+" note="omicron"/>
-    <codePoint name="f070" decimal="61552" unicode="U+" note="pi"/>
-    <codePoint name="f071" decimal="61553" unicode="U+" note="theta"/>
-    <codePoint name="f072" decimal="61554" unicode="U+" note="rho"/>
-    <codePoint name="f073" decimal="61555" unicode="U+" note="sigma"/>
-    <codePoint name="f074" decimal="61556" unicode="U+" note="tau"/>
-    <codePoint name="f075" decimal="61557" unicode="U+" note="upsilon"/>
-    <codePoint name="f076" decimal="61558" unicode="U+" note="omega1"/>
-    <codePoint name="f077" decimal="61559" unicode="U+" note="omega"/>
-    <codePoint name="f078" decimal="61560" unicode="U+" note="xi"/>
-    <codePoint name="f079" decimal="61561" unicode="U+" note="psi"/>
-    <codePoint name="f07a" decimal="61562" unicode="U+" note="zeta"/>
-    <codePoint name="f07b" decimal="61563" unicode="U+" note="lcurly"/>
-    <codePoint name="f07c" decimal="61564" unicode="U+" note="pipe"/>
-    <codePoint name="f07d" decimal="61565" unicode="U+" note="rcurly"/>
-    <codePoint name="f07e" decimal="61566" unicode="U+" note="tilde"/>
-    <codePoint name="f0a1" decimal="61601" unicode="U+" note="Upsilon1"/>
-    <codePoint name="f0a2" decimal="61602" unicode="U+" note="apos"/>
-    <codePoint name="f0a3" decimal="61603" unicode="U+" note="lessthan equals"/>
-    <codePoint name="f0a4" decimal="61604" unicode="U+" note="slash"/>
-    <codePoint name="f0a5" decimal="61605" unicode="U+" note="infinty"/>
-    <codePoint name="f0a6" decimal="61606" unicode="U+" note="f?"/>
-    <codePoint name="f0a7" decimal="61607" unicode="U+" note="club"/>
-    <codePoint name="f0a8" decimal="61608" unicode="U+" note="diamond"/>
-    <codePoint name="f0a9" decimal="61609" unicode="U+" note="heart"/>
-    <codePoint name="f0aa" decimal="61610" unicode="U+" note="spade"/>
-    <codePoint name="f0ab" decimal="61611" unicode="U+" note="double arrow"/>
-    <codePoint name="f0ac" decimal="61612" unicode="U+" note="left arrow"/>
-    <codePoint name="f0ad" decimal="61613" unicode="U+" note="uparrow"/>
-    <codePoint name="f0ae" decimal="61614" unicode="U+" note="rightarrow"/>
-    <codePoint name="f0af" decimal="61615" unicode="U+" note="downarrow"/>
-    <codePoint name="f0b0" decimal="61616" unicode="U+" note="degree"/>
-    <codePoint name="f0b1" decimal="61617" unicode="U+" note="plusminus"/>
-    <codePoint name="f0b2" decimal="61618" unicode="U+" note="quot"/>
-    <codePoint name="f0b3" decimal="61619" unicode="U+" note="greaterthanequals"/>
-    <codePoint name="f0b4" decimal="61620" unicode="U+" note="multiply"/>
-    <codePoint name="f0b5" decimal="61621" unicode="U+" note="proportional"/>
-    <codePoint name="f0b6" decimal="61622" unicode="U+" note="differential"/>
-    <codePoint name="f0b7" decimal="61623" unicode="U+" note="bullet"/>
-    <codePoint name="f0b8" decimal="61624" unicode="U+" note="divide"/>
-    <codePoint name="f0b9" decimal="61625" unicode="U+" note="not equals"/>
-    <codePoint name="f0ba" decimal="61626" unicode="U+" note="equivalent">
-    <codePoint name="f0bb" decimal="61627" unicode="U+" note="aprox equals"/>
-    <codePoint name="f0bc" decimal="61628" unicode="U+" note="ellipsis"/>
-    <codePoint name="f0bd" decimal="61629" unicode="U+" note="pipe"/>
-    <codePoint name="f0be" decimal="61630" unicode="U+" note="em dash"/>
-    <codePoint name="f0bf" decimal="61631" unicode="U+" note="right bent arrow"/>
-    <codePoint name="f0c0" decimal="61632" unicode="U+" note="aleph"/>
-    <codePoint name="f0c1" decimal="61633" unicode="U+" note="???"/>
-    <codePoint name="f0c2" decimal="61634" unicode="U+" note="rfraktur"/>
-    <codePoint name="f0c3" decimal="61635" unicode="U+" note="weierstrass"/>
-    <codePoint name="f0c4" decimal="61636" unicode="U+" note="cross in circle"/>
-    <codePoint name="f0c5" decimal="61637" unicode="U+" note="plus in circle"/>
-    <codePoint name="f0c6" decimal="61638" unicode="U+" note="circle slash"/>
-    <codePoint name="f0c7" decimal="61639" unicode="U+" note="union"/>
-    <codePoint name="f0c8" decimal="61640" unicode="U+" note="disjoint"/>
-    <codePoint name="f0c9" decimal="61641" unicode="U+" note=""/>
-    <codePoint name="f0ca" decimal="61642" unicode="U+" note=""/>
-    <codePoint name="f0cb" decimal="61643" unicode="U+" note=""/>
-    <codePoint name="f0cc" decimal="61644" unicode="U+" note=""/>
-    <codePoint name="f0cd" decimal="61645" unicode="U+" note=""/>
-    <codePoint name="f0ce" decimal="61646" unicode="U+" note=""/>
-    <codePoint name="f0cf" decimal="61647" unicode="U+" note=""/>
-    <codePoint name="f0d0" decimal="61648" unicode="U+" note=""/>
-    <codePoint name="f0d1" decimal="61649" unicode="U+" note="nabla"/>
-    <codePoint name="f0d2" decimal="61650" unicode="U+" note="registered"/>
-    <codePoint name="f0d3" decimal="61651" unicode="U+" note="copyright"/>
-    <codePoint name="f0d4" decimal="61652" unicode="U+" note="trademark"/>
-    <codePoint name="f0d5" decimal="61653" unicode="U+" note="product"/>
-    <codePoint name="f0d6" decimal="61654" unicode="U+" note="squareroot"/>
-    <codePoint name="f0d7" decimal="61655" unicode="U+" note="middot"/>
-    <codePoint name="f0d8" decimal="61656" unicode="U+" note="??"/>
-    <codePoint name="f0d9" decimal="61657" unicode="U+" note="caret"/>
-    <codePoint name="f0da" decimal="61658" unicode="U+" note="downcaret"/>
-    <codePoint name="f0db" decimal="61659" unicode="U+" note="doublethickarrow"/>
-    <codePoint name="f0dc" decimal="61660" unicode="U+" note="leftthickarrow"/>
-    <codePoint name="f0dd" decimal="61661" unicode="U+" note="upthickarrow"/>
-    <codePoint name="f0de" decimal="61662" unicode="U+" note="rightthickarrow"/>
-    <codePoint name="f0df" decimal="61663" unicode="U+" note="downthickarrow"/>
-    <codePoint name="f0e0" decimal="61664" unicode="U+" note="lozenge"/>
-    <codePoint name="f0e1" decimal="61665" unicode="U+" note="bra"/>
-    <codePoint name="f0e2" decimal="61666" unicode="U+" note="registeredsans"/>
-    <codePoint name="f0e3" decimal="61667" unicode="U+" note="copyrightsans"/>
-    <codePoint name="f0e4" decimal="61668" unicode="U+" note="tmsans"/>
-    <codePoint name="f0e5" decimal="61669" unicode="U+" note="sum"/>
-    <codePoint name="f0e6" decimal="61670" unicode="U+" note="leftbrackettophook"/>
-    <codePoint name="f0e7" decimal="61671" unicode="U+" note="leftbracketmidhook"/>
-    <codePoint name="f0e8" decimal="61672" unicode="U+" note="leftbracketbottomhook"/>
-    <codePoint name="f0e9" decimal="61673" unicode="U+" note="leftsquaretophook"/>
-    <codePoint name="f0ea" decimal="61674" unicode="U+" note="leftsquaremidhook"/>
-    <codePoint name="f0eb" decimal="61675" unicode="U+" note="rightsquaretophook"/>
-    <codePoint name="f0ec" decimal="61676" unicode="U+" note="leftcurlytophook"/>
-    <codePoint name="f0ed" decimal="61677" unicode="U+" note="leftcurlymidhook"/>
-    <codePoint name="f0ee" decimal="61678" unicode="U+" note="leftcurlybottomhook"/>
-    <codePoint name="f0ef" decimal="61679" unicode="U+" note="leftcurlyextendedhook"/>
-    <codePoint name="f0f1" decimal="61681" unicode="U+" note="ket"/>
-    <codePoint name="f0f2" decimal="61682" unicode="U+" note="integral"/>
-    <codePoint name="f0f3" decimal="61683" unicode="U+" note="integraltop"/>
-    <codePoint name="f0f4" decimal="61684" unicode="U+" note="integralmid"/>
-    <codePoint name="f0f5" decimal="61685" unicode="U+" note="integralbottom"/>
-    <codePoint name="f0f6" decimal="61686" unicode="U+" note="rightbrackettophook"/>
-    <codePoint name="f0f7" decimal="61687" unicode="U+" note="rightbracketmidhook"/>
-    <codePoint name="f0f8" decimal="61688" unicode="U+" note="rightbracketbottomhook"/>
-    <codePoint name="f0f9" decimal="61689" unicode="U+" note="rightsquaretophook"/>
-    <codePoint name="f0fa" decimal="61690" unicode="U+" note="rightsquaremidhook"/>
-    <codePoint name="f0fb" decimal="61691" unicode="U+" note="rightsquarebottomhook"/>
-    <codePoint name="f0fc" decimal="61692" unicode="U+" note="rightcurlytophook"/>
-    <codePoint name="f0fd" decimal="61693" unicode="U+" note="rightcurlymidhook"/>
-    <codePoint name="f0fe" decimal="61694" unicode="U+" note="rightcurlybottomhook"/>
+<codePointSet encoding="nonUnicodeSymbol" id="nonUnicodeSymbol" resource="org/xmlcml/pdf2svg/codepoints/symbol">
+
+<!-- needs filling in manually -->
+
+    <codePoint   unicode="U+0020" decimal="61472" note="SPACE"/>
+    <codePoint   unicode="U+0021" decimal="61473" note="EXCLAMATION MARK"/>
+    <codePoint   unicode="U+" decimal="61474" note="forall"/>
+    <codePoint   unicode="U+" decimal="61475" note="hash"/>
+    <codePoint   unicode="U+" decimal="61476" note="exists"/>
+    <codePoint   unicode="U+" decimal="61477" note="percent"/>
+    <codePoint   unicode="U+" decimal="61478" note="amp"/>
+    <codePoint   unicode="U+" decimal="61479" note="set"/>
+    <codePoint   unicode="U+" decimal="61480" note="lparen"/>
+    <codePoint   unicode="U+" decimal="61481" note="rparen"/>
+    <codePoint   unicode="U+" decimal="61482" note="asterisk"/>
+    <codePoint   unicode="U+" decimal="61483" note="plus"/>
+    <codePoint   unicode="U+" decimal="61484" note="comma"/>
+    <codePoint   unicode="U+" decimal="61485" note="minus"/>
+    <codePoint   unicode="U+" decimal="61486" note="fullstop"/>
+    <codePoint   unicode="U+" decimal="61487" note="slash"/>
+    <codePoint   unicode="U+" decimal="61488" note="zero"/>
+    <codePoint   unicode="U+" decimal="61489" note="one"/>
+    <codePoint   unicode="U+" decimal="61490" note="two"/>
+    <codePoint   unicode="U+" decimal="61491" note="three"/>
+    <codePoint   unicode="U+" decimal="61492" note="four"/>
+    <codePoint   unicode="U+" decimal="61493" note="five"/>
+    <codePoint   unicode="U+" decimal="61494" note="six"/>
+    <codePoint   unicode="U+" decimal="61495" note="seven"/>
+    <codePoint   unicode="U+" decimal="61496" note="eight"/>
+    <codePoint   unicode="U+" decimal="61497" note="nine"/>
+    <codePoint   unicode="U+" decimal="61498" note="colon"/>
+    <codePoint   unicode="U+" decimal="61499" note="semicolon"/>
+    <codePoint   unicode="U+" decimal="61500" note="less than"/>
+    <codePoint   unicode="U+" decimal="61501" note="equals"/>
+    <codePoint   unicode="U+" decimal="61502" note="greater"/>
+    <codePoint   unicode="U+" decimal="61503" note="question"/>
+    <codePoint   unicode="U+" decimal="61504" note="almost equal"/>
+    <codePoint   unicode="U+" decimal="61505" note="Alpha"/>
+    <codePoint   unicode="U+" decimal="61506" note="Beta"/>
+    <codePoint   unicode="U+" decimal="61507" note="Chi"/>
+    <codePoint   unicode="U+" decimal="61508" note="Delta"/>
+    <codePoint   unicode="U+" decimal="61509" note="Epsilon"/>
+    <codePoint   unicode="U+" decimal="61510" note="Phi"/>
+    <codePoint   unicode="U+" decimal="61511" note="Gamma"/>
+    <codePoint   unicode="U+" decimal="61512" note="Eta"/>
+    <codePoint   unicode="U+" decimal="61513" note="Iota"/>
+    <codePoint   unicode="U+" decimal="61514" note="Theta1"/>
+    <codePoint   unicode="U+" decimal="61515" note="Kappa"/>
+    <codePoint   unicode="U+" decimal="61516" note="Lambda"/>
+    <codePoint   unicode="U+" decimal="61517" note="Mu"/>
+    <codePoint   unicode="U+" decimal="61518" note="Nu"/>
+    <codePoint   unicode="U+" decimal="61519" note="Omicron"/>
+    <codePoint   unicode="U+" decimal="61520" note="Pi"/>
+    <codePoint   unicode="U+" decimal="61521" note="Theta"/>
+    <codePoint   unicode="U+" decimal="61522" note="Rho"/>
+    <codePoint   unicode="U+" decimal="61523" note="Sigma"/>
+    <codePoint   unicode="U+" decimal="61524" note="Tau"/>
+    <codePoint   unicode="U+" decimal="61525" note="Upsilon"/>
+    <codePoint   unicode="U+" decimal="61526" note="sigma1"/>
+    <codePoint   unicode="U+" decimal="61527" note="Omega"/>
+    <codePoint   unicode="U+" decimal="61528" note="Xi"/>
+    <codePoint   unicode="U+" decimal="61529" note="Psi"/>
+    <codePoint   unicode="U+" decimal="61530" note="Zeta"/>
+    <codePoint   unicode="U+" decimal="61531" note="lsquare"/>
+    <codePoint   unicode="U+" decimal="61532" note="therefore"/>
+    <codePoint   unicode="U+" decimal="61533" note="rsquare"/>
+    <codePoint   unicode="U+" decimal="61534" note="perp"/>
+    <codePoint   unicode="U+" decimal="61535" note="underscore"/>
+    <codePoint   unicode="U+" decimal="61536" note="macron"/>
+    <codePoint   unicode="U+" decimal="61537" note="alpha"/>
+    <codePoint   unicode="U+" decimal="61538" note="beta"/>
+    <codePoint   unicode="U+" decimal="61539" note="chi"/>
+    <codePoint   unicode="U+" decimal="61540" note="delta"/>
+    <codePoint   unicode="U+" decimal="61541" note="epsilon"/>
+    <codePoint   unicode="U+" decimal="61542" note="phi"/>
+    <codePoint   unicode="U+" decimal="61543" note="gamma"/>
+    <codePoint   unicode="U+" decimal="61544" note="eta"/>
+    <codePoint   unicode="U+" decimal="61545" note="iota"/>
+    <codePoint   unicode="U+" decimal="61546" note="phi"/>
+    <codePoint   unicode="U+" decimal="61547" note="kappa"/>
+    <codePoint   unicode="U+" decimal="61548" note="lambda"/>
+    <codePoint   unicode="U+" decimal="61549" note="mu"/>
+    <codePoint   unicode="U+" decimal="61550" note="nu"/>
+    <codePoint   unicode="U+" decimal="61551" note="omicron"/>
+    <codePoint   unicode="U+" decimal="61552" note="pi"/>
+    <codePoint   unicode="U+" decimal="61553" note="theta"/>
+    <codePoint   unicode="U+" decimal="61554" note="rho"/>
+    <codePoint   unicode="U+" decimal="61555" note="sigma"/>
+    <codePoint   unicode="U+" decimal="61556" note="tau"/>
+    <codePoint   unicode="U+" decimal="61557" note="upsilon"/>
+    <codePoint   unicode="U+" decimal="61558" note="omega1"/>
+    <codePoint   unicode="U+" decimal="61559" note="omega"/>
+    <codePoint   unicode="U+" decimal="61560" note="xi"/>
+    <codePoint   unicode="U+" decimal="61561" note="psi"/>
+    <codePoint   unicode="U+" decimal="61562" note="zeta"/>
+    <codePoint   unicode="U+" decimal="61563" note="lcurly"/>
+    <codePoint   unicode="U+" decimal="61564" note="pipe"/>
+    <codePoint   unicode="U+" decimal="61565" note="rcurly"/>
+    <codePoint   unicode="U+" decimal="61566" note="tilde"/>
+    <codePoint   unicode="U+" decimal="61601" note="Upsilon1"/>
+    <codePoint   unicode="U+" decimal="61602" note="apos"/>
+    <codePoint   unicode="U+" decimal="61603" note="lessthan equals"/>
+    <codePoint   unicode="U+" decimal="61604" note="slash"/>
+    <codePoint   unicode="U+" decimal="61605" note="infinty"/>
+    <codePoint   unicode="U+" decimal="61606" note="f?"/>
+    <codePoint   unicode="U+" decimal="61607" note="club"/>
+    <codePoint   unicode="U+" decimal="61608" note="diamond"/>
+    <codePoint   unicode="U+" decimal="61609" note="heart"/>
+    <codePoint   unicode="U+" decimal="61610" note="spade"/>
+    <codePoint   unicode="U+" decimal="61611" note="double arrow"/>
+    <codePoint   unicode="U+" decimal="61612" note="left arrow"/>
+    <codePoint   unicode="U+" decimal="61613" note="uparrow"/>
+    <codePoint   unicode="U+" decimal="61614" note="rightarrow"/>
+    <codePoint   unicode="U+" decimal="61615" note="downarrow"/>
+    <codePoint   unicode="U+" decimal="61616" note="degree"/>
+    <codePoint   unicode="U+" decimal="61617" note="plusminus"/>
+    <codePoint   unicode="U+" decimal="61618" note="quot"/>
+    <codePoint   unicode="U+" decimal="61619" note="greaterthanequals"/>
+    <codePoint   unicode="U+" decimal="61620" note="multiply"/>
+    <codePoint   unicode="U+" decimal="61621" note="proportional"/>
+    <codePoint   unicode="U+" decimal="61622" note="differential"/>
+    <codePoint   unicode="U+" decimal="61623" note="bullet"/>
+    <codePoint   unicode="U+" decimal="61624" note="divide"/>
+    <codePoint   unicode="U+" decimal="61625" note="not equals"/>
+    <codePoint   unicode="U+" decimal="61626" note="equivalent">
+    <codePoint   unicode="U+" decimal="61627" note="aprox equals"/>
+    <codePoint   unicode="U+" decimal="61628" note="ellipsis"/>
+    <codePoint   unicode="U+" decimal="61629" note="pipe"/>
+    <codePoint   unicode="U+" decimal="61630" note="em dash"/>
+    <codePoint   unicode="U+" decimal="61631" note="right bent arrow"/>
+    <codePoint   unicode="U+" decimal="61632" note="aleph"/>
+    <codePoint   unicode="U+" decimal="61633" note="???"/>
+    <codePoint   unicode="U+" decimal="61634" note="rfraktur"/>
+    <codePoint   unicode="U+" decimal="61635" note="weierstrass"/>
+    <codePoint   unicode="U+" decimal="61636" note="cross in circle"/>
+    <codePoint   unicode="U+" decimal="61637" note="plus in circle"/>
+    <codePoint   unicode="U+" decimal="61638" note="circle slash"/>
+    <codePoint   unicode="U+" decimal="61639" note="union"/>
+    <codePoint   unicode="U+" decimal="61640" note="disjoint"/>
+    <codePoint   unicode="U+" decimal="61641" note=""/>
+    <codePoint   unicode="U+" decimal="61642" note=""/>
+    <codePoint   unicode="U+" decimal="61643" note=""/>
+    <codePoint   unicode="U+" decimal="61644" note=""/>
+    <codePoint   unicode="U+" decimal="61645" note=""/>
+    <codePoint   unicode="U+" decimal="61646" note=""/>
+    <codePoint   unicode="U+" decimal="61647" note=""/>
+    <codePoint   unicode="U+" decimal="61648" note=""/>
+    <codePoint   unicode="U+" decimal="61649" note="nabla"/>
+    <codePoint   unicode="U+" decimal="61650" note="registered"/>
+    <codePoint   unicode="U+" decimal="61651" note="copyright"/>
+    <codePoint   unicode="U+" decimal="61652" note="trademark"/>
+    <codePoint   unicode="U+" decimal="61653" note="product"/>
+    <codePoint   unicode="U+" decimal="61654" note="squareroot"/>
+    <codePoint   unicode="U+" decimal="61655" note="middot"/>
+    <codePoint   unicode="U+" decimal="61656" note="??"/>
+    <codePoint   unicode="U+" decimal="61657" note="caret"/>
+    <codePoint   unicode="U+" decimal="61658" note="downcaret"/>
+    <codePoint   unicode="U+" decimal="61659" note="doublethickarrow"/>
+    <codePoint   unicode="U+" decimal="61660" note="leftthickarrow"/>
+    <codePoint   unicode="U+" decimal="61661" note="upthickarrow"/>
+    <codePoint   unicode="U+" decimal="61662" note="rightthickarrow"/>
+    <codePoint   unicode="U+" decimal="61663" note="downthickarrow"/>
+    <codePoint   unicode="U+" decimal="61664" note="lozenge"/>
+    <codePoint   unicode="U+" decimal="61665" note="bra"/>
+    <codePoint   unicode="U+" decimal="61666" note="registeredsans"/>
+    <codePoint   unicode="U+" decimal="61667" note="copyrightsans"/>
+    <codePoint   unicode="U+" decimal="61668" note="tmsans"/>
+    <codePoint   unicode="U+" decimal="61669" note="sum"/>
+    <codePoint   unicode="U+" decimal="61670" note="leftbrackettophook"/>
+    <codePoint   unicode="U+" decimal="61671" note="leftbracketmidhook"/>
+    <codePoint   unicode="U+" decimal="61672" note="leftbracketbottomhook"/>
+    <codePoint   unicode="U+" decimal="61673" note="leftsquaretophook"/>
+    <codePoint   unicode="U+" decimal="61674" note="leftsquaremidhook"/>
+    <codePoint   unicode="U+" decimal="61675" note="rightsquaretophook"/>
+    <codePoint   unicode="U+" decimal="61676" note="leftcurlytophook"/>
+    <codePoint   unicode="U+" decimal="61677" note="leftcurlymidhook"/>
+    <codePoint   unicode="U+" decimal="61678" note="leftcurlybottomhook"/>
+    <codePoint   unicode="U+" decimal="61679" note="leftcurlyextendedhook"/>
+    <codePoint   unicode="U+" decimal="61681" note="ket"/>
+    <codePoint   unicode="U+" decimal="61682" note="integral"/>
+    <codePoint   unicode="U+" decimal="61683" note="integraltop"/>
+    <codePoint   unicode="U+" decimal="61684" note="integralmid"/>
+    <codePoint   unicode="U+" decimal="61685" note="integralbottom"/>
+    <codePoint   unicode="U+" decimal="61686" note="rightbrackettophook"/>
+    <codePoint   unicode="U+" decimal="61687" note="rightbracketmidhook"/>
+    <codePoint   unicode="U+" decimal="61688" note="rightbracketbottomhook"/>
+    <codePoint   unicode="U+" decimal="61689" note="rightsquaretophook"/>
+    <codePoint   unicode="U+" decimal="61690" note="rightsquaremidhook"/>
+    <codePoint   unicode="U+" decimal="61691" note="rightsquarebottomhook"/>
+    <codePoint   unicode="U+" decimal="61692" note="rightcurlytophook"/>
+    <codePoint   unicode="U+" decimal="61693" note="rightcurlymidhook"/>
+    <codePoint   unicode="U+" decimal="61694" note="rightcurlybottomhook"/>
 </codePointSet>

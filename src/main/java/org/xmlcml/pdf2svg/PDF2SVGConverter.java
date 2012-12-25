@@ -388,9 +388,11 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			try {
 				readFileOrDirectory(filename);
 			} catch (Exception e) {
+				e.printStackTrace();
 				System.err.printf("Cannot parse PDF '" + filename + "':" + e);
-				if (exitOnError)
+				if (exitOnError) {
 					return false;
+				}
 				succeeded = false;
 			}
 		}

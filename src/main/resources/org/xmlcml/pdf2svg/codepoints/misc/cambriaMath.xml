@@ -16,7 +16,7 @@
 
 -->
 <!--  this has different fontSizes for different characters! -->
-<codePointSet encoding="Cambria Math" id="cambriaMath">
+<codePointSet encoding="Cambria Math" id="cambriaMath" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
 <!--  this may be wrong -->
     <codePoint unicode="U+0020" decimal="3" note="space"/>

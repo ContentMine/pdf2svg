@@ -15,6 +15,11 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvEnt2" id="advEnt2">
-    <codePoint decimal="119" unicode="U+2020" unicodeName="DAGGER" name="w" note=""/>
+<codePointSet encoding="AdvEnt2" id="advEnt2" resource="org/xmlcml/pdf2svg/codepoints/defacto">
+
+<!-- PROBABLY not Unicode -->
+
+    <codePoint unicode="U+2020" decimal="119" note="DAGGER"/>
+    
+    
 </codePointSet>

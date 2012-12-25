@@ -39,6 +39,9 @@
     <codePoint unicode="U+2261" unicodeName="IDENTICAL TO" name="equivalence" />
     <codePoint unicode="U+2264" unicodeName="LESS-THAN OR EQUAL TO" name="lessequal" />
     <codePoint unicode="U+2265" unicodeName="GREATER-THAN OR EQUAL TO" name="greaterequal" />
+    <codePoint unicode="U+226A" unicodeName="MUCH LESS-THAN" name="" />
+    <codePoint unicode="U+226B" unicodeName="MUCH GREATER-THAN" name="" />
+	
     <codePoint unicode="U+2282" unicodeName="SUBSET OF" name="propersubset" />
     <codePoint unicode="U+2283" unicodeName="SUPERSET OF" name="propersuperset" />
     <codePoint unicode="U+2284" unicodeName="NOT A SUBSET OF" name="notsubset" />

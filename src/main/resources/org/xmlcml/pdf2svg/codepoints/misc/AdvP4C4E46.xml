@@ -15,40 +15,45 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvP4C4E46" id="AdvP4C4E46"> 
+<codePointSet encoding="AdvP4C4E46" id="AdvP4C4E46" resource="org/xmlcml/pdf2svg/codepoints/misc"> 
 
-	<codePoint name="zero" unicode="U+239B" unicodeName="LEFT PARENTHESIS UPPER HOOK" />
-    <codePoint name="B" unicode="U+239C" unicodeName="LEFT PARENTHESIS EXTENSION"/>
-    <codePoint name="at" unicode="U+239D" unicodeName="LEFT PARENTHESIS LOWER HOOK"/>
-    <codePoint name="one" unicode="U+239E" unicodeName="RIGHT PARENTHESIS UPPER HOOK" />
-    <codePoint name="C" unicode="U+239F" unicodeName="RIGHT PARENTHESIS EXTENSION" />
-    <codePoint name="A" unicode="U+23A0" unicodeName="RIGHT PARENTHESIS LOWER HOOK" />
-    <codePoint name="s" unicode="U+221A" unicodeName="SQUARE ROOT" />
+<!-- NO UNICODE POINTS, we believe -->
 
-    <codePoint unicode="U+23A1" unicodeName="RIGHT SQUARE BRACKET UPPER CORNER" name="two"/>
-    <codePoint unicode="U+23A2" unicodeName="RIGHT SQUARE BRACKET EXTENSION" name="six"/>
-    <codePoint unicode="U+23A3" unicodeName="RIGHT SQUARE BRACKET LOWER CORNER" name="four"/>
-    <codePoint unicode="U+23A4" unicodeName="RIGHT SQUARE BRACKET UPPER CORNER" name="three"/>
-    <codePoint unicode="U+23A5" unicodeName="RIGHT SQUARE BRACKET EXTENSION" name="seven"/>
-    <codePoint unicode="U+23A6" unicodeName="RIGHT SQUARE BRACKET LOWER CORNER" name="five"/>
+    <codePoint unicode="U+239B" name="zero" note="LEFT PARENTHESIS UPPER HOOK" />
+    <codePoint unicode="U+239C" name="B" note="LEFT PARENTHESIS EXTENSION"/>
+    <codePoint unicode="U+239D" name="at" note="LEFT PARENTHESIS LOWER HOOK"/>
+    <codePoint unicode="U+239E" name="one" note="RIGHT PARENTHESIS UPPER HOOK" />
+    <codePoint unicode="U+239F" name="C" note="RIGHT PARENTHESIS EXTENSION" />
+    <codePoint unicode="U+23A0" name="A" note="RIGHT PARENTHESIS LOWER HOOK" />
+    <codePoint unicode="U+221A" name="p" note="SQUARE ROOT" />
+    <codePoint unicode="U+221A" name="s" note="SQUARE ROOT" />
+    <codePoint unicode="U+221A" name="r" note="SQUARE ROOT" /> <!-- large descending -->
+    <codePoint unicode="U+2211" name="X" note="N-ARY SUMMATION" />
+
+    <codePoint unicode="U+23A1" name="two" note="RIGHT SQUARE BRACKET UPPER CORNER"/>
+    <codePoint unicode="U+23A2" name="six" note="RIGHT SQUARE BRACKET EXTENSION"/>
+    <codePoint unicode="U+23A3" name="four" note="RIGHT SQUARE BRACKET LOWER CORNER"/>
+    <codePoint unicode="U+23A4" name="three" note="RIGHT SQUARE BRACKET UPPER CORNER"/>
+    <codePoint unicode="U+23A5" name="seven" note="RIGHT SQUARE BRACKET EXTENSION"/>
+    <codePoint unicode="U+23A6" name="five" note="RIGHT SQUARE BRACKET LOWER CORNER"/>
 <!--  this seems to be an extended SQRT without clear unicode mapping 
       this hack may be the best we can do -->    
-    <codePoint unicode="U+23A1" unicodeName="RIGHT SQUARE BRACKET UPPER CORNER" name="v"/>
-    <codePoint unicode="U+23A2" unicodeName="RIGHT SQUARE BRACKET EXTENSION" name="u"/>
-    <codePoint name="t" unicode="U+221A" unicodeName="SQUARE ROOT" />
+    <codePoint unicode="U+23A1" name="v" note="RIGHT SQUARE BRACKET UPPER CORNER"/>
+    <codePoint unicode="U+23A2" name="u" note="RIGHT SQUARE BRACKET EXTENSION"/>
+    <codePoint unicode="U+221A" name="t" note="SQUARE ROOT" />
 
-
-	<codePoint decimal="80" unicode="U+2211" unicodeName="N-ARY SUMMATION"/>  
+    <codePoint unicode="U+2211" decimal="80" name="P" note="N-ARY SUMMATION"/>  
 	
-	<codePoint decimal="64259" unicode="U+00AF" unicodeName="MACRON"/>  
+    <codePoint unicode="U+00AF" decimal="64259" note="MACRON"/>  
 	
-	<codePoint name="C2" unicode="U+005B" unicodeName="LEFT SQUARE BRACKET"/>  
-	<codePoint name="C3" unicode="U+005D" unicodeName="RIGHT SQUARE BRACKET"/>  
-
-	<codePoint name="C16" unicode="U+0028" unicodeName="LEFT BRACKET"/>  
-	<codePoint name="C17" unicode="U+0029" unicodeName="RIGHT BRACKET"/>
-	  
-	<codePoint name="C18" unicode="U+0028" unicodeName="LEFT BRACKET"/>  <!--  larger size -->
-	<codePoint name="C19" unicode="U+0029" unicodeName="RIGHT BRACKET"/> <!--  larger size --> 
+    <codePoint unicode="U+005B" name="C2" note="LEFT SQUARE BRACKET"/>  
+    <codePoint unicode="U+005D" name="C3" note="RIGHT SQUARE BRACKET"/>  
+    <codePoint unicode="U+0028" name="C16" note="LEFT BRACKET"/>  
+    <codePoint unicode="U+0029" name="C17" note="RIGHT BRACKET"/>
+    <codePoint unicode="U+0028" name="C18" note="LEFT BRACKET"/>  <!--  larger size -->
+    <codePoint unicode="U+0029" name="C19" note="RIGHT BRACKET"/> <!--  larger size --> 
+    <codePoint unicode="U+007B" name="C26" note="LEFT CURLY BRACKET"/> <!--  larger size --> 
+    <codePoint unicode="U+007D" name="C27" note="RIGHT CURLY BRACKET"/> <!--  larger size --> 
+    
 </codePointSet>
 		

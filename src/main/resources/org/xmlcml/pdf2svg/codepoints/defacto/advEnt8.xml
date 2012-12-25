@@ -15,8 +15,11 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvEnt8" id="advEnt8">
-    <codePoint unicode="U+274E" unicodeName="UNKNOWN" name="grot" note="unknown"/>
-    <codePoint decimal="55" unicode="U+00B1" unicodeName="PLUS-MINUS SIGN" name="" note="plus-minus"/>
-    <codePoint decimal="67" unicode="U+00F7" unicodeName="DIVISION SIGN" name="" note="plus-minus"/>
+<codePointSet encoding="AdvEnt8" id="advEnt8" resource="org/xmlcml/pdf2svg/codepoints/defacto">
+
+    <codePoint unicode="U+00B1" decimal="55" note="PLUS-MINUS SIGN" />
+    <codePoint unicode="U+00F7" decimal="67" note="DIVISION SIGN" />
+    
+    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
+    
 </codePointSet>

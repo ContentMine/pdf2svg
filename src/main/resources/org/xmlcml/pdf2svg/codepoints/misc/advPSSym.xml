@@ -15,8 +15,22 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvPSSym" id="AdvPSSym">
+<codePointSet encoding="AdvPSSym" id="AdvPSSym" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
-    <codePoint unicode="U+00A9" decimal="170" name="ordfeminine" unicodeName="COPYRIGHT"/>
-	<codePoint unicode="U+2122" decimal="50" name="C212" unicodeName="TRADE MARK SIGN"/> 
+<!-- this *might* be unicode compliant -->
+    
+    <codePoint unicode="U+00D7" name="periodcentered" decimal="183" note="MULTIPLICATION SIGN"/> 
+    
+    <codePoint unicode="U+00B0" name="C176" note="DEGREE SIGN"/> 
+    <codePoint unicode="U+00AE" name="C210" note="REGISTERED SIGN"/> 
+    <codePoint unicode="U+00A9" name="C211" note="COPYRIGHT SIGN"/> 
+    <codePoint unicode="U+2122" name="C212" note="TRADE MARK SIGN"/> 
+    <codePoint unicode="U+2038" name="C217" note="CARET"/> 
+
+    <codePoint unicode="U+2026" decimal="8230" note="HORIZONTAL ELLIPSIS"/>
+
+    <codePoint unicode="U+FB01" decimal="64257" note="LATIN SMALL LIGATURE FI"/> 
+<!--
+    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
+-->    
 </codePointSet>

@@ -36,9 +36,9 @@ public class CodePoint extends Element {
 	private static final String UNICODE_NAME = "unicodeName";
 	
 	private Integer nonUnicodeDecimal; // may or may not be the decimal equivalent of unicode    
-	private String name;        // a mnemonic (origin unspecified , ?Adobe, ?HTML-ent
-	private String note;        // some explanatory or other note
-	private UnicodePoint unicodePoint; 
+	private String  name;               // a mnemonic (origin unspecified , ?Adobe, ?HTML-ent
+	private String  note;               // some explanatory or other note
+	private UnicodePoint unicodePoint;
 	
 	public CodePoint() {
 		super(TAG);
@@ -120,6 +120,14 @@ public class CodePoint extends Element {
 
 	public String getName() {
 		return name;
+	}
+
+	public void setNote(String note) {
+		this.note = note;
+	}
+
+	public String getNote() {
+		return note;
 	}
 
 	public Integer getDecimal() {

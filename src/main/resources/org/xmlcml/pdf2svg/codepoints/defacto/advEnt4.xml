@@ -15,8 +15,12 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvEnt4" id="advEnt4">
-    <codePoint decimal="111" unicode="U+003C" unicodeName="LEFT ANGLE BRACKET" note=""/>
-    <codePoint decimal="114" unicode="U+2246" unicodeName="LESS THAN OR EQUALS" note=""/>
-    <codePoint unicodeName="UNKNOWN" unicode="U+274E" name="grot" note="unknown"/>
+<codePointSet encoding="AdvEnt4" id="advEnt4" resource="org/xmlcml/pdf2svg/codepoints/defacto">
+
+    <!-- NOT UNICODE -->
+    <codePoint unicode="U+003C" decimal="110" name="o" note="LESS-THAN SIGN"/>
+    <codePoint unicode="U+003C" decimal="111" note="LESS-THAN SIGN"/> <!-- ??? -->
+    <codePoint unicode="U+2246" decimal="114" note="LESS THAN OR EQUALS"/>
+    
+    
 </codePointSet>

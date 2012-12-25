@@ -15,7 +15,10 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="MathematicalPI" id="mathpi5">
+<codePointSet encoding="MathematicalPI" id="mathpi5" resource="org/xmlcml/pdf2svg/codepoints/defacto">
+
+    <codePoint name="H11601" unicode="U+007E" unicodeName="TILDE" />
     <codePoint name="H33522" unicode="U+007E" unicodeName="TILDE" />
+    
 </codePointSet>
 		

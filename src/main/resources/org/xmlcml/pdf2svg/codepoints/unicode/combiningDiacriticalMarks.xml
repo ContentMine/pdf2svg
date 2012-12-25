@@ -1,2 +1,3 @@
 <codePointSet encoding="Unicode" id="combiningDiacriticalMarks">
+    <codePoint unicode="U+0306" unicodeName="COMBINING BREVE" name="breve" />
 </codePointSet>

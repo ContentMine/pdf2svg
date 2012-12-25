@@ -5,6 +5,7 @@
     <codePoint unicode="U+02C6" unicodeName="MODIFIER LETTER CIRCUMFLEX ACCENT" name=""/>
     <codePoint unicode="U+02C7" unicodeName="CARON" name=""/>
     <codePoint unicode="U+02C9" unicodeName="MODIFIER LETTER MACRON" name=""/>
+    <codePoint unicode="U+02D8" unicodeName="BREVE" name="breve" />
     <codePoint unicode="U+02D9" unicodeName="DOT ABOVE" name=""/>
     <codePoint unicode="U+02DA" unicodeName="RING ABOVE" name=""/>
     <codePoint unicode="U+02DB" unicodeName="OGONEK" name=""/>

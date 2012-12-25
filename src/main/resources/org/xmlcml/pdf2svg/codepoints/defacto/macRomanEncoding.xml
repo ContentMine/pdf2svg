@@ -15,7 +15,8 @@
     limitations under the License.
 
 -->
-<codePoints encoding="macRomanEncoding" id="macRomanEncoding">
+<codePoints encoding="macRomanEncoding" id="macRomanEncoding" resource="org/xmlcml/pdf2svg/codepoints/defacto">
+
     <codePoint unicode="U+0020" name="space" />
     <codePoint unicode="U+0021" name="exclam" />
     <codePoint unicode="U+0022" name="quotedbl" />
@@ -223,4 +224,5 @@
     <codePoint unicode="U+00FD" name="hungarumlaut" />
     <codePoint unicode="U+00FE" name="ogonek" />
     <codePoint unicode="U+00FF" name="caron" />
+    
 </codePoints>

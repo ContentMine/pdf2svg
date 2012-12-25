@@ -15,14 +15,15 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="ADVMT_MI" id="advmt_mi">
+<codePointSet encoding="ADVMT_MI" id="advmt_mi" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
-    <codePoint name="C2"  unicode="U+00D7" unicodeName="MULTIPLICATION SIGN"/>
-    <codePoint name="C14" unicode="U+25CB" unicodeName="WHITE CIRCLE"/>
-    <codePoint name="C15" unicode="U+2022" unicodeName="BULLET"/>
-    <codePoint name="C18" unicode="U+03B8" unicodeName="GREEK SMALL LETTER THETA" />
-    <codePoint name="C21" unicode="U+03BB" unicodeName="GREEK SMALL LETTER LAMBDA" />
-    <codePoint name="C22" unicode="U+03BC" unicodeName="GREEK SMALL LETTER MU" />
-    <codePoint name="C27" unicode="U+03C3" unicodeName="GREEK SMALL LETTER SIGMA" />
-    <codePoint name="C31" unicode="U+03C7" unicodeName="GREEK SMALL LETTER CHI" />
+    <codePoint unicode="U+00D7" name="C2" note="MULTIPLICATION SIGN"/>
+    <codePoint unicode="U+25CB" name="C14" note="WHITE CIRCLE"/>
+    <codePoint unicode="U+2022" name="C15" note="BULLET"/>
+    <codePoint unicode="U+03B8" name="C18" note="GREEK SMALL LETTER THETA" />
+    <codePoint unicode="U+03BB" name="C21" note="GREEK SMALL LETTER LAMBDA" />
+    <codePoint unicode="U+03BC" name="C22" note="GREEK SMALL LETTER MU" />
+    <codePoint unicode="U+03C3" name="C27" note="GREEK SMALL LETTER SIGMA" />
+    <codePoint unicode="U+03C7" name="C31" note="GREEK SMALL LETTER CHI" />
+    
 </codePointSet>

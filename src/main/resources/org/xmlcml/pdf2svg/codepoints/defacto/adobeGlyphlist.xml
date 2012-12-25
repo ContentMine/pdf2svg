@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<codePointSet name="Adobe Glyph List" encoding="adobeGlyphList" id="adobeGlyphList">
+<codePointSet name="Adobe Glyph List" encoding="adobeGlyphList" id="adobeGlyphList" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
   <!-- See http://partners.adobe.com/asn/developer/typeforum/unicodegn.html -->
   

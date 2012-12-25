@@ -16,21 +16,12 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="MTSY" id="mtsy">
-<!-- assume >=32 == Unicode??? -->
-    <!-- only non-Unicode? -->
+<codePointSet encoding="MTSY" id="mtsy" resource="org/xmlcml/pdf2svg/codepoints/defacto">
+
     <codePoint unicode="U+00D7" decimal="2"   name="multiply" note="multiply"/>
+    <codePoint unicode="U+002F" decimal="3"   name="negationslash" note="slash"/>
     
-    <codePoint unicode="U+007C" decimal="124" name="bar" note="bar"/>
-    <codePoint unicode="U+00D7" decimal="215" name="multiply" note="multiply"/>
-    <codePoint unicode="U+00D7" decimal="175" name="macron" />
-    <codePoint unicode="U+2245" decimal="25"  note="approximately equal to"/>
+    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
     
-    <codePoint unicode="U+02C6" decimal="710"  note="circumflex"/>
-    <codePoint unicode="U+2212" decimal="8722" note="MINUS SIGN"/>
-    <codePoint unicode="U+21D2" decimal="8658" note="RIGHTWARDS DOUBLE ARROW"/>
-    <codePoint unicode="U+221A" decimal="8730" note="square root"/>
-    <codePoint unicode="U+2264" decimal="8804" note="less than or equals"/>
-    <codePoint unicode="U+2265" decimal="8805" note="greater than or equals"/>
     
 </codePointSet>

@@ -32,48 +32,14 @@ e.g.
 
 the charname appears to take precedence over the charval
 -->
-<codePointSet encoding="MTMI" id="mtmi">
-    <codePoint unicode="U+0394" decimal="7" unicodeName="GREEK CAPITAL LETTER DELTA" />
-    
-    <codePoint unicode="U+0394" name="" decimal="3" note="GREEK CAPITAL LETTER DELTA"/>
-    <codePoint unicode="U+0028" decimal="40" name="parenleft" font="MTMI"/>
-    <codePoint unicode="U+0029" decimal="41" name="parenright" font="MTMI"/>
-    <codePoint unicode="U+002E" decimal="46" name="period"    note="PERIOD"/>
-    <codePoint unicode="U+002F" decimal="47" name="slash"     note="SOLIDUS"/>
-    <codePoint unicode="U+003C" decimal="60" name="less"      note="LESS-THAN SIGN"/>
-    <codePoint unicode="U+003E" decimal="62" name="greater"   note="GREATER-THAN SIGN"/>
-    <codePoint unicode="U+274E" decimal="64" name="at"  note="partial derivative; find correct char"/>
-    
-    <codePoint name="Delta1"  unicode="U+0394" note="GREEK CAPITAL LETTER DELTA"/>
-    <codePoint name="delta1"  unicode="U+0394" note="GREEK CAPITAL LETTER DELTA"/>
+<codePointSet encoding="MTMI" id="mtmi" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
-<!-- direct unicode equivalents? might guess most missing chars-->    
-    <codePoint name="Theta1"  unicode="U+0398" decimal="0920" note="GREEK CAPITAL LETTER THETA"/>
-    <codePoint name="Phi1"    unicode="U+03A6" decimal="0934" note="GREEK SMALL LETTER PHI"/>
-    <codePoint name="alpha"   unicode="U+03B1" decimal="0945" note="GREEK SMALL LETTER ALPHA"/>
-    <codePoint name="beta"    unicode="U+03B2" decimal="0946" note="GREEK SMALL LETTER BETA"/>
-    <codePoint name="gamma"   unicode="U+03B3" decimal="0947" note="GREEK SMALL LETTER GAMMA"/>
-    <codePoint name="delta"   unicode="U+03B4" decimal="0948" note="GREEK SMALL LETTER DELTA"/>
-    <codePoint name="epsilon" unicode="U+03B5" decimal="0949" note="GREEK SMALL LETTER EPSILON"/>
-    <codePoint name="zeta"    unicode="U+03B6" decimal="0950" note="GREEK SMALL LETTER ZETA"/>
-    <codePoint name="eta"     unicode="U+03B7" decimal="0951" note="GREEK SMALL LETTER ETA"/>
-    <codePoint name="theta"   unicode="U+03B8" decimal="0952" note="GREEK SMALL LETTER THETA"/>
-    <codePoint name="iota"    unicode="U+03B9" decimal="0953" note="GREEK SMALL LETTER IOTA"/>
-    <codePoint name="kappa"   unicode="U+03BA" decimal="0954" note="GREEK SMALL LETTER KAPPA"/>
-    <codePoint name="lambda"  unicode="U+03BB" decimal="0955" note="GREEK SMALL LETTER LAMBDA"/>
-    <codePoint name="mu"      unicode="U+03BC" decimal="0956" note="GREEK SMALL LETTER MU"/>
-    <codePoint name="mu"      unicode="U+03BC" decimal="181"  note="GREEK SMALL LETTER MU"/>
-    <codePoint name="nu"      unicode="U+03BD" decimal="0957" note="GREEK SMALL LETTER NU"/>
-    <codePoint name="rho"     unicode="U+03C1" decimal="0961" note="GREEK SMALL LETTER RHO"/>
-    <codePoint name="sigma"   unicode="U+03C3" decimal="0963" note="GREEK SMALL LETTER SIGMA"/>
-    <codePoint name="tau"     unicode="U+03C4" decimal="0964" note="GREEK SMALL LETTER TAU"/>
-    <codePoint name="upsilon" unicode="U+03C5" decimal="0965" note="GREEK SMALL LETTER UPSILON"/>
-    <codePoint name="phi"     unicode="U+03C6" decimal="0966" note="GREEK SMALL LETTER PHI"/>
-    <codePoint name="psi"     unicode="U+03C7" decimal="0967" note="GREEK SMALL LETTER PSI"/>
-    <codePoint name="chi"     unicode="U+03C8" decimal="0968" note="GREEK SMALL LETTER CHI"/>
-    <codePoint name="omega"   unicode="U+03C9" decimal="0969" note="GREEK SMALL LETTER OMEGA"/>
-    
-    <codePoint unicode="U+21BD" decimal="8637" note="LEFTWARDS HARPOON WITH BARB DOWNWARDS"/>
-    <codePoint unicode="U+21C0" decimal="8640" note="RIGHTWARDS HARPOON WITH BARB UPWARDS"/>
+    <codePoint unicode="U+0393" name="Gamma1"  note="GREEK CAPITAL LETTER GAMMA"/>
+    <codePoint unicode="U+0394" name="Delta1"  note="GREEK CAPITAL LETTER DELTA"/>
+    <codePoint unicode="U+0394" name="delta1"  note="GREEK CAPITAL LETTER DELTA"/>
+    <codePoint unicode="U+03A3" name="Sigma1" note="GREEK CAPITAL LETTER SIGMA" />
+    <codePoint unicode="U+2202" decimal="64" name="at"  note="partial derivative"/>
+
+    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
 
 </codePointSet>

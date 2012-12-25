@@ -295,9 +295,10 @@ public class PDFGraphics2D extends Graphics2D {
 		double scaleRatio = scalex/scaley;
 		Real2 translate = t2.getTranslation();
 		// trap non-square or translated
-		if (!Real.isEqual(scaleRatio, 1.0, 0.01) 
+		if (!Real.isEqual(scaleRatio, 1.0, 0.3) 
 				|| !translate.isEqualTo(new Real2(0., 0.0), 0.001)) {
-			System.out.printf("transform(Tx=%s)%n", t2.toString());
+//			System.out.printf("transform(Tx=%s)%n", t2.toString());
+			System.out.println("transform "+ new RealArray(t2.getMatrixAsArray()));
 		}
 	}
 

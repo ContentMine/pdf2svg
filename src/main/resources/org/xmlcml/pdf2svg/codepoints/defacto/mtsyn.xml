@@ -18,10 +18,16 @@
 -->
 <codePointSet encoding="MTSYN" id="MTSYN" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
-    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
-    
-    <!-- non-Unicode? -->
-    <codePoint unicode="U+002F" decimal="5"    unicodeName="SOLIDUS" />
-    <codePoint unicode="U+2260" decimal="11"   unicodeName="NOT EQUAL TO" />
-    
+<!-- NOT UNICODE -->
+
+    <codePoint unicode="U+002F" decimal="5"   note="SOLIDUS" />
+    <codePoint unicode="U+2260" decimal="11"  note="NOT EQUAL TO" />
+    <codePoint unicode="U+002D" decimal="68"  name="D" note="EQUALS SIGN" />
+    <codePoint unicode="U+002D" decimal="161" name="exclamdown" note="HYPHEN-MINUS" />
+    <codePoint unicode="U+002A" decimal="163" note="ASTERISK" />
+    <codePoint unicode="U+002A" decimal="164" name="currency" note="ASTERISK" />
+    <codePoint unicode="U+002B" decimal="163" name="sterling" note="PLUS SIGN" />
+    <codePoint unicode="U+00B1" decimal="167" name="section" note="PLUS-MINUS SIGN" />
+    <codePoint unicode="U+007E" decimal="187" name="guillemotright" note="TILDE" />
+
 </codePointSet>

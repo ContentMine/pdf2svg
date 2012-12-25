@@ -75,8 +75,10 @@ Malayalam Sinhala Thai Lao Tibetan Myanmar Georgian Hangul Jamo Ethiopic Ethiopi
 											Supplemental Arrows-A U+27F0 U+27FF  (16)
 											Braille Patterns U+2800 U+28FF  (256)
 											Supplemental Arrows-B U+2900 U+297F  (128)
-											Miscellaneous Mathematical Symbols-B U+2980 U+29FF  (128)
-											Supplemental Mathematical Operators U+2A00 U+2AFF  (256)
+											Miscellaneous Mathematical Symbols-B U+2980 U+29FF  (128) -->
+											
+    <codePointSet idRef="supplementalMathematicalOperators"    href="supplementalMathematicalOperators.xml" note="Supplemental Mathematical Operators U+2A00 U+2AFF (256)"/>
+<!--											
 											Miscellaneous Symbols and Arrows U+2B00 U+2BFF  (87)
 -->
 <!-- 

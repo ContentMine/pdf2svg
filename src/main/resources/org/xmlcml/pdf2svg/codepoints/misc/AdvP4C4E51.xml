@@ -15,17 +15,22 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvP4C4E51" id="AdvP4C4E51"> 
+<codePointSet encoding="AdvP4C4E51" id="AdvP4C4E51" resource="org/xmlcml/pdf2svg/codepoints/misc"> 
 
-<!-- is this right? -->
+    <!-- DOES NOT SUPPORT UNICODE -->
+    
+    <codePoint unicode="U+002E" name="colon"     decimal="58" note="FULL STOP"/>
+    <codePoint unicode="U+002C" name="semicolon" decimal="59" note="COMMA"/>
+    <codePoint unicode="U+003C" name="less"      decimal="60" note="LESS-THAN SIGN"/>
+    <codePoint unicode="U+002F" name="equal"     decimal="61" note="SOLIDUS"/>
+    <codePoint unicode="U+003E" name="greater"   decimal="62" note="GREATER-THAN SIGN"/>
+    <codePoint unicode="U+007C" name="j"         decimal="106" note="VERTICAL LINE"/>
 
-	<codePoint name="colon" decimal="58" unicode="U+003A" unicodeName="FULL STOP"/>  
-	<codePoint name="semicolon" decimal="59" unicode="U+002C" unicodeName="COMMA"/>  
-	<codePoint name="slash" decimal="61" unicode="U+002F" unicodeName="SOLIDUS"/>  
-	<codePoint name="less" decimal="60" unicode="U+274E" unicodeName="UNK"/>  
-    <codePoint name="equal" unicode="U+002F" unicodeName="SOLIDUS"/>
-
-	<codePoint name="C18" unicode="U+03B8" unicodeName="GREEK SMALL LETTER THETA"/>
+    <codePoint unicode="U+03B8" name="C18" note="GREEK SMALL LETTER THETA"/>
+    <codePoint unicode="U+03BA" name="C20" note="GREEK SMALL LETTER KAPPA"/>
+    <codePoint unicode="U+03C6" name="C30" note="GREEK SMALL LETTER PHI"/>
+	
+    <codePoint unicode="U+03C6" name="period" note="GREEK SMALL LETTER PHI"/>
 	
 </codePointSet>
 		

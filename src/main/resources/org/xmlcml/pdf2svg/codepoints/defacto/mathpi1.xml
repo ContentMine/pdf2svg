@@ -6,52 +6,74 @@
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
 
-            http://www.apache.org/licenses/LICENSE-2.0
+        http://www.apache.org/licenses/LICENSE-2.0
 
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
-    limitations under the License.
+    limiations under the License.
 
 -->
-<codePointSet encoding="MathematicalPI" id="mathpi1">
-    <!--  appear to be some simply names -->
-	<codePoint name="space" unicode="U+0020" unicodeName="SPACE"/>
-	
-	<codePoint name="H9004" unicode="U+0394" unicodeName="GREEK CAPITAL LETTER DELTA"/>
-	
-	<codePoint name="H9251" unicode="U+03B1" unicodeName="GREEK SMALL LETTER ALPHA"/>
-	<codePoint name="H9252" unicode="U+03B2" unicodeName="GREEK SMALL LETTER BETA"/>
-	<codePoint name="H9253" unicode="U+03B3" unicodeName="GREEK SMALL LETTER GAMMA"/>
-	<codePoint name="H9254" unicode="U+03B4" unicodeName="GREEK SMALL LETTER DELTA"/>
-	<codePoint name="H9255" unicode="U+03B5" unicodeName="GREEK SMALL LETTER EPSILON"/>
-	<codePoint name="H9256" unicode="U+03B6" unicodeName="GREEK SMALL LETTER ZETA"/>
-	<codePoint name="H9257" unicode="U+03B7" unicodeName="GREEK SMALL LETTER ETA"/>
-	<codePoint name="H9258" unicode="U+03B8" unicodeName="GREEK SMALL LETTER THETA"/>
-	<codePoint name="H9259" unicode="U+03B9" unicodeName="GREEK SMALL LETTER IOTA"/>
-	<codePoint name="H9260" unicode="U+03BA" unicodeName="GREEK SMALL LETTER KAPPA"/>
-	<codePoint name="H9261" unicode="U+03BB" unicodeName="GREEK SMALL LETTER LAMBDA"/>
-	<codePoint name="H9262" unicode="U+03BC" unicodeName="GREEK SMALL LETTER MU"/>
-	<codePoint name="H9263" unicode="U+03BD" unicodeName="GREEK SMALL LETTER NU"/>
-	
-	<codePoint name="H9273" unicode="U+03C7" unicodeName="GREEK SMALL LETTER CHI"/>
+<codePointSet encoding="MathematicalPI" id="mathpi1" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
+    <codePoint unicode="U+0020" name="space" note="SPACE"/>
+    
+    <codePoint unicode="U+0394" name="H9004" note="GREEK CAPITAL LETTER DELTA"/>
+    
+    <codePoint unicode="U+03B1" name="H9251" note="GREEK SMALL LETTER ALPHA"/>
+    <codePoint unicode="U+03B1" name="a" note="GREEK SMALL LETTER ALPHA"/>
+    <codePoint unicode="U+03B2" name="H9252" note="GREEK SMALL LETTER BETA"/>
+    <codePoint unicode="U+03B2" name="b" note="GREEK SMALL LETTER BETA"/>
+    <codePoint unicode="U+03B3" name="H9253" note="GREEK SMALL LETTER GAMMA"/>
+    <codePoint unicode="U+03B4" name="H9254" note="GREEK SMALL LETTER DELTA"/>
+    <codePoint unicode="U+03B5" name="H9255" note="GREEK SMALL LETTER EPSILON"/>
+    <codePoint unicode="U+03B6" name="H9256" note="GREEK SMALL LETTER ZETA"/>
+    <codePoint unicode="U+03B7" name="H9257" note="GREEK SMALL LETTER ETA"/>
+    <codePoint unicode="U+03B8" name="H9258" note="GREEK SMALL LETTER THETA"/>
+    <codePoint unicode="U+03B8" name="u" note="GREEK SMALL LETTER THETA"/>
+    <codePoint unicode="U+03B9" name="H9259" note="GREEK SMALL LETTER IOTA"/>
+    <codePoint unicode="U+03BA" name="H9260" note="GREEK SMALL LETTER KAPPA"/>
+    <codePoint unicode="U+03BB" name="H9261" note="GREEK SMALL LETTER LAMBDA"/>
+    <codePoint unicode="U+03BC" name="H9262" note="GREEK SMALL LETTER MU"/>
+    <codePoint unicode="U+03BC" name="m" note="GREEK SMALL LETTER MU"/>
+    <codePoint unicode="U+03BD" name="H9263" note="GREEK SMALL LETTER NU"/>
+    
+    <codePoint unicode="U+03C7" name="H9273" note="GREEK SMALL LETTER CHI"/>
+    <codePoint unicode="U+03C7" name="x" note="GREEK SMALL LETTER CHI"/>
 
-	
-	<codePoint name="H11001" unicode="U+002B"  unicodeName="PLUS"/>
-	<codePoint name="H11002" unicode="U+002D"  unicodeName="MINUS"/>
-	<codePoint name="H11003" unicode="U+00D7"  unicodeName="MULTIPLICATION SIGN"/> 
-	<codePoint name="H11005" unicode="U+003D"  unicodeName="EQUALS"/> 
-	<codePoint name="H11006" unicode="U+00B1"  unicodeName="PLUS-MINUS SIGN"/> 
-	<codePoint name="H11011" unicode="U+007E"  unicodeName="TILDE"/> 
-	<codePoint name="H11021" unicode="U+003C"  unicodeName="LESS-THAN SIGN" htmlName="lt"/> 
-	<codePoint name="H11022" unicode="U+003E"  unicodeName="GREATER-THAN SIGN" htmlName="gt"/> 
-	<codePoint name="H11032" unicode="U+0027"  unicodeName="APOSTROPHE" htmlName="apos"/> 
-	<codePoint name="H11033" unicode="U+0022"  unicodeName="QUOT" htmlName="quot"/> 
-	<codePoint name="H11034" unicode="U+00B0"  unicodeName="DEGREE SIGN" htmlName="deg"/> 
-	
-	<codePoint name="H11554" unicode="U+00B7"  unicodeName="MIDDLE DOT"/> 
-	
+    <codePoint unicode="U+002B" name="H11001"  note="PLUS"/>
+    <codePoint unicode="U+002B" name="one" decimal="49" note="PLUS"/>
+    <codePoint unicode="U+002D" name="H11002"  note="MINUS"/>
+    <codePoint unicode="U+002D" name="two" decimal="50" note="MINUS"/>
+    <codePoint unicode="U+00D7" name="H11003"  note="MULTIPLICATION SIGN"/> 
+    <codePoint unicode="U+00D7" name="three" decimal="51" note="MULTIPLICATION SIGN"/> 
+    <codePoint unicode="U+00F7" name="H11004"  note="DIVISION SIGN"/> 
+    <codePoint unicode="U+00F7" name="four" decimal="52" note="DIVISION SIGN"/> 
+    <codePoint unicode="U+003D" name="H11005"  note="EQUALS"/> 
+    <codePoint unicode="U+003D" name="five" decimal="53" note="EQUALS"/> 
+    <codePoint unicode="U+00B1" name="H11006"  note="PLUS-MINUS SIGN"/> 
+    <codePoint unicode="U+007E" name="H11011"  note="TILDE"/> 
+    <codePoint unicode="U+003C" name="H11021"  note="LESS-THAN SIGN"/> 
+    <codePoint unicode="U+003C" name="comma"  note="LESS-THAN SIGN"/> 
+    <codePoint unicode="U+003E" name="H11022"  note="GREATER-THAN SIGN"/> 
+    <codePoint unicode="U+003E" name="period"  note="GREATER-THAN SIGN"/> 
+    <codePoint unicode="U+0027" name="H11032"  note="APOSTROPHE"/> 
+    <codePoint unicode="U+0027" name="nine"  note="APOSTROPHE"/> 
+    <codePoint unicode="U+0022" name="H11033"  note="QUOT"/> 
+    <codePoint unicode="U+00B0" name="H11034"  note="DEGREE SIGN"/> 
+
+    <codePoint unicode="U+2264" name="H11349"  note="LESS THAN OR EQUAL TO"/> 
+    <codePoint unicode="U+2265" name="H11350"  note="GREATER THAN OR EQUAL TO"/> 
+    
+    <codePoint unicode="U+00B7" name="H11554"  note="MIDDLE DOT"/> 
+    <codePoint unicode="U+00B7" name="z" decimal="122" note="MIDDLE DOT"/> 
+    
+    <codePoint unicode="U+2AA2" name="at" decimal="60" note="DOUBLE NESTED GREATER-THAN"/> 
+    
+    <codePoint unicode="U+0028" name="asciitilde"  note="LEFT PARENTHESIS"/> 
+    <codePoint unicode="U+0029" name="exclam"  note="RIGHT PARENTHESIS"/> 
+
+    	
 </codePointSet>
 		

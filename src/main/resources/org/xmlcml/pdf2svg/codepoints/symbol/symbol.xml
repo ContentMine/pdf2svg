@@ -16,59 +16,65 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="Symbol" id="symbol">
+<codePointSet encoding="symbol" id="symbol" resource="org/xmlcml/pdf2svg/codepoints/symbol">
   <!--  high code points in Symbol font -->    
   
-	<codePoint decimal="65" unicode="U+0391" unicodeName="GREEK CAPITAL LETTER ALPHA"/>
-	<codePoint decimal="66" unicode="U+0392" unicodeName="GREEK CAPITAL LETTER BETA"/>
-	<codePoint decimal="67" unicode="U+03A7" unicodeName="GREEK CAPITAL LETTER CHI" note="" />
-	<codePoint decimal="68" unicode="U+0394" unicodeName="GREEK CAPITAL LETTER DELTA"/>
-	<codePoint decimal="69" unicode="U+0395" unicodeName="GREEK CAPITAL LETTER EPSILON"/>
-	<codePoint decimal="70" unicode="U+03A6" unicodeName="GREEK CAPITAL LETTER PHI" note="" />
-	<codePoint decimal="71" unicode="U+0393" unicodeName="GREEK CAPITAL LETTER GAMMA"/>
-	<codePoint decimal="72" unicode="U+0397" unicodeName="GREEK CAPITAL LETTER ETA"/>
-	<codePoint decimal="73" unicode="U+0399" unicodeName="GREEK CAPITAL LETTER IOTA"/>
-	<codePoint decimal="75" unicode="U+039A" unicodeName="GREEK CAPITAL LETTER KAPPA"/>
-	<codePoint decimal="76" unicode="U+039B" unicodeName="GREEK CAPITAL LETTER LAMBDA"/>
-	<codePoint decimal="77" unicode="U+039C" unicodeName="GREEK CAPITAL LETTER MU"/>
-	<codePoint decimal="78" unicode="U+039D" unicodeName="GREEK CAPITAL LETTER NU"/>
-	<codePoint decimal="79" unicode="U+039F" unicodeName="GREEK CAPITAL LETTER OMICRON"/>
-	<codePoint decimal="80" unicode="U+03A0" unicodeName="GREEK CAPITAL LETTER PI"/>
-	<codePoint decimal="81" unicode="U+0398" unicodeName="GREEK CAPITAL LETTER THETA"/>
-	<codePoint decimal="82" unicode="U+03A1" unicodeName="GREEK CAPITAL LETTER RHO"/>
-	<codePoint decimal="83" unicode="U+03A3" unicodeName="GREEK CAPITAL LETTER SIGMA"/>
-	<codePoint decimal="84" unicode="U+03A4" unicodeName="GREEK CAPITAL LETTER TAU"/>
-	<codePoint decimal="85" unicode="U+03A5" unicodeName="GREEK CAPITAL LETTER UPSILON"/>
-	<codePoint decimal="87" unicode="U+03A9" unicodeName="GREEK CAPITAL LETTER OMEGA" note="" />
-	<codePoint decimal="88" unicode="U+039E" unicodeName="GREEK CAPITAL LETTER XI"/>
-	<codePoint decimal="89" unicode="U+03A8" unicodeName="GREEK CAPITAL LETTER PSI" note="" />
-	<codePoint decimal="90" unicode="U+0396" unicodeName="GREEK CAPITAL LETTER ZETA"/>
+    <codePoint unicode="U+0391" decimal="65" note="GREEK CAPITAL LETTER ALPHA"/>
+    <codePoint unicode="U+0392" decimal="66" note="GREEK CAPITAL LETTER BETA"/>
+    <codePoint unicode="U+03A7" decimal="67" note="GREEK CAPITAL LETTER CHI"/>
+    <codePoint unicode="U+0394" decimal="68" note="GREEK CAPITAL LETTER DELTA"/>
+    <codePoint unicode="U+0395" decimal="69" note="GREEK CAPITAL LETTER EPSILON"/>
+    <codePoint unicode="U+03A6" decimal="70" note="GREEK CAPITAL LETTER PHI"/>
+    <codePoint unicode="U+0393" decimal="71" note="GREEK CAPITAL LETTER GAMMA"/>
+    <codePoint unicode="U+0397" decimal="72" note="GREEK CAPITAL LETTER ETA"/>
+    <codePoint unicode="U+0399" decimal="73" note="GREEK CAPITAL LETTER IOTA"/>
+    <codePoint unicode="U+039A" decimal="75" note="GREEK CAPITAL LETTER KAPPA"/>
+    <codePoint unicode="U+039B" decimal="76" note="GREEK CAPITAL LETTER LAMBDA"/>
+    <codePoint unicode="U+039C" decimal="77" note="GREEK CAPITAL LETTER MU"/>
+    <codePoint unicode="U+039D" decimal="78" note="GREEK CAPITAL LETTER NU"/>
+    <codePoint unicode="U+039F" decimal="79" note="GREEK CAPITAL LETTER OMICRON"/>
+    <codePoint unicode="U+03A0" decimal="80" note="GREEK CAPITAL LETTER PI"/>
+    <codePoint unicode="U+0398" decimal="81" note="GREEK CAPITAL LETTER THETA"/>
+    <codePoint unicode="U+03A1" decimal="82" note="GREEK CAPITAL LETTER RHO"/>
+    <codePoint unicode="U+03A3" decimal="83" note="GREEK CAPITAL LETTER SIGMA"/>
+    <codePoint unicode="U+03A4" decimal="84" note="GREEK CAPITAL LETTER TAU"/>
+    <codePoint unicode="U+03A5" decimal="85" note="GREEK CAPITAL LETTER UPSILON"/>
+    <codePoint unicode="U+03A9" decimal="87" note="GREEK CAPITAL LETTER OMEGA"/>
+    <codePoint unicode="U+039E" decimal="88" note="GREEK CAPITAL LETTER XI"/>
+    <codePoint unicode="U+03A8" decimal="89" note="GREEK CAPITAL LETTER PSI"/>
+    <codePoint unicode="U+0396" decimal="90" note="GREEK CAPITAL LETTER ZETA"/>
 
-	<codePoint decimal="101" unicode="U+03B5" unicodeName="GREEK SMALL LETTER EPSILON"/>
-	<codePoint decimal="102" unicode="U+03C6" unicodeName="GREEK SMALL LETTER PHI" note="" />
-	<codePoint decimal="103" unicode="U+03B3" unicodeName="GREEK SMALL LETTER GAMMA"/>
-	<codePoint decimal="104" unicode="U+03B7" unicodeName="GREEK SMALL LETTER ETA"/>
-	<codePoint decimal="107" unicode="U+03B8" unicodeName="GREEK SMALL LETTER THETA"/>
-	<codePoint decimal="105" unicode="U+03B9" unicodeName="GREEK SMALL LETTER IOTA"/>
-	<codePoint decimal="107" unicode="U+03BA" unicodeName="GREEK SMALL LETTER KAPPA"/>
-	<codePoint decimal="108" unicode="U+03BB" unicodeName="GREEK SMALL LETTER LAMBDA"/>
-	<codePoint decimal="111" unicode="U+03BF" unicodeName="GREEK SMALL LETTER OMICRON"/>
-	<codePoint decimal="112" unicode="U+03C0" unicodeName="GREEK SMALL LETTER PI"/>
-	<codePoint decimal="114" unicode="U+03C1" unicodeName="GREEK SMALL LETTER RHO"/>
-	<codePoint decimal="115" unicode="U+03C3" unicodeName="GREEK SMALL LETTER SIGMA"/>
-	<codePoint decimal="116" unicode="U+03C4" unicodeName="GREEK SMALL LETTER TAU"/>
-	<codePoint decimal="116" unicode="U+03B6" unicodeName="GREEK SMALL LETTER ZETA"/>
-	<codePoint decimal="117" unicode="U+03C5" unicodeName="GREEK SMALL LETTER UPSILON"/>
-	<codePoint decimal="119" unicode="U+03C9" unicodeName="GREEK SMALL LETTER OMEGA" note="" />
-	<codePoint decimal="120" unicode="U+03BE" unicodeName="GREEK SMALL LETTER XI"/>
-	<codePoint decimal="121" unicode="U+03C8" unicodeName="GREEK SMALL LETTER PSI" note="" />
+    <codePoint unicode="U+03B5" decimal="101" note="GREEK SMALL LETTER EPSILON"/>
+    <codePoint unicode="U+03C6" decimal="102" note="GREEK SMALL LETTER PHI"/>
+    <codePoint unicode="U+03B3" decimal="103" note="GREEK SMALL LETTER GAMMA"/>
+    <codePoint unicode="U+03B7" decimal="104" note="GREEK SMALL LETTER ETA"/>
+    <codePoint unicode="U+03B8" decimal="107" note="GREEK SMALL LETTER THETA"/>
+    <codePoint unicode="U+03B9" decimal="105" note="GREEK SMALL LETTER IOTA"/>
+    <codePoint unicode="U+03BA" decimal="107" note="GREEK SMALL LETTER KAPPA"/>
+    <codePoint unicode="U+03BB" decimal="108" note="GREEK SMALL LETTER LAMBDA"/>
+    <codePoint unicode="U+03BF" decimal="111" note="GREEK SMALL LETTER OMICRON"/>
+    <codePoint unicode="U+03C0" decimal="112" note="GREEK SMALL LETTER PI"/>
+    <codePoint unicode="U+03C1" decimal="114" note="GREEK SMALL LETTER RHO"/>
+    <codePoint unicode="U+03C3" decimal="115" note="GREEK SMALL LETTER SIGMA"/>
+    <codePoint unicode="U+03C4" decimal="116" note="GREEK SMALL LETTER TAU"/>
+    <codePoint unicode="U+03B6" decimal="116" note="GREEK SMALL LETTER ZETA"/>
+    <codePoint unicode="U+03C5" decimal="117" note="GREEK SMALL LETTER UPSILON"/>
+    <codePoint unicode="U+03C9" decimal="119" note="GREEK SMALL LETTER OMEGA"/>
+    <codePoint unicode="U+03BE" decimal="120" note="GREEK SMALL LETTER XI"/>
+    <codePoint unicode="U+03C8" decimal="121" note="GREEK SMALL LETTER PSI"/>
     
-<!--  these display OK in browsers so are probably standard ; see nonunicodesymbol.xml -->	
+<!--  these display OK in browsers so are probably standard ; see nonunicodesymbol.xml -->    
 
-	<codePoint decimal="61537" unicode="U+03B1" unicodeName="GREEK SMALL LETTER ALPHA"/>
-	<codePoint decimal="61538" unicode="U+03B2" unicodeName="GREEK SMALL LETTER BETA"/>
-	<codePoint decimal="61539" unicode="U+03C7" unicodeName="GREEK SMALL LETTER CHI" note="" />
-	<codePoint decimal="61540" unicode="U+03B4" unicodeName="GREEK SMALL LETTER DELTA"/>
-	<codePoint decimal="61549" unicode="U+03BC" unicodeName="GREEK SMALL LETTER MU"/>
-	<codePoint decimal="61550" unicode="U+03BD" unicodeName="GREEK SMALL LETTER NU"/>
+    <codePoint unicode="U+03B1" decimal="61537" note="GREEK SMALL LETTER ALPHA"/>
+    <codePoint unicode="U+03B2" decimal="61538" note="GREEK SMALL LETTER BETA"/>
+    <codePoint unicode="U+03C7" decimal="61539" note="GREEK SMALL LETTER CHI"/>
+    <codePoint unicode="U+03B4" decimal="61540" note="GREEK SMALL LETTER DELTA"/>
+    <codePoint unicode="U+03BC" decimal="61549" note="GREEK SMALL LETTER MU"/>
+    <codePoint unicode="U+03BD" decimal="61550" note="GREEK SMALL LETTER NU"/>
+    
+<!-- this is actually SymbolStd but may get routed here -->
+    <codePoint name="C210" unicode="U+00AE" note="REGISTERED SIGN"/> 
+    <codePoint name="C211" unicode="U+00A9" note="COPYRIGHT SIGN"/> 
+    <codePoint name="C212" unicode="U+2122" note="TRADE-MARK SIGN"/> 
+    
 </codePointSet>

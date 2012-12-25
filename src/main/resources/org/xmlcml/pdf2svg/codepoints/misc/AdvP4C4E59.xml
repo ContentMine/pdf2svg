@@ -15,12 +15,26 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvP4C4E59" id="advp4c4e59"> 
+<codePointSet encoding="AdvP4C4E59" id="advp4c4e59" resource="org/xmlcml/pdf2svg/codepoints/misc"> 
 
-	<codePoint name="asciitilde" unicode="U+007E" unicodeName="TILDE"/>  
+<!-- COMBINING DIACRITICAL MARKS ? -->
+    <!-- DOES NOT SUPPORT UNICODE -->
+    
+    <codePoint unicode="U+002E" name="period" decimal="46" note="FULL STOP"/>  
+    
+    <codePoint unicode="U+007E" name="asciitilde" note="TILDE"/>  
+    <codePoint unicode="U+005E" name="asciicircum" note="CIRCUMFLEX ACCENT"/>  
+    <codePoint unicode="U+002A" name="asterisk" note="ASTERISK"/> 
+    
+    <codePoint unicode="U+2018" name="C18" note="LEFT SINGLE QUOTATION MARK"/>  
+    <codePoint unicode="U+007E" name="C19" note="TILDE"/>  
+    <codePoint unicode="U+02C7" name="C20" note="CARON"/>  
+    <codePoint unicode="U+0306" name="C21" note="COMBINING BREVE"/>
+    <codePoint unicode="U+00A8" name="C22" note="MACRON" />  
+    <codePoint unicode="U+00B0" name="C23" note="DEGREE SIGN" />  
+    
+    <codePoint unicode="U+00A8" decimal="8364" note="DIAERESIS" />  
 
-	<codePoint name="C19" unicode="U+007E" unicodeName="TILDE"/>  
-	<codePoint name="C22" unicode="U+00A8"  unicodeName="MACRON" />  
 
 </codePointSet>
 		

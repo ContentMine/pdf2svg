@@ -16,8 +16,10 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvEnt6" id="advEnt6">
-    <codePoint unicodeName="UNKNOWN" unicode="U+274E" name="grot" note="unknown"/>
-    <codePoint decimal="63" unicode="U+22EF" unicodeName="MIDLINE HORIZONTAL ELLIPSIS" name="" />
+<codePointSet encoding="AdvEnt6" id="advEnt6" resource="org/xmlcml/pdf2svg/codepoints/defacto">
+
+    <codePoint unicode="U+22EF" decimal="63" note="MIDLINE HORIZONTAL ELLIPSIS"/>
+    
+    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
     
 </codePointSet>

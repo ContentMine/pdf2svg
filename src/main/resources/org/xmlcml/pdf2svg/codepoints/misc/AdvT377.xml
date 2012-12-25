@@ -15,7 +15,8 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="CSymbol" id="csymbol"> 
+<codePointSet encoding="AdvT377" id="AdvT377" resource="org/xmlcml/pdf2svg/codepoints/misc"> 
+
     <codePoint name="asterisk" unicode="U+002A" unicodeName="ASTERISK"/>  
     <codePoint decimal="8364" unicode="U+0308" unicodeName="COMBINING DIAERESIS"/>  
     <codePoint unicode="U+002B" decimal="254" name="thorn" note="plus"/>
@@ -39,5 +40,6 @@
     <codePoint name="C210" unicode="U+00AE" unicodeName="REGISTERED SIGN"/> 
     <codePoint name="C211" unicode="U+00A9" unicodeName="COPYRIGHT SIGN"/> 
     <codePoint name="C223" unicode="U+00A9" unicodeName="COPYRIGHT SIGN"/> <!-- maybe sans serif variant? -->
+    
 </codePointSet>
         

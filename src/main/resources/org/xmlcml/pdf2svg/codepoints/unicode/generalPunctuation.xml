@@ -43,6 +43,9 @@
     <codePoint unicode="U+2030" unicodeName="PER MILLE SIGN" name=""/>
     <codePoint unicode="U+2032" unicodeName="PRIME" decimal="8242" note="replace by APOSTROPHE" replaceByUnicode="U+0027" name="minute" />
     <codePoint unicode="U+2033" unicodeName="DOUBLE PRIME" name="second" />
+    <codePoint unicode="U+2038" unicodeName="CARET" name=""/>
     
+    <codePoint unicode="U+204E" unicodeName="LOW ASTERISK" name=""/>
+
     <codePoint unicode="U+2044" unicodeName="FRACTION SLASH" name="fraction" />
 </codePointSet>
