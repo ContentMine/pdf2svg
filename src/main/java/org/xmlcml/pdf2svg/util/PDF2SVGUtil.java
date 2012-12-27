@@ -35,8 +35,10 @@ public class PDF2SVGUtil {
 	public static final String LIGATURE = "ligature";
 	
 	public static void setSVGXAttribute(SVGElement svgElement, String attName, String value) {
-		Attribute attribute = new Attribute(SVGX_PREFIX+CMLConstants.S_COLON+attName, SVGX_NS, value);
-		svgElement.addAttribute(attribute);
+		if (attName != null && value != null) {
+			Attribute attribute = new Attribute(SVGX_PREFIX+CMLConstants.S_COLON+attName, SVGX_NS, value);
+			svgElement.addAttribute(attribute);
+		}
 	}
 
 	public static String getSVGXAttribute(SVGElement svgElement, String attName) {

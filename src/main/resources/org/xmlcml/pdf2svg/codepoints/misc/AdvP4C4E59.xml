@@ -17,14 +17,14 @@
 -->
 <codePointSet encoding="AdvP4C4E59" id="advp4c4e59" resource="org/xmlcml/pdf2svg/codepoints/misc"> 
 
-<!-- COMBINING DIACRITICAL MARKS ? -->
-    <!-- DOES NOT SUPPORT UNICODE -->
-    
+<!-- 
     <codePoint unicode="U+002E" name="period" decimal="46" note="FULL STOP"/>  
+    <codePoint unicode="U+003B" name="semicolon" decimal="59" note="SEMICOLON"/>  
     
     <codePoint unicode="U+007E" name="asciitilde" note="TILDE"/>  
     <codePoint unicode="U+005E" name="asciicircum" note="CIRCUMFLEX ACCENT"/>  
     <codePoint unicode="U+002A" name="asterisk" note="ASTERISK"/> 
+-->
     
     <codePoint unicode="U+2018" name="C18" note="LEFT SINGLE QUOTATION MARK"/>  
     <codePoint unicode="U+007E" name="C19" note="TILDE"/>  
@@ -34,7 +34,9 @@
     <codePoint unicode="U+00B0" name="C23" note="DEGREE SIGN" />  
     
     <codePoint unicode="U+00A8" decimal="8364" note="DIAERESIS" />  
-
+    
+    <codePointSet idRef="basicLatin" href="../unicode/basicLatin.xml"/>
+    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>
 
 </codePointSet>
 		

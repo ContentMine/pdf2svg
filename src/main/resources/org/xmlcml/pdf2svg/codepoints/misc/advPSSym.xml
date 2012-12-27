@@ -20,6 +20,9 @@
 <!-- this *might* be unicode compliant -->
     
     <codePoint unicode="U+00D7" name="periodcentered" decimal="183" note="MULTIPLICATION SIGN"/> 
+    <codePoint unicode="U+2264" name="sterling" decimal="163" note="LESS-THAN OR EQUAL TO"/> 
+    <codePoint unicode="U+0027" name="cent" decimal="162" note="APOSTROPHE"/> 
+    <codePoint unicode="U+00A9" name="ordfeminine" decimal="170" note="COPYRIGHT"/> 
     
     <codePoint unicode="U+00B0" name="C176" note="DEGREE SIGN"/> 
     <codePoint unicode="U+00AE" name="C210" note="REGISTERED SIGN"/> 
@@ -27,10 +30,6 @@
     <codePoint unicode="U+2122" name="C212" note="TRADE MARK SIGN"/> 
     <codePoint unicode="U+2038" name="C217" note="CARET"/> 
 
-    <codePoint unicode="U+2026" decimal="8230" note="HORIZONTAL ELLIPSIS"/>
-
-    <codePoint unicode="U+FB01" decimal="64257" note="LATIN SMALL LIGATURE FI"/> 
-<!--
-    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
--->    
+    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/> 
+    
 </codePointSet>

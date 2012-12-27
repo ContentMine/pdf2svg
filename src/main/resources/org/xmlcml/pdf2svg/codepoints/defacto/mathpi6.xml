@@ -17,6 +17,10 @@
 -->
 <codePointSet encoding="MathematicalPI" id="mathpi6" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
+
+    <codePoint unicode="U+274E" name="H" note="UNKNOWN" />
+    <codePoint unicode="U+0020" name="space" decimal="32" note="SPACE" />
+
     <codePoint unicode="U+25C7" name="H17004" note="WHITE DIAMOND" />
     <codePoint unicode="U+25B3" name="H17005" note="WHITE UPWARDS-POINTING TRIANGLE" />
     <codePoint unicode="U+25BD" name="H17006" note="WHITE DOWNWARDS-POINTING TRIANGLE" />

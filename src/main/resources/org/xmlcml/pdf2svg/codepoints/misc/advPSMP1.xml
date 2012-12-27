@@ -19,8 +19,10 @@
 
 <!-- this *might* be unicode compliant -->
     
+    <codePoint unicode="U+2020" name="C160" note="DAGGER"/> 
     <codePoint unicode="U+2018" name="C212" note="LEFT SINGLE QUOTATION MARK"/> 
     <codePoint unicode="U+0027" name="C213" note="APOSTROPHE"/> 
+    <codePoint unicode="U+2021" name="C224" note="DOUBLE DAGGER"/> 
 
     <codePoint unicode="U+00B7" name="AE" decimal="187" note="MIDDLE DOT"/> 
 

@@ -17,6 +17,10 @@
 -->
 <codePointSet encoding="AdvMT_SY" id="advmt_sy" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
+
+    <codePoint unicode="U+00A7" name="x" decimal="120" note="SECTION SIGN"/>  
+    <codePoint unicode="U+0027" name="zero" note="APOSTROPHE"/>  
+
     <codePoint unicode="U+002D" name="C0" note="MINUS"/>  
     <codePoint unicode="U+00D7" name="C2" note="MULTIPLICATION SIGN"/>
     <codePoint unicode="U+25CB" name="C14" note="WHITE CIRCLE"/>

@@ -62,6 +62,7 @@ public class PDFGraphics2D extends Graphics2D {
 	private final static Logger LOG = Logger.getLogger(PDFGraphics2D.class);
 	private String currentPathString;
 	private AMIFont amiFont;
+	private SVGPath svgPath;
 	
 	public PDFGraphics2D(AMIFont amiFont) {
 //		System.out.println("PDFGraphics");
@@ -149,7 +150,7 @@ public class PDFGraphics2D extends Graphics2D {
 		Shape shape = g.getOutline();
 		AffineTransform at = new AffineTransform();
 		this.currentPathString = SVGPath.getPathAsDString(shape.getPathIterator(at));
-		SVGPath svgPath = new SVGPath(this.currentPathString);
+		svgPath = new SVGPath(this.currentPathString);
 		
 //		throw new RuntimeException("OVERRIDE this");
 	}
@@ -282,12 +283,16 @@ public class PDFGraphics2D extends Graphics2D {
 	public void transform(AffineTransform Tx) {
 //		// TODO Auto-generated method stub
 //		System.out.printf("transform(Tx=%s)%n", Tx.toString());
-		reportUnusualTransforms(Tx);
+		boolean unusual = reportUnusualTransforms(Tx);
+		if (unusual && svgPath != null) {
+			LOG.debug("Character path: "+svgPath.toXML());
+		}
 //		throw new RuntimeException("OVERRIDE this");
 
 	}
 
-	private void reportUnusualTransforms(AffineTransform Tx) {
+	private boolean reportUnusualTransforms(AffineTransform Tx) {
+		boolean unusual = false;
 		Transform2 t2 = new Transform2(Tx);
 		RealArray scales = t2.getScales();
 		double scalex = scales.get(0);
@@ -299,7 +304,9 @@ public class PDFGraphics2D extends Graphics2D {
 				|| !translate.isEqualTo(new Real2(0., 0.0), 0.001)) {
 //			System.out.printf("transform(Tx=%s)%n", t2.toString());
 			System.out.println("transform "+ new RealArray(t2.getMatrixAsArray()));
+			unusual = true;
 		}
+		return unusual;
 	}
 
 	@Override

@@ -15,9 +15,12 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvPS4731B1" id="AdvPS4731B1" resource="org/xmlcml/pdf2svg/codepoints/misc"> 
+<codePointSet encoding="AdvP4C4E5E" id="AdvP4C4E5E" resource="org/xmlcml/pdf2svg/codepoints/misc"> 
 
-    <codePoint unicode="U+221E" name="N" decimal="78" note="INFIMITY"/>  
-
+    <codePoint unicode="U+0307" decimal="95" name="underscore" note="COMBINING DOT ABOVE"/>
+    
+    <codePoint unicode="U+0027" name="C19" note="APOSTROPHE"/>
+    <codePoint unicode="U+00AF" name="C22" note="MACRON"/>
+	
 </codePointSet>
 		

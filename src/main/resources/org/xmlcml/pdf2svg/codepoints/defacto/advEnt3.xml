@@ -17,6 +17,6 @@
 -->
 <codePointSet encoding="AdvEnt3" id="advEnt3" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
-    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
+    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/> 
     
 </codePointSet>

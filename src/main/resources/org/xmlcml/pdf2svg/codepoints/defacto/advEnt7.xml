@@ -17,9 +17,9 @@
 -->
 <codePointSet encoding="AdvEnt7" id="advEnt7" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
-    <codePoint unicode="U+007E" decimal="66" note="TILDE"/>     
-    <codePoint unicode="U+2248" decimal="69" note="ALMOST EQUAL TO"/>
-    <codePoint unicode="U+2260" decimal="97" note="NOT EQUAL TO"/>
+    <codePoint unicode="U+007E" decimal="66" name="B" note="TILDE"/>     
+    <codePoint unicode="U+2248" decimal="69" name="E" note="ALMOST EQUAL TO"/>
+    <codePoint unicode="U+2260" decimal="97" name="a" note="NOT EQUAL TO"/>
 
     <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
     

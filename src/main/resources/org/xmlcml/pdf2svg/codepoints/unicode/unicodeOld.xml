@@ -737,7 +737,7 @@
     <codePoint unicode="U+2217" unicodeName="ASTERISK OPERATOR" name="asteriskmath" 
         replaceName="ASTERISK" replaceByUnicode="U+002A" />
     <codePoint unicode="U+221A" unicodeName="SQUARE ROOT" name="radical" />
-    <codePoint unicode="U+221B" unicodeName="CUBE ROOT name="" />
+    <codePoint unicode="U+221B" unicodeName="CUBE ROOT" name="" />
     <codePoint unicode="U+221D" unicodeName="PROPORTIONAL TO" name="proportional" />
     <codePoint unicode="U+221E" unicodeName="INFINITY" name="infinity" />
     <codePoint unicode="U+2220" unicodeName="ANGLE" name="angle" />

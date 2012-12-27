@@ -75,6 +75,7 @@
     
     <codePoint unicode="U+221D" decimal="1503" note="proportional"/>
     <codePoint unicode="U+222B" decimal="1516" note="integral"/>
+    <codePoint unicode="U+007E" decimal="1533" note="tilde"/>
     <codePoint unicode="U+003C" decimal="1575" note="less"/>
     <codePoint unicode="U+003E" decimal="1576" note="greater"/>
 

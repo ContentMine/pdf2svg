@@ -20,4 +20,7 @@
 	<codePoint unicode="U+2734" decimal="1" note="BLACK DOWN-POINTING TRIANGLE"/> 
 	<codePoint unicode="U+25B2" name="trianglesolid" note="BLACK UP-POINTING TRIANGLE"/> 
 	
+	<!-- unicode --> 
+    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>
+	
 </codePointSet>

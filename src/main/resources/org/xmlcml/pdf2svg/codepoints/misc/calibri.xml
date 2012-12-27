@@ -15,47 +15,10 @@
     limitations under the License.
 
 -->
-<!-- Calibri may not have any font info
+<!-- Calibri sometimes may not have any font info
      the gdd code may be meaningless; probably is -->
 
 <codePointSet encoding="Calibri" id="calibri" resource="org/xmlcml/pdf2svg/codepoints/misc">
+   <codePointSet idRef="unicode" href="../unicode/unicode.xml"/>
 
-	<codePoint unicode="U+0020" name="g1" note="space"/> 
-	<codePoint unicode="U+0041" name="g2" note="A"/> 
-	<codePoint unicode="U+0042" name="g3" note="B"/> 
-	<codePoint unicode="U+0043" name="g4" note="C"/> 
-	<codePoint unicode="U+0044" name="g5" note="D"/> 
-	<codePoint unicode="U+0046" name="g6" note="F possibly E"/> 
-	<codePoint unicode="U+0047" name="g7" note="G"/> 
-	<codePoint unicode="U+0048" name="g8" note="H"/> 
-	<codePoint unicode="U+004B" name="g9" note="K"/> 
-	<codePoint unicode="U+004C" name="g10" note="L"/> 
-	<codePoint unicode="U+004E" name="g11" note="N"/>  
-	<codePoint unicode="U+0053" name="g12" note="S"/>  
-	<codePoint unicode="U+0054" name="g13" note="T"/>  
-	<codePoint unicode="U+0061" name="g14" note="a"/>  
-	<codePoint unicode="U+0062" name="g15" note="b"/> 
-	<codePoint unicode="U+0063" name="g16" note="c"/> 
-	<codePoint unicode="U+0064" name="g17" note="d"/> 
-	<codePoint unicode="U+0065" name="g18" note="e"/> 
-	<codePoint unicode="U+0067" name="g19" note="g"/> 
-	<codePoint unicode="U+0068" name="g20" note="h"/> 
-	<codePoint unicode="U+0069" name="g21" note="i"/> 
-	<codePoint unicode="U+006C" name="g22" note="l"/> 
-	<codePoint unicode="U+006E" name="g23" note="n"/> 
-	<codePoint unicode="U+0070" name="g24" note="p"/> 
-	<codePoint unicode="U+0072" name="g25" note="r"/> 
-	<codePoint unicode="U+0073" name="g26" note="s"/> 
-	<codePoint unicode="U+0075" name="g27" note="u"/> 
-	<codePoint unicode="U+002E" name="g28" note="period"/> 
-	<codePoint unicode="U+0030" name="g31" note="0"/> 
-	<codePoint unicode="U+0031" name="g32" note="1"/> 
-	<codePoint unicode="U+0032" name="g33" note="2"/> 
-	<codePoint unicode="U+0033" name="g34" note="3"/> 
-	<codePoint unicode="U+0034" name="g35" note="4"/> 
-	<codePoint unicode="U+0035" name="g36" note="5"/> 
-	<codePoint unicode="U+0036" name="g37" note="6"/> 
-	<codePoint unicode="U+0037" name="g38" note="7"/> 
-	<codePoint unicode="U+0038" name="g39" note="8"/> 
-	<codePoint unicode="U+0039" name="g40" note="9"/> 
 </codePointSet>

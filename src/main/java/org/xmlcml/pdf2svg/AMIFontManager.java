@@ -28,7 +28,9 @@ import nu.xom.Elements;
 
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.cos.COSArray;
+import org.apache.pdfbox.cos.COSBase;
 import org.apache.pdfbox.cos.COSDictionary;
+import org.apache.pdfbox.cos.COSInteger;
 import org.apache.pdfbox.cos.COSName;
 import org.apache.pdfbox.encoding.StandardEncoding;
 import org.apache.pdfbox.pdmodel.font.PDFont;
@@ -37,13 +39,14 @@ import org.apache.pdfbox.pdmodel.font.PDFontFactory;
 import org.apache.pdfbox.pdmodel.font.PDTrueTypeFont;
 import org.apache.pdfbox.pdmodel.font.PDType0Font;
 import org.apache.pdfbox.pdmodel.font.PDType1Font;
+import org.apache.pdfbox.pdmodel.font.PDType3Font;
 import org.xmlcml.euclid.Util;
-import org.xmlcml.pdf2svg.util.PConstants;
 public class AMIFontManager {
 
 
 	private final static Logger LOG = Logger.getLogger(AMIFontManager.class);
-
+	
+	public static final String N_NAME = "Name";
 	
 	public static final String FONT_TRUE_TYPE = "TrueType";
 	public static final String FONT_TYPE1 = "Type1";
@@ -99,39 +102,103 @@ public class AMIFontManager {
 		return amiFontByFontNameMap.get(fontName);
 	}
 
-	private void logFontDict(int level, COSDictionary dict) {
-
-		String indent = "";
-		for (int i = 0; i < level; i++) {
-			indent += " ";
-		}
-
-		LOG.debug(String.format("%s****************** level %d font dict:",
-				indent, level));
-
-		level++;
-		indent += "    ";
-
+	private AMIFont getOrCreateFontDict(int level, COSDictionary dict) {
+		AMIFont amiFont = null;
+		/**
+Type = COSName{Font}
+Subtype = COSName{Type1}
+BaseFont = COSName{Times-Roman}
+Name = COSName{arXivStAmP}		
+LastChar = COSInt{32}
+Widths = COSArray{[COSInt{19}]}
+FirstChar = COSInt{32}
+FontMatrix = COSArray{[COSFloat{0.0121}, COSInt{0}, COSInt{0}, COSFloat{-0.0121}, COSInt{0}, COSInt{0}]}
+ToUnicode = COSDictionary{(COSName{Length}:COSInt{212}) (COSName{Filter}:COSName{FlateDecode}) }
+FontBBox = COSArray{[COSInt{0}, COSInt{0}, COSInt{1}, COSInt{1}]}
+Resources = COSDictionary{(COSName{ProcSet}:COSArray{[COSName{PDF}, COSName{ImageB}]}) }
+Encoding = COSDictionary{(COSName{Differences}:COSArray{[COSInt{32}, COSName{space}]}) (COSName{Type}:COSName{Encoding}) }
+CharProcs = COSDictionary{(COSName{space}:COSDictionary{(COSName{Length}:COSInt{67}) (COSName{Filter}:COSName{FlateDecode}) }) }*/
+		String typeS = null;
+		String subtypeS = null;
+		String baseFontS = null;
+		String fontName = null;
+		boolean isSymbol = false;
 		for (COSName key : dict.keySet()) {
-			LOG.debug(String.format("%s****************** %s = %s", indent,
-					key.getName(), dict.getDictionaryObject(key)));
+			String keyName = key.getName();
+			if (keyName == null) {
+				LOG.error("Null key");
+				continue;
+			} else if (!(key instanceof COSName)) {
+				LOG.error("key not COSName");
+				continue;
+			}
+			String cosNameName = null;
+			COSBase cosBase = dict.getDictionaryObject(key);
+			if (cosBase instanceof COSName) {
+				COSName cosName = (COSName) cosBase;
+				cosNameName = cosName.getName();
+				LOG.trace("Name:"+cosNameName);
+			} else if (cosBase instanceof COSInteger) {
+				COSInteger cosInteger = (COSInteger) cosBase;
+				LOG.trace("Integer: "+cosInteger.intValue());
+			} else if (cosBase instanceof COSArray) {
+				COSArray cosArray = (COSArray) cosBase;
+				LOG.trace("Array: "+cosArray.size()+" / "+cosArray);
+			} else if (cosBase instanceof COSDictionary) {
+				COSDictionary cosDictionary = (COSDictionary) cosBase;
+				LOG.trace("Dictionary: "+cosDictionary);
+			} else{
+				LOG.error("COS "+cosBase);
+			}
+			if (cosNameName != null && keyName.equals(N_NAME)) {
+				fontName = cosNameName;
+			}
 		}
-
-		COSArray array = (COSArray) dict
-				.getDictionaryObject(COSName.DESCENDANT_FONTS);
-		if (array != null) {
-			LOG.debug(String.format(
-					"%s****************** descendant fonts (%d):", indent,
-					array.size()));
-			logFontDict(level, (COSDictionary) array.getObject(0));
+		
+		amiFont = getAmiFontByFontName(fontName);
+		if (amiFont == null) {
+			amiFont = new AMIFont(fontName, null, typeS, isSymbol, dict);
+			amiFont.setFontName(fontName);
+			amiFontByFontNameMap.put(fontName, amiFont);
+	
+			String indent = "";
+			for (int i = 0; i < level; i++) {
+				indent += " ";
+			}
+	
+			LOG.debug(String.format("%s****************** level %d font dict:",
+					indent, level));
+	
+			level++;
+			indent += "    ";
+	
+			for (COSName key : dict.keySet()) {
+				String keyName = key.getName();
+				Object object = dict.getDictionaryObject(key);
+				LOG.debug(String.format("%s****************** %s = %s", indent,
+						keyName, object));
+			}
+	
+			COSArray array = (COSArray) dict
+					.getDictionaryObject(COSName.DESCENDANT_FONTS);
+			if (array != null) {
+				LOG.debug(String.format(
+						"%s****************** descendant fonts (%d):", indent,
+						array.size()));
+				getOrCreateFontDict(level, (COSDictionary) array.getObject(0));
+			}
 		}
+		return amiFont;
 	}
+
 
 	public AMIFont getAmiFontByFont(PDFont pdFont) {
 		ensureAMIFontMaps();
 		String fontName = null;
 		AMIFont amiFont = null;
 		PDFontDescriptor fd = pdFont.getFontDescriptor();
+//		COSBase cosBase = ((PDSimpleFont) pdFont).getToUnicode();
+//		System.out.println("ToUnicode: "+((cosBase== null) ? "NULL" : cosBase));
 		if (fd == null && pdFont instanceof PDType0Font) {
 			COSDictionary dict = (COSDictionary) pdFont.getCOSObject();
 			COSArray array = (COSArray) dict.getDictionaryObject(COSName.DESCENDANT_FONTS);
@@ -145,16 +212,23 @@ public class AMIFontManager {
 		}
 		if (fd == null) {
 			LOG.error("****************** Null Font Descriptor : "+pdFont);
-			logFontDict(0, (COSDictionary) pdFont.getCOSObject());
-		} else {
-			fontName = fd.getFontName();
+			amiFont = getOrCreateFontDict(0, (COSDictionary) pdFont.getCOSObject());
+			fontName = amiFont.getFontName();
 			if (fontName == null) {
 				throw new RuntimeException("No currentFontName");
 			}
+		} else {
+			fontName = fd.getFontName();
+		}
+		if (fontName == null) {
+			throw new RuntimeException("No currentFontName");
 		}
 		amiFont = amiFontByFontNameMap.get(fontName);
 		if (amiFont == null) {
-			if (pdFont instanceof PDType1Font || pdFont instanceof PDTrueTypeFont || pdFont instanceof PDType0Font) {
+			if (pdFont instanceof PDType1Font ||
+				pdFont instanceof PDTrueTypeFont || 
+				pdFont instanceof PDType0Font ||
+				pdFont instanceof PDType3Font) {
 				amiFont = new AMIFont(pdFont);
 				amiFontByFontNameMap.put(fontName, amiFont);
 				String fontFamilyName = amiFont.getFontFamilyName();

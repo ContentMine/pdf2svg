@@ -335,7 +335,7 @@ xmlns="http://www.w3.org/2000/svg">
 		svgText.setFontWeight(amiFont.getFontWeight());
 
 		if (amiFont.isSymbol() || amiFont.getDictionaryEncoding() != null ||
-				fontFamily.getCodePointSet() != null) {
+				(fontFamily != null && fontFamily.getCodePointSet() != null)) {
 			convertNonUnicodeCharacterEncodings();
 			annotateContent(svgText, textContent, charCode, charname, charCode, encoding);
 		}
@@ -351,7 +351,9 @@ xmlns="http://www.w3.org/2000/svg">
 	private void setAndProcessFontNameAndFamilyName() {
 		fontName = amiFont.getFontName();
 		if (fontName == null) {
-			throw new RuntimeException("Null font name");
+//			throw new RuntimeException("Null font name: "+amiFont);
+			LOG.error("Null font name: "+amiFont);
+			return;
 		} else if (!fontName.equals(lastFontName)) {
 			LOG.trace("font from "+lastFontName+" -> "+fontName);
 			lastFontName = fontName;
@@ -437,6 +439,10 @@ xmlns="http://www.w3.org/2000/svg">
 			svgText.setFontWeight("bold");
 		}
 		addCodePointToHighPoints(textPosition);
+		if ("Symbol".equals(svgText.getFontFamily())) {
+			svgText.setFontFamily("Symbol-X"); // to stop browsers misbehaving
+		}
+
 	}
 
 	private void convertNonUnicodeCharacterEncodings() {
@@ -1002,7 +1008,11 @@ xmlns="http://www.w3.org/2000/svg">
 	}
 
 	private void setFontName(SVGElement svgElement, String fontName) {
-		PDF2SVGUtil.setSVGXAttribute(svgElement, AMIFontManager.FONT_NAME, fontName);
+		if (fontName != null) {
+			PDF2SVGUtil.setSVGXAttribute(svgElement, AMIFontManager.FONT_NAME, fontName);
+		} else {
+			LOG.error("NULL font name");
+		}
 	}
 	
 	private void setCharacterWidth(SVGElement svgElement, double width) {

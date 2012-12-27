@@ -16,9 +16,10 @@
 
 -->
 <codePointSet encoding="AdvEnt5" id="advEnt5" resource="org/xmlcml/pdf2svg/codepoints/defacto">
-    <codePoint unicode="U+00B0" decimal="49"  note="DEGREE SIGN" />
-    <codePoint unicode="U+2026" decimal="121" note="HORIZONTAL ELLIPSIS" />
+
+    <codePoint unicode="U+00B0" decimal="49"  name="one" note="DEGREE SIGN" />
+    <codePoint unicode="U+2026" decimal="121" name="y" note="HORIZONTAL ELLIPSIS" />
     
-    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
+    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/> 
     
 </codePointSet>

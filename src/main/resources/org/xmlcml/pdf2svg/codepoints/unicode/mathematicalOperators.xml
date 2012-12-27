@@ -13,7 +13,7 @@
     <codePoint unicode="U+220F" unicodeName="N-ARY PRODUCT" name="product" />
     <codePoint unicode="U+2211" unicodeName="N-ARY SUMMATION" name="summation" />
     <codePoint unicode="U+2212" unicodeName="MINUS SIGN" name="minus"
-    replaceName="HYPHEN-MINUS" replaceByUnicode="U+002D" />
+         replaceName="HYPHEN-MINUS" replaceByUnicode="U+002D" />
     <codePoint unicode="U+2215" unicodeName="DIVISION SLASH" name="fraction" />
     <codePoint unicode="U+2217" unicodeName="ASTERISK OPERATOR" name="asteriskmath" 
         replaceName="ASTERISK" replaceByUnicode="U+002A" />

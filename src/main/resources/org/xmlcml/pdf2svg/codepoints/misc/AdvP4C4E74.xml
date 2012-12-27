@@ -29,6 +29,9 @@
     <codePoint unicode="U+003D" name="onequarter"              note="EQUALS"/>  
     <codePoint unicode="U+003D" name="ellipsis"                note="EQUALS"/>  
     <codePoint unicode="U+005B" name="onehalf"                 note="LEFT SQUARE BRACKET"/>  
+    <codePoint unicode="U+1D4DD" name="N"                      note="Mathematical bold script capital n"/>  
+    <codePoint unicode="U+1D4E2" name="S"                      note="Mathematical bold script capital s"/>  
+    <codePoint unicode="U+1D4E3" name="T"                      note="Mathematical bold script capital T"/>  
     <codePoint unicode="U+007B" name="f"                       note="LEFT CURLY BRACKET"/>  
     <codePoint unicode="U+007D" name="g"                       note="RIGHT CURLY BRACKET"/>  
     <codePoint unicode="U+3008" name="h" decimal="104"         note="LEFT ANGLE BRACKET"/>  
@@ -67,6 +70,7 @@
     <codePoint unicode="U+00AE" name="C210"   note="REGISTERED SIGN"/> 
     <codePoint unicode="U+00A9" name="C211"   note="COPYRIGHT SIGN"/> 
     <codePoint unicode="U+00A9" name="C223"   note="COPYRIGHT SIGN"/> 
+    <codePoint unicode="U+2212" name="C255"   note="MINUS SIGN"/> 
     
 </codePointSet>
         

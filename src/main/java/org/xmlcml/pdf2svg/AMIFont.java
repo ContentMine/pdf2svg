@@ -17,16 +17,20 @@ package org.xmlcml.pdf2svg;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 import org.apache.log4j.Logger;
+import org.apache.pdfbox.cos.COSArray;
+import org.apache.pdfbox.cos.COSBase;
+import org.apache.pdfbox.cos.COSDictionary;
+import org.apache.pdfbox.cos.COSInteger;
+import org.apache.pdfbox.cos.COSName;
 import org.apache.pdfbox.encoding.DictionaryEncoding;
 import org.apache.pdfbox.encoding.Encoding;
-import org.apache.pdfbox.encoding.WinAnsiEncoding;
 import org.apache.pdfbox.pdmodel.font.PDFont;
 import org.apache.pdfbox.pdmodel.font.PDFontDescriptor;
-import org.apache.pdfbox.pdmodel.font.PDType1Font;
 
 /** wrapper for PDType1Font. is meant to manage the badFontnames, other
  * fontTypes, etc and try to convert them to a standard approach. 
@@ -37,6 +41,8 @@ import org.apache.pdfbox.pdmodel.font.PDType1Font;
  *
  */
 public class AMIFont {
+
+	private static final String SYMBOL = "Symbol";
 
 	private final static Logger LOG = Logger.getLogger(AMIFont.class);
 	
@@ -63,7 +69,7 @@ public class AMIFont {
 		".Inclined", 
 		};
 	
-	public static final String MONOTYPE_SUFFIX = "MT";
+	public static final String MONOTYPE_SUFFIX = "MT";  // rubbish - means MathType!
 	public static final String POSTSCRIPT_SUFFIX = "PS";
 	public static final String ENCODING = "Encoding";
 	static Pattern LEADER_PATTERN = Pattern.compile("^[A-Z]{6}\\+(.*)$");
@@ -89,6 +95,8 @@ public class AMIFont {
 	private String baseFont;
 
 	private Map<String, String> pathStringByCharnameMap;
+
+	private COSDictionary dictionary;
 	
 //	static {
 //		String[] standard14Names = PDType1Font.getStandard14Names();
@@ -154,6 +162,37 @@ and
 		this.fontEncoding = encoding;
 		this.fontType = type;
 		this.isSymbol = isSymbol;
+	}
+
+	/** create font from family and key attributes
+	 * currently used when compiling an external table
+	 */
+	public AMIFont(String fontFamilyName, String encoding, String type, boolean isSymbol, COSDictionary dictionary) {
+		this(fontFamilyName, encoding, type, isSymbol);
+		this.dictionary = dictionary;
+		analyzeDictionary();
+	}
+
+	private void analyzeDictionary() {
+		Set<COSName> keySet = dictionary.keySet();
+		for (COSName key : keySet) {
+			COSBase object = dictionary.getDictionaryObject(key);
+			if (object instanceof COSArray) {
+				COSArray cosArray = (COSArray) object;
+				for (int i = 0; i < cosArray.size(); i++) {
+					LOG.trace(cosArray.getName(i)+": "+cosArray.getObject(i));
+				}
+			} else if (object instanceof COSName) {
+				COSName cosName = (COSName) object;
+			} else if (object instanceof COSDictionary) {
+				COSDictionary cosDictionary = (COSDictionary) object;
+			} else if (object instanceof COSInteger) {
+				COSInteger cosInt = (COSInteger) object;
+			} else {
+				LOG.debug(object.getClass());
+//				COSInt cosInt = (COSInt) object;
+			}
+		}
 	}
 
 	public AMIFont(PDFont pdFont) {
@@ -234,21 +273,26 @@ and
 	}
 
 	private void noteAndRemovePrefix() {
-		Matcher matcher = LEADER_PATTERN.matcher(fontName);
-		if (matcher.matches())
-			fontName = matcher.group(matcher.groupCount());
+		if (fontName != null){
+			Matcher matcher = LEADER_PATTERN.matcher(fontName);
+			if (matcher.matches()) {
+				fontName = matcher.group(matcher.groupCount());
+			}
+		}
 	}
 
 	private void processFinalSuffix() {
 		finalSuffix = null;
-		if (fontName.endsWith(MONOTYPE_SUFFIX)) {
-			finalSuffix = MONOTYPE_SUFFIX;
-		} else if (fontName.endsWith(POSTSCRIPT_SUFFIX)) {
-			finalSuffix = POSTSCRIPT_SUFFIX;
-		}
-		if (finalSuffix != null) {
-			int lf = fontName.length();
-			fontName = fontName.substring(0, lf-finalSuffix.length());
+		if (fontName != null) {
+			if (fontName.endsWith(MONOTYPE_SUFFIX)) {
+				finalSuffix = MONOTYPE_SUFFIX;
+			} else if (fontName.endsWith(POSTSCRIPT_SUFFIX)) {
+				finalSuffix = POSTSCRIPT_SUFFIX;
+			}
+			if (finalSuffix != null) {
+				int lf = fontName.length();
+				fontName = fontName.substring(0, lf-finalSuffix.length());
+			}
 		}
 	}
 
@@ -259,7 +303,7 @@ and
 		if (fontFamilyName != null) return;
 		processAsFamily("Helvetica");
 		if (fontFamilyName != null) return;
-		processAsFamily("Symbol");
+		processAsFamily(SYMBOL);
 		if (fontFamilyName != null) return;
 		processAsFamily("ZapfDingbats");
 	}
@@ -294,21 +338,25 @@ and
 	}
 
 	private void processAsFamily(String standardFamilyName) {
-		String fontNameLower = fontName.toLowerCase();
-		currentIndex = fontNameLower.indexOf(standardFamilyName.toLowerCase());
-		if (currentIndex != -1) {
-			removeFromFontName(standardFamilyName, currentIndex);
-			fontFamilyName = standardFamilyName;
+		if (fontName != null) {
+			String fontNameLower = fontName.toLowerCase();
+			currentIndex = fontNameLower.indexOf(standardFamilyName.toLowerCase());
+			if (currentIndex != -1) {
+				removeFromFontName(standardFamilyName, currentIndex);
+				fontFamilyName = standardFamilyName;
+			}
 		}
 	}
 
 	private Boolean isIncluded(String suffix) {
 		boolean isIncluded = false;
-		String fontNameLower = fontName.toLowerCase();
-		currentIndex = fontNameLower.indexOf(suffix.toLowerCase());
-		if (currentIndex != -1) {
-			removeFromFontName(suffix, currentIndex);
-			isIncluded = true;
+		if (fontName != null) {
+			String fontNameLower = fontName.toLowerCase();
+			currentIndex = fontNameLower.indexOf(suffix.toLowerCase());
+			if (currentIndex != -1) {
+				removeFromFontName(suffix, currentIndex);
+				isIncluded = true;
+			}
 		}
 		return isIncluded;
 	}
@@ -422,6 +470,10 @@ and
 		sb.append(baseFont);
 		
 		return sb.toString();
+	}
+
+	public void setFontName(String fontName) {
+		this.fontName = fontName;
 	}
 	
 }

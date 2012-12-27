@@ -15,9 +15,11 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvPS4731B1" id="AdvPS4731B1" resource="org/xmlcml/pdf2svg/codepoints/misc"> 
+<codePointSet encoding="CMM" id="cmmi10" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
-    <codePoint unicode="U+221E" name="N" decimal="78" note="INFIMITY"/>  
-
+    <codePoint unicode="U+2113" name="lscript" note="SCRIPT SMALL L" />
+	
+	<!-- unicode --> 
+    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>
+	
 </codePointSet>
-		

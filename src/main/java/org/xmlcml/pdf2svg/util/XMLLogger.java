@@ -22,7 +22,34 @@ import org.xmlcml.pdf2svg.AMIFont;
 
 public class XMLLogger {
 
+
+
 	private final static Logger LOG = Logger.getLogger(XMLLogger.class);
+
+	private static final String BASEFONT = "basefont";
+	private static final String CHARACTER = "character";
+	private static final String CODE = "code";
+	private static final String ENCODING = "encoding";
+	private static final String FAMILY = "family";
+	private static final String FILENAME = "filename";
+	private static final String FONT = "font";
+	private static final String FONT_LIST = "fontList";
+	private static final String FONTENCODING = "fontencoding";
+	private static final String GLYPHS = "glyphs";
+	private static final String NAME = "name";
+	private static final String NULL = "null";
+	private static final String NUM = "num";
+	private static final String PAGE = "page";
+	private static final String PAGE_COUNT = "pageCount";
+	private static final String PDF = "pdf";
+	private static final String PDF_LOG = "pdfLog";
+	private static final String TYPE = "type";
+
+	private static final String BOLD = "bold";
+	private static final String ITALIC = "italic";
+	private static final String SYMBOL = "symbol";
+
+	private static final String UTF_8 = "UTF-8";
 
 	private Element root;
 	private Element fontlist;
@@ -44,10 +71,10 @@ public class XMLLogger {
 	}
 
 	public void reset() {
-		root = new Element("pdfLog");
-		root.addAttribute(new Attribute("glyphs", Boolean.toString(logGlyphs)));
+		root = new Element(PDF_LOG);
+		root.addAttribute(new Attribute(GLYPHS, Boolean.toString(logGlyphs)));
 
-		fontlist = new Element("fontList");
+		fontlist = new Element(FONT_LIST);
 		root.appendChild(fontlist);
 
 		file = null;
@@ -59,9 +86,9 @@ public class XMLLogger {
 	}
 
 	public void newPDFFile(String fileName, int pageCount) {
-		file = new Element("pdf");
-		file.addAttribute(new Attribute("filename", fileName));
-		file.addAttribute(new Attribute("pageCount", Integer
+		file = new Element(PDF);
+		file.addAttribute(new Attribute(FILENAME, fileName));
+		file.addAttribute(new Attribute(PAGE_COUNT, Integer
 				.toString(pageCount)));
 		root.appendChild(file);
 
@@ -72,8 +99,8 @@ public class XMLLogger {
 	public void newPDFPage(int pageNumber) {
 		if (file == null)
 			throw new RuntimeException("no current PDF file!");
-		page = new Element("page");
-		page.addAttribute(new Attribute("num", Integer.toString(pageNumber)));
+		page = new Element(PAGE);
+		page.addAttribute(new Attribute(NUM, Integer.toString(pageNumber)));
 		file.appendChild(page);
 	}
 
@@ -88,35 +115,38 @@ public class XMLLogger {
 			return;
 		fontnames.add(fontName);
 
-		Element font = new Element("font");
+		Element font = new Element(FONT);
 
-		font.addAttribute(new Attribute("name", fontName));
+		font.addAttribute(new Attribute(NAME, fontName));
 		String fontFamilyName = amiFont.getFontFamilyName();
-		font.addAttribute(new Attribute("family",
-				fontFamilyName == null ? "null" : fontFamilyName));
+		font.addAttribute(new Attribute(FAMILY,
+				fontFamilyName == null ? NULL : fontFamilyName));
 
 		String fontType = amiFont.getFontType();
-		font.addAttribute(new Attribute("type", fontType == null ? "null"
+		font.addAttribute(new Attribute(TYPE, fontType == null ? NULL
 				: fontType));
 		Encoding encoding = amiFont.getEncoding();
-		font.addAttribute(new Attribute("encoding", encoding == null ? "null"
+		font.addAttribute(new Attribute(ENCODING, encoding == null ? NULL
 				: encoding.getClass().getSimpleName()));
 		String fontEncoding = amiFont.getFontEncoding();
 
-		font.addAttribute(new Attribute("fontencoding",
-				fontEncoding == null ? "null" : fontEncoding));
+		font.addAttribute(new Attribute(FONTENCODING,
+				fontEncoding == null ? NULL : fontEncoding));
 		String baseFont = amiFont.getBaseFont();
-		font.addAttribute(new Attribute("basefont", baseFont == null ? "null"
+		font.addAttribute(new Attribute(BASEFONT, baseFont == null ? NULL
 				: baseFont));
 
-		font.addAttribute(new Attribute("bold", Boolean.toString(amiFont
-				.isBold())));
-		font.addAttribute(new Attribute("italic", Boolean.toString(amiFont
-				.isItalic())));
-		font.addAttribute(new Attribute("symbol", Boolean.toString(amiFont
-				.isSymbol())));
+		addAttribute(font, BOLD, amiFont.isBold());		
+		addAttribute(font, ITALIC, amiFont.isItalic());
+		addAttribute(font, SYMBOL, amiFont.isSymbol());
 
 		fontlist.appendChild(font);
+	}
+
+	private void addAttribute(Element font, String attName, Boolean value) {
+		if (value != null) {
+			font.addAttribute(new Attribute(attName, Boolean.toString(value)));
+		}
 	}
 
 	public void newCharacter(String fontName, String fontFamilyName,
@@ -136,15 +166,15 @@ public class XMLLogger {
 					+ "' - which doesn't exist!");
 		}
 
-		Element character = new Element("character");
+		Element character = new Element(CHARACTER);
 
-		character.addAttribute(new Attribute("font", fontName));
-		character.addAttribute(new Attribute("family",
-				fontFamilyName == null ? "null" : fontFamilyName));
-		character.addAttribute(new Attribute("name", charName == null ? "null"
+		character.addAttribute(new Attribute(FONT, fontName));
+		character.addAttribute(new Attribute(FAMILY,
+				fontFamilyName == null ? NULL : fontFamilyName));
+		character.addAttribute(new Attribute(NAME, charName == null ? NULL
 				: charName));
 		character
-				.addAttribute(new Attribute("code", Integer.toString(charCode)));
+				.addAttribute(new Attribute(CODE, Integer.toString(charCode)));
 
 		if (logGlyphs) {
 			AMIFont amiFont = fontmap.get(fontName);
@@ -170,7 +200,7 @@ public class XMLLogger {
 	public void writeXMLFile(OutputStream outputStream) {
 		Document doc = new Document(root);
 		try {
-			Serializer serializer = new Serializer(outputStream, "ISO-8859-1");
+			Serializer serializer = new Serializer(outputStream, UTF_8);
 			serializer.setIndent(4);
 			serializer.setMaxLength(50);
 			serializer.write(doc);

@@ -15,9 +15,9 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="AdvPS4731B1" id="AdvPS4731B1" resource="org/xmlcml/pdf2svg/codepoints/misc"> 
+<codePointSet encoding="AdvT001" id="AdvT001" resource="org/xmlcml/pdf2svg/codepoints/misc"> 
 
-    <codePoint unicode="U+221E" name="N" decimal="78" note="INFIMITY"/>  
-
+    <codePoint unicode="U+00D0" name="C140" note="LATIN CAPITAL LETTER ETH"/>
+    <codePoint unicode="U+00A9" name="C223" note="COPYRIGHT SIGN"/>
 </codePointSet>
-		
+        

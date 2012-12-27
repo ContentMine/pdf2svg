@@ -34,6 +34,8 @@ the charname appears to take precedence over the charval
 -->
 <codePointSet encoding="MTMI" id="mtmi" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
+    <codePoint unicode="U+0394" decimal="7"  note="GREEK CAPITAL LETTER DELTA"/>
+
     <codePoint unicode="U+0393" name="Gamma1"  note="GREEK CAPITAL LETTER GAMMA"/>
     <codePoint unicode="U+0394" name="Delta1"  note="GREEK CAPITAL LETTER DELTA"/>
     <codePoint unicode="U+0394" name="delta1"  note="GREEK CAPITAL LETTER DELTA"/>

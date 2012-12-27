@@ -112,7 +112,7 @@ public class CodePointSetTest {
 	public void testMainResources() throws Exception {
 		CodePointSet codePointSet = CodePointSet.readCodePointSet("org/xmlcml/pdf2svg/codepoints/defacto/mtsyn.xml");
 		int size = codePointSet.size();
-		Assert.assertTrue(""+size, size >= 8 && size <= 20); // this will change
+		Assert.assertTrue(""+size, size >= 8 && size <= 5000); // this will change
 		
 		CodePoint codePoint = codePointSet.getByDecimal(5); 
 		Assert.assertNotNull("SOLIDUS", codePoint);
@@ -122,7 +122,7 @@ public class CodePointSetTest {
 //		Assert.assertEquals("SOLIDUS", 47, (int) codePoint.getUnicodePoint().getDecimalValue());
 		
 		codePoint = codePointSet.getByDecimal(183); 
-		Assert.assertNull("183", codePoint);               // MTSYN does not include Unicode
+//		Assert.assertNull("183", codePoint);               // MTSYN does not include Unicode // does NOW!
 	}
 
 

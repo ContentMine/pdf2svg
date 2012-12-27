@@ -19,11 +19,14 @@
 
     <!-- DOES NOT SUPPORT UNICODE -->
     
+    <codePoint unicode="U+0210" decimal="8216" note="SCRIPT LETTER L"/>
+    
     <codePoint unicode="U+002E" name="colon"     decimal="58" note="FULL STOP"/>
     <codePoint unicode="U+002C" name="semicolon" decimal="59" note="COMMA"/>
     <codePoint unicode="U+003C" name="less"      decimal="60" note="LESS-THAN SIGN"/>
     <codePoint unicode="U+002F" name="equal"     decimal="61" note="SOLIDUS"/>
     <codePoint unicode="U+003E" name="greater"   decimal="62" note="GREATER-THAN SIGN"/>
+    <codePoint unicode="U+2202" name="at     "   decimal="64" note="PARTIAL DIFFERENTIAL"/>
     <codePoint unicode="U+007C" name="j"         decimal="106" note="VERTICAL LINE"/>
 
     <codePoint unicode="U+03B8" name="C18" note="GREEK SMALL LETTER THETA"/>
