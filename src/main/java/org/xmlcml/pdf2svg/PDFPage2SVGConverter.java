@@ -423,7 +423,7 @@ xmlns="http://www.w3.org/2000/svg">
 	private void addContentAndAttributesToSVGText(TextPosition textPosition, SVGText svgText,
 			float width, int charCode) {
 		try {
-			svgText.setText(textContent);
+			svgText.setText(textPosition.getCharacter());
 		} catch (RuntimeException e) {
 			// drops here if cannot encode as XML character
 			annotateUnusualCharacters(textPosition, svgText);
