@@ -100,15 +100,15 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private BasicStroke basicStroke;
 	private SVGSVG svg;
 //	private Composite composite;
-	private Paint paint;
+//	private Paint paint;
 	private PDGraphicsState graphicsState;
 	private Matrix textPos;
 	private PDFont pdFont;
 
 	private String fontFamilyName;
 	private String fontName;
-	private Double currentFontSize;
-	private String currentFontStyle;
+//	private Double currentFontSize;
+//	private String currentFontStyle;
 //	private String currentFontWeight;
 	
 	private int nPlaces = 3;
@@ -145,7 +145,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	 * @param page
 	 * @param converter
 	 */
-	SVGSVG convertPageToSVG(PDPage page, PDF2SVGConverter converter) {
+	public SVGSVG convertPageToSVG(PDPage page, PDF2SVGConverter converter) {
 		pageSize = null;	// reset size for each page
 		this.pdf2svgConverter = converter;
 		this.amiFontManager = converter.getAmiFontManager();
@@ -318,7 +318,9 @@ xmlns="http://www.w3.org/2000/svg">
 
 		int charCode = getCharCodeAndSetEncodingAndCharname(textPosition);
 
-		createGraphicsStateAndPaintAndComposite();
+		SVGText svgText = new SVGText();
+		
+		createGraphicsStateAndPaintAndComposite(svgText);
 		getAndFormatClipPath();
 
 		if (pdf2svgConverter.useXMLLogger) {
@@ -328,16 +330,14 @@ xmlns="http://www.w3.org/2000/svg">
 			}
 		}
 
-		SVGText svgText = new SVGText();
-
 		createAndReOrientateTextPosition(textPosition, svgText);
 
 		svgText.setFontWeight(amiFont.getFontWeight());
 
 		if (amiFont.isSymbol() || amiFont.getDictionaryEncoding() != null ||
 				(fontFamily != null && fontFamily.getCodePointSet() != null)) {
-			convertNonUnicodeCharacterEncodings();
-			annotateContent(svgText, textContent, charCode, charname, charCode, encoding);
+			//convertNonUnicodeCharacterEncodings();
+			//annotateContent(svgText, textContent, charCode, charname, charCode, encoding);
 		}
 
 		LOG.trace("Fn: "+fontName+"; Ff: "+fontFamilyName+"; "+textContent+"; "+charCode+"; "+charname);
@@ -560,12 +560,12 @@ xmlns="http://www.w3.org/2000/svg">
 	}
 
 	private void addAttributesToSVGText(float width, SVGText svgText) {
-//		svgText.setClipPath(clipString);
+		//svgText.setClipPath(clipString);
 		setClipPath(svgText, clipString, (Integer) integerByClipStringMap.get(clipString));
-		svgText.setFontSize(currentFontSize);
-		final String stroke = getCSSColor((Color) paint);
-		svgText.setStroke(stroke);
-		svgText.setFontStyle(currentFontStyle);
+		//svgText.setFontSize(currentFontSize);
+		//final String stroke = getCSSColor((Color) paint);
+		//svgText.setStroke(stroke);
+		//svgText.setFontStyle(currentFontStyle);
 		svgText.setFontFamily(fontFamilyName);
 		setFontName(svgText, fontName);
 		setCharacterWidth(svgText, width);
@@ -795,8 +795,8 @@ xmlns="http://www.w3.org/2000/svg">
 			Transform2 t2a = Transform2.getRotationAboutPoint(angle, svgText.getXY());
 			svgText.setTransform(t2a);
 		}
-		currentFontSize = scale;
-		return currentFontSize;
+		svgText.setFontSize(scale);
+		return scale;
 	}
 
 	/** changes coordinates because AWT and SVG use top-left origin while PDF uses bottom left
@@ -822,7 +822,8 @@ xmlns="http://www.w3.org/2000/svg">
 		svgText.setXY(currentXY);
 	}
 
-	private void createGraphicsStateAndPaintAndComposite() {
+	private void createGraphicsStateAndPaintAndComposite(SVGText svgText) {
+		Paint paint;
 		try {
 			graphicsState = getGraphicsState();
 			ensurePageSize();
@@ -833,6 +834,7 @@ xmlns="http://www.w3.org/2000/svg">
 				if (paint == null) {
 					paint = graphicsState.getNonStrokingColor().getPaint(pageSize.height);
 				}
+				svgText.setFill(getCSSColor(paint));
 				break;
 			case PDTextState.RENDERING_MODE_STROKE_TEXT:
 				// composite = graphicsState.getStrokeJavaComposite();
@@ -840,6 +842,9 @@ xmlns="http://www.w3.org/2000/svg">
 				if (paint == null) {
 					paint = graphicsState.getStrokingColor().getPaint(pageSize.height);
 				}
+				Double lineWidth = graphicsState.getLineWidth();
+				svgText.setStroke(getCSSColor(paint));
+				svgText.setStrokeWidth(lineWidth);
 				break;
 			case PDTextState.RENDERING_MODE_NEITHER_FILL_NOR_STROKE_TEXT:
 				// basic support for text rendering mode "invisible"
@@ -859,6 +864,7 @@ xmlns="http://www.w3.org/2000/svg">
 						+ PDTextState.RENDERING_MODE_FILL_TEXT + " instead");
 				// composite = graphicsState.getNonStrokeJavaComposite();
 				paint = graphicsState.getNonStrokingColor().getJavaColor();
+				svgText.setFill(getCSSColor(paint));
 			}
 		} catch (IOException e) {
 			throw new RuntimeException("graphics state error???", e);
