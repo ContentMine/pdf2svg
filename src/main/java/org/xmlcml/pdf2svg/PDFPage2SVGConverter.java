@@ -918,10 +918,7 @@ xmlns="http://www.w3.org/2000/svg">
 		if (dashPattern != null) {
 			setDashArray(svgPath);
 		}
-		if (lineWidth > 0.00001) {
-			svgPath.setStrokeWidth(lineWidth);
-			LOG.trace("stroke "+lineWidth);
-		}
+		svgPath.setStrokeWidth(lineWidth);
 		svgPath.format(nPlaces);
 		svg.appendChild(svgPath);
 		generalPath.reset();
