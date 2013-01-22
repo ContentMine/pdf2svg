@@ -102,6 +102,8 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/msam9.xml" />
     <fontFamily name="MSAM10" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/msam10.xml" />
+    <fontFamily name="msam10" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/msam10.xml" />
         
 <!--  ================================================== -->    
     
@@ -147,16 +149,28 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvTTec1d2308I.xml"/>
     <fontFamily name="AdvPS4731B1" symbol="true" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvPS4731B1.xml"/>
+    <fontFamily name="AdvPS586B" symbol="true" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvPS586B.xml"/>
+
+
+    <fontFamily name="AdvT001" symbol="true" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvT001.xml"/>
 
     <fontFamily name="AdvPSMP1" symbol="true" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advPSMP1.xml"/>
     <fontFamily name="AdvPS_TINR" symbol="true" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advPSTINR.xml"/>
 
+    <fontFamily name="AdvMT_EX" symbol="true"
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmt_ex.xml" />
     <fontFamily name="AdvMT_MI" symbol="true"
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmt_mi.xml" />
     <fontFamily name="ADVMT_MI" symbol="true"
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmt_mi.xml" />
+    <fontFamily name="ADVMT_RM" symbol="true"
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmt_rm.xml" />
+    <fontFamily name="AdvMT_RM" symbol="true"
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmt_rm.xml" />
         
     <fontFamily name="AdvMT_SY" symbol="true"
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmt_sy.xml" />
@@ -201,6 +215,8 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 
     <fontFamily name="Cambria Math" symbol="true" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cambriaMath.xml"/>
+    <fontFamily name="CambriaMath" symbol="true" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cambriaMath.xml"/>
 
 <!-- uses Cddd codepoints -->
     <fontFamily name="AdvMacMthSyN" 
@@ -211,6 +227,13 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
     <fontFamily name="AdvOT863180fb+fb" symbol="false" />
 
 <!-- ====================== CM ==============================  -->
+    <fontFamily name="CMSY10" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cmsy10.xml"/>
+
+    <fontFamily name="cmmi8" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cmmi8.xml"/>
+    <fontFamily name="cmmi9" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cmmi9.xml"/>
     <fontFamily name="cmmi10" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cmmi10.xml"/>
 <!-- ====================== Calibri ==============================  -->

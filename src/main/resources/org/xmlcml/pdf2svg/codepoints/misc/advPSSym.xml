@@ -20,9 +20,9 @@
 <!-- this *might* be unicode compliant -->
     
     <codePoint unicode="U+00D7" name="periodcentered" decimal="183" note="MULTIPLICATION SIGN"/> 
-    <codePoint unicode="U+2264" name="sterling" decimal="163" note="LESS-THAN OR EQUAL TO"/> 
-    <codePoint unicode="U+0027" name="cent" decimal="162" note="APOSTROPHE"/> 
-    <codePoint unicode="U+00A9" name="ordfeminine" decimal="170" note="COPYRIGHT"/> 
+    <codePoint unicode="U+2264" name="sterling"       decimal="163" note="LESS-THAN OR EQUAL TO"/> 
+    <codePoint unicode="U+0027" name="cent"           decimal="162" note="APOSTROPHE"/> 
+    <codePoint unicode="U+00A9" name="ordfeminine"    decimal="170" note="COPYRIGHT"/> 
     
     <codePoint unicode="U+00B0" name="C176" note="DEGREE SIGN"/> 
     <codePoint unicode="U+00AE" name="C210" note="REGISTERED SIGN"/> 

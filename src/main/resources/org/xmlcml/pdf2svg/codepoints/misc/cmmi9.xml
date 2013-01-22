@@ -15,10 +15,11 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="advmt_sy" id="advmt_sy" resource="org/xmlcml/pdf2svg/codepoints/defacto"> 
-    
-    <codePoint unicode="U+00D7" name="C2" note="MULTIPLICATION SIGN"/>  
-    <codePoint unicode="U+00B0" name="C14" note="DEGREE SIGN"/>  
-    
+<codePointSet encoding="CMM" id="cmmi9" resource="org/xmlcml/pdf2svg/codepoints/misc">
+
+    <codePoint unicode="U+2113" name="lscript" note="SCRIPT SMALL L" />
+	
+	<!-- unicode --> 
+    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>
+	
 </codePointSet>
-        

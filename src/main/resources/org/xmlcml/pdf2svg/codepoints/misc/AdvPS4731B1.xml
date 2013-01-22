@@ -17,7 +17,7 @@
 -->
 <codePointSet encoding="AdvPS4731B1" id="AdvPS4731B1" resource="org/xmlcml/pdf2svg/codepoints/misc"> 
 
-    <codePoint unicode="U+221E" name="N" decimal="78" note="INFIMITY"/>  
+    <codePoint unicode="U+221E" name="N" decimal="78" note="INFINITY"/>  
 
 </codePointSet>
 		

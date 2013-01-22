@@ -15,13 +15,11 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="CMM" id="cmmi10" resource="org/xmlcml/pdf2svg/codepoints/misc">
+<codePointSet encoding="CM" id="cmsy10" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
-<!--  maybe unicode?  -->
-    <codePointSet idRef="greekAndCoptic" href="../unicode/greekAndCoptic.xml"/>
+    <codePoint unicode="U+226B" name="greatermuch" decimal="29" note="MUCH GREATER-THAN"/>
+<!-- several points are ".notdef" and p;us-minus -->    
+    <codePoint unicode="U+00B1" name=".notdef" note="PLUS-MINUS SIGN"/>
     
-    <codePoint unicode="U+003E" name="greater" note="GREATER-THAN SIGN" />
-	
-    <codePoint unicode="U+2113" name="lscript" note="SCRIPT SMALL L" />
-	
 </codePointSet>
+        

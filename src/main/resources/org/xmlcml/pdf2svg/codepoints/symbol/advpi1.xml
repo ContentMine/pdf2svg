@@ -22,6 +22,7 @@
     
     <codePoint unicode="U+2264" decimal="35" name="numbersign" note="LESS-THAN OR EQUAL TO"/>
     <codePoint unicode="U+2265" decimal="36" name="dollar" note="GREATER-THAN OR EQUAL TO"/>
+    <codePoint unicode="U+2245" decimal="38" name="ampersand" note="APPROXIMATELY EQUAL TO"/>
     <codePoint unicode="U+003C" decimal="44" name="comma"  note="LESS-THAN SIGN"/>
     <codePoint unicode="U+2192" decimal="45" name="hyphen"  note="RIGHTWARDS ARROW"/>
     <codePoint unicode="U+003E" decimal="46" note="GREATER-THAN SIGN"/>
@@ -31,6 +32,7 @@
     <codePoint unicode="U+003E" decimal="52" name="four" note="RIGHT ANGLE BRACKET"/>
     <codePoint unicode="U+00D7" decimal="54" name="six" note="MULTIPLY SIGN"/>
     <codePoint unicode="U+00B0" decimal="56" name="eight" note="DEGREE SIGN"/>
+    <codePoint unicode="U+221E" decimal="63" name="question" note="INFINITY"/>
 
 <!--  greek Gamma = G -->    
     <codePoint unicode="U+0391" decimal="65" name="A" note="GREEK CAPITAL LETTER ALPHA"/>

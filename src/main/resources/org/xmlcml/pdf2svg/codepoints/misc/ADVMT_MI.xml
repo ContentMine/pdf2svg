@@ -21,6 +21,9 @@
     <codePointSet idRef="basicLatin" href="../unicode/basicLatin.xml"/>
 
     <codePoint unicode="U+00D7" name="C2" note="MULTIPLICATION SIGN"/>
+    <codePoint unicode="U+03B1" name="C11" note="GREEK SMALL LETTER ALPHA"/>
+    <codePoint unicode="U+03B2" name="C12" note="GREEK SMALL LETTER BETA"/>
+    <codePoint unicode="U+03B3" name="C13" note="GREEK SMALL LETTER GAMMA"/>
     <codePoint unicode="U+25CB" name="C14" note="WHITE CIRCLE"/>
     <codePoint unicode="U+2022" name="C15" note="BULLET"/>
     <codePoint unicode="U+03B8" name="C18" note="GREEK SMALL LETTER THETA" />
@@ -29,5 +32,7 @@
     <codePoint unicode="U+007E" name="C24" note="TILDE" />
     <codePoint unicode="U+03C3" name="C27" note="GREEK SMALL LETTER SIGMA" />
     <codePoint unicode="U+03C7" name="C31" note="GREEK SMALL LETTER CHI" />
+    <codePoint unicode="U+00AE" name="C213" note="REGISTERED SIGN" />
+    <codePoint unicode="U+00A9" name="C223" note="COPYRIGHT SIGN" />
     
 </codePointSet>

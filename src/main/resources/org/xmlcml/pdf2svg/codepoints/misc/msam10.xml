@@ -18,6 +18,8 @@
 <codePointSet encoding="MSAM" id="msam10" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
 	<codePoint unicode="U+2A7E" name="greaterorequalslant" note="GREATER-THAN OR SLANTED EQUAL TO"/> 
+	<codePoint unicode="U+2272" name="lessorsimilar" decimal="46" note="LESS-THAN OR EQUIVALENT TO"/> 
+	<codePoint unicode="U+2273" name="greaterorsimilar" decimal="38" note="GREATER-THAN OR EQUIVALENT TO"/> 
 	
 	<!-- unicode --> 
     <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>

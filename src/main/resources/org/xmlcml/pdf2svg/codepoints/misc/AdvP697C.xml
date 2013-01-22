@@ -17,6 +17,7 @@
 -->
 <codePointSet encoding="AdvP697C" id="AdvP697C" resource="org/xmlcml/pdf2svg/codepoints/misc"> 
 
+    <codePoint unicode="U+002B" name="plus" decimal="43" note="PLUS SIGN"/>
     <codePoint unicode="U+003C" name="less" note="LESS-THAN SIGN"/>
     <codePoint unicode="U+003E" name="greater" note="GREATER-THAN SIGN"/>
 

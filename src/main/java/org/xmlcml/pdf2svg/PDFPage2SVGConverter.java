@@ -134,6 +134,8 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private HashMap<String, Integer> integerByClipStringMap;
 
 	private SVGElement defs1;
+
+	private boolean reportedEncodingError = false;;
 	
 
 	public PDFPage2SVGConverter() throws IOException {
@@ -149,6 +151,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		pageSize = null;	// reset size for each page
 		this.pdf2svgConverter = converter;
 		this.amiFontManager = converter.getAmiFontManager();
+		amiFontManager.setNullFontDescriptorReport(true);
 		createSVGSVG();
 		drawPage(page);
 		return svg;
@@ -157,6 +160,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	void drawPage(PDPage p) {
 		ensurePageSize();
 		page = p;
+		reportedEncodingError = false;
 
 		try {
 			if (page.getContents() != null) {
@@ -400,7 +404,12 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 
 		if (encoding == null) {
-			LOG.debug("Null encoding for character: "+charCode+" at "+currentXY+" font: "+fontName+" / "+fontFamilyName+" / "+amiFont.getBaseFont());
+			if (!reportedEncodingError ) {
+				LOG.debug("Null encoding for character: "+charCode+" at "+currentXY+" font: "+fontName+" / "+
+			       fontFamilyName+" / "+amiFont.getBaseFont()+
+			       "\n                FURTHER ERRORS HIDDEN");
+				reportedEncodingError = true;
+			}
 		} else {
 //			if (encoding instanceof DictionaryEncoding) {
 				getCharnameThroughEncoding(charCode);

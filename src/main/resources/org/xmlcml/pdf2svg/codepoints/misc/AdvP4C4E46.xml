@@ -54,6 +54,8 @@
     <codePoint unicode="U+222B" decimal="82" name="R" note="INTEGRAL"/>  
     <codePoint unicode="U+2211"              name="X" note="N-ARY SUMMATION" />
     <codePoint unicode="U+222B" decimal="90" name="Z" note="INTEGRAL"/>  
+    <codePoint unicode="U+222B" decimal="240" name="eth" note="INTEGRAL"/>  
+    <codePoint unicode="U+221E" decimal="63" name="question" note="INFINITY"/>  
 	
     <codePoint unicode="U+006C" decimal="8216" note="CURLY LETTER L - no idea what character"/>  
 	
@@ -63,10 +65,10 @@
     <codePoint unicode="U+0029" name="C1" note="RIGHT PARENTHESIS"/>
     <codePoint unicode="U+005B" name="C2" note="LEFT SQUARE BRACKET"/>  
     <codePoint unicode="U+005D" name="C3" note="RIGHT SQUARE BRACKET"/>  
-    <codePoint unicode="U+0028" name="C16" note="LEFT BRACKET"/>  
-    <codePoint unicode="U+0029" name="C17" note="RIGHT BRACKET"/>
-    <codePoint unicode="U+0028" name="C18" note="LEFT BRACKET"/>  <!--  larger size -->
-    <codePoint unicode="U+0029" name="C19" note="RIGHT BRACKET"/> <!--  larger size --> 
+    <codePoint unicode="U+0028" name="C16" note="LEFT PARENTHESIS"/>  
+    <codePoint unicode="U+0029" name="C17" note="RIGHT PARENTHESIS"/>
+    <codePoint unicode="U+0028" name="C18" note="LEFT PARENTHESIS"/>  <!--  larger size -->
+    <codePoint unicode="U+0029" name="C19" note="RIGHT PARENTHESIS"/> <!--  larger size --> 
     <codePoint unicode="U+007B" name="C26" note="LEFT CURLY BRACKET"/> <!--  larger size --> 
     <codePoint unicode="U+007D" name="C27" note="RIGHT CURLY BRACKET"/> <!--  larger size --> 
     <codePoint unicode="U+3008" name="C28" note="LEFT ANGLE BRACKET"/> <!--  larger size --> 

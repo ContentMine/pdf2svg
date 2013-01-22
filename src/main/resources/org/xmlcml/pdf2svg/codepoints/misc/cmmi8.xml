@@ -15,13 +15,8 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="CMM" id="cmmi10" resource="org/xmlcml/pdf2svg/codepoints/misc">
+<codePointSet encoding="CMM" id="cmmi8" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
-<!--  maybe unicode?  -->
-    <codePointSet idRef="greekAndCoptic" href="../unicode/greekAndCoptic.xml"/>
-    
-    <codePoint unicode="U+003E" name="greater" note="GREATER-THAN SIGN" />
-	
     <codePoint unicode="U+2113" name="lscript" note="SCRIPT SMALL L" />
 	
 </codePointSet>

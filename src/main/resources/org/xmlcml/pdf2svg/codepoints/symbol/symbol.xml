@@ -75,6 +75,7 @@
     <codePoint unicode="U+03BC" decimal="61472" note="GREEK SMALL LETTER MU"/>
 
     <codePoint unicode="U+002D" decimal="61485" note="HYPHEN-MINUS"/>
+    <!--  have also found combining tilde -->
 
     <codePoint unicode="U+03B1" decimal="61537" note="GREEK SMALL LETTER ALPHA"/>
     <codePoint unicode="U+03B2" decimal="61538" note="GREEK SMALL LETTER BETA"/>

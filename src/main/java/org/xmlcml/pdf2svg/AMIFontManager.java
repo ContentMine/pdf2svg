@@ -47,6 +47,7 @@ public class AMIFontManager {
 	private final static Logger LOG = Logger.getLogger(AMIFontManager.class);
 	
 	public static final String N_NAME = "Name";
+	public static final String N_BASE_FONT = "BaseFont";
 	
 	public static final String FONT_TRUE_TYPE = "TrueType";
 	public static final String FONT_TYPE1 = "Type1";
@@ -75,6 +76,8 @@ public class AMIFontManager {
 	private FontFamilySet newFontFamilySet;
 
 	private Map<String, Integer> symbol2UnicodeHackMap;
+
+	private boolean nullFontDescriptorReport = true;;
 	
 	public static final int UNKNOWN_CHAR = (char)0X274E; // black square with white cross
 
@@ -118,6 +121,8 @@ FontBBox = COSArray{[COSInt{0}, COSInt{0}, COSInt{1}, COSInt{1}]}
 Resources = COSDictionary{(COSName{ProcSet}:COSArray{[COSName{PDF}, COSName{ImageB}]}) }
 Encoding = COSDictionary{(COSName{Differences}:COSArray{[COSInt{32}, COSName{space}]}) (COSName{Type}:COSName{Encoding}) }
 CharProcs = COSDictionary{(COSName{space}:COSDictionary{(COSName{Length}:COSInt{67}) (COSName{Filter}:COSName{FlateDecode}) }) }*/
+		
+		// This is messy until we work out what is null and what isn't
 		String typeS = null;
 		String subtypeS = null;
 		String baseFontS = null;
@@ -152,7 +157,12 @@ CharProcs = COSDictionary{(COSName{space}:COSDictionary{(COSName{Length}:COSInt{
 			}
 			if (cosNameName != null && keyName.equals(N_NAME)) {
 				fontName = cosNameName;
+			} else if(cosNameName != null && keyName.equals(N_BASE_FONT)) {
+				baseFontS = cosNameName;
 			}
+		}
+		if (fontName == null) {
+			fontName = baseFontS;
 		}
 		
 		amiFont = getAmiFontByFontName(fontName);
@@ -211,7 +221,10 @@ CharProcs = COSDictionary{(COSName{space}:COSDictionary{(COSName{Length}:COSInt{
 			}
 		}
 		if (fd == null) {
-			LOG.error("****************** Null Font Descriptor : "+pdFont);
+			if (nullFontDescriptorReport) {
+				LOG.error("****************** Null Font Descriptor : "+pdFont+"\n       FURTHER ERRORS HIDDEN");
+				nullFontDescriptorReport = false;
+			}
 			amiFont = getOrCreateFontDict(0, (COSDictionary) pdFont.getCOSObject());
 			fontName = amiFont.getFontName();
 			if (fontName == null) {
@@ -413,6 +426,10 @@ CharProcs = COSDictionary{(COSName{space}:COSDictionary{(COSName{Length}:COSInt{
 
 	public static String getUnknownCharacterSymbol() {
 		return ""+(char)UNKNOWN_CHAR;
+	}
+
+	public void setNullFontDescriptorReport(boolean b) {
+		this.nullFontDescriptorReport = b;
 	}
 	
 }

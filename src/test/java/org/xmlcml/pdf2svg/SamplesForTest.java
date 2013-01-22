@@ -32,7 +32,7 @@ public class SamplesForTest {
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/BotJLinn55", "../pdfs/BotJLinn55");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/IchthyRes79", "../pdfs/IchthyRes79");
 		
-		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/MolBiolEvol51", "../pdfs/MolBiolEvol51");
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/MolBiolEvol51", "../pdfs/MolBiolEvol51");
 		// runs OK // 460 secs
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/Palaeontology44", "../pdfs/Palaeontology44");
 		// runs OK
@@ -66,11 +66,28 @@ public class SamplesForTest {
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/jb/", "../pdfs/jb/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/misc/", "../pdfs/misc/");
 //      new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/npg/", "../pdfs/npg/");
+		// OK
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/ActaPalaeontologicaPolonica", "../pdfs/pdfsByJournal/ActaPalaeontologicaPolonica");
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/ActaZoologica", "../pdfs/pdfsByJournal/ActaZoologica");
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/AmericanJournalBotany", "../pdfs/pdfsByJournal/AmericanJournalBotany");
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/AmericanMuseumNovitates", "../pdfs/pdfsByJournal/AmericanMuseumNovitates");
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/AmericanZoologist", "../pdfs/pdfsByJournal/AmericanZoologist");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/AnnualReviewEcologySystematics", "../pdfs/pdfsByJournal/AnnualReviewEcologySystematics");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/AppliedMathematicsLetters", "../pdfs/pdfsByJournal/AppliedMathematicsLetters");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/BiochemicalSystematicsEcology", "../pdfs/pdfsByJournal/BiochemicalSystematicsEcology");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/Bioinformatics", "../pdfs/pdfsByJournal/Bioinformatics");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/BiologicalJournalLinneanSociety", "../pdfs/pdfsByJournal/BiologicalJournalLinneanSociety");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/BiologicalReviews", "../pdfs/pdfsByJournal/BiologicalReviews");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/BiologyLetters", "../pdfs/pdfsByJournal/BiologyLetters");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/BiologicalReviews", "../pdfs/pdfsByJournal/BiologicalReviews");
+		
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/plosone/", "../pdfs/plosone/");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/ppt/", "../pdfs/ppt/");
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/taylorfrancis/", "../pdfs/taylorfrancis/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/psyc/", "../pdfs/psyc/");
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/royalsoc/", "../pdfs/royalsoc/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/rsc/many/", "../pdfs/rsc/many/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/springer/", "../pdfs/springer/");
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/taylorfrancis/", "../pdfs/taylorfrancis/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/thesis/", "../pdfs/thesis/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/wiley/", "../pdfs/wiley/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/word/", "../pdfs/word/");
