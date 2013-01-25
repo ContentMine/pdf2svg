@@ -102,7 +102,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 //	private Composite composite;
 //	private Paint paint;
 	private PDGraphicsState graphicsState;
-	private Matrix textPos;
+	private Matrix testMatrix;
 	private PDFont pdFont;
 
 	private String fontFamilyName;
@@ -132,11 +132,11 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private FontFamily fontFamily;
 
 	private HashMap<String, Integer> integerByClipStringMap;
-
 	private SVGElement defs1;
+	private boolean reportedEncodingError = false;
+	private TextPosition textPosition;
 
-	private boolean reportedEncodingError = false;;
-	
+	private int charCode;;
 
 	public PDFPage2SVGConverter() throws IOException {
 		super();
@@ -311,7 +311,7 @@ xmlns="http://www.w3.org/2000/svg">
 
 	@Override
 	protected void processTextPosition(TextPosition textPosition) {
-
+		this.textPosition = textPosition;
 		charname = null;
 		charWasLogged = false;
 
@@ -320,7 +320,7 @@ xmlns="http://www.w3.org/2000/svg">
 
 		setAndProcessFontNameAndFamilyName();
 
-		int charCode = getCharCodeAndSetEncodingAndCharname(textPosition);
+		int charCode = getCharCodeAndSetEncodingAndCharname();
 
 		SVGText svgText = new SVGText();
 		
@@ -330,11 +330,11 @@ xmlns="http://www.w3.org/2000/svg">
 		if (pdf2svgConverter.useXMLLogger) {
 			pdf2svgConverter.xmlLogger.newFont(amiFont);
 			if (pdf2svgConverter.xmlLoggerLogGlyphs) {
-				captureAndIndexGlyphVector(textPosition, charCode);
+				captureAndIndexGlyphVector(charCode);
 			}
 		}
 
-		createAndReOrientateTextPosition(textPosition, svgText);
+		createAndReOrientateTextPosition(svgText);
 
 		svgText.setFontWeight(amiFont.getFontWeight());
 
@@ -347,7 +347,7 @@ xmlns="http://www.w3.org/2000/svg">
 		LOG.trace("Fn: "+fontName+"; Ff: "+fontFamilyName+"; "+textContent+"; "+charCode+"; "+charname);
 
 		float width = getCharacterWidth(pdFont, textContent);
-		addContentAndAttributesToSVGText(textPosition, svgText, width, charCode);
+		addContentAndAttributesToSVGText(svgText, width, charCode);
 
 		svg.appendChild(svgText);
 	}
@@ -364,30 +364,14 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 		fontFamilyName = amiFont.getFontFamilyName();
 		fontFamily = amiFontManager.getFontFamily(fontFamilyName);
-//		if (fontFamily.getCodePointSet() == null && amiFont.isSymbol()) {
-//			throw new RuntimeException("Symbol font ("+fontFamilyName+") needs codePointSet");
-//		}
-//		checkPublisherFontFamily();
 	}
 
-//	private void checkPublisherFontFamily() {
-//		Publisher publisher = pdf2svgConverter.getPublisher();
-//		if (publisher != null) {
-//			if (!publisher.containsFontFamilyName(fontFamilyName))  {
-//				publisher.addFontFamilyName(fontFamilyName);
-//				LOG.trace("added fontFamilyName "+fontFamilyName);
-//			} else {
-//				LOG.trace("already in publisher fontFamilySet "+fontFamilyName);
-//			}
-//		}
-//	}
-
-	private int getCharCodeAndSetEncodingAndCharname(TextPosition textPosition) {
+	private int getCharCodeAndSetEncodingAndCharname() {
 
 		encoding = amiFont.getEncoding();
 		int[] codePoints = textPosition.getCodePoints();
 		LOG.trace("codePoints: "+(codePoints == null ? null : codePoints.length));
-		int charCode = -1;
+		charCode = -1;
 		if (encoding == null) {
 			if (codePoints != null) {
 				charCode = codePoints[0];
@@ -411,9 +395,7 @@ xmlns="http://www.w3.org/2000/svg">
 				reportedEncodingError = true;
 			}
 		} else {
-//			if (encoding instanceof DictionaryEncoding) {
-				getCharnameThroughEncoding(charCode);
-//			}
+			getCharnameThroughEncoding(charCode);
 		}
 
 		return charCode;
@@ -429,13 +411,12 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 	}
 
-	private void addContentAndAttributesToSVGText(TextPosition textPosition, SVGText svgText,
-			float width, int charCode) {
+	private void addContentAndAttributesToSVGText(SVGText svgText, float width, int charCode) {
 		try {
 			svgText.setText(textPosition.getCharacter());
 		} catch (RuntimeException e) {
 			// drops here if cannot encode as XML character
-			annotateUnusualCharacters(textPosition, svgText);
+			annotateUnusualCharacters(svgText);
 		}
 		
 		getFontSizeAndSetNotZeroRotations(svgText);
@@ -447,7 +428,7 @@ xmlns="http://www.w3.org/2000/svg">
 		if (amiFont.isBold() != null && amiFont.isBold()) {
 			svgText.setFontWeight("bold");
 		}
-		addCodePointToHighPoints(textPosition);
+		addCodePointToHighPoints();
 		if ("Symbol".equals(svgText.getFontFamily())) {
 			svgText.setFontFamily("Symbol-X"); // to stop browsers misbehaving
 		}
@@ -485,7 +466,7 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 	}
 
-	private void captureAndIndexGlyphVector(TextPosition text, int charCode) {
+	private void captureAndIndexGlyphVector(int charCode) {
 		String key = charname;
 		if (key == null) {
 			key = "" + charCode;
@@ -495,7 +476,7 @@ xmlns="http://www.w3.org/2000/svg">
 		if (pathString == null) {
 			ensurePageSize();
 			PDFGraphics2D graphics = new PDFGraphics2D(amiFont);
-			Matrix textPos = text.getTextPos().copy();
+			Matrix textPos = textPosition.getTextPos().copy();
 			float x = textPos.getXPosition();
 			// the 0,0-reference has to be moved from the lower left (PDF) to
 			// the upper left (AWT-graphics)
@@ -526,7 +507,7 @@ xmlns="http://www.w3.org/2000/svg">
 			// transformation
 			// we should remove it from the parameter list in the long run
 			try {
-				pdFont.drawString(text.getCharacter(), text.getCodePoints(),
+				pdFont.drawString(textPosition.getCharacter(), textPosition.getCodePoints(),
 						graphics, 1, at, x, y);
 			} catch (IOException e) {
 				throw new RuntimeException("font.drawString", e);
@@ -548,9 +529,9 @@ xmlns="http://www.w3.org/2000/svg">
 		}
 	}
 
-	private int addCodePointToHighPoints(TextPosition text) {
+	private int addCodePointToHighPoints() {
 		pdf2svgConverter.ensureCodePointSets();
-		int charCode = text.getCharacter().charAt(0);
+		int charCode = textPosition.getCharacter().charAt(0);
 		if (charCode > 255) {
 			if (pdf2svgConverter.knownCodePointSet.containsKey((Integer)charCode)) {
 				// known
@@ -725,16 +706,16 @@ xmlns="http://www.w3.org/2000/svg">
 		return width;
 	}
 
-	private void annotateUnusualCharacters(TextPosition text, SVGText svgText) {
-		char cc = text.getCharacter().charAt(0);
-		String s = AMIFontManager.BADCHAR_S+(int)cc+AMIFontManager.BADCHAR_E;
+	private void annotateUnusualCharacters(SVGText svgText) {
+//		char cc = textPosition.getCharacter().charAt(0);
+		String s = AMIFontManager.BADCHAR_S+(int)charCode+AMIFontManager.BADCHAR_E;
 		if (pdf2svgConverter.useXMLLogger && !charWasLogged) {
-			pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, cc);
+			pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, charCode);
 			charWasLogged = true;
 		}
 		else
 			LOG.debug(s+" "+fontName+" ("+fontSubType+") charname: "+charname);
-		s = ""+(char)(BADCHAR+Math.min(9, cc));
+		s = ""+(char)(BADCHAR+Math.min(9, charCode));
 		svgText.setText(s);
 		svgText.setStroke("red");
 		svgText.setFill("red");
@@ -765,7 +746,7 @@ xmlns="http://www.w3.org/2000/svg">
 
 	private double getFontSizeAndSetNotZeroRotations(SVGText svgText) {
 		// attempts to see if matrices were scaling glyphs - apparently not.
-		AffineTransform at = textPos.createAffineTransform();
+		AffineTransform at = testMatrix.createAffineTransform();
 //		double atScaleX = at.getScaleX();
 //		double atScaleY = at.getScaleY();
 //		double atScaleRatio = atScaleX/atScaleY;
@@ -810,23 +791,23 @@ xmlns="http://www.w3.org/2000/svg">
 
 	/** changes coordinates because AWT and SVG use top-left origin while PDF uses bottom left
 	 * 
-	 * @param text
+	 * @param textPosition
 	 * @param svgText
 	 */
-	private void createAndReOrientateTextPosition(TextPosition text, SVGText svgText) {
+	private void createAndReOrientateTextPosition(SVGText svgText) {
 		ensurePageSize();
-		textPos = text.getTextPos().copy();
-		float x = textPos.getXPosition();
+		testMatrix = textPosition.getTextPos().copy();
+		float x = testMatrix.getXPosition();
 		// the 0,0-reference has to be moved from the lower left (PDF) to
 		// the upper left (AWT-graphics)
-		float y = pageSize.height - textPos.getYPosition();
+		float y = pageSize.height - testMatrix.getYPosition();
 		// Set translation to 0,0. We only need the scaling and shearing
-		textPos.setValue(2, 0, 0);
-		textPos.setValue(2, 1, 0);
+		testMatrix.setValue(2, 0, 0);
+		testMatrix.setValue(2, 1, 0);
 		// because of the moved 0,0-reference, we have to shear in the
 		// opposite direction
-		textPos.setValue(0, 1, (-1) * textPos.getValue(0, 1));
-		textPos.setValue(1, 0, (-1) * textPos.getValue(1, 0));
+		testMatrix.setValue(0, 1, (-1) * testMatrix.getValue(0, 1));
+		testMatrix.setValue(1, 0, (-1) * testMatrix.getValue(1, 0));
 		currentXY = new Real2(x, y);
 		svgText.setXY(currentXY);
 	}

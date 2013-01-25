@@ -30,7 +30,7 @@ import org.xmlcml.pdf2svg.PDF2SVGConverter;
 
 /** Not really tests.
  * Run over a large number of different PDFs to gather information and
- * a vague hope of cataching regressions
+ * a vague hope of catching regressions
  * Run manually
  * 
  * @author pm286

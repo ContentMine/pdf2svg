@@ -197,6 +197,21 @@ public class XMLLogger {
 		page.appendChild(character);
 	}
 
+	public void newException(Exception e) {
+		if (file == null || page == null) {
+			throw new RuntimeException("no current PDF file or page!");
+		}
+
+		Element exceptionElement = new Element("exception");
+		StackTraceElement[] steArray = e.getStackTrace();
+		for (StackTraceElement ste : steArray) {
+			Element ste0 = new Element("stackTrace");
+			exceptionElement.appendChild(ste0);
+			ste0.appendChild(ste.toString());
+		}
+		page.appendChild(exceptionElement);
+	}
+
 	public void writeXMLFile(OutputStream outputStream) {
 		Document doc = new Document(root);
 		try {

@@ -19,6 +19,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import nu.xom.Builder;
 import nu.xom.Element;
@@ -195,6 +196,14 @@ public class CodePointSet extends Element {
 		}
 		return codePointsElement;
 		
+	}
+	
+	public Set<String> getUnicodeNames() {
+		return codePointByUnicodeNameMap.keySet();
+	}
+
+	public Set<String> getNames() {
+		return codePointByNameMap.keySet();
 	}
 
 	public int size() {
