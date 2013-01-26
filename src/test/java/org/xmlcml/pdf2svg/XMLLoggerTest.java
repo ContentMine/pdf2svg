@@ -11,7 +11,7 @@ import nu.xom.ParsingException;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.xmlcml.pdf2svg.util.XMLLogger;
+import org.xmlcml.pdf2svg.log.XMLLogger;
 
 public class XMLLoggerTest {
 

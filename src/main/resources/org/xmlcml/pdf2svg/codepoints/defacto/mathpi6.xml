@@ -21,6 +21,7 @@
     <codePoint unicode="U+274E" name="H" note="UNKNOWN" />
     <codePoint unicode="U+0020" name="space" decimal="32" note="SPACE" />
 
+    <codePoint unicode="U+25C7" name="H17003" note="WHITE DIAMOND" /> <!-- square on side?-->
     <codePoint unicode="U+25C7" name="H17004" note="WHITE DIAMOND" />
     <codePoint unicode="U+25B3" name="H17005" note="WHITE UPWARDS-POINTING TRIANGLE" />
     <codePoint unicode="U+25BD" name="H17006" note="WHITE DOWNWARDS-POINTING TRIANGLE" />
@@ -35,6 +36,7 @@
     <codePoint unicode="U+25A0" name="H17039" note="BLACK SQUARE" />
     <codePoint unicode="U+25A1" name="H17040" note="WHITE SQUARE" />
     
+    <codePoint unicode="U+25E6" name="H11568" note="WHITE BULLET" />
     <codePoint unicode="U+25A1" name="H11623" note="WHITE SQUARE" />
     
     <codePoint unicode="U+2606" name="H22841" note="WHITE STAR" />

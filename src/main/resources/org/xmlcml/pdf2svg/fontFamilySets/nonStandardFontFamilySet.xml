@@ -42,6 +42,9 @@
     <fontFamily name="Universal-NewswithCommPi"
         codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/commpi.xml"/>
 
+<!--  =================AstrologyPi================================= -->    
+    <fontFamily name="LAstrologyPi-One"
+        codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/astrologypi1.xml"/>
 
 
 <!--  ================== MATH TIME =================== -->    
@@ -130,6 +133,10 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 
 
 <!--  ==================Adv misc =========================== -->    
+    
+    
+    <fontFamily name="AdvMathSymb" symbol="true" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmathsymb.xml"/>
     
     <fontFamily name="AdvP4C4E74" symbol="true" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvP4C4E74.xml"/>
@@ -221,6 +228,8 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 <!-- uses Cddd codepoints -->
     <fontFamily name="AdvMacMthSyN" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvMacMthSyN.xml"/>
+    <fontFamily name="AdvMacms"  
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvMacMthSyN.xml"/>
 
     <!-- ligatures -->
     <fontFamily name="AdvOT863180fb" symbol="false" />
@@ -269,6 +278,10 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
     <fontFamily name="MyriadLight" />
     
     <fontFamily name="AdvMyriad_R" />
+
+<!-- ====================== Other ==============================  -->
+    <fontFamily name="AdvSPSASORT" symbol="true" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advSPSASORT.xml"/>
 
     
 <!-- ====================== Other ==============================  -->

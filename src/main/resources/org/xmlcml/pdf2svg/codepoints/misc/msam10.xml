@@ -17,9 +17,11 @@
 -->
 <codePointSet encoding="MSAM" id="msam10" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
+<!--	<codePoint unicode="U+0000" name="lessorequalslant"    note="LESS-THAN OR SLANTED EQUAL TO"/>  CHECK UNICODE -->
 	<codePoint unicode="U+2A7E" name="greaterorequalslant" note="GREATER-THAN OR SLANTED EQUAL TO"/> 
-	<codePoint unicode="U+2272" name="lessorsimilar" decimal="46" note="LESS-THAN OR EQUIVALENT TO"/> 
-	<codePoint unicode="U+2273" name="greaterorsimilar" decimal="38" note="GREATER-THAN OR EQUIVALENT TO"/> 
+	<codePoint unicode="U+2273" name="greaterorsimilar"    note="GREATER-THAN OR EQUIVALENT TO" decimal="38" /> 
+	<codePoint unicode="U+2272" name="lessorsimilar"       note="LESS-THAN OR EQUIVALENT TO" decimal="46" /> 
+	<codePoint unicode="U+25A0" name="square"              note="BLACK SQUARE"/> 
 	
 	<!-- unicode --> 
     <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>

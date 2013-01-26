@@ -68,50 +68,20 @@ public class SamplesForTest {
 //      new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/npg/", "../pdfs/npg/");
 		// OK
 		
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/BMCBioinformatics", "../pdfs/pdfsByJournal/BMCBioinformatics");
-		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/test", "../pdfs/test");
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/test", "../pdfs/test");
+
 		
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/ActaPalaeontologicaPolonica", "../pdfs/pdfsByJournal/ActaPalaeontologicaPolonica");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/ActaZoologica", "../pdfs/pdfsByJournal/ActaZoologica");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/AmericanJournalBotany", "../pdfs/pdfsByJournal/AmericanJournalBotany");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/AmericanMuseumNovitates", "../pdfs/pdfsByJournal/AmericanMuseumNovitates");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/AmericanZoologist", "../pdfs/pdfsByJournal/AmericanZoologist");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/AnnualReviewEcologySystematics", "../pdfs/pdfsByJournal/AnnualReviewEcologySystematics");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/AppliedMathematicsLetters", "../pdfs/pdfsByJournal/AppliedMathematicsLetters");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/BiochemicalSystematicsEcology", "../pdfs/pdfsByJournal/BiochemicalSystematicsEcology");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/Bioinformatics", "../pdfs/pdfsByJournal/Bioinformatics");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/BiologicalJournalLinneanSociety", "../pdfs/pdfsByJournal/BiologicalJournalLinneanSociety");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/BiologicalReviews", "../pdfs/pdfsByJournal/BiologicalReviews");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/BiologyLetters", "../pdfs/pdfsByJournal/BiologyLetters");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/BiologicalReviews", "../pdfs/pdfsByJournal/BiologicalReviews");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/BiologyPhilosophy", "../pdfs/pdfsByJournal/BiologyPhilosophy");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/BulletinAmericanMuseumNaturalHistory", "../pdfs/pdfsByJournal/BulletinAmericanMuseumNaturalHistory");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/CanadianJournalEarthSciences", "../pdfs/pdfsByJournal/CanadianJournalEarthSciences");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/Cladistics", "../pdfs/pdfsByJournal/Cladistics");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/Comptes Rendus Palevol", "../pdfs/pdfsByJournal/Comptes Rendus Palevol");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/Copeia", "../pdfs/pdfsByJournal/Copeia");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/Cretaceous Research", "../pdfs/pdfsByJournal/CretaceousResearch");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/EarthEnvironmentalScienceTransactionsRoyalSocietyEdinburgh", "../pdfs/pdfsByJournal/EarthEnvironmentalScienceTransactionsRoyalSocietyEdinburgh");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/Evolution", "../pdfs/pdfsByJournal/Evolution");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/EvolutionaryBiology", "../pdfs/pdfsByJournal/EvolutionaryBiology");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/Exs", "../pdfs/pdfsByJournal/Exs");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/FungalBiology", "../pdfs/pdfsByJournal/FungalBiology");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/Geobios", "../pdfs/pdfsByJournal/Geobios");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/Geodiversitas", "../pdfs/pdfsByJournal/Geodiversitas");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/HerpetologicalMonographs", "../pdfs/pdfsByJournal/HerpetologicalMonographs");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/IchthyologicalResearch", "../pdfs/pdfsByJournal/IchthyologicalResearch");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/InvertebrateBiology", "../pdfs/pdfsByJournal/InvertebrateBiology");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/JournalBiogeography", "../pdfs/pdfsByJournal/JournalBiogeography");
-		
-		
-		
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/JournalEvolutionaryBiology", "../pdfs/pdfsByJournal/JournalEvolutionaryBiology");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/JournalHumanEvolution", "../pdfs/pdfsByJournal/JournalHumanEvolution");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/JournalMammalianEvolution", "../pdfs/pdfsByJournal/JournalMammalianEvolution");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/JournalMolluscanStudies", "../pdfs/pdfsByJournal/JournalMolluscanStudies");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/JournalPaleontology", "../pdfs/pdfsByJournal/JournalPaleontology");
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/pdfsByJournal/JournalSystematicPalaeontology", "../pdfs/pdfsByJournal/JournalSystematicPalaeontology");
-			
+//		mainAB();
+//		mainCJ();
+//		mainMZ();
+
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/abc", "../pdfs/minorJournals/abc");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/def", "../pdfs/minorJournals/def");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/ghijk", "../pdfs/minorJournals/ghijk");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/lmnop", "../pdfs/minorJournals/lmnop");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/rst", "../pdfs/minorJournals/rst");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/uvwxyz", "../pdfs/minorJournals/uvwxyz");
+
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/plosone/", "../pdfs/plosone/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/taylorfrancis/", "../pdfs/taylorfrancis/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/psyc/", "../pdfs/psyc/");
@@ -122,6 +92,71 @@ public class SamplesForTest {
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/thesis/", "../pdfs/thesis/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/wiley/", "../pdfs/wiley/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/word/", "../pdfs/word/");
+	}
+
+	private static void mainMZ() {
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/MolecularBiologyEvolution", "../pdfs/mainJournals/MolecularBiologyEvolution");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Nature", "../pdfs/mainJournals/Nature");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Naturwissenschaften", "../pdfs/mainJournals/Naturwissenschaften");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Palaeontology", "../pdfs/mainJournals/Palaeontology");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/PaläontologischeZeitschrift", "../pdfs/mainJournals/PaläontologischeZeitschrift");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/PhilosophicalTransB", "../pdfs/mainJournals/PhilosophicalTransB");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/PlantSystematicsEvolution", "../pdfs/mainJournals/PlantSystematicsEvolution");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/PLoSBiology", "../pdfs/mainJournals/PLoSBiology");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/PNAS", "../pdfs/mainJournals/PNAS");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/PNAS1", "../pdfs/mainJournals/PNAS1");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/ProcRoySocB", "../pdfs/mainJournals/ProcRoySocB");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Science", "../pdfs/mainJournals/Science");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/SystBiol", "../pdfs/mainJournals/SystBiol");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/SystematicEntomology", "../pdfs/mainJournals/SystematicEntomology");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/SystematicZoology", "../pdfs/mainJournals/SystematicZoology");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/ZoologicaScripta", "../pdfs/mainJournals/ZoologicaScripta");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/ZoologicalJournalLinneanSociety", "../pdfs/mainJournals/ZoologicalJournalLinneanSociety");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Zootaxa", "../pdfs/mainJournals/Zootaxa");
+	}
+
+	private static void mainAB() {
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/ActaPalaeontologicaPolonica", "../pdfs/mainJournals/ActaPalaeontologicaPolonica");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/ActaZoologica", "../pdfs/mainJournals/ActaZoologica");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/AmericanJournalBotany", "../pdfs/mainJournals/AmericanJournalBotany");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/AmericanMuseumNovitates", "../pdfs/mainJournals/AmericanMuseumNovitates");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/AmericanZoologist", "../pdfs/mainJournals/AmericanZoologist");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/AnnualReviewEcologySystematics", "../pdfs/mainJournals/AnnualReviewEcologySystematics");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/AppliedMathematicsLetters", "../pdfs/mainJournals/AppliedMathematicsLetters");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/BiochemicalSystematicsEcology", "../pdfs/mainJournals/BiochemicalSystematicsEcology");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Bioinformatics", "../pdfs/mainJournals/Bioinformatics");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/BiologicalJournalLinneanSociety", "../pdfs/mainJournals/BiologicalJournalLinneanSociety");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/BiologicalReviews", "../pdfs/mainJournals/BiologicalReviews");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/BiologyLetters", "../pdfs/mainJournals/BiologyLetters");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/BiologicalReviews", "../pdfs/mainJournals/BiologicalReviews");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/BiologyPhilosophy", "../pdfs/mainJournals/BiologyPhilosophy");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/BMCBioinformatics", "../pdfs/mainJournals/BMCBioinformatics");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/BulletinAmericanMuseumNaturalHistory", "../pdfs/mainJournals/BulletinAmericanMuseumNaturalHistory");
+	}
+
+	private static void mainCJ() {
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/CanadianJournalEarthSciences", "../pdfs/mainJournals/CanadianJournalEarthSciences");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Cladistics", "../pdfs/mainJournals/Cladistics");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Copeia", "../pdfs/mainJournals/Copeia");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Cretaceous Research", "../pdfs/mainJournals/CretaceousResearch");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/EarthEnvironmentalScienceTransactionsRoyalSocietyEdinburgh", "../pdfs/mainJournals/EarthEnvironmentalScienceTransactionsRoyalSocietyEdinburgh");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Evolution", "../pdfs/mainJournals/Evolution");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/EvolutionaryBiology", "../pdfs/mainJournals/EvolutionaryBiology");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Exs", "../pdfs/mainJournals/Exs");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/FungalBiology", "../pdfs/mainJournals/FungalBiology");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Geobios", "../pdfs/mainJournals/Geobios");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Geodiversitas", "../pdfs/mainJournals/Geodiversitas");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/HerpetologicalMonographs", "../pdfs/mainJournals/HerpetologicalMonographs");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/IchthyologicalResearch", "../pdfs/mainJournals/IchthyologicalResearch");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/InvertebrateBiology", "../pdfs/mainJournals/InvertebrateBiology");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/JournalBiogeography", "../pdfs/mainJournals/JournalBiogeography");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/JournalEvolutionaryBiology", "../pdfs/mainJournals/JournalEvolutionaryBiology");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/JournalHumanEvolution", "../pdfs/mainJournals/JournalHumanEvolution");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/JournalMammalianEvolution", "../pdfs/mainJournals/JournalMammalianEvolution");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/JournalMolluscanStudies", "../pdfs/mainJournals/JournalMolluscanStudies");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/JournalPaleontology", "../pdfs/mainJournals/JournalPaleontology");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/JournalSystematicPalaeontology", "../pdfs/mainJournals/JournalSystematicPalaeontology");
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/JournalVertebratePaleontology", "../pdfs/mainJournals/JournalVertebratePaleontology");
 	}
 
 }

@@ -29,8 +29,10 @@
     
     <codePoint unicode="U+2212" name="C0" note="MINUS SIGN"/>  
     <codePoint unicode="U+00D7" name="C2" note="MULTIPLICATION SIGN"/>  
+    <codePoint unicode="U+002A" name="C3" note="ASTERISK"/>  
     <codePoint unicode="U+00B0" name="C14" note="DEGREE SIGN"/>  
     <codePoint unicode="U+003E" name="C14" note="GREATER-THAN SIGN"/>  
+    <codePoint unicode="U+2022" name="C15" note="BULLET"/>  
     <codePoint unicode="U+2264" name="C20" note="LESS-THAN OR EQUAL TO"/>  
     <codePoint unicode="U+2265" name="C21" note="GREATER-THAN OR EQUAL TO"/>  
     <codePoint unicode="U+007E" name="C24" note="TILDE"/>  

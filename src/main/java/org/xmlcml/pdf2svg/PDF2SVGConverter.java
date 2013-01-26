@@ -35,9 +35,9 @@ import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.util.PDFStreamEngine;
 import org.xmlcml.graphics.svg.SVGSVG;
+import org.xmlcml.pdf2svg.log.XMLLogger;
 import org.xmlcml.pdf2svg.util.MenuSystem;
 import org.xmlcml.pdf2svg.util.PConstants;
-import org.xmlcml.pdf2svg.util.XMLLogger;
 
 /**
  * Simple app to read PDF documents ... based on ... * PDFReader.java
@@ -133,7 +133,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 		svgPageList = null;
 		page2svgConverter = new PDFPage2SVGConverter();
-		LOG.debug("Parsing PDF file "+ file.getAbsolutePath());
+		LOG.debug("PDF "+ file.getCanonicalPath());
 		readDocument(file, useNonSeqParser, PDFpassword);
 
 		@SuppressWarnings("unchecked")

@@ -28,17 +28,18 @@
     <codePoint unicode="U+007C" decimal="124"  name="bar" note="VERTICAL LINE" />
     
     <codePoint unicode="U+002D" decimal="161" name="exclamdown" note="HYPHEN-MINUS" />
-    <codePoint unicode="U+002A" decimal="163" note="ASTERISK" />
-    <codePoint unicode="U+002A" decimal="164" name="currency" note="ASTERISK" />
-    <codePoint unicode="U+002B" decimal="163" name="plus" note="PLUS SIGN" />
-    <codePoint unicode="U+00B1" decimal="167" name="section" note="PLUS-MINUS SIGN" />
+    <codePoint unicode="U+002A" decimal="163"                   note="ASTERISK" />
+    <codePoint unicode="U+002A" decimal="164" name="currency"   note="ASTERISK" />
+    <codePoint unicode="U+002B" decimal="163" name="plus"       note="PLUS SIGN" />
+    <codePoint unicode="U+00B1" decimal="167" name="section"    note="PLUS-MINUS SIGN" />
     <codePoint unicode="U+25E6" decimal="169" name="quotesingle" note="WHITE BULLET" />
-    <codePoint unicode="U+00B1" decimal="177" name="endash" note="PLUS-MINUS SIGN" />
-    <codePoint unicode="U+00B1" name="plusminus" note="PLUS-MINUS SIGN" />
-    <codePoint unicode="U+00B7" decimal="183" name="bullet" note="MIDDLE DOT" />
+    <codePoint unicode="U+00B1" decimal="177" name="endash"     note="PLUS-MINUS SIGN" />
+    <codePoint unicode="U+00B7" decimal="183" name="bullet"     note="MIDDLE DOT" />
     <codePoint unicode="U+007E" decimal="187" name="guillemotright" note="TILDE" />
-    <codePoint unicode="U+00D7" decimal="215" name="multiply" note="MULTIPLICATION SIGN" />
+    <codePoint unicode="U+00D7" decimal="215" name="multiply"   note="MULTIPLICATION SIGN" />
 
+    <codePoint unicode="U+00B1"               name="plusminus"  note="PLUS-MINUS SIGN" />
+    <codePoint unicode="U+002F"               name="negationslash" note="SOLIDUS" />
     
 <!-- unicode --> 
     <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>

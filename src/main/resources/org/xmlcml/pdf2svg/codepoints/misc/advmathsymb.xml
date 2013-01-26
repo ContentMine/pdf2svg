@@ -15,11 +15,9 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="advmt_rm" id="advmt_rm" resource="org/xmlcml/pdf2svg/codepoints/defacto"> 
+<codePointSet encoding="AdvMathSymb" id="advmathsymb" resource="org/xmlcml/pdf2svg/codepoints/misc">]
 
-    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/>
+    <codePoint unicode="U+002A" name="C3"     note="ASTERISK"/>  
     
-    <codePoint unicode="U+03A6" name="C8" note="GREEK CAPITAL LETTER PHI"/>  
-    <codePoint unicode="U+00A8" name="C22" note="MACRON" />    
 </codePointSet>
         

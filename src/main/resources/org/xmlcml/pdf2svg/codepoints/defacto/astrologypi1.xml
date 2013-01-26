@@ -6,20 +6,19 @@
     you may not use this file except in compliance with the License.
     You may obtain a copy of the License at
 
-            http://www.apache.org/licenses/LICENSE-2.0
+        http://www.apache.org/licenses/LICENSE-2.0
 
     Unless required by applicable law or agreed to in writing, software
     distributed under the License is distributed on an "AS IS" BASIS,
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
-    limitations under the License.
+    limiations under the License.
 
 -->
-<codePointSet encoding="advmt_rm" id="advmt_rm" resource="org/xmlcml/pdf2svg/codepoints/defacto"> 
+<codePointSet encoding="AstrologyPi1" id="astrologypi1" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
-    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/>
+    <codePoint unicode="U+2640" name="H50488" note="FEMALE SIGN"/>
     
-    <codePoint unicode="U+03A6" name="C8" note="GREEK CAPITAL LETTER PHI"/>  
-    <codePoint unicode="U+00A8" name="C22" note="MACRON" />    
+    	
 </codePointSet>
-        
+		

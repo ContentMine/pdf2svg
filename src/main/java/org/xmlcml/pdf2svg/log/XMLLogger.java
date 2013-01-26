@@ -1,4 +1,4 @@
-package org.xmlcml.pdf2svg.util;
+package org.xmlcml.pdf2svg.log;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -149,8 +149,7 @@ public class XMLLogger {
 		}
 	}
 
-	public void newCharacter(String fontName, String fontFamilyName,
-			String charName, int charCode) {
+	public void newCharacter(String fontName, String fontFamilyName, String charName, int charCode) {
 		if (file == null || page == null)
 			throw new RuntimeException("no current PDF file or page!");
 

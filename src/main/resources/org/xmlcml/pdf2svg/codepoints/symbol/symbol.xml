@@ -89,6 +89,11 @@
     <codePoint name="C210" unicode="U+00AE" note="REGISTERED SIGN"/> 
     <codePoint name="C211" unicode="U+00A9" note="COPYRIGHT SIGN"/> 
     <codePoint name="C212" unicode="U+2122" note="TRADE-MARK SIGN"/> 
+<!-- maybe the same? -->    
+    <codePoint name="c174" unicode="U+2192" note="RIGHTWARDS ARROW"/> 
+    <codePoint name="c176" unicode="U+25E6" note="WHITE BULLET"/> 
+    <codePoint name="c183" unicode="U+2022" note="BULLET"/> 
+    <codePoint name="c215" unicode="U+015C" notee="LATIN CAPITAL LETTER S WITH CIRCUMFLEX"/>
     
     
 </codePointSet>

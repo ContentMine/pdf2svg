@@ -25,7 +25,7 @@
     <codePoint unicode="U+005E" name="asciicircum" note="CIRCUMFLEX ACCENT"/>  
     <codePoint unicode="U+002A" name="asterisk" note="ASTERISK"/> 
 -->
-    
+    <codePoint unicode="U+0393" name="C0" note="GREEK CAPITAL LETTER GAMMA"/>
     <codePoint unicode="U+2018" name="C18" note="LEFT SINGLE QUOTATION MARK"/>  
     <codePoint unicode="U+007E" name="C19" note="TILDE"/>  
     <codePoint unicode="U+02C7" name="C20" note="CARON"/>  
