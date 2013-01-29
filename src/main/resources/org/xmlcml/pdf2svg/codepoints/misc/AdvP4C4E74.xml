@@ -49,10 +49,14 @@
     <codePoint unicode="U+0029" decimal="222"                  note="RIGHT PARENTHESIS"/> <!-- large -->  
 
     <codePoint unicode="U+002D" name="C0"     note="MINUS"/>  
-    <codePoint unicode="U+00B7" name="C1"     note="MMIDDLE DOT"/>  
+    <codePoint unicode="U+00B7" name="C1"     note="MIDDLE DOT"/>  
     <codePoint unicode="U+00D7" name="C2"     note="MULTIPLICATION SIGN"/>  
     <codePoint unicode="U+002A" name="C3"     note="ASTERISK"/>  
+    <codePoint unicode="U+00F7" name="C4"     note="DIVISION SIGN"/>  
     <codePoint unicode="U+00B1" name="C6"     note="PLUS-MINUS SIGN"/>  
+    
+    <codePoint unicode="U+29BF" name="C12"    note="CIRCLED BULLET"/>  
+    <codePoint unicode="U+25CB" name="C13"    note="WHITE CIRCLE"/>  
     <codePoint unicode="U+00B0" name="C14"    note="DEGREE SIGN" htmlName="deg"/>  
     <codePoint unicode="U+2022" name="C15"    note="BULLET"/> 
     <codePoint unicode="U+0028" name="C16"    note="LEFT PARENTHESIS"/>  

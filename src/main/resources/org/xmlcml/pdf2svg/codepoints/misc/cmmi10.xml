@@ -18,7 +18,11 @@
 <codePointSet encoding="CMM" id="cmmi10" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
 <!--  maybe unicode?  -->
+<!-- 
+    <codePointSet idRef="greekByName1" href="../defacto/greekByName1.xml"/>
     <codePointSet idRef="greekAndCoptic" href="../unicode/greekAndCoptic.xml"/>
+-->
+    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>
     
     <codePoint unicode="U+003E" name="greater" note="GREATER-THAN SIGN" />
 	

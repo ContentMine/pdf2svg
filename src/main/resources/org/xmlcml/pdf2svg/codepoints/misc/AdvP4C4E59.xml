@@ -26,12 +26,18 @@
     <codePoint unicode="U+002A" name="asterisk" note="ASTERISK"/> 
 -->
     <codePoint unicode="U+0393" name="C0" note="GREEK CAPITAL LETTER GAMMA"/>
+    <codePoint unicode="U+039B" name="C3" note="GREEK CAPITAL LETTER LAMBDA"/>
+    <codePoint unicode="U+03A8" name="C9" note="GREEK CAPITAL LETTER PSI"/>
     <codePoint unicode="U+2018" name="C18" note="LEFT SINGLE QUOTATION MARK"/>  
     <codePoint unicode="U+007E" name="C19" note="TILDE"/>  
     <codePoint unicode="U+02C7" name="C20" note="CARON"/>  
     <codePoint unicode="U+0306" name="C21" note="COMBINING BREVE"/>
     <codePoint unicode="U+00A8" name="C22" note="MACRON" />  
     <codePoint unicode="U+00B0" name="C23" note="DEGREE SIGN" />  
+    <codePoint unicode="U+00DF" name="C25" note="LATIN SMALL LETTER SHARP S" />  
+    <codePoint unicode="U+00E6" name="C26" note="LATIN SMALL LETTER AE" />  
+    <codePoint unicode="U+2205" name="C28" note="EMPTY SET" />  
+    <codePoint unicode="U+0393" name="C255" note="GREEK CAPITAL LETTER GAMMA"/>
     
     <codePoint unicode="U+00A8" decimal="8364" note="DIAERESIS" />  
     

@@ -19,6 +19,7 @@
 
     <codePoint unicode="U+03B1" name="afii9825"    note="GREEK SMALL LETTER ALPHA"/>
     <codePoint unicode="U+226A" name="afii9828"    note="MUCH LESS-THAN"/> 
+    <codePoint unicode="U+03B4" name="afii9829" note="GREEK SMALL LETTER DELTA"/>
     <codePoint unicode="U+03C7" name="afii9851"    note="GREEK SMALL LETTER CHI"/>
         	
 </codePointSet>

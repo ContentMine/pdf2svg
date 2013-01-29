@@ -37,7 +37,6 @@ import org.apache.pdfbox.util.PDFStreamEngine;
 import org.xmlcml.graphics.svg.SVGSVG;
 import org.xmlcml.pdf2svg.log.XMLLogger;
 import org.xmlcml.pdf2svg.util.MenuSystem;
-import org.xmlcml.pdf2svg.util.PConstants;
 
 /**
  * Simple app to read PDF documents ... based on ... * PDFReader.java
@@ -67,6 +66,8 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	public static final String LOGMORE = "-logmore";
 	public static final String LOGGLYPHS = "-logglyphs";
 	public static final String EXITONERR = "-exitonerr";
+
+	private static final int DEFAULT_MAX_PAGE = 200;
 
 	private String PDFpassword = "";
 	private boolean useNonSeqParser = false;
@@ -103,6 +104,16 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	public String XMLLoggerFile = "pdfLog.xml";
 	public boolean xmlLoggerLogGlyphs = false;
 	public boolean xmlLoggerLogMore = false;
+
+	private int maxPage = DEFAULT_MAX_PAGE;
+
+	public int getMaxPage() {
+		return maxPage;
+	}
+
+	public void setMaxPage(int maxPage) {
+		this.maxPage = maxPage;
+	}
 
 	private static void usage() {
 		System.err
@@ -177,6 +188,10 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			}
 
 			pageNumber = pr.next(pageNumber);
+			if (pageNumber > maxPage ) {
+				LOG.error("terminated after "+pageNumber+" pages");
+				break;
+			}
 		}
 		System.out.println();
 
@@ -234,7 +249,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 	private void reportNewFontFamilyNames() {
 		FontFamilySet newFontFamilySet = amiFontManager.getNewFontFamilySet();
-		LOG.debug("new fontFamilyNames: "+newFontFamilySet.createElement().toXML());
+		LOG.trace("new fontFamilyNames: "+newFontFamilySet.createElement().toXML());
 	}
 
 	private void writeHTMLSystem(List<File> outfileList) {
@@ -488,8 +503,8 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		ensureCodePointSets();
 		int newCodePointCount = newCodePointSet.size();
 		if (newCodePointCount > 0) {
-			LOG.debug("New High CodePoints: " + newCodePointSet.size());
-			LOG.debug(newCodePointSet.createElementWithSortedIntegers().toXML());
+			LOG.trace("New High CodePoints: " + newCodePointSet.size());
+			LOG.trace(newCodePointSet.createElementWithSortedIntegers().toXML());
 		}
 	}
 

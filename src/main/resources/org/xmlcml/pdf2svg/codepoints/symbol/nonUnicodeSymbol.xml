@@ -10,7 +10,7 @@ characters are >= F020
 
     <codePoint   unicode="U+0020" decimal="61472" note="SPACE"/>
     <codePoint   unicode="U+0021" decimal="61473" note="EXCLAMATION MARK"/>
-    <codePoint   unicode="U+" decimal="61474" note="forall"/>
+    <codePoint   unicode="U+2200" decimal="61474" note="forall"/>
     <codePoint   unicode="U+" decimal="61475" note="hash"/>
     <codePoint   unicode="U+" decimal="61476" note="exists"/>
     <codePoint   unicode="U+" decimal="61477" note="percent"/>

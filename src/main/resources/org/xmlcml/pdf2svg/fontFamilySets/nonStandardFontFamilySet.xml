@@ -20,14 +20,18 @@
     <fontFamily name="Univers" />
 
 <!--  =================MathematicalPi================================= -->    
+
     <fontFamily name="MathematicalPi-One-Italic" note="" symbol="true" italic="true"
         codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi1.xml"/>
     <fontFamily name="MathPiOne" note="" symbol="true" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi1.xml"/>
     <fontFamily name="MathematicalPi-One" note="" symbol="true" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi1.xml"/>
-    <fontFamily name="Universal-GreekwithMathPi" 
+    <fontFamily name="MATHG-1A" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi1.xml"/>
+        
+        
+        
     <fontFamily name="MathematicalPi-Two"
         codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi2.xml"/>
     <fontFamily name="MathematicalPi-Three"
@@ -38,6 +42,12 @@
         codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi5.xml"/>
     <fontFamily name="MathematicalPi-Six"
         codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mathpi6.xml"/>
+
+<!-- combination? -->        
+    <fontFamily name="Universal-GreekwithMathPi" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/universalGreekMathpi.xml"/>
+        
+<!--  =================CommPi================================= -->    
 
     <fontFamily name="Universal-NewswithCommPi"
         codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/commpi.xml"/>
@@ -82,8 +92,11 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 
     <fontFamily name="MTMI" symbol="true" italic="true"
         codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mtmi.xml" />
+    <fontFamily name="RMTMI" symbol="true" italic="true"
+        codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mtmi.xml"/>
     <fontFamily name="MTMIB" symbol="true" italic="true"
         codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mtmi.xml" />
+        
     <fontFamily name="MTSY"
         codePointSet="org/xmlcml/pdf2svg/codepoints/defacto/mtsy.xml" />
     <fontFamily name="MTEX" unicode="guessed" publishers=""/>
@@ -99,6 +112,8 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
     <!--  FONTS OF TEX / AMS (MSAM/MSBM) -->
     <fontFamily name="MSAM6" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/msam6.xml" />
+    <fontFamily name="MSAM7" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/msam7.xml" />
     <fontFamily name="MSAM8" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/msam8.xml" />
     <fontFamily name="MSAM9" 
@@ -106,6 +121,9 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
     <fontFamily name="MSAM10" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/msam10.xml" />
     <fontFamily name="msam10" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/msam10.xml" />
+
+    <fontFamily name="MSBM10" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/msam10.xml" />
         
 <!--  ================================================== -->    
@@ -162,6 +180,8 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 
     <fontFamily name="AdvT001" symbol="true" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvT001.xml"/>
+    <fontFamily name="AdvT006" symbol="true" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvT006.xml"/>
 
     <fontFamily name="AdvPSMP1" symbol="true" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advPSMP1.xml"/>
@@ -170,6 +190,7 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 
     <fontFamily name="AdvMT_EX" symbol="true"
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmt_ex.xml" />
+<!-- MT_MI seems variable -->        
     <fontFamily name="AdvMT_MI" symbol="true"
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmt_mi.xml" />
     <fontFamily name="ADVMT_MI" symbol="true"
@@ -235,14 +256,28 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
     <fontFamily name="AdvOT863180fb" symbol="false" />
     <fontFamily name="AdvOT863180fb+fb" symbol="false" />
 
+<!-- ====================== AdvMTR ==============================  -->
+    <fontFamily name="AdvMTR" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advmtr.xml"/>
+
 <!-- ====================== CM ==============================  -->
     <fontFamily name="CMSY10" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cmsy10.xml"/>
 
+    <fontFamily name="CMMI6" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cmmi6.xml"/>
+    <fontFamily name="cmmi6" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cmmi6.xml"/>
+    <fontFamily name="CMMI7" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cmmi7.xml"/>
+    <fontFamily name="cmmi7" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cmmi7.xml"/>
     <fontFamily name="cmmi8" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cmmi8.xml"/>
     <fontFamily name="cmmi9" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cmmi9.xml"/>
+    <fontFamily name="CMMI10" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cmmi10.xml"/>
     <fontFamily name="cmmi10" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cmmi10.xml"/>
 <!-- ====================== Calibri ==============================  -->
@@ -256,7 +291,13 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
     <fontFamily name="Calibri,old" />
     <fontFamily name="Calibri,talic" />
 
+<!-- ====================== Cyrillic ==============================  -->
+    <fontFamily name="Cyryl" 
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/cyryl.xml"/>
 
+<!-- ====================== Fx ==============================  -->
+
+<!-- there is a family of fonts Fe, Fi, Fs, etc. maybe one for each letter. No idea what to do -->
 <!-- ====================== Myriad ==============================  -->
     <fontFamily name="MyriadPro-Regular" 
         codePointSet="org/xmlcml/pdf2svg/codepoints/misc/myriadPro.xml"/>
@@ -327,7 +368,6 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
     <fontFamily name="AdvPS4721B4" />
     <fontFamily name="AdvPS44A44B" />
 
-    <fontFamily name="RMTMI" />
     <fontFamily name="Minion-Regular" />
     <fontFamily name="MinionBold" />
     <fontFamily name="MinionBoldtalic" />

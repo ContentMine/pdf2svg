@@ -19,6 +19,7 @@
 	<codePoint name="H11541" unicode="U+2032" unicodeName="PRIME"/> 
 	<codePoint name="H11542" unicode="U+2033" unicodeName="DOUBLE PRIME"/> 
 	<codePoint name="H11546" unicode="U+2014" unicodeName="EM DASH"/> 
+	<codePoint name="H11549" unicode="U+003D" unicodeName="EQUALS"/> 
 	
 </codePointSet>
 		

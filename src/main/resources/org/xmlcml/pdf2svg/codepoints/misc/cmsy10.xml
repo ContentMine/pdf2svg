@@ -49,7 +49,12 @@
     <codePoint unicode="U+2261" name="" decimal="8801" note="IDENTICAL TO" />
     <codePoint unicode="U+2264" name="" decimal="8804" note="LESS-THAN OR EQUAL TO" />
     <codePoint unicode="U+2265" name="" decimal="8805" note="GREATER-THAN OR EQUAL TO" />
-	<!-- 
+    <codePoint unicode="U+2265" name="" decimal="8805" note="GREATER-THAN OR EQUAL TO" />
+    
+    <codePoint unicode="U+2243" name="similarequal"  note="ASYMPTOTICALLY EQUAL TO" />
+    <codePoint unicode="U+0394" name="unionsq"  note="GREEK CAPITAL LETTER DELTA" /> <!--might be an operator -->
+    
+<!-- 
     <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>	
     -->
 </codePointSet>

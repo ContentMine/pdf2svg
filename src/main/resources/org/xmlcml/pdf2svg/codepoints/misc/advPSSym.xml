@@ -25,10 +25,11 @@
     <codePoint unicode="U+00A9" name="ordfeminine"    decimal="170" note="COPYRIGHT"/> 
     
     <codePoint unicode="U+00B0" name="C176" note="DEGREE SIGN"/> 
-    <codePoint unicode="U+221D" name="C181" unicodeName="PROPORTIONAL TO"/> 
+    <codePoint unicode="U+221D" name="C181" note="PROPORTIONAL TO"/> 
     <codePoint unicode="U+00AE" name="C210" note="REGISTERED SIGN"/> 
     <codePoint unicode="U+00A9" name="C211" note="COPYRIGHT SIGN"/> 
     <codePoint unicode="U+2122" name="C212" note="TRADE MARK SIGN"/> 
+    <codePoint unicode="U+00AC" name="C216" note="NOT SIGN"/> 
     <codePoint unicode="U+2038" name="C217" note="CARET"/> 
     <codePoint unicode="U+2122" name="C228" note="TRADE MARK SIGN"/> 
 

@@ -131,7 +131,9 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	private boolean reportedEncodingError = false;
 	private TextPosition textPosition;
 
-	private int charCode;;
+	private int charCode;
+
+	private boolean annotateText;;
 
 	public PDFPage2SVGConverter() throws IOException {
 		super();
@@ -314,7 +316,6 @@ xmlns="http://www.w3.org/2000/svg">
 		amiFont = amiFontManager.getAmiFontByFont(pdFont);
 
 		setAndProcessFontNameAndFamilyName();
-
 		getCharCodeAndSetEncodingAndCharname();
 
 		SVGText svgText = new SVGText();
@@ -335,9 +336,13 @@ xmlns="http://www.w3.org/2000/svg">
 
 		if (amiFont.isSymbol() || amiFont.getDictionaryEncoding() != null ||
 				(fontFamily != null && fontFamily.getCodePointSet() != null)) {
-			//convertNonUnicodeCharacterEncodings();
-			//annotateContent(svgText, textContent, charCode, charname, charCode, encoding);
+//			convertNonUnicodeCharacterEncodings();
+//			annotateContent(svgText, textContent, charCode, charname, charCode, encoding);
 		}
+		if ("Symbol".equalsIgnoreCase(fontFamilyName)) {
+			LOG.trace("symbol >> "+charname+"/"+charCode+"/"+Integer.toHexString(charCode));
+		}
+
 
 		LOG.trace("Fn: "+fontName+"; Ff: "+fontFamilyName+"; "+textContent+"; "+charCode+"; "+charname);
 
@@ -370,6 +375,7 @@ xmlns="http://www.w3.org/2000/svg">
 				LOG.trace("charCode "+charCode);
 				textContent = ""+(char) charCode;
 			}
+			annotateText = false;
 		} else {
 			textContent = textPosition.getCharacter();
 			if (textContent.length() > 1) {
@@ -379,6 +385,7 @@ xmlns="http://www.w3.org/2000/svg">
 			charCode = textContent.charAt(0);
 		}
 
+		annotateText = false;
 		if (encoding == null) {
 			if (!reportedEncodingError ) {
 				LOG.debug("Null encoding for character: "+charname+" / "+charCode+" at "+currentXY+" font: "+fontName+" / "+
@@ -386,6 +393,7 @@ xmlns="http://www.w3.org/2000/svg">
 			       "\n                FURTHER NULL ENCODING ERRORS HIDDEN");
 				reportedEncodingError = true;
 			}
+			
 		} else {
 			getCharnameThroughEncoding();
 		}
@@ -402,6 +410,7 @@ xmlns="http://www.w3.org/2000/svg">
 				charCode = (codePoint != null) ? codePoint.getUnicodeDecimal() : charCode;
 				textContent = ""+(char)charCode;
 			}
+			annotateText = true;
 		}
 	}
 
@@ -412,6 +421,7 @@ xmlns="http://www.w3.org/2000/svg">
 			LOG.trace("code "+charCode+" (font: "+fontSubType+" "+fontName+") "+charname);
 		} catch (IOException e1) {
 			LOG.warn("cannot get char encoding "+" at "+currentXY, e1);
+			annotateText = true;
 		}
 	}
 
@@ -420,7 +430,7 @@ xmlns="http://www.w3.org/2000/svg">
 			svgText.setText(textContent);
 		} catch (RuntimeException e) {
 			// drops here if cannot encode as XML character
-			annotateUnusualCharacters(svgText);
+			annotateText = true;
 		}
 		
 		getFontSizeAndSetNotZeroRotations(svgText);
@@ -437,6 +447,13 @@ xmlns="http://www.w3.org/2000/svg">
 		if ("Symbol".equals(svgText.getFontFamily())) {
 			svgText.setFontFamily("Symbol-X"); // to stop browsers misbehaving
 		}
+		if (annotateText) {
+			annotateUnusualCharacters(svgText);
+		}
+	}
+
+	private void annotateCharacter(SVGText svgText) {
+		svgText.setFill("red");
 	}
 
 	private void convertNonUnicodeCharacterEncodings() {
@@ -545,7 +562,7 @@ xmlns="http://www.w3.org/2000/svg">
 				pdf2svgConverter.newCodePointSet.ensureEncoding(encoding.toString());
 				CodePoint codePoint = new CodePoint((Integer)charCode, charname); // creates as UNKNOWN unicode
 				pdf2svgConverter.newCodePointSet.add(codePoint);
-				LOG.debug("added to new codePointSet: "+charCode);
+				LOG.trace("added to new codePointSet: "+charCode);
 			} else {
 				LOG.warn("Font name: "+fontName+" No encoding, so cannot add codePoint ("+charCode+") to codePointSet");
 			}
@@ -566,84 +583,20 @@ xmlns="http://www.w3.org/2000/svg">
 		svgText.format(nPlaces);
 	}
 
-//	private void processDictionaryEncoding(int charCode, SVGText svgText) {
-//		LOG.trace("DICT_ENCODE "+fontName+" / "+fontFamilyName+" / "+fontSubType+" / "+charCode+" / "+charname);
-//		Integer charCodeNew = fontFamily.convertSymbol2UnicodePoint(charname);
-//		if (charCodeNew == null) {
-//			charCodeNew = convertCharacterHack(charCode, svgText, "DICT_ENCODE");
-//		}
-//		if (charCodeNew != null) {
-//			if (charCodeNew != charCode) {
-//				LOG.warn("Inconsistent charCodes (orig: "+charCode+"("+(char)charCode+"); new "+charCodeNew+"("+(char)(int)charCodeNew+");) for charname "+charname+"; taking old: ");
-//				charCodeNew = charCode;
-//			}
-//			addCharacterData(charCode, svgText, charCodeNew);
-//		} else {
-//			LOG.error("Cannot find character in dictionary font ("+fontName+"): "+charname+" / "+charCode);
-//		}
-//	}
 
-//	private void addCharacterData(int charCode, SVGText svgText, Integer charCodeNew) {
-//		if (textContent.length() == 1) {
-//			textContent = ""+(char)(int)charCodeNew;
-//		}
-//		annotateContent(svgText, textContent, charCode, charname, charCodeNew, encoding);
-//		LOG.trace("charname: "+charname+" charCode: "+charCodeNew+" textContent: "+textContent);
-//	}
-
-//	private Integer convertCharacterHack(Integer charCode, SVGText svgText, String title) {
-//		Integer charCodeNew = null;
-//		
-////		charCodeNew = amiFontManager.convertSymbol2UnicodeHack(charname, fontFamilyName);
-//		charCodeNew = (fontFamily != null) ? (Integer) fontFamily.convertSymbol2UnicodePoint(charname) : null;
-//		if (charCodeNew != null) {
-//			LOG.trace(title+" "+fontName+" / "+fontFamilyName+" / "+fontSubType+" / "+charCode+" / "+charname +" / "+(char) (int) charCode+ " new: "+charCodeNew);
-//		} else {
-//			// horrible hack. Some fonts report only the charCode and not the name, so guess unicode
-//			if (charCode != null && charCode > 127) {
-//				charCodeNew = charCode;
-//			} else {
-//				LOG.debug(title+" unconverted "+fontName+" / "+fontFamilyName+" / "+fontSubType+" / "+charCode+" / "+charname +" / "+(char) (int) charCode);
-//			}
-//			svgText.setFontSize(20.0);
-//			svgText.setFill("blue");
-//		}
-//		return charCodeNew;
-//	}
-
-	/** this font is declared as a symbol font. That means we have to work out what each character means
-	 * MathematicalPI has a completely different set of codes and names so needs lookup
-	 * some "symbol fonts" appear to be largely unicode
-	 * 
-	 * This is similar to the dictionaryEncoded stuff as they both seem to be ab/used similarly
-	 * @param charCode
-	 * @param svgText
-	 */
-//	private void convertSymbolsToCharacters(Integer charCode, SVGText svgText) {
-//		LOG.trace("SYMBOL "+fontName+" / "+fontFamilyName+" / "+fontSubType+" / "+charCode+" / "+charname);
-//		Integer charCodeNew = amiFontManager.convertSymbol2UnicodeStandard(charname);
-//		if (charCodeNew == null) {
-//			charCodeNew = convertCharacterHack(charCode, svgText, "SYMBOL_ENCODE");
-//		}
-//		if (charCodeNew != null) {
-//			addCharacterData(charCode, svgText, charCodeNew);
-//		} else {
-//			LOG.error("Cannot find character in symbol font ("+fontName+"): "+charname+" / "+charCode);
-//		}
-//	}
 	
 	private void annotateContent(SVGText svgText, String unicodeContent, int charCode, String charname, int newCode, Encoding fontEncoding) {
-		try {
-			svgText.setText(unicodeContent);
-		} catch (Exception e) {
-//			if (pdf2svgConverter.useXMLLogger && !charWasLogged) {
-//				pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, charCode);
-//				charWasLogged = true;
-//			}
-//			else
-				LOG.error("couldn't set unicode: "+unicodeContent+" / +font: "+fontName+" charname: "+charname+" "+charCode+" / "+e);
-			svgText.setText("?"+(int)charCode);
-		}
+//		try {
+//			svgText.setText(unicodeContent);
+//		} catch (Exception e) {
+////			if (pdf2svgConverter.useXMLLogger && !charWasLogged) {
+////				pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, charCode);
+////				charWasLogged = true;
+////			}
+////			else
+//				LOG.error("couldn't set unicode: "+unicodeContent+" / +font: "+fontName+" charname: "+charname+" "+charCode+" / "+e);
+//			svgText.setText("?"+(int)charCode);
+//		}
 		if (unicodeContent.length() > 1) {
 			PDF2SVGUtil.setSVGXAttribute(svgText, PDF2SVGUtil.LIGATURE, ""+unicodeContent.length());
 		}
@@ -659,13 +612,13 @@ xmlns="http://www.w3.org/2000/svg">
 		if (newCode != charCode) {
 			PDF2SVGUtil.setSVGXAttribute(svgText, PDF2SVGUtil.CHARACTER_NEW_CODE, ""+newCode);
 		}
-		svgText.setFill("red");
-		svgText.setStrokeWidth(0.15);
-		svgText.setStroke("blue");
-		svgText.setFontSize(20.0);
-		if (charCode == AMIFontManager.UNKNOWN_CHAR) {
-			svgText.setStrokeWidth(3.0);
-		}
+//		svgText.setFill("red");
+//		svgText.setStrokeWidth(0.15);
+//		svgText.setStroke("blue");
+//		svgText.setFontSize(20.0);
+//		if (charCode == AMIFontManager.UNKNOWN_CHAR) {
+//			svgText.setStrokeWidth(3.0);
+//		}
 		if (pdf2svgConverter.useXMLLogger && pdf2svgConverter.xmlLoggerLogMore && !charWasLogged) {
 			pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, charCode);
 			charWasLogged = true;

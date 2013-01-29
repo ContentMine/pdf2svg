@@ -30,10 +30,20 @@
     <codePoint unicode="U+0022" name="H11033"  note="QUOT"/> 
     <codePoint unicode="U+00B0" name="H11034"  note="DEGREE SIGN"/> 
     
-    <codePoint unicode="U+00A9" name="H17015"  note="COPYRIGHT SIGN"/> 
-
+    <!-- these are offset by 500 - maybe bold/size? -->
+    <codePoint unicode="U+002B" name="H11501"  note="PLUS"/>
+    <codePoint unicode="U+002D" name="H11502"  note="MINUS"/> 
+    <codePoint unicode="U+00D7" name="H11503"  note="MULTIPLICATION SIGN"/> 
+    <codePoint unicode="U+00F7" name="H11504"  note="DIVISION SIGN"/> 
+    <codePoint unicode="U+003D" name="H11505"  note="EQUALS"/> 
+    <codePoint unicode="U+00B1" name="H11506"  note="PLUS-MINUS SIGN"/> 
     <codePoint unicode="U+00B7" name="H11554"  note="MIDDLE DOT"/> 
-    <codePoint unicode="U+00B7" name="z" decimal="122" note="MIDDLE DOT"/> 
+    
+    <codePoint unicode="U+00A9" name="H17015"  note="COPYRIGHT SIGN"/> 
+    
+    <codePoint unicode="U+00B7" name="H18528"  note="MIDDLE DOT"/> 
+
+    <codePoint unicode="U+00B7" name="z" note="MIDDLE DOT"/> 
     
 </codePointSet>
         

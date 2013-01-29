@@ -65,10 +65,14 @@
     <codePoint unicode="U+0029" name="C1" note="RIGHT PARENTHESIS"/>
     <codePoint unicode="U+005B" name="C2" note="LEFT SQUARE BRACKET"/>  
     <codePoint unicode="U+005D" name="C3" note="RIGHT SQUARE BRACKET"/>  
+    <codePoint unicode="U+007B" name="C8" note="LEFT CURLY BRACKET"/>  
+    <codePoint unicode="U+007D" name="C9" note="RIGHT CURLY BRACKET"/>  
     <codePoint unicode="U+0028" name="C16" note="LEFT PARENTHESIS"/>  
     <codePoint unicode="U+0029" name="C17" note="RIGHT PARENTHESIS"/>
     <codePoint unicode="U+0028" name="C18" note="LEFT PARENTHESIS"/>  <!--  larger size -->
     <codePoint unicode="U+0029" name="C19" note="RIGHT PARENTHESIS"/> <!--  larger size --> 
+    <codePoint unicode="U+005B" name="C20" note="LEFT SQUARE BRACKET"/>  <!--  larger size -->
+    <codePoint unicode="U+005D" name="C21" note="RIGHT SQUARE BRACKET"/>  <!--  larger size -->
     <codePoint unicode="U+007B" name="C26" note="LEFT CURLY BRACKET"/> <!--  larger size --> 
     <codePoint unicode="U+007D" name="C27" note="RIGHT CURLY BRACKET"/> <!--  larger size --> 
     <codePoint unicode="U+3008" name="C28" note="LEFT ANGLE BRACKET"/> <!--  larger size --> 

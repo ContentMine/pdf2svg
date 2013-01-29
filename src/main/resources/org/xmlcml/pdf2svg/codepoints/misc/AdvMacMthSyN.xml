@@ -17,29 +17,30 @@
 -->
 <codePointSet encoding="AdvMacMthSyN" id="AdvMacMthSyN" resource="org/xmlcml/pdf2svg/codepoints/misc"> 
 
-    <codePoint name="asterisk" unicode="U+002A" unicodeName="ASTERISK"/>  
-    <codePoint decimal="8364" unicode="U+0308" unicodeName="COMBINING DIAERESIS"/>  
+    <codePoint unicode="U+002A" name="asterisk" unicodeName="ASTERISK"/>  
+    <codePoint unicode="U+0308" decimal="8364" unicodeName="COMBINING DIAERESIS"/>  
     <codePoint unicode="U+002B" decimal="254" name="thorn" note="plus"/>
     <codePoint unicode="U+003D" decimal="188" name="onequarter" note="equals"/>
     
-    <codePoint name="C0" unicode="U+002D" unicodeName="MINUS"/>  
-    <codePoint name="C2" unicode="U+00D7" unicodeName="MULTIPLICATION SIGN"/>  
-    <codePoint name="C3" unicode="U+002A" unicodeName="ASTERISK"/>  
-    <codePoint name="C6" unicode="U+00B1" unicodeName="PLUS-MINUS SIGN"/>  
-    <codePoint name="C14" unicode="U+00B0" unicodeName="DEGREE SIGN" htmlName="deg"/>  
-    <codePoint name="C16" unicode="U+0028" unicodeName="LEFT PARENTHESIS"/>  
-    <codePoint name="C17" unicode="U+0029" unicodeName="RIGHT PARENTHESIS"/>  
-    <codePoint name="C18" unicode="U+0028" unicodeName="LEFT PARENTHESIS"/> <!--  may be larger?? -->  
-    <codePoint name="C19" unicode="U+0029" unicodeName="RIGHT PARENTHESIS"/> <!--  may be larger?? -->    
-    <codePoint name="C22" unicode="U+00A8" unicodeName="MACRON" />  
-    <codePoint name="C23" unicode="U+030A" unicodeName="COMBINING RING ABOVE" />  
-    <codePoint name="C26" unicode="U+007B" unicodeName="LEFT CURLY BRACKET"/> 
-    <codePoint name="C27" unicode="U+007D" unicodeName="RIGHT CURLY BRACKET"/>  
-    <codePoint name="C138" unicode="U+002F" unicodeName="SOLIDUS" />  
-    <codePoint name="C190" unicode="U+00D7" unicodeName="MULTIPLICATION SIGN"/>  
-    <codePoint name="C210" unicode="U+00AE" unicodeName="REGISTERED SIGN"/> 
-    <codePoint name="C211" unicode="U+00A9" unicodeName="COPYRIGHT SIGN"/> 
-    <codePoint name="C223" unicode="U+00A9" unicodeName="COPYRIGHT SIGN"/> <!-- maybe sans serif variant? -->
+    <codePoint unicode="U+002D" name="C0" unicodeName="MINUS"/>  
+    <codePoint unicode="U+00D7" name="C2" unicodeName="MULTIPLICATION SIGN"/>  
+    <codePoint unicode="U+002A" name="C3" unicodeName="ASTERISK"/>  
+    <codePoint unicode="U+00B1" name="C6" unicodeName="PLUS-MINUS SIGN"/>  
+    <codePoint unicode="U+00B0" name="C14" unicodeName="DEGREE SIGN" htmlName="deg"/>  
+    <codePoint unicode="U+2022" name="C15" unicodeName="BULLET"/>  
+    <codePoint unicode="U+0028" name="C16" unicodeName="LEFT PARENTHESIS"/>  
+    <codePoint unicode="U+0029" name="C17" unicodeName="RIGHT PARENTHESIS"/>  
+    <codePoint unicode="U+0028" name="C18" unicodeName="LEFT PARENTHESIS"/> <!--  may be larger?? -->  
+    <codePoint unicode="U+0029" name="C19" unicodeName="RIGHT PARENTHESIS"/> <!--  may be larger?? -->    
+    <codePoint unicode="U+00A8" name="C22" unicodeName="MACRON" />  
+    <codePoint unicode="U+030A" name="C23" unicodeName="COMBINING RING ABOVE" />  
+    <codePoint unicode="U+007B" name="C26" unicodeName="LEFT CURLY BRACKET"/> 
+    <codePoint unicode="U+007D" name="C27" unicodeName="RIGHT CURLY BRACKET"/>  
+    <codePoint unicode="U+002F" name="C138" unicodeName="SOLIDUS" />  
+    <codePoint unicode="U+00D7" name="C190" unicodeName="MULTIPLICATION SIGN"/>  
+    <codePoint unicode="U+00AE" name="C210" unicodeName="REGISTERED SIGN"/> 
+    <codePoint unicode="U+00A9" name="C211" unicodeName="COPYRIGHT SIGN"/> 
+    <codePoint unicode="U+00A9" name="C223" unicodeName="COPYRIGHT SIGN"/> <!-- maybe sans serif variant? -->
     
 </codePointSet>
         

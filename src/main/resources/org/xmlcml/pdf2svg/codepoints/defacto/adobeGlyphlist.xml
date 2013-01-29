@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!-- NOTE: Surrogates are omitted, so only Unicode with single points -->
 <codePointSet name="Adobe Glyph List" encoding="adobeGlyphList" id="adobeGlyphList" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
   <!-- See http://partners.adobe.com/asn/developer/typeforum/unicodegn.html -->
@@ -1504,11 +1505,14 @@
   <codePoint unicode="U+05D3" name="dalet"/>
   <codePoint unicode="U+FB33" name="daletdagesh"/>
   <codePoint unicode="U+FB33" name="daletdageshhebrew"/>
+  <!-- 
   <codePoint unicode="U+05D3 05B2" name="dalethatafpatah"/>
   <codePoint unicode="U+05D3 05B2" name="dalethatafpatahhebrew"/>
   <codePoint unicode="U+05D3 05B1" name="dalethatafsegol"/>
   <codePoint unicode="U+05D3 05B1" name="dalethatafsegolhebrew"/>
+  -->
   <codePoint unicode="U+05D3" name="dalethebrew"/>
+<!--   
   <codePoint unicode="U+05D3 05B4" name="dalethiriq"/>
   <codePoint unicode="U+05D3 05B4" name="dalethiriqhebrew"/>
   <codePoint unicode="U+05D3 05B9" name="daletholam"/>
@@ -1525,6 +1529,7 @@
   <codePoint unicode="U+05D3 05B0" name="daletshevahebrew"/>
   <codePoint unicode="U+05D3 05B5" name="dalettsere"/>
   <codePoint unicode="U+05D3 05B5" name="dalettserehebrew"/>
+  -->
   <codePoint unicode="U+FEAA" name="dalfinalarabic"/>
   <codePoint unicode="U+064F" name="dammaarabic"/>
   <codePoint unicode="U+064F" name="dammalowarabic"/>
@@ -1841,10 +1846,12 @@
   <codePoint unicode="U+FB3A" name="finalkafdagesh"/>
   <codePoint unicode="U+FB3A" name="finalkafdageshhebrew"/>
   <codePoint unicode="U+05DA" name="finalkafhebrew"/>
+  <!-- 
   <codePoint unicode="U+05DA 05B8" name="finalkafqamats"/>
   <codePoint unicode="U+05DA 05B8" name="finalkafqamatshebrew"/>
   <codePoint unicode="U+05DA 05B0" name="finalkafsheva"/>
   <codePoint unicode="U+05DA 05B0" name="finalkafshevahebrew"/>
+  -->
   <codePoint unicode="U+05DD" name="finalmem"/>
   <codePoint unicode="U+05DD" name="finalmemhebrew"/>
   <codePoint unicode="U+05DF" name="finalnun"/>
@@ -2033,14 +2040,18 @@
   <codePoint unicode="U+FF8A" name="hakatakanahalfwidth"/>
   <codePoint unicode="U+0A4D" name="halantgurmukhi"/>
   <codePoint unicode="U+0621" name="hamzaarabic"/>
+  <!-- 
   <codePoint unicode="U+0621 064F" name="hamzadammaarabic"/>
   <codePoint unicode="U+0621 064C" name="hamzadammatanarabic"/>
   <codePoint unicode="U+0621 064E" name="hamzafathaarabic"/>
   <codePoint unicode="U+0621 064B" name="hamzafathatanarabic"/>
+  -->
   <codePoint unicode="U+0621" name="hamzalowarabic"/>
+<!-- 
   <codePoint unicode="U+0621 0650" name="hamzalowkasraarabic"/>
   <codePoint unicode="U+0621 064D" name="hamzalowkasratanarabic"/>
   <codePoint unicode="U+0621 0652" name="hamzasukunarabic"/>
+  -->
   <codePoint unicode="U+3164" name="hangulfiller"/>
   <codePoint unicode="U+044A" name="hardsigncyrillic"/>
   <codePoint unicode="U+21BC" name="harpoonleftbarbup"/>
@@ -2472,10 +2483,12 @@
   <codePoint unicode="U+FB3C" name="lameddagesh"/>
   <codePoint unicode="U+FB3C" name="lameddageshhebrew"/>
   <codePoint unicode="U+05DC" name="lamedhebrew"/>
+  <!-- 
   <codePoint unicode="U+05DC 05B9" name="lamedholam"/>
   <codePoint unicode="U+05DC 05B9 05BC" name="lamedholamdagesh"/>
   <codePoint unicode="U+05DC 05B9 05BC" name="lamedholamdageshhebrew"/>
   <codePoint unicode="U+05DC 05B9" name="lamedholamhebrew"/>
+  -->
   <codePoint unicode="U+FEDE" name="lamfinalarabic"/>
   <codePoint unicode="U+FCCA" name="lamhahinitialarabic"/>
   <codePoint unicode="U+FEDF" name="laminitialarabic"/>
@@ -2485,8 +2498,10 @@
   <codePoint unicode="U+FEE0" name="lammedialarabic"/>
   <codePoint unicode="U+FD88" name="lammeemhahinitialarabic"/>
   <codePoint unicode="U+FCCC" name="lammeeminitialarabic"/>
+  <!-- 
   <codePoint unicode="U+FEDF FEE4 FEA0" name="lammeemjeeminitialarabic"/>
   <codePoint unicode="U+FEDF FEE4 FEA8" name="lammeemkhahinitialarabic"/>
+-->
   <codePoint unicode="U+25EF" name="largecircle"/>
   <codePoint unicode="U+019A" name="lbar"/>
   <codePoint unicode="U+026C" name="lbelt"/>
@@ -2783,7 +2798,9 @@
   <codePoint unicode="U+FEE6" name="noonfinalarabic"/>
   <codePoint unicode="U+06BA" name="noonghunnaarabic"/>
   <codePoint unicode="U+FB9F" name="noonghunnafinalarabic"/>
+  <!-- 
   <codePoint unicode="U+FEE7 FEEC" name="noonhehinitialarabic"/>
+  -->
   <codePoint unicode="U+FEE7" name="nooninitialarabic"/>
   <codePoint unicode="U+FCD2" name="noonjeeminitialarabic"/>
   <codePoint unicode="U+FC4B" name="noonjeemisolatedarabic"/>
@@ -3155,11 +3172,14 @@
   <codePoint unicode="U+05E7" name="qof"/>
   <codePoint unicode="U+FB47" name="qofdagesh"/>
   <codePoint unicode="U+FB47" name="qofdageshhebrew"/>
+  <!-- 
   <codePoint unicode="U+05E7 05B2" name="qofhatafpatah"/>
   <codePoint unicode="U+05E7 05B2" name="qofhatafpatahhebrew"/>
   <codePoint unicode="U+05E7 05B1" name="qofhatafsegol"/>
   <codePoint unicode="U+05E7 05B1" name="qofhatafsegolhebrew"/>
+  -->
   <codePoint unicode="U+05E7" name="qofhebrew"/>
+  <!-- 
   <codePoint unicode="U+05E7 05B4" name="qofhiriq"/>
   <codePoint unicode="U+05E7 05B4" name="qofhiriqhebrew"/>
   <codePoint unicode="U+05E7 05B9" name="qofholam"/>
@@ -3176,6 +3196,7 @@
   <codePoint unicode="U+05E7 05B0" name="qofshevahebrew"/>
   <codePoint unicode="U+05E7 05B5" name="qoftsere"/>
   <codePoint unicode="U+05E7 05B5" name="qoftserehebrew"/>
+  -->
   <codePoint unicode="U+24AC" name="qparen"/>
   <codePoint unicode="U+2669" name="quarternote"/>
   <codePoint unicode="U+05BB" name="qubuts"/>
@@ -3249,16 +3270,21 @@
   <codePoint unicode="U+0580" name="reharmenian"/>
   <codePoint unicode="U+FEAE" name="rehfinalarabic"/>
   <codePoint unicode="U+308C" name="rehiragana"/>
+  <!-- 
   <codePoint unicode="U+0631 U+FEF3 U+FE8E U+0644" name="rehyehaleflamarabic"/>
+  -->
   <codePoint unicode="U+30EC" name="rekatakana"/>
   <codePoint unicode="U+FF9A" name="rekatakanahalfwidth"/>
   <codePoint unicode="U+05E8" name="resh"/>
   <codePoint unicode="U+FB48" name="reshdageshhebrew"/>
+  <!-- 
   <codePoint unicode="U+05E8 U+05B2" name="reshhatafpatah"/>
   <codePoint unicode="U+05E8 U+05B2" name="reshhatafpatahhebrew"/>
   <codePoint unicode="U+05E8 U+05B1" name="reshhatafsegol"/>
   <codePoint unicode="U+05E8 U+05B1" name="reshhatafsegolhebrew"/>
+  -->
   <codePoint unicode="U+05E8" name="reshhebrew"/>
+  <!-- 
   <codePoint unicode="U+05E8 U+05B4" name="reshhiriq"/>
   <codePoint unicode="U+05E8 U+05B4" name="reshhiriqhebrew"/>
   <codePoint unicode="U+05E8 U+05B9" name="reshholam"/>
@@ -3275,6 +3301,7 @@
   <codePoint unicode="U+05E8 U+05B0" name="reshshevahebrew"/>
   <codePoint unicode="U+05E8 U+05B5" name="reshtsere"/>
   <codePoint unicode="U+05E8 U+05B5" name="reshtserehebrew"/>
+  -->
   <codePoint unicode="U+223D" name="reversedtilde"/>
   <codePoint unicode="U+0597" name="reviahebrew"/>
   <codePoint unicode="U+0597" name="reviamugrashhebrew"/>
@@ -3473,7 +3500,9 @@
   <codePoint unicode="U+FC61" name="shaddadammaarabic"/>
   <codePoint unicode="U+FC5E" name="shaddadammatanarabic"/>
   <codePoint unicode="U+FC60" name="shaddafathaarabic"/>
+  <!-- 
   <codePoint unicode="U+0651 064B" name="shaddafathatanarabic"/>
+  -->
   <codePoint unicode="U+FC62" name="shaddakasraarabic"/>
   <codePoint unicode="U+FC5F" name="shaddakasratanarabic"/>
   <codePoint unicode="U+2592" name="shade"/>
@@ -3670,7 +3699,9 @@
   <codePoint unicode="U+FB7B" name="tchehfinalarabic"/>
   <codePoint unicode="U+FB7C" name="tchehinitialarabic"/>
   <codePoint unicode="U+FB7D" name="tchehmedialarabic"/>
+  <!-- 
   <codePoint unicode="U+FB7C FEE4" name="tchehmeeminitialarabic"/>
+  -->
   <codePoint unicode="U+24E3" name="tcircle"/>
   <codePoint unicode="U+1E71" name="tcircumflexbelow"/>
   <codePoint unicode="U+0163" name="tcommaaccent"/>

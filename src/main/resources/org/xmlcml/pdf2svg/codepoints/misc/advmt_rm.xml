@@ -19,6 +19,7 @@
 
     <codePointSet idRef="unicode" href="../unicode/unicode.xml"/>
     
+    <codePoint unicode="U+0393" name="C0" note="GREEK CAPITAL LETTER GAMMA"/>  
     <codePoint unicode="U+03A6" name="C8" note="GREEK CAPITAL LETTER PHI"/>  
     <codePoint unicode="U+00A8" name="C22" note="MACRON" />    
 </codePointSet>

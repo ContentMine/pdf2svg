@@ -166,8 +166,9 @@ public class LogAggregator {
 	public static void main(String[] args) throws IOException {
 		LogAggregator aggregator = new LogAggregator();
 //		aggregator.aggregateAllLogs("target/pdfsByJournal");
-		aggregator.aggregateAllLogs("target/minorJournals");
-		aggregator.writeLog(new File("target/pdfLog.xml"));
+//		aggregator.aggregateAllLogs("target/minorJournals");
+		aggregator.aggregateAllLogs("target/livingReviews");
+		aggregator.writeLog(new File("target/livingReviews-pdfLog.xml"));
 	}
 
 }

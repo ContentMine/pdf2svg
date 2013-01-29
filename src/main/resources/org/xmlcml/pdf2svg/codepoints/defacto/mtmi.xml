@@ -34,14 +34,18 @@ the charname appears to take precedence over the charval
 -->
 <codePointSet encoding="MTMI" id="mtmi" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
-    <codePoint unicode="U+0394" decimal="7"  note="GREEK CAPITAL LETTER DELTA"/>
+<!-- it is not clear whether "1" is alterantive or capital. -->
 
     <codePoint unicode="U+0393" name="Gamma1"  note="GREEK CAPITAL LETTER GAMMA"/>
     <codePoint unicode="U+0394" name="Delta1"  note="GREEK CAPITAL LETTER DELTA"/>
     <codePoint unicode="U+0394" name="delta1"  note="GREEK CAPITAL LETTER DELTA"/>
+        <codePoint unicode="U+0398" name="Theta1"  note="GREEK CAPITAL LETTER GAMMA"/>
+
     <codePoint unicode="U+03A3" name="Sigma1" note="GREEK CAPITAL LETTER SIGMA" />
     <codePoint unicode="U+2202" decimal="64" name="at"  note="partial derivative"/>
 
+    <codePoint unicode="U+1D4C1" name="lscript"  note="MATHEMATICAL SCRIPT SMALL L"/>
+    
     <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
 
 </codePointSet>

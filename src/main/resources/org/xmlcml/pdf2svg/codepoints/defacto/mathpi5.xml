@@ -17,8 +17,8 @@
 -->
 <codePointSet encoding="MathematicalPI" id="mathpi5" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
-    <codePoint name="H11601" unicode="U+007E" unicodeName="TILDE" />
-    <codePoint name="H33522" unicode="U+007E" unicodeName="TILDE" />
-    
+    <codePoint unicode="U+007E" unicodeName="TILDE" name="H11601"/>
+    <codePoint unicode="U+2207" unicodeName="NABLA" name="H17188"/>
+    <codePoint unicode="U+007E" unicodeName="TILDE" name="H33522"/>
 </codePointSet>
 		

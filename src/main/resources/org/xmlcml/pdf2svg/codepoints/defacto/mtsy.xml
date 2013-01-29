@@ -18,8 +18,9 @@
 -->
 <codePointSet encoding="MTSY" id="mtsy" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
-    <codePoint unicode="U+00D7" decimal="2"   name="multiply" note="multiply"/>
-    <codePoint unicode="U+002F" decimal="3"   name="negationslash" note="slash"/>
+    <codePoint unicode="U+002F"     name="negationslash" note="slash"/>
+
+    <codePointSet idRef="adobeGlyphList" href="../defacto/adobeGlyphList.xml"/> 
     
     <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
     

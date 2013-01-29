@@ -13,10 +13,17 @@ public class SamplesForTest {
 	
 	public static void main(String[] args) {
 		// Comment in/out what you want
+		// astrophysics
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/astrophys", "src/test/resources/astrophys");
+		// Law paper
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/gjoil", "src/test/resources/gjoil");
 		// Word thesis 1 document
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/word", "src/test/resources/word/harterchap7small.pdf");
 //		// encryption 1 article // this also has a stretched glyph //OK
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/ajc", "../pdfs/ajc/CH01182.pdf");
+		//living reviews in relativity
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/livingReviews", "src/test/resources/livingReviews");
+		
 //		// AJC corpus 52 sec
 //        new PDF2SVGConverter().run( "-logger", "-infofiles", "-logglyphs", "-outdir", "target/ajc/sample", "../pdfs/ajc/sample");
 //		// ?? 42 secs
@@ -25,6 +32,10 @@ public class SamplesForTest {
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/csiro/pick100", "../pdfs/csiro/pick100");
 //		// IUCR has symbol fonts MT_MI/MT_SY // OK
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/iucr", "../pdfs/iucr");
+		// MDPI 
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mdpi", "src/test/resources/mdpi");
+		// Springer
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/springer", "src/test/resources/springer");
 //		// CSIRO 
 //		new PDF2SVGConverter().run("-logger", "-outdir", "target/csiro/test", "../pdfs/csiro/test");
 //		// CSIRO AusSystBot26 // needs a few symbols doing // 180 secs
@@ -75,12 +86,12 @@ public class SamplesForTest {
 //		mainCJ();
 //		mainMZ();
 
-		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/abc", "../pdfs/minorJournals/abc");
-		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/def", "../pdfs/minorJournals/def");
-		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/ghijk", "../pdfs/minorJournals/ghijk");
-		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/lmnop", "../pdfs/minorJournals/lmnop");
-		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/rst", "../pdfs/minorJournals/rst");
-		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/uvwxyz", "../pdfs/minorJournals/uvwxyz");
+//		minorABC();
+//		minorDEF();
+//		minorGHIJK();
+//		minorLMNOP();
+//		minorRST();
+//		minorUVWXYZ();
 
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/plosone/", "../pdfs/plosone/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/taylorfrancis/", "../pdfs/taylorfrancis/");
@@ -92,6 +103,30 @@ public class SamplesForTest {
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/thesis/", "../pdfs/thesis/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/wiley/", "../pdfs/wiley/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/word/", "../pdfs/word/");
+	}
+
+	private static void minorUVWXYZ() {
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/uvwxyz", "../pdfs/minorJournals/uvwxyz");
+	}
+
+	private static void minorRST() {
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/rst", "../pdfs/minorJournals/rst");
+	}
+
+	private static void minorLMNOP() {
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/lmnop", "../pdfs/minorJournals/lmnop");
+	}
+
+	private static void minorGHIJK() {
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/ghijk", "../pdfs/minorJournals/ghijk");
+	}
+
+	private static void minorDEF() {
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/def", "../pdfs/minorJournals/def");
+	}
+
+	private static void minorABC() {
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/abc", "../pdfs/minorJournals/abc");
 	}
 
 	private static void mainMZ() {

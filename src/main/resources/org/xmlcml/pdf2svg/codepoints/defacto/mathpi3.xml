@@ -19,9 +19,20 @@
 
 	<codePoint unicode="U+003D" name="H11013" unicodeName="EQUALS"/> 
 	
+	<codePoint unicode="U+005B" name="H20900" unicodeName="LEFT SQUARE BRACKET"/> 
+	<codePoint unicode="U+005D" name="H20901" unicodeName="RIGHT SQUARE BRACKET"/> 
 	<codePoint unicode="U+003C" name="H20908" unicodeName="LESS-THAN SIGN"/> 
 	<codePoint unicode="U+003E" name="H20909" unicodeName="GREATER-THAN SIGN"/> 
 	
+        <codePoint unicode="U+007C" name="H20841" unicodeName="VERTICAL LINE"/> 
+        <codePoint unicode="U+222B" name="H20848" unicodeName="INTEGRAL"/> <!-- BOLD --> 
+        <codePoint unicode="U+0028" name="H20849" unicodeName="LEFT PARENTHESIS"/> <!-- BOLD --> 
+        <codePoint unicode="U+0029" name="H20850" unicodeName="RIGHT PARENTHESIS"/> <!-- BOLD --> 
+        <codePoint unicode="U+007B" name="H20853" note="LEFT CURLY BRACKET"/> 
+        <codePoint unicode="U+007D" name="H20854" note="RIGHT CURLY BRACKET"/> 
+        <codePoint unicode="U+03A3" name="H20858" note="GREEK CAPITAL LETTER SIGMA"/> 
+        <codePoint unicode="U+0028" name="H20873" note="LEFT PARENTHESIS"/> 
+        <codePoint unicode="U+0029" name="H20874" note="RIGHT PARENTHESIS"/> 
         <codePoint unicode="U+221A" name="H20881" unicodeName="SQUARE ROOT"/> 
         <codePoint unicode="U+2211" name="H20888" unicodeName="N-ARY SUMMATION"/> 
         	

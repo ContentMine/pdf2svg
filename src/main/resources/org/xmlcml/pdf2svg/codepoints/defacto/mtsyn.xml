@@ -40,6 +40,7 @@
 
     <codePoint unicode="U+00B1"               name="plusminus"  note="PLUS-MINUS SIGN" />
     <codePoint unicode="U+002F"               name="negationslash" note="SOLIDUS" />
+    <codePoint unicode="U+22A6"               name="turnstileleft" note="ASSERTION" />
     
 <!-- unicode --> 
     <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>
