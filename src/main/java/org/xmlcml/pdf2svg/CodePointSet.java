@@ -28,6 +28,7 @@ import nu.xom.Elements;
 import org.apache.log4j.Logger;
 import org.xmlcml.euclid.Util;
 import org.xmlcml.pdf2svg.util.PConstants;
+import org.xmlcml.pdf2svg.util.PDF2SVGUtil;
 
 /** local implementation of codePointSet
  * 
@@ -80,6 +81,7 @@ public class CodePointSet extends Element {
 	}
 
 	public static CodePointSet readCodePointSet(String codePointSetXmlResource) {
+		codePointSetXmlResource = PDF2SVGUtil.normalizeResource(codePointSetXmlResource);
 		CodePointSet codePointSet = new CodePointSet();
 		try {
 			Element codePointSetElement = new Builder().build(

@@ -15,6 +15,9 @@
  */
 package org.xmlcml.pdf2svg.util;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import nu.xom.Attribute;
 
 import org.apache.pdfbox.pdmodel.common.PDMatrix;
@@ -33,6 +36,8 @@ public class PDF2SVGUtil {
 	public static final String CHARACTER_NEW_CODE = "newCode";
 	public static final String FONT_ENCODING = "fontEnc";
 	public static final String LIGATURE = "ligature";
+	private static final String DOT = CMLConstants.S_PERIOD;
+	private static final String DOT_DOT = DOT+CMLConstants.S_PERIOD;
 	
 	public static void setSVGXAttribute(SVGElement svgElement, String attName, String value) {
 		if (attName != null && value != null) {
@@ -78,6 +83,44 @@ public class PDF2SVGUtil {
 		}
 		RealArray ra = new RealArray(dd);
 		return ra;
+	}
+
+	/** removes ./ and ../ from a resources name
+	 * e.g. a/../b => b
+	 * a/./b => a/b
+	 * a/b../../c/d => c/d
+	 * @param resource
+	 * @return
+	 */
+	public static String normalizeResource(String resource) {
+		resource = resource.trim();
+		String[] ss = resource.split(CMLConstants.S_SLASH);
+		List<String> sList = new ArrayList<String>();
+		for (int i = 0; i <ss.length; i++) {
+			if (ss[i].trim().length() == 0){
+				sList.add("");
+			} else if (ss[i].equals(DOT)){
+				continue;
+			} else if (ss[i].equals(DOT_DOT)) {
+				if (sList.size() == 0) {
+					throw new RuntimeException("Cannot start resource with ../ or unbalanced ../");
+				}
+				sList.remove(sList.size()-1);
+			} else {
+				sList.add(ss[i]);
+			}
+		}
+		StringBuilder sb = new StringBuilder();
+		for (int i = 0 ; i < sList.size(); i++) {
+			if (i > 0) {
+				sb.append(CMLConstants.S_SLASH);
+			}
+			sb.append(sList.get(i));
+		}
+		if (resource.endsWith(CMLConstants.S_SLASH)) {
+			sb.append(CMLConstants.S_SLASH);
+		}
+		return sb.toString();
 	}
 
 
