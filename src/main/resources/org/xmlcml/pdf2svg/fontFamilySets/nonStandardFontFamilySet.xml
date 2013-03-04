@@ -322,7 +322,7 @@ see also http://www.pctex.com/mtpro2.html (commercial sale)
 
 <!-- ====================== Other ==============================  -->
     <fontFamily name="AdvSPSASORT" symbol="true" 
-        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/advSPSASORT.xml"/>
+        codePointSet="org/xmlcml/pdf2svg/codepoints/misc/AdvSPSASORT.xml"/>
 
     
 <!-- ====================== Other ==============================  -->
