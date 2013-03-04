@@ -20,7 +20,7 @@
 
     <codePoint unicode="U+002F"     name="negationslash" note="slash"/>
 
-    <codePointSet idRef="adobeGlyphList" href="../defacto/adobeGlyphList.xml"/> 
+    <codePointSet idRef="adobeGlyphlist" href="../defacto/adobeGlyphlist.xml"/> 
     
     <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
     
