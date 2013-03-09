@@ -98,7 +98,7 @@ public class PDF2SVGUtil {
 		List<String> sList = new ArrayList<String>();
 		for (int i = 0; i <ss.length; i++) {
 			if (ss[i].trim().length() == 0){
-				sList.add("");
+//				sList.add("");
 			} else if (ss[i].equals(DOT)){
 				continue;
 			} else if (ss[i].equals(DOT_DOT)) {
@@ -120,7 +120,11 @@ public class PDF2SVGUtil {
 		if (resource.endsWith(CMLConstants.S_SLASH)) {
 			sb.append(CMLConstants.S_SLASH);
 		}
-		return sb.toString();
+		String sss = sb.toString();
+		if (sss.contains("//")) {
+			throw new RuntimeException("BUG //");
+		}
+		return sss;
 	}
 
 
