@@ -1,6 +1,7 @@
 package org.xmlcml.pdf2svg.log;
 
 import java.io.File;
+
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.HashSet;
@@ -10,7 +11,7 @@ import nu.xom.Attribute;
 import nu.xom.Element;
 import nu.xom.Nodes;
 
-import org.xmlcml.cml.base.CMLUtil;
+import org.xmlcml.xml.XMLUtil;
 
 public class LogAggregator {
 
@@ -148,7 +149,7 @@ public class LogAggregator {
 	 */
 	private void addLogFile(File file) {
 		System.err.println(file.getAbsolutePath());
-		Element logElement = CMLUtil.parseQuietlyToDocument(file).getRootElement();
+		Element logElement = XMLUtil.parseQuietlyToDocument(file).getRootElement();
 		// add children with characters
 		Nodes nodes = logElement.query(".//pdf[page[count(*)>0]]");
 		for (int i = 0; i < nodes.size(); i++) {
@@ -160,7 +161,7 @@ public class LogAggregator {
 	
 	private void writeLog(File file) throws IOException {
 		FileOutputStream fos = new FileOutputStream(file);
-		CMLUtil.debug(pdfLogRoot, fos, 2);
+		XMLUtil.debug(pdfLogRoot, fos, 2);
 	}
 	
 	public static void main(String[] args) throws IOException {

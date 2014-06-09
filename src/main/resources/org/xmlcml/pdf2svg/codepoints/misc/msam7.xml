@@ -15,9 +15,8 @@
     limitations under the License.
 
 -->
-<codePointSet encoding="MSAM7" id="msam6" resource="org/xmlcml/pdf2svg/codepoints/misc">
-	<codePoint unicode="U+2A7E" name="greaterorequalslant" note="GREATER-THAN OR SLANTED EQUAL TO"/> 
+<codePointSet encoding="MSAM7" id="msam7" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
-	<codePoint unicode="U+25A0" name="squaresolid" note="BLACK SQUARE" /> 
+	<codePoint unicode="U+2A7E" name="greaterorequalslant" note="GREATER-THAN OR SLANTED EQUAL TO"/> 
 	
 </codePointSet>

@@ -19,10 +19,11 @@
 <codePointSet encoding="MTSY" id="mtsy" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
     <codePoint unicode="U+002F"     name="negationslash" note="slash"/>
+    <codePoint unicode="U+25B3"     name="triangle" note="WHITE UPWARDS-POINTING TRIANGLE" />
 
-    <codePointSet idRef="adobeGlyphlist" href="../defacto/adobeGlyphlist.xml"/> 
+    <codePointSet idRef="adobeGlyphList" href="org/xmlcml/pdf2svg/codepoints/defacto/adobeGlyphlist.xml"/> 
     
-    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
+    <codePointSet idRef="unicode" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode.xml"/> 
     
     
 </codePointSet>

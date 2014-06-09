@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- NOTE: Surrogates are omitted, so only Unicode with single points -->
-<codePointSet name="Adobe Glyph List" encoding="adobeGlyphlist" id="adobeGlyphlist" resource="org/xmlcml/pdf2svg/codepoints/defacto">
+<codePointSet name="Adobe Glyph List" encoding="adobeGlyphList" id="adobeGlyphList" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
   <!-- See http://partners.adobe.com/asn/developer/typeforum/unicodegn.html -->
   

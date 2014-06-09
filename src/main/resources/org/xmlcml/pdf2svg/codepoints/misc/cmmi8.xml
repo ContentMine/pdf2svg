@@ -17,6 +17,9 @@
 -->
 <codePointSet encoding="CMM" id="cmmi8" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
+    <codePointSet idRef="basicLatin" href="org/xmlcml/pdf2svg/codepoints/unicode/basicLatin.xml"/>
+    <codePointSet idRef="greekByName1" href="org/xmlcml/pdf2svg/codepoints/defacto/greekByName1.xml"/>
+
     <codePoint unicode="U+2113" name="lscript" note="SCRIPT SMALL L" />
 	
 </codePointSet>

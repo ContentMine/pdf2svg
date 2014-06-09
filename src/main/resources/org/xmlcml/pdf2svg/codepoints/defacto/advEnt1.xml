@@ -17,7 +17,7 @@
 -->
 <codePointSet encoding="AdvEnt1" id="advEnt1" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 
-    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/>
+    <codePointSet idRef="unicode" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode.xml"/>
     
     <codePoint unicode="U+21C4" decimal="34" note="RIGHTWARDS ARROW OVER LEFTWARDS ARROW"/>
     <codePoint unicode="U+2192" decimal="45" note="RIGHTWARDS ARROW"/>

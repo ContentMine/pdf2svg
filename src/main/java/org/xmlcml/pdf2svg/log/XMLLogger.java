@@ -136,9 +136,9 @@ public class XMLLogger {
 		font.addAttribute(new Attribute(BASEFONT, baseFont == null ? NULL
 				: baseFont));
 
-		addAttribute(font, BOLD, amiFont.isBold());		
+		addAttribute(font, BOLD, amiFont.isForceBold());		
 		addAttribute(font, ITALIC, amiFont.isItalic());
-		addAttribute(font, SYMBOL, amiFont.isSymbol());
+		addAttribute(font, SYMBOL, amiFont.isSymbolic());
 
 		fontlist.appendChild(font);
 	}

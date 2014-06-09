@@ -21,7 +21,6 @@ public class PConstants {
 	public static final String PDF2SVG_ROOT = "org/xmlcml/pdf2svg";
 	
 	// suffixes
-	public static final String NEXML = ".nexml";
 	public static final String PDF = ".pdf";
 	public static final String SVG = ".svg";
 	public static final String XML = ".xml";

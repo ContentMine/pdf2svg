@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<codePointSet name="Additional Glyph List" id="adobeGlyphlist" encoding="adobeGlyphlist" resource="org/xmlcml/pdf2svg/codepoints/defacto">
+<codePointSet name="Additional Glyph List" id="adobeGlyphList" encoding="adobeGlyphList" resource="org/xmlcml/pdf2svg/codepoints/defacto">
 <!--
 #
 # Licensed to the Apache Software Foundation (ASF) under one or more

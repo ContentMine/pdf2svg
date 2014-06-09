@@ -27,7 +27,7 @@
     <codePoint unicode="U+00B7" name="AE" decimal="187" note="MIDDLE DOT"/> 
 
 <!--
-    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
+    <codePointSet idRef="unicode" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode.xml"/> 
 -->
 
 </codePointSet>

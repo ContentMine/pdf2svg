@@ -41,8 +41,8 @@
     
     <codePoint unicode="U+00A8" decimal="8364" note="DIAERESIS" />  
     
-    <codePointSet idRef="basicLatin" href="../unicode/basicLatin.xml"/>
-    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>
+    <codePointSet idRef="basicLatin" href="org/xmlcml/pdf2svg/codepoints/unicode/basicLatin.xml"/>
+    <codePointSet idRef="unicode256" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode256.xml"/>
 
 </codePointSet>
 		

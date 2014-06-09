@@ -1,10 +1,12 @@
 package org.xmlcml.pdf2svg.codepoints.defacto;
 
+import java.io.File;
+
 import junit.framework.Assert;
 
 import org.junit.Test;
-import org.xmlcml.pdf2svg.CodePointSet;
-import org.xmlcml.pdf2svg.codepoints.Fixtures;
+import org.xmlcml.font.CodePointSet;
+import org.xmlcml.pdf2svg.Fixtures;
 
 /** tests contents of codePointSet
  * 
@@ -13,12 +15,17 @@ import org.xmlcml.pdf2svg.codepoints.Fixtures;
  */
 public class MathPi1Test {
 
-	private static final String DEFACTO_DIR = Fixtures.CODEPOINTS_DIR+"defacto/";
+//	private static final File CODEPOINTS_DIR = new File("src/main/resources/org/xmlcml/pdf2svg/codepoints/");
+//	private static final File DEFACTO_DIR = new File(CODEPOINTS_DIR, "defacto/");
 	private static final String MATHPI1_XML = "mathpi1.xml";
 
 	@Test
 	public void testReadCodePointSet() {
-		CodePointSet codePointSet = CodePointSet.readCodePointSet(DEFACTO_DIR+MATHPI1_XML);
+//		Assert.assertTrue("exists", CODEPOINTS_DIR.exists());
+//		Assert.assertTrue("exists", DEFACTO_DIR.exists());
+//		File mathpi = new File(DEFACTO_DIR, MATHPI1_XML);
+//		Assert.assertTrue("mathpi", mathpi.exists());
+		CodePointSet codePointSet = CodePointSet.readCodePointSet("org/xmlcml/pdf2svg/codepoints/defacto/mathpi1.xml");
 		Assert.assertNotNull(MATHPI1_XML, codePointSet);
 		Assert.assertTrue(MATHPI1_XML+" "+codePointSet.size(), codePointSet.size() > 10 && codePointSet.size() < 300);
 	}

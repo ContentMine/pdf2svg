@@ -19,12 +19,12 @@
 
 <!-- seems to be a combination of (?all) mathpi -->
 
-    <codePointSet idRef="mathpi1" href="./mathpi1.xml"/>
-    <codePointSet idRef="mathpi2" href="./mathpi2.xml"/>
-    <codePointSet idRef="mathpi3" href="./mathpi3.xml"/>
-    <codePointSet idRef="mathpi4" href="./mathpi4.xml"/>
-    <codePointSet idRef="mathpi5" href="./mathpi5.xml"/>
-    <codePointSet idRef="mathpi6" href="./mathpi6.xml"/>
+    <codePointSet idRef="mathpi1" href="org/xmlcml/pdf2svg/codepoints/defacto/mathpi1.xml"/>
+    <codePointSet idRef="mathpi2" href="org/xmlcml/pdf2svg/codepoints/defacto/mathpi2.xml"/>
+    <codePointSet idRef="mathpi3" href="org/xmlcml/pdf2svg/codepoints/defacto/mathpi3.xml"/>
+    <codePointSet idRef="mathpi4" href="org/xmlcml/pdf2svg/codepoints/defacto/mathpi4.xml"/>
+    <codePointSet idRef="mathpi5" href="org/xmlcml/pdf2svg/codepoints/defacto/mathpi5.xml"/>
+    <codePointSet idRef="mathpi6" href="org/xmlcml/pdf2svg/codepoints/defacto/mathpi6.xml"/>
     	
 </codePointSet>
 		

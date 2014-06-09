@@ -23,8 +23,6 @@ import java.util.List;
 import nu.xom.Attribute;
 
 import org.apache.log4j.Logger;
-import org.xmlcml.cml.base.CMLConstants;
-import org.xmlcml.cml.base.CMLUtil;
 import org.xmlcml.euclid.Util;
 import org.xmlcml.html.HtmlA;
 import org.xmlcml.html.HtmlFrame;
@@ -32,6 +30,8 @@ import org.xmlcml.html.HtmlFrameset;
 import org.xmlcml.html.HtmlHtml;
 import org.xmlcml.html.HtmlLi;
 import org.xmlcml.html.HtmlUl;
+import org.xmlcml.xml.XMLConstants;
+import org.xmlcml.xml.XMLUtil;
 
 
 public class MenuSystem {
@@ -78,7 +78,7 @@ public class MenuSystem {
 		HtmlHtml html = new HtmlHtml();
 		try {
 			File displayFile = new File(outdir, DISPLAY_HTML);
-			CMLUtil.debug(html, new FileOutputStream(displayFile), 1);
+			XMLUtil.debug(html, new FileOutputStream(displayFile), 1);
 		} catch (IOException e) {
 			throw new RuntimeException("Cannot write file: "+DISPLAY_HTML, e);
 		}
@@ -100,7 +100,7 @@ public class MenuSystem {
 		frameset.appendChild(displayFrame);
 		try {
 			File indexFile = new File(outdir, INDEX_HTML);
-			CMLUtil.debug(html, new FileOutputStream(indexFile), 1);
+			XMLUtil.debug(html, new FileOutputStream(indexFile), 1);
 		} catch (IOException e) {
 			throw new RuntimeException("Cannot write file: ", e);
 		}
@@ -123,7 +123,7 @@ public class MenuSystem {
 		}
 		try {
 			File menuFile = new File(outdir, MENU_HTML);
-			CMLUtil.debug(html1, new FileOutputStream(menuFile), 1);
+			XMLUtil.debug(html1, new FileOutputStream(menuFile), 1);
 		} catch (IOException e) {
 			throw new RuntimeException("Cannot write file: ", e);
 		}
@@ -144,7 +144,7 @@ public class MenuSystem {
 		HtmlA a = new HtmlA();
 		li.appendChild(a);
 		File file = new File(filename);
-		String relativeName = Util.getRelativeFilename(relativeDir, new File(filename), CMLConstants.S_SLASH);
+		String relativeName = Util.getRelativeFilename(relativeDir, new File(filename), XMLConstants.S_SLASH);
 		a.addAttribute(new Attribute(target, display));
 		a.setHref(relativeName);
 		String name = file.getName();

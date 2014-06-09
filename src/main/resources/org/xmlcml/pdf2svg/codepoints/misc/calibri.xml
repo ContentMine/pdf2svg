@@ -19,6 +19,6 @@
      the gdd code may be meaningless; probably is -->
 
 <codePointSet encoding="Calibri" id="calibri" resource="org/xmlcml/pdf2svg/codepoints/misc">
-   <codePointSet idRef="unicode" href="../unicode/unicode.xml"/>
+   <codePointSet idRef="unicode" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode.xml"/>
 
 </codePointSet>

@@ -28,13 +28,12 @@
     <codePoint unicode="U+0037" unicodeName="DIGIT SEVEN" name="seven"/>
     <codePoint unicode="U+0038" unicodeName="DIGIT EIGHT" name="eight"/>
     <codePoint unicode="U+0039" unicodeName="DIGIT NINE" name="nine"/>
-    <codePoint unicode="U+003A" unicodeName="COLON" name="colon"/>
+    <codePoint unicode="U+003A" unicodeName="COLON"      name="colon"/>
     <codePoint unicode="U+003B" unicodeName="SEMICOLON" name="semicolon"/>
     <codePoint unicode="U+003C" unicodeName="LESS-THAN SIGN" name="less"/>
     <codePoint unicode="U+003D" unicodeName="EQUALS SIGN" name="equal"/>
     <codePoint unicode="U+003E" unicodeName="GREATER-THAN SIGN" name="greater"/>
     <codePoint unicode="U+003F" unicodeName="QUESTION MARK" name="question"/>
-    
     <codePoint unicode="U+0040" unicodeName="AT SIGN" name="at"/>
     <codePoint unicode="U+0041" unicodeName="LATIN CAPITAL LETTER A" name="A"/>
     <codePoint unicode="U+0042" unicodeName="LATIN CAPITAL LETTER B" name="B"/>
@@ -67,7 +66,6 @@
     <codePoint unicode="U+005D" unicodeName="RIGHT SQUARE BRACKET" name="bracketright"/>
     <codePoint unicode="U+005E" unicodeName="CIRCUMFLEX ACCENT" name="asciicircum"/>
     <codePoint unicode="U+005F" unicodeName="LOW LINE" name="underscore"/>
-
     <codePoint unicode="U+0060" unicodeName="GRAVE ACCENT" name="grave"/>
     <codePoint unicode="U+0061" unicodeName="LATIN SMALL LETTER A" name="a"/>
     <codePoint unicode="U+0062" unicodeName="LATIN SMALL LETTER B" name="b"/>
@@ -95,7 +93,6 @@
     <codePoint unicode="U+0078" unicodeName="LATIN SMALL LETTER X" name="x"/>
     <codePoint unicode="U+0079" unicodeName="LATIN SMALL LETTER Y" name="y"/>
     <codePoint unicode="U+007A" unicodeName="LATIN SMALL LETTER Z" name="z"/>
-    
     <codePoint unicode="U+007B" unicodeName="LEFT CURLY BRACKET" name="braceleft"/>
     <codePoint unicode="U+007C" unicodeName="VERTICAL LINE" name="bar"/>
     <codePoint unicode="U+007D" unicodeName="RIGHT CURLY BRACKET" name="braceright"/>

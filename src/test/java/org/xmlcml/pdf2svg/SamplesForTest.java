@@ -11,7 +11,15 @@ import org.junit.Test;
  */
 public class SamplesForTest {
 	
-	public static void main(String[] args) {
+	@Test
+	@Ignore
+	public void main() {
+		// columbia
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/columbia", "../pdfs/columbia");
+		// NICE
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/nice1", "src/test/resources/nice1");
+		// national occ standards
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/nos", "src/test/resources/nos");
 		// Comment in/out what you want
 		// astrophysics
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/astrophys", "src/test/resources/astrophys");
@@ -22,7 +30,7 @@ public class SamplesForTest {
 //		// encryption 1 article // this also has a stretched glyph //OK
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/ajc", "../pdfs/ajc/CH01182.pdf");
 		//living reviews in relativity
-		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/livingReviews", "src/test/resources/livingReviews");
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/livingReviews", "src/test/resources/livingReviews");
 		
 //		// AJC corpus 52 sec
 //        new PDF2SVGConverter().run( "-logger", "-infofiles", "-logglyphs", "-outdir", "target/ajc/sample", "../pdfs/ajc/sample");
@@ -34,6 +42,8 @@ public class SamplesForTest {
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/iucr", "../pdfs/iucr");
 		// MDPI 
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mdpi", "src/test/resources/mdpi");
+		// Packed PDFs
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/packed", "../pdfs/packed");
 		// Springer
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/springer", "src/test/resources/springer");
 //		// CSIRO 
@@ -72,7 +82,9 @@ public class SamplesForTest {
 		// 8
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/csiro/", "../pdfs/csiro/");
 		// 3
-//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/e/", "../pdfs/e/");
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/e/", "../pdfs/e/"
+//				,"-debugFontName", "GGLKDA+AdvOTb92eb7df.I"
+//				);
 		// fontType0 problems...
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/jb/", "../pdfs/jb/");
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/misc/", "../pdfs/misc/");
@@ -80,6 +92,10 @@ public class SamplesForTest {
 		// OK
 		
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/test", "../pdfs/test");
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/test", "../pdfs/peerj/30.pdf",
+//				"-debugFontName" , "MCHWMU+CMTT10");
+//		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/test", "../pdfs/peerj/36.pdf", 
+//				"-debugFontName", "RNMPIC+Dingbats");
 
 		
 //		mainAB();
@@ -105,31 +121,40 @@ public class SamplesForTest {
 //		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/word/", "../pdfs/word/");
 	}
 
-	private static void minorUVWXYZ() {
+	@Test
+	@Ignore
+	public void minorUVWXYZ() {
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/uvwxyz", "../pdfs/minorJournals/uvwxyz");
 	}
-
-	private static void minorRST() {
+	@Test
+	@Ignore
+	public void minorRST() {
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/rst", "../pdfs/minorJournals/rst");
 	}
-
-	private static void minorLMNOP() {
+	@Test
+	@Ignore
+	public void minorLMNOP() {
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/lmnop", "../pdfs/minorJournals/lmnop");
 	}
-
-	private static void minorGHIJK() {
+	@Test
+	@Ignore
+	public void minorGHIJK() {
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/ghijk", "../pdfs/minorJournals/ghijk");
 	}
-
-	private static void minorDEF() {
+	@Test
+	@Ignore
+	public void minorDEF() {
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/def", "../pdfs/minorJournals/def");
 	}
-
-	private static void minorABC() {
+	@Test
+	@Ignore
+	public void minorABC() {
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/minorJournals/abc", "../pdfs/minorJournals/abc");
 	}
-
-	private static void mainMZ() {
+	
+	@Test
+	@Ignore
+	public void mainMZ() {
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/MolecularBiologyEvolution", "../pdfs/mainJournals/MolecularBiologyEvolution");
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Nature", "../pdfs/mainJournals/Nature");
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Naturwissenschaften", "../pdfs/mainJournals/Naturwissenschaften");
@@ -150,7 +175,9 @@ public class SamplesForTest {
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Zootaxa", "../pdfs/mainJournals/Zootaxa");
 	}
 
-	private static void mainAB() {
+	@Test
+	@Ignore
+	public void mainAB() {
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/ActaPalaeontologicaPolonica", "../pdfs/mainJournals/ActaPalaeontologicaPolonica");
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/ActaZoologica", "../pdfs/mainJournals/ActaZoologica");
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/AmericanJournalBotany", "../pdfs/mainJournals/AmericanJournalBotany");
@@ -168,8 +195,10 @@ public class SamplesForTest {
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/BMCBioinformatics", "../pdfs/mainJournals/BMCBioinformatics");
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/BulletinAmericanMuseumNaturalHistory", "../pdfs/mainJournals/BulletinAmericanMuseumNaturalHistory");
 	}
-
-	private static void mainCJ() {
+	
+	@Test
+	@Ignore
+	public void mainCJ() {
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/CanadianJournalEarthSciences", "../pdfs/mainJournals/CanadianJournalEarthSciences");
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Cladistics", "../pdfs/mainJournals/Cladistics");
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/mainJournals/Copeia", "../pdfs/mainJournals/Copeia");

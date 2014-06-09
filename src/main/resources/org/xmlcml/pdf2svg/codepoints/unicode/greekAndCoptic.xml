@@ -35,8 +35,8 @@
     <codePoint unicode="U+03B9" unicodeName="GREEK SMALL LETTER IOTA" name="iota"/>
     <codePoint unicode="U+03BA" unicodeName="GREEK SMALL LETTER KAPPA" name="kappa"/>
     <codePoint unicode="U+03BB" unicodeName="GREEK SMALL LETTER LAMBDA" name="lambda"/>
-    <codePoint unicode="U+03BC" unicodeName="GREEK SMALL LETTER MU" name="mu"/>
-    <codePoint unicode="U+03BD" unicodeName="GREEK SMALL LETTER NU" name="nu"/>
+    <codePoint unicode="U+03BC" unicodeName="GREEK SMALL LETTER MU" name="mu" decimal="956"/>
+    <codePoint unicode="U+03BD" unicodeName="GREEK SMALL LETTER NU" name="nu" decimal="957"/>
     <codePoint unicode="U+03BE" unicodeName="GREEK SMALL LETTER XI" name="xi"/>
     <codePoint unicode="U+03BF" unicodeName="GREEK SMALL LETTER OMICRON" name="omicron"/>
     <codePoint unicode="U+03C0" unicodeName="GREEK SMALL LETTER PI" name="pi"/>

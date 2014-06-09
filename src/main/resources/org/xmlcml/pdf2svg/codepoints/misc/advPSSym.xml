@@ -33,6 +33,6 @@
     <codePoint unicode="U+2038" name="C217" note="CARET"/> 
     <codePoint unicode="U+2122" name="C228" note="TRADE MARK SIGN"/> 
 
-    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/> 
+    <codePointSet idRef="unicode256" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode256.xml"/> 
     
 </codePointSet>

@@ -20,6 +20,6 @@
 	<codePoint name="harpoonleftright" unicode="U+21CC" note="RIGHTWARDS HARPOON OVER LEFTWARDS HARPOON"/> 
 	
 	<!-- unicode --> 
-    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>
+    <codePointSet idRef="unicode256" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode256.xml"/>
 	
 </codePointSet>

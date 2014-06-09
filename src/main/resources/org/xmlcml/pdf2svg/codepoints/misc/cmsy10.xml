@@ -17,6 +17,7 @@
 -->
 <codePointSet encoding="CMM" id="cmsy10" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
+    <codePoint unicode="U+226A" name="lessmuch"                   note="MUCH LESS-THAN" />
     <codePoint unicode="U+226B" name="greatermuch"   decimal="29" note="MUCH GREATER-THAN" />
     <codePoint unicode="U+002F" name="negationslash" decimal="54" note="SOLIDUS" />
     <codePoint unicode="U+007B" name="paragraph"     decimal="123" note="LEFT CURLY BRACKET" />
@@ -26,7 +27,7 @@
 	<codePoint unicode="U+00B1" name=".notdef" note="PLUS-MINUS SIGN"/>
 	
 	<!-- mathScript --> 
-    <codePointSet idRef="mathBoldScript" href="../misc/mathBoldScript.xml"/>
+    <codePointSet idRef="mathBoldScript" href="org/xmlcml/pdf2svg/codepoints/misc/mathBoldScript.xml"/>
 	
 	<!-- unicode broken? 8729 8733 fails; there may be two overlapping fonts :-( -->
 	
@@ -55,6 +56,6 @@
     <codePoint unicode="U+0394" name="unionsq"  note="GREEK CAPITAL LETTER DELTA" /> <!--might be an operator -->
     
 <!-- 
-    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>	
+    <codePointSet idRef="unicode256" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode256.xml"/>	
     -->
 </codePointSet>

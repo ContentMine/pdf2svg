@@ -20,6 +20,8 @@ import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -27,6 +29,7 @@ import java.util.Map;
 import javax.print.attribute.standard.PageRanges;
 
 import nu.xom.Document;
+import nu.xom.Serializer;
 
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.exceptions.CryptographyException;
@@ -34,13 +37,16 @@ import org.apache.pdfbox.exceptions.InvalidPasswordException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.util.PDFStreamEngine;
+import org.apache.pdfbox.util.operator.SetWordSpacing;
+import org.xmlcml.font.CodePointSet;
+import org.xmlcml.font.FontFamilySet;
+import org.xmlcml.font.NonStandardFontManager;
 import org.xmlcml.graphics.svg.SVGSVG;
 import org.xmlcml.pdf2svg.log.XMLLogger;
 import org.xmlcml.pdf2svg.util.MenuSystem;
 
 /**
- * Simple app to read PDF documents ... based on ... * PDFReader.java
- * 
+ * Simple app to read PDF documents based on PDFReader.java
  */
 public class PDF2SVGConverter extends PDFStreamEngine {
 
@@ -53,20 +59,25 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	@SuppressWarnings("unused")
 	private static final long serialVersionUID = 1L;
 
-	public static final String PASSWORD = "-password";
-	public static final String NONSEQ = "-nonseq";
-	public static final String PAGES = "-pages";
-	public static final String PUB = "-pub";
-	public static final String OUTDIR = "-outdir";
-	public static final String MKDIR = "-mkdir";
-	public static final String NO_SVG = "-nosvg";
+	public static final String DEBUG_CHAR_CODE = "-debugCharCode";
+	public static final String DEBUG_CHAR_NAME = "-debugCharName";
+	public static final String DEBUG_FONT_NAME = "-debugFontName";
+	public static final String EXITONERR = "-exitonerr";
 	public static final String INFO_FILES = "-infofiles";
 	public static final String LOGGER = "-logger";
 	public static final String LOGFILE = "-logfile";
 	public static final String LOGMORE = "-logmore";
 	public static final String LOGGLYPHS = "-logglyphs";
-	public static final String EXITONERR = "-exitonerr";
+	public static final String MKDIR = "-mkdir";
+	public static final String NO_SVG = "-nosvg";
+	public static final String NONSEQ = "-nonseq";
+	public static final String OUTDIR = "-outdir";
+	public static final String PAGES = "-pages";
+	public static final String PASSWORD = "-password";
+	public static final String PUB = "-pub";
+	public static final String STORE_SVG = "-storesvg";
 
+	public static final String HTTP = "http";
 	private static final int DEFAULT_MAX_PAGE = 200;
 
 	private String PDFpassword = "";
@@ -74,26 +85,24 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private String outputDirectory = ".";
 	private boolean basenameOutdir = false;
 	private PageRanges pageRanges = null;
-	private Publisher publisher = null;
 
 	private PDDocument document;
 	private List<SVGSVG> svgPageList;
 	private boolean fixFont = true;
 	
-	private AMIFontManager amiFontManager;
+	private NonStandardFontManager amiFontManager;
 	private Map<String, AMIFont> amiFontMap;
 	CodePointSet knownCodePointSet;
 	CodePointSet newCodePointSet;
-	private File outdir;
+	File outdir;
 	private int iarg;
-	private String publisherSetXmlResource = PublisherSet.PUBLISHER_SET_XML;
-	private PublisherSet publisherSet;
 	
 	Double pageHeight = _DEFAULT_PAGE_HEIGHT;
 	Double pageWidth = _DEFAULT_PAGE_WIDTH;
 	private PDFPage2SVGConverter page2svgConverter;
 	private SVGSVG currentSVGPage;
 	public boolean writeFile = true;
+	public boolean storeSVG = true;
 	private boolean writeInfoFiles = false;
 	private boolean exitOnError = false;
 	
@@ -106,6 +115,20 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	public boolean xmlLoggerLogMore = false;
 
 	private int maxPage = DEFAULT_MAX_PAGE;
+
+	public String debugCharname = null;
+	public Integer debugCharCode = null;
+	public String debugFontName = null;
+
+	private List<File> outfileList;
+	private List<SVGSVG> svgList;
+	private List<PDPage> pdPages;
+
+	String inputBasename;
+	int pageNumber;
+	int imageNumber;
+
+	public int maxInlineImageSize = 100; // size in pixels - arbitrary 
 
 	public int getMaxPage() {
 		return maxPage;
@@ -126,52 +149,76 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 						+ "  %s <dirname>     Location to write output SVG pages (default '.')%n"
 						+ "  %s                Create dir in outdir using PDF basename and set as outdir for this PDF%n"
 						+ "  %s                Don't write SVG files%n"
+						+ "  %s                Store SVG%n"
 						+ "  %s            Write info files%n"
 						+ "  %s               Use XML logger to record unknown characters/fonts/etc%n"
 						+ "  %s <filename>   Write the XML Logger output into 'filename' (default 'pdfLog.xml')%n"
 						+ "  %s              log lots more characters (could produce a VERY big log)%n"
 						+ "  %s            Attempt to include char glyphs as svg paths in the XML logger%n"
 						+ "  %s            exit on PDF parse error (otherwise continue to next pdf)%n"
+						+ "  %s            enter debug loop (with charCode)%n"
+						+ "  %s            enter debug loop (with charName)%n"
+						+ "  %s            enter debug loop (with fontName)%n"
 						+ "  <input-file(s)>       The PDF document(s) to be loaded%n%n",
-						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, MKDIR, NO_SVG,
+						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, MKDIR, NO_SVG, STORE_SVG,
 						INFO_FILES, LOGGER, LOGFILE, LOGMORE, LOGGLYPHS,
 						EXITONERR, PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, MKDIR,
 						NO_SVG, INFO_FILES, LOGGER, LOGFILE, LOGMORE,
-						LOGGLYPHS, EXITONERR);
+						LOGGLYPHS, EXITONERR, DEBUG_CHAR_CODE, DEBUG_CHAR_NAME, DEBUG_FONT_NAME);
 	}
 
-	private void openPDFFile(File file) throws Exception {
+	private void openPDFURL(String urlString) throws Exception {
+		URL url = new URL(urlString);
+		InputStream is = url.openStream();
+		page2svgConverter = new PDFPage2SVGConverter();
+		LOG.trace("URL " + urlString);
+		readDocument(is);
+		openAndProcess((File) null, url);
+	}
 
+	public void openPDFFile(File file) throws Exception {
 		svgPageList = null;
 		page2svgConverter = new PDFPage2SVGConverter();
-		LOG.debug("PDF "+ file.getCanonicalPath());
+		LOG.trace("PDF " + file.getCanonicalPath());
 		readDocument(file, useNonSeqParser, PDFpassword);
 
-		@SuppressWarnings("unchecked")
-		List<PDPage> pages = document.getDocumentCatalog().getAllPages();
+		openAndProcess(file, (URL) null);
 
-		PageRanges pr = pageRanges;
-		if (pr == null) {
-			pr = new PageRanges(String.format("1-%d", pages.size()));
-		}
+		document.close();
+	}
+
+	private void openAndProcess(File inputFile, URL url) {
+		pdPages = (List<PDPage>) document.getDocumentCatalog().getAllPages();
+
+		pageRanges = new PageRanges(String.format("1-%d", pdPages.size()));
 
 		if (useXMLLogger) {
-			xmlLogger.newPDFFile(file.getAbsolutePath(), pages.size());
+			xmlLogger.newPDFFile(inputFile.getAbsolutePath(), pdPages.size());
 		}
 
-		System.out.print(" .. pages "+pr.toString()+" ("+pages.size()+") "); 
+		LOG.debug(" .. pages "+pageRanges.toString()+" ("+pdPages.size()+") "); 
 
-		String basename = file.getName().toLowerCase();
-		if (basename.endsWith(PDF)) {
-			basename = basename.substring(0, basename.length() - 4);
+		createBasename(inputFile);
+		createOutputDirectory(inputBasename);
+
+		pageNumber = pageRanges.next(0);
+		if (writeFile) {
+			outfileList = new ArrayList<File>();
 		}
+		
+		iterateOverPagesAndWriteFiles();
 
-		createOutputDirectory(basename);
+		if (writeInfoFiles) {
+			reportHighCodePoints();
+			reportNewFontFamilyNames();
+			writeHTMLSystem(outfileList);
+		}
+	}
 
-		int pageNumber = pr.next(0);
-		List<File> outfileList = new ArrayList<File>();
+	private void iterateOverPagesAndWriteFiles() {
 		while (pageNumber > 0) {
-			PDPage page = pages.get(pageNumber - 1);
+			PDPage page = pdPages.get(pageNumber - 1);
+			imageNumber = 0;
 
 			if (useXMLLogger) {
 				xmlLogger.newPDFPage(pageNumber);
@@ -181,28 +228,33 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 			currentSVGPage = page2svgConverter.convertPageToSVG(page, this);
 
-			addPageToPageList();
+			if (storeSVG) {
+				addPageToPageList();
+			}
 			if (writeFile) {
-				File outfile = writeFile(basename, pageNumber);
+				File outfile = writeFile(pageNumber);
 				outfileList.add(outfile);
 			}
 
-			pageNumber = pr.next(pageNumber);
-			if (pageNumber > maxPage ) {
+			pageNumber = pageRanges.next(pageNumber);
+			if (pageNumber > maxPage) {
 				LOG.error("terminated after "+pageNumber+" pages");
 				break;
 			}
 		}
 		System.out.println();
+	}
 
-		if (writeInfoFiles) {
-			reportHighCodePoints();
-			reportNewFontFamilyNames();
-			writeHTMLSystem(outfileList);
-			reportPublisher();
+	private void createBasename(File inputFile) {
+		inputBasename = null;
+		if (inputFile != null) {
+			inputBasename = inputFile.getName().toLowerCase();
+			if (inputBasename.endsWith(PDF)) {
+				inputBasename = inputBasename.substring(0, inputBasename.length() - 4);
+			}
+		} else {
+			inputBasename = "target"; // change later
 		}
-
-		document.close();
 	}
 
 	private void addPageToPageList() {
@@ -211,32 +263,28 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		svgPageList.add(svgPage);
 	}
 
-	private void reportPublisher() {
-		if (publisher != null) {
-			LOG.debug("PUB "+publisher.createElement().toXML());
+	private void createOutputDirectory(String basename) {
+		if (basenameOutdir) {
+			outdir = new File(outputDirectory, basename);
+		} else {
+			outdir = new File(outputDirectory);
+		}
+		if (!outdir.exists()) {
+			outdir.mkdirs();
+		}
+		if (!outdir.isDirectory()) {
+			throw new RuntimeException(String.format(
+					"'%s' is not a directory!", outdir.getAbsoluteFile()));
 		}
 	}
 
-	private void createOutputDirectory(String basename) {
-		if (basenameOutdir)
-			outdir = new File(outputDirectory, basename);
-		else
-			outdir = new File(outputDirectory);
-		if (!outdir.exists())
-			outdir.mkdirs();
-		if (!outdir.isDirectory())
-			throw new RuntimeException(String.format(
-					"'%s' is not a directory!", outdir.getAbsoluteFile()));
-	}
-
-	private File writeFile(String basename, int pageNumber) {
+	private File writeFile(int pageNumber) {
 
 		File outfile = null;
 		try {
-			outfile = new File(outdir, basename + "-page" + pageNumber + ".svg");
+			outfile = new File(outdir, inputBasename + "-page" + pageNumber + ".svg");
 			LOG.trace("Writing output to file '"+outfile.getCanonicalPath());
-			SVGSerializer serializer = new SVGSerializer(new FileOutputStream(
-					outfile), "UTF-8");
+			Serializer serializer = new SVGSerializer(new FileOutputStream(outfile), "UTF-8");
 			Document document = currentSVGPage.getDocument();
 			document = (document == null) ? new Document(currentSVGPage) : document;
 			serializer.setIndent(1);
@@ -287,6 +335,23 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 	}
 
+	private void readDocument(InputStream inputStream) throws IOException {
+		document = PDDocument.load(inputStream);
+		/*if (document.isEncrypted()) {
+			try {
+				document.decrypt(password);
+			} catch (InvalidPasswordException e) {
+				System.err
+						.printf("Error: The document in inputSstream is encrypted (use '-password' option).%n");
+				return;
+			} catch (CryptographyException e) {
+				System.err
+						.printf("Error: Failed to decrypt document in inputStream");
+				return;
+			}
+		}*/
+	}
+
 	public static void main(String[] args) throws Exception {
 
 		PDF2SVGConverter converter = new PDF2SVGConverter();
@@ -312,6 +377,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 		for (iarg = 0; iarg < args.length; iarg++) {
 
+			LOG.trace(args[iarg]);
 			if (args[iarg].equals(PASSWORD)) {
 				if (!incrementArg(args))
 					return false;
@@ -337,7 +403,33 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			}
 
 			if (args[iarg].equals(NO_SVG)) {
-				writeFile = false;
+				setWriteFile(false);
+				continue;
+			}
+
+			if (args[iarg].equals(STORE_SVG)) {
+				setStoreSVG(true);
+				continue;
+			}
+
+			if (args[iarg].equals(DEBUG_CHAR_CODE)) {
+				if (!incrementArg(args))
+					return false;
+				debugCharCode = new Integer(args[iarg]);
+				continue;
+			}
+
+			if (args[iarg].equals(DEBUG_CHAR_NAME)) {
+				if (!incrementArg(args))
+					return false;
+				debugCharname = args[iarg];
+				continue;
+			}
+
+			if (args[iarg].equals(DEBUG_FONT_NAME)) {
+				if (!incrementArg(args))
+					return false;
+				debugFontName = args[iarg];
 				continue;
 			}
 
@@ -380,11 +472,8 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 				continue;
 			}
 
-			if (args[iarg].equals(PUB)) {
-				if (!incrementArg(args))
-					return false;
-				publisher = getPublisher(args[iarg]);
-				continue;
+			if (args[iarg].startsWith("-")) {
+				throw new RuntimeException("Unknown arg: "+args[iarg]);
 			}
 
 			fileList.add(args[iarg]);
@@ -401,10 +490,10 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 		for (String filename : fileList) {
 			try {
-				readFileOrDirectory(filename);
+				readFileOrDirectoryOrURL(filename);
 			} catch (Exception e) {
 				e.printStackTrace();
-				System.err.printf("Cannot parse PDF '" + filename + "':" + e);
+				System.err.printf("Cannot parse PDF '" + filename + "':" + e+"\n");
 				if (exitOnError) {
 					return false;
 				}
@@ -415,6 +504,14 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		writeXMLLoggerOutput();
 
 		return succeeded;
+	}
+
+	public void setWriteFile(boolean b) {
+		writeFile = b;
+	}
+
+	public void setStoreSVG(boolean b) {
+		storeSVG = b;
 	}
 
 	private void ensureXMLLogger() {
@@ -438,50 +535,42 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		}
 	}
 
-	private void readFileOrDirectory(String filename) {
-		File file = new File(filename);
-		if (!file.exists()) {
-			throw new RuntimeException("File does not exist: " + filename);
-		}
-		if (file.isDirectory()) {
-			File[] pdfFiles = file.listFiles(new FilenameFilter() {
-				public boolean accept(File dir, String filename) {
-					return filename.endsWith(PDF);
-				}
-			});
-			if (pdfFiles != null) {
-				for (File pdf : pdfFiles) {
-					try {
-						openPDFFile(pdf);
-					} catch (Exception e) {
-						LOG.error("Failed to convert file: "+pdf+", skipping", e);
-					}
-				}
+	private void readFileOrDirectoryOrURL(String filename) {
+		if (filename == null) {
+			throw new RuntimeException("No input filename");
+		} else if (filename.startsWith(HTTP)) {
+			try {
+				openPDFURL(filename);
+			} catch (Exception e) {
+				LOG.error("Failed to convert URL: "+filename, e);
 			}
 		} else {
-			try {
-				openPDFFile(file);
-			} catch (Exception e) {
-				throw new RuntimeException("Cannot convert file: "+file, e);
+			File file = new File(filename);
+			if (!file.exists()) {
+				throw new RuntimeException("File does not exist: " + filename);
 			}
-		}
-		
-	}
-	
-
-	public Publisher getPublisher() {
-		return publisher;
-	}
-
-	private Publisher getPublisher(String abbreviation) {
-		ensurePublisherMaps();
-		publisher = (publisherSet == null) ? null : publisherSet.getPublisherByAbbreviation(abbreviation);
-		return publisher;
-	}
-
-	private void ensurePublisherMaps() {
-		if (publisherSet == null && publisherSetXmlResource != null) {
-			publisherSet = PublisherSet.readPublisherSet(publisherSetXmlResource );
+			if (file.isDirectory()) {
+				File[] pdfFiles = file.listFiles(new FilenameFilter() {
+					public boolean accept(File dir, String filename) {
+						return filename.endsWith(PDF);
+					}
+				});
+				if (pdfFiles != null) {
+					for (File pdf : pdfFiles) {
+						try {
+							openPDFFile(pdf);
+						} catch (Exception e) {
+							LOG.error("Failed to convert file: "+pdf+", skipping", e);
+						}
+					}
+				}
+			} else {
+				try {
+					openPDFFile(file);
+				} catch (Exception e) {
+					throw new RuntimeException("Cannot convert file: "+file, e);
+				}
+			}
 		}
 	}
 
@@ -532,18 +621,18 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	}
 
 	public boolean isFixFont() {
-		return fixFont ;
+		return fixFont;
 	}
 	
-	public AMIFontManager getAmiFontManager() {
+	public NonStandardFontManager getAmiFontManager() {
 		ensureAmiFontManager();
 		return amiFontManager;
 	}
 
 	private void ensureAmiFontManager() {
 		if (amiFontManager == null) {
-			amiFontManager = new AMIFontManager();
-			amiFontMap = AMIFontManager.readAmiFonts();
+			amiFontManager = new NonStandardFontManager();
+			amiFontMap = NonStandardFontManager.readAmiFonts();
 			for (String fontName : amiFontMap.keySet()) {
 				AMIFont font = amiFontMap.get(fontName);
 			}
@@ -554,4 +643,5 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		ensureAmiFontManager();
 		return amiFontMap;
 	}
+
 }

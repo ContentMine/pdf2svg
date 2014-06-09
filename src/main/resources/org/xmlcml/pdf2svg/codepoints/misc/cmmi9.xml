@@ -20,6 +20,6 @@
     <codePoint unicode="U+2113" name="lscript" note="SCRIPT SMALL L" />
 	
 	<!-- unicode --> 
-    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>
+    <codePointSet idRef="unicode256" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode256.xml"/>
 	
 </codePointSet>

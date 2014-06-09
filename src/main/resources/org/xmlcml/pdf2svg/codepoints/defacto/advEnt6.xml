@@ -20,6 +20,6 @@
 
     <codePoint unicode="U+22EF" decimal="63" note="MIDLINE HORIZONTAL ELLIPSIS"/>
     
-    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
+    <codePointSet idRef="unicode" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode.xml"/> 
     
 </codePointSet>

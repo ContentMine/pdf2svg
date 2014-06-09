@@ -20,6 +20,6 @@
     <codePoint unicode="U+00B0" decimal="49"  name="one" note="DEGREE SIGN" />
     <codePoint unicode="U+2026" decimal="121" name="y" note="HORIZONTAL ELLIPSIS" />
     
-    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/> 
+    <codePointSet idRef="unicode256" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode256.xml"/> 
     
 </codePointSet>

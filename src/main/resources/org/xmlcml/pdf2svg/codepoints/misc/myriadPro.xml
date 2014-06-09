@@ -26,7 +26,7 @@
     <codePoint unicode="U+003D" name="hyphen" decimal="45" note="HYPHEN-MINUS"/>
     <codePoint unicode="U+00A0" name="" decimal="160" note="NO-BREAK SPACE"/>
 
-    <codePointSet idRef="basicLatin" href="../unicode/basicLatin.xml"/>
+    <codePointSet idRef="basicLatin" href="org/xmlcml/pdf2svg/codepoints/unicode/basicLatin.xml"/>
             	
 </codePointSet>
 		

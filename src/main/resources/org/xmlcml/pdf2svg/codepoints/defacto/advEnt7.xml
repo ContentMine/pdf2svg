@@ -21,6 +21,6 @@
     <codePoint unicode="U+2248" decimal="69" name="E" note="ALMOST EQUAL TO"/>
     <codePoint unicode="U+2260" decimal="97" name="a" note="NOT EQUAL TO"/>
 
-    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
+    <codePointSet idRef="unicode" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode.xml"/> 
     
 </codePointSet>

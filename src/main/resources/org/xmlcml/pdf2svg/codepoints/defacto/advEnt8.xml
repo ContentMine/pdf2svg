@@ -20,6 +20,6 @@
     <codePoint unicode="U+00B1" decimal="55" note="PLUS-MINUS SIGN" />
     <codePoint unicode="U+00F7" decimal="67" note="DIVISION SIGN" />
     
-    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
+    <codePointSet idRef="unicode" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode.xml"/> 
     
 </codePointSet>

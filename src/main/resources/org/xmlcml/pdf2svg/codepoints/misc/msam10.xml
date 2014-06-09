@@ -22,10 +22,13 @@
 	<codePoint unicode="U+2A7E" name="greaterorequalslant" note="GREATER-THAN OR SLANTED EQUAL TO"/> 
 	<codePoint unicode="U+2272" name="lessorsimilar"       note="LESS-THAN OR EQUIVALENT TO" decimal="46" /> 
 	<codePoint unicode="U+2273" name="greaterorsimilar"    note="GREATER-THAN OR EQUIVALENT TO" decimal="38" /> 
+	<codePoint unicode="U+25B2" name="trianglesolid"       note="BLACK UP-POINTING TRIANGLE"/> 
+	<codePoint unicode="U+25A0" name="squaresolid"         note="BLACK SQUARE"/> 
+	<codePoint unicode="U+25C6" name="diamondsolid"        note="BLACK DIAMOND"/> 
 	<codePoint unicode="U+25A0" name="square"              note="BLACK SQUARE"/> 
 
 
 	<!-- unicode --> 
-    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>
+    <codePointSet idRef="unicode256" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode256.xml"/>
 	
 </codePointSet>

@@ -15,16 +15,13 @@
  */
 package org.xmlcml.pdf2svg.util;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import nu.xom.Attribute;
 
 import org.apache.pdfbox.pdmodel.common.PDMatrix;
-import org.xmlcml.cml.base.CMLConstants;
 import org.xmlcml.euclid.RealArray;
 import org.xmlcml.euclid.RealMatrix;
 import org.xmlcml.graphics.svg.SVGElement;
+import org.xmlcml.xml.XMLConstants;
 
 public class PDF2SVGUtil {
 
@@ -32,16 +29,17 @@ public class PDF2SVGUtil {
 	public final static String SVGX_PREFIX = "svgx";
 	public static final String CHARACTER_WIDTH = "width";
 	public static final String CHARACTER_CODE = "charCode";
+	public static final String CHARACTER_HEX = "hexCode";
 	public static final String CHARACTER_NAME = "charName";
 	public static final String CHARACTER_NEW_CODE = "newCode";
 	public static final String FONT_ENCODING = "fontEnc";
 	public static final String LIGATURE = "ligature";
-	private static final String DOT = CMLConstants.S_PERIOD;
-	private static final String DOT_DOT = DOT+CMLConstants.S_PERIOD;
+	public static final String TEXT_CHAR = "textChar";
+	public static final String TEXT_HEX = "textHex";
 	
 	public static void setSVGXAttribute(SVGElement svgElement, String attName, String value) {
 		if (attName != null && value != null) {
-			Attribute attribute = new Attribute(SVGX_PREFIX+CMLConstants.S_COLON+attName, SVGX_NS, value);
+			Attribute attribute = new Attribute(SVGX_PREFIX+XMLConstants.S_COLON+attName, SVGX_NS, value);
 			svgElement.addAttribute(attribute);
 		}
 	}
@@ -83,48 +81,6 @@ public class PDF2SVGUtil {
 		}
 		RealArray ra = new RealArray(dd);
 		return ra;
-	}
-
-	/** removes ./ and ../ from a resources name
-	 * e.g. a/../b => b
-	 * a/./b => a/b
-	 * a/b../../c/d => c/d
-	 * @param resource
-	 * @return
-	 */
-	public static String normalizeResource(String resource) {
-		resource = resource.trim();
-		String[] ss = resource.split(CMLConstants.S_SLASH);
-		List<String> sList = new ArrayList<String>();
-		for (int i = 0; i <ss.length; i++) {
-			if (ss[i].trim().length() == 0){
-//				sList.add("");
-			} else if (ss[i].equals(DOT)){
-				continue;
-			} else if (ss[i].equals(DOT_DOT)) {
-				if (sList.size() == 0) {
-					throw new RuntimeException("Cannot start resource with ../ or unbalanced ../");
-				}
-				sList.remove(sList.size()-1);
-			} else {
-				sList.add(ss[i]);
-			}
-		}
-		StringBuilder sb = new StringBuilder();
-		for (int i = 0 ; i < sList.size(); i++) {
-			if (i > 0) {
-				sb.append(CMLConstants.S_SLASH);
-			}
-			sb.append(sList.get(i));
-		}
-		if (resource.endsWith(CMLConstants.S_SLASH)) {
-			sb.append(CMLConstants.S_SLASH);
-		}
-		String sss = sb.toString();
-		if (sss.contains("//")) {
-			throw new RuntimeException("BUG //");
-		}
-		return sss;
 	}
 
 

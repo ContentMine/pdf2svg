@@ -18,7 +18,7 @@
 <codePointSet encoding="ADVMT_MI" id="advmt_mi" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
 
-    <codePointSet idRef="basicLatin" href="../unicode/basicLatin.xml"/>
+    <codePointSet idRef="basicLatin" href="org/xmlcml/pdf2svg/codepoints/unicode/basicLatin.xml"/>
 
     <codePoint unicode="U+00D7" name="C2" note="MULTIPLICATION SIGN"/>
     <codePoint unicode="U+03B1" name="C11" note="GREEK SMALL LETTER ALPHA"/>

@@ -16,7 +16,6 @@
     <codePoint unicode="U+00AD" unicodeName="SOFT HYPHEN" name=""/>
     <codePoint unicode="U+00AE" unicodeName="REGISTERED SIGN" name=""/>
     <codePoint unicode="U+00AF" unicodeName="MACRON" name=""/>
-    
     <codePoint unicode="U+00B0" unicodeName="DEGREE SIGN" name="DEGREE"/>
     <codePoint unicode="U+00B1" unicodeName="PLUS-MINUS SIGN" name="PLUSMINUS"/>
     <codePoint unicode="U+00B2" unicodeName="SUPERSCRIPT TWO" name=""/>
@@ -33,7 +32,6 @@
     <codePoint unicode="U+00BD" unicodeName="VULGAR FRACTION ONE HALF" name=""/>
     <codePoint unicode="U+00BE" unicodeName="VULGAR FRACTION THREE QUARTERS" name=""/>
     <codePoint unicode="U+00BF" unicodeName="INVERTED QUESTION MARK" name=""/>
-    
     <codePoint unicode="U+00C0" unicodeName="LATIN Capital LETTER A WITH GRAVE" name=""/>
     <codePoint unicode="U+00C1" unicodeName="LATIN CAPITAL LETTER A WITH ACUTE" name=""/>
     <codePoint unicode="U+00C2" unicodeName="LATIN CAPITAL LETTER A WITH CIRCUMFLEX" name=""/>
@@ -50,7 +48,6 @@
     <codePoint unicode="U+00CD" unicodeName="LATIN CAPITAL LETTER I WITH ACUTE" name=""/>
     <codePoint unicode="U+00CE" unicodeName="LATIN CAPITAL LETTER I WITH CIRCUMFLEX" name=""/>
     <codePoint unicode="U+00CF" unicodeName="LATIN CAPITAL LETTER I WITH DIAERESIS" name=""/>
-    
     <codePoint unicode="U+00D0" unicodeName="LATIN CAPITAL LETTER ETH" name=""/>
     <codePoint unicode="U+00D1" unicodeName="LATIN CAPITAL LETTER N WITH TILDE" name=""/>
     <codePoint unicode="U+00D2" unicodeName="LATIN CAPITAL LETTER O WITH GRAVE" name=""/>
@@ -67,7 +64,6 @@
     <codePoint unicode="U+00DD" unicodeName="LATIN Capital LETTER Y WITH ACUTE" name=""/>
     <codePoint unicode="U+00DE" unicodeName="LATIN Capital LETTER THORN" name=""/>
     <codePoint unicode="U+00DF" unicodeName="LATIN SMALL LETTER SHARP S" name=""/>
-    
     <codePoint unicode="U+00E0" unicodeName="LATIN SMALL LETTER A WITH GRAVE" name=""/>
     <codePoint unicode="U+00E1" unicodeName="LATIN SMALL LETTER A WITH ACUTE" name=""/>
     <codePoint unicode="U+00E2" unicodeName="LATIN SMALL LETTER A WITH CIRCUMFLEX" name=""/>
@@ -84,7 +80,6 @@
     <codePoint unicode="U+00ED" unicodeName="LATIN SMALL LETTER I WITH ACUTE" name=""/>
     <codePoint unicode="U+00EE" unicodeName="LATIN SMALL LETTER I WITH CIRCUMFLEX" name=""/>
     <codePoint unicode="U+00EF" unicodeName="LATIN SMALL LETTER I WITH DIAERESIS" name=""/>
-    
     <codePoint unicode="U+00F0" unicodeName="LATIN SMALL LETTER ETH" name=""/>
     <codePoint unicode="U+00F1" unicodeName="LATIN SMALL LETTER N WITH TILDE" name=""/>
     <codePoint unicode="U+00F2" unicodeName="LATIN SMALL LETTER O WITH GRAVE" name=""/>

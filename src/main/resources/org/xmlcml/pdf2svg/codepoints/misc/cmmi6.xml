@@ -17,7 +17,7 @@
 -->
 <codePointSet encoding="CMM" id="cmmi6" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
-    <codePointSet idRef="basicLatin" href="../unicode/basicLatin.xml"/>
+    <codePointSet idRef="basicLatin" href="org/xmlcml/pdf2svg/codepoints/unicode/basicLatin.xml"/>
 
     <codePoint unicode="U+2605" name="star" note="BLACK STAR" />
 	

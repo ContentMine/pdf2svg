@@ -24,6 +24,7 @@ import nu.xom.Text;
 
 import org.apache.log4j.Logger;
 
+@Deprecated // moved to svg package
 public class SVGSerializer extends Serializer {
 	private final static Logger LOG = Logger.getLogger(SVGSerializer.class);
 	public SVGSerializer(OutputStream os) {
@@ -41,26 +42,32 @@ public class SVGSerializer extends Serializer {
 	 */
 	public void write(Text text) throws IOException {
 		String s = text.getValue();
+		LOG.trace(s.length());
 		StringBuilder sb = new StringBuilder();
-		for (int i = 0; i < s.length(); i++) {
-			int ch = s.charAt(i);
-			if (ch > 255) {
+		int codePointCount = s.codePointCount(0, s.length());
+		int charIndex = 0;
+		for (int i = 0; i < codePointCount; i++) {
+			int codepoint = s.codePointAt(charIndex);
+			int charCount = Character.charCount(codepoint);
+			LOG.trace(codepoint+" "+charCount);
+			charIndex += charCount;
+			if (codepoint > 127) {
 				sb.append("&#");
-				sb.append(ch);
+				sb.append(codepoint);
 				sb.append(";");
 // escape the main XML characters				
-			} else if (ch =='&') {
+			} else if (codepoint == (char)'&') {
 				sb.append("&amp;");
-			} else if (ch =='<') {
+			} else if (codepoint == (char)'<') {
 				sb.append("&lt;");
-			} else if (ch =='>') {
+			} else if (codepoint ==(char)'>') {
 				sb.append("&gt;");
-			} else if (ch =='\'') {
+			} else if (codepoint ==(char)'\'') {
 				sb.append("&apos;");
-			} else if (ch =='"') {
+			} else if (codepoint ==(char)'"') {
 				sb.append("&quot;");
 			} else {
-				sb.append((char)ch);
+				sb.append((char)codepoint);
 			}
 		}
 		writeRaw(sb.toString());

@@ -46,6 +46,6 @@ the charname appears to take precedence over the charval
 
     <codePoint unicode="U+1D4C1" name="lscript"  note="MATHEMATICAL SCRIPT SMALL L"/>
     
-    <codePointSet idRef="unicode" href="../unicode/unicode.xml"/> 
+    <codePointSet idRef="unicode" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode.xml"/> 
 
 </codePointSet>

@@ -17,7 +17,7 @@
 -->
 <codePointSet encoding="CMM" id="cmmi7" resource="org/xmlcml/pdf2svg/codepoints/misc">
 
-    <codePointSet idRef="greekByName1" href="../defacto/greekByName1.xml"/>
+    <codePointSet idRef="greekByName1" href="org/xmlcml/pdf2svg/codepoints/defacto/greekByName1.xml"/>
 
     <codePoint unicode="U+2605" name="star" note="BLACK STAR" />
 	

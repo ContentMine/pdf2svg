@@ -44,9 +44,7 @@ import java.util.Map;
 import org.apache.log4j.Logger;
 import org.xmlcml.euclid.Real;
 import org.xmlcml.euclid.Real2;
-import org.xmlcml.euclid.Real2Range;
 import org.xmlcml.euclid.RealArray;
-import org.xmlcml.euclid.RealRange;
 import org.xmlcml.euclid.Transform2;
 import org.xmlcml.graphics.svg.SVGPath;
 

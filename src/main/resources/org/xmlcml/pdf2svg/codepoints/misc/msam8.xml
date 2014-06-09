@@ -21,6 +21,6 @@
 	<codePoint unicode="U+25B2" name="trianglesolid" note="BLACK UP-POINTING TRIANGLE"/> 
 	
 	<!-- unicode --> 
-    <codePointSet idRef="unicode256" href="../unicode/unicode256.xml"/>
+    <codePointSet idRef="unicode256" href="org/xmlcml/pdf2svg/codepoints/unicode/unicode256.xml"/>
 	
 </codePointSet>
