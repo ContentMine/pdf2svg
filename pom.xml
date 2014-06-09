@@ -29,7 +29,7 @@
 
 	<groupId>org.xml-cml</groupId>
 	<artifactId>pdf2svg</artifactId>
-	<version>0.1-SNAPSHOT</version>
+	<version>1.0.0</version>
 	<name>PDF2SVG</name>
 	<description>Converts PDF to SVG</description>
 
