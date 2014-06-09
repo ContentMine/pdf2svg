@@ -924,7 +924,7 @@ xmlns="http://www.w3.org/2000/svg">
 			LOG.trace("IMAGE: x="+bImage.getMinX()+" y="+bImage.getMinY()+" h="+bImage.getHeight()+" w="+bImage.getWidth());
 			SVGImage svgImage = new SVGImage();
 			svgImage.setTransform(t2);
-			svgImage.readImageData(bImage, SVGImage.IMAGE_PNG);
+			svgImage.readImageDataIntoSrcValue(bImage, SVGImage.IMAGE_PNG);
 			svg.appendChild(svgImage);
 		} else {
 			LOG.warn("Image not incorporated");
