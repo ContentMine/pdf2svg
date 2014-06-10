@@ -20,7 +20,7 @@
 
 
 	<groupId>org.xml-cml</groupId>
-	<artifactId>pdf2svg-dev</artifactId>
+	<artifactId>pdf2svg</artifactId>
 	<version>1.1-SNAPSHOT</version>
 	<name>PDF2SVG</name>
 	<description>Converts PDF to SVG</description>
@@ -41,9 +41,9 @@
 		</license>
 	</licenses>
 	<scm>
-		<url>https://bitbucket.org/petermr/pdf2svg-dev/src</url>
-		<connection>scm:hg:http://bitbucket.org/petermr/pdf2svg-dev</connection>
-		<developerConnection>scm:hg:https://bitbucket.org/petermr/pdf2svg-dev</developerConnection>
+		<url>https://bitbucket.org/petermr/pdf2svg/src</url>
+		<connection>scm:hg:http://bitbucket.org/petermr/pdf2svg</connection>
+		<developerConnection>scm:hg:https://bitbucket.org/petermr/pdf2svg</developerConnection>
 	</scm>
 
 	<!-- remove <repositories> for releases to maven central -->
