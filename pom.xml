@@ -29,7 +29,7 @@
 		<pdfbox.version>1.8.5</pdfbox.version>
 		<svg.version>0.2-SNAPSHOT</svg.version>
 		<html.version>0.2-SNAPSHOT</html.version>
-		<junit.version>4.8.1</junit.version>
+		<junit.version>4.11</junit.version>
 		<guava.version>17.0</guava.version>
 	</properties>
 
