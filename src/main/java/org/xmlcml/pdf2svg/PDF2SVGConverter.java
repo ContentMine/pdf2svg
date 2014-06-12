@@ -141,7 +141,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private static void usage() {
 		System.err
 				.printf("Usage: pdf2svg [%s <pw>] [%s] [%s <page-ranges>] [%s <pub>] [%s <dir>] [%s] [%s]%n"
-						+ "               [%s] [%s] [%s <filename>] [%s] [%s] [%s] <input-file(s)> ...%n%n"
+						+ "               [%s] [%s] [%s] [%s <filename>] [%s] [%s] [%s] <input-file(s)> ...%n%n"
 						+ "  %s <password>  Password to decrypt the document (default none)%n"
 						+ "  %s               Enables the new non-sequential parser%n"
 						+ "  %s <page-ranges>  Restrict pages to be output (default all)%n"
@@ -149,7 +149,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 						+ "  %s <dirname>     Location to write output SVG pages (default '.')%n"
 						+ "  %s                Create dir in outdir using PDF basename and set as outdir for this PDF%n"
 						+ "  %s                Don't write SVG files%n"
-						+ "  %s                Store SVG%n"
+						+ "  %s             Store SVG%n"
 						+ "  %s            Write info files%n"
 						+ "  %s               Use XML logger to record unknown characters/fonts/etc%n"
 						+ "  %s <filename>   Write the XML Logger output into 'filename' (default 'pdfLog.xml')%n"
@@ -160,11 +160,10 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 						+ "  %s            enter debug loop (with charName)%n"
 						+ "  %s            enter debug loop (with fontName)%n"
 						+ "  <input-file(s)>       The PDF document(s) to be loaded%n%n",
-						PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, MKDIR, NO_SVG, STORE_SVG,
-						INFO_FILES, LOGGER, LOGFILE, LOGMORE, LOGGLYPHS,
-						EXITONERR, PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, MKDIR,
-						NO_SVG, INFO_FILES, LOGGER, LOGFILE, LOGMORE,
-						LOGGLYPHS, EXITONERR, DEBUG_CHAR_CODE, DEBUG_CHAR_NAME, DEBUG_FONT_NAME);
+                                                PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, MKDIR, NO_SVG, STORE_SVG,
+                                                INFO_FILES, LOGGER, LOGFILE, LOGMORE, LOGGLYPHS, EXITONERR,
+                                                PASSWORD, NONSEQ, PAGES, PUB, OUTDIR, MKDIR, NO_SVG, STORE_SVG,
+                                                INFO_FILES, LOGGER, LOGFILE, LOGMORE, LOGGLYPHS, EXITONERR, DEBUG_CHAR_CODE, DEBUG_CHAR_NAME, DEBUG_FONT_NAME);
 	}
 
 	private void openPDFURL(String urlString) throws Exception {
