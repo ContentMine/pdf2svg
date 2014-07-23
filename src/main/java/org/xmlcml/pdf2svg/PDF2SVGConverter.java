@@ -318,11 +318,6 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 			if (document.isEncrypted()) {
 				try {
 					document.decrypt(password);
-				} catch (InvalidPasswordException e) {
-					System.err
-							.printf("Error: The document in file '%s' is encrypted (use '-password' option).%n",
-									file.getAbsolutePath());
-					return;
 				} catch (CryptographyException e) {
 					System.err
 							.printf("Error: Failed to decrypt document in file '%s'.%n",
