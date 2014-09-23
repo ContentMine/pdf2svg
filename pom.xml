@@ -26,7 +26,7 @@
 	<description>Converts PDF to SVG</description>
 
 	<properties>
-		<pdfbox.version>1.8.6</pdfbox.version>
+		<pdfbox.version>1.8.7</pdfbox.version>
 		<svg.version>0.2-SNAPSHOT</svg.version>
 		<html.version>0.2-SNAPSHOT</html.version>
 		<junit.version>4.11</junit.version>
