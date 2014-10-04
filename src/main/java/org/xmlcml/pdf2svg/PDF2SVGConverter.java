@@ -166,13 +166,17 @@ public class PDF2SVGConverter extends PDFStreamEngine {
                                                 INFO_FILES, LOGGER, LOGFILE, LOGMORE, LOGGLYPHS, EXITONERR, DEBUG_CHAR_CODE, DEBUG_CHAR_NAME, DEBUG_FONT_NAME);
 	}
 
-	private void openPDFURL(String urlString) throws Exception {
+	public void openPDFURL(String urlString) throws Exception {
 		URL url = new URL(urlString);
+		openPDFURL(url);
+	}
+
+	public void openPDFURL(URL url) throws IOException {
 		InputStream is = url.openStream();
 		page2svgConverter = new PDFPage2SVGConverter();
-		LOG.trace("URL " + urlString);
 		readDocument(is);
 		openAndProcess((File) null, url);
+		is.close();
 	}
 
 	public void openPDFFile(File file) throws Exception {
