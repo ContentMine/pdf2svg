@@ -33,11 +33,9 @@ import nu.xom.Serializer;
 
 import org.apache.log4j.Logger;
 import org.apache.pdfbox.exceptions.CryptographyException;
-import org.apache.pdfbox.exceptions.InvalidPasswordException;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDPage;
 import org.apache.pdfbox.util.PDFStreamEngine;
-import org.apache.pdfbox.util.operator.SetWordSpacing;
 import org.xmlcml.font.CodePointSet;
 import org.xmlcml.font.FontFamilySet;
 import org.xmlcml.font.NonStandardFontManager;
@@ -49,6 +47,8 @@ import org.xmlcml.pdf2svg.util.MenuSystem;
  * Simple app to read PDF documents based on PDFReader.java
  */
 public class PDF2SVGConverter extends PDFStreamEngine {
+
+	private static final String DEFAULT_OUTPUT_DIRECTORY = "target";
 
 	private final static Logger LOG = Logger.getLogger(PDF2SVGConverter.class);
 
@@ -173,10 +173,14 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 
 	public void openPDFURL(URL url) throws IOException {
 		InputStream is = url.openStream();
+		openPDFInputStream(is);
+		is.close();
+	}
+
+	public void openPDFInputStream(InputStream is) throws IOException {
 		page2svgConverter = new PDFPage2SVGConverter();
 		readDocument(is);
-		openAndProcess((File) null, url);
-		is.close();
+		openAndProcess((File) null, (URL) null);
 	}
 
 	public void openPDFFile(File file) throws Exception {
@@ -184,9 +188,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		page2svgConverter = new PDFPage2SVGConverter();
 		LOG.trace("PDF " + file.getCanonicalPath());
 		readDocument(file, useNonSeqParser, PDFpassword);
-
 		openAndProcess(file, (URL) null);
-
 		document.close();
 	}
 
@@ -256,7 +258,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 				inputBasename = inputBasename.substring(0, inputBasename.length() - 4);
 			}
 		} else {
-			inputBasename = "target"; // change later
+			inputBasename = DEFAULT_OUTPUT_DIRECTORY; // change later
 		}
 	}
 
