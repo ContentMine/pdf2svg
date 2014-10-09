@@ -30,7 +30,7 @@
 		<svg.version>0.2-SNAPSHOT</svg.version>
 		<html.version>0.2-SNAPSHOT</html.version>
 		<junit.version>4.11</junit.version>
-		<guava.version>17.0</guava.version>
+		<guava.version>18.0</guava.version>
 	</properties>
 
 	<licenses>
