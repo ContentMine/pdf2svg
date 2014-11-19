@@ -861,6 +861,9 @@ xmlns="http://www.w3.org/2000/svg">
 		float width = 0.0f;
 		try {
 			width = font.getStringWidth(textContent);
+			if (Math.abs(1000 - width) < 0.1) {
+				LOG.debug("width: "+width+" ("+textContent+")"+(int)textContent.charAt(0));
+			}
 		} catch (IOException e) {
 			throw new RuntimeException("PDFBox exception ", e);
 		}

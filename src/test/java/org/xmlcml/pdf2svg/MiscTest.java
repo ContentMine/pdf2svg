@@ -16,15 +16,21 @@ public class MiscTest {
 		new PDF2SVGConverter().run();
 	}
 	
-// comment out @Ignore to test these
-	@Test
-	@Ignore
-	public void testDingbatsFont() {
-		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/test", "../pdfs/peerj/36.pdf"
-//				,"-debugFontName", "RNMPIC+Dingbats"
-				);
-	}
-	
+		@Test
+		public void testBMC() {
+			new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/bmc", "src/test/resources/bmc/1471-2148-11-329.pdf"
+			);
+		}
+		
+		// comment out @Ignore to test these
+		@Test
+		@Ignore
+		public void testDingbatsFont() {
+			new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/test", "../pdfs/peerj/36.pdf"
+//					,"-debugFontName", "RNMPIC+Dingbats"
+					);
+		}
+		
 	@Test
 	@Ignore
 	public void testCambriaMathFont() {
