@@ -107,8 +107,6 @@ public class PDFPage2SVGConverter extends PageDrawer {
 
 	private BasicStroke basicStroke;
 	private SVGSVG svg;
-//	private Composite composite;
-//	private Paint paint;
 	private PDGraphicsState graphicsState;
 	private Matrix testMatrix;
 	private PDFont pdFont;
@@ -330,16 +328,6 @@ xmlns="http://www.w3.org/2000/svg">
 		charWasLogged = false;
 
 		pdFont = textPosition.getFont();
-//		try { // debug font width
-//			for (int i = pdFont.getFirstChar(); i <= pdFont.getLastChar(); i++) {
-//				float f = pdFont.getFontWidth(i);
-//				System.out.print(f+" ");
-//			}
-//			PDRectangle pdRect = pdFont.getFontBoundingBox();
-//			System.out.println("\nchars: "+(pdFont.getLastChar()-pdFont.getFirstChar())+" "+pdRect);
-//		} catch (Exception e) {
-//			LOG.debug("font: "+e);
-//		}
 		amiFont = amiFontManager.getAmiFontByFont(pdFont);
 		setAndProcessFontNameAndFamilyName();
 		debugFont();
@@ -589,7 +577,6 @@ xmlns="http://www.w3.org/2000/svg">
 		if (amiFont.isItalic() != null && amiFont.isItalic()) {
 			svgText.setFontStyle(ITALIC);
 		}
-//		addCodePointToHighPoints();
 		if (SYMBOL.equals(svgText.getFontFamily())) {
 			svgText.setFontFamily("Symbol-X"); // to stop browsers misbehaving
 		}
@@ -610,7 +597,6 @@ xmlns="http://www.w3.org/2000/svg">
 			}
 			if (codePoint == null) {
 				//or add Bad Character Glyph
-//				int ch = (int) textContent.charAt(0);
 				if (pdf2svgConverter.useXMLLogger && !charWasLogged) {
 					pdf2svgConverter.xmlLogger.newCharacter(fontName, fontFamilyName, charname, charCode);
 					charWasLogged = true;
@@ -697,29 +683,6 @@ xmlns="http://www.w3.org/2000/svg">
 		svgText.appendChild(svgTitle);
 	}
 
-//	private int addCodePointToHighPoints() {
-//		pdf2svgConverter.ensureCodePointSets();
-//		int charCode = textPosition.getCharacter().charAt(0);
-//		if (charCode > 255) {
-//			if (pdf2svgConverter.knownCodePointSet.containsKey((Integer)charCode)) {
-//				// known
-//			} else if (pdf2svgConverter.newCodePointSet.containsKey((Integer) charCode)) {
-//				// known 
-//			} else if (encoding != null) {
-//				pdf2svgConverter.newCodePointSet.ensureEncoding(encoding.toString());
-//				CodePoint codePoint = new CodePoint((Integer)charCode, charname); // creates as UNKNOWN unicode
-//				pdf2svgConverter.newCodePointSet.add(codePoint);
-//				LOG.trace("added to new codePointSet: "+charCode);
-//			} else {
-//				//assume identity
-//				CodePoint codePoint = new CodePoint((Integer)charCode, null); // creates as UNKNOWN unicode
-//				pdf2svgConverter.newCodePointSet.add(codePoint);
-////				LOG.trace("Font name: "+fontName+" No encoding, so cannot add codePoint ("+charCode+") to codePointSet");
-//			}
-//		}
-//		return charCode;
-//	}
-
 	private void addAttributesToSVGText(float width, SVGText svgText) {
 		setClipPath(svgText, clipString, (Integer) integerByClipStringMap.get(clipString));
 		svgText.setFontFamily(fontFamilyName);
@@ -735,18 +698,6 @@ xmlns="http://www.w3.org/2000/svg">
 			sb.appendCodePoint((int)charCode);
 			String s = sb.toString();
 			svgText.setText(s);
-//			Nodes nodes = svgText.query("node()");
-//			for (int i = 0; i < nodes.size(); i++) {
-//				nodes.get(i).detach();
-//			}
-//			svgText.appendChild(s);
-//			Serializer ser = new Serializer(System.out);
-//			try {
-//				ser.write(new Document((Element)svgText.copy()));
-//			} catch (IOException e) {
-//				// TODO Auto-generated catch block
-//				e.printStackTrace();
-//			}
 		}
 	}
 
@@ -861,9 +812,13 @@ xmlns="http://www.w3.org/2000/svg">
 		float width = 0.0f;
 		try {
 			width = font.getStringWidth(textContent);
-			if (Math.abs(1000 - width) < 0.1) {
-				LOG.debug("width: "+width+" ("+textContent+")"+(int)textContent.charAt(0));
+			if (/*Math.abs(1000 - width) < 0.1 && */textContent.equals("I")) {
+//				for (int i = 32; i < 128; i++) {
+//					System.out.print((char)i+": "+font.getStringWidth(String.valueOf((char)i)));
+//				}
+//				LOG.debug("font: "+font.getBaseFont()+" width: "+width+" ("+textContent+")"+(int)textContent.charAt(0));
 			}
+//			LOG.debug("font: "+font.getBaseFont()+" width: "+width+" ("+textContent+")"+(int)textContent.charAt(0));
 		} catch (IOException e) {
 			throw new RuntimeException("PDFBox exception ", e);
 		}
