@@ -35,25 +35,21 @@ public class TextStripperTest {
         int endPage = Integer.MAX_VALUE;
         toHTML = false;
         sort = true;
-        PDDocument document = PDDocument.load(new File( pdfFile ));
-        Writer output = new OutputStreamWriter( new FileOutputStream( outputFile ), encoding );
+        PDDocument document = PDDocument.load(new File(pdfFile));
+        Writer output = new OutputStreamWriter(new FileOutputStream(outputFile), encoding);
         PDFTextStripper stripper = null;
-        if(toHTML) {
-<<<<<<< local
-//            stripper = new org.apache.pdfbox.tools.PDFText2HTML(); // don't know why this doesn't link...
-=======
+        if (toHTML) {
+        	//stripper = new org.apache.pdfbox.tools.PDFText2HTML();//Don't know why this doesn't link...
             stripper = new PDFText2HTML("UTF-8");
->>>>>>> other
         } else {
             stripper = new PDFTextStripper();
         }
-        stripper.setForceParsing( force );
-        stripper.setSortByPosition( sort );
-        stripper.setShouldSeparateByBeads( separateBeads );
-        stripper.setStartPage( startPage );
-        stripper.setEndPage( endPage );
-        stripper.writeText( document, output );
+        stripper.setForceParsing(force);
+        stripper.setSortByPosition(sort);
+        stripper.setShouldSeparateByBeads(separateBeads);
+        stripper.setStartPage(startPage);
+        stripper.setEndPage(endPage);
+        stripper.writeText(document, output);
         output.close();
 	}
 }
-
