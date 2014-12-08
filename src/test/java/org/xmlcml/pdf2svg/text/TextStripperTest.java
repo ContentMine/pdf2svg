@@ -37,9 +37,13 @@ public class TextStripperTest {
         sort = true;
         PDDocument document = PDDocument.load(new File( pdfFile ));
         Writer output = new OutputStreamWriter( new FileOutputStream( outputFile ), encoding );
-        PDFTextStripper stripper;
+        PDFTextStripper stripper = null;
         if(toHTML) {
+<<<<<<< local
+//            stripper = new org.apache.pdfbox.tools.PDFText2HTML(); // don't know why this doesn't link...
+=======
             stripper = new PDFText2HTML("UTF-8");
+>>>>>>> other
         } else {
             stripper = new PDFTextStripper();
         }
