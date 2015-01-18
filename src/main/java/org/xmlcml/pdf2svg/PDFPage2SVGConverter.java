@@ -328,7 +328,12 @@ xmlns="http://www.w3.org/2000/svg">
 		charWasLogged = false;
 
 		pdFont = textPosition.getFont();
-		amiFont = amiFontManager.getAmiFontByFont(pdFont);
+		try {
+			amiFont = amiFontManager.getAmiFontByFont(pdFont);
+		} catch (Exception e) {
+			LOG.error("bad font: "+e);
+			return;
+		}
 		setAndProcessFontNameAndFamilyName();
 		debugFont();
 		getCharCodeAndSetEncodingAndCharname();
