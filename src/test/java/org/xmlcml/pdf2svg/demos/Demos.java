@@ -5,8 +5,9 @@ import org.xmlcml.pdf2svg.PDF2SVGConverter;
 public class Demos {
 
 	public static void main(String[] args) {
-			ebola1();
+//			ebola1();
 //			astro1();
+			plot1();
 
 	}
 
@@ -27,6 +28,16 @@ public class Demos {
 				"-logglyphs", 
 				"-outdir", "target/astro", 
 				"demos/astro/0004-637X_778_1_1.pdf"
+		);
+	}
+	
+	private static void plot1() {
+		new PDF2SVGConverter().run(
+				"-logger", 
+				"-infofiles", 
+				"-logglyphs", 
+				"-outdir", "target/plot", 
+				"demos/plot/22649_Sada_2012-1.pdf"
 		);
 	}
 	

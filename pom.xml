@@ -12,12 +12,13 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
+<!-- 
 	<parent>
 		<groupId>uk.ac.cam.ch.wwmm</groupId>
 		<artifactId>wwmm-parent</artifactId>
 		<version>5-SNAPSHOT</version>
 	</parent>
-
+-->
 
 	<groupId>org.xml-cml</groupId>
 	<artifactId>pdf2svg</artifactId>
@@ -63,11 +64,13 @@
 			<version>${pdfbox.version}</version>
 		</dependency>
 
+<!--  
 		<dependency>
 			<groupId>org.xml-cml</groupId>
 			<artifactId>svg</artifactId>
 			<version>${svg.version}</version>
 		</dependency>
+-->
 		
 		<dependency>
 			<groupId>org.xml-cml</groupId>
@@ -75,16 +78,20 @@
 			<version>0.1-SNAPSHOT</version>
 		</dependency>
 
+<!-- 
 		<dependency>
 			<groupId>org.xml-cml</groupId>
 			<artifactId>html</artifactId>
 			<version>${html.version}</version>
 		</dependency>
+-->
+		
 		<dependency>
 			<groupId>org.bouncycastle</groupId>
 			<artifactId>bcprov-jdk16</artifactId>
 			<version>1.46</version>
 		</dependency>
+		
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -92,12 +99,13 @@
 			<scope>test</scope>
 		</dependency>
 
+<!-- 
 		<dependency>
 			<groupId>com.google.guava</groupId>
 			<artifactId>guava</artifactId>
 			<version>${guava.version}</version>
 		</dependency>
-
+-->
 
 
 	</dependencies>

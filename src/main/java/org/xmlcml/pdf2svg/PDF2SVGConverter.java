@@ -81,7 +81,8 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private static final int DEFAULT_MAX_PAGE = 200;
 
 	private String PDFpassword = "";
-	private boolean useNonSeqParser = false;
+//	private boolean useNonSeqParser = false;
+	private boolean useNonSeqParser = true;
 	private String outputDirectory = ".";
 	private boolean basenameOutdir = false;
 	private PageRanges pageRanges = null;
