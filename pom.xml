@@ -32,7 +32,6 @@
 		<svg.version>0.2-SNAPSHOT</svg.version>
 		<html.version>0.2-SNAPSHOT</html.version>
 		<junit.version>4.11</junit.version>
-		<guava.version>18.0</guava.version>
 	</properties>
 
 	<licenses>
@@ -78,13 +77,6 @@
 			<version>0.1-SNAPSHOT</version>
 		</dependency>
 
-<!-- 
-		<dependency>
-			<groupId>org.xml-cml</groupId>
-			<artifactId>html</artifactId>
-			<version>${html.version}</version>
-		</dependency>
--->
 		
 		<dependency>
 			<groupId>org.bouncycastle</groupId>
@@ -98,14 +90,6 @@
 			<version>${junit.version}</version>
 			<scope>test</scope>
 		</dependency>
-
-<!-- 
-		<dependency>
-			<groupId>com.google.guava</groupId>
-			<artifactId>guava</artifactId>
-			<version>${guava.version}</version>
-		</dependency>
--->
 
 
 	</dependencies>
