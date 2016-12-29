@@ -8,3 +8,5 @@ nonUnicodeSymbolInfo/
 Non\-unicode*
 ^misc/
 ^target/
+^funnel/
+^demos/

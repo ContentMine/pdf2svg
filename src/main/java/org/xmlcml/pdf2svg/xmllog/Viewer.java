@@ -25,7 +25,6 @@ import javax.swing.tree.TreeModel;
 import javax.swing.tree.TreePath;
 import javax.swing.tree.TreeSelectionModel;
 
-import org.apache.pdfbox.pdfviewer.ReaderBottomPanel;
 import org.apache.pdfbox.util.ExtensionFileFilter;
 import org.xmlcml.euclid.Real2;
 import org.xmlcml.euclid.Transform2;

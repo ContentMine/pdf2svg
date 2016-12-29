@@ -24,7 +24,15 @@ public class TextStripperTest {
         extractAsTextFileWithDefaults(pdfFile, outputFile);
     }
 
-	private void extractAsTextFileWithDefaults(String pdfFile, File outputFile) throws IOException {
+	public static void main(String[] args) throws Exception {
+		// this has bad character widths
+		runTextStripper("demos/gandhi/sample.pdf", new File("target/gandhi/stripper.txt"));
+	}
+	private static void runTextStripper(String pdfFile, File outputFile ) throws IOException {
+        extractAsTextFileWithDefaults(pdfFile, outputFile);
+    }
+
+	private static void extractAsTextFileWithDefaults(String pdfFile, File outputFile) throws IOException {
 		boolean toHTML = true;
         boolean force = false;
         boolean sort = true;

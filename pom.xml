@@ -139,6 +139,75 @@
 					</execution>
 				</executions>
 			</plugin>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>appassembler-maven-plugin</artifactId>
+				<version>1.8.1</version>
+				<configuration>
+
+					<programs>
+						<program>
+							<mainClass>org.xmlcml.svg2xml.PDFAnalyzer</mainClass>
+							<id>pdf2xml</id>
+						</program>
+
+					</programs>
+
+					<!-- Prevent long directories -->
+					<repositoryLayout>flat</repositoryLayout>
+
+				</configuration>
+
+				<executions>
+					<execution>
+						<id>assembly</id>
+						<phase>package</phase>
+						<goals>
+							<goal>assemble</goal>
+						</goals>
+					</execution>
+				</executions>
+
+			</plugin>
+
+			<plugin>
+				<!--Tool for building a Debian package (.deb) http://tech.ebuddy.com/2013/10/02/automating-debian-package-creation-and-management-with-mavenant/ 
+					https://github.com/brndkfr/xmppbot/blob/master/xmppbot/pom.xml -->
+				<artifactId>jdeb</artifactId>
+				<groupId>org.vafer</groupId>
+				<version>1.3</version>
+				<executions>
+					<execution>
+						<phase>package</phase>
+						<goals>
+							<goal>jdeb</goal>
+						</goals>
+					</execution>
+				</executions>
+				<configuration>
+					<dataSet>
+						<data>
+							<src>${project.build.directory}/appassembler/</src>
+							<type>directory</type>
+							<mapper>
+								<type>perm</type>
+								<filemode>555</filemode>
+								<prefix>/usr/share/pdf2xml-repo</prefix>
+							</mapper>
+						</data>
+
+
+						<data>
+							<type>link</type>
+							<symlink>true</symlink>
+							<linkName>/usr/bin/pdf2xml</linkName>
+							<linkTarget>/usr/share/pdf2xml-repo/bin/pdf2xml</linkTarget>
+						</data>
+
+					</dataSet>
+				</configuration>
+			</plugin>
+			
 
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>

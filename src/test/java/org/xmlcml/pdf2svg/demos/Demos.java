@@ -7,7 +7,8 @@ public class Demos {
 	public static void main(String[] args) {
 //			ebola1();
 //			astro1();
-			plot1();
+		run("target/plot", "demos/plot/22649_Sada_2012-1.pdf");
+//		run("target/gandhi", "demos/gandhi/sample.pdf");
 
 	}
 
@@ -38,6 +39,16 @@ public class Demos {
 				"-logglyphs", 
 				"-outdir", "target/plot", 
 				"demos/plot/22649_Sada_2012-1.pdf"
+		);
+	}
+	
+	private static void run(String outdir, String infile) {
+		new PDF2SVGConverter().run(
+				"-logger", 
+				"-infofiles", 
+				"-logglyphs", 
+				"-outdir", outdir, 
+				infile
 		);
 	}
 	
