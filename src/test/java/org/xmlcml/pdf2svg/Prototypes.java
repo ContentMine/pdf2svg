@@ -1,8 +1,5 @@
 package org.xmlcml.pdf2svg;
 
-import org.junit.Test;
-
-
 public class Prototypes {
 
 	public static void main(String[] args) {
@@ -25,5 +22,9 @@ public class Prototypes {
 		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/funnel", "demos/sage/Sbarra-454-74.pdf"
 		);
 	
+	}
+	private static void BMC() {
+		new PDF2SVGConverter().run("-logger", "-infofiles", "-logglyphs", "-outdir", "target/BMC", Fixtures.PDF2SVG_DIR+"misc/10.1186_1471-2431-13-190/fulltext.pdf"
+				);
 	}
 }
