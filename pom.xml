@@ -12,26 +12,22 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-<!-- 
 	<parent>
-		<groupId>uk.ac.cam.ch.wwmm</groupId>
-		<artifactId>wwmm-parent</artifactId>
-		<version>5-SNAPSHOT</version>
+		<groupId>org.contentmine</groupId>
+		<artifactId>cm-parent</artifactId>
+		<version>6</version>
 	</parent>
--->
 
-	<groupId>org.xml-cml</groupId>
+	<groupId>org.contentmine</groupId>
 	<artifactId>pdf2svg</artifactId>
-	<version>1.1-SNAPSHOT</version>
-	<name>PDF2SVG</name>
+	<version>2</version>
+	<name>pdf2svg</name>
 	<description>Converts PDF to SVG</description>
 
 	<properties>
-<!-- 		<pdfbox.version>1.8.7</pdfbox.version>  updated 2015-01-08 PMR-->
 		<pdfbox.version>1.8.8</pdfbox.version>
-		<svg.version>0.2-SNAPSHOT</svg.version>
-		<html.version>0.2-SNAPSHOT</html.version>
-		<junit.version>4.11</junit.version>
+		<svg.version>1</svg.version>
+		<html.version>2</html.version>
 	</properties>
 
 	<licenses>
@@ -42,20 +38,12 @@
 		</license>
 	</licenses>
 	<scm>
-		<url>https://bitbucket.org/petermr/pdf2svg/src</url>
-		<connection>scm:hg:http://bitbucket.org/petermr/pdf2svg</connection>
-		<developerConnection>scm:hg:https://bitbucket.org/petermr/pdf2svg</developerConnection>
+		<url>https://github.com/contentmine/pdf2svg/src</url>
+		<connection>scm:hg:http://github.com/contentmine/pdf2svg</connection>
+		<developerConnection>scm:hg:https://github.com/contentmine/pdf2svg</developerConnection>
 	</scm>
 
 	<!-- remove <repositories> for releases to maven central -->
-	<repositories>
-		<repository>
-			<id>ucc-repo</id>
-			<name>UCC Repository</name>
-			<url>https://maven.ch.cam.ac.uk/m2repo</url>
-		</repository>
-	</repositories>
-
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.pdfbox</groupId>
@@ -63,18 +51,10 @@
 			<version>${pdfbox.version}</version>
 		</dependency>
 
-<!--  
 		<dependency>
-			<groupId>org.xml-cml</groupId>
-			<artifactId>svg</artifactId>
-			<version>${svg.version}</version>
-		</dependency>
--->
-		
-		<dependency>
-			<groupId>org.xml-cml</groupId>
+			<groupId>org.contentmine</groupId>
 			<artifactId>imageanalysis</artifactId>
-			<version>0.1-SNAPSHOT</version>
+			<version>1</version>
 		</dependency>
 
 		
@@ -84,14 +64,6 @@
 			<version>1.46</version>
 		</dependency>
 		
-		<dependency>
-			<groupId>junit</groupId>
-			<artifactId>junit</artifactId>
-			<version>${junit.version}</version>
-			<scope>test</scope>
-		</dependency>
-
-
 	</dependencies>
 
 	<build>
