@@ -173,12 +173,9 @@ public class PDFPage2SVGConverter extends PageDrawer {
 		try {
 			if (page.getContents() != null) {
 				PDResources resources = page.findResources();
-				LOG.debug("pageSize: "+pageSize);
 				ensurePageSize();
 				// can be very slow - 35 secs/page sometimes
-				LOG.debug("startStream");
 				processStream(page, resources, page.getContents().getStream());
-				LOG.debug("endStream");
 			}
 		} catch (Exception e) {
 			// PDFBox routines have a very bad feature of trapping exceptions

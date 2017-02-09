@@ -177,6 +177,7 @@ public class TexCharacterSet {
 			characterSet.addCharacter(line);
 			nchars++;
 		}
+		br.close();
 		LOG.trace("characters "+nchars + " latex "+characterSet.characterByLatexMap.size()+ " unicodeMath "+characterSet.characterByUnicodeMathMap.size());
 		return characterSet;
 	}
