@@ -76,7 +76,6 @@ import org.xmlcml.graphics.svg.SVGSVG;
 import org.xmlcml.graphics.svg.SVGText;
 import org.xmlcml.graphics.svg.SVGTitle;
 import org.xmlcml.graphics.svg.SVGUtil;
-import org.xmlcml.image.ImageUtil;
 import org.xmlcml.pdf2svg.util.PDF2SVGUtil;
 
 /** converts a PDPage to SVG
@@ -1098,7 +1097,7 @@ xmlns="http://www.w3.org/2000/svg">
 	private String writeImage(BufferedImage bImage) {
 		pdf2svgConverter.imageNumber++;
 		String filename = createImageFilename();
-		ImageUtil.writeImageQuietly(bImage, new File(pdf2svgConverter.outdir, filename));
+		org.xmlcml.graphics.image.ImageUtil.writeImageQuietly(bImage, new File(pdf2svgConverter.outdir, filename));
 		return filename;
 	}
 
