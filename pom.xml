@@ -39,13 +39,26 @@
 			<artifactId>pdfbox</artifactId>
 			<version>${pdfbox.version}</version>
 		</dependency>
+		<!-- 
+		<dependency>
+			<groupId>org.contentmine</groupId>
+			<artifactId>svg</artifactId>
+			<version>1.0.3</version>
+		</dependency>
+		-->
 
+<!-- 
 		<dependency>
 			<groupId>org.contentmine</groupId>
 			<artifactId>imageanalysis</artifactId>
 			<version>1.0.1</version>
 		</dependency>
-
+		-->
+        <dependency>
+			<groupId>org.contentmine</groupId>
+			<artifactId>html</artifactId>
+			<version>2.0.1</version>
+		</dependency>
 		
 		<dependency>
 			<groupId>org.bouncycastle</groupId>
