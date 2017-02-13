@@ -1,20 +1,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
 	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 
-	<!-- Copyright (C) 2012 pm286 <peter.murray.rust@googlemail.com> Licensed 
-		under the Apache License, Version 2.0 (the "License"); you may not use this 
-		file except in compliance with the License. You may obtain a copy of the 
-		License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by 
-		applicable law or agreed to in writing, software distributed under the License 
-		is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY 
-		KIND, either express or implied. See the License for the specific language 
+	<!-- Copyright (C) 2012 pm286 <peter.murray.rust@googlemail.com> Licensed
+		under the Apache License, Version 2.0 (the "License"); you may not use this
+		file except in compliance with the License. You may obtain a copy of the
+		License at http://www.apache.org/licenses/LICENSE-2.0 Unless required by
+		applicable law or agreed to in writing, software distributed under the License
+		is distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+		KIND, either express or implied. See the License for the specific language
 		governing permissions and limitations under the License. -->
 
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>org.contentmine</groupId>
+		<artifactId>cm-parent</artifactId>
+		<version>7.0.3</version>
+	</parent>
+
 	<groupId>org.contentmine</groupId>
 	<artifactId>pdf2svg</artifactId>
-	<version>2.0.1</version>
+	<version>2.0.2</version>
 	<name>pdf2svg</name>
 	<description>Converts PDF to SVG</description>
 
@@ -39,21 +45,7 @@
 			<artifactId>pdfbox</artifactId>
 			<version>${pdfbox.version}</version>
 		</dependency>
-		<!-- 
-		<dependency>
-			<groupId>org.contentmine</groupId>
-			<artifactId>svg</artifactId>
-			<version>1.0.3</version>
-		</dependency>
-		-->
 
-<!-- 
-		<dependency>
-			<groupId>org.contentmine</groupId>
-			<artifactId>imageanalysis</artifactId>
-			<version>1.0.1</version>
-		</dependency>
-		-->
         <dependency>
 			<groupId>org.contentmine</groupId>
 			<artifactId>html</artifactId>
@@ -65,7 +57,7 @@
 			<artifactId>bcprov-jdk16</artifactId>
 			<version>1.46</version>
 		</dependency>
-		
+
 	</dependencies>
 
 	<build>
@@ -100,9 +92,9 @@
 
 			</plugin>
 
-<!--  
+<!--
 			<plugin>
-				<!- - Tool for building a Debian package (.deb) http://tech.ebuddy.com/2013/10/02/automating-debian-package-creation-and-management-with-mavenant/ 
+				<!- - Tool for building a Debian package (.deb) http://tech.ebuddy.com/2013/10/02/automating-debian-package-creation-and-management-with-mavenant/
 					https://github.com/brndkfr/xmppbot/blob/master/xmppbot/pom.xml - ->
 				<artifactId>jdeb</artifactId>
 				<groupId>org.vafer</groupId>
@@ -141,4 +133,16 @@
 -->
 		</plugins>
 	</build>
+
+	<repositories>
+		<repository>
+			<id>cm-pom</id>
+			<url>https://raw.github.com/ContentMine/cm-pom/mvn-repo/</url>
+			<snapshots>
+					<enabled>true</enabled>
+					<updatePolicy>always</updatePolicy>
+			</snapshots>
+		</repository>
+	</repositories>
+	
 </project>
