@@ -14,13 +14,13 @@
 
     <groupId>org.contentmine</groupId>
     <artifactId>pdf2svg</artifactId>
-    <version>2.0.4</version>
+    <version>2.0.5</version>
     <name>pdf2svg</name>
     <description>Converts PDF to SVG</description>
 
     <properties>
         <pdfbox.version>1.8.8</pdfbox.version>
-        <html.version>2.0.5</html.version>
+        <html.version>2.0.6</html.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
