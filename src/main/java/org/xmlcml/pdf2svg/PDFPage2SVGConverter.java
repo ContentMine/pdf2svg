@@ -1097,7 +1097,7 @@ xmlns="http://www.w3.org/2000/svg">
 	private String writeImage(BufferedImage bImage) {
 		pdf2svgConverter.imageNumber++;
 		String filename = createImageFilename();
-		org.xmlcml.graphics.image.ImageUtil.writeImageQuietly(bImage, new File(pdf2svgConverter.outdir, filename));
+		org.xmlcml.graphics.image.ImageIOUtil.writeImageQuietly(bImage, new File(pdf2svgConverter.outdir, filename));
 		return filename;
 	}
 

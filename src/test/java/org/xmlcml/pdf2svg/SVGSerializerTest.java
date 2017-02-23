@@ -16,17 +16,16 @@
 package org.xmlcml.pdf2svg;
 
 import java.io.ByteArrayOutputStream;
-
 import java.io.FileOutputStream;
 import java.io.IOException;
 
-import junit.framework.Assert;
+import org.apache.log4j.Logger;
+import org.junit.Assert;
+import org.junit.Test;
+
 import nu.xom.Document;
 import nu.xom.Element;
 import nu.xom.Serializer;
-
-import org.apache.log4j.Logger;
-import org.junit.Test;
 
 public class SVGSerializerTest {
 

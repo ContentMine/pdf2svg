@@ -1,12 +1,8 @@
 package org.xmlcml.pdf2svg.codepoints.defacto;
 
-import java.io.File;
-
-import junit.framework.Assert;
-
+import org.junit.Assert;
 import org.junit.Test;
 import org.xmlcml.font.CodePointSet;
-import org.xmlcml.pdf2svg.Fixtures;
 
 /** tests contents of codePointSet
  * 

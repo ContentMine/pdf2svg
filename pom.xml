@@ -12,17 +12,20 @@
 
     <modelVersion>4.0.0</modelVersion>
 
+    <properties>
+        <pdf2svg.version>2.0.5</pdf2svg.version>
+        <!-- upstream -->
+        <html.version>2.0.6</html.version>
+        <pdfbox.version>1.8.8</pdfbox.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    
     <groupId>org.contentmine</groupId>
     <artifactId>pdf2svg</artifactId>
-    <version>2.0.5</version>
+    <version>${pdf2svg.version}</version>
     <name>pdf2svg</name>
     <description>Converts PDF to SVG</description>
 
-    <properties>
-        <pdfbox.version>1.8.8</pdfbox.version>
-        <html.version>2.0.6</html.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    </properties>
 
     <licenses>
         <license>
