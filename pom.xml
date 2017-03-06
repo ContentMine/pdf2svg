@@ -17,7 +17,6 @@
         <!-- upstream -->
         <html.version>2.0.7</html.version>
         <pdfbox.version>1.8.8</pdfbox.version>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
     
     <groupId>org.contentmine</groupId>
@@ -25,15 +24,6 @@
     <version>${pdf2svg.version}</version>
     <name>pdf2svg</name>
     <description>Converts PDF to SVG</description>
-
-
-    <licenses>
-        <license>
-            <name>Apache License, Version 2.0</name>
-            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
-            <distribution>repo</distribution>
-        </license>
-    </licenses>
 
     <!-- remove <repositories> for releases to maven central -->
     <dependencies>
