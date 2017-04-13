@@ -48,6 +48,8 @@ import org.xmlcml.pdf2svg.util.MenuSystem;
  */
 public class PDF2SVGConverter extends PDFStreamEngine {
 
+	private static final String IMAGES = "images";
+
 	private static final String DEFAULT_OUTPUT_DIRECTORY = "target";
 
 	private final static Logger LOG = Logger.getLogger(PDF2SVGConverter.class);
@@ -78,7 +80,8 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	public static final String STORE_SVG = "-storesvg";
 
 	public static final String HTTP = "http";
-	private static final int DEFAULT_MAX_PAGE = 200;
+//	private static final int DEFAULT_MAX_PAGE = 200;
+	private static final int DEFAULT_MAX_PAGE = 999;
 
 	private String PDFpassword = "";
 //	private boolean useNonSeqParser = false;
@@ -128,6 +131,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	String inputBasename;
 	int pageNumber;
 	int imageNumber;
+	File imageDirectory;
 
 	public int maxInlineImageSize = 100; // size in pixels - arbitrary 
 
@@ -644,5 +648,18 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 		ensureAmiFontManager();
 		return amiFontMap;
 	}
+	
+	public void setImageDirectory(File imageDirectory) {
+		this.imageDirectory = imageDirectory;
+	}
+
+	
+	File getOrCreateImageDirectory() {
+		if (imageDirectory == null) {
+			imageDirectory = outdir == null ? null : new File(outdir, IMAGES);
+		}
+		return imageDirectory;
+	}
+
 
 }

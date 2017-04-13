@@ -13,9 +13,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <pdf2svg.version>2.0.6</pdf2svg.version>
+        <pdf2svg.version>2.1.0</pdf2svg.version>
         <!-- upstream -->
-        <html.version>2.0.7</html.version>
+        <html.version>2.1.0</html.version>
         <pdfbox.version>1.8.8</pdfbox.version>
     </properties>
     

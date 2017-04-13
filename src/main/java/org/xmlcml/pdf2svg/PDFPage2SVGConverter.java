@@ -73,6 +73,7 @@ import org.xmlcml.graphics.svg.SVGImage;
 import org.xmlcml.graphics.svg.SVGPath;
 import org.xmlcml.graphics.svg.SVGRect;
 import org.xmlcml.graphics.svg.SVGSVG;
+import org.xmlcml.graphics.svg.SVGShape;
 import org.xmlcml.graphics.svg.SVGText;
 import org.xmlcml.graphics.svg.SVGTitle;
 import org.xmlcml.graphics.svg.SVGUtil;
@@ -200,7 +201,7 @@ public class PDFPage2SVGConverter extends PageDrawer {
 			if (shapeString != null && shapeString.trim().length() > 0) {
 				SVGPath path = new SVGPath(shapeString);
 				Real2Range bbox = path.getBoundingBox();
-				SVGRect box = null;
+				SVGShape box = null;
 				box = new SVGRect(bbox);
 				box.setFill("none");
 				box.setStroke(color[icol]);
@@ -1096,8 +1097,14 @@ xmlns="http://www.w3.org/2000/svg">
 
 	private String writeImage(BufferedImage bImage) {
 		pdf2svgConverter.imageNumber++;
-		String filename = createImageFilename();
-		org.xmlcml.graphics.image.ImageIOUtil.writeImageQuietly(bImage, new File(pdf2svgConverter.outdir, filename));
+		String filename = null;
+		File imageDirectory = pdf2svgConverter.getOrCreateImageDirectory();
+		if (imageDirectory != null) {
+			filename = createImageFilename();
+			File imageFile =  imageDirectory == null ? null : new File(imageDirectory, filename);
+			LOG.debug("imageFile "+imageFile);
+			org.xmlcml.graphics.image.ImageIOUtil.writeImageQuietly(bImage, imageFile);
+		}
 		return filename;
 	}
 
@@ -1163,4 +1170,7 @@ xmlns="http://www.w3.org/2000/svg">
 		return basicStroke;
 	}
 
+
+
+	
 }
