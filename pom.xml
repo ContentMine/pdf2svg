@@ -49,6 +49,33 @@
 
     <build>
         <plugins>
+            <!-- giant jar -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <addClasspath>true</addClasspath>
+                            <mainClass>org.xmlcml.pdf2svg.PDF2SVGConverter</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>make-assembly</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
             <plugin>
                 <groupId>org.codehaus.mojo</groupId>
                 <artifactId>appassembler-maven-plugin</artifactId>
@@ -56,10 +83,9 @@
                 <configuration>
                     <programs>
                         <program>
-                            <mainClass>org.xmlcml.svg2xml.PDFAnalyzer</mainClass>
-                            <id>pdf2xml</id>
+                            <mainClass>org.xmlcml.pdf2svg.PDF2SVGConverter</mainClass>
+                            <id>pdf2svg</id>
                         </program>
-
                     </programs>
 
                     <!-- Prevent long directories -->
