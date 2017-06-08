@@ -25,6 +25,7 @@
     <name>pdf2svg</name>
     <description>Converts PDF to SVG</description>
 
+
     <!-- remove <repositories> for releases to maven central -->
     <dependencies>
         <dependency>
