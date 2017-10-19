@@ -167,7 +167,6 @@ public class PDFPage2SVGConverter extends PageDrawer {
 	
 	void drawPage(PDPage p) {
 		LOG.trace("startPage");
-		ensurePageSize();
 		page = p;
 		reportedEncodingError = false;
 
@@ -314,6 +313,7 @@ xmlns="http://www.w3.org/2000/svg">
 				pageSize = mediaBox == null ? null : mediaBox.createDimension();
 				pageSize = pageSize == null ? DEFAULT_DIMENSION : pageSize;
 				LOG.trace("set dimension: "+pageSize);
+                                LOG.debug("set dimension: "+pageSize);
 			}
 		}
 	}
