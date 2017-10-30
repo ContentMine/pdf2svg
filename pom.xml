@@ -13,9 +13,10 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <pdf2svg.version>2.2.0-SNAPSHOT</pdf2svg.version>
+        <pdf2svg.version>2.3.0-SNAPSHOT</pdf2svg.version>
         <!-- upstream -->
-        <html.version>2.2.0-SNAPSHOT</html.version>
+<!--         <html.version>2.2.0-SNAPSHOT</html.version> -->
+         <svghtml.version>2.2.0-SNAPSHOT</svghtml.version> -->
         <pdfbox.version>1.8.8</pdfbox.version>
     </properties>
     
@@ -36,8 +37,8 @@
 
         <dependency>
             <groupId>org.contentmine</groupId>
-            <artifactId>html</artifactId>
-            <version>${html.version}</version>
+            <artifactId>svghtml</artifactId>
+            <version>${svghtml.version}</version>
         </dependency>
         
         <dependency>
