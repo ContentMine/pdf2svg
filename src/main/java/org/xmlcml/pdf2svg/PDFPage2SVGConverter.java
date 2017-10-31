@@ -77,6 +77,7 @@ import org.xmlcml.graphics.svg.SVGShape;
 import org.xmlcml.graphics.svg.SVGText;
 import org.xmlcml.graphics.svg.SVGTitle;
 import org.xmlcml.graphics.svg.SVGUtil;
+import org.xmlcml.graphics.svg.util.ImageIOUtil;
 import org.xmlcml.pdf2svg.util.PDF2SVGUtil;
 
 /** converts a PDPage to SVG
@@ -1103,7 +1104,7 @@ xmlns="http://www.w3.org/2000/svg">
 			filename = createImageFilename();
 			File imageFile =  imageDirectory == null ? null : new File(imageDirectory, filename);
 			LOG.debug("imageFile "+imageFile);
-			org.xmlcml.graphics.image.ImageIOUtil.writeImageQuietly(bImage, imageFile);
+			ImageIOUtil.writeImageQuietly(bImage, imageFile);
 		}
 		return filename;
 	}
