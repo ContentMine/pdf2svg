@@ -55,7 +55,7 @@ public class PDF2SVGConverter extends PDFStreamEngine {
 	private final static Logger LOG = Logger.getLogger(PDF2SVGConverter.class);
 
 	private static final String PDF = ".pdf";
-	private static final double _DEFAULT_PAGE_WIDTH = 600.0;
+	private static final double _DEFAULT_PAGE_WIDTH = 800.0;
 	private static final double _DEFAULT_PAGE_HEIGHT = 800.0;
 	
 	@SuppressWarnings("unused")
