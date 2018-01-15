@@ -17,6 +17,7 @@
          <svg2xml.version>2.4.0-SNAPSHOT</svg2xml.version>
         <pdfbox.version>1.8.8</pdfbox.version>
         <bcprov-jdk16.version>1.46</bcprov-jdk16.version>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
 <!--  old version for compatibility -->    
