@@ -20,18 +20,18 @@ import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 
-import nu.xom.Attribute;
-
 import org.apache.log4j.Logger;
 import org.xmlcml.euclid.Util;
-import org.xmlcml.html.HtmlA;
-import org.xmlcml.html.HtmlFrame;
-import org.xmlcml.html.HtmlFrameset;
-import org.xmlcml.html.HtmlHtml;
-import org.xmlcml.html.HtmlLi;
-import org.xmlcml.html.HtmlUl;
+import org.xmlcml.graphics.html.HtmlA;
+import org.xmlcml.graphics.html.HtmlFrame;
+import org.xmlcml.graphics.html.HtmlFrameset;
+import org.xmlcml.graphics.html.HtmlHtml;
+import org.xmlcml.graphics.html.HtmlLi;
+import org.xmlcml.graphics.html.HtmlUl;
 import org.xmlcml.xml.XMLConstants;
 import org.xmlcml.xml.XMLUtil;
+
+import nu.xom.Attribute;
 
 
 public class MenuSystem {
@@ -45,7 +45,7 @@ public class MenuSystem {
 	private static final String MENU = "menu";
 
 	private static final int DEFAULT_ROW_WIDTH = 100;
-	private static final String target = PConstants.HTML_TARGET;
+	private static final String target = org.xmlcml.pdf2svg.util.PConstants.HTML_TARGET;
 
 	private HtmlUl ul;
 	private File outdir;

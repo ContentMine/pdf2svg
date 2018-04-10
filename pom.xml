@@ -13,17 +13,23 @@
     <modelVersion>4.0.0</modelVersion>
 
     <properties>
-        <pdf2svg.version>2.1.0</pdf2svg.version>
         <!-- upstream -->
-        <html.version>2.1.0</html.version>
+         <svg2xml.version>2.4.0-SNAPSHOT</svg2xml.version> <!-- not used -->
+         
+         <svghtml.version>1.0.0-SNAPSHOT</svghtml.version>
         <pdfbox.version>1.8.8</pdfbox.version>
+        <bcprov-jdk16.version>1.46</bcprov-jdk16.version>
+	<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    
-    <groupId>org.contentmine</groupId>
+
+<!--  old version for compatibility -->    
+<!--     <groupId>org.contentmine</groupId> -->
+    <groupId>org.xmlcml</groupId>
     <artifactId>pdf2svg</artifactId>
-    <version>${pdf2svg.version}</version>
+    <version>2.4.0-SNAPSHOT</version>
     <name>pdf2svg</name>
     <description>Converts PDF to SVG</description>
+
 
     <!-- remove <repositories> for releases to maven central -->
     <dependencies>
@@ -33,16 +39,25 @@
             <version>${pdfbox.version}</version>
         </dependency>
 
+<!--  order is svghtml , svg2xml , cproject -->
+<!-- 
         <dependency>
             <groupId>org.contentmine</groupId>
-            <artifactId>html</artifactId>
-            <version>${html.version}</version>
+            <artifactId>svg2xml</artifactId>
+            <version>${svg2xml.version}</version>
+        </dependency>
+-->
+
+        <dependency>
+            <groupId>org.contentmine</groupId>
+            <artifactId>svghtml</artifactId>
+            <version>${svghtml.version}</version>
         </dependency>
         
         <dependency>
             <groupId>org.bouncycastle</groupId>
             <artifactId>bcprov-jdk16</artifactId>
-            <version>1.46</version>
+            <version>${bcprov-jdk16.version}</version>
         </dependency>
 
     </dependencies>
@@ -55,9 +70,14 @@
                 <version>1.8.1</version>
                 <configuration>
                     <programs>
+                    <!-- probably fails -->
                         <program>
                             <mainClass>org.xmlcml.svg2xml.PDFAnalyzer</mainClass>
                             <id>pdf2xml</id>
+                        </program>
+                        <program>
+                            <mainClass>org.xmlcml.pdf2svg.PDF2SVGConverter</mainClass>
+                            <id>pdf2svg</id>
                         </program>
 
                     </programs>
